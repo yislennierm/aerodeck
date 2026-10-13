@@ -1,0 +1,37 @@
+AERODECK / EdgeTX Lua development — RadioMaster TX16S MkII
+
+Open this LUA folder in VS Code, or open AERODECK.code-workspace.
+Install the recommended Lua extension. Editor settings are in .vscode.
+
+MAIN SOURCE
+sdcard/SCRIPTS/TOOLS/telem.lua
+Assets: sdcard/SCRIPTS/TOOLS/AERODECK/
+Also included: hello.lua and the experimental aerolab.lua with AEROLAB assets.
+Current AERODECK controls and limitations: AERODECK.txt.
+Older previews and MKII instructions are retained for history.
+
+ON EACH COMPUTER
+1. Make this entire LUA folder available locally through your chosen sync or Git workflow.
+2. Install EdgeTX Companion for that computer and select the TX16S radio type.
+3. Set Companion's SD-card folder to the sdcard folder inside this local project.
+   That absolute path is specific to each computer; it is not an editor setting.
+4. Start the radio simulator and open SYS > Tools > AERODECK.
+5. Edit telem.lua, save, then exit and reopen AERODECK to reload.
+
+The .code-workspace uses relative paths. Lua bitmap paths beginning /SCRIPTS
+are SD-card-root paths and must stay that way for the radio.
+
+This move does not configure cloud sync or a Git remote. Use the folder's
+existing sync service if available. Avoid editing the same file concurrently
+on two computers. Install archives are snapshots; edit the source under sdcard.
+
+THIS MAC
+Project: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA
+Companion SD folder: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard
+A compatibility symlink at the previous Codex project location keeps existing
+local references working. Other computers should use their own local SD path.
+
+VALIDATION
+Latest UI checks ran in the TX16S EdgeTX 3.0.0 WASM simulator. Physical radio
+and Companion 2.12.4 behavior remain unverified. Match Companion to your radio
+firmware when testing for deployment.

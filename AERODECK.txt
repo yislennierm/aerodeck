@@ -1,0 +1,29 @@
+AERODECK — integrated radio application
+
+SYS > Tools > AERODECK (telem.lua).
+Six tabs: Flight, Telemetry, Nav, Power, System, Tools.
+Tools opens the Betaflight Stick Commands reference. ENTER or the MODE header cycles diagram modes 1-4. PREV/NEXT buttons at the bottom of the list switch its two pages. Stick mode changes only the diagrams, not the radio configuration. This page does not send commands.
+
+PAGE advances pages; PAGE back goes backwards. Touch any bottom tab directly.
+On Telemetry, ENTER or the top-right status badge cycles DEMO, LOW PACK, LINK LOSS, LIVE.
+RTN exits the application.
+
+Flight and Power remain demonstrations. Nav starts in demo mode and has a separate live GPS mode. Telemetry defaults to explicit DEMO mode. LIVE reads discovered standard-name sensors, converts recognised speed/altitude/angle units, and clears readings when the telemetry link is unavailable. System retains its sensor inspector and original scenario controls. Telemetry demonstration modes are independent of the original flight scenarios.
+
+Merge SCRIPTS into your simulator SD folder. Remove SCRIPTS/TOOLS/deck.lua if you previously installed the separate AERODECK III download. The workspace SD folder already has this duplicate removed. All existing Flight/Nav/Power/System assets are included.
+
+Verified in TX16S EdgeTX 3.0.0 WASM firmware: all five pages, complete navigation loop, telemetry mode switching by ENTER and touch, tab selection, and exit. Physical radio performance and EdgeTX 2.12.4 remain unverified. No model/RF writes. Custom sensor names require mapping; individual stale sensors are not detected independently of the global link. LIVE cell count and flight mode are not implemented.
+
+STICK COMMANDS REFERENCE
+Verified against https://betaflight.com/docs/wiki/guides/current/Controls on 2026-10-13. Includes save settings, PID profiles 1-3 (CLI indices 0-2), gyro/accelerometer/compass calibration, optional in-flight calibration and four accelerometer trims. Availability depends on FC firmware, build options and configuration; this is not an FC capability detector. Mode assumes conventional axis directions, without reversed/custom radio mixes.
+
+TX16S WASM simulator checks: Tools tab launch, all four stick modes, second command page, forward wrap to Flight, backward return to Tools, and exit. Physical radio and EdgeTX 2.12.4 remain unverified.
+
+GPS / HOME NAV PAGE
+Use the existing NAV tab. ENTER or USE LIVE/USE DEMO switches source. ZOOM + cycles plot scales. SET HOME captures the current coordinates as this page's local home reference; it does not change the flight controller home point. Live home is unset until captured. Demo home starts at the demo origin. Switching source clears home and trail.
+
+North-up plot displays up to 90 samples gathered about once a second while Nav is open. The labelled radius is in metres. It is a relative track plot, not a geographical basemap. Coordinates use decimal degrees; distance and initial bearing use spherical great-circle calculations. At under one metre, bearing is omitted. GPS altitude datum depends on the sensor; it is not labelled AGL or ASL.
+
+Live requires discovered GPS, GSpd, GAlt, Sats and Hdg sources (individual missing values remain blank). getSourceValue current status rejects stale GPS. Standard speed/altitude/angle sensor units are converted. Constellation and 3D-fix status are not inferred from satellite count. Existing tracks remain visibly historical during a GPS outage; current position and home direction disappear. Source reference: https://luadoc.edgetx.org/edgetx-v2.8/part_iii_-_opentx_lua_reference/general-functions-less-than-greater-than-luadoc-begin-general/getsourcevalue-source
+
+Verified in TX16S EdgeTX 3.0.0 WASM: demo view, zoom, home capture, disconnected live view, demo return, subsequent page navigation and exit. Mathematical tests cover east/north bearings, distances, longitude wrap at the dateline, zero/invalid/stale GPS and unit conversion. Real GPS receiver and physical 2.12.4 radio remain unverified.
