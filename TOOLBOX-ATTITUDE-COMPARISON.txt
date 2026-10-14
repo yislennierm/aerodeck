@@ -1,0 +1,21 @@
+AERODECK attitude-loop comparison — 13 October 2026
+
+Reference inspected: supplied recovered Toolbox2 source, not screenshots.
+LIB/TLM/TLMSADD.lua binds getSourceIndex(CHAR_TELEMETRY .. sensorName) during setup.
+LIB/TLM/TLMUPDS.lua reads bound numeric source IDs and stores sensor values.
+LIB/TLM/TBS/GYRO.lua defines Ptch/Roll/Yaw and angle conversion (recovered branches are imperfect).
+MAIN/ML.lua updates telemetry before drawing; it does not periodically discard source IDs.
+UI/480X272/DB1/ATT.lua and AHR.lua call the native horizon primitive via X.HR.
+UI/X.lua confirms X.HR is lcd.drawHudRectangle.
+
+Actual differences corrected
+AERODECK used unqualified getFieldInfo names, with its whole cache discarded every two seconds. It now uses telemetry-qualified getSourceIndex IDs, binds each name once per source refresh, and keeps control-switch lookup separate. An explicit refresh or reopening rebuilds bindings. This avoids ambiguous input/sensor names; the two-second expiry was a candidate for the reported timing, not a proven hardware cause.
+
+Pitch and Roll are now polled on every callback, before redraw throttling. Other dashboard data is sampled for due frames. A slow drawing cadence no longer controls all attitude sampling. No extrapolation, made-up movement or synthetic production telemetry has been added. Existing unit conversion and current/stale validation remain; Toolbox's recovered reader ignores some freshness flags, which is not copied.
+
+All automatic diagnostic SD writes are removed. Diagnostics keeps its counters in memory. Previously saved runtime-check.txt files are historical and do not describe this build. The cockpit layout, artwork and native horizon primitive are unchanged by this patch.
+
+Validation
+Portable tests cover stable telemetry-qualified IDs even when a general input has the same name; explicit refresh; 12000 callbacks over 120 simulated seconds with zero repeated source binding and zero file writes; attitude polling on callbacks skipped by redraw limiting; stale data and unit conversions; existing configuration behavior. The 100 Hz polling / 25 Hz drawing figures in the mock-clock test are scheduling assertions, not hardware performance claims.
+
+A firmware-rendering test with changing test-only sensor values supplements those tests. Neither test proves that this fixes the physical-radio slowdown. Hardware A/B verification remains necessary. Background allocation failures remain a separate issue; this patch does not claim to solve them.

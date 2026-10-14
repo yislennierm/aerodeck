@@ -1,0 +1,66 @@
+ATTITUDE TEST — standalone TX16S diagnostic
+Status updated 2026-10-14. Investigation ongoing; no confirmed fix.
+
+CURRENT HARDWARE FINDING
+On the TX16S MkII, the user reports a constant 20 DRAW fps in numbers-only
+mode, but attitude values respond quickly after launch and then slow to one
+change every several seconds. Toolbox2 remains responsive on the same
+hardware and RF settings (250 Hz, telemetry ratio 1:64 STD).
+This separates screen redraw speed from changes in the displayed values.
+It does not establish whether the cause is source updates, freshness checks,
+or a difference in Toolbox's wider telemetry processing.
+
+CURRENT TEST: RAW VERSUS CURRENT-ONLY
+The revised attest.lua was installed and hash-verified on 2026-10-13.
+AERODECK, widget, models and settings were verified unchanged; radio ejected.
+Hardware results from this revised view are still pending.
+
+Open SYS > Tools > ATTITUDE TEST. ENTER switches horizon / numbers-only;
+RTN exits. In numbers-only view:
+- Left: pitch/roll accepted only when getSourceValue reports current data.
+- Right RAW: the numeric value returned by getSourceValue, even if stale,
+  matching the value-reading behavior found in Toolbox's TLMUPDS.lua.
+- CURRENT / FRESH: the two API flags, pitch then roll.
+- UNCHANGED: seconds since each raw numeric value last changed.
+- SOURCE: bound pitch and roll source identifiers.
+- DRAW: callbacks rendered per second.
+- VALUE CHANGES: changes in either accepted attitude value per second.
+  This is not a packet counter. Stationary values can correctly show zero.
+
+With the quad disarmed and props removed, continuously tilt it until the
+slowdown occurs. Record a photo of numbers-only view and whether RAW values
+also slow. If RAW moves while the left side is absent, investigate freshness
+handling. If RAW also freezes, the current-only check cannot explain the raw
+freeze; compare source selection and Toolbox's wider processing next.
+UNCHANGED measures value changes, not the age of the last received packet.
+RAW values are diagnostic only and must not be presented as live flight data.
+
+IMPLEMENTATION
+sdcard/SCRIPTS/TOOLS/attest.lua binds Ptch/Roll once, reads exactly two sources
+per callback, and converts supported radians/degrees to degrees. It has no
+bitmaps, file I/O, logging, RF commands, settings writes, histories, forced GC
+or redraw throttle. Horizon mode uses the native lcd.drawHudRectangle.
+It does not load AERODECK. Raw and filtered values share the same reads.
+
+LOCAL VALIDATION
+From this LUA directory, with LuaJIT installed:
+  luajit development/test_attitude_only.lua
+Checks two reads per callback across 10,000 mocked callbacks, unit conversion,
+numbers-only mode, stale/missing inputs, raw values visible with false current
+flags, explicit status/age labels, no file/bitmap access, and exit.
+Other regression tests:
+  luajit development/test_configuration.lua
+  luajit development/test_telemetry.lua
+  luajit development/test_rendering.lua
+  luajit development/test_attitude_loop.lua
+Mocks verify code behavior, not radio timing or telemetry delivery.
+The initial standalone test also ran in an isolated TX16S EdgeTX 3.0.0 WASM
+simulator with synthetic inputs. That does not reproduce the hardware issue;
+the revised raw/status display has mock coverage, not hardware results yet.
+
+RELATED EVIDENCE
+TOOLBOX-ATTITUDE-COMPARISON.txt: source comparison and earlier changes.
+hardware-stability-report.txt: historical AERODECK hardware measurements.
+stability-test.txt: historical synthetic-input WASM run, not radio evidence.
+Earlier render/allocation/source-binding changes did not resolve the user's
+reported slowdown. Bitmap allocation failures remain a separate open issue.

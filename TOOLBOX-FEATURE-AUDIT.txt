@@ -1,0 +1,54 @@
+AERODECK / TOOLBOX2 IMPLEMENTATION AUDIT
+13 October 2026
+
+Reference scope
+Reviewed recovered Toolbox2 module registry, 480x272 module screens, configuration registry/visibility, telemetry, FC/MSP, GPS and VTX folders. The supplied recovery report says 287 files recovered, 279 passing syntax checks, with unresolved MSP/parser/control-flow errors. Recovered code is evidence of intended behavior, not an executable specification. No Toolbox2 code, artwork, activation logic or licence-dependent features have been copied into this update. Icons and new renderers are original native Lua drawings.
+
+REFERENCE FEATURE -> WHAT THE UI NEEDS -> AERODECK STATUS
+
+Dashboard / DB1 (ATT, AHR, BAT, CEL, CMP, GPS, RCL, TIM, FMI)
+Needs attitude, pack/link condition, speed/altitude/course, flight mode and missing-data states. Flight now reads the same source selection as Telemetry and Power; unavailable attitude is masked rather than shown level. The restored original Flight artwork, twin gauges and moving tapes preserve the radio cockpit design. Battery/link alerts are displayed. Actual per-cell readings, hardware timer selection and compass rose remain unimplemented; cell average is explicitly an average from pack voltage/configured count.
+
+MENU / quick navigation
+Needs predictable destinations, clear selected state and input handling. Implemented original 12-tile native icon launcher, touch/rotary selection, previous/next navigation and shared source-state footer. Tiles never issue aircraft commands. Reference-only VTX/Stick pages are labelled. Launcher icons are native; Flight keeps the original textured background and numeral artwork using native-resolution chrome pieces.
+
+MOD/TLM and LIB/TLM
+Needs sensor names/units, independent current/stale flags, mappings and discovery visibility. Existing TLM mappings retained; Flight/Power/Link use them too. Live sampling uses getSourceValue current flags rather than requiring a generic RSSI signal. Inspector shows CURRENT or STALE/NONE individually. Sensor discovery is still done in EdgeTX's native model menu. No remote sensor creation/deletion is performed.
+
+MOD/RCL
+Needs link quality, signal strength, SNR, transmit power, RF mode and warning conditions. Implemented dedicated RC Link page and up to 90 one-second samples of LQ. Critical warning takes precedence. RFMD remains a numeric protocol value: no unsupported packet-rate lookup is invented.
+
+MOD/BAT; DB1/BAT, BTC, CEL, BFV
+Needs pack profiles, thresholds, capacity, current, history, measured versus estimated values. Existing configuration and three favourites retained; native Power now shows live voltage/current/consumption/remaining and sample history. Remaining estimate fallback uses selected capacity only if reported Bat% is missing; assumes full pack and reset consumption. Pack cell count is configured, not inferred. Per-cell imbalance tracking and battery-change detection remain unimplemented.
+
+MOD/GPS; LIB/GPS
+Needs coordinates, current/fix status, home source, distance/bearing and satellite details. Existing GPS details and Nav plot retained, now tied to the shared source mode. Manual home and opt-in first-position home policies retained. Current samples reject stale GPS; explicit fix type/per-satellite/constellation data remains unavailable without its actual source. No 3D-fix claim based only on satellite count. Track retained only while GPS/Nav is viewed; it is not a terrain map or flight recorder.
+
+MOD/AST; LIB/FC/BF/ASC; LIB/FC/IN/ASC
+Needs actual FC arming-disable reasons, flags and firmware version. NOT IMPLEMENTED: needs a validated FC transport and parser. New Flight Status shows configured radio arm/cut indicators, received FM and an in-app arm timer. It explicitly uses the configured switch; it is not proof that the FC is armed. No invented arming-disable messages.
+
+LIB/MSP and WR transports
+Needs request/response sequence, CRC, retries, timeout, connection status, read/write separation and firmware-aware decoding. NOT IMPLEMENTED. The recovered main loop/parser contain unresolved errors. Future implementation must use the official protocol and be verified with the actual connected quad. No silent reuse of recovered executable code.
+
+MOD/VTX; LIB/VTX
+Needs actual transport/device/channel/power/pit-mode status plus confirmed write results. NOT IMPLEMENTED transport. Added explicit reference-only Video/VTX page showing the five saved frequency notes. No Apply/Power/Pit control is drawn when there is no working command path.
+
+MOD/STK
+Existing 12 verified stick-command diagrams and modes 1-4 retained. Reference only, no command execution. FC/version/configuration may limit command availability.
+
+MOD/CFG
+Existing 12 configuration categories and dynamic visibility retained. Model metadata gates visible lists; saved hidden values survive. Lists with no working transport stay honestly marked unavailable. Startup page, sources, thresholds, colour, refresh limit, local-home and battery profiles work. Configuration migration preserves existing per-model files.
+
+WIDGET/loader
+Added WIDGETS/AERODECK/main.lua. Compact panel uses current telemetry and configured source names. EdgeTX's Full screen command opens the same telem.lua app. App state is released when the widget returns to compact/hidden mode, preventing retained graphics. Compact and fullscreen are live-only; legacy demo startup preferences are ignored. No background alerts/timers are claimed when the app is not running.
+
+About / diagnostics / memory
+New Diagnostics reports EdgeTX version, model, source mode and honest transport capabilities. No memory figures are invented. Existing source version and configuration remain accessible locally. Error-file logging, screenshots and continuous flight logging are not implemented.
+
+Design decisions
+Keep AERODECK's navy/metal instrument palette, restrained lime/cyan/amber/red status colours and attitude bezel. Icons use one 24px geometric family: horizon, bars, track nodes, GPS target, battery, antenna, stopwatch, gimbals, sliders, waveform, display, information ring. Each has a text label and a mode/capability caption. Large controls and a fixed footer replace eight cramped tabs. Alert colours do not imply an aircraft command was executed.
+
+Important limits
+This is a substantial app/UI expansion, not full Toolbox2 feature parity. MSP arming diagnostics, VTX control, per-satellite data, individual cell telemetry, hardware timer integration and background logging remain outstanding. Saved model settings and radio/FC output configuration are not rewritten. Physical radio performance and live-quad behavior need another test after simulator verification.
+
+Flight resolution fix: the original chrome is split into five pixel-exact pieces (156,832 decoded bytes instead of 261,120). Flight no longer uses the half-resolution fallback or bitmap enlargement. Physical-radio verification remains pending.

@@ -29,7 +29,15 @@
     "UNIT_FEET",
     "UNIT_RADIANS",
     "UNIT_DEGREE",
-    "getSourceValue"
+    "getSourceValue",
+    "EVT_VIRTUAL_NEXT",
+    "EVT_VIRTUAL_PREV",
+    "playTone",
+    "playHaptic",
+    "getVersion",
+    "loadScript",
+    "getSourceIndex",
+    "CHAR_TELEMETRY"
   ],
   "Lua.workspace.checkThirdParty": false
 }

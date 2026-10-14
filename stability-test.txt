@@ -1,0 +1,14 @@
+TX16S EdgeTX 3.0.0 WASM, 120 seconds. Changing synthetic inputs in an isolated test fixture, never shipped in the app. Physical radio still requires verification.
+
+t=6s page=1 fps=18.5 attitude=18.5Hz draw=1.6ms heap=215.1KB background=5/5 NATIVE
+t=16s page=1 fps=18.6 attitude=18.6Hz draw=2.9ms heap=278.8KB background=5/5 NATIVE
+t=26s page=1 fps=17.0 attitude=17.0Hz draw=2.4ms heap=341.5KB background=5/5 NATIVE
+t=36s page=1 fps=18.4 attitude=18.4Hz draw=1.9ms heap=253.9KB background=5/5 NATIVE
+t=47s page=1 fps=18.7 attitude=18.7Hz draw=1.8ms heap=318.4KB background=5/5 NATIVE
+t=57s page=1 fps=18.6 attitude=18.6Hz draw=1.8ms heap=382.7KB background=5/5 NATIVE
+t=67s page=1 fps=18.3 attitude=18.3Hz draw=1.9ms heap=263.0KB background=5/5 NATIVE
+t=77s page=1 fps=18.8 attitude=18.8Hz draw=1.6ms heap=327.4KB background=5/5 NATIVE
+t=87s page=1 fps=18.6 attitude=18.6Hz draw=1.8ms heap=392.2KB background=5/5 NATIVE
+t=97s page=1 fps=18.5 attitude=18.5Hz draw=1.9ms heap=268.2KB background=5/5 NATIVE
+t=108s page=1 fps=18.1 attitude=18.1Hz draw=1.4ms heap=331.1KB background=5/5 NATIVE
+t=118s page=1 fps=18.5 attitude=18.5Hz draw=0.8ms heap=394.8KB background=5/5 NATIVE

@@ -1,0 +1,11 @@
+Historical AERODECK hardware log, 2026-10-13. Predates the standalone
+attitude test and latest source-binding change. Not evidence of a fix.
+The attitude counter counts value changes, not incoming packets.
+See ATTITUDE-TEST.txt for current findings and pending test.
+
+t=6s page=1 fps=8.9 attitude=0.5Hz draw=80.6ms heap=195.0KB background=FAILED 2,3
+t=16s page=1 fps=9.0 attitude=0.0Hz draw=81.7ms heap=255.1KB background=FAILED 2,3
+t=26s page=1 fps=8.9 attitude=0.5Hz draw=81.1ms heap=315.4KB background=FAILED 2,3
+t=37s page=1 fps=8.9 attitude=0.0Hz draw=81.7ms heap=238.5KB background=FAILED 2,3
+t=47s page=1 fps=8.9 attitude=0.0Hz draw=81.1ms heap=299.8KB background=FAILED 2,3
+t=57s page=1 fps=9.1 attitude=0.0Hz draw=79.5ms heap=183.4KB background=FAILED 1,2,3

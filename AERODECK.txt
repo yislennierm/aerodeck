@@ -1,29 +1,54 @@
-AERODECK — integrated radio application
+CURRENT BUILD: attitude source-binding repair
+Sources are bound once using telemetry-qualified IDs. No two-second cache reset. Attitude is polled independently of redraw. Diagnostics is in memory only: runtime-check.txt from previous builds is historical. No automatic SD logging. See TOOLBOX-ATTITUDE-COMPARISON.txt.
 
-SYS > Tools > AERODECK (telem.lua).
-Six tabs: Flight, Telemetry, Nav, Power, System, Tools.
-Tools opens the Betaflight Stick Commands reference. ENTER or the MODE header cycles diagram modes 1-4. PREV/NEXT buttons at the bottom of the list switch its two pages. Stick mode changes only the diagrams, not the radio configuration. This page does not send commands.
+AERODECK — TX16S flight console
+13 October 2026
 
-PAGE advances pages; PAGE back goes backwards. Touch any bottom tab directly.
-On Telemetry, ENTER or the top-right status badge cycles DEMO, LOW PACK, LINK LOSS, LIVE.
-RTN exits the application.
+INSTALL / OPEN
+Merge the archive's SCRIPTS and WIDGETS folders into the radio or simulator SD root. Preserve all battery-*.cfg, settings-*.cfg and their .bak files. Do not replace model or RADIO folders. Exit AERODECK before updating. Remove an old SCRIPTS/TOOLS/telem.luac cache if present, then reopen SYS > Tools > AERODECK.
 
-Flight and Power remain demonstrations. Nav starts in demo mode and has a separate live GPS mode. Telemetry defaults to explicit DEMO mode. LIVE reads discovered standard-name sensors, converts recognised speed/altitude/angle units, and clears readings when the telemetry link is unavailable. System retains its sensor inspector and original scenario controls. Telemetry demonstration modes are independent of the original flight scenarios.
+For a home-screen widget, add AERODECK through EdgeTX screen/widget setup. Its compact view always reads live pack voltage, current and link quality. The widget's Full screen command opens the same application. RTN closes the launcher first, then returns to the home screen. Compact/hidden mode does not run application alarms or flight timers.
 
-Merge SCRIPTS into your simulator SD folder. Remove SCRIPTS/TOOLS/deck.lua if you previously installed the separate AERODECK III download. The workspace SD folder already has this duplicate removed. All existing Flight/Nav/Power/System assets are included.
+NAVIGATION
+MENU opens 12 original native-icon destinations: Flight, Telemetry, Navigation, GPS, Power, RC Link, Flight Status, Stick Guide, Configuration, Sensors, Video/VTX and Diagnostics. Touch selects a tile; rotary selects and ENTER opens. PAGE or the footer PREV/NEXT changes page. Telemetry is live-only. The centre footer refreshes sensor metadata without changing source or clearing home. Old demo startup preferences are ignored. No synthetic readings are substituted.
 
-Verified in TX16S EdgeTX 3.0.0 WASM firmware: all five pages, complete navigation loop, telemetry mode switching by ENTER and touch, tab selection, and exit. Physical radio performance and EdgeTX 2.12.4 remain unverified. No model/RF writes. Custom sensor names require mapping; individual stale sensors are not detected independently of the global link. LIVE cell count and flight mode are not implemented.
+LIVE TELEMETRY
+Flight, Power, RC Link, Telemetry and GPS share the source selection. Current readings use EdgeTX getSourceValue current flags; stale readings disappear. Unavailable attitude is masked, never represented as level flight. Discover sensors in the radio's model Telemetry menu, then map custom names under Configuration > Model Setup and RC Link. Auto tries standard names; None disables a mapped source. Recognised speed, altitude and angle units are converted. RFMD remains a raw numeric protocol value.
 
-STICK COMMANDS REFERENCE
-Verified against https://betaflight.com/docs/wiki/guides/current/Controls on 2026-10-13. Includes save settings, PID profiles 1-3 (CLI indices 0-2), gyro/accelerometer/compass calibration, optional in-flight calibration and four accelerometer trims. Availability depends on FC firmware, build options and configuration; this is not an FC capability detector. Mode assumes conventional axis directions, without reversed/custom radio mixes.
+The Power and RC Link traces retain up to 90 samples collected approximately once per second while the full application runs. The count is labelled; traces reset when the app restarts. Capacity-based remaining percentage is used only with a selected battery profile and missing reported Bat%; this assumes reset consumption and a full pack. Cell voltage is an average derived from configured count, not an individual-cell measurement.
 
-TX16S WASM simulator checks: Tools tab launch, all four stick modes, second command page, forward wrap to Flight, backward return to Tools, and exit. Physical radio and EdgeTX 2.12.4 remain unverified.
+GPS / NAVIGATION
+GPS displays coordinates, speed, altitude, course, satellite count and local home. Nav shows a north-up relative track, not a map. Home is manually captured or opt-in first-position capture under GPS settings. It does not change the FC's home point. Satellite count does not prove a 3D fix. Altitude datum is not inferred. No per-satellite or constellation data is invented. The track is collected while Nav/GPS is viewed. Stale position/home direction disappear; older track points remain historical. Source changes clear home and trail.
 
-GPS / HOME NAV PAGE
-Use the existing NAV tab. ENTER or USE LIVE/USE DEMO switches source. ZOOM + cycles plot scales. SET HOME captures the current coordinates as this page's local home reference; it does not change the flight controller home point. Live home is unset until captured. Demo home starts at the demo origin. Switching source clears home and trail.
+CONFIGURATION
+Twelve categories: Model Setup, RC Link, Model Battery, Battery Favourites, Flight Controller, Indicators, Betaflight, VTX, VTX Favourites, GPS, User Interface and Application. Header arrows select lists; MORE ROWS scrolls longer lists. Tap a row, then -/+; rotary selects and ENTER toggles editing. SAVE validates and writes; REVERT restores saved values. Model Battery has its own save/revert; other lists share a draft.
 
-North-up plot displays up to 90 samples gathered about once a second while Nav is open. The labelled radius is in metres. It is a relative track plot, not a geographical basemap. Coordinates use decimal degrees; distance and initial bearing use spherical great-circle calculations. At under one metre, bearing is omitted. GPS altitude datum depends on the sensor; it is not labelled AGL or ASL.
+Visibility starts with four base lists. Model Setup protocol, FC, voltage/GPS mappings and VTX mode enable related lists immediately in the draft. Hidden values are preserved. Categories requiring an unimplemented transport say so: selecting an FC/VTX type does not create a working connection.
 
-Live requires discovered GPS, GSpd, GAlt, Sats and Hdg sources (individual missing values remain blank). getSourceValue current status rejects stale GPS. Standard speed/altitude/angle sensor units are converted. Constellation and 3D-fix status are not inferred from satellite count. Existing tracks remain visibly historical during a GPS outage; current position and home direction disappear. Source reference: https://luadoc.edgetx.org/edgetx-v2.8/part_iii_-_opentx_lua_reference/general-functions-less-than-greater-than-luadoc-begin-general/getsourcevalue-source
+Settings are per model name: settings-<hex-name>.cfg and battery-<hex-name>.cfg in SCRIPTS/TOOLS/AERODECK. Writes are verified and previous settings retained as .bak. Renaming a model selects different settings; duplicate names share settings. These are app preferences, not radio/FC output settings.
 
-Verified in TX16S EdgeTX 3.0.0 WASM: demo view, zoom, home capture, disconnected live view, demo return, subsequent page navigation and exit. Mathematical tests cover east/north bearings, distances, longitude wrap at the dateline, zero/invalid/stale GPS and unit conversion. Real GPS receiver and physical 2.12.4 radio remain unverified.
+BATTERY ALERTS / INDICATORS
+Set pack cell count explicitly and choose appropriate ordered thresholds. No-power suppresses alerts. Visual-only is default. Optional sound/haptic alerts run while the full app is running in LIVE with current voltage, at most once every ten seconds. No demo source is available. These are not background radio alarms.
+
+Flight Status shows configured RADIO arm/cut switch indicators and received flight-mode text. Its timer counts the configured arm switch while app callbacks run, within this app session. Neither proves the FC is armed. Arming-disable reasons require a validated MSP transport and are not implemented.
+
+REFERENCE PAGES
+Stick Guide retains 12 Betaflight stick-command diagrams in modes 1–4. ENTER or the mode header changes diagram mode; list buttons switch command pages. It is a reference, not a command sender. Firmware/configuration determines availability.
+Video/VTX displays five saved frequency notes. It has no working device connection, live channel readout, power/pit control or Apply command. See TOOLBOX-FEATURE-AUDIT.txt for the source-to-UI assessment and remaining work.
+
+GRAPHICS / MEMORY
+Original native vector icons and panels preserve the AERODECK palette and attitude bezel. Flight retains the original textured background, large numeral artwork, moving tapes and twin bar gauges, using native-resolution chrome pieces. Power, launcher and other native pages avoid full-screen bitmaps. Existing bitmap pages try a smaller fallback and then a native background when unavailable. Radio memory/performance still needs hardware verification.
+
+VALIDATION
+Actual TX16S EdgeTX 3.0.0 WASM firmware: all 12 destinations, navigation and exit, compact widget/fullscreen/return, demo/live-empty views. Isolated current/stale sensor fixtures verify rendering and loss handling; fixtures are not included in the install. Portable Lua tests cover dynamic configuration/persistence, live data, units, stale values and demo/loss. This new build has not been validated on the physical radio with a live quad or installed there.
+
+DEVELOPMENT
+Edit sdcard/SCRIPTS/TOOLS/telem.lua and sdcard/WIDGETS/AERODECK/main.lua. Assets live alongside the tool in AERODECK/. Exit/reopen to reload. Run luajit development/test_configuration.lua and luajit development/test_telemetry.lua from this LUA folder. The install archive is a snapshot, not the development source.
+
+Flight resolution fix: the original chrome is split into five pixel-exact pieces (156,832 decoded bytes instead of 261,120). Flight no longer uses the half-resolution fallback or bitmap enlargement. Physical-radio verification remains pending.
+
+PERFORMANCE REPAIR
+Flight chrome prefers uncompressed BMP assets, with PNG fallback per piece. A failed piece no longer discards all loaded pieces. Source handles are cached for two seconds, and telemetry work occurs only on due frames. UI setting renderHz defaults to a 25 Hz target; actual callback rate depends on firmware/hardware. Diagnostics shows measured draw FPS, observed attitude changes per second, and loaded background pieces. Stationary attitude can correctly show zero changes. After six seconds the app saves AERODECK/runtime-check.txt for hardware investigation; it contains timing and load status, not flight coordinates. Simulator checks measured about 19 fps; this is not a physical-radio performance claim.
+
+SUSTAINED PERFORMANCE REPAIR
+Telemetry reuses its sample table and fixed source lists. Digit punctuation, link thresholds, UI accents and horizon drawing no longer create per-frame tables/closures; the model name is cached and history entries are reused after 90 samples. A mocked 1000-frame comparison reduced Lua allocation from 10,434 KB to 639 KB (about 94%). This measures allocation, not physical-radio FPS. runtime-check.txt now retains up to 12 timing/heap samples, starting after six seconds and then every ten seconds. Heap means Lua-managed memory, not all bitmap RAM. Reports remain local on the SD card.

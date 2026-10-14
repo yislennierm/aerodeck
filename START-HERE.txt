@@ -7,7 +7,9 @@ MAIN SOURCE
 sdcard/SCRIPTS/TOOLS/telem.lua
 Assets: sdcard/SCRIPTS/TOOLS/AERODECK/
 Also included: hello.lua and the experimental aerolab.lua with AEROLAB assets.
-Current AERODECK controls and limitations: AERODECK.txt.
+Widget source: sdcard/WIDGETS/AERODECK/main.lua
+Current controls and installation: AERODECK.txt.
+Toolbox2 source-to-UI assessment: TOOLBOX-FEATURE-AUDIT.txt.
 Older previews and MKII instructions are retained for history.
 
 ON EACH COMPUTER
@@ -31,7 +33,12 @@ Companion SD folder: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdca
 A compatibility symlink at the previous Codex project location keeps existing
 local references working. Other computers should use their own local SD path.
 
+CURRENT INVESTIGATION — 2026-10-14
+Physical-radio attitude slowdown remains unresolved, including in a minimal
+numbers-only test at a steady 20 redraws/sec. Read ATTITUDE-TEST.txt for the
+installed raw-versus-current diagnostic, evidence, test commands and next step.
+
 VALIDATION
-Latest UI checks ran in the TX16S EdgeTX 3.0.0 WASM simulator. Physical radio
-and Companion 2.12.4 behavior remain unverified. Match Companion to your radio
-firmware when testing for deployment.
+UI checks also ran in the TX16S EdgeTX 3.0.0 WASM simulator with synthetic
+inputs; they are not proof of hardware performance. Match Companion to your
+radio firmware when testing for deployment.
