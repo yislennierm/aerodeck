@@ -1,3 +1,8 @@
+UPDATE 2026-10-16: earlier source-binding/render fixes did not resolve the hardware issue.
+The original bytecode and installed radio configuration now confirm a missing
+active MSP exchange. AERODECK implements read-only identification/status polling;
+see TELEMETRY-CONNECTION.txt. Notes below are historical.
+
 AERODECK attitude-loop comparison — 13 October 2026
 
 Reference inspected: supplied recovered Toolbox2 source, not screenshots.

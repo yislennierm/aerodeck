@@ -1,0 +1,95 @@
+{
+  "build": "HOME-ICON-20261016",
+  "sourceSha256": "5bbadc15235f82707385f43b18b3be6a1bb6fd281470753d12bfae86b4372c41",
+  "homePngSha256": "aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6",
+  "hardwarePoseVerified": false,
+  "syntheticDataOnly": true,
+  "screenshots": [
+    {
+      "file": "home-icon-flight.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "f20baedb5ae8076206d7983ba340d528d8ceb0aead3f986da27e9402f4a0303f"
+    },
+    {
+      "file": "home-icon-home-crop.png",
+      "width": 40,
+      "height": 34,
+      "sha256": "ab40530bedf54bc7d857421da7564a3e307f164c01b18b3c172cd61f25327920"
+    },
+    {
+      "file": "home-icon-nose-up.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "66667f7263352e20e93b26e7e75b64d8084068d0efea854f4c6c688dac936c64"
+    },
+    {
+      "file": "home-icon-return.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "4f8d4c0ef73ee444a0adc29a90c020e65831557a6c2c87895f9e78e76cd9c939"
+    },
+    {
+      "file": "home-icon-setup.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "99e2d395d0e73053514e5a0dafa73e95940521735962d6801dc91c0ff44062e0"
+    },
+    {
+      "file": "home-icon-topbar-crop.png",
+      "width": 104,
+      "height": 34,
+      "sha256": "a34a0ee6f610922db5db76ec828ac10d462c885e816d97988436e7cb5e82beae"
+    },
+    {
+      "file": "home-icon-video.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "742cb169c4bc17cacc3ebbff4f881697a234230c2ffea4f95b04ca373cd1c126"
+    }
+  ],
+  "simulatorVersion": "3.0.0",
+  "simulatorTarget": "TX16S",
+  "simulatorKind": "native WASM RGB565 framebuffer",
+  "errorFreeLogs": true,
+  "logs": [
+    {
+      "file": "work/edgetx/home-icon/capture-home.log",
+      "sha256": "d06b0c547baa0efc58e40fa1922e629df31aa451efb6829dc5296202f52c2a32",
+      "processExitCode": 0,
+      "screenshots": 4,
+      "errorMatches": [],
+      "knownHostNotice": "Node WASI ExperimentalWarning only"
+    },
+    {
+      "file": "work/edgetx/home-icon/capture-nose-up.log",
+      "sha256": "cff14453ff885ffdbd34cbe7de8459246b7a24716b353363c35f77b57b4fcc86",
+      "processExitCode": 0,
+      "screenshots": 1,
+      "errorMatches": [],
+      "knownHostNotice": "Node WASI ExperimentalWarning only"
+    }
+  ],
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "fixturePrefixShips": false,
+  "observations": {
+    "opaqueWhitePixelsInHomeBox": 0,
+    "homeGlyphBoundsInclusive": [
+      8,
+      4,
+      31,
+      29
+    ],
+    "clearClockGapX37Through42": true,
+    "homeAndClockPixelsStableAcrossPages": true,
+    "otherSixNavigationIconsPixelIdenticalToPitchFix": {
+      "flight": true,
+      "video": true
+    },
+    "homeTapReturnsFlight": true,
+    "noseUpRawPitchRadians": -0.3490658503988659,
+    "noseUpNormalizedPitchDegrees": 20,
+    "noseUpHorizonBelowAircraft": true
+  }
+}

@@ -1,0 +1,736 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGIND.luac SHA256 81143b6a9771a5b09dd6387f7f9b85b3ab8a5b05ecb575edb0d6d70a06cbb98f
+
+FUNCTION main params 0 vararg 1 stack 16 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 281), ('F', 1, 281), ('D', 1, 281), ('X', 1, 281), ('T', 1, 281), ('listInd', 21, 281), ('listInd2', 25, 281), ('listSwPos', 75, 281), ('listSrc', 76, 281), ('(for index)', 81, 90), ('(for limit)', 81, 90), ('(for step)', 81, 90), ('i', 82, 89), ('(for index)', 95, 104), ('(for limit)', 95, 104), ('(for step)', 95, 104), ('i', 96, 103), ('(for index)', 109, 118), ('(for limit)', 109, 118), ('(for step)', 109, 118), ('i', 110, 117)]
+K0 'pID'
+K1 'IND'
+K2 'pN'
+K3 'INDICATORS'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 350
+K8 320
+K9 170
+K10 100
+K11 0
+K12 'OFF'
+K13 'Switch'
+K14 'srcTypes'
+K15 'fm'
+K16 'pgg'
+K17 1
+K18 2
+K19 3
+K20 'table'
+K21 'insert'
+K22 'Logic Switch'
+K23 'sxx'
+K24 'Telemetry'
+K25 '---'
+K26 'up'
+K27 'mid'
+K28 'down'
+K29 'not up'
+K30 'not mid'
+K31 'not down'
+K32 'RD'
+K33 'PT'
+K34 'SL'
+K35 'TR'
+K36 'cv'
+K37 '_AR_srct'
+K38 'o'
+K39 'l'
+K40 'Arm indicator'
+K41 'v'
+K42 't'
+K43 'L'
+K44 'lv'
+K45 '_AR_swn'
+K46 ' switch name'
+K47 'NT'
+K48 'm'
+K49 'x'
+K50 'SW'
+K51 'i'
+K52 '_AR_swp'
+K53 ' switch positon'
+K54 '_AR_lsn'
+K55 4
+K56 ' logical switch number'
+K57 'N'
+K58 64
+K59 'f'
+K60 '%1d'
+K61 '_TC_srct'
+K62 5
+K63 'Throttle Cut indicator'
+K64 '_TC_swn'
+K65 6
+K66 '_TC_swp'
+K67 7
+K68 '_TC_lsn'
+K69 8
+K70 '%.0d'
+K71 '_TL_srct'
+K72 9
+K73 'Throttle Limiter'
+K74 '_TMR_host'
+K75 10
+K76 'Arm Timer host'
+K77 'OS'
+K78 'ToolBox'
+K79 '_TMR_no'
+K80 11
+K81 ' Timer used'
+K82 'Timer 1'
+K83 'Timer 2'
+K84 'Timer 3'
+K85 'frun'
+K86 'PLIBCFG'
+K87 'CFGSWDE'
+K88 'AR'
+K89 'S'
+K90 'IN_AR_src'
+K91 'TC'
+K92 'IN_TC_src'
+K93 'CFGSRDE'
+K94 'TL'
+K95 'IN_TL_src'
+K96 'TMR_host'
+K97 'TMR_no'
+K98 'updateDisp'
+K99 'onSave'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('IND')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('INDICATORS')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (350)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (170)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (100)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  14] NEWTABLE  A=5 B=1 C=1
+  19 [  14] SETTABLE  R5[K11(0)] = K12('OFF')
+  20 [  14] LOADK     R6 = K13 ('Switch')
+  21 [  14] SETLIST   A=5 B=1 C=1
+  22 [  15] NEWTABLE  A=6 B=1 C=1
+  23 [  15] SETTABLE  R6[K11(0)] = K12('OFF')
+  24 [  15] LOADK     R7 = K13 ('Switch')
+  25 [  15] SETLIST   A=6 B=1 C=1
+  26 [  16] GETTABLE  R7 = R0[K15('fm')]
+  27 [  16] GETTABLE  R7 = R7[K16('pgg')]
+  28 [  16] TEST      A=7 B=0 C=0
+  29 [  16] JMP       A=0 ->38
+  30 [  16] NEWTABLE  A=7 B=3 C=1
+  31 [  16] SETTABLE  R7[K11(0)] = K11(0)
+  32 [  16] LOADK     R8 = K17 (1)
+  33 [  16] LOADK     R9 = K18 (2)
+  34 [  16] LOADK     R10 = K19 (3)
+  35 [  16] SETLIST   A=7 B=3 C=1
+  36 [  16] TEST      A=7 B=0 C=1
+  37 [  16] JMP       A=0 ->43
+  38 [  16] NEWTABLE  A=7 B=2 C=1
+  39 [  16] SETTABLE  R7[K11(0)] = K11(0)
+  40 [  16] LOADK     R8 = K17 (1)
+  41 [  16] LOADK     R9 = K19 (3)
+  42 [  16] SETLIST   A=7 B=2 C=1
+  43 [  16] SETTABLE  R4[K14('srcTypes')] = R7
+  44 [  17] GETTABLE  R7 = R0[K15('fm')]
+  45 [  17] GETTABLE  R7 = R7[K16('pgg')]
+  46 [  17] TEST      A=7 B=0 C=0
+  47 [  17] JMP       A=0 ->58
+  48 [  18] GETTABUP  R7 = UP0[K20('table')]
+  49 [  18] GETTABLE  R7 = R7[K21('insert')]
+  50 [  18] MOVE      A=8 B=5 C=0
+  51 [  18] LOADK     R9 = K22 ('Logic Switch')
+  52 [  18] CALL      A=7 B=3 C=1
+  53 [  19] GETTABUP  R7 = UP0[K20('table')]
+  54 [  19] GETTABLE  R7 = R7[K21('insert')]
+  55 [  19] MOVE      A=8 B=6 C=0
+  56 [  19] LOADK     R9 = K22 ('Logic Switch')
+  57 [  19] CALL      A=7 B=3 C=1
+  58 [  21] GETTABLE  R7 = R0[K15('fm')]
+  59 [  21] GETTABLE  R7 = R7[K23('sxx')]
+  60 [  21] TEST      A=7 B=0 C=0
+  61 [  21] JMP       A=0 ->67
+  62 [  21] GETTABUP  R7 = UP0[K20('table')]
+  63 [  21] GETTABLE  R7 = R7[K21('insert')]
+  64 [  21] MOVE      A=8 B=5 C=0
+  65 [  21] LOADK     R9 = K24 ('Telemetry')
+  66 [  21] CALL      A=7 B=3 C=1
+  67 [  23] NEWTABLE  A=7 B=6 C=1
+  68 [  23] SETTABLE  R7[K11(0)] = K25('---')
+  69 [  23] LOADK     R8 = K26 ('up')
+  70 [  23] LOADK     R9 = K27 ('mid')
+  71 [  23] LOADK     R10 = K28 ('down')
+  72 [  23] LOADK     R11 = K29 ('not up')
+  73 [  23] LOADK     R12 = K30 ('not mid')
+  74 [  23] LOADK     R13 = K31 ('not down')
+  75 [  23] SETLIST   A=7 B=6 C=1
+  76 [  25] NEWTABLE  A=8 B=0 C=0
+  77 [  26] LOADK     R9 = K17 (1)
+  78 [  26] GETTABLE  R10 = R2[K32('RD')]
+  79 [  26] GETTABLE  R10 = R10[K33('PT')]
+  80 [  26] LEN       A=10 B=10 C=0
+  81 [  26] LOADK     R11 = K17 (1)
+  82 [  26] FORPREP   A=9 ->90
+  83 [  27] GETTABUP  R13 = UP0[K20('table')]
+  84 [  27] GETTABLE  R13 = R13[K21('insert')]
+  85 [  27] MOVE      A=14 B=8 C=0
+  86 [  27] GETTABLE  R15 = R2[K32('RD')]
+  87 [  27] GETTABLE  R15 = R15[K33('PT')]
+  88 [  27] GETTABLE  R15 = R15[R12]
+  89 [  27] CALL      A=13 B=3 C=1
+  90 [  26] FORLOOP   A=9 ->83
+  91 [  29] LOADK     R9 = K17 (1)
+  92 [  29] GETTABLE  R10 = R2[K32('RD')]
+  93 [  29] GETTABLE  R10 = R10[K34('SL')]
+  94 [  29] LEN       A=10 B=10 C=0
+  95 [  29] LOADK     R11 = K17 (1)
+  96 [  29] FORPREP   A=9 ->104
+  97 [  30] GETTABUP  R13 = UP0[K20('table')]
+  98 [  30] GETTABLE  R13 = R13[K21('insert')]
+  99 [  30] MOVE      A=14 B=8 C=0
+ 100 [  30] GETTABLE  R15 = R2[K32('RD')]
+ 101 [  30] GETTABLE  R15 = R15[K34('SL')]
+ 102 [  30] GETTABLE  R15 = R15[R12]
+ 103 [  30] CALL      A=13 B=3 C=1
+ 104 [  29] FORLOOP   A=9 ->97
+ 105 [  32] LOADK     R9 = K17 (1)
+ 106 [  32] GETTABLE  R10 = R2[K32('RD')]
+ 107 [  32] GETTABLE  R10 = R10[K35('TR')]
+ 108 [  32] LEN       A=10 B=10 C=0
+ 109 [  32] LOADK     R11 = K17 (1)
+ 110 [  32] FORPREP   A=9 ->118
+ 111 [  33] GETTABUP  R13 = UP0[K20('table')]
+ 112 [  33] GETTABLE  R13 = R13[K21('insert')]
+ 113 [  33] MOVE      A=14 B=8 C=0
+ 114 [  33] GETTABLE  R15 = R2[K32('RD')]
+ 115 [  33] GETTABLE  R15 = R15[K35('TR')]
+ 116 [  33] GETTABLE  R15 = R15[R12]
+ 117 [  33] CALL      A=13 B=3 C=1
+ 118 [  32] FORLOOP   A=9 ->111
+ 119 [  58] NEWTABLE  A=9 B=0 C=0
+ 120 [  58] SETTABLE  R4[K36('cv')] = R9
+ 121 [  59] GETTABLE  R9 = R4[K36('cv')]
+ 122 [  59] NEWTABLE  A=10 B=0 C=5
+ 123 [  59] SETTABLE  R10[K38('o')] = K17(1)
+ 124 [  59] SETTABLE  R10[K39('l')] = K40('Arm indicator')
+ 125 [  59] SETTABLE  R10[K41('v')] = K11(0)
+ 126 [  59] SETTABLE  R10[K42('t')] = K43('L')
+ 127 [  59] SETTABLE  R10[K44('lv')] = R5
+ 128 [  59] SETTABLE  R9[K37('_AR_srct')] = R10
+ 129 [  60] GETTABLE  R9 = R4[K36('cv')]
+ 130 [  60] NEWTABLE  A=10 B=0 C=7
+ 131 [  60] SETTABLE  R10[K38('o')] = K18(2)
+ 132 [  60] SETTABLE  R10[K39('l')] = K46(' switch name')
+ 133 [  60] SETTABLE  R10[K41('v')] = K11(0)
+ 134 [  60] SETTABLE  R10[K42('t')] = K47('NT')
+ 135 [  60] SETTABLE  R10[K48('m')] = K11(0)
+ 136 [  60] GETTABLE  R11 = R2[K32('RD')]
+ 137 [  60] GETTABLE  R11 = R11[K50('SW')]
+ 138 [  60] LEN       A=11 B=11 C=0
+ 139 [  60] SETTABLE  R10[K49('x')] = R11
+ 140 [  60] SETTABLE  R10[K51('i')] = K17(1)
+ 141 [  60] SETTABLE  R9[K45('_AR_swn')] = R10
+ 142 [  61] GETTABLE  R9 = R4[K36('cv')]
+ 143 [  61] NEWTABLE  A=10 B=0 C=5
+ 144 [  61] SETTABLE  R10[K38('o')] = K19(3)
+ 145 [  61] SETTABLE  R10[K39('l')] = K53(' switch positon')
+ 146 [  61] SETTABLE  R10[K41('v')] = K11(0)
+ 147 [  61] SETTABLE  R10[K42('t')] = K43('L')
+ 148 [  61] SETTABLE  R10[K44('lv')] = R7
+ 149 [  61] SETTABLE  R9[K52('_AR_swp')] = R10
+ 150 [  62] GETTABLE  R9 = R4[K36('cv')]
+ 151 [  62] NEWTABLE  A=10 B=0 C=8
+ 152 [  62] SETTABLE  R10[K38('o')] = K55(4)
+ 153 [  62] SETTABLE  R10[K39('l')] = K56(' logical switch number')
+ 154 [  62] SETTABLE  R10[K41('v')] = K17(1)
+ 155 [  62] SETTABLE  R10[K42('t')] = K57('N')
+ 156 [  62] SETTABLE  R10[K48('m')] = K17(1)
+ 157 [  62] SETTABLE  R10[K49('x')] = K58(64)
+ 158 [  62] SETTABLE  R10[K51('i')] = K17(1)
+ 159 [  62] SETTABLE  R10[K59('f')] = K60('%1d')
+ 160 [  62] SETTABLE  R9[K54('_AR_lsn')] = R10
+ 161 [  64] GETTABLE  R9 = R4[K36('cv')]
+ 162 [  64] NEWTABLE  A=10 B=0 C=5
+ 163 [  64] SETTABLE  R10[K38('o')] = K62(5)
+ 164 [  64] SETTABLE  R10[K39('l')] = K63('Throttle Cut indicator')
+ 165 [  64] SETTABLE  R10[K41('v')] = K11(0)
+ 166 [  64] SETTABLE  R10[K42('t')] = K43('L')
+ 167 [  64] SETTABLE  R10[K44('lv')] = R6
+ 168 [  64] SETTABLE  R9[K61('_TC_srct')] = R10
+ 169 [  65] GETTABLE  R9 = R4[K36('cv')]
+ 170 [  65] NEWTABLE  A=10 B=0 C=7
+ 171 [  65] SETTABLE  R10[K38('o')] = K65(6)
+ 172 [  65] SETTABLE  R10[K39('l')] = K46(' switch name')
+ 173 [  65] SETTABLE  R10[K41('v')] = K11(0)
+ 174 [  65] SETTABLE  R10[K42('t')] = K47('NT')
+ 175 [  65] SETTABLE  R10[K48('m')] = K11(0)
+ 176 [  65] GETTABLE  R11 = R2[K32('RD')]
+ 177 [  65] GETTABLE  R11 = R11[K50('SW')]
+ 178 [  65] LEN       A=11 B=11 C=0
+ 179 [  65] SETTABLE  R10[K49('x')] = R11
+ 180 [  65] SETTABLE  R10[K51('i')] = K17(1)
+ 181 [  65] SETTABLE  R9[K64('_TC_swn')] = R10
+ 182 [  66] GETTABLE  R9 = R4[K36('cv')]
+ 183 [  66] NEWTABLE  A=10 B=0 C=5
+ 184 [  66] SETTABLE  R10[K38('o')] = K67(7)
+ 185 [  66] SETTABLE  R10[K39('l')] = K53(' switch positon')
+ 186 [  66] SETTABLE  R10[K41('v')] = K11(0)
+ 187 [  66] SETTABLE  R10[K42('t')] = K43('L')
+ 188 [  66] SETTABLE  R10[K44('lv')] = R7
+ 189 [  66] SETTABLE  R9[K66('_TC_swp')] = R10
+ 190 [  67] GETTABLE  R9 = R4[K36('cv')]
+ 191 [  67] NEWTABLE  A=10 B=0 C=8
+ 192 [  67] SETTABLE  R10[K38('o')] = K69(8)
+ 193 [  67] SETTABLE  R10[K39('l')] = K56(' logical switch number')
+ 194 [  67] SETTABLE  R10[K41('v')] = K17(1)
+ 195 [  67] SETTABLE  R10[K42('t')] = K57('N')
+ 196 [  67] SETTABLE  R10[K48('m')] = K17(1)
+ 197 [  67] SETTABLE  R10[K49('x')] = K58(64)
+ 198 [  67] SETTABLE  R10[K51('i')] = K17(1)
+ 199 [  67] SETTABLE  R10[K59('f')] = K70('%.0d')
+ 200 [  67] SETTABLE  R9[K68('_TC_lsn')] = R10
+ 201 [  69] GETTABLE  R9 = R4[K36('cv')]
+ 202 [  69] NEWTABLE  A=10 B=1 C=7
+ 203 [  69] SETTABLE  R10[K38('o')] = K72(9)
+ 204 [  69] SETTABLE  R10[K39('l')] = K73('Throttle Limiter')
+ 205 [  69] SETTABLE  R10[K41('v')] = K11(0)
+ 206 [  69] SETTABLE  R10[K42('t')] = K47('NT')
+ 207 [  69] LOADK     R11 = K47 ('NT')
+ 208 [  69] SETTABLE  R10[K48('m')] = K11(0)
+ 209 [  69] LEN       A=12 B=8 C=0
+ 210 [  69] SETTABLE  R10[K49('x')] = R12
+ 211 [  69] SETTABLE  R10[K51('i')] = K17(1)
+ 212 [  69] SETLIST   A=10 B=1 C=1
+ 213 [  69] SETTABLE  R9[K71('_TL_srct')] = R10
+ 214 [  71] GETTABLE  R9 = R4[K36('cv')]
+ 215 [  71] NEWTABLE  A=10 B=0 C=5
+ 216 [  71] SETTABLE  R10[K38('o')] = K75(10)
+ 217 [  71] SETTABLE  R10[K39('l')] = K76('Arm Timer host')
+ 218 [  71] SETTABLE  R10[K41('v')] = K11(0)
+ 219 [  71] SETTABLE  R10[K42('t')] = K43('L')
+ 220 [  71] NEWTABLE  A=11 B=1 C=1
+ 221 [  71] SETTABLE  R11[K11(0)] = K77('OS')
+ 222 [  71] LOADK     R12 = K78 ('ToolBox')
+ 223 [  71] SETLIST   A=11 B=1 C=1
+ 224 [  71] SETTABLE  R10[K44('lv')] = R11
+ 225 [  71] SETTABLE  R9[K74('_TMR_host')] = R10
+ 226 [  72] GETTABLE  R9 = R4[K36('cv')]
+ 227 [  72] NEWTABLE  A=10 B=0 C=5
+ 228 [  72] SETTABLE  R10[K38('o')] = K80(11)
+ 229 [  72] SETTABLE  R10[K39('l')] = K81(' Timer used')
+ 230 [  72] SETTABLE  R10[K41('v')] = K17(1)
+ 231 [  72] SETTABLE  R10[K42('t')] = K43('L')
+ 232 [  72] NEWTABLE  A=11 B=3 C=0
+ 233 [  72] LOADK     R12 = K82 ('Timer 1')
+ 234 [  72] LOADK     R13 = K83 ('Timer 2')
+ 235 [  72] LOADK     R14 = K84 ('Timer 3')
+ 236 [  72] SETLIST   A=11 B=3 C=1
+ 237 [  72] SETTABLE  R10[K44('lv')] = R11
+ 238 [  72] SETTABLE  R9[K79('_TMR_no')] = R10
+ 239 [  74] GETTABLE  R9 = R0[K85('frun')]
+ 240 [  74] GETTABLE  R10 = R0[K86('PLIBCFG')]
+ 241 [  74] LOADK     R11 = K87 ('CFGSWDE')
+ 242 [  74] CONCAT    A=10 B=10 C=11
+ 243 [  74] MOVE      A=11 B=4 C=0
+ 244 [  74] LOADK     R12 = K88 ('AR')
+ 245 [  74] GETTABLE  R13 = R2[K89('S')]
+ 246 [  74] GETTABLE  R13 = R13[K90('IN_AR_src')]
+ 247 [  74] CALL      A=9 B=5 C=1
+ 248 [  75] GETTABLE  R9 = R0[K85('frun')]
+ 249 [  75] GETTABLE  R10 = R0[K86('PLIBCFG')]
+ 250 [  75] LOADK     R11 = K87 ('CFGSWDE')
+ 251 [  75] CONCAT    A=10 B=10 C=11
+ 252 [  75] MOVE      A=11 B=4 C=0
+ 253 [  75] LOADK     R12 = K91 ('TC')
+ 254 [  75] GETTABLE  R13 = R2[K89('S')]
+ 255 [  75] GETTABLE  R13 = R13[K92('IN_TC_src')]
+ 256 [  75] CALL      A=9 B=5 C=1
+ 257 [  76] GETTABLE  R9 = R0[K85('frun')]
+ 258 [  76] GETTABLE  R10 = R0[K86('PLIBCFG')]
+ 259 [  76] LOADK     R11 = K93 ('CFGSRDE')
+ 260 [  76] CONCAT    A=10 B=10 C=11
+ 261 [  76] MOVE      A=11 B=4 C=0
+ 262 [  76] LOADK     R12 = K94 ('TL')
+ 263 [  76] GETTABLE  R13 = R2[K89('S')]
+ 264 [  76] GETTABLE  R13 = R13[K95('IN_TL_src')]
+ 265 [  76] CALL      A=9 B=5 C=1
+ 266 [  77] GETTABLE  R9 = R4[K36('cv')]
+ 267 [  77] GETTABLE  R9 = R9[K74('_TMR_host')]
+ 268 [  77] GETTABLE  R10 = R2[K89('S')]
+ 269 [  77] GETTABLE  R10 = R10[K96('TMR_host')]
+ 270 [  77] SETTABLE  R9[K41('v')] = R10
+ 271 [  78] GETTABLE  R9 = R4[K36('cv')]
+ 272 [  78] GETTABLE  R9 = R9[K79('_TMR_no')]
+ 273 [  78] GETTABLE  R10 = R2[K89('S')]
+ 274 [  78] GETTABLE  R10 = R10[K97('TMR_no')]
+ 275 [  78] SETTABLE  R9[K41('v')] = R10
+ 276 [ 114] CLOSURE   R9 = proto[0]
+ 277 [ 114] SETTABLE  R4[K98('updateDisp')] = R9
+ 278 [ 137] CLOSURE   R9 = proto[1]
+ 279 [ 137] SETTABLE  R4[K99('onSave')] = R9
+ 280 [ 139] RETURN    A=0 B=1 C=0
+ 281 [ 139] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 5 lines 82 114 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2)), ('listSrc', (1, 8)), ('G', (1, 0))]
+LOCALS [('arSrcType', 13, 245), ('tcSrcType', 26, 245)]
+K0 'srcTypes'
+K1 'cv'
+K2 '_AR_srct'
+K3 'v'
+K4 '_TC_srct'
+K5 '_AR_swn'
+K6 'h'
+K7 1
+K8 '_AR_swp'
+K9 0
+K10 '_AR_lsn'
+K11 2
+K12 'dv'
+K13 '---'
+K14 'RD'
+K15 'SW'
+K16 'cdv'
+K17 '???'
+K18 '_TC_swn'
+K19 '_TC_swp'
+K20 '_TC_lsn'
+K21 '_TL_srct'
+K22 'OFF'
+K23 'fm'
+K24 'sxx'
+K25 True
+K26 '_TMR_host'
+K27 '_TMR_no'
+   1 [  84] GETTABUP  R0 = UP0[K0('srcTypes')]
+   2 [  84] TEST      A=0 B=0 C=0
+   3 [  84] JMP       A=0 ->11
+   4 [  84] GETTABUP  R0 = UP0[K0('srcTypes')]
+   5 [  84] GETTABUP  R1 = UP0[K1('cv')]
+   6 [  84] GETTABLE  R1 = R1[K2('_AR_srct')]
+   7 [  84] GETTABLE  R1 = R1[K3('v')]
+   8 [  84] GETTABLE  R0 = R0[R1]
+   9 [  84] TEST      A=0 B=0 C=1
+  10 [  84] JMP       A=0 ->14
+  11 [  84] GETTABUP  R0 = UP0[K1('cv')]
+  12 [  84] GETTABLE  R0 = R0[K2('_AR_srct')]
+  13 [  84] GETTABLE  R0 = R0[K3('v')]
+  14 [  85] GETTABUP  R1 = UP0[K0('srcTypes')]
+  15 [  85] TEST      A=1 B=0 C=0
+  16 [  85] JMP       A=0 ->24
+  17 [  85] GETTABUP  R1 = UP0[K0('srcTypes')]
+  18 [  85] GETTABUP  R2 = UP0[K1('cv')]
+  19 [  85] GETTABLE  R2 = R2[K4('_TC_srct')]
+  20 [  85] GETTABLE  R2 = R2[K3('v')]
+  21 [  85] GETTABLE  R1 = R1[R2]
+  22 [  85] TEST      A=1 B=0 C=1
+  23 [  85] JMP       A=0 ->27
+  24 [  85] GETTABUP  R1 = UP0[K1('cv')]
+  25 [  85] GETTABLE  R1 = R1[K4('_TC_srct')]
+  26 [  85] GETTABLE  R1 = R1[K3('v')]
+  27 [  87] GETTABUP  R2 = UP0[K1('cv')]
+  28 [  87] GETTABLE  R2 = R2[K5('_AR_swn')]
+  29 [  87] EQ        A=1 R0, K7(1); skip-next if condition != A
+  30 [  87] JMP       A=0 ->34
+  31 [  87] LOADBOOL  A=3 B=1 C=0
+  32 [  87] TEST      A=3 B=0 C=1
+  33 [  87] JMP       A=0 ->35
+  34 [  87] LOADNIL   A=3 B=0 C=0
+  35 [  87] SETTABLE  R2[K6('h')] = R3
+  36 [  88] GETTABUP  R2 = UP0[K1('cv')]
+  37 [  88] GETTABLE  R2 = R2[K8('_AR_swp')]
+  38 [  88] GETTABUP  R3 = UP0[K1('cv')]
+  39 [  88] GETTABLE  R3 = R3[K5('_AR_swn')]
+  40 [  88] GETTABLE  R3 = R3[K3('v')]
+  41 [  88] EQ        A=0 R3, K9(0); skip-next if condition != A
+  42 [  88] JMP       A=0 ->46
+  43 [  88] LOADBOOL  A=3 B=1 C=0
+  44 [  88] TEST      A=3 B=0 C=1
+  45 [  88] JMP       A=0 ->47
+  46 [  88] LOADNIL   A=3 B=0 C=0
+  47 [  88] SETTABLE  R2[K6('h')] = R3
+  48 [  89] GETTABUP  R2 = UP0[K1('cv')]
+  49 [  89] GETTABLE  R2 = R2[K8('_AR_swp')]
+  50 [  89] EQ        A=1 R0, K7(1); skip-next if condition != A
+  51 [  89] JMP       A=0 ->55
+  52 [  89] LOADBOOL  A=3 B=1 C=0
+  53 [  89] TEST      A=3 B=0 C=1
+  54 [  89] JMP       A=0 ->58
+  55 [  89] GETTABUP  R3 = UP0[K1('cv')]
+  56 [  89] GETTABLE  R3 = R3[K8('_AR_swp')]
+  57 [  89] GETTABLE  R3 = R3[K6('h')]
+  58 [  89] SETTABLE  R2[K6('h')] = R3
+  59 [  90] GETTABUP  R2 = UP0[K1('cv')]
+  60 [  90] GETTABLE  R2 = R2[K10('_AR_lsn')]
+  61 [  90] EQ        A=1 R0, K11(2); skip-next if condition != A
+  62 [  90] JMP       A=0 ->66
+  63 [  90] LOADBOOL  A=3 B=1 C=0
+  64 [  90] TEST      A=3 B=0 C=1
+  65 [  90] JMP       A=0 ->67
+  66 [  90] LOADNIL   A=3 B=0 C=0
+  67 [  90] SETTABLE  R2[K6('h')] = R3
+  68 [  91] GETTABUP  R2 = UP0[K1('cv')]
+  69 [  91] GETTABLE  R2 = R2[K5('_AR_swn')]
+  70 [  91] GETTABUP  R3 = UP0[K1('cv')]
+  71 [  91] GETTABLE  R3 = R3[K5('_AR_swn')]
+  72 [  91] GETTABLE  R3 = R3[K3('v')]
+  73 [  91] EQ        A=0 R3, K9(0); skip-next if condition != A
+  74 [  91] JMP       A=0 ->78
+  75 [  91] LOADK     R3 = K13 ('---')
+  76 [  91] TEST      A=3 B=0 C=1
+  77 [  91] JMP       A=0 ->96
+  78 [  91] GETTABUP  R3 = UP1[K14('RD')]
+  79 [  91] GETTABLE  R3 = R3[K15('SW')]
+  80 [  91] GETTABUP  R4 = UP0[K1('cv')]
+  81 [  91] GETTABLE  R4 = R4[K5('_AR_swn')]
+  82 [  91] GETTABLE  R4 = R4[K3('v')]
+  83 [  91] GETTABLE  R3 = R3[R4]
+  84 [  91] TEST      A=3 B=0 C=0
+  85 [  91] JMP       A=0 ->95
+  86 [  91] GETTABUP  R3 = UP1[K14('RD')]
+  87 [  91] GETTABLE  R3 = R3[K15('SW')]
+  88 [  91] GETTABUP  R4 = UP0[K1('cv')]
+  89 [  91] GETTABLE  R4 = R4[K5('_AR_swn')]
+  90 [  91] GETTABLE  R4 = R4[K3('v')]
+  91 [  91] GETTABLE  R3 = R3[R4]
+  92 [  91] GETTABLE  R3 = R3[K16('cdv')]
+  93 [  91] TEST      A=3 B=0 C=1
+  94 [  91] JMP       A=0 ->96
+  95 [  91] LOADK     R3 = K17 ('???')
+  96 [  91] SETTABLE  R2[K12('dv')] = R3
+  97 [  92] GETTABUP  R2 = UP0[K1('cv')]
+  98 [  92] GETTABLE  R2 = R2[K8('_AR_swp')]
+  99 [  92] GETTABUP  R3 = UP0[K1('cv')]
+ 100 [  92] GETTABLE  R3 = R3[K5('_AR_swn')]
+ 101 [  92] GETTABLE  R3 = R3[K3('v')]
+ 102 [  92] EQ        A=0 R3, K9(0); skip-next if condition != A
+ 103 [  92] JMP       A=0 ->107
+ 104 [  92] LOADK     R3 = K13 ('---')
+ 105 [  92] TEST      A=3 B=0 C=1
+ 106 [  92] JMP       A=0 ->110
+ 107 [  92] GETTABUP  R3 = UP0[K1('cv')]
+ 108 [  92] GETTABLE  R3 = R3[K8('_AR_swp')]
+ 109 [  92] GETTABLE  R3 = R3[K12('dv')]
+ 110 [  92] SETTABLE  R2[K12('dv')] = R3
+ 111 [  94] GETTABUP  R2 = UP0[K1('cv')]
+ 112 [  94] GETTABLE  R2 = R2[K18('_TC_swn')]
+ 113 [  94] EQ        A=1 R1, K7(1); skip-next if condition != A
+ 114 [  94] JMP       A=0 ->118
+ 115 [  94] LOADBOOL  A=3 B=1 C=0
+ 116 [  94] TEST      A=3 B=0 C=1
+ 117 [  94] JMP       A=0 ->119
+ 118 [  94] LOADNIL   A=3 B=0 C=0
+ 119 [  94] SETTABLE  R2[K6('h')] = R3
+ 120 [  95] GETTABUP  R2 = UP0[K1('cv')]
+ 121 [  95] GETTABLE  R2 = R2[K19('_TC_swp')]
+ 122 [  95] GETTABUP  R3 = UP0[K1('cv')]
+ 123 [  95] GETTABLE  R3 = R3[K18('_TC_swn')]
+ 124 [  95] GETTABLE  R3 = R3[K3('v')]
+ 125 [  95] EQ        A=0 R3, K9(0); skip-next if condition != A
+ 126 [  95] JMP       A=0 ->130
+ 127 [  95] LOADBOOL  A=3 B=1 C=0
+ 128 [  95] TEST      A=3 B=0 C=1
+ 129 [  95] JMP       A=0 ->131
+ 130 [  95] LOADNIL   A=3 B=0 C=0
+ 131 [  95] SETTABLE  R2[K6('h')] = R3
+ 132 [  96] GETTABUP  R2 = UP0[K1('cv')]
+ 133 [  96] GETTABLE  R2 = R2[K19('_TC_swp')]
+ 134 [  96] EQ        A=1 R1, K7(1); skip-next if condition != A
+ 135 [  96] JMP       A=0 ->139
+ 136 [  96] LOADBOOL  A=3 B=1 C=0
+ 137 [  96] TEST      A=3 B=0 C=1
+ 138 [  96] JMP       A=0 ->142
+ 139 [  96] GETTABUP  R3 = UP0[K1('cv')]
+ 140 [  96] GETTABLE  R3 = R3[K19('_TC_swp')]
+ 141 [  96] GETTABLE  R3 = R3[K6('h')]
+ 142 [  96] SETTABLE  R2[K6('h')] = R3
+ 143 [  97] GETTABUP  R2 = UP0[K1('cv')]
+ 144 [  97] GETTABLE  R2 = R2[K20('_TC_lsn')]
+ 145 [  97] EQ        A=1 R1, K11(2); skip-next if condition != A
+ 146 [  97] JMP       A=0 ->150
+ 147 [  97] LOADBOOL  A=3 B=1 C=0
+ 148 [  97] TEST      A=3 B=0 C=1
+ 149 [  97] JMP       A=0 ->151
+ 150 [  97] LOADNIL   A=3 B=0 C=0
+ 151 [  97] SETTABLE  R2[K6('h')] = R3
+ 152 [  98] GETTABUP  R2 = UP0[K1('cv')]
+ 153 [  98] GETTABLE  R2 = R2[K18('_TC_swn')]
+ 154 [  98] GETTABUP  R3 = UP0[K1('cv')]
+ 155 [  98] GETTABLE  R3 = R3[K18('_TC_swn')]
+ 156 [  98] GETTABLE  R3 = R3[K3('v')]
+ 157 [  98] EQ        A=0 R3, K9(0); skip-next if condition != A
+ 158 [  98] JMP       A=0 ->162
+ 159 [  98] LOADK     R3 = K13 ('---')
+ 160 [  98] TEST      A=3 B=0 C=1
+ 161 [  98] JMP       A=0 ->180
+ 162 [  98] GETTABUP  R3 = UP1[K14('RD')]
+ 163 [  98] GETTABLE  R3 = R3[K15('SW')]
+ 164 [  98] GETTABUP  R4 = UP0[K1('cv')]
+ 165 [  98] GETTABLE  R4 = R4[K18('_TC_swn')]
+ 166 [  98] GETTABLE  R4 = R4[K3('v')]
+ 167 [  98] GETTABLE  R3 = R3[R4]
+ 168 [  98] TEST      A=3 B=0 C=0
+ 169 [  98] JMP       A=0 ->179
+ 170 [  98] GETTABUP  R3 = UP1[K14('RD')]
+ 171 [  98] GETTABLE  R3 = R3[K15('SW')]
+ 172 [  98] GETTABUP  R4 = UP0[K1('cv')]
+ 173 [  98] GETTABLE  R4 = R4[K18('_TC_swn')]
+ 174 [  98] GETTABLE  R4 = R4[K3('v')]
+ 175 [  98] GETTABLE  R3 = R3[R4]
+ 176 [  98] GETTABLE  R3 = R3[K16('cdv')]
+ 177 [  98] TEST      A=3 B=0 C=1
+ 178 [  98] JMP       A=0 ->180
+ 179 [  98] LOADK     R3 = K17 ('???')
+ 180 [  98] SETTABLE  R2[K12('dv')] = R3
+ 181 [  99] GETTABUP  R2 = UP0[K1('cv')]
+ 182 [  99] GETTABLE  R2 = R2[K19('_TC_swp')]
+ 183 [  99] GETTABUP  R3 = UP0[K1('cv')]
+ 184 [  99] GETTABLE  R3 = R3[K18('_TC_swn')]
+ 185 [  99] GETTABLE  R3 = R3[K3('v')]
+ 186 [  99] EQ        A=0 R3, K9(0); skip-next if condition != A
+ 187 [  99] JMP       A=0 ->191
+ 188 [  99] LOADK     R3 = K13 ('---')
+ 189 [  99] TEST      A=3 B=0 C=1
+ 190 [  99] JMP       A=0 ->194
+ 191 [  99] GETTABUP  R3 = UP0[K1('cv')]
+ 192 [  99] GETTABLE  R3 = R3[K19('_TC_swp')]
+ 193 [  99] GETTABLE  R3 = R3[K12('dv')]
+ 194 [  99] SETTABLE  R2[K12('dv')] = R3
+ 195 [ 101] GETTABUP  R2 = UP0[K1('cv')]
+ 196 [ 101] GETTABLE  R2 = R2[K21('_TL_srct')]
+ 197 [ 101] GETTABUP  R3 = UP0[K1('cv')]
+ 198 [ 101] GETTABLE  R3 = R3[K21('_TL_srct')]
+ 199 [ 101] GETTABLE  R3 = R3[K3('v')]
+ 200 [ 101] EQ        A=0 R3, K9(0); skip-next if condition != A
+ 201 [ 101] JMP       A=0 ->205
+ 202 [ 101] LOADK     R3 = K22 ('OFF')
+ 203 [ 101] TEST      A=3 B=0 C=1
+ 204 [ 101] JMP       A=0 ->219
+ 205 [ 101] GETTABUP  R3 = UP0[K1('cv')]
+ 206 [ 101] GETTABLE  R3 = R3[K21('_TL_srct')]
+ 207 [ 101] GETTABLE  R3 = R3[K3('v')]
+ 208 [ 101] GETTABUP  R3 = UP2[R3]
+ 209 [ 101] TEST      A=3 B=0 C=0
+ 210 [ 101] JMP       A=0 ->218
+ 211 [ 101] GETTABUP  R3 = UP0[K1('cv')]
+ 212 [ 101] GETTABLE  R3 = R3[K21('_TL_srct')]
+ 213 [ 101] GETTABLE  R3 = R3[K3('v')]
+ 214 [ 101] GETTABUP  R3 = UP2[R3]
+ 215 [ 101] GETTABLE  R3 = R3[K16('cdv')]
+ 216 [ 101] TEST      A=3 B=0 C=1
+ 217 [ 101] JMP       A=0 ->219
+ 218 [ 101] LOADK     R3 = K17 ('???')
+ 219 [ 101] SETTABLE  R2[K12('dv')] = R3
+ 220 [ 105] GETTABUP  R2 = UP3[K23('fm')]
+ 221 [ 105] GETTABLE  R2 = R2[K24('sxx')]
+ 222 [ 105] TEST      A=2 B=0 C=1
+ 223 [ 105] JMP       A=0 ->245
+ 224 [ 106] GETTABUP  R2 = UP0[K1('cv')]
+ 225 [ 106] GETTABLE  R2 = R2[K4('_TC_srct')]
+ 226 [ 106] SETTABLE  R2[K6('h')] = K25(True)
+ 227 [ 107] GETTABUP  R2 = UP0[K1('cv')]
+ 228 [ 107] GETTABLE  R2 = R2[K18('_TC_swn')]
+ 229 [ 107] SETTABLE  R2[K6('h')] = K25(True)
+ 230 [ 108] GETTABUP  R2 = UP0[K1('cv')]
+ 231 [ 108] GETTABLE  R2 = R2[K19('_TC_swp')]
+ 232 [ 108] SETTABLE  R2[K6('h')] = K25(True)
+ 233 [ 109] GETTABUP  R2 = UP0[K1('cv')]
+ 234 [ 109] GETTABLE  R2 = R2[K20('_TC_lsn')]
+ 235 [ 109] SETTABLE  R2[K6('h')] = K25(True)
+ 236 [ 110] GETTABUP  R2 = UP0[K1('cv')]
+ 237 [ 110] GETTABLE  R2 = R2[K21('_TL_srct')]
+ 238 [ 110] SETTABLE  R2[K6('h')] = K25(True)
+ 239 [ 111] GETTABUP  R2 = UP0[K1('cv')]
+ 240 [ 111] GETTABLE  R2 = R2[K26('_TMR_host')]
+ 241 [ 111] SETTABLE  R2[K6('h')] = K25(True)
+ 242 [ 112] GETTABUP  R2 = UP0[K1('cv')]
+ 243 [ 112] GETTABLE  R2 = R2[K27('_TMR_no')]
+ 244 [ 112] SETTABLE  R2[K6('h')] = K25(True)
+ 245 [ 114] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 6 lines 124 137 source None
+UPVALUES [('G', (1, 0)), ('T', (1, 4)), ('listSrc', (1, 8)), ('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS []
+K0 'frun'
+K1 'PLIBCFG'
+K2 'CFGSWEN'
+K3 'AR'
+K4 'TC'
+K5 'CFGSREN'
+K6 'TL'
+K7 'cv'
+K8 '_TL_srct'
+K9 'v'
+K10 'S'
+K11 'TMR_host'
+K12 '_TMR_host'
+K13 'TMR_no'
+K14 '_TMR_no'
+K15 'table'
+K16 'insert'
+K17 'RINIT'
+K18 'fn'
+K19 'PLIBTB'
+K20 'INDINIT'
+   1 [ 127] GETTABUP  R0 = UP0[K0('frun')]
+   2 [ 127] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+   3 [ 127] LOADK     R2 = K2 ('CFGSWEN')
+   4 [ 127] CONCAT    A=1 B=1 C=2
+   5 [ 127] GETUPVAL  A=2 B=1 C=0
+   6 [ 127] LOADK     R3 = K3 ('AR')
+   7 [ 127] CALL      A=0 B=4 C=1
+   8 [ 129] GETTABUP  R0 = UP0[K0('frun')]
+   9 [ 129] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+  10 [ 129] LOADK     R2 = K2 ('CFGSWEN')
+  11 [ 129] CONCAT    A=1 B=1 C=2
+  12 [ 129] GETUPVAL  A=2 B=1 C=0
+  13 [ 129] LOADK     R3 = K4 ('TC')
+  14 [ 129] CALL      A=0 B=4 C=1
+  15 [ 131] GETTABUP  R0 = UP0[K0('frun')]
+  16 [ 131] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+  17 [ 131] LOADK     R2 = K5 ('CFGSREN')
+  18 [ 131] CONCAT    A=1 B=1 C=2
+  19 [ 131] GETUPVAL  A=2 B=1 C=0
+  20 [ 131] LOADK     R3 = K6 ('TL')
+  21 [ 131] GETTABUP  R4 = UP1[K7('cv')]
+  22 [ 131] GETTABLE  R4 = R4[K8('_TL_srct')]
+  23 [ 131] GETTABLE  R4 = R4[K9('v')]
+  24 [ 131] GETTABUP  R5 = UP1[K7('cv')]
+  25 [ 131] GETTABLE  R5 = R5[K8('_TL_srct')]
+  26 [ 131] GETTABLE  R5 = R5[K9('v')]
+  27 [ 131] GETTABUP  R5 = UP2[R5]
+  28 [ 131] CALL      A=0 B=6 C=1
+  29 [ 133] GETTABUP  R0 = UP3[K10('S')]
+  30 [ 133] GETTABUP  R1 = UP1[K7('cv')]
+  31 [ 133] GETTABLE  R1 = R1[K12('_TMR_host')]
+  32 [ 133] GETTABLE  R1 = R1[K9('v')]
+  33 [ 133] SETTABLE  R0[K11('TMR_host')] = R1
+  34 [ 135] GETTABUP  R0 = UP3[K10('S')]
+  35 [ 135] GETTABUP  R1 = UP1[K7('cv')]
+  36 [ 135] GETTABLE  R1 = R1[K14('_TMR_no')]
+  37 [ 135] GETTABLE  R1 = R1[K9('v')]
+  38 [ 135] SETTABLE  R0[K13('TMR_no')] = R1
+  39 [ 136] GETTABUP  R0 = UP4[K15('table')]
+  40 [ 136] GETTABLE  R0 = R0[K16('insert')]
+  41 [ 136] GETTABUP  R1 = UP3[K17('RINIT')]
+  42 [ 136] NEWTABLE  A=2 B=0 C=1
+  43 [ 136] GETTABUP  R3 = UP0[K19('PLIBTB')]
+  44 [ 136] LOADK     R4 = K20 ('INDINIT')
+  45 [ 136] CONCAT    A=3 B=3 C=4
+  46 [ 136] SETTABLE  R2[K18('fn')] = R3
+  47 [ 136] CALL      A=0 B=3 C=1
+  48 [ 137] RETURN    A=0 B=1 C=0

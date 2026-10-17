@@ -1,0 +1,319 @@
+{
+  "build": "MATERIAL-ICONS-20261016",
+  "status": "PASS",
+  "sourceSha256": "c49c95c01dc5883b534914efacb22c75df6951404b4875424cfb07364def4ece",
+  "simulator": {
+    "version": "3.0.0",
+    "target": "RadioMaster TX16S",
+    "renderer": "Native EdgeTX WASM simulator",
+    "framebuffer": "RGB565 480x272",
+    "host": "work/edgetx/native-sim/host.cjs"
+  },
+  "syntheticDataOnly": true,
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "fixturePrefixShips": false,
+  "fixture": {
+    "flightMode": "HORIZON*",
+    "levelPitchRadians": 0,
+    "levelRollRadians": 0,
+    "armingFlag": "NO_ACC_CAL bit 23 only",
+    "noseUpRawPitchRadians": -0.3490658503988659,
+    "expectedNormalizedNoseUpDegrees": 20,
+    "noseUpRollRadians": 0
+  },
+  "pageScreenCount": 12,
+  "inputScreenCount": 6,
+  "additionalPoseScreenCount": 1,
+  "screenshots": [
+    {
+      "file": "material-arm.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "aaa32d4bf40f70b5e436890a65d752edfb4a8c04f48732040f20fe33d0b56950",
+      "purpose": "Arm Stops",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-diagnostics.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "81f304818919e58038a6a827e404fa59e11158741dea0935a7d40941472cc48d",
+      "purpose": "Diagnostics",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-flight.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "456d52b6dd7751197f84e7506a6abf5fd82b2fb2ef59665be87af325c441c63f",
+      "purpose": "Flight",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-gps.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "3003a8835dac19680a165f70071d7e6cd356ea36aad9eb1c5123042d1ecaa9fd",
+      "purpose": "GPS Details",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-home-return.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "071013e0a9bf996591ecf134970814cbc3dfc4c75dfa4ad3ea1075cafd1d0637",
+      "purpose": "Home tap returns to Flight",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-link.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "ea99497705add75a3ba1aa49ced5f33ec7a3554633874902a9cd1317a21698ae",
+      "purpose": "RC Link",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-nav-enter.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "3003a8835dac19680a165f70071d7e6cd356ea36aad9eb1c5123042d1ecaa9fd",
+      "purpose": "ENTER opens the focused GPS section",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-nav-focus.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "4101b6cb202eb0c34bbf0d42a334e222d52f9f5ebc1cbfcc1a7d2be9bb035497",
+      "purpose": "SYS focuses Flight section without navigating",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-nav-page-focus.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "70e9903797d6f2c66e2a2a9de997e9eae98f678d52377398a44444048d39a542",
+      "purpose": "PAGE> moves section focus to GPS without navigating",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-nav-rotary.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "5f7315ba8386c74f86879358dd0e1a28d2937b82d1b9a275282c9324bfc5a60d",
+      "purpose": "Rotary +1 focuses Data while Flight remains visible",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-nose-up.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "c867b8e02a38bcbc1c6d97fe67c817271ff8cd39f2047e710bd3d4f0fdb3c9cb",
+      "purpose": "Pitch sign regression: raw -20 degrees renders nose-up",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-page-data.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "e8ed7891964e7c94032e8bf8e594365f4bbe637c9cfe968956f927bc23239b9a",
+      "purpose": "Normal PAGE> from Flight opens Data / Telemetry",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-power.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "43e54ac01bca7ea57f7d09099d3518594081924cf95a73fd5a377508b96613cb",
+      "purpose": "Power",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-sensors.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "6cd9abdbc87f40ba4b90bdf99ba86b5f7eb2f5c919f34bdcb6879393a5103650",
+      "purpose": "Sensors",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-setup.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "a3b87716cb463fc33fe7e614c735669f9229980fd5d31960544c1852225b455c",
+      "purpose": "Setup Categories",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-sticks.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "b613edfeb5b7b51b70c674ff083f434c83e9ceb399d5108adfb701e345446fde",
+      "purpose": "Stick Guide",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-telemetry.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "e8ed7891964e7c94032e8bf8e594365f4bbe637c9cfe968956f927bc23239b9a",
+      "purpose": "Telemetry",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-track.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "af5294a1c7e82aeeb9f78b49ad5041d386e5dcf28a0b73ce194ad1ac098968a5",
+      "purpose": "Track / Home",
+      "visuallyInspected": true
+    },
+    {
+      "file": "material-video.png",
+      "width": 480,
+      "height": 272,
+      "sha256": "87e094a454808d8d2e68466ecbc43e273458c6585f013779500b8a1c1f1bae1b",
+      "purpose": "Video",
+      "visuallyInspected": true
+    }
+  ],
+  "nativeMasks": {
+    "expectedCount": 18,
+    "newAssetsCount": 17,
+    "existingHomeCount": 1,
+    "observed": {
+      "OPEN": [
+        "battery_full-18.png",
+        "bug_report-18.png",
+        "build.png",
+        "cell_tower-18.png",
+        "gpp_bad-18.png",
+        "head_mounted_device-18.png",
+        "head_mounted_device.png",
+        "home.png",
+        "my_location-18.png",
+        "my_location.png",
+        "route-18.png",
+        "sensors-18.png",
+        "speed-18.png",
+        "speed.png",
+        "sports_esports-18.png",
+        "table_chart-18.png",
+        "table_chart.png",
+        "tune.png"
+      ],
+      "MASK": [
+        "battery_full-18.png",
+        "bug_report-18.png",
+        "build.png",
+        "cell_tower-18.png",
+        "gpp_bad-18.png",
+        "head_mounted_device-18.png",
+        "head_mounted_device.png",
+        "home.png",
+        "my_location-18.png",
+        "my_location.png",
+        "route-18.png",
+        "sensors-18.png",
+        "speed-18.png",
+        "speed.png",
+        "sports_esports-18.png",
+        "table_chart-18.png",
+        "table_chart.png",
+        "tune.png"
+      ],
+      "DRAW": [
+        "battery_full-18.png",
+        "bug_report-18.png",
+        "build.png",
+        "cell_tower-18.png",
+        "gpp_bad-18.png",
+        "head_mounted_device-18.png",
+        "head_mounted_device.png",
+        "home.png",
+        "my_location-18.png",
+        "my_location.png",
+        "route-18.png",
+        "sensors-18.png",
+        "speed-18.png",
+        "speed.png",
+        "sports_esports-18.png",
+        "table_chart-18.png",
+        "table_chart.png",
+        "tune.png"
+      ]
+    },
+    "expectedIconFallbacksUsed": false,
+    "method": "Test-only lexical proxies forward real Bitmap.open, Bitmap.toMask and lcd.drawBitmapPattern. Unique native open/mask/draw filenames all equal the 18 expected assets; duplicate worker log lines are deduplicated. Native toMask returns a binary string."
+  },
+  "visualChecks": [
+    "All 12 pages show the correct Material main/context icons with no white rectangles or bitmap fallback geometry.",
+    "Six 30px main icons and the existing 30px Home mask are distinct, aligned, and clear of the clock/model metadata.",
+    "Eleven 18px context masks fit their tabs; inactive icons are muted grey and active icons white.",
+    "HORIZON* fits Flight context and Telemetry flight-mode cell.",
+    "Accelerometer not calibrated fits the Arm Stops title with a right gutter.",
+    "Video REFERENCE badge and saved-favourites heading do not overlap.",
+    "Existing cockpit textures, circular bezel, level attitude and raw -20-degree nose-up sign are preserved."
+  ],
+  "inputChecks": [
+    {
+      "action": "Home tap returns to Flight",
+      "passed": true,
+      "screenshot": "material-home-return.png"
+    },
+    {
+      "action": "SYS focuses Flight section without navigating",
+      "passed": true,
+      "screenshot": "material-nav-focus.png"
+    },
+    {
+      "action": "Rotary +1 focuses Data while Flight remains visible",
+      "passed": true,
+      "screenshot": "material-nav-rotary.png"
+    },
+    {
+      "action": "PAGE> moves section focus to GPS without navigating",
+      "passed": true,
+      "screenshot": "material-nav-page-focus.png"
+    },
+    {
+      "action": "ENTER opens the focused GPS section",
+      "passed": true,
+      "screenshot": "material-nav-enter.png"
+    },
+    {
+      "action": "Normal PAGE> from Flight opens Data / Telemetry",
+      "passed": true,
+      "screenshot": "material-page-data.png"
+    }
+  ],
+  "logs": [
+    {
+      "file": "work/edgetx/material-icons/capture-all.log",
+      "sha256": "13db6b3077922fe6e63abe01c2a2aa0e6854b830e6db427d66ceb48945cb3036",
+      "processExitCode": 0,
+      "acceptedShotCount": 18,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/material-icons/capture-nose-up.log",
+      "sha256": "881f11e19616907b0a9eb0a6cb3ccd194acf11d03a374c09f08433df2ddb2b22",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    }
+  ],
+  "errorFreeLogs": true,
+  "knownHostNotices": [
+    "Node ExperimentalWarning: WASI is an experimental feature"
+  ],
+  "limitations": [
+    "Native simulation uses EdgeTX 3.0.0; physical TX16S EdgeTX 2.12.4 icon rendering and memory remain unverified.",
+    "Sensor, switch and MSP responses are synthetic fixtures; screenshots do not establish live-radio telemetry behaviour.",
+    "Instrumentation and desktop simulation are not hardware FPS or memory benchmarks.",
+    "The initial wrong-tool frames were rejected and all 19 accepted filenames were overwritten after preserving the isolated AERODECK launcher."
+  ]
+}

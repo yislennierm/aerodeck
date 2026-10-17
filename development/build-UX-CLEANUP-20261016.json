@@ -1,0 +1,94 @@
+{
+  "build": "UX-CLEANUP-20261016",
+  "createdUtc": "2026-10-16T16:16:04.550327+00:00",
+  "sourceSha256": "6089c0320007e4ea5fa6d2894bd4270a3c4edcada748f4fad19a6295bf5b507b",
+  "installSha256": "9e1b692e93d496393e5a1babd3d6e2c4b535f2165f5f439a632d342324fd9df2",
+  "runtimeFiles": 80,
+  "installFiles": 88,
+  "unchangedRuntimeFiles": 79,
+  "widgetUnchanged": true,
+  "transportUnchanged": true,
+  "graphicsUnchanged": true,
+  "portableSuitesPassed": 8,
+  "configurationAssertions": 82,
+  "navigationScenarios": 24,
+  "nativePreviewCaptures": 43,
+  "nativeRuntime": "TX16S EdgeTX3.0.0 WASM",
+  "radioFirmware": "2.12.4",
+  "hardwarePerformanceMeasured": false,
+  "installedOnRadio": true,
+  "lastVerifiedRadioBuild": "UX-CLEANUP-20261016",
+  "tests": [
+    {
+      "name": "test_crsf_status.lua",
+      "chunk_id": "2557bc",
+      "wall_time_seconds": 3.8331e-05,
+      "exit_code": 0,
+      "original_token_count": 39,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates\n"
+    },
+    {
+      "name": "test_fc_connection.lua",
+      "chunk_id": "2f419c",
+      "wall_time_seconds": 4.9707e-05,
+      "exit_code": 0,
+      "original_token_count": 36,
+      "output": "PASS: empty TEST configuration auto-detects CRSF; armed/failsafe/unknown/stale/disabled/incompatible gates; exit cancels; transport before draw\n"
+    },
+    {
+      "name": "test_configuration.lua",
+      "chunk_id": "61a720",
+      "wall_time_seconds": 1.4026e-05,
+      "exit_code": 0,
+      "original_token_count": 10,
+      "output": "PASS: 82 configuration UX assertions\n"
+    },
+    {
+      "name": "test_telemetry.lua",
+      "chunk_id": "c182d6",
+      "wall_time_seconds": 2.7151e-05,
+      "exit_code": 0,
+      "original_token_count": 26,
+      "output": "PASS: live without RSSI, units, flight mode, stale clearing, no demo via refresh or old startup setting\n"
+    },
+    {
+      "name": "test_rendering.lua",
+      "chunk_id": "03c7b6",
+      "wall_time_seconds": 2.0349e-05,
+      "exit_code": 0,
+      "original_token_count": 31,
+      "output": "PASS: stable qualified telemetry binding, explicit refresh, partial bitmap failure retains background and reports failure\n"
+    },
+    {
+      "name": "test_attitude_loop.lua",
+      "chunk_id": "48d9cc",
+      "wall_time_seconds": 0.098662264,
+      "exit_code": 0,
+      "original_token_count": 27,
+      "output": "PASS: 12000 callbacks; 27 source binds, zero runtime writes; attitude 100.0 Hz, draw 25.0 Hz (mock clock)\n"
+    },
+    {
+      "name": "test_arm_status.lua",
+      "chunk_id": "ed2034",
+      "wall_time_seconds": 2.0336e-05,
+      "exit_code": 0,
+      "original_token_count": 34,
+      "output": "PASS: STATUS_EX offsets, exact API1.46/1.47 flags, bytewise high/low bits, unknown APIs/counts, malformed rejection, no input mutation\n"
+    },
+    {
+      "name": "test_ui_navigation.lua",
+      "chunk_id": "fcb6bf",
+      "wall_time_seconds": 0.187922871,
+      "exit_code": 0,
+      "original_token_count": 47,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 7 dirty-exit, settings-return, draft-preservation, repeated-control, arming and warning-action scenarios\n"
+    }
+  ],
+  "browserPageStatesVerified": 12,
+  "browserSysRotaryEnterVerified": true,
+  "preview": "http://127.0.0.1:8766/",
+  "deployedAt": "2026-10-16T18:47:23.191384+02:00",
+  "radioSafelyEjected": true,
+  "previousVerifiedRadioBuild": "ICON-NAV-20261016",
+  "deploymentReport": "DEPLOYMENT.txt"
+}

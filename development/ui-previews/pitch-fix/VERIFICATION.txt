@@ -1,0 +1,16 @@
+PITCH-FIX-20261016 — native orientation preview verification
+
+Six480x272 PNGs use staged production Lua plus a lexical simulator-only fixture. Staged source SHA256:
+07acc61a035126891419a1e33f61b63c205326b99b8f10119afbe578d4379368
+
+Input and observed result:
+- Raw CRSF Ptch -0.3490658503988659rad (-20deg), Roll0 -> displayed pitch+20.0deg. Flight horizon moves downward, showing more sky for nose-up. Video reports P20.0 / R0.0.
+- Raw Ptch0, Roll0 -> displayed P0.0 / R0.0. Flight sky/ground boundary lies at the circular aperture's vertical center; Video boundary lies at its inset center.
+- Raw CRSF Ptch+0.3490658503988659rad (+20deg), Roll0 -> displayed pitch-20.0deg. Flight horizon moves upward, showing more ground for nose-down. Video reports P-20.0 / R0.0.
+
+The small Video inset is entirely sky at+20deg and entirely ground at-20deg: its horizon reaches/outgrows the73px-high crop at those inputs. This capture does not claim a visible horizon inside that crop at both extremes.
+
+Files: pitch-{nose-up,level,nose-down}-{flight,video}.png.
+Native host logs: work/edgetx/pitch-fix/capture-{nose-up,level,nose-down}.log. All processes exit0; six frame payloads are261120bytes; no Lua/firmware error, syntax or memory faults. Node emits its standard WASI ExperimentalWarning host notice.
+Runtime: actual EdgeTX3.0.0 TX16S WASM renderer. Data is synthetic, not live-quad telemetry. No physical-radio pitch calibration, data latency or FPS claim is made.
+Only isolated pitch-fix/runtimes copies were changed. Fixture prefixes are absent from staged production source and must not enter the radio package. No canonical source, radio file or shared runtime was edited.

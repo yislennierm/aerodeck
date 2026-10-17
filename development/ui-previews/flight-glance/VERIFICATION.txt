@@ -1,0 +1,12 @@
+FLIGHT-GLANCE-20261017 — NATIVE VISUAL QA PASS
+Source SHA256: 5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379
+
+34 final-source screenshots, all visually inspected at480x272, cover all12 pages plus focus/edit/navigation states and bank35, pitch+20, roll90, inverted180, missing/zero/extreme telemetry, configured link warnings and headings015/140/359.
+
+Native font dimensions: ARM INFO60x17px (fits72px inner width); selected35942x29px; nearby12021x17px. ARM INFO is untruncated. Touch362,48 and ENTER-focus/ENTER-activate both open Arm Info; RTN returns. Home returns to Flight; PAGE> opens Data.
+
+The larger aircraft and pitch labels stay clear in the captured poses; normal horizon, aircraft and tape indexes align at240,154. Major labels are complete. Missing input is explicit; zero stays0. Actual saved critical80/low90 thresholds produce amber85 and red75 with matching messages. Other11 pages, config rows/edit/actions and shared navigation remain clear.
+
+10 native processes exited0; logs contain no Lua/firmware errors. File hashes, fixture values/settings and log hashes are in verification.json. Production fixtures do not ship and no radio was touched.
+
+LIMITATION: This is EdgeTX3.0.0 TX16S WASM with synthetic data, not target EdgeTX2.12.4 hardware. Actual30–40cm readability, live telemetry, physical pose, hardware FPS/memory and target-firmware behavior remain unverified. Desktop diagnostic FPS is not a radio benchmark.

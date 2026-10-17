@@ -1,0 +1,907 @@
+{
+  "build": "FLIGHT-GLANCE-20261017",
+  "createdUtc": "2026-10-16T22:35:15.879648+00:00",
+  "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+  "installSha256": "58b16722dc23a769a0179fe15b50a9199f11ab724f626507af2a7b633ef6c956",
+  "runtimeFiles": 39,
+  "rootDocuments": 16,
+  "installFiles": 55,
+  "unchangedRuntimeFiles": 38,
+  "changedRuntimeFiles": [
+    "SCRIPTS/TOOLS/telem.lua"
+  ],
+  "newRuntimeFiles": [],
+  "omittedUnusedRuntimeFiles": [],
+  "legacyAssetsRetainedLocally": true,
+  "canonicalFilesDeleted": [],
+  "previousLocalBuild": "FLIGHT-SPACE-20261016",
+  "previousLocalSourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+  "baselineArchiveSha256": "1eb52ea2803053045618530aee64b29beecdbd32fc3c83cf03f2aa4c9c541f65",
+  "installedOnRadio": false,
+  "lastVerifiedRadioBuild": "HOME-ICON-20261016",
+  "deploymentHistoryUnchanged": true,
+  "attitudeBitmapsLoaded": false,
+  "nativeFlightFonts": true,
+  "sharedInstrumentZero": [
+    240,
+    154
+  ],
+  "hudField": [
+    78,
+    64,
+    324,
+    180
+  ],
+  "visibleAttitudeSize": [
+    232,
+    180
+  ],
+  "previousVisibleAttitudeSize": [
+    232,
+    182
+  ],
+  "originalVisibleAttitudeSize": [
+    184,
+    122
+  ],
+  "visibleAttitudeAreaGainPercent": 86.03,
+  "previousVisibleAttitudeAreaRetainedPercent": 98.9,
+  "designViewingDistanceCm": [
+    30,
+    40
+  ],
+  "primaryFontBoxHeight": 29,
+  "secondaryFontBoxHeight": 17,
+  "supportingFontBoxHeight": 12,
+  "majorPitchLabelDegrees": 20,
+  "flightFooterDeduplicated": true,
+  "pitchRungDegrees": 10,
+  "pitchPixelsPerDegree": 1.85,
+  "attitudeFixIncluded": true,
+  "attitudeSchedulingUnchanged": true,
+  "transportUnchanged": true,
+  "widgetUnchanged": true,
+  "portableSuitesPassed": 12,
+  "testCounts": {
+    "test_arm_status.lua": [],
+    "test_attitude_loop.lua": [
+      12000
+    ],
+    "test_configuration.lua": [
+      91
+    ],
+    "test_crsf_status.lua": [],
+    "test_fc_connection.lua": [],
+    "test_flight_layout.lua": [
+      1484
+    ],
+    "test_home_icon.lua": [
+      235
+    ],
+    "test_material_icons.lua": [
+      2107
+    ],
+    "test_pitch_direction.lua": [
+      54
+    ],
+    "test_rendering.lua": [],
+    "test_telemetry.lua": [],
+    "test_ui_navigation.lua": [
+      17,
+      18
+    ]
+  },
+  "configurationAssertions": 91,
+  "pitchDirectionAssertions": 54,
+  "navigationAndRendererScenarios": 35,
+  "materialIconAssertions": 2107,
+  "flightLayoutAssertions": 1484,
+  "nativePreviewFolder": "development/ui-previews/flight-glance",
+  "nativePreview": {
+    "build": "FLIGHT-GLANCE-20261017",
+    "status": "PASS",
+    "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+    "syntheticDataOnly": true,
+    "fixturePrefixShips": false,
+    "simulator": {
+      "version": "3.0.0",
+      "target": "RadioMaster TX16S",
+      "renderer": "Native EdgeTX WASM",
+      "framebuffer": "RGB565 little endian480x272",
+      "pngConversion": "Pillow RGB/raw/BGR;16;565 primary colors validated",
+      "host": "work/edgetx/native-sim/host.cjs"
+    },
+    "intendedRadioFirmware": "EdgeTX2.12.4",
+    "hardwareVerified": false,
+    "hardwarePoseVerified": false,
+    "hardwareRenderingVerified": false,
+    "hardwarePerformanceMeasured": false,
+    "radioInstalledByThisQA": false,
+    "physicalViewingDistanceVerified": false,
+    "intendedViewingDistanceCm": [
+      30,
+      40
+    ],
+    "pageScreenCount": 12,
+    "pageScreens": {
+      "Flight": "glance-flight.png",
+      "Arm Info": "glance-arm.png",
+      "Telemetry": "glance-telemetry.png",
+      "Power": "glance-power.png",
+      "RC Link": "glance-link.png",
+      "GPS Details": "glance-gps.png",
+      "Track/Home": "glance-track.png",
+      "Video": "glance-video.png",
+      "Setup": "glance-setup.png",
+      "Stick Guide": "glance-sticks.png",
+      "Sensors": "glance-sensors.png",
+      "Diagnostics": "glance-diagnostics.png"
+    },
+    "totalAcceptedScreenshotCount": 34,
+    "screenshots": [
+      {
+        "file": "glance-flight.png",
+        "sha256": "daad86988c85e8822904bef5b2d74b08ba11ec2bca7501099696fdff6e179c22",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Normal PFD: 29px heading, 88px aircraft, 17px major pitch/tape labels and explicit ARM INFO button"
+      },
+      {
+        "file": "glance-nav-focus.png",
+        "sha256": "6dacd5d809823a86bf6b318fac001a407377f264a51957eeda9baaa95a8af9f0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "SYS focuses the current section and replaces compass row with selection instructions"
+      },
+      {
+        "file": "glance-context-focus.png",
+        "sha256": "d112c228169453957559cf10db16d7b5639bb01216097815b4320e9ad93ba13c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "First ENTER visibly focuses ARM INFO; selected heading remains clear"
+      },
+      {
+        "file": "glance-arm.png",
+        "sha256": "d380e07778f95dd82ecc388eb541781d74ed63ac9708bd5bcb548db8b8e1e1ca",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Touch362,48 opens Arm Info and shows decoded NO_ACC_CAL reason"
+      },
+      {
+        "file": "glance-arm-return.png",
+        "sha256": "daad86988c85e8822904bef5b2d74b08ba11ec2bca7501099696fdff6e179c22",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "RTN returns from touch-opened Arm Info to Flight"
+      },
+      {
+        "file": "glance-arm-enter.png",
+        "sha256": "5b3e5bdd6041db58007d04604722829c2766806f87efef0f24c3a4e147f85065",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Second ENTER activates visibly focused ARM INFO"
+      },
+      {
+        "file": "glance-arm-enter-return.png",
+        "sha256": "daad86988c85e8822904bef5b2d74b08ba11ec2bca7501099696fdff6e179c22",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "RTN returns from key-opened Arm Info to Flight"
+      },
+      {
+        "file": "glance-telemetry.png",
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Dense three-column telemetry table"
+      },
+      {
+        "file": "glance-power.png",
+        "sha256": "6b5507d51a5f444b96b0f95297ce54cb6aed342685050d9675f94533300e4d35",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Power data and sample histories"
+      },
+      {
+        "file": "glance-link.png",
+        "sha256": "a5832ed95bf1980ffebc09a2c3f0ea6fa6874b6acd8c9f0f69ed6601466664a2",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "RC Link statistics and sample history"
+      },
+      {
+        "file": "glance-gps.png",
+        "sha256": "0f20f3633439b7cbd641254bbef49c2f55672a8743af3b536273833aa7f5173a",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "GPS Details, coordinates and home actions"
+      },
+      {
+        "file": "glance-track.png",
+        "sha256": "3f862fa0521d29091f55324575f08d97368dc4c59731a6df50efe4ffa6ec92b6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Track/Home map and actions"
+      },
+      {
+        "file": "glance-video.png",
+        "sha256": "4583edd5d2ca6a770b0e553b7eeb325bcd606c6216ac985ac27ebe62194f860c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Saved VTX favourites with explicit REFERENCE status and native mini attitude"
+      },
+      {
+        "file": "glance-setup.png",
+        "sha256": "2d5c490ac4d61dc09bc2a3e4cf6638cad9335713800a8ecbea01988f67d68b19",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Setup categories1-7/12"
+      },
+      {
+        "file": "glance-battery.png",
+        "sha256": "1579389f97f1675f874d09f305f1e3432ec998a51cf71e1b94e9df2b23c12f7b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Eight battery rows and all action controls fit"
+      },
+      {
+        "file": "glance-battery-edit.png",
+        "sha256": "960b97bde89131e4f99dbcfbcf40bceec72e80edb102bef89e994d4976e04e72",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Audible alerts selected for editing; subsequent RTN cancels editing"
+      },
+      {
+        "file": "glance-model-settings.png",
+        "sha256": "f41fe37f0b1ab8d51010f2137e04ec036168764a95c9e7137bc514106d0bf87d",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Model Setup rows1-7/17"
+      },
+      {
+        "file": "glance-model-mid.png",
+        "sha256": "6d62280d4d654d9e9e09bc9afcb3d0ed45d678a1144d972ff855f8763203416c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Model Setup rows8-14/17"
+      },
+      {
+        "file": "glance-settings-save.png",
+        "sha256": "3c2dea5b811fefba94bfffa05470de873a85d33160ba8b4e25c8d17fe089e85b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "SAVE SETTINGS remains visibly focused after activation"
+      },
+      {
+        "file": "glance-categories-second.png",
+        "sha256": "eb9451f31d06150e40a4faa6b4821294215c4119be5ace3f5f3e16f15e4c66a0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Setup categories8-12/12 and disabled NEXT state"
+      },
+      {
+        "file": "glance-sticks.png",
+        "sha256": "2ae1c966f08ee7fa39070a7850b7c368dc35817d7b6faa9fa1a513695eda2cb0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Betaflight reference Stick Guide"
+      },
+      {
+        "file": "glance-sensors.png",
+        "sha256": "f5f46632387b66f26e58a0e77717cbfa0813dd7f67911a834cea212df2f09882",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Sensor values and current/missing states"
+      },
+      {
+        "file": "glance-diagnostics.png",
+        "sha256": "6697ff98196693d75ab02ed8c7dcbd3b4cde3836b1c41e8ae30656a3db9705c4",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Diagnostics reports exact FLIGHT-GLANCE-20261017 build and native3.0.0 runtime"
+      },
+      {
+        "file": "glance-home-return.png",
+        "sha256": "ded04f3f809995d690804ac265d43a05d01691c82a58fde9a1f1f12fa354342e",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Home returns to Flight; local home distance appears in unique Flight footer"
+      },
+      {
+        "file": "glance-page-data.png",
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Physical PAGE> from Flight opens Data landing page"
+      },
+      {
+        "file": "glance-bank.png",
+        "sha256": "3809431050173e40eb694729aa5fa3c15ecbdfdc63f954b7b4cdc41d436cee93",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Roll+35deg: 17px major captions avoid aircraft and angle readouts"
+      },
+      {
+        "file": "glance-nose-up.png",
+        "sha256": "cf1da3e582d7c339621a0806e727dde74cfcc09e4c5dcdd44d4a0d62e9627f6c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Raw pitch-20deg normalizes to+20; selected20 caption clears wider aircraft"
+      },
+      {
+        "file": "glance-roll.png",
+        "sha256": "1002b08866d5f8992df68931dd535a5153489948fe621ba8be47a3f739340f04",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Roll+90deg: vertical field, separate major labels and signed readout"
+      },
+      {
+        "file": "glance-inverted.png",
+        "sha256": "b51b6cbc422b257bc412bb7edffd0adf1bd1dacb8e276837079297711dd5dd07",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Roll+180deg: inverted field, signed captions and readout"
+      },
+      {
+        "file": "glance-missing.png",
+        "sha256": "ea7c47618c64196d5020782b167bf3e06a4397cf55b1ae85d8d79049b24db2b4",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "All telemetry missing: --, ATTITUDE UNAVAILABLE and explicit warning"
+      },
+      {
+        "file": "glance-zero.png",
+        "sha256": "76582d006374886e63f2419e263e6f0a397ed4e37a211cbace47f13fba151ace",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "All numeric readings0 remain valid0; NO PACK POWER warning"
+      },
+      {
+        "file": "glance-long-values.png",
+        "sha256": "fce3efdfdcdabc279ab91288d7502604cc24a4e365bd69757af3a2d1ac9da1b0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Extreme numbers fit rails/tapes; selected359 heading wraps to N/030 nearby"
+      },
+      {
+        "file": "glance-low-lq.png",
+        "sha256": "6a1daa09031d94fa0531128848ea95671daa3d0c72f004edb0dccc70fbfad091",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Heading015 and LQ85 with actual saved critical80/low90 thresholds: amber value and LINK LOW footer"
+      },
+      {
+        "file": "glance-critical-lq.png",
+        "sha256": "ee19944e6ea8a2f560dc425f7de324c70a2f5ba71fb3e55c8a25a55450844b51",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "visuallyInspected": true,
+        "purpose": "Heading140 and LQ75 with actual saved critical80/low90 thresholds: red value and LINK CRITICAL footer"
+      }
+    ],
+    "priorSourceEvidenceCount": 0,
+    "fixtures": [
+      {
+        "variant": "all",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "bank",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 0.6108652381980153
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "nose-up",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": -0.3490658503988659
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "roll",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 1.5707963267948966
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "inverted",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 3.141592653589793
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "missing",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": true,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "zero",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": true,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "long-values",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RxBt": 123.4,
+          "Capa": 9999999,
+          "TPWR": 99999,
+          "Curr": 999.9,
+          "1RSS": -1234,
+          "GSpd": 12345,
+          "GAlt": -99999,
+          "Sats": 999,
+          "Bat%": 100,
+          "Hdg": 359
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "low-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 85,
+          "Hdg": 15
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      {
+        "variant": "critical-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "5f2aa7850895b1fce3477a40729df23078f1a2f424246e55ec98105e709ff379",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 75,
+          "Hdg": 140
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      }
+    ],
+    "layout": {
+      "fullHudRectangle": [
+        78,
+        64,
+        324,
+        180
+      ],
+      "nominalAttitudeViewport": [
+        124,
+        64,
+        232,
+        180
+      ],
+      "centralDatum": [
+        240,
+        154
+      ],
+      "leftMetricRail": [
+        4,
+        35,
+        70,
+        209
+      ],
+      "rightMetricRail": [
+        406,
+        35,
+        70,
+        209
+      ],
+      "tapeWidths": 46,
+      "tapeIndexWindowsY": [
+        138,
+        170
+      ],
+      "headingBand": [
+        78,
+        34,
+        246,
+        30
+      ],
+      "selectedHeadingBadge": [
+        208,
+        34,
+        64,
+        30
+      ],
+      "armInfoButton": [
+        324,
+        35,
+        78,
+        28
+      ],
+      "aircraftWidth": 88,
+      "aircraftForegroundStrokePixels": 2,
+      "aircraftHaloStrokePixels": 4,
+      "horizonStrokePixels": 2,
+      "majorPitchLabelFontHeight": 17,
+      "pitchRungSpacingDegrees": 10,
+      "pitchLabelSpacingDegrees": 20,
+      "pfdBitmapAssetLoads": 0
+    },
+    "nativeFontMetrics": [
+      {
+        "name": "ARM_INFO",
+        "flags": 768,
+        "width": 60,
+        "height": 17
+      },
+      {
+        "name": "HEADING_359",
+        "flags": 1024,
+        "width": 42,
+        "height": 29
+      },
+      {
+        "name": "MAJOR_120",
+        "flags": 768,
+        "width": 21,
+        "height": 17
+      }
+    ],
+    "fontFitChecks": {
+      "armInfoAvailableInnerWidth": 72,
+      "armInfoMeasuredWidth": 60,
+      "selectedHeadingBadgeWidth": 64,
+      "heading359MeasuredWidth": 42,
+      "armInfoUntruncated": true,
+      "selectedHeadingClear": true
+    },
+    "armInfoInputChecks": [
+      {
+        "action": "Touch362,48 opens Arm Info; RTN returns",
+        "opened": "glance-arm.png",
+        "returned": "glance-arm-return.png",
+        "passed": true
+      },
+      {
+        "action": "ENTER focuses; second ENTER opens; RTN returns",
+        "focused": "glance-context-focus.png",
+        "opened": "glance-arm-enter.png",
+        "returned": "glance-arm-enter-return.png",
+        "passed": true
+      }
+    ],
+    "finalSourceChecks": {
+      "all12PagesVisuallyInspected": true,
+      "all34ScreenshotsVisuallyInspected": true,
+      "noUnintendedOverlapObservedInCapturedCases": true,
+      "noPartialPitchOrHeadingCaptionsObservedInCapturedCases": true,
+      "normalDatumAlignedAtY154": true,
+      "largerAircraftAndSelectedPitch20Clear": true,
+      "signedPitchRollReadoutsClear": true,
+      "bank35Roll90AndInvertedFieldClippingCorrect": true,
+      "heading015140359WrapAndBadgeClearance": true,
+      "zeroAndMissingDistinguished": true,
+      "customLqThresholdColorsAndFooterMessagesCorrect": true,
+      "extremeValuesContainedInRailsAndTapeWindows": true,
+      "other11PagesFit": true,
+      "armInfoTouchAndKeyboardReturnPathsPass": true,
+      "homeAndPageDataRoutesPass": true
+    },
+    "visualChecks": [
+      "All34 screenshots were regenerated from exact final5f2 source; all12 pages and input-focus/action states were visually inspected at native480x272.",
+      "The selected heading uses native29px MIDSIZE type. Nearby major references and20-degree pitch captions use17px SMLSIZE. Minor15-degree compass ticks and10-degree pitch rungs remain visible.",
+      "The88px gold aircraft with dark halo and2px horizon remain clear at level, bank35, normalized pitch+20, roll90 and inverted180. Selected+20 caption relocates outside aircraft; major rolled captions remain separate.",
+      "ARM INFO measures60x17px natively, fits72px inner width without abbreviation, and opens through both touch and visible ENTER focus. RTN returns in both cases.",
+      "Missing telemetry is explicit, actual0 remains0, extreme numbers stay inside rails/windows, and selected359 heading wraps nearby references cleanly.",
+      "Actual saved critical80/low90 settings yield amber LQ85 with LINK LOW and red LQ75 with LINK CRITICAL.015 and140 headings retain full caption clearance.",
+      "All other page layouts, Video CUSTOM/REFERENCE, configuration rows/edit/actions, Arm Info long flight-mode heading, shared navigation/footer and Home/PAGE routes remain clear."
+    ],
+    "logs": [
+      {
+        "file": "work/edgetx/flight-glance/capture-all.log",
+        "sha256": "962da4d10409009ab920c3d9be120729603408375ddb9d9df9be10cfd6efb23a",
+        "processExitCode": 0,
+        "acceptedShotCount": 25,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-bank.log",
+        "sha256": "30c4b7442e1a107e0f418a06d2594442ae65593901c8935e3e3ac17ba1fac116",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-nose-up.log",
+        "sha256": "64b21159d6f3575e9431a18a059750a920b65b3ff3ad8b646a6c563a89caf9a0",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-roll.log",
+        "sha256": "f5fd49a61a6da53c722e8b8ca2bd99d1a3b8e060af3b763601715bd5446a8cca",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-inverted.log",
+        "sha256": "24bbf80a7cbeb4c5e6ae3e1e0fe94d4cea39d2fd5b12250849b3c754df8ba57d",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-missing.log",
+        "sha256": "2b0010f902988305122a7d99483e4c750a0c9f51e61dda46ad5d8a03304cd68d",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-zero.log",
+        "sha256": "5110abaf14a85f073565421b8c2158afdca8c622ea5952a3f2139eefcc194103",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-long-values.log",
+        "sha256": "cda8dbb3078580261a26d6c3d3f2dc10fd77327219249cf5c3db06e21013ec84",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-low-lq.log",
+        "sha256": "cc966211dd912a6763fc4b4fca6a727bc606a8daf92852d75149959dc32518fe",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-glance/capture-critical-lq.log",
+        "sha256": "3fb7c26db58ac02fb647d0e088e59e7c039c2b54368611f84ec79aa580fc1207",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      }
+    ],
+    "errorFreeLogs": true,
+    "knownHostNotices": [
+      "Node ExperimentalWarning: WASI is an experimental feature"
+    ],
+    "limitations": [
+      "Native simulator is EdgeTX3.0.0 WASM. The target physical radio uses EdgeTX2.12.4; target-firmware rendering/API behavior, live telemetry, physical pose and hardware performance are unverified by this QA.",
+      "All telemetry, switches and MSP replies are synthetic fixtures in a single isolated reused runtime. UI words such as LIVE/CURRENT describe that fixture input, not a real quad in this run. Production source contains no fixture; no radio was modified.",
+      "Font dimensions are actual native renderer measurements. Readability at a physical30-40cm viewing distance has not been measured on the radio.",
+      "Desktop diagnostic draw-rate values are not hardware FPS or memory benchmarks.",
+      "Unrealistic9999999mAh stress input displays10000000 after native Lua rounding; this is a fitting case, not a sensor-accuracy assertion.",
+      "Early same-source level/bank/missing previews are excluded from the final count; all34 accepted screenshots belong to the final capture run."
+    ]
+  },
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "tests": [
+    {
+      "name": "test_arm_status.lua",
+      "exit_code": 0,
+      "output": "PASS: STATUS_EX offsets, exact API1.46/1.47 flags, bytewise high/low bits, unknown APIs/counts, malformed rejection, no input mutation"
+    },
+    {
+      "name": "test_attitude_loop.lua",
+      "exit_code": 0,
+      "output": "PASS: 12000 callbacks; 27 source binds, zero runtime writes; attitude 100.0 Hz, draw 25.0 Hz (mock clock)"
+    },
+    {
+      "name": "test_configuration.lua",
+      "exit_code": 0,
+      "output": "PASS: 91 configuration UX assertions"
+    },
+    {
+      "name": "test_crsf_status.lua",
+      "exit_code": 0,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates"
+    },
+    {
+      "name": "test_fc_connection.lua",
+      "exit_code": 0,
+      "output": "PASS: empty TEST configuration auto-detects CRSF; armed/failsafe/unknown/stale/disabled/incompatible gates; exit cancels; transport before draw"
+    },
+    {
+      "name": "test_flight_layout.lua",
+      "exit_code": 0,
+      "output": "PASS: 1484 actual Flight checks; rectangular PFD, heading wrap, signed native-scale ladder, shared datum, missing/zero/long telemetry, and icon-only stable cache"
+    },
+    {
+      "name": "test_home_icon.lua",
+      "exit_code": 0,
+      "output": "PASS: 235 home icon cache, tint, GC, fallback and compatibility checks"
+    },
+    {
+      "name": "test_material_icons.lua",
+      "exit_code": 0,
+      "output": "PASS: 2107 Material icon native-size, cache, cold-GC, tint, lifetime and fallback checks"
+    },
+    {
+      "name": "test_pitch_direction.lua",
+      "exit_code": 0,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks"
+    },
+    {
+      "name": "test_rendering.lua",
+      "exit_code": 0,
+      "output": "PASS: stable qualified telemetry binding, explicit refresh, no legacy flight background loaders or source-binding bitmap reads"
+    },
+    {
+      "name": "test_telemetry.lua",
+      "exit_code": 0,
+      "output": "PASS: live without RSSI, units, flight mode, stale clearing, no demo via refresh or old startup setting"
+    },
+    {
+      "name": "test_ui_navigation.lua",
+      "exit_code": 0,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 18 dirty-exit, settings-return, draft-preservation, repeated-control, arming, warning-action and pitch-rendering scenarios"
+    }
+  ]
+}

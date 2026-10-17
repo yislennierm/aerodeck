@@ -1,0 +1,30 @@
+AERODECK — HOME-ICON-20261016
+INSTALLED AND VERIFIED: 2026-10-16T19:20:34.529289+02:00; radio safely ejected.
+
+Includes the verified PITCH-FIX-20261016 conversion: negate only radian Ptch,
+then use that shared pitch for Flight fill/ladder/numerics and Video inset.
+No attitude scheduling, source bindings or MSP changes in this revision.
+
+HOME IMAGE
+Google Material Symbols Outlined, home; Apache-2.0.
+Editable export: development/icons/home-outlined-30.svg
+Unmodified Google source: development/icons/google-home-outlined-original.svg
+Radio file: sdcard/SCRIPTS/TOOLS/AERODECK/icons/home.png
+License and origin/modification notes ship alongside the PNG.
+
+The PNG is30x30 RGB, black artwork on opaque white; grey smooths edges.
+The unchanged Google path is optically fitted to26px ink height with2px
+vertical padding. Bitmap.toMask supplies transparency from brightness and
+ignores the source alpha. Lua tints the cached mask with the existing palette.
+Draw origin5,2 fits the34px bar and preserves clock/model/navigation spacing.
+The touch target and return-to-Flight behavior are unchanged.
+
+The first home draw loads and converts one PNG. Later frames/pages reuse the
+same mask string; no per-frame SD reads, scaling or image conversion.
+The temporary colour bitmap can be collected. If the file is missing/wrong
+size or mask APIs are unavailable, the original line icon is used without
+repeated load attempts. Reopen the app after editing/replacing the PNG.
+
+Verification records and native captures are in development/build-HOME-ICON-20261016.json
+and development/ui-previews/home-icon/. Synthetic previews do not establish
+physical-radio attitude direction or latency. No fixture ships in the install.

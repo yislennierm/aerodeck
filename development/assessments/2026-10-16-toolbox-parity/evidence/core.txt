@@ -1,0 +1,59 @@
+STRICT CORE PARITY REVIEW — 16 October 2026
+
+Baseline: installed ICON-NAV-20261016 main source SHA256
+f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8.
+Canonical runtime matches the independently verified deployment:80 runtime files and115
+protected radio files checked at installation. This assessment does not re-run hardware.
+Target is the same TX16S480x272/EdgeTX2.12.4/Betaflight/ELRS combination as Toolbox.
+
+core.json contains44 feature-level rows. Each row identifies the actual reference runtime,
+actual AERODECK runtime/control, strict status, user consequence and file:line evidence.
+Working means an executable source path exists, not that every sensor is present or that
+physical-radio performance is proven. Partial means a real subset/different workflow.
+Missing means no corresponding function. Unknown means physical/reference behavior is
+unproven. Counts are descriptive coverage, NOT a percentage of completion or effort:
+{"missing": 15, "partial": 15, "unknown": 2, "working": 12}
+
+CORE-39 compact widget includes an additional capability not established in Toolbox; do
+not count it as reference parity completion. Other source/edition capability guards may
+limit Toolbox controls. Unsupported transports/radios are outside this matrix. This
+matrix deliberately does not count each font setting/category note as a feature.
+
+Key findings
+
+1. Native attitude instrument exists; reliable sustained physical response remains unknown
+   after the MSP change. Screen FPS and telemetry data freshness must stay separate.
+2. GPS home/track updates only inside GPS/Nav renderers. Staying on Flight can delay
+   auto-home capture until a later location; a page menu is not a continuous flight model.
+3. OS Timer1–3 read/control/reset is absent. Local arm stopwatch clips callback intervals
+   to1s, stops with the app, and has no reset/persistence. A 'timer' label is not parity.
+4. Current27-field table exists; dynamic complete browsing, native Min/Max and selector
+   are missing. Compact widget/Inspector source bindings are still unqualified.
+5. Battery favorites are3 rather than5, lack chemistry, and have no quick connected-pack
+   selector. No individual cells, auto-count, radio battery or quick mute/new-flight flow.
+6. Capability metadata mostly controls list visibility; RC/FC None is accepted as Auto.
+   The12 configuration headings contain functional controls plus notes/placeholders.
+7. Toolbox CRSF fix/HDOP labels include satellite-count heuristics in original bytecode;
+   matching screenshots does not justify claiming those values are real receiver data.
+8. Toolbox widget background callback existence does not prove hidden operation because
+   its guard is unresolved. AERODECK explicitly releases its app in compact/hidden mode.
+
+UX priorities
+
+P0: direct full-application hardware response/orientation gate on the accepted cockpit.
+P1: shared source identity; Auto/Off/capability semantics; page-independent session/home;
+native timer read first; pack/new-flight/mute/reset/reload actions; sensor Current/Min/Max;
+distinct radio battery; sourced mode/arm/cut state. Use one action menu, do not substitute
+another destination tile for a missing action or add controls ahead of their backend.
+P2: conditional cells/satellite detail, relative home vector/ETA, protocol-aware captions,
+optional dashboard inspection. Retain honest unavailability when sources do not exist.
+
+Evidence method
+
+Actual production source read without edits. Recovered Toolbox Lua is not an executable
+specification: it has known branch/table/call damage. Critical source-family registrations,
+min/max, dashboard selection, favorites, timer controls, configuration gates, quick menu,
+GPS inference/home behavior and widget lifecycle use original .luac disassembly preserved
+in work/edgetx/icon-revision/audit-core-original-disassembly.txt and verified-*.txt.
+References into recovered source indicate straightforward names/data paths, not an
+endorsement of damaged expressions. No reference artwork/license logic was copied.

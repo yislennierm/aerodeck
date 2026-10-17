@@ -1,0 +1,11 @@
+PASS — UI-ALIGN-20261016
+
+Source SHA256: 17d09af0b1bb741f069fc4261da3fd3ebd961236f4aa3d9027205168eb473a6d
+
+28 accepted native 480x272 captures inspected: all 12 pages plus section/context focus, settings list/battery/edit/middle rows/actions, missing data and warning states. No spacing, overlap, white mask box or tint defects found. Header focus plates are44x32 around30px icons. All19 icon masks, including satellite_alt, were logged through actual native drawBitmapPattern calls.
+
+Native font boxes: SMLSIZE17px, TINSIZE12px for Agjpqy. Clock y0..16 and model y19..30 fit the34px header. Long model Gyro pjqy long model name truncates to Gyro pjqy lo... in TINSIZE. Footer icons and text share y250; normal, missing and critical/no-current warning states fit. HORIZON*, longest Arm Stops heading, Video CUSTOM/REFERENCE, settings rows and action labels fit.
+
+All five successful native processes exited0; no Lua/firmware errors found. Standard Node WASI experimental-feature notices remain. Fixtures/probes stay outside production. No canonical project, radio or shared preview runtime was modified.
+
+Scope: EdgeTX3.0.0 TX16S native simulator with synthetic data only. Physical radio EdgeTX2.12.4 rendering, telemetry, FPS/memory and pose are not verified. See verification.json for hashes, logs, exact states and rejected-capture limitations.

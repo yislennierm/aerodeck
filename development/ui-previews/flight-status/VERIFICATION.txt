@@ -1,0 +1,9 @@
+FLIGHT-STATUS-20261017 — NATIVE VISUAL QA PASS
+Main SHA256: e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d
+Decoder SHA256: b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34
+
+61 exact-source screenshots visually inspected, covering all 12 pages, the global footer control and normal/warning touch/ENTER/RTN paths. Known API1.48/count30/GPS bit18, zero flags, unknown API/count, stale status, multiple flags, missing/numeric zero and long values were checked. Full compass and footer content fit in captured states.
+
+File hashes, fixture packets/settings and error-free native process logs are recorded in verification.json. Source fixtures do not ship; no radio was touched.
+
+LIMITATION: EdgeTX3.0.0 TX16S WASM with synthetic input, not physical EdgeTX2.12.4 hardware. Hardware rendering, live telemetry, poses, FPS/memory and viewing-distance readability are unverified.

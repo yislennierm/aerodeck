@@ -1,0 +1,533 @@
+{
+  "build": "FLIGHT-PRIORITY-20261017",
+  "status": "PASS",
+  "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+  "syntheticDataOnly": true,
+  "fixturePrefixShips": false,
+  "simulator": {
+    "version": "3.0.0",
+    "target": "RadioMaster TX16S",
+    "renderer": "Native EdgeTX WASM",
+    "framebuffer": "RGB565 little endian480x272",
+    "pngConversion": "Pillow RGB/raw/BGR;16;565 primary colors validated",
+    "host": "work/edgetx/native-sim/host.cjs"
+  },
+  "intendedRadioFirmware": "EdgeTX2.12.4",
+  "hardwareVerified": false,
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "radioInstalledByThisQA": false,
+  "physicalViewingDistanceVerified": false,
+  "pageScreenCount": 1,
+  "scope": "Focused Flight layout QA; other11pages/navigation unchanged and not recaptured in this revision",
+  "totalAcceptedScreenshotCount": 11,
+  "screenshots": [
+    {
+      "file": "priority-level.png",
+      "sha256": "bb1269f6305f8fa2df6a65f03b43edc6de77cd9f53acf18dc6dd22c818aa0dd5",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Normal Flight priority layout"
+    },
+    {
+      "file": "priority-bank.png",
+      "sha256": "5ae786940ba681120be0f45c2643dcc06182729b1c9206f2851310d16a6045fa",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Roll35deg major pitch captions and angle readouts"
+    },
+    {
+      "file": "priority-missing.png",
+      "sha256": "2f11572ad2429ee86aadd0041746028122b0190ca9b1338b1963e176025f31e9",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "All source values missing; explicit unavailable state"
+    },
+    {
+      "file": "priority-zero.png",
+      "sha256": "9a09010fc44de4efb547405d06619fac7705fbf60fff706104a78f141fb5fd27",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "All numeric inputs zero remain valid zero"
+    },
+    {
+      "file": "priority-long-values.png",
+      "sha256": "cb618147e16457c7ebfd786179751c2805030bac8b3c1a421c03e9c2cc3da6ad",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Extreme source values and359deg heading wrap"
+    },
+    {
+      "file": "priority-low-lq.png",
+      "sha256": "93fee9b3ef89b7b51beb0de13ac14b1041ae3d01ecc7eeddfd412cbc54ee19f8",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "LQ85 with actual saved critical80/low90 thresholds and heading015"
+    },
+    {
+      "file": "priority-critical-lq.png",
+      "sha256": "18720d26a4ba0eea8fe6a86fe09370fcf331dd4976ffc63a591c2c5e6c756ff1",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "LQ75 with actual saved critical80/low90 thresholds and heading140"
+    },
+    {
+      "file": "priority-capacity-4.png",
+      "sha256": "34781adfe1f8c038cf0f26f13b1894f6f80223fef00b3b750dab6d04009a3ece",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Consumed capacity9999mAh four digits"
+    },
+    {
+      "file": "priority-capacity-5.png",
+      "sha256": "8bdbe19cdb6fdd68cb80a5d96d5088c80baeead51f8496bfa5adb21445586870",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Consumed capacity99999mAh five digits"
+    },
+    {
+      "file": "priority-full-pack.png",
+      "sha256": "6543da972e290013867c0495d49a576e5a43230c459cfd8873f9a2f5a468dee2",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Six-cell25.2V pack with100% remaining and0 consumed/current"
+    },
+    {
+      "file": "priority-estimated-full.png",
+      "sha256": "0b07319728a333e49043ef157c71ac2b8b74f76a79e1c84e549cb98745a376a8",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "visuallyInspected": true,
+      "purpose": "Bat% missing; actual saved Pack1 six-cell3000mAh profile derives~100% from0 consumed"
+    }
+  ],
+  "priorSourceEvidenceCount": 0,
+  "fixtures": [
+    {
+      "variant": "level",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "bank",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "Roll": 0.6108652381980153
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "missing",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": true,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "zero",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": true,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "long-values",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RxBt": 123.4,
+        "Capa": 9999999,
+        "TPWR": 99999,
+        "Curr": 999.9,
+        "1RSS": -1234,
+        "GSpd": 12345,
+        "GAlt": -99999,
+        "Sats": 999,
+        "Bat%": 100,
+        "Hdg": 359
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "low-lq",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RQly": 85,
+        "Hdg": 15
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+    },
+    {
+      "variant": "critical-lq",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RQly": 75,
+        "Hdg": 140
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+    },
+    {
+      "variant": "capacity-4",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "Capa": 9999
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "capacity-5",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "Capa": 99999
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "full-pack",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RxBt": 25.2,
+        "Bat%": 100,
+        "Capa": 0,
+        "Curr": 0
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": false,
+      "configuredPack": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "estimated-full",
+      "runtime": "runtime-all",
+      "sourceSha256": "62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RxBt": 25.2,
+        "Bat%": null,
+        "Capa": 0,
+        "Curr": 0
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "estimatedRemainingFromCapacity": true,
+      "configuredPack": {
+        "active": 1,
+        "cells": 6,
+        "capacity": 3000
+      },
+      "settingsSha256": "3d3c87e38fc6f5b1be6400c18ce474f36e2e7c153e3a6dc1bef253ae18b64ace"
+    }
+  ],
+  "nativeFontMetrics": [
+    {
+      "name": "ARM_INFO",
+      "flags": 768,
+      "width": 60,
+      "height": 17
+    },
+    {
+      "name": "AVG_CELL_V",
+      "flags": 512,
+      "width": 49,
+      "height": 12
+    },
+    {
+      "name": "CAPACITY_2762",
+      "flags": 1024,
+      "width": 56,
+      "height": 29
+    },
+    {
+      "name": "CAPACITY_9999",
+      "flags": 1024,
+      "width": 56,
+      "height": 29
+    },
+    {
+      "name": "CAPACITY_99999",
+      "flags": 1024,
+      "width": 70,
+      "height": 29
+    },
+    {
+      "name": "ESTIMATED_100",
+      "flags": 512,
+      "width": 28,
+      "height": 12
+    },
+    {
+      "name": "HEADING_359",
+      "flags": 1024,
+      "width": 42,
+      "height": 29
+    },
+    {
+      "name": "MAJOR_120",
+      "flags": 768,
+      "width": 21,
+      "height": 17
+    }
+  ],
+  "priorityLayout": {
+    "leftRailPrimary": [
+      "LINK",
+      "RSSI",
+      "SNR"
+    ],
+    "leftRailContext": "TX mW",
+    "rightRailPrimary": [
+      "PACK V",
+      "USED mAh",
+      "CURRENT A"
+    ],
+    "rightRailContext": "AVG CELL V",
+    "normalCapacityFontHeight": 29,
+    "derivedCellAverageFontHeight": 17,
+    "percentageFontHeight": 12,
+    "percentageBarMaxWidth": 36,
+    "estimated100PercentMeasuredWidth": 28,
+    "estimated100PercentBarWidth": 30,
+    "valueCellWidth": 62
+  },
+  "finalSourceChecks": {
+    "all11FlightStatesVisuallyInspected": true,
+    "noUnintendedOverlapObservedInCapturedCases": true,
+    "noPartialPitchOrHeadingCaptionsObservedInCapturedCases": true,
+    "zeroAndMissingDistinguished": true,
+    "customLqThresholdColorsAndFooterMessagesCorrect": true,
+    "capacity4And5DigitsContained": true,
+    "fullPack100PercentContained": true,
+    "estimated100PercentContained": true,
+    "fullAndEstimatedFullDoNotTriggerAboveMaximum": true,
+    "missingValueAndHealthIconColorsMuted": true,
+    "extremeValuesContainedInCells": true
+  },
+  "visualChecks": [
+    "Normal2762 and9999mAh capacity fit native29px MID type;99999mAh falls back to17px SML without overlap. SNR is a primary29px value; TXpower and derived averagecell voltage remain17px context values.",
+    "AVG CELL V measures49x12px; estimated~100% measures28x12px witha30px bar and4px gap inside62px. Bothdirect100% andestimated~100% are complete.",
+    "Full6S25.2V direct andestimated packs no longer showABOVE MAXIMUM after batteryboundary quantization. Candidate first-three evidence is archived outsideaccepted previews and not used asfinal-source evidence.",
+    "Missing metrics and healthicons usemuted color; valid numericzero isretained. Customcritical80/low90 thresholds yieldamber85 andred75 withmatching messages. Bank35 andextreme telemetry remaincontained."
+  ],
+  "logs": [
+    {
+      "file": "work/edgetx/flight-priority/capture-level.log",
+      "sha256": "c2676e613cf11825a8d7008f5b63f81b78f42e70fc9cdf9592b65eb3eb3890a6",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-bank.log",
+      "sha256": "f7d23dcfbfa1acab6c68eb6da9320156b8cdb484bb68c090478ccb39942dbd65",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-missing.log",
+      "sha256": "21543f96c2c211cde59cb55de566f4305e92213d70560c02e34ca16ad4d13f36",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-zero.log",
+      "sha256": "5e996fa78edea6a6a9923816fc3a185657044fc3761a2b8fbd397573312246a9",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-long-values.log",
+      "sha256": "305e71b8bd02da4e2917fd1ff4f4c1668cb28ba6081d0dd12d683c5208c810b2",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-low-lq.log",
+      "sha256": "5ff9dce2137b92c137fa97841158bbcc917b9acaabbc2515aa08136e6026fde5",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-critical-lq.log",
+      "sha256": "fa2d5715c9670b63503b0026cc846075c4488e9f8435b40aac285ee3e61eb1c5",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-capacity-4.log",
+      "sha256": "8630b003f144dfccb72b9a7b37fd5d7ca40324e1ca1c215a091b2adf41e66362",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-capacity-5.log",
+      "sha256": "b17974a6a8e05cfb2e0b365d55153266fd68456276e6b091178092ce8beac135",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-full-pack.log",
+      "sha256": "6af6fd7a6bdeb79d4a20b126ab14ddb52d3bcb4056501499878c56e6f010b283",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-priority/capture-estimated-full.log",
+      "sha256": "91ae6562afe39a3f660be3f784e8a05a65560c32b814bda3d0d83d4b393fb88c",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    }
+  ],
+  "errorFreeLogs": true,
+  "knownHostNotices": [
+    "Node ExperimentalWarning: WASI is an experimental feature"
+  ],
+  "limitations": [
+    "Native simulator is EdgeTX3.0.0 WASM. The target physical radio uses EdgeTX2.12.4; target-firmware rendering/API behavior, live telemetry, physical pose and hardware performance are unverified by this QA.",
+    "All telemetry, switches and MSP replies are synthetic fixtures in a single isolated reused runtime. UI words such as LIVE/CURRENT describe that fixture input, not a real quad in this run. Production source contains no fixture; no radio was modified.",
+    "Readability at a physical30-40cm viewing distance has not been measured on the radio. Desktop diagnostic draw-rate values are not hardware FPS or memory benchmarks.",
+    "The unrealistic9999999mAh stress case tests numeric fitting rather than sensor accuracy.",
+    "This focused revision checks Flight states only; it does not repeat the previous12-page navigation tour."
+  ]
+}

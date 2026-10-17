@@ -1,0 +1,57 @@
+AERODECK POWER-LIVE-20261017
+
+CURRENT SOFTWARE
+Combined Flight-Status footer/GPS flag fix and battery/power revision.
+See DEPLOYMENT.txt for the last file-verified installation; execution with the
+quad and physical-radio performance need a live check after reopening the app.
+
+CONFIRMED AOS 5 FINDING
+The radio already defines native CRSF RxBt(V), Curr(A), Capa(mAh) and Bat%.
+Its saved AERODECK mapping explicitly has voltage=None; current=Auto.
+None disables all voltage aliases before a sensor can be read. The proposed
+repair changes only that app preference to Auto, preserving every other key.
+The SD cannot establish current sensor freshness or FC current calibration.
+Missing current has not been independently diagnosed as an FC or link fault.
+
+DATA AND UI CHANGES
+- Positive telemetry IDs stay bound. Failed names alone are retried at most one
+  name per500ms from the slower sample path, never the attitude poll. A complete
+  absent-name cycle can take several seconds; explicit Refresh is immediate.
+- Power and Sensor Refresh share a one-shot binding/unit/sensor-choice refresh.
+  Normal navigation does not rescan all model sensors. Draft edits are retained.
+- Power identifies OFF, NOT FOUND, STALE, INVALID and LIVE source states using
+  the same current-only samples as its readings. Stale raw values are not used
+  as live measurements. Real0A is displayed as0A and yields0W with valid voltage.
+- Power exposes Sources, Refresh and Cell Limits. Sources focuses the voltage
+  row. RTN returns through Setup categories to Power. Existing footer shortcuts,
+  warning precedence, compass and attitude layout are preserved.
+- Current-chart heading shows calculated VxA watts only when both values are
+  current. Consumed/remaining charge uses compact Ah formatting where useful.
+- Five battery favourites retain the previous three profiles/defaults. Selecting
+  a capacity gives a marked remaining-percent estimate and remaining mAh only
+  when consumed mAh is current. Missing Capa never invents a full battery.
+- Compact widget resolves qualified telemetry names too, avoiding named-input
+  collisions. It retains current/numeric validation, explicit None and real0.
+
+TOOLBOX2 COMPARISON
+Toolbox uses the same RxBt/Curr/Capa/Bat% telemetry. It does not require a
+separate MSP battery feed. Its original update bytecode ignores current flags;
+AERODECK keeps live and stale distinct. Five favourites and selected-capacity
+arithmetic close concrete gaps. Watts and explicit source-health messages are
+AERODECK additions, not claims about Toolbox's screen.
+Remaining gaps: automatic cell inference; native min/max statistics; favourite
+chemistry labels/enable switches and dashboard chooser; custom-unit conversion;
+Toolbox's mute/repeat alarm behavior. Existing saved alarm thresholds remain.
+CRSF pack/cell average is not individual-cell telemetry. Toolbox's cell screen
+alone does not prove a working per-cell feed.
+Source-backed14-row audit: development/assessments/power-live/toolbox-gap.txt
+and toolbox-gap.json. Damaged recovered Lua control flow was cross-checked
+against original bytecode for the material battery behavior.
+
+VALIDATION AND INSTALL SCOPE
+Portable suites and exact-source native Power/Flight/settings/source cases are
+required before packaging. Native EdgeTX3.0 WASM uses synthetic fixtures; target
+radio is2.12.4. No fixture or per-model cfg is distributed in the install ZIP.
+No FC/RF/model-sensor edits are part of this repair. Transport and existing
+battery alarm policy are preserved. Deployment records contain file hashes and
+verified backups; they do not prove live voltage/current or hardware FPS.

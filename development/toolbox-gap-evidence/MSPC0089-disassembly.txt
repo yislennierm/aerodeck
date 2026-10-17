@@ -1,0 +1,64 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0089.luac
+
+FUNCTION main params 0 vararg 1 stack 16 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0089.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 50), ('F', 1, 50), ('D', 1, 50), ('X', 1, 50), ('bID', 4, 50), ('bName', 7, 50), ('bL', 11, 50), ('bFactory', 18, 50), ('frqN', 21, 50), ('(for index)', 35, 48), ('(for limit)', 35, 48), ('(for step)', 35, 48), ('cID', 36, 47), ('frq', 39, 47)]
+K0 'MSPP'
+K1 'U8'
+K2 'S'
+K3 1
+K4 'VTX'
+K5 'TBLR'
+K6 'bl'
+K7 'f'
+K8 'U16'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R1[K0('MSPP')]
+   3 [  11] LOADK     R5 = K1 ('U8')
+   4 [  11] CALL      A=4 B=2 C=2
+   5 [  12] GETTABLE  R5 = R1[K0('MSPP')]
+   6 [  12] LOADK     R6 = K2 ('S')
+   7 [  12] CALL      A=5 B=2 C=2
+   8 [  13] GETTABLE  R6 = R1[K0('MSPP')]
+   9 [  13] LOADK     R7 = K2 ('S')
+  10 [  13] LOADK     R8 = K3 (1)
+  11 [  13] CALL      A=6 B=3 C=2
+  12 [  14] GETTABLE  R7 = R1[K0('MSPP')]
+  13 [  14] LOADK     R8 = K1 ('U8')
+  14 [  14] CALL      A=7 B=2 C=2
+  15 [  14] EQ        A=1 R7, K3(1); skip-next if condition != A
+  16 [  14] JMP       A=0 ->18
+  17 [  14] LOADBOOL  A=7 B=0 C=1
+  18 [  14] LOADBOOL  A=7 B=1 C=0
+  19 [  17] GETTABLE  R8 = R1[K0('MSPP')]
+  20 [  17] LOADK     R9 = K1 ('U8')
+  21 [  17] CALL      A=8 B=2 C=2
+  22 [  21] GETTABLE  R9 = R2[K4('VTX')]
+  23 [  21] GETTABLE  R9 = R9[K5('TBLR')]
+  24 [  21] GETTABLE  R10 = R2[K4('VTX')]
+  25 [  21] GETTABLE  R10 = R10[K5('TBLR')]
+  26 [  21] LEN       A=10 B=10 C=0
+  27 [  21] ADD       A=10 B=10 C=259
+  28 [  21] NEWTABLE  A=11 B=0 C=2
+  29 [  21] SETTABLE  R11[K6('bl')] = R6
+  30 [  21] NEWTABLE  A=12 B=0 C=0
+  31 [  21] SETTABLE  R11[K7('f')] = R12
+  32 [  21] SETTABLE  R9[R10] = R11
+  33 [  23] LOADK     R9 = K3 (1)
+  34 [  23] MOVE      A=10 B=8 C=0
+  35 [  23] LOADK     R11 = K3 (1)
+  36 [  23] FORPREP   A=9 ->48
+  37 [  24] GETTABLE  R13 = R1[K0('MSPP')]
+  38 [  24] LOADK     R14 = K8 ('U16')
+  39 [  24] CALL      A=13 B=2 C=2
+  40 [  25] GETTABLE  R14 = R2[K4('VTX')]
+  41 [  25] GETTABLE  R14 = R14[K5('TBLR')]
+  42 [  25] GETTABLE  R15 = R2[K4('VTX')]
+  43 [  25] GETTABLE  R15 = R15[K5('TBLR')]
+  44 [  25] LEN       A=15 B=15 C=0
+  45 [  25] GETTABLE  R14 = R14[R15]
+  46 [  25] GETTABLE  R14 = R14[K7('f')]
+  47 [  25] SETTABLE  R14[R12] = R13
+  48 [  23] FORLOOP   A=9 ->37
+  49 [  28] RETURN    A=0 B=1 C=0
+  50 [  28] RETURN    A=0 B=1 C=0

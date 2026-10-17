@@ -1,0 +1,95 @@
+INDEPENDENT NATIVE VISUAL / UX REVIEW
+2026-10-16, ICON-NAV-20261016
+
+Scope and limits
+- Reviewed the 12 actual AERODECK page renderers, drawer, six captured setup variants, and five arm-reason selections using audit-*.png/raw native 480x272 captures. Raw RGB565 frames were converted losslessly to PNG for inspection.
+- Production main SHA256: f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8.
+- These are native EdgeTX 3.0.0 WASM TX16S renders of the installed source, using isolated synthetic telemetry, all 29 arm flags, and a custom 5000MHz favourite. Physical target firmware is 2.12.4. These captures are not photographs/screenshots of the connected radio, real telemetry validation, or proof of physical frame rate, touch response, or exact 2.12.4 font identity.
+- Native lcd.sizeText bounding boxes corroborate the particular widths below. They are not sufficient by themselves to declare overlap: later painting, panel boundaries, gutters, and actual pixels must also be checked.
+- No globally broken resolution, missing cockpit background, or blank main page was observed. Most ordinary labels fit. Do not redesign the cockpit to solve the local issues below.
+
+SCREEN-BY-SCREEN VERDICTS (12 pages)
+
+1. Flight / cockpit — FITS; PRESERVE.
+   audit-flight.png retains the textured native cockpit, circular attitude display, tapes, and clear primary numbers. No demonstrated overlap. Persistent footer duplicates LQ/RSSI/pack/GPS already present on this page; repetition is a density tradeoff, not a clipping defect. It provides consistent navigation/status on other pages. Keep the cockpit geometry and asset treatment intact in the first UX slice. HDG is a data-semantics concern (GPS course), not a new layout failure.
+   Evidence: telem.lua:871-890; shell footer :1153-1176.
+
+2. Telemetry data — FITS; RAW LABELS NEED INTERPRETATION.
+   audit-data.png has dense, aligned three-column telemetry, with units on values and enough room for the sample coordinates. RFMD/1RSS/2RSS/RQly/RSNR/TRSS/TQly/TSNR are sensor names rather than immediately understandable user language. Offer readable labels or accessible source-name explanations while retaining the source identity. Current layout has no LIVE/MIN/MAX selector; adding unsupported controls would be misleading until the backend supports them. Footer duplication is deliberate persistent status, not a separate defect.
+   Evidence: telem.lua:798 onwards (telemetry row definitions and telemetryScreen).
+
+3. Power — FITS; CHARTS LACK A READABLE SCALE.
+   audit-power.png keeps important pack/cell/current/used/remaining values clear. The two traces have titles and sample counts, but no vertical units/range markers or time window. A flat line alone is hard to interpret; do not call it a stale-data bug from this stationary fixture. Voltage uses 0..cells*4.6 (or 60V); current uses 0..100A, and the reader cannot see those scales. Add minimal range labels and elapsed/history window, without replacing the left battery panel.
+   Evidence: telem.lua:934-957, particularly trace :939 and fixed chart ranges :955-957.
+
+4. RC Link — FITS; CHART/STATUS LANGUAGE NEEDS CLARITY.
+   audit-link.png has clear LQ, signal and SNR cards. RFMD 3 needs a protocol-aware decode or accompanying description; DOWN 99% should say what quantity it represents (downlink quality). LQ history also has no time/range annotation. Its blank chart area is valid space for a flat 100% trace, not a missing page. Footer repeats the primary values but maintains navigation consistency.
+   Evidence: telem.lua:959-967.
+
+5. GPS Details — FITS WITH A TINY SIDEBAR GUTTER ISSUE; STATUS IS HONEST.
+   audit-gps.png shows coordinates, speed, altitude, GPS course, local home and distance. FIX TYPE / NOT REPORTED correctly avoids claiming a 3D fix from satellite count. The native NOT REPORTED string is 93px at x13, ending x106; sidebar ends x104 and the table starts x108. This consumes the inter-panel gutter by 2px, but does not overlap the table's text. Small typography/padding adjustment is justified; a global-overlap claim is not. SET LOCAL HOME is visibly different from aircraft-provided home. REFRESH SENSORS/SET LOCAL HOME/VIEW TRACK correspond to real handlers.
+   Evidence: telem.lua:629-651, handlers :1207; font-boxes.json text NOT REPORTED.
+
+6. Track / Home — FITS; ONE FALSE BUTTON AFFORDANCE.
+   audit-track.png shows north-up grid/rings with an 86m scale, course, local home and small sat/speed/alt strip. There is no geographic basemap; current local-plot presentation does not pretend there is one. NORTH UP is drawn exactly like the three action buttons but has no touch handler. Make it a passive orientation label/chip, or implement a deliberate orientation control later. LIVE SENSORS triggers a sensor refresh, not a live-mode transition; REFRESH is the clearer action label. Do not call the home-distance zero/bearing -- a defect: the fixture captures home at the current point.
+   Evidence: telem.lua:536-540, 568-570, 603-606, 1208.
+
+7. Arm Stops — FITS; ONE LONG TITLE HAS NO RIGHT GUTTER.
+   audit-arm-01/04/23/24/29.png show readable codes, expanded explanations, and a CHECK instruction. Native Accelerometer not calibrated is 313px from x159 to x472, exactly the detail panel's right edge. This fits the panel, but leaves no intended gutter; use actual text width to fall back/wrap before future longer/localized titles overflow. Do not claim current text is visibly clipped. The final all-flags page has just ARM_SWITCH and blank list space; that is the last page of 29 fixture reasons, not proof of missing flags. MORE FLAGS legitimately wraps. In normal no-flags/no-current code paths there is explicit NO FLAGS/NO STATUS and explanatory text, although those states were not included in the current native capture set. RADIO ARM/CUT/session time are separate radio controls/local stopwatch and should stay clearly distinct from FC arming state.
+   Evidence: telem.lua:990-1032; font-boxes.json Accelerometer not calibrated.
+
+8. Saved VTX Favourites — CONCRETE CUSTOM-LABEL CLIPPING; FEATURE SCOPE IS CLEAR.
+   audit-video-custom.png shows CUSTOM painted at MIDSIZE in a 74px card. Native width is 98px at x15; it ends x113 while the card ends x82. The next card begins x87 and paints over it, visibly truncating the word. This is an actual reproduced bug. Use a smaller/shorter CUSTOM presentation or a width-aware fallback within the card's 60px inner width. Ordinary R3/F4/R5 cards fit. REFERENCE and LOCAL NOTES / NO VTX COMMANDS correctly disclose that favourites do not configure a transmitter. The live attitude inset is separate, but largely duplicates Flight's instrument and may be less useful than future VTX status; do not remove it as an unrequested first-slice redesign.
+   Evidence: telem.lua:1047, 1054-1060, 1067-1070; font-boxes.json CUSTOM.
+
+9. Setup / 12 configuration sections — FITS; READ-ONLY ROWS LOOK EDITABLE.
+   audit-config-01/05/07/08/10/12.png show crisp rows and working section index. Short lists leave valid blank lower space; this is not a rendering failure. Some pages are mixed editable/reporting rows; VTX 8/12 is entirely informational (NOT IMPLEMENTED/Unavailable/Use existing VTX tool/Offline frequency notes only), yet it highlights its first row and offers green minus/plus/SAVE/REVERT just like an editable page. Remove or disable adjustment affordances when the chosen row is a note; distinguish read-only status rows from editable fields. SAVE state must follow actual unsaved draft changes across sections (and battery settings), not be removed blindly because the current page is informational. Keep save feedback visible and explain what the save applies to. Twelve section headers alone are not evidence of twelve implemented Toolbox functions.
+   Evidence: telem.lua:177-205 (section definitions), 323-343 (selection/note text/footer); native 8/12 screenshot.
+
+10. Stick Guide — FITS; REFERENCE AND PAGINATION COULD BE CLEARER.
+    audit-sticks.png has readable command names and two distinct 18x18 diagrams. BETAFLIGHT / REFERENCE appropriately avoids implying on-screen buttons transmit stick commands. Mode selector has a real handler. PREV/NEXT both toggle between the two pages, but no visible page 1/2 or 2/2 indicator exists. Add a small position marker instead of making users infer whether commands are missing; preserve the useful FC support varies notice. Empty rows on page two are expected because there are 12 total commands.
+    Evidence: telem.lua:691-738; handlers :1202-1203.
+
+11. Sensor Inspector — FITS; UNIT/SOURCE/POSITION CONTEXT IS MISSING.
+    audit-sensors.png shows five sources and CURRENT/STALE status, but Ptch 0.19 and Roll 0.49 do not identify units (raw CRSF radians, unlike the degree display elsewhere). The inspector should expose source unit/identifier and page position or total count. The old renderer draws the source count at y12, then the persistent shell overwrites it; therefore this count is not visible in the current UI. Do not report that hidden text as a visible overlap. TAP HERE: NEXT SENSORS / REFRESH advances the page and rescans in one action; separate wording or explicit paging would make the effect predictable.
+    Evidence: telem.lua:655-684, 1209; shell redraw :1227.
+
+12. Diagnostics — FITS; PRESENTATION CAN OVERSTATE LIVENESS.
+    audit-diagnostics.png fits its runtime/capability list. Source LIVE TELEMETRY is a constant string, not a current-sensor/freshness test; label it as a source MODE or show an explicit current/stale state. MSP connection READY and footer MSP LIVE refer to related but different layers: transport/protocol state versus recent status reply; explain or consolidate instead of treating them as inconsistent. Draw / value changes 18.3fps / 0.0Hz is not a packet-rate measurement: a stationary fixture can have zero attitude-value changes while data stays current. Rename to draw FPS / attitude changes with explanatory context. EdgeTX3.0.0 in this shot is the native audit runtime and must not be presented as the physical radio's firmware.
+    Evidence: telem.lua:1073-1078, 1167-1176, 1214-1216, 1228-1232; baseline.json.
+
+Drawer (additional navigation surface)
+- audit-drawer.png fits 12 icon targets in a 4x3 grid, with the focused destination's title and short description above. Current focus is Diagnostics. This meets the icon-first design direction while supplying a focused caption. It does not give persistent names to every icon; discoverability should be tested with real navigation rather than claimed solved by pixel fit.
+- No need to increase icon sizes or replace the established icon language to fix the identified defects.
+
+BLANK / DUPLICATE STATUS SUMMARY
+- No blank page reproduced. Empty lower regions in short configuration lists, the last arm-flags page, and flat histories are expected from their current content.
+- Persistent footer duplicates primary LQ/pack/GPS on Flight, Power, Link and GPS. This is consistent orientation/navigation, not evidence of a renderer regression. Optimize duplication only if valuable page content needs the space.
+- Existing per-page top headings/status badges drawn before shell.draw are covered by the shell tabs. Treat them as redundant drawing/dead UI code, not visible double headers. Measure actual cost before making performance claims.
+- Separate these states: selected live-source mode, valid current EdgeTX sensor sample, recent FC status reply, and FC armed/disarmed flags. A single LIVE word cannot reliably represent all four.
+
+SMALLEST FIRST UX SLICE (preserves cockpit, telemetry loop, assets and page architecture)
+1. Fit and gutters: width-aware CUSTOM label; arm title fallback before x461 inner edge; GPS NOT REPORTED stays within sidebar's inner x13..96. Verify using native sizeText and screenshots of all long arm titles, not a global font-size reduction.
+2. Honest controls: NORTH UP becomes a passive orientation indicator; LIVE SENSORS becomes REFRESH SENSORS where its action is refresh; setup note rows use read-only styling and disabled +/- controls. SAVE/REVERT enabled states reflect dirty state and retain an explicit scope when changes elsewhere exist.
+3. Small context labels using existing free space: Stick Guide page counter; Inspector units and source count/page position; Diagnostics source MODE and clearly named attitude-value-change metric. Keep all original telemetry source names available.
+
+A separate second slice can add chart ranges/time windows and user-readable RF labels; do not pack unrelated backend feature parity, new pages, or a new cockpit into the first change.
+
+FIRST-SLICE ACCEPTANCE
+- Flight pixel layout and native background remain unchanged; icon navigation and read-only MSP cadence remain unchanged.
+- CUSTOM is fully readable within its own favourite; the longest supported arm title and GPS status retain right padding; no downstream card paints over text.
+- Every element styled as enabled control has an action, and informational rows cannot suggest that +/- changes an unavailable VTX/FC feature.
+- Setup dirty feedback survives moving between editable and informational sections; SAVE/REVERT still apply to the correct draft without suggesting physical FC/VTX writes.
+- Stick Guide/Inspector show position and unit context; Diagnostics distinguishes fixed mode, freshness and value-change measurement.
+- Native 3.0.0 renders supply layout evidence; one physical 2.12.4 radio pass is still required for final font fit/touch affordance and response behavior. Never claim synthetic sample motion proves real telemetry response.
+
+Evidence roots
+Canonical telem.lua:
+/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua
+Native captures:
+/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/native-sim/audit-*.png
+Native measured bounds:
+/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/font-boxes.json
+Isolated audit preparation and manifest:
+/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/prepare-native-audit.py
+/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/baseline.json

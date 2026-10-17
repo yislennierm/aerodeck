@@ -1,0 +1,247 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXMSP.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/VTX/VTXMSP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 8), ('F', 1, 8), ('D', 1, 8), ('X', 1, 8)]
+K0 'VTX'
+K1 'getMSPHW'
+K2 'SN_VTX'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  10] GETTABLE  R4 = R2[K0('VTX')]
+   3 [  24] CLOSURE   R5 = proto[0]
+   4 [  24] SETTABLE  R4[K1('getMSPHW')] = R5
+   5 [  69] CLOSURE   R4 = proto[1]
+   6 [  69] SETTABLE  R1[K2('SN_VTX')] = R4
+   7 [  71] RETURN    A=0 B=1 C=0
+   8 [  71] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 10 lines 10 24 source None
+UPVALUES []
+LOCALS [('hwID', 0, 45), ('hw', 32, 45)]
+K0 0
+K1 '!'
+K2 'unknown'
+K3 'RT'
+K4 'RtC6705'
+K5 'SA'
+K6 'SmartAudio'
+K7 'TR'
+K8 'Tramp'
+K9 'M'
+K10 'MSP'
+K11 255
+K12 'protocol error'
+K13 1
+K14 2
+K15 'Unknown'
+   1 [  11] NEWTABLE  A=1 B=5 C=2
+   2 [  12] NEWTABLE  A=2 B=2 C=0
+   3 [  12] LOADK     R3 = K1 ('!')
+   4 [  12] LOADK     R4 = K2 ('unknown')
+   5 [  12] SETLIST   A=2 B=2 C=1
+   6 [  12] SETTABLE  R1[K0(0)] = R2
+   7 [  12] NEWTABLE  A=2 B=2 C=0
+   8 [  13] LOADK     R3 = K3 ('RT')
+   9 [  13] LOADK     R4 = K4 ('RtC6705')
+  10 [  13] SETLIST   A=2 B=2 C=1
+  11 [  13] NEWTABLE  A=3 B=2 C=0
+  12 [  14] LOADK     R4 = K1 ('!')
+  13 [  14] LOADK     R5 = K2 ('unknown')
+  14 [  14] SETLIST   A=3 B=2 C=1
+  15 [  14] NEWTABLE  A=4 B=2 C=0
+  16 [  15] LOADK     R5 = K5 ('SA')
+  17 [  15] LOADK     R6 = K6 ('SmartAudio')
+  18 [  15] SETLIST   A=4 B=2 C=1
+  19 [  15] NEWTABLE  A=5 B=2 C=0
+  20 [  16] LOADK     R6 = K7 ('TR')
+  21 [  16] LOADK     R7 = K8 ('Tramp')
+  22 [  16] SETLIST   A=5 B=2 C=1
+  23 [  16] NEWTABLE  A=6 B=2 C=0
+  24 [  17] LOADK     R7 = K9 ('M')
+  25 [  17] LOADK     R8 = K10 ('MSP')
+  26 [  17] SETLIST   A=6 B=2 C=1
+  27 [  18] NEWTABLE  A=7 B=2 C=0
+  28 [  18] LOADK     R8 = K1 ('!')
+  29 [  18] LOADK     R9 = K12 ('protocol error')
+  30 [  18] SETLIST   A=7 B=2 C=1
+  31 [  18] SETTABLE  R1[K11(255)] = R7
+  32 [  19] SETLIST   A=1 B=5 C=1
+  33 [  20] TEST      A=0 B=0 C=0
+  34 [  20] JMP       A=0 ->43
+  35 [  20] GETTABLE  R2 = R1[R0]
+  36 [  20] TEST      A=2 B=0 C=0
+  37 [  20] JMP       A=0 ->43
+  38 [  21] GETTABLE  R2 = R1[R0]
+  39 [  21] GETTABLE  R2 = R2[K13(1)]
+  40 [  21] GETTABLE  R3 = R1[R0]
+  41 [  21] GETTABLE  R3 = R3[K14(2)]
+  42 [  21] RETURN    A=2 B=3 C=0
+  43 [  23] LOADK     R2 = K15 ('Unknown')
+  44 [  23] RETURN    A=2 B=2 C=0
+  45 [  24] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 1 vararg 1 stack 20 lines 26 69 source None
+UPVALUES [('D', (1, 2)), ('G', (1, 0)), ('_ENV', (0, 0)), ('F', (1, 1))]
+LOCALS [('fn', 0, 125), ('frq', 14, 123), ('bid', 14, 123), ('cid', 14, 123), ('pwr', 14, 123), ('pit', 14, 123), ('data', 30, 123)]
+K0 'read'
+K1 'VTX'
+K2 'setable'
+K3 'S'
+K4 'mspReady'
+K5 'tChRA'
+K6 'send'
+K7 'dbgMSP'
+K8 'VTXMSP'
+K9 'fn'
+K10 'frq'
+K11 'bid'
+K12 'cid'
+K13 'pwr'
+K14 'pit'
+K15 1
+K16 8
+K17 2
+K18 0
+K19 'sFRQ'
+K20 256
+K21 'math'
+K22 'floor'
+K23 3
+K24 'sPwID'
+K25 4
+K26 'sPIT'
+K27 'dbgT'
+K28 'MSPQAD'
+K29 'nodup'
+K30 89
+K31 250
+K32 'setInP'
+K33 True
+K34 88
+K35 'MSP'
+K36 'eSave'
+   1 [  28] EQ        A=0 R0, K0('read'); skip-next if condition != A
+   2 [  28] JMP       A=0 ->12
+   3 [  29] GETTABUP  R1 = UP0[K1('VTX')]
+   4 [  29] GETTABUP  R2 = UP0[K3('S')]
+   5 [  29] GETTABLE  R2 = R2[K4('mspReady')]
+   6 [  29] TEST      A=2 B=0 C=0
+   7 [  29] JMP       A=0 ->10
+   8 [  29] GETTABUP  R2 = UP0[K1('VTX')]
+   9 [  29] GETTABLE  R2 = R2[K5('tChRA')]
+  10 [  29] SETTABLE  R1[K2('setable')] = R2
+  11 [  29] JMP       A=0 ->124
+  12 [  33] EQ        A=0 R0, K6('send'); skip-next if condition != A
+  13 [  33] JMP       A=0 ->124
+  14 [  35] VARARG    A=1 B=6 C=0
+  15 [  36] GETTABUP  R6 = UP1[K7('dbgMSP')]
+  16 [  36] LOADK     R7 = K8 ('VTXMSP')
+  17 [  36] LOADK     R8 = K9 ('fn')
+  18 [  36] MOVE      A=9 B=0 C=0
+  19 [  36] LOADK     R10 = K10 ('frq')
+  20 [  36] MOVE      A=11 B=1 C=0
+  21 [  36] LOADK     R12 = K11 ('bid')
+  22 [  36] MOVE      A=13 B=2 C=0
+  23 [  36] LOADK     R14 = K12 ('cid')
+  24 [  36] MOVE      A=15 B=3 C=0
+  25 [  36] LOADK     R16 = K13 ('pwr')
+  26 [  36] MOVE      A=17 B=4 C=0
+  27 [  36] LOADK     R18 = K14 ('pit')
+  28 [  36] MOVE      A=19 B=5 C=0
+  29 [  36] CALL      A=6 B=14 C=1
+  30 [  38] NEWTABLE  A=6 B=0 C=0
+  31 [  40] GETTABUP  R7 = UP0[K1('VTX')]
+  32 [  40] GETTABLE  R7 = R7[K5('tChRA')]
+  33 [  40] TEST      A=7 B=0 C=0
+  34 [  40] JMP       A=0 ->46
+  35 [  40] TEST      A=2 B=0 C=0
+  36 [  40] JMP       A=0 ->46
+  37 [  40] TEST      A=3 B=0 C=0
+  38 [  40] JMP       A=0 ->46
+  39 [  42] SUB       A=7 B=2 C=271
+  40 [  42] MUL       A=7 B=7 C=272
+  41 [  42] SUB       A=8 B=3 C=271
+  42 [  42] ADD       A=7 B=7 C=8
+  43 [  42] SETTABLE  R6[K15(1)] = R7
+  44 [  43] SETTABLE  R6[K17(2)] = K18(0)
+  45 [  43] JMP       A=0 ->60
+  46 [  46] TEST      A=1 B=0 C=1
+  47 [  46] JMP       A=0 ->50
+  48 [  46] GETTABUP  R7 = UP0[K1('VTX')]
+  49 [  46] GETTABLE  R1 = R7[K19('sFRQ')]
+  50 [  47] TEST      A=1 B=0 C=1
+  51 [  47] JMP       A=0 ->53
+  52 [  48] RETURN    A=0 B=1 C=0
+  53 [  51] MOD       A=7 B=1 C=276
+  54 [  51] SETTABLE  R6[K15(1)] = R7
+  55 [  52] GETTABUP  R7 = UP2[K21('math')]
+  56 [  52] GETTABLE  R7 = R7[K22('floor')]
+  57 [  52] DIV       A=8 B=1 C=276
+  58 [  52] CALL      A=7 B=2 C=2
+  59 [  52] SETTABLE  R6[K17(2)] = R7
+  60 [  55] TESTSET   A=7 B=4 C=1
+  61 [  55] JMP       A=0 ->74
+  62 [  55] GETTABUP  R7 = UP0[K1('VTX')]
+  63 [  55] GETTABLE  R7 = R7[K24('sPwID')]
+  64 [  55] TEST      A=7 B=0 C=0
+  65 [  55] JMP       A=0 ->73
+  66 [  55] GETTABUP  R7 = UP0[K1('VTX')]
+  67 [  55] GETTABLE  R7 = R7[K24('sPwID')]
+  68 [  55] TEST      A=7 B=0 C=1
+  69 [  55] JMP       A=0 ->74
+  70 [  55] LOADK     R7 = K15 (1)
+  71 [  55] TEST      A=7 B=0 C=1
+  72 [  55] JMP       A=0 ->74
+  73 [  55] LOADK     R7 = K15 (1)
+  74 [  55] SETTABLE  R6[K23(3)] = R7
+  75 [  56] TEST      A=5 B=0 C=0
+  76 [  56] JMP       A=0 ->85
+  77 [  56] TEST      A=5 B=0 C=0
+  78 [  56] JMP       A=0 ->82
+  79 [  56] LOADK     R7 = K15 (1)
+  80 [  56] TEST      A=7 B=0 C=1
+  81 [  56] JMP       A=0 ->100
+  82 [  56] LOADK     R7 = K18 (0)
+  83 [  56] TEST      A=7 B=0 C=1
+  84 [  56] JMP       A=0 ->100
+  85 [  56] GETTABUP  R7 = UP0[K1('VTX')]
+  86 [  56] GETTABLE  R7 = R7[K26('sPIT')]
+  87 [  56] TEST      A=7 B=0 C=0
+  88 [  56] JMP       A=0 ->99
+  89 [  56] GETTABUP  R7 = UP0[K1('VTX')]
+  90 [  56] GETTABLE  R7 = R7[K26('sPIT')]
+  91 [  56] TEST      A=7 B=0 C=0
+  92 [  56] JMP       A=0 ->96
+  93 [  56] LOADK     R7 = K15 (1)
+  94 [  56] TEST      A=7 B=0 C=1
+  95 [  56] JMP       A=0 ->100
+  96 [  56] LOADK     R7 = K18 (0)
+  97 [  56] TEST      A=7 B=0 C=1
+  98 [  56] JMP       A=0 ->100
+  99 [  56] LOADK     R7 = K18 (0)
+ 100 [  56] SETTABLE  R6[K25(4)] = R7
+ 101 [  58] GETTABUP  R7 = UP1[K27('dbgT')]
+ 102 [  58] MOVE      A=8 B=6 C=0
+ 103 [  58] CALL      A=7 B=2 C=1
+ 104 [  60] GETTABUP  R7 = UP3[K28('MSPQAD')]
+ 105 [  60] LOADK     R8 = K29 ('nodup')
+ 106 [  60] LOADK     R9 = K30 (89)
+ 107 [  60] MOVE      A=10 B=6 C=0
+ 108 [  60] LOADBOOL  A=11 B=1 C=0
+ 109 [  60] CALL      A=7 B=5 C=1
+ 110 [  61] GETTABUP  R7 = UP3[K28('MSPQAD')]
+ 111 [  61] LOADK     R8 = K29 ('nodup')
+ 112 [  61] LOADK     R9 = K31 (250)
+ 113 [  61] LOADNIL   A=10 B=0 C=0
+ 114 [  61] LOADBOOL  A=11 B=1 C=0
+ 115 [  61] CALL      A=7 B=5 C=1
+ 116 [  62] GETTABUP  R7 = UP0[K1('VTX')]
+ 117 [  62] SETTABLE  R7[K32('setInP')] = K33(True)
+ 118 [  63] GETTABUP  R7 = UP3[K28('MSPQAD')]
+ 119 [  63] LOADK     R8 = K29 ('nodup')
+ 120 [  63] LOADK     R9 = K34 (88)
+ 121 [  63] CALL      A=7 B=3 C=1
+ 122 [  64] GETTABUP  R7 = UP0[K35('MSP')]
+ 123 [  64] SETTABLE  R7[K36('eSave')] = K33(True)
+ 124 [  68] RETURN    A=0 B=1 C=0
+ 125 [  69] RETURN    A=0 B=1 C=0

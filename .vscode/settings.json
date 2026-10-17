@@ -37,7 +37,11 @@
     "getVersion",
     "loadScript",
     "getSourceIndex",
-    "CHAR_TELEMETRY"
+    "CHAR_TELEMETRY",
+    "crossfireTelemetryPush",
+    "crossfireTelemetryPop",
+    "getSwitchIndex",
+    "getSwitchValue"
   ],
   "Lua.workspace.checkThirdParty": false
 }

@@ -1,0 +1,24 @@
+{
+  "outlined": {
+    "source": "https://github.com/google/material-design-icons/blob/master/symbols/web/home/materialsymbolsoutlined/home_24px.svg",
+    "size": [
+      30,
+      30
+    ],
+    "pngSha256": "aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6",
+    "inkHeight": 26,
+    "paddingVertical": 2,
+    "viewBox": "64.615384615 -895.384615385 830.769230769 830.769230769"
+  },
+  "rounded": {
+    "source": "https://github.com/google/material-design-icons/blob/master/symbols/web/home/materialsymbolsrounded/home_24px.svg",
+    "size": [
+      30,
+      30
+    ],
+    "pngSha256": "cbbb810d4e56136ba4d8eac55cfe87c659ab886f460370bc5e20d241804e2679",
+    "inkHeight": 26,
+    "paddingVertical": 2,
+    "viewBox": "76.153846154 -873.846153846 807.692307692 807.692307692"
+  }
+}

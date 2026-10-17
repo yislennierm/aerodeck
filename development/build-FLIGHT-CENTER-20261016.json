@@ -1,0 +1,822 @@
+{
+  "build": "FLIGHT-CENTER-20261016",
+  "createdUtc": "2026-10-16T21:45:24.712241+00:00",
+  "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+  "installSha256": "2b3e246b48df567f4bbed26de37d31d5aa9b8f43d8d4190317e58163338d48f0",
+  "runtimeFiles": 39,
+  "rootDocuments": 14,
+  "installFiles": 53,
+  "unchangedRuntimeFiles": 38,
+  "changedRuntimeFiles": [
+    "SCRIPTS/TOOLS/telem.lua"
+  ],
+  "newRuntimeFiles": [],
+  "omittedUnusedRuntimeFiles": [
+    "SCRIPTS/TOOLS/AERODECK/attitude-cover.png",
+    "SCRIPTS/TOOLS/AERODECK/attitude-flat.png"
+  ],
+  "legacyAssetsRetainedLocally": true,
+  "canonicalFilesDeleted": [],
+  "previousLocalBuild": "FLIGHT-FLAT-20261016",
+  "previousLocalSourceSha256": "712a7e999022e0bd5d0ddee29602286dc12844881900ed109f43314153926c53",
+  "baselineArchiveSha256": "35cd5e3c8d0c827ab391d949fd04333e842619407a1183ec57c01b9f844d420e",
+  "installedOnRadio": false,
+  "lastVerifiedRadioBuild": "HOME-ICON-20261016",
+  "deploymentHistoryUnchanged": true,
+  "attitudeBitmapsLoaded": false,
+  "nativeFlightFonts": true,
+  "sharedInstrumentZero": [
+    240,
+    147
+  ],
+  "pitchRungDegrees": 10,
+  "pitchPixelsPerDegree": 1.85,
+  "attitudeFixIncluded": true,
+  "attitudeSchedulingUnchanged": true,
+  "transportUnchanged": true,
+  "widgetUnchanged": true,
+  "portableSuitesPassed": 12,
+  "testCounts": {
+    "test_arm_status.lua": [],
+    "test_attitude_loop.lua": [
+      12000
+    ],
+    "test_configuration.lua": [
+      91
+    ],
+    "test_crsf_status.lua": [],
+    "test_fc_connection.lua": [],
+    "test_flight_layout.lua": [
+      1288
+    ],
+    "test_home_icon.lua": [
+      235
+    ],
+    "test_material_icons.lua": [
+      2107
+    ],
+    "test_pitch_direction.lua": [
+      54
+    ],
+    "test_rendering.lua": [],
+    "test_telemetry.lua": [],
+    "test_ui_navigation.lua": [
+      17,
+      15
+    ]
+  },
+  "configurationAssertions": 91,
+  "pitchDirectionAssertions": 54,
+  "navigationAndRendererScenarios": 32,
+  "materialIconAssertions": 2107,
+  "flightLayoutAssertions": 1288,
+  "nativePreviewFolder": "development/ui-previews/flight-center",
+  "nativePreview": {
+    "build": "FLIGHT-CENTER-20261016",
+    "status": "PASS",
+    "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+    "syntheticDataOnly": true,
+    "fixturePrefixShips": false,
+    "simulator": {
+      "version": "3.0.0",
+      "target": "RadioMaster TX16S",
+      "renderer": "Native EdgeTX WASM",
+      "framebuffer": "RGB565 little endian480x272",
+      "pngConversion": "Pillow RGB/raw/BGR;16; primary565 red/green/blue validated",
+      "host": "work/edgetx/native-sim/host.cjs"
+    },
+    "hardwareVerified": false,
+    "hardwarePoseVerified": false,
+    "hardwareRenderingVerified": false,
+    "hardwarePerformanceMeasured": false,
+    "radioInstalledByThisQA": false,
+    "pageScreenCount": 12,
+    "totalAcceptedScreenshotCount": 28,
+    "screenshots": [
+      {
+        "file": "center-flight.png",
+        "sha256": "21f79d480fd3f74c2a6ad8ebd99fcd963d8758a357ec24d9aab4031e6cbc451f",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Normal rectangular PFD; level shared datum and full heading/tape captions"
+      },
+      {
+        "file": "center-nav-focus.png",
+        "sha256": "553005e962957a8c42845d0a69e51e1ed8199be0693ea206ccb7e3ce8bab7510",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "SYS section focus"
+      },
+      {
+        "file": "center-context-focus.png",
+        "sha256": "4cabbbad945eacab7264d7bd864bc8d0cf3a61a94bf26c27a130c1f1de6a5d29",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "ENTER exposes context keyboard focus"
+      },
+      {
+        "file": "center-arm.png",
+        "sha256": "5131d9064de3ab3bd94a153371664d3b8a02b7a0dea7c13d6f18d2c9fc78c729",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Arm Stops with long NO_ACC_CAL explanation"
+      },
+      {
+        "file": "center-telemetry.png",
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Telemetry three-column data page"
+      },
+      {
+        "file": "center-power.png",
+        "sha256": "edc5adf9945d40a7ce590357bc4e68c9fc912c9494b8e1ae78296b1d1e156de3",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Power page"
+      },
+      {
+        "file": "center-link.png",
+        "sha256": "7102f9e8d9ca1df311e24e5a4941a02aff3c3213a10611f0e9e9661b9a32dcdf",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "RC Link page"
+      },
+      {
+        "file": "center-gps.png",
+        "sha256": "0f20f3633439b7cbd641254bbef49c2f55672a8743af3b536273833aa7f5173a",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "GPS Details page"
+      },
+      {
+        "file": "center-track.png",
+        "sha256": "3f862fa0521d29091f55324575f08d97368dc4c59731a6df50efe4ffa6ec92b6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Track/Home page"
+      },
+      {
+        "file": "center-video.png",
+        "sha256": "4583edd5d2ca6a770b0e553b7eeb325bcd606c6216ac985ac27ebe62194f860c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Video CUSTOM favourite and REFERENCE badge"
+      },
+      {
+        "file": "center-setup.png",
+        "sha256": "2d5c490ac4d61dc09bc2a3e4cf6638cad9335713800a8ecbea01988f67d68b19",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Setup categories first page"
+      },
+      {
+        "file": "center-battery.png",
+        "sha256": "1579389f97f1675f874d09f305f1e3432ec998a51cf71e1b94e9df2b23c12f7b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Battery category all eight rows/actions"
+      },
+      {
+        "file": "center-battery-edit.png",
+        "sha256": "960b97bde89131e4f99dbcfbcf40bceec72e80edb102bef89e994d4976e04e72",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Audible-alert edit state"
+      },
+      {
+        "file": "center-model-settings.png",
+        "sha256": "f41fe37f0b1ab8d51010f2137e04ec036168764a95c9e7137bc514106d0bf87d",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Model settings first rows"
+      },
+      {
+        "file": "center-model-mid.png",
+        "sha256": "6d62280d4d654d9e9e09bc9afcb3d0ed45d678a1144d972ff855f8763203416c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Model settings middle rows"
+      },
+      {
+        "file": "center-settings-save.png",
+        "sha256": "3c2dea5b811fefba94bfffa05470de873a85d33160ba8b4e25c8d17fe089e85b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Save Settings focus"
+      },
+      {
+        "file": "center-categories-second.png",
+        "sha256": "eb9451f31d06150e40a4faa6b4821294215c4119be5ace3f5f3e16f15e4c66a0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Setup categories second page"
+      },
+      {
+        "file": "center-sticks.png",
+        "sha256": "2ae1c966f08ee7fa39070a7850b7c368dc35817d7b6faa9fa1a513695eda2cb0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Stick Guide page"
+      },
+      {
+        "file": "center-sensors.png",
+        "sha256": "f5f46632387b66f26e58a0e77717cbfa0813dd7f67911a834cea212df2f09882",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Sensors page"
+      },
+      {
+        "file": "center-diagnostics.png",
+        "sha256": "0fc92ad457621f995319d1651b17fa97b5a43f24d44c0daf9e25fa2698ed8a3f",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Diagnostics build identity"
+      },
+      {
+        "file": "center-home-return.png",
+        "sha256": "00dd3365bf0db39c8ad721903b30ce715a600cfd713eac546bf945337e48ae2a",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Home returns to Flight, local home0m"
+      },
+      {
+        "file": "center-page-data.png",
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Normal PAGE> opens Data"
+      },
+      {
+        "file": "center-bank.png",
+        "sha256": "7c6367e64adc36881a4ceb1168279283e7c89269557f61a49b2e8200db5a1d9f",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Bank+35: separately spaced pitch captions using constant anchor"
+      },
+      {
+        "file": "center-pitch-ten.png",
+        "sha256": "bac0cb3c396856a96234e56dacead0499592e988ca7fe807b4f81463e7115cce",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Pitch+10: complete caption clear of fixed aircraft wing"
+      },
+      {
+        "file": "center-roll.png",
+        "sha256": "a1d3a476075571fb6d9cbb8362ff25c93f26650561ddafa8b7fee114563a0f35",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Roll+90: four separate visible pitch captions and vertical horizon"
+      },
+      {
+        "file": "center-inverted.png",
+        "sha256": "8172de6ba2696a9e38cffd179bafded2604558db17928ba1f8610ff93e199f35",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Roll180: inverted sky/ground, ladder and pointer remain clipped"
+      },
+      {
+        "file": "center-low-lq.png",
+        "sha256": "c460692ce255592c9ed62bcdd2e846a0603648e0011441284a6134a1343a06e2",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Heading015 +actual Crit80/Low90 thresholds: LQ85 amber/LINK LOW"
+      },
+      {
+        "file": "center-critical-lq.png",
+        "sha256": "98893b1331aa39782880bb103b529c04c244f99fcb6de961a6869bc920a91c96",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "visuallyInspected": true,
+        "purpose": "Heading140 +actual Crit80/Low90 thresholds: LQ75 red/LINK CRITICAL"
+      }
+    ],
+    "fixtures": [
+      {
+        "variant": "all",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "bank",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 0.6108652381980153
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "pitch-ten",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": -0.17453292519943295
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "roll",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 1.5707963267948966
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "inverted",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 3.141592653589793
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "low-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 85,
+          "Hdg": 15
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      {
+        "variant": "critical-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 75,
+          "Hdg": 140
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      }
+    ],
+    "priorSourceEvidenceCount": 5,
+    "priorSourceEvidence": [
+      {
+        "file": "prior-6b5c87/center-missing.png",
+        "sha256": "1f668b2f2b2429c81ae8f9dbcbc989391fe9564dc2417a44e503935037f6f0a0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "visuallyInspected": true,
+        "acceptedForFinalSource": false,
+        "case": "missing",
+        "fixture": {
+          "variant": "missing",
+          "runtime": "runtime-all",
+          "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+          "syntheticDataOnly": true,
+          "fixturePrefixShips": false,
+          "values": {},
+          "allReadsMissing": true,
+          "allNumericReadsZero": false,
+          "lqThresholds": {
+            "low": 80,
+            "critical": 60
+          },
+          "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+        },
+        "scope": "Previous-source data/pose evidence only. Final source subsequently changed pitch-caption placement/collision suppression."
+      },
+      {
+        "file": "prior-6b5c87/center-zero.png",
+        "sha256": "b76d556e5a4ecd55d005f90033cd073376b28ab2c1d96afce1b5d9cf8f9ced61",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "visuallyInspected": true,
+        "acceptedForFinalSource": false,
+        "case": "zero",
+        "fixture": {
+          "variant": "zero",
+          "runtime": "runtime-all",
+          "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+          "syntheticDataOnly": true,
+          "fixturePrefixShips": false,
+          "values": {},
+          "allReadsMissing": false,
+          "allNumericReadsZero": true,
+          "lqThresholds": {
+            "low": 80,
+            "critical": 60
+          },
+          "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+        },
+        "scope": "Previous-source data/pose evidence only. Final source subsequently changed pitch-caption placement/collision suppression."
+      },
+      {
+        "file": "prior-6b5c87/center-long-values.png",
+        "sha256": "52b1c0ae53ce014c886da4726f8ea28bfa8f707828bd77e41f147577e32e3711",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "visuallyInspected": true,
+        "acceptedForFinalSource": false,
+        "case": "long-values",
+        "fixture": {
+          "variant": "long-values",
+          "runtime": "runtime-all",
+          "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+          "syntheticDataOnly": true,
+          "fixturePrefixShips": false,
+          "values": {
+            "RxBt": 123.4,
+            "Capa": 9999999,
+            "TPWR": 99999,
+            "Curr": 999.9,
+            "1RSS": -1234,
+            "GSpd": 12345,
+            "GAlt": -99999,
+            "Sats": 999,
+            "Bat%": 100,
+            "Hdg": 359
+          },
+          "allReadsMissing": false,
+          "allNumericReadsZero": false,
+          "lqThresholds": {
+            "low": 80,
+            "critical": 60
+          },
+          "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+        },
+        "scope": "Previous-source data/pose evidence only. Final source subsequently changed pitch-caption placement/collision suppression."
+      },
+      {
+        "file": "prior-6b5c87/center-nose-up.png",
+        "sha256": "a63dde31094d5d7a44b777c5e5de034bc1ee50a2834da3e0287be383ce4fd26d",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "visuallyInspected": true,
+        "acceptedForFinalSource": false,
+        "case": "nose-up",
+        "fixture": {
+          "variant": "nose-up",
+          "runtime": "runtime-all",
+          "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+          "syntheticDataOnly": true,
+          "fixturePrefixShips": false,
+          "values": {
+            "Ptch": -0.3490658503988659
+          },
+          "allReadsMissing": false,
+          "allNumericReadsZero": false,
+          "lqThresholds": {
+            "low": 80,
+            "critical": 60
+          },
+          "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+        },
+        "scope": "Previous-source data/pose evidence only. Final source subsequently changed pitch-caption placement/collision suppression."
+      },
+      {
+        "file": "prior-6b5c87/center-nose-down.png",
+        "sha256": "7a29cec43a6741d9d0c3c99d30cdaa21e25359f00c5c21de5658fbb1777bb39b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "visuallyInspected": true,
+        "acceptedForFinalSource": false,
+        "case": "nose-down",
+        "fixture": {
+          "variant": "nose-down",
+          "runtime": "runtime-all",
+          "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+          "syntheticDataOnly": true,
+          "fixturePrefixShips": false,
+          "values": {
+            "Ptch": 0.3490658503988659
+          },
+          "allReadsMissing": false,
+          "allNumericReadsZero": false,
+          "lqThresholds": {
+            "low": 80,
+            "critical": 60
+          },
+          "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+        },
+        "scope": "Previous-source data/pose evidence only. Final source subsequently changed pitch-caption placement/collision suppression."
+      }
+    ],
+    "totalEvidenceImageCount": 33,
+    "layout": {
+      "pfdRectangle": [
+        100,
+        86,
+        280,
+        122
+      ],
+      "centralDatum": [
+        240,
+        147
+      ],
+      "tapeWidths": 48,
+      "selectedTapeWindowsY": [
+        131,
+        163
+      ],
+      "headingRibbon": [
+        156,
+        64,
+        168,
+        20
+      ],
+      "selectedHeadingBadge": [
+        216,
+        64,
+        48,
+        20
+      ],
+      "homeCard": [
+        100,
+        214,
+        136,
+        29
+      ],
+      "currentCard": [
+        244,
+        214,
+        136,
+        29
+      ],
+      "pfdBitmapAssetLoads": 0
+    },
+    "finalSourceChecks": {
+      "all12PagesVisuallyInspected": true,
+      "noOverlapObserved": true,
+      "noPartialCaptionsObserved": true,
+      "normalDatumAligned": true,
+      "equalWidthTapesClearOfAircraft": true,
+      "bank35PitchCaptionsSeparatelySpaced": true,
+      "pitch10CaptionClearOfAircraftWing": true,
+      "roll90VisiblePitchCaptions": [
+        "30",
+        "10",
+        "-20",
+        "-40"
+      ],
+      "roll90CaptionsSeparate": true,
+      "inverted180OrientationAndClippingCorrect": true,
+      "heading015CaptionsWhole": true,
+      "heading140CaptionsWhole": true,
+      "alt33NoPartial40CaptionAboveIndex": true,
+      "sectionsSettingsAndFooterFit": true,
+      "noPfdImageAssetFailures": true
+    },
+    "visualChecks": [
+      "All12 pages and28 accepted screenshots were captured from exact final00f7d2 source and inspected.",
+      "The native rectangular PFD shares center240,147 with the zero-pitch horizon, aircraft datum and tape index centers; side tapes are equal48px widths.",
+      "Bank35 captions are visibly separated. Roll90 retains four complete, separated captions (30,10,-20,-40); inverted180 sky/ground and guides stay inside the field.",
+      "Pitch+10 caption is clear of the aircraft wing; heading015/140 labels are wholly outside the selected badge; no partial40 caption is exposed above ALT33.",
+      "Heading/home/current grouping, side-panel values and units, shared nav/context/footer, long Arm Stops heading, Video CUSTOM/REFERENCE and settings rows/actions fit.",
+      "Actual saved LQ thresholds Crit80/Low90 produce amber85 and red75 with matching footer warnings.",
+      "No circular cockpit assets, texture/silver bezel, aperture mask or pixel loop is used by the final PFD source.",
+      "Missing/zero/extreme-values and \u00b120pitch screenshots are explicitly retained as previous6b5-source evidence, not final-source caption-placement verification."
+    ],
+    "logs": [
+      {
+        "file": "work/edgetx/flight-center/capture-all.log",
+        "sha256": "8cfb4d12f26b10eab21c02e09b79b71eaaa04a44e1d00633cf68a35c7117e4f1",
+        "processExitCode": 0,
+        "acceptedShotCount": 22,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-center/capture-bank.log",
+        "sha256": "09e89ac9f001d91e8ea62a3803c9b3764f27355a58e71b2abe461e0a762f20da",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-center/capture-pitch-ten.log",
+        "sha256": "a61867d917aa9106fe0370a5ff0b74f757e102e7818cbd3ea52c40f39118a0d2",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-center/capture-roll.log",
+        "sha256": "aa8c38f6cb5c27abe4bfd2344db2f62e9d60da9947e07a94d03c6548b6fed056",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-center/capture-inverted.log",
+        "sha256": "03e37975b0d37fb67c76618081efacc5f2d2587cd11dc7aa308f8f824cca8e58",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-center/capture-low-lq.log",
+        "sha256": "77e63e36c7ad9c6423d0905c83e64d40c87e1c24cb783841b407d6c1e921fae7",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-center/capture-critical-lq.log",
+        "sha256": "1fa307bbfc069c112f16f7e4622abcf2f516d7398d14be8c226ab849a8bcc1da",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      }
+    ],
+    "errorFreeLogs": true,
+    "knownHostNotices": [
+      "Node ExperimentalWarning: WASI is an experimental feature"
+    ],
+    "limitations": [
+      "Native simulator is EdgeTX3.0.0. Physical TX16S on EdgeTX2.12.4 rendering, live telemetry, FPS/memory and physical pose remain unverified.",
+      "All telemetry/switch/MSP readings are synthetic fixtures in the isolated runtime. Production source contains no fixture; no radio was modified.",
+      "PASS and the28 screenshots[] entries apply only to final00f7d2 source. Five priorSourceEvidence entries remain on6b5c87 and are excluded from final accepted counts.",
+      "Previous-source frames demonstrate data/pose states before only pitch-caption location/collision logic changed. They do not establish final-source appearance of those five cases.",
+      "Desktop diagnostic draw-rate values are not hardware performance measurements.",
+      "Early1fb previews, pre-fix6b5 page frames and the aborted d8 attempt are excluded from final acceptance. No00f7 screenshot is inferred from them."
+    ]
+  },
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "tests": [
+    {
+      "name": "test_arm_status.lua",
+      "exit_code": 0,
+      "output": "PASS: STATUS_EX offsets, exact API1.46/1.47 flags, bytewise high/low bits, unknown APIs/counts, malformed rejection, no input mutation"
+    },
+    {
+      "name": "test_attitude_loop.lua",
+      "exit_code": 0,
+      "output": "PASS: 12000 callbacks; 27 source binds, zero runtime writes; attitude 100.0 Hz, draw 25.0 Hz (mock clock)"
+    },
+    {
+      "name": "test_configuration.lua",
+      "exit_code": 0,
+      "output": "PASS: 91 configuration UX assertions"
+    },
+    {
+      "name": "test_crsf_status.lua",
+      "exit_code": 0,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates"
+    },
+    {
+      "name": "test_fc_connection.lua",
+      "exit_code": 0,
+      "output": "PASS: empty TEST configuration auto-detects CRSF; armed/failsafe/unknown/stale/disabled/incompatible gates; exit cancels; transport before draw"
+    },
+    {
+      "name": "test_flight_layout.lua",
+      "exit_code": 0,
+      "output": "PASS: 1288 actual Flight checks; rectangular PFD, heading wrap, signed native-scale ladder, shared datum, missing/zero/long telemetry, and icon-only stable cache"
+    },
+    {
+      "name": "test_home_icon.lua",
+      "exit_code": 0,
+      "output": "PASS: 235 home icon cache, tint, GC, fallback and compatibility checks"
+    },
+    {
+      "name": "test_material_icons.lua",
+      "exit_code": 0,
+      "output": "PASS: 2107 Material icon native-size, cache, cold-GC, tint, lifetime and fallback checks"
+    },
+    {
+      "name": "test_pitch_direction.lua",
+      "exit_code": 0,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks"
+    },
+    {
+      "name": "test_rendering.lua",
+      "exit_code": 0,
+      "output": "PASS: stable qualified telemetry binding, explicit refresh, no legacy flight background loaders or source-binding bitmap reads"
+    },
+    {
+      "name": "test_telemetry.lua",
+      "exit_code": 0,
+      "output": "PASS: live without RSSI, units, flight mode, stale clearing, no demo via refresh or old startup setting"
+    },
+    {
+      "name": "test_ui_navigation.lua",
+      "exit_code": 0,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 15 dirty-exit, settings-return, draft-preservation, repeated-control, arming, warning-action and pitch-rendering scenarios"
+    }
+  ]
+}

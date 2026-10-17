@@ -1,0 +1,106 @@
+CURRENT UI: POWER-LIVE-20261017
+Power gains explicit source health, Sources/Refresh/Limits actions, calculated
+watts and capacity-based remaining charge. Five favourites are supported.
+The shared Flight-Status footer and full compass remain. See POWER-LIVE.txt.
+Installation is recorded separately in DEPLOYMENT.txt.
+
+HISTORICAL FLIGHT-STATUS NOTES FOLLOW
+CURRENT LOCAL UI: FLIGHT-STATUS-20261017 — LOCAL ONLY; not installed on the radio.
+Previous local and last verified radio build: FLIGHT-PRIORITY-20261017.
+DEPLOYMENT.txt and the historical records below remain unchanged.
+
+The shared 26 px footer now shows mode (0–120), local-home distance (120–240),
+satellites (240–304), a current arming-block summary (304–432), and a separate
+icon-only Arm Info control (432–480) on all twelve pages. Warnings retain the
+left 432 px and the right control stays available. No persistent MSP text or
+repeated LQ/RSSI/voltage occupies this footer. Removing Flight's ARM INFO text
+button returns all 324 px above the HUD to the compass.
+
+The decoder supports exact API/count pairs 1.46/26, 1.47/29 and 1.48/30.
+Stable Betaflight 2026.6.2 API 1.48 gives GPS bit 18, AUTOPILOT_SW bit 28 and
+ARM_SWITCH bit 29. Unknown pairs remain numbered; zero flags never claims
+ready/armed. Unavailable, stale and malformed status are explicit. Decode work
+is cached per status packet and the existing eight-second current-status rule
+is shared by summary and list. No new telemetry requests or routine writes.
+RTN from Arm Info restores its origin, including a Setup draft and value edit.
+
+Only main and arm-status.lua change among the 39 packaged runtime files.
+Widget, CRSF transport, Flight attitude/sampling and rail hierarchy are preserved.
+Release gates require twelve fresh suites and native review of all twelve pages,
+footer controls and status/warning states against exact main and decoder hashes.
+Evidence: development/ui-previews/flight-status/ and, after packaging,
+development/build-FLIGHT-STATUS-20261017.json. EdgeTX 3.0 WASM synthetic QA does
+not establish EdgeTX 2.12.4 physical rendering, RF responsiveness, FPS or viewing
+distance. This local revision has not been installed. See FLIGHT-STATUS.txt.
+
+HISTORICAL UI RECORD — current installed build is FLIGHT-PRIORITY-20261017; see DEPLOYMENT.txt.
+Installed and file-verified: 2026-10-17T09:39:56.756759+02:00.
+Physical rendering, live responsiveness and hardware performance remain unverified.
+Current Flight-Priority also corrects float32 battery-boundary roundoff by
+rounding per-cell voltage to 0.1 mV before the existing threshold comparisons.
+Saved thresholds and alarm policy remain unchanged; see FLIGHT-PRIORITY.txt.
+See UX-CLEANUP.txt for current navigation and AERODECK.txt for controls.
+The ICON-NAV deployment below is historical; see DEPLOYMENT.txt for the current installation.
+
+DEPLOYMENT UPDATE: ICON-NAV-20261016 installed and SHA-256 verified on the TX16S on 2026-10-16T12:34:28.859186+02:00. Hardware attitude performance remains unverified. See DEPLOYMENT.txt.
+
+CURRENT: ICON-NAV-20261016; see ICON-NAVIGATION.txt.
+This file also records the first six-section layout revision.
+
+AERODECK UI REVISION — 16 October 2026
+
+Implemented source, now installed and verified on the physical radio. Reference:
+eight user-supplied Toolbox2 screenshots and the local source audit.
+
+The original native-resolution flight chrome, bezel, digit assets, 152 × 152
+attitude area, tapes and gauges are preserved. All existing bitmap assets and
+the read-only CRSF MSP transport are byte-identical to the previous build.
+
+Six fixed sections organize the existing 12 destinations:
+HUD: Instruments / Arm Stops
+DATA: Telemetry / Power / RC Link
+GPS: Details / Track and Home
+VTX: eight saved frequency references
+SET: twelve conditionally visible configuration lists
+SYS: Stick Guide / Sensors / Diagnostics
+
+The grid icon opens all screens. Sections remember their last subpage. The
+footer links to current pack/link/GPS/MSP details. Battery/link warnings and
+no-current-telemetry replace the footer so navigation cannot obscure them. MSP
+LIVE requires an active connection and a recent status reply, not merely
+successful FC identification. A timeout is shown explicitly.
+
+Telemetry uses 27 native display slots and a single shared data snapshot. GPS
+Details is a split summary/table; Track retains satellite/speed/altitude
+readouts inside the body. Home remains local, not the FC home. Fix type is NOT
+REPORTED: no satellite-count-to-fix inference is used.
+
+Arm Stops decodes the existing STATUS_EX response. Verified API 1.46/count 26
+and API 1.47/count 29 maps have version-specific names; unknown versions retain
+numbered bits. Selection survives new replies. Invalid or stopped status, or
+status older than eight seconds, clears the reasons. Radio arm/cut indicators and the local
+radio-arm session timer are separate from FC state. No command clears flags.
+
+VTX favourites retain existing entries 1-5 and add default entries 6-8.
+Highlights are local selections, not active channel claims. The edit link
+identifies the Setup prerequisite when the favourites list is hidden. No live
+VTX table, power/PIT control, or Apply command is implemented.
+
+VALIDATION
+Eight portable Lua suites pass: CRSF/status transport, FC adapter, configuration,
+telemetry, source binding/rendering, attitude loop, arm decoding, UI interaction.
+UI interaction covers navigation and remembered tabs, configuration header
+priority, battery first/eighth row persistence, stick controls, visible critical
+warnings, MSP freshness, shared GPS sampling, stable/cleared arm explanations,
+and no-current-telemetry routing. Attitude loop: 12,000 mock callbacks, 27 source
+bindings, zero runtime file writes; mock-clock rates are not hardware rates.
+
+The actual TX16S EdgeTX 3.0.0 WASM runtime renders the screen tour, including
+critical-battery and empty-data states. Screenshots use explicit synthetic
+fixtures isolated from production sources. The physical radio runs 2.12.4. These
+checks do not confirm physical-radio FPS or resolve the previously reported
+attitude slowdown. The previous MSP connection update is preserved.
+
+Previews: development/ui-previews/ (synthetic data, never a live-quad capture).
+The install archive contains only application code, assets, widget and docs; no
+preview fixture, model settings, per-model preferences or compiled cache.

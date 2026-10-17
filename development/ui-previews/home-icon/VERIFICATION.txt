@@ -1,0 +1,15 @@
+HOME-ICON-20261016 native preview verification
+
+Source SHA256: 5bbadc15235f82707385f43b18b3be6a1bb6fd281470753d12bfae86b4372c41
+Mask asset SHA256: aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6
+
+Captured Flight, Setup, Video, Home return and raw -20deg CRSF pitch nose-up. Seven PNGs include topbar/home crops.
+- Native image mask is tinted to the existing muted icon color; no opaque white box appears.
+- Home glyph pixel bounds inside its40x34 region: [8, 4, 31, 29]. No white pixels; x37..42 remains background before clock starts atx43.
+- Home+clock region is pixel-identical across Flight/Setup/Video/return/nose-up frames.
+- The other six top-navigation symbols are pixel-identical to the prior PITCH-FIX native previews on Flight and Video.
+- Tapping Home at20,15 returns from Video to Flight.
+- Raw pitch -20deg radians still renders nose-up, with horizon below the aircraft. Pitch correction remains present.
+- Native logs have no Lua/firmware error, syntax or memory faults. Node emits only its standard WASI ExperimentalWarning host notice.
+
+Actual EdgeTX3.0.0 TX16S WASM renderer; synthetic inputs only. No physical-radio mask, pose, performance, outdoor or finger test is claimed. Isolated home-icon runtime copies only; no canonical/radio/shared-server edits. Fixture prefixes are not in staged production source.

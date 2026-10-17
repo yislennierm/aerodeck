@@ -1,0 +1,13 @@
+PASS — FLIGHT-SPACE-20261016
+
+Exact final source SHA256: dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad
+
+36 final-source native480x272 screenshots inspected across all12 pages and full pose/data cases. No layout overlap, partial-caption, mask or asset error found. All accepted frames use finaldce1; no prior-source substitutions.
+
+Expanded HUD78..402,y62..244, datum240,153, equal46px tapes and narrow70px metric rails fit. Signed P/R readouts are legible at0,+10,±20pitch,+35,+90,+180roll; the previous bank35 guide/caption collision is eliminated. Heading015/140/359, full index labels, zero/missing/extreme values, actual custom LQ thresholds, unique Flight footer and remaining pages fit.
+
+Native input paths pass: touch384,46→Arm Stops→RTN→Flight; ENTER focus→ENTER open→RTN→Flight. SYS/Home/PAGE and settings/edit/action states remain clean.
+
+Twelve final native processes exited0 with no Lua/firmware error; standard Node WASI notice remains. Exact fixtures, hashes, logs and screenshot roles are recorded in verification.json. No canonical project, radio or shared preview runtime was modified by this QA.
+
+Scope: EdgeTX3.0.0 TX16S native simulation and synthetic data only. Physical EdgeTX2.12.4 rendering, live telemetry, hardware FPS/memory and physical pose remain unverified.

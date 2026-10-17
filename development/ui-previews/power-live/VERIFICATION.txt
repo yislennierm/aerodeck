@@ -1,0 +1,9 @@
+POWER-LIVE-20261017 — TARGETED NATIVE VISUAL QA PASS
+Main SHA256: c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b
+Widget SHA256: 1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3
+
+22 screenshots in9 cases visually inspected: normal Flight/Power/actions, valid zeros, missing current, disabled voltage, stale values, late binding and Refresh, five favourites with active Pack5 capacity calculation, long values and shared Arm footer return. All native processes exited0 with no Lua/firmware errors.
+
+AOS5 preferences are a read-only fixture copy. Telemetry and source lifecycle are synthetic; no fixture or per-model runtime file ships. No radio or canonical file was changed by this QA. Exact hashes/provenance are recorded in verification.json.
+
+LIMITATION: EdgeTX3.0.0 WASM versus physical target2.12.4. Real quad measurements, calibration, hardware rendering/FPS and compact widget native execution are unverified.

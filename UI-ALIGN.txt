@@ -1,0 +1,47 @@
+AERODECK — UI-ALIGN-20261016
+LOCAL ONLY. Not installed on the radio.
+Previous local build: MATERIAL-ICONS-20261016.
+Last verified radio build: HOME-ICON-20261016. DEPLOYMENT.txt is unchanged.
+
+The 480x272 layout now aligns text using the native font height. Clock and model
+metadata are centered in their own rows; model text uses the native TINSIZE
+font when available and measured fitting. The six 30 px navigation images sit
+in 44x32 px selected/focus plates. Each 26 px context frame centers its 18 px symbol
+and caption together. Existing touch areas and physical controls are retained.
+
+The status footer shows RC link quality (%) and RSSI (dBm), pack voltage with
+a battery icon, satellite count with a satellite icon, and current MSP status.
+Missing values remain --. The satellite count does not establish GPS fix type.
+Warning banners retain their detail destination instead of ordinary status.
+
+Body rows and action labels are centered in their actual rows/buttons. This
+includes Telemetry, GPS, Sensors, Stick Guide, Arm Stops, Setup and Battery.
+Telemetry units use measured width and a consistent gap; values are fitted to
+their available cell. Video CUSTOM and larger channel codes share a centered
+value cell. Power's small voltage unit shares the numeric baseline.
+
+Only one PNG is added: icons/satellite_alt-18.png, 18x18 opaque RGB Material
+Symbols Outlined mask. The existing battery mask is reused. Shared chrome caches icon masks and native
+font measurements; steady-state icon draws do not reload SD files.
+The original flight artwork, instrument geometry and verified pitch correction
+are retained. Attitude sampling, read-only MSP scheduling, settings formats,
+model/output behavior and the compact widget are unchanged.
+
+Settings still use two independent staged stores. SAVE SETTINGS applies the
+non-battery preferences; SAVE BATTERY applies cell/voltage/alert preferences.
+RTN cancels the current value edit before leaving its category. Unsaved exit
+still offers Keep Editing or Discard/Exit. None profile semantics are retained;
+use Read-only FC connection Off to disable MSP explicitly.
+
+Release verification requires all11 portable suites and matching-source native
+QA. The configuration suite contains91 behavior/alignment assertions. Exact
+suite counts, source/archive hashes and native results are recorded dynamically
+in development/build-UI-ALIGN-20261016.json. Current synthetic native previews:
+development/ui-previews/ui-align/. They are fixtures, not live quad telemetry.
+Physical-radio pose, rendering and timing are not newly verified by this build.
+
+AERODECK-install.zip contains101 runtime files plus12 root documents. The
+release helper compares against the prior local Material build and updates
+only changed local files, backing up existing changed targets first. It has
+no radio deployment or installation-record command. No radio update is part
+of this local-only release.

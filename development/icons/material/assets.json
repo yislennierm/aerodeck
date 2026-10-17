@@ -1,0 +1,159 @@
+{
+  "sourceSetSha256": "a45c9a6786058247d00d70ced4d39bbedcba7e3342f5c1d8664a8d0176ec76e6",
+  "homeUnchanged": true,
+  "homeSha256": "aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6",
+  "newPngCount": 19,
+  "sourceIconCount": 14,
+  "exports": [
+    {
+      "file": "speed.png",
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "dde260c9abcbb85db55a13ba28d87fa678d8d4a6d6779b866a9029f28d16ad39"
+    },
+    {
+      "file": "table_chart.png",
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "cb156605dabf0196f54490fdc9e47f69afcc815339d9e5562243b59058891d6a"
+    },
+    {
+      "file": "my_location.png",
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "8efe6881630adefaa140e1eb82e5b57d5550b2f2ce7208a085373d8a0927d509"
+    },
+    {
+      "file": "head_mounted_device.png",
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "e2547a125a635ff6a0b348f7cf6c9896a87643c44c19cd1f43f0fb9a5ce52c52"
+    },
+    {
+      "file": "tune.png",
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "b308525580147d5818270bb343f0797a8604775ebf80e74471fa53eb4d2a856a"
+    },
+    {
+      "file": "build.png",
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "fef1db514c1916d6f291d331acb2906120f15cf4625b47b315cc670937ffb418"
+    },
+    {
+      "file": "speed-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "2d9204e15b8a4cf7a2acd7eee0f596f62f8c702031126b6e1b4208e4a7a27934"
+    },
+    {
+      "file": "route-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "ac863cf7053acc6ae3222844a19dfae62c5a2b34010a0a472b277c9fbd5e1f4a"
+    },
+    {
+      "file": "battery_full-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "45eb2683003373196581e4f5546d3e4e60aaf9ebcde6c1095ccb986f503f4cac"
+    },
+    {
+      "file": "sensors-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "50f49afa97efcdb61f86d80ca3da4bf4139e33af0a8c1f16272042ff9ef9224c"
+    },
+    {
+      "file": "table_chart-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "1b2e723554e138d74ef10f9f552e92056401063cba52f8a5f53e964936c27eb4"
+    },
+    {
+      "file": "sports_esports-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "27c24e1897c478a4887ef19a30cf77d0cf5bf83d21dfe907e85374236fda7f71"
+    },
+    {
+      "file": "my_location-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "1471edbf48d82a38110b8385fb965e31d74970418b9bf8b0ac71760a8d0b1428"
+    },
+    {
+      "file": "cell_tower-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "218d4ffac7721968ae2606ce114ea245c6c9fd7f02d899dba9de4ea69b6f969c"
+    },
+    {
+      "file": "gpp_bad-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "720cb481e696303e236000cde8720ca8145b755215ee1134c7cf714b81a14c16"
+    },
+    {
+      "file": "head_mounted_device-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "0203282602b0c7dabb4f18bbff36e185b7a9e2bb36dc9fc26f4b628e5e6b8161"
+    },
+    {
+      "file": "bug_report-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "13f83f4bfdccca792eddf2c5bb64c215cf8c2305cbda3fbb92107c5bc4c04c0d"
+    },
+    {
+      "file": "satellite_alt-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "16241dea34276792cf3445539f4cb27530a10bb5ee935742162853643a2727ed"
+    },
+    {
+      "file": "home-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "9ac516212f71704bb8a6b9364f976e1d3a14b0ef8a16492b23b8ebf50e8d9ac0",
+      "sourceMaster": "development/icons/home-outlined-30.svg",
+      "sourceMasterSha256": "c9a764ee7a83cbd23e1385ebd098b4019cb7a282a041cb0a2e815d1d8d5ec171",
+      "modification": "Native18px RGB raster export from the existing licensed Home SVG; original30px runtime Home remains unchanged."
+    }
+  ],
+  "licenseSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+  "nativeSizes": {
+    "navigation": 30,
+    "context": 18,
+    "footer": 18
+  },
+  "modifications": "30px masters preserve path geometry, fit26px ink, center and add white background.18px RGB context/footer variants rendered directly by rsvg-convert then flattened onto white.",
+  "sourceSha256AtAssetPreparation": "c49c95c01dc5883b534914efacb22c75df6951404b4875424cfb07364def4ece",
+  "sourceSha256": "712a7e999022e0bd5d0ddee29602286dc12844881900ed109f43314153926c53",
+  "previousSourceSetSha256": "112356bb6b07fb201b94fa729ea4596415fe9a4b8a0720b34c37b5d14b28f5e9",
+  "sourceSetHashMethod": "SHA256 of compact UTF-8 JSON list sorted by name, records {name,originalSha256,masterSha256}, sort_keys=True, separators=(comma,colon)",
+  "currentBuild": "FLIGHT-FLAT-20261016",
+  "assetPreparationNote": "satellite_alt-18.png added for GPS satellite count; existing battery_full-18.png reused for pack voltage. No Lua change in this preparation.",
+  "currentUpdate": "Flat Flight uses a new18px Home export for local-home distance. Existing30px Home and all prior icon masks retain their bytes."
+}

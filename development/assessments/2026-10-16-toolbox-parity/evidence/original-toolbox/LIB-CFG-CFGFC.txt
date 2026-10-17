@@ -1,0 +1,257 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGFC.luac SHA256 12d325ca042e90a51a33649424ef8d845ef0be735acb895f554d380df55092f5
+
+FUNCTION main params 0 vararg 1 stack 9 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGFC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 79), ('F', 1, 79), ('D', 1, 79), ('X', 1, 79), ('T', 1, 79), ('fw', 20, 79), ('fwID', 23, 79)]
+K0 'pID'
+K1 'FC'
+K2 'pN'
+K3 'FLIGHT CONTROLLER'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 300
+K8 320
+K9 180
+K10 80
+K11 'BetaFlight'
+K12 'BF'
+K13 'cv'
+K14 'FC_MSP_ON'
+K15 'o'
+K16 1
+K17 'l'
+K18 ' MSP'
+K19 't'
+K20 'S'
+K21 'FC_MSP_VER'
+K22 2
+K23 '  version'
+K24 'N'
+K25 'm'
+K26 'x'
+K27 'i'
+K28 'f'
+K29 '%1d'
+K30 'FC_MSP_ERR_INTVAL'
+K31 3
+K32 '  FC status read every'
+K33 0
+K34 5
+K35 'u'
+K36 's'
+K37 'FC_MSP_VTX_INTVAL'
+K38 4
+K39 '  VTX read every'
+K40 10
+K41 'readDS'
+K42 'updateDisp'
+K43 'cv'
+K44 'FC_MSP_ON'
+K45 'onSave'
+K46 'FC_MSP_VER'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('FC')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('FLIGHT CONTROLLER')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (300)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (180)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (80)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  14] NEWTABLE  A=5 B=1 C=0
+  19 [  14] LOADK     R6 = K11 ('BetaFlight')
+  20 [  14] SETLIST   A=5 B=1 C=1
+  21 [  15] NEWTABLE  A=6 B=1 C=0
+  22 [  15] LOADK     R7 = K12 ('BF')
+  23 [  15] SETLIST   A=6 B=1 C=1
+  24 [  17] NEWTABLE  A=7 B=0 C=0
+  25 [  17] SETTABLE  R4[K13('cv')] = R7
+  26 [  18] GETTABLE  R7 = R4[K13('cv')]
+  27 [  18] NEWTABLE  A=8 B=0 C=3
+  28 [  18] SETTABLE  R8[K15('o')] = K16(1)
+  29 [  18] SETTABLE  R8[K17('l')] = K18(' MSP')
+  30 [  18] SETTABLE  R8[K19('t')] = K20('S')
+  31 [  18] SETTABLE  R7[K14('FC_MSP_ON')] = R8
+  32 [  19] GETTABLE  R7 = R4[K13('cv')]
+  33 [  19] NEWTABLE  A=8 B=0 C=7
+  34 [  19] SETTABLE  R8[K15('o')] = K22(2)
+  35 [  19] SETTABLE  R8[K17('l')] = K23('  version')
+  36 [  19] SETTABLE  R8[K19('t')] = K24('N')
+  37 [  19] SETTABLE  R8[K25('m')] = K22(2)
+  38 [  19] SETTABLE  R8[K26('x')] = K22(2)
+  39 [  19] SETTABLE  R8[K27('i')] = K16(1)
+  40 [  19] SETTABLE  R8[K28('f')] = K29('%1d')
+  41 [  19] SETTABLE  R7[K21('FC_MSP_VER')] = R8
+  42 [  20] GETTABLE  R7 = R4[K13('cv')]
+  43 [  20] NEWTABLE  A=8 B=0 C=8
+  44 [  20] SETTABLE  R8[K15('o')] = K31(3)
+  45 [  20] SETTABLE  R8[K17('l')] = K32('  FC status read every')
+  46 [  20] SETTABLE  R8[K19('t')] = K24('N')
+  47 [  20] SETTABLE  R8[K25('m')] = K33(0)
+  48 [  20] SETTABLE  R8[K26('x')] = K34(5)
+  49 [  20] SETTABLE  R8[K27('i')] = K16(1)
+  50 [  20] SETTABLE  R8[K28('f')] = K29('%1d')
+  51 [  20] SETTABLE  R8[K35('u')] = K36('s')
+  52 [  20] SETTABLE  R7[K30('FC_MSP_ERR_INTVAL')] = R8
+  53 [  21] GETTABLE  R7 = R4[K13('cv')]
+  54 [  21] NEWTABLE  A=8 B=0 C=8
+  55 [  21] SETTABLE  R8[K15('o')] = K38(4)
+  56 [  21] SETTABLE  R8[K17('l')] = K39('  VTX read every')
+  57 [  21] SETTABLE  R8[K19('t')] = K24('N')
+  58 [  21] SETTABLE  R8[K25('m')] = K33(0)
+  59 [  21] SETTABLE  R8[K26('x')] = K40(10)
+  60 [  21] SETTABLE  R8[K27('i')] = K16(1)
+  61 [  21] SETTABLE  R8[K28('f')] = K29('%1d')
+  62 [  21] SETTABLE  R8[K35('u')] = K36('s')
+  63 [  21] SETTABLE  R7[K37('FC_MSP_VTX_INTVAL')] = R8
+  64 [  24] GETTABLE  R7 = R4[K41('readDS')]
+  65 [  24] CALL      A=7 B=1 C=1
+  66 [  40] CLOSURE   R7 = proto[0]
+  67 [  40] SETTABLE  R4[K42('updateDisp')] = R7
+  68 [  42] GETTABLE  R7 = R4[K43('cv')]
+  69 [  42] GETTABLE  R7 = R7[K44('FC_MSP_ON')]
+  70 [  44] CLOSURE   R8 = proto[1]
+  71 [  44] SETTABLE  R7[K45('onSave')] = R8
+  72 [  46] GETTABLE  R7 = R4[K43('cv')]
+  73 [  46] GETTABLE  R7 = R7[K46('FC_MSP_VER')]
+  74 [  46] GETTABLE  R8 = R4[K43('cv')]
+  75 [  46] GETTABLE  R8 = R8[K44('FC_MSP_ON')]
+  76 [  46] GETTABLE  R8 = R8[K45('onSave')]
+  77 [  46] SETTABLE  R7[K45('onSave')] = R8
+  78 [  48] RETURN    A=0 B=1 C=0
+  79 [  48] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 4 lines 26 40 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4))]
+LOCALS [('inav', 10, 87), ('cond', 44, 87)]
+K0 'S'
+K1 'MDL_FC'
+K2 2
+K3 'FC_FW_ID'
+K4 'IN'
+K5 'cv'
+K6 'FC_MSP_VER'
+K7 'v'
+K8 'h'
+K9 True
+K10 'FC_MSP_ERR_INTVAL'
+K11 'FC_MSP_ON'
+K12 0
+K13 'FC_MSP_VTX_INTVAL'
+K14 'FC_ON'
+   1 [  28] GETTABUP  R0 = UP0[K0('S')]
+   2 [  28] GETTABLE  R0 = R0[K1('MDL_FC')]
+   3 [  28] EQ        A=1 R0, K2(2); skip-next if condition != A
+   4 [  28] JMP       A=0 ->10
+   5 [  28] GETTABUP  R0 = UP0[K0('S')]
+   6 [  28] GETTABLE  R0 = R0[K3('FC_FW_ID')]
+   7 [  28] EQ        A=1 R0, K4('IN'); skip-next if condition != A
+   8 [  28] JMP       A=0 ->10
+   9 [  28] LOADBOOL  A=0 B=0 C=1
+  10 [  28] LOADBOOL  A=0 B=1 C=0
+  11 [  29] GETTABUP  R1 = UP1[K5('cv')]
+  12 [  29] GETTABLE  R1 = R1[K6('FC_MSP_VER')]
+  13 [  29] SETTABLE  R1[K7('v')] = K2(2)
+  14 [  30] GETTABUP  R1 = UP1[K5('cv')]
+  15 [  30] GETTABLE  R1 = R1[K6('FC_MSP_VER')]
+  16 [  30] SETTABLE  R1[K8('h')] = K9(True)
+  17 [  31] GETTABUP  R1 = UP1[K5('cv')]
+  18 [  31] GETTABLE  R1 = R1[K10('FC_MSP_ERR_INTVAL')]
+  19 [  31] GETTABUP  R2 = UP1[K5('cv')]
+  20 [  31] GETTABLE  R2 = R2[K11('FC_MSP_ON')]
+  21 [  31] GETTABLE  R2 = R2[K7('v')]
+  22 [  31] EQ        A=0 R2, K12(0); skip-next if condition != A
+  23 [  31] JMP       A=0 ->27
+  24 [  31] LOADBOOL  A=2 B=1 C=0
+  25 [  31] TEST      A=2 B=0 C=1
+  26 [  31] JMP       A=0 ->28
+  27 [  31] LOADNIL   A=2 B=0 C=0
+  28 [  31] SETTABLE  R1[K8('h')] = R2
+  29 [  32] GETTABUP  R1 = UP1[K5('cv')]
+  30 [  32] GETTABLE  R1 = R1[K13('FC_MSP_VTX_INTVAL')]
+  31 [  32] GETTABUP  R2 = UP1[K5('cv')]
+  32 [  32] GETTABLE  R2 = R2[K11('FC_MSP_ON')]
+  33 [  32] GETTABLE  R2 = R2[K7('v')]
+  34 [  32] EQ        A=1 R2, K12(0); skip-next if condition != A
+  35 [  32] JMP       A=0 ->38
+  36 [  32] TEST      A=0 B=0 C=0
+  37 [  32] JMP       A=0 ->41
+  38 [  32] LOADBOOL  A=2 B=1 C=0
+  39 [  32] TEST      A=2 B=0 C=1
+  40 [  32] JMP       A=0 ->42
+  41 [  32] LOADNIL   A=2 B=0 C=0
+  42 [  32] SETTABLE  R1[K8('h')] = R2
+  43 [  34] GETTABUP  R1 = UP0[K0('S')]
+  44 [  34] GETTABLE  R1 = R1[K14('FC_ON')]
+  45 [  36] GETTABUP  R2 = UP1[K5('cv')]
+  46 [  36] GETTABLE  R2 = R2[K11('FC_MSP_ON')]
+  47 [  36] TEST      A=1 B=0 C=0
+  48 [  36] JMP       A=0 ->52
+  49 [  36] LOADBOOL  A=3 B=1 C=0
+  50 [  36] TEST      A=3 B=0 C=1
+  51 [  36] JMP       A=0 ->53
+  52 [  36] LOADNIL   A=3 B=0 C=0
+  53 [  36] SETTABLE  R2[K8('h')] = R3
+  54 [  37] GETTABUP  R2 = UP1[K5('cv')]
+  55 [  37] GETTABLE  R2 = R2[K6('FC_MSP_VER')]
+  56 [  37] TEST      A=1 B=0 C=0
+  57 [  37] JMP       A=0 ->61
+  58 [  37] LOADBOOL  A=3 B=1 C=0
+  59 [  37] TEST      A=3 B=0 C=1
+  60 [  37] JMP       A=0 ->64
+  61 [  37] GETTABUP  R3 = UP1[K5('cv')]
+  62 [  37] GETTABLE  R3 = R3[K6('FC_MSP_VER')]
+  63 [  37] GETTABLE  R3 = R3[K8('h')]
+  64 [  37] SETTABLE  R2[K8('h')] = R3
+  65 [  38] GETTABUP  R2 = UP1[K5('cv')]
+  66 [  38] GETTABLE  R2 = R2[K10('FC_MSP_ERR_INTVAL')]
+  67 [  38] TEST      A=1 B=0 C=0
+  68 [  38] JMP       A=0 ->72
+  69 [  38] LOADBOOL  A=3 B=1 C=0
+  70 [  38] TEST      A=3 B=0 C=1
+  71 [  38] JMP       A=0 ->75
+  72 [  38] GETTABUP  R3 = UP1[K5('cv')]
+  73 [  38] GETTABLE  R3 = R3[K10('FC_MSP_ERR_INTVAL')]
+  74 [  38] GETTABLE  R3 = R3[K8('h')]
+  75 [  38] SETTABLE  R2[K8('h')] = R3
+  76 [  39] GETTABUP  R2 = UP1[K5('cv')]
+  77 [  39] GETTABLE  R2 = R2[K13('FC_MSP_VTX_INTVAL')]
+  78 [  39] TEST      A=1 B=0 C=0
+  79 [  39] JMP       A=0 ->83
+  80 [  39] LOADBOOL  A=3 B=1 C=0
+  81 [  39] TEST      A=3 B=0 C=1
+  82 [  39] JMP       A=0 ->86
+  83 [  39] GETTABUP  R3 = UP1[K5('cv')]
+  84 [  39] GETTABLE  R3 = R3[K13('FC_MSP_VTX_INTVAL')]
+  85 [  39] GETTABLE  R3 = R3[K8('h')]
+  86 [  39] SETTABLE  R2[K8('h')] = R3
+  87 [  40] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 5 lines 42 44 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS []
+K0 'table'
+K1 'insert'
+K2 'RINIT'
+K3 'fn'
+K4 'PLIBMSP'
+K5 'MSPINIT'
+   1 [  43] GETTABUP  R0 = UP0[K0('table')]
+   2 [  43] GETTABLE  R0 = R0[K1('insert')]
+   3 [  43] GETTABUP  R1 = UP1[K2('RINIT')]
+   4 [  43] NEWTABLE  A=2 B=0 C=1
+   5 [  43] GETTABUP  R3 = UP2[K4('PLIBMSP')]
+   6 [  43] LOADK     R4 = K5 ('MSPINIT')
+   7 [  43] CONCAT    A=3 B=3 C=4
+   8 [  43] SETTABLE  R2[K3('fn')] = R3
+   9 [  43] CALL      A=0 B=3 C=1
+  10 [  44] RETURN    A=0 B=1 C=0

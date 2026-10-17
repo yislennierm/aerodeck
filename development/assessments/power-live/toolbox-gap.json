@@ -1,0 +1,424 @@
+{
+  "task": "Read-only Toolbox2 battery/power parity and missing live power audit",
+  "createdUtc": "2026-10-17T13:58:49.249706+00:00",
+  "aerodeckMain": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+  "aerodeckSourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+  "toolboxRecoveredSource": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2",
+  "hardwareValuesRead": false,
+  "currentFailureCauseConfirmed": false,
+  "originalBytecodeVerified": [
+    "TBS/BTV",
+    "TBS/BTA",
+    "TLMUPDS",
+    "TB/BTCNO",
+    "UI/SNV"
+  ],
+  "disassemblyEvidence": [
+    "work/edgetx/power-live/toolbox-power-disassembly.txt",
+    "work/edgetx/power-live/toolbox-snv-disassembly.txt",
+    "work/edgetx/toolbox-200-reference/ML-disassembly.txt"
+  ],
+  "decompilerCaution": "Recovered source omits vFN branch in TLMUPDS and damages BTV/BTA ternaries/control flow. Important claims above were checked in original Lua5.3 bytecode. Do not execute the recovered fragments as production code.",
+  "features": [
+    {
+      "id": "native-power-sources",
+      "status": "working",
+      "toolbox": "TBS battery modules bind RxBt (V), Curr (A), Capa (mAh), Bat% (%); none has a power value-conversion vFN.",
+      "aerodeck": "Same CRSF defaults; voltage also falls back to VFAS and Bat. Manual Auto/None/source mappings are available.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.lua",
+          "line": 40
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+          "line": 57
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 526
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 189
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 371
+        }
+      ],
+      "consequence": "There is no special Toolbox battery transport to copy. Confirm native sources/current flags before changing MSP."
+    },
+    {
+      "id": "telemetry-resolution-validity",
+      "status": "intentional-difference",
+      "toolbox": "TLMSADD qualifies CHAR_TELEMETRY+name. TLMUPDS accepts only first getSourceValue return, clamps ranges, retains data while global telemetry controls dimming.",
+      "aerodeck": "Qualified source lookup is shared/cached; numeric values must have current=true. Real zero remains present. Missing/stale values become nil/--.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMSADD.lua",
+          "line": 56
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.lua",
+          "line": 10
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 19
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 503
+        }
+      ],
+      "consequence": "Do not fix absent live values by copying Toolbox stale-value behavior."
+    },
+    {
+      "id": "late-discovery-negative-cache",
+      "status": "bug",
+      "toolbox": "Binding is performed during telemetry initialization; no claim of better live rediscovery.",
+      "aerodeck": "A missing qualified source is cached false until refreshSources. Sensors-page REFRESH only calls scanSensors and does not clear this cache; GPS refresh/reopen does.",
+      "evidence": [
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 19
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 30
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 498
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 801
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1564
+        }
+      ],
+      "consequence": "Concrete possible cause when battery sensors were discovered after AERODECK opened; not proven to be this live failure."
+    },
+    {
+      "id": "power-units",
+      "status": "partial",
+      "toolbox": "Power definitions declare expected engineering units/precision and TLMSADD records native unit/precision. No scaling function is attached to CRSF power fields.",
+      "aerodeck": "Unit scan exists but read() checks/converts speed, angle, vertical speed and altitude only. Voltage/current/consumed/remaining accept any numeric unit after manual mapping.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMSADD.lua",
+          "line": 20
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+          "line": 57
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 498
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 503
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 526
+        }
+      ],
+      "consequence": "A custom mA/Ah/wrong source could be mislabeled A/mAh/V; add explicit typed diagnostics and supported conversions rather than scaling already-correct CRSF values."
+    },
+    {
+      "id": "cell-count-and-average",
+      "status": "partial",
+      "toolbox": "Without a selected favourite, BTCNO infers 1\u20136S from pack voltage versus configured max cell voltage. With a favourite, uses its cell count. Cell display is pack/cells.",
+      "aerodeck": "Manual battery cells default 0 (not set), or one of three profiles overrides 1\u201312S. No inference. Average voltage and battery checks are unavailable when cells remain unset.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/BTCNO.lua",
+          "line": 7
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.lua",
+          "line": 23
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 32
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 133
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 193
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 544
+        }
+      ],
+      "consequence": "Unset cells explains missing average/alerts only; it cannot hide actual pack voltage or current. Automatic inference is ambiguous on discharged packs, so do not silently treat it as measured cell count."
+    },
+    {
+      "id": "battery-favourites",
+      "status": "partial",
+      "toolbox": "Five independently enabled favourites, chemistry label, 1\u201399 cells and 100\u2013100000mAh; dashboard chooser persists selection/cells/capacity.",
+      "aerodeck": "Three profiles plus manual cells; 1\u201312 cells and 100\u201330000mAh; active profile and parameters saved via settings. No chemistry labels/enable toggles/dashboard chooser.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBFV.lua",
+          "line": 13
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BFV.lua",
+          "line": 7
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 193
+        }
+      ],
+      "consequence": "Parity gap in pack management; unrelated to native voltage/current availability."
+    },
+    {
+      "id": "remaining-capacity",
+      "status": "working-with-differences",
+      "toolbox": "Bat% native by default; selected capacity overrides it with floor(max(0,capacity-consumed)/capacity*100). Consumed defaults to 0; callback runs even without active Bat%/Capa binding.",
+      "aerodeck": "Uses current native Bat% first; only if absent and selected pack plus current numeric Capa are present, derives clamped remaining and marks estimated (~).",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+          "line": 7
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+          "line": 39
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.lua",
+          "line": 32
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 544
+        }
+      ],
+      "consequence": "AERO avoids fabricating100% from absent consumption. Neither calculation accounts for partial starting charge without reset/full-pack assumptions."
+    },
+    {
+      "id": "voltage-normalized-bar",
+      "status": "intentional-difference",
+      "toolbox": "Generic SNV bar normalizes cell voltage within configured min/max; battery status rail can display this normalized percentage. This is a voltage-range measure, not measured remaining capacity.",
+      "aerodeck": "Remaining percentage is actual Bat% or explicitly estimated from consumed capacity; no voltage-derived charge estimate is invented.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/SNV.lua",
+          "line": 101
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/BAT.lua",
+          "line": 77
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 544
+        }
+      ],
+      "consequence": "If added, label voltage-range/estimate clearly instead of implying state of charge."
+    },
+    {
+      "id": "native-min-max",
+      "status": "missing",
+      "toolbox": "TLMUPDS samples native sourceID+1 and sourceID+2 into rValMin/rValMax.",
+      "aerodeck": "Does not read native extrema. Power/RC traces retain up to90 foreground samples, sampled once per second while app runs.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.lua",
+          "line": 24
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1187
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1202
+        }
+      ],
+      "consequence": "Native extrema and peak/low summaries are genuine additional data, distinct from short foreground traces."
+    },
+    {
+      "id": "capacity-formatting",
+      "status": "partial",
+      "toolbox": "Below1000 uses mAh; above1000 switches to Ah with dynamic precision. Original bytecode confirms conditional logic lost by decompiler.",
+      "aerodeck": "Primary consumed counter remains mAh, uses measured fitting and falls back to17px for longer values; Power page always shows mAh.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+          "line": 46
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1030
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1065
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1208
+        }
+      ],
+      "consequence": "Optional readability improvement for very large consumed totals; current2762mAh is intentionally29px."
+    },
+    {
+      "id": "battery-alerts",
+      "status": "working-with-differences",
+      "toolbox": "Per-cell no-power/min/critical/low/max config; visual sound/haptic combinations and critical-only vs critical+low. Background MAIN telemetry gate runs warning checks only when protocol/telemetry enabled and cell>no-power; original ML PCs288\u2013331 verify this is outside DEVON. Critical/low tick cycles are4s/6s; UI mute suppresses alerts.",
+      "aerodeck": "Same broad threshold categories with full-page warnings; nativefloat32 boundary fix rounds0.1mV/cell. Tone/haptic repeat at most every10s, only full app; no explicit mute control. Uses current voltage and configured cells.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua",
+          "line": 11
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SND.lua",
+          "line": 7
+        },
+        {
+          "file": "work/edgetx/toolbox-200-reference/ML-disassembly.txt",
+          "line": 386
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 133
+        }
+      ],
+      "consequence": "Cadence/mute differ. No power/no known cells cannot produce battery alarm; do not alter alarm policy as a workaround for missing sources."
+    },
+    {
+      "id": "individual-cell-screen",
+      "status": "reference-only-in-toolbox",
+      "toolbox": "BTC draws individual cells only if BT_MD_CELLS_V/BT_MD_CELL_V exist. Local source has reset/read references but no data producer for either field in CRSF modules.",
+      "aerodeck": "Only pack-derived average; does not claim individual measured cells.",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BTC.lua",
+          "line": 12
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMRST.lua",
+          "line": 20
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.lua",
+          "line": 23
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1206
+        }
+      ],
+      "consequence": "Do not count the Toolbox screen as a proven working CRSF individual-cell feature or fabricate cells from averages."
+    },
+    {
+      "id": "msp-power-transport",
+      "status": "not-required",
+      "toolbox": "Power comes from EdgeTX telemetry. Verified repeat scheduler requests status/GPS/VTX as applicable, not battery/analog telemetry.",
+      "aerodeck": "MSP client requests only FC_VARIANT2, API_VERSION1, FC_VERSION3, STATUS_EX150. Native power sampling is independent of MSP eligibility.",
+      "evidence": [
+        {
+          "file": "work/edgetx/toolbox-200-reference/MSPRPT-disassembly.txt",
+          "line": 1
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+          "line": 1
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 480
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 526
+        }
+      ],
+      "consequence": "Do not add continuous MSP power queries or alter the established attitude scheduling to solve an unconfirmed source failure."
+    },
+    {
+      "id": "compact-vs-full-binding",
+      "status": "inconsistent-aerodeck-paths",
+      "toolbox": "Not assessed as Toolbox parity.",
+      "aerodeck": "Compact widget uses uncached unqualified getFieldInfo every refresh; full app uses qualified cached bindings. Same manual source keys, different implementation.",
+      "evidence": [
+        {
+          "file": "sdcard/WIDGETS/AERODECK/main.lua",
+          "line": 11
+        },
+        {
+          "file": "sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 19
+        }
+      ],
+      "consequence": "If compact can see power but full app cannot, binding/cache is isolated. Align both readers after verifying live evidence."
+    }
+  ],
+  "prioritizedFixes": [
+    {
+      "priority": "P0",
+      "action": "Correct the parent-confirmed voltage=None AERODECK app mapping only.",
+      "acceptance": "Current native pack voltage appears; EdgeTX model/FC/RF remain unchanged."
+    },
+    {
+      "priority": "P0",
+      "action": "Fix negative-cache recovery and shared refresh; make cached source name/ID/current/missing status visible in Power.",
+      "acceptance": "Late discovery recovers without reopen, stale clears, real0A remains0A, and no sensor-table scan runs every draw."
+    },
+    {
+      "priority": "P1",
+      "action": "Power actions route consistently to Refresh, configured Sources and battery Limits; derive watts only from current V\u00d7A.",
+      "acceptance": "Missing V or A yields--W; real0A yields0W; derivation sends no telemetry command."
+    },
+    {
+      "priority": "P1",
+      "action": "Expand favourites to5 and show selected-capacity remainingmAh/percent with honest consumed-data prerequisite.",
+      "acceptance": "Old profiles survive; no100%/full-capacity remaining is fabricated when Capa is absent; partial-charge assumption remains explicit."
+    },
+    {
+      "priority": "P2",
+      "action": "Retain the explicit next gaps listed above; do not silently add auto-cells, native extrema, unit scaling or chemistry labels in this power-data fix.",
+      "acceptance": "Current scope and remaining parity work are separately documented."
+    }
+  ],
+  "liveEvidenceFromParent": {
+    "voltageIssue": "Parent confirmed the active AERODECK app setting voltage=None. The fix changes the app mapping only, not EdgeTX model sensors or FC/RF settings.",
+    "voltageCauseConfirmedByParent": true,
+    "currentIssue": "This source audit does not prove why current is absent. Preserve unavailable versus real0A and inspect cached native source health.",
+    "evidenceQualification": "Parent live-state finding; independent source/bytecode audit in this report does not read live hardware values."
+  },
+  "currentFailureCauseScope": "Voltage disabled mapping confirmed by parent; combined missing-current symptom not independently diagnosed here.",
+  "chosenImplementationScope": [
+    "Fix the active app-only voltage=None mapping; do not alter model sensors, FC or RF settings.",
+    "Bounded retry of unresolved source bindings and a visible refresh that invalidates shared bindings/unit metadata; no per-frame sensor inventory scans.",
+    "Power page uses cached source health plus Refresh, Sources and Limits actions. Derive watts only from current voltage and current current; missing is not0.",
+    "Expand app battery favourites from3 to5 with compatible saved defaults.",
+    "Calculate selected-capacity remainingmAh and percent only with current consumedmAh. Percent calculation matches Toolbox underlying capacity-consumed formula; explicit remainingmAh is an AERODECK display enhancement, not a proven Toolbox displayed field.",
+    "Maintain current/missing/real-zero distinctions and existing attitude/transport scheduling."
+  ],
+  "explicitNextGaps": [
+    "Automatic cell-count inference/connection-latching; current configured cell count is retained.",
+    "Native min/max rather than foreground traces.",
+    "Typed power-unit validation/conversion for custom mappings; standard CRSF engineering values must not be rescaled.",
+    "Chemistry labels and independently enabled favourites/dashboard pack chooser.",
+    "Toolbox cadence/mute differences, radio battery display and adaptive Ah formatting.",
+    "No individual-cell data producer is proven in Toolbox CRSF source; do not advertise per-cell telemetry from an average."
+  ]
+}

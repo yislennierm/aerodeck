@@ -1,0 +1,691 @@
+{
+  "schema": "aerodeck-workflow-audit-v1",
+  "revision": "ICON-NAV-20261016",
+  "date": "2026-10-16",
+  "scope": "Read-only audit of canonical source, modules and native synthetic-data previews. No production edits or real-radio timing claims.",
+  "measurement_rules": "Action counts are discrete taps or PAGE events, not elapsed time. Cold group memories are1,5,7,11,8,6. Hardware counts use the shortest of next/previous PAGE unless blocked. Counts stop at observing the requested screen; no screen-reader or touch support is inferred for Toolbox.",
+  "information_architecture": {
+    "screens": 12,
+    "top_sections": 6,
+    "global_navigation_surfaces": 5,
+    "local_navigation_families": 3,
+    "global_surfaces": [
+      "Six section icons with remembered subpages",
+      "Context tabs exposing current section pages",
+      "Flat12-tile drawer",
+      "Linear12-page hardware PAGE cycle",
+      "Four footer shortcuts, replaced by whole-footer alert routing"
+    ],
+    "local_families": [
+      "Setup list carousel and rows pager",
+      "Stick/Sensor/Arming detail paging",
+      "Cross-links such as GPS View Track and VTX Edit Favourites"
+    ],
+    "section_order": [
+      [
+        "Flight",
+        1,
+        10
+      ],
+      [
+        "Data",
+        5,
+        3,
+        9
+      ],
+      [
+        "GPS",
+        7,
+        2
+      ],
+      [
+        "VTX",
+        11
+      ],
+      [
+        "Setup",
+        8
+      ],
+      [
+        "Tools",
+        6,
+        4,
+        12
+      ]
+    ],
+    "linear_and_drawer_order": [
+      1,
+      5,
+      2,
+      7,
+      3,
+      9,
+      10,
+      6,
+      8,
+      4,
+      11,
+      12
+    ],
+    "settings_lists": {
+      "minimum": 4,
+      "maximum": 12,
+      "condition_source": "unsaved draft",
+      "displayed_rows": {
+        "general": 7,
+        "battery": 8
+      },
+      "save_stores": 2
+    },
+    "persistent_chrome": {
+      "top_bar_pixels": 34,
+      "context_pixels": 26,
+      "footer_pixels": 26,
+      "total_pixels": 86,
+      "fraction_of_display_height": 0.3161764705882353,
+      "body_height_pixels": 180
+    },
+    "toolbox": {
+      "declared_modules": 8,
+      "maximum_module_bar_items": 7,
+      "notes": "Dashboard is the shared return destination and omitted from the visible module bar. Other modules are filtered by configured capabilities. Module declaration is UI/MDINIT.lua10; filtering UI/MDUPD.lua8\u201327."
+    }
+  },
+  "workflows": [
+    {
+      "task": "View telemetry",
+      "start": "Flight; cold group memories",
+      "touch_actions": 1,
+      "touch_route": [
+        "Tap Data icon"
+      ],
+      "hardware_actions": 1,
+      "hardware_route": [
+        "PAGE next"
+      ],
+      "toolbox_comparison": "One destination in its common module bar, with LIVE/MIN/MAX local page actions."
+    },
+    {
+      "task": "View GPS coordinates",
+      "start": "Flight; cold group memories",
+      "touch_actions": 1,
+      "touch_route": [
+        "Tap GPS icon"
+      ],
+      "hardware_actions": 3,
+      "hardware_route": [
+        "PAGE next x3"
+      ],
+      "toolbox_comparison": "GPS is a direct module in the common bar; local RT/LT scrolls satellite detail."
+    },
+    {
+      "task": "View track",
+      "start": "Flight; cold group memories",
+      "touch_actions": 2,
+      "touch_route": [
+        "Tap GPS icon",
+        "Tap Track/Home context"
+      ],
+      "hardware_actions": 2,
+      "hardware_route": [
+        "PAGE next x2"
+      ],
+      "toolbox_comparison": "Track plot is an AERODECK extension; source does not establish an equivalent Toolbox module."
+    },
+    {
+      "task": "Read battery or link details",
+      "start": "Flight; no active global warning",
+      "touch_actions": 1,
+      "touch_route": [
+        "Tap Pack or LQ footer segment"
+      ],
+      "hardware_actions": {
+        "power": 4,
+        "link": 5
+      },
+      "hardware_route": [
+        "Use shortest PAGE direction in12-page cycle"
+      ],
+      "caveat": "An active alert makes the entire footer route to its alert target instead."
+    },
+    {
+      "task": "Open arming-stop explanation",
+      "start": "Flight",
+      "touch_actions": 1,
+      "touch_route": [
+        "Tap Arm Stops context"
+      ],
+      "hardware_actions": 6,
+      "hardware_route": [
+        "PAGE in either direction x6"
+      ],
+      "toolbox_comparison": "Toolbox Arm Stops is a module; AERODECK explanation selection supports rotary once reached."
+    },
+    {
+      "task": "Open Sensor Inspector",
+      "start": "Flight; cold group memories",
+      "touch_actions": 2,
+      "touch_route": [
+        "Tap Tools icon",
+        "Tap Sensors context"
+      ],
+      "hardware_actions": 3,
+      "hardware_route": [
+        "PAGE previous x3"
+      ],
+      "toolbox_comparison": "AERODECK splits a fixed telemetry table and a separate source inspector; Toolbox TLM is a dynamic source list."
+    },
+    {
+      "task": "Open all-screens drawer",
+      "start": "Any normal page",
+      "touch_actions": 1,
+      "touch_route": [
+        "Tap grid icon"
+      ],
+      "hardware_actions": null,
+      "hardware_route": [],
+      "blocked_reason": "No physical opener. Rotary focus works only after touching the grid.",
+      "toolbox_comparison": "Toolbox SY opens module focus; EN selects, EX cancels/returns Dashboard."
+    },
+    {
+      "task": "Edit and save battery cell count by one",
+      "start": "Flight; all12 settings lists enabled; Setup list1; battery first row selected",
+      "touch_actions": 6,
+      "touch_route": [
+        "Setup icon",
+        "Next list x2",
+        "Cell-count row",
+        "Plus",
+        "Save"
+      ],
+      "hardware_actions": null,
+      "blocked_reason": "Can open Setup in4 PAGE presses, but list selection and Save need touch.",
+      "toolbox_comparison": "Toolbox config PN/PP selects lists; EN edits/commits; EX cancels a value."
+    },
+    {
+      "task": "Read the second Stick Guide page",
+      "start": "Flight; cold Tools group",
+      "touch_actions": 2,
+      "touch_route": [
+        "Tools icon",
+        "Next"
+      ],
+      "hardware_actions": null,
+      "blocked_reason": "PAGE opens a different screen and rotary NEXT has no guide handler.",
+      "caveat": "PREV and NEXT currently perform the same toggle."
+    },
+    {
+      "task": "Change one saved VTX frequency by1MHz",
+      "start": "Flight; favourites list enabled",
+      "touch_actions": 5,
+      "touch_route": [
+        "VTX icon",
+        "Edit Favourites",
+        "Select favourite row",
+        "Plus",
+        "Save"
+      ],
+      "hardware_actions": null,
+      "blocked_reason": "No physical commit/list access; opening favourites is a touch action.",
+      "caveat": "This edits an offline note only; no VTX command is transmitted. Row8 needs one More Rows touch. Larger frequency changes require one increment perMHz."
+    },
+    {
+      "task": "Cancel an unsaved edit",
+      "start": "Setup edit mode",
+      "touch_actions": 1,
+      "touch_route": [
+        "Tap Revert"
+      ],
+      "hardware_actions": null,
+      "blocked_reason": "RTN exits the full app; ENTER ends editing without applying; no physical revert control.",
+      "toolbox_comparison": "Toolbox EX in edit mode restores its backed-up value."
+    },
+    {
+      "task": "Capture automatic home while watching Flight",
+      "start": "Valid current GPS, sufficient satellites, autoHome enabled",
+      "touch_actions": null,
+      "hardware_actions": null,
+      "blocked_reason": "Automatic capture does not execute until a GPS renderer is visited.",
+      "workaround": [
+        "Visit GPS once, then return Flight"
+      ],
+      "toolbox_comparison": "Toolbox GPS/sensor processing is in the common foreground loop."
+    }
+  ],
+  "findings": [
+    {
+      "id": "WF01",
+      "severity": "high",
+      "title": "Hardware navigation cannot open the all-screens drawer",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1177,
+          "end_line": 1200
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/MENU.lua",
+          "line": 26,
+          "end_line": 59
+        }
+      ],
+      "impact": "Rotary selection only works after touching the grid. A user navigating with the radio buttons must remember a twelve-page cycle; SYS/MENU does not expose the menu.",
+      "smallest_remedy": "Map one documented physical action to focus/open the existing drawer, with ENTER to select and RTN to cancel. Keep touch behavior.",
+      "verification": "Canonical app boundary probe: event42 representing SYS did not open the drawer. Static run() has no SYS/MENU/long-ENTER branch. Original Toolbox MENU bytecode confirms SY, EN, EX, RT/LT controls."
+    },
+    {
+      "id": "WF02",
+      "severity": "high",
+      "title": "Settings can be edited by rotary but cannot be saved or moved between lists without touch",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 107,
+          "end_line": 116
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 276,
+          "end_line": 290
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1194,
+          "end_line": 1197
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.lua",
+          "line": 180,
+          "end_line": 220
+        }
+      ],
+      "impact": "PAGE from Setup leaves for Sensors instead of selecting the next settings list. ENTER only toggles edit mode; neither SAVE nor REVERT is focusable. The hardware workflow reaches a dead end after adjustment.",
+      "smallest_remedy": "Make local settings interaction own PAGE while in Setup, and expose Save/Revert through the same focus model or explicit physical commit/cancel actions.",
+      "verification": "Probe: PAGE from Model Setup -> page4 Sensors; edit+rotary+ENTER -> zero writes and active value unchanged. Original Toolbox config bytecode confirms PN/PP changePage, EN commit, EX restore."
+    },
+    {
+      "id": "WF03",
+      "severity": "high",
+      "title": "RTN exits the full app while editing instead of backing out",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1179
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 255,
+          "end_line": 260
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 107,
+          "end_line": 116
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.lua",
+          "line": 180,
+          "end_line": 220
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/MENU.lua",
+          "line": 52,
+          "end_line": 54
+        }
+      ],
+      "impact": "A familiar cancel/back action destroys the current editing session on reopen. Ordinary pages also have no physical 'back to Flight'; users must traverse the global cycle.",
+      "smallest_remedy": "Prioritize cancel-edit, close-local-view and return-to-Flight before full app exit. Keep a deliberate app-exit action distinct and do not silently commit.",
+      "verification": "Probe: RTN returns1 from an unsaved edit; reopening restores the old active value. Toolbox EX restores the edited value in edit mode and returns Dashboard outside edit mode."
+    },
+    {
+      "id": "WF04",
+      "severity": "high",
+      "title": "Auto-home and track recording depend on looking at a GPS page",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 542,
+          "end_line": 554
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 558
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 628
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 922,
+          "end_line": 923
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1225
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+          "line": 147,
+          "end_line": 159
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.lua",
+          "line": 29,
+          "end_line": 60
+        }
+      ],
+      "impact": "Starting on Flight with valid GPS and auto-home enabled leaves HOME blank. The track is not a record of the flight; it records only time spent on GPS Details/Track screens.",
+      "smallest_remedy": "Update navigation state from the existing sampled data once per foreground frame, independently of which page renders. Keep rendering read-only and do not add duplicate sensor reads.",
+      "verification": "Probe with autoHome1 and valid GPS/sats: 35 Flight frames -> home=false, samples0; one GPS frame -> home=true, samples1. Toolbox sensor/GPS processing is in its common foreground loop."
+    },
+    {
+      "id": "WF05",
+      "severity": "medium",
+      "title": "Tapping the already-selected page reloads its graphics",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 490,
+          "end_line": 498
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1082
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1180,
+          "end_line": 1184
+        }
+      ],
+      "impact": "A harmless tap on the current icon/context/footer causes full garbage collection and reloads Flight chrome, bezel and digit glyphs. It can visibly stutter without changing page.",
+      "smallest_remedy": "Close the drawer if needed, but return early from a same-page selection unless the user explicitly requested a refresh. Preserve the current graphics cache.",
+      "verification": "Canonical app renderer with LCD/Bitmap boundary mocks: tapping already-active Flight caused26 Bitmap.open calls. This is an API-call count, not a measured radio pause."
+    },
+    {
+      "id": "WF06",
+      "severity": "medium",
+      "title": "The new shell is composed over legacy page headers",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 768,
+          "end_line": 777
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 559,
+          "end_line": 563
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 669,
+          "end_line": 671
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 865,
+          "end_line": 872
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1113,
+          "end_line": 1141
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1224,
+          "end_line": 1227
+        }
+      ],
+      "impact": "Pages draw titles, telemetry badges, model/source counts and navigation summaries that are then completely covered by the shell. Important page-specific information vanishes, and the code retains competing layouts rather than one layout owner.",
+      "smallest_remedy": "Give the shell sole ownership of the header/context/footer and remove legacy drawing there. Place any still-needed page status once in the reserved body or shared status region.",
+      "verification": "Render order is explicit: page renderer then shell.draw. Native screenshots show only the shell; Sensor Inspector source-count heading and old live/alert badges are covered. Root is separately measuring visible overlap."
+    },
+    {
+      "id": "WF07",
+      "severity": "medium",
+      "title": "Five global routes expose different mental maps of the same twelve screens",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 440,
+          "end_line": 443
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 769
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1085,
+          "end_line": 1091
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1165
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1185,
+          "end_line": 1195
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/MDINIT.lua",
+          "line": 10
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/MDUPD.lua",
+          "line": 8,
+          "end_line": 27
+        }
+      ],
+      "impact": "Section icons, contextual tabs, flat drawer, linear PAGE order and footer shortcuts each require a different navigation rule. A section remembers a subpage, so the same icon can open a different destination on a later tap.",
+      "smallest_remedy": "Choose one primary navigation model and one secondary shortcut mechanism. Retain useful page memory but make current section/page explicit; align linear order with section order if kept.",
+      "verification": "AERODECK:6 groups,12 pages,5 global navigation surfaces plus3 local navigation families. Toolbox declares8 modules (Dashboard plus7 modules), and its visible module list is filtered from that single declaration."
+    },
+    {
+      "id": "WF08",
+      "severity": "medium",
+      "title": "The icon-only drawer cannot teach unfamiliar icons to a touch user before activation",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 781,
+          "end_line": 791
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1128,
+          "end_line": 1130
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1185,
+          "end_line": 1191
+        }
+      ],
+      "impact": "Twelve similar line drawings are presented without simultaneous names. Only the focused caption is visible; touch selects immediately, so learning requires opening the wrong page. Rotary preview exists but the drawer itself needs a touch to open.",
+      "smallest_remedy": "Keep the requested icon-only top navigation, but add an intentional preview/focus affordance in the drawer or a compact labeled learning view. Do not rely on a universal-icon claim.",
+      "verification": "Native ui-menu.png and source. This supersedes the earlier optimistic description of a 'labeled drawer': it has one focused caption, not twelve labeled choices."
+    },
+    {
+      "id": "WF09",
+      "severity": "medium",
+      "title": "Stick Guide paging is a toggle disguised as directional navigation",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 693,
+          "end_line": 730
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1196,
+          "end_line": 1203
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/STK.lua",
+          "line": 47,
+          "end_line": 64
+        }
+      ],
+      "impact": "PREV at the first page opens the second page, NEXT at the second page opens the first, and rotary motion does nothing. PAGE changes the global screen instead of the guide page. There is no visible1/2 page position.",
+      "smallest_remedy": "Show a small page count and provide one consistent directional paging path through touch and hardware. For only two pages, one clearly named 'More commands' toggle is smaller and more truthful.",
+      "verification": "Probe: rotary NEXT kept commandPage1; PREV taps1->2->1. Toolbox RT/LT moves the visible command window and PN/PP changes reference stick mode."
+    },
+    {
+      "id": "WF10",
+      "severity": "medium",
+      "title": "Off/None affects setup-list visibility but not the visible feature destination",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 184,
+          "end_line": 220
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 355
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 360,
+          "end_line": 362
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1051,
+          "end_line": 1070
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1085,
+          "end_line": 1091
+        }
+      ],
+      "impact": "VTX reference lists Off still exposes eight favourite cards. RC protocol None reduces Setup to four lists while telemetry and eligible Auto/native MSP can work. Users cannot infer whether a setting disables behavior, hides configuration, or only changes a label.",
+      "smallest_remedy": "Define and label the setting's actual scope. Keep available live information visible, but show a clear capability/disabled explanation and a direct route to the controlling setting.",
+      "verification": "Static conditions: visible(draft) gates settings lists; groups/destinations are unconditional. MSP explicitly allows profileNone. No hardware inference required."
+    },
+    {
+      "id": "WF11",
+      "severity": "medium",
+      "title": "SAVE and REVERT have two different scopes behind identical buttons",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 97,
+          "end_line": 114
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 257,
+          "end_line": 260
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 278
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 287,
+          "end_line": 288
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 315,
+          "end_line": 322
+        }
+      ],
+      "impact": "General Save commits drafts across settings lists, while the battery page saves only its separate battery draft. Revert on one page does not revert the other draft. The user sees the same buttons without a scope explanation.",
+      "smallest_remedy": "Use one settings transaction model or explicitly label the separate battery save scope. Expose pending changes and do not imply that one Save commits every setting.",
+      "verification": "Two independent active/draft/path stores, two save() functions and input delegation for section3."
+    },
+    {
+      "id": "WF12",
+      "severity": "low",
+      "title": "Some button-like controls have no action or no feedback",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 604,
+          "end_line": 606
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 954
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1207,
+          "end_line": 1209
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 536,
+          "end_line": 540
+        }
+      ],
+      "impact": "NORTH UP is drawn like adjacent buttons but has no handler. SET CELL COUNT on Power looks actionable but is only text and has no direct route. Refresh buttons update source caches without completion feedback.",
+      "smallest_remedy": "Render fixed orientation as metadata, turn actionable setup hints into direct links, and provide a short refresh result/age indicator.",
+      "verification": "Track touch handlers cover mode/zoom/home only; Power has no body input handler."
+    },
+    {
+      "id": "WF13",
+      "severity": "low",
+      "title": "ENTER has unrelated and mostly invisible behavior across pages",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1196,
+          "end_line": 1209
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 430,
+          "end_line": 431
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 655,
+          "end_line": 665
+        }
+      ],
+      "impact": "ENTER cycles stick mode, advances an arming reason, rescans Sensors, toggles settings edit, or refreshes telemetry source caches. Users must learn these by page, and most pages do not show the key's meaning.",
+      "smallest_remedy": "Show the primary page action consistently and make ENTER activate the selected visible control. Remove undocumented no-feedback refresh actions where no action is needed.",
+      "verification": "Event dispatch directly demonstrates the five behavior classes."
+    },
+    {
+      "id": "WF14",
+      "severity": "low",
+      "title": "Attitude is polled twice in a rendered frame",
+      "evidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 404,
+          "end_line": 419
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1213,
+          "end_line": 1218
+        }
+      ],
+      "impact": "The fast callback polls pitch/roll before the draw throttle, then sample() polls them again for every redraw. The extra pass adds API work and can use slightly different values for cadence metrics and the visible frame.",
+      "smallest_remedy": "Have sample() reuse the immediately preceding attitude snapshot; preserve the fast callback rate and transport ordering.",
+      "verification": "Static call path; this is redundant work, not proof of the original slow-attitude cause."
+    }
+  ],
+  "evidence": {
+    "probe": "workflow-probe.lua",
+    "probe_output": "workflow-probe.txt",
+    "original_toolbox_disassembly": [
+      "toolbox-menu-original.txt",
+      "toolbox-config-original.txt",
+      "toolbox-sticks-original.txt"
+    ],
+    "limitations": "Toolbox recovered Lua contains malformed decompiler control flow. Key menu/config/stick event claims were checked against original Lua5.3 bytecode; exact elapsed timings or equivalent touch routes were not inferred. Native previews use synthetic telemetry."
+  }
+}

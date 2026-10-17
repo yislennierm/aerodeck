@@ -1,0 +1,161 @@
+{
+  "status": "PRIOR SOURCE EVIDENCE ONLY",
+  "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+  "records": [
+    {
+      "case": "missing",
+      "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+      "fixture": {
+        "variant": "missing",
+        "runtime": "runtime-all",
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": true,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-missing.log",
+      "logSha256": "0f16e89534439171365379f3dee723cbf74f931ec299e36d8968fa2c97c70b63",
+      "processExitCode": 0,
+      "screenshots": [
+        "center-missing.png"
+      ],
+      "file": "prior-6b5c87/center-missing.png",
+      "sha256": "1f668b2f2b2429c81ae8f9dbcbc989391fe9564dc2417a44e503935037f6f0a0",
+      "evidenceScope": "Prior-source data and pose evidence; final caption placement changed afterward."
+    },
+    {
+      "case": "zero",
+      "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+      "fixture": {
+        "variant": "zero",
+        "runtime": "runtime-all",
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": true,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-zero.log",
+      "logSha256": "de31627b4aef0fc63c1b237511b86c68d893c8fd9b8a4702dccd3c92eaa9f6a6",
+      "processExitCode": 0,
+      "screenshots": [
+        "center-zero.png"
+      ],
+      "file": "prior-6b5c87/center-zero.png",
+      "sha256": "b76d556e5a4ecd55d005f90033cd073376b28ab2c1d96afce1b5d9cf8f9ced61",
+      "evidenceScope": "Prior-source data and pose evidence; final caption placement changed afterward."
+    },
+    {
+      "case": "long-values",
+      "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+      "fixture": {
+        "variant": "long-values",
+        "runtime": "runtime-all",
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RxBt": 123.4,
+          "Capa": 9999999,
+          "TPWR": 99999,
+          "Curr": 999.9,
+          "1RSS": -1234,
+          "GSpd": 12345,
+          "GAlt": -99999,
+          "Sats": 999,
+          "Bat%": 100,
+          "Hdg": 359
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-long-values.log",
+      "logSha256": "323642b1eeafa84cd85ed3a13f34f34ce0add31c860f71fd0e928f3c8c900d4a",
+      "processExitCode": 0,
+      "screenshots": [
+        "center-long-values.png"
+      ],
+      "file": "prior-6b5c87/center-long-values.png",
+      "sha256": "52b1c0ae53ce014c886da4726f8ea28bfa8f707828bd77e41f147577e32e3711",
+      "evidenceScope": "Prior-source data and pose evidence; final caption placement changed afterward."
+    },
+    {
+      "case": "nose-up",
+      "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+      "fixture": {
+        "variant": "nose-up",
+        "runtime": "runtime-all",
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": -0.3490658503988659
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-nose-up.log",
+      "logSha256": "9d6dc05c1d6ce286db7b271fdfca9d80cf8179e1c2ba6864ef90c3d3459c8752",
+      "processExitCode": 0,
+      "screenshots": [
+        "center-nose-up.png"
+      ],
+      "file": "prior-6b5c87/center-nose-up.png",
+      "sha256": "a63dde31094d5d7a44b777c5e5de034bc1ee50a2834da3e0287be383ce4fd26d",
+      "evidenceScope": "Prior-source data and pose evidence; final caption placement changed afterward."
+    },
+    {
+      "case": "nose-down",
+      "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+      "fixture": {
+        "variant": "nose-down",
+        "runtime": "runtime-all",
+        "sourceSha256": "6b5c87df82f3a3926ec920a2ff1b7e5abb49a3dad2b0ff0072b823a73851db38",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": 0.3490658503988659
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-nose-down.log",
+      "logSha256": "16662e6f02a363e97ee7cdc0b9ed4ff55683433444302e259b89c821f35fdd84",
+      "processExitCode": 0,
+      "screenshots": [
+        "center-nose-down.png"
+      ],
+      "file": "prior-6b5c87/center-nose-down.png",
+      "sha256": "7a29cec43a6741d9d0c3c99d30cdaa21e25359f00c5c21de5658fbb1777bb39b",
+      "evidenceScope": "Prior-source data and pose evidence; final caption placement changed afterward."
+    }
+  ]
+}

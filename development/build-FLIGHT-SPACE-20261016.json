@@ -1,0 +1,929 @@
+{
+  "build": "FLIGHT-SPACE-20261016",
+  "createdUtc": "2026-10-16T22:03:12.203771+00:00",
+  "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+  "installSha256": "1eb52ea2803053045618530aee64b29beecdbd32fc3c83cf03f2aa4c9c541f65",
+  "runtimeFiles": 39,
+  "rootDocuments": 15,
+  "installFiles": 54,
+  "unchangedRuntimeFiles": 38,
+  "changedRuntimeFiles": [
+    "SCRIPTS/TOOLS/telem.lua"
+  ],
+  "newRuntimeFiles": [],
+  "omittedUnusedRuntimeFiles": [],
+  "legacyAssetsRetainedLocally": true,
+  "canonicalFilesDeleted": [],
+  "previousLocalBuild": "FLIGHT-CENTER-20261016",
+  "previousLocalSourceSha256": "00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e",
+  "baselineArchiveSha256": "2b3e246b48df567f4bbed26de37d31d5aa9b8f43d8d4190317e58163338d48f0",
+  "installedOnRadio": false,
+  "lastVerifiedRadioBuild": "HOME-ICON-20261016",
+  "deploymentHistoryUnchanged": true,
+  "attitudeBitmapsLoaded": false,
+  "nativeFlightFonts": true,
+  "sharedInstrumentZero": [
+    240,
+    153
+  ],
+  "hudField": [
+    78,
+    62,
+    324,
+    182
+  ],
+  "visibleAttitudeSize": [
+    232,
+    182
+  ],
+  "previousVisibleAttitudeSize": [
+    184,
+    122
+  ],
+  "visibleAttitudeAreaGainPercent": 88.1,
+  "flightFooterDeduplicated": true,
+  "pitchRungDegrees": 10,
+  "pitchPixelsPerDegree": 1.85,
+  "attitudeFixIncluded": true,
+  "attitudeSchedulingUnchanged": true,
+  "transportUnchanged": true,
+  "widgetUnchanged": true,
+  "portableSuitesPassed": 12,
+  "testCounts": {
+    "test_arm_status.lua": [],
+    "test_attitude_loop.lua": [
+      12000
+    ],
+    "test_configuration.lua": [
+      91
+    ],
+    "test_crsf_status.lua": [],
+    "test_fc_connection.lua": [],
+    "test_flight_layout.lua": [
+      2295
+    ],
+    "test_home_icon.lua": [
+      235
+    ],
+    "test_material_icons.lua": [
+      2107
+    ],
+    "test_pitch_direction.lua": [
+      54
+    ],
+    "test_rendering.lua": [],
+    "test_telemetry.lua": [],
+    "test_ui_navigation.lua": [
+      17,
+      18
+    ]
+  },
+  "configurationAssertions": 91,
+  "pitchDirectionAssertions": 54,
+  "navigationAndRendererScenarios": 35,
+  "materialIconAssertions": 2107,
+  "flightLayoutAssertions": 2295,
+  "nativePreviewFolder": "development/ui-previews/flight-space",
+  "nativePreview": {
+    "build": "FLIGHT-SPACE-20261016",
+    "status": "PASS",
+    "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+    "syntheticDataOnly": true,
+    "fixturePrefixShips": false,
+    "simulator": {
+      "version": "3.0.0",
+      "target": "RadioMaster TX16S",
+      "renderer": "Native EdgeTX WASM",
+      "framebuffer": "RGB565 little endian480x272",
+      "pngConversion": "Pillow RGB/raw/BGR;16; primary565 red/green/blue validated",
+      "host": "work/edgetx/native-sim/host.cjs"
+    },
+    "hardwareVerified": false,
+    "hardwarePoseVerified": false,
+    "hardwareRenderingVerified": false,
+    "hardwarePerformanceMeasured": false,
+    "radioInstalledByThisQA": false,
+    "pageScreenCount": 12,
+    "totalAcceptedScreenshotCount": 36,
+    "screenshots": [
+      {
+        "file": "space-flight.png",
+        "sha256": "f43b911bed44f0ac7f195caf358baaf78578d7779b714b884402cb870efa755c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Normal expanded native PFD, signed pitch/roll readouts and unique Flight footer"
+      },
+      {
+        "file": "space-nav-focus.png",
+        "sha256": "98ff44bca4cda71b639d960d70867ac7c7e97c397cb879d871001021841b9b64",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "SYS section focus retains shared navigation"
+      },
+      {
+        "file": "space-context-focus.png",
+        "sha256": "35474c5aacdb78cbe28cf127c31efcc958f968ebea4e95be6aff408d263bedf0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "ENTER shows compact shield focus without touching heading"
+      },
+      {
+        "file": "space-arm.png",
+        "sha256": "ec5d93e7cfc03c8e7e4bd9cafae0b2eb672d7797885a0a15d6f8fdc15ac92c7b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Touch384,46 opens Arm Stops"
+      },
+      {
+        "file": "space-arm-return.png",
+        "sha256": "f43b911bed44f0ac7f195caf358baaf78578d7779b714b884402cb870efa755c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Physical RTN returns from touch-opened Arm Stops to Flight"
+      },
+      {
+        "file": "space-arm-enter.png",
+        "sha256": "ef3c2be818737788fbecaee508bb645db6ac7fb669cbc097aedd7a008cf1d42c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "ENTER focus then ENTER activation opens Arm Stops"
+      },
+      {
+        "file": "space-arm-enter-return.png",
+        "sha256": "f43b911bed44f0ac7f195caf358baaf78578d7779b714b884402cb870efa755c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Physical RTN returns from keyboard-opened Arm Stops to Flight"
+      },
+      {
+        "file": "space-telemetry.png",
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Telemetry dense three-column page"
+      },
+      {
+        "file": "space-power.png",
+        "sha256": "6b5507d51a5f444b96b0f95297ce54cb6aed342685050d9675f94533300e4d35",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Power page"
+      },
+      {
+        "file": "space-link.png",
+        "sha256": "a5832ed95bf1980ffebc09a2c3f0ea6fa6874b6acd8c9f0f69ed6601466664a2",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "RC Link page"
+      },
+      {
+        "file": "space-gps.png",
+        "sha256": "0f20f3633439b7cbd641254bbef49c2f55672a8743af3b536273833aa7f5173a",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "GPS Details page"
+      },
+      {
+        "file": "space-track.png",
+        "sha256": "3f862fa0521d29091f55324575f08d97368dc4c59731a6df50efe4ffa6ec92b6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Track/Home page"
+      },
+      {
+        "file": "space-video.png",
+        "sha256": "4583edd5d2ca6a770b0e553b7eeb325bcd606c6216ac985ac27ebe62194f860c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Video CUSTOM/REFERENCE layout"
+      },
+      {
+        "file": "space-setup.png",
+        "sha256": "2d5c490ac4d61dc09bc2a3e4cf6638cad9335713800a8ecbea01988f67d68b19",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Setup categories page1"
+      },
+      {
+        "file": "space-battery.png",
+        "sha256": "1579389f97f1675f874d09f305f1e3432ec998a51cf71e1b94e9df2b23c12f7b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Battery category all eight rows/actions"
+      },
+      {
+        "file": "space-battery-edit.png",
+        "sha256": "960b97bde89131e4f99dbcfbcf40bceec72e80edb102bef89e994d4976e04e72",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Audible-alert editing state"
+      },
+      {
+        "file": "space-model-settings.png",
+        "sha256": "f41fe37f0b1ab8d51010f2137e04ec036168764a95c9e7137bc514106d0bf87d",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Model settings first rows"
+      },
+      {
+        "file": "space-model-mid.png",
+        "sha256": "6d62280d4d654d9e9e09bc9afcb3d0ed45d678a1144d972ff855f8763203416c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Model settings middle rows"
+      },
+      {
+        "file": "space-settings-save.png",
+        "sha256": "3c2dea5b811fefba94bfffa05470de873a85d33160ba8b4e25c8d17fe089e85b",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Save Settings focus"
+      },
+      {
+        "file": "space-categories-second.png",
+        "sha256": "eb9451f31d06150e40a4faa6b4821294215c4119be5ace3f5f3e16f15e4c66a0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Setup categories page2"
+      },
+      {
+        "file": "space-sticks.png",
+        "sha256": "2ae1c966f08ee7fa39070a7850b7c368dc35817d7b6faa9fa1a513695eda2cb0",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Stick Guide page"
+      },
+      {
+        "file": "space-sensors.png",
+        "sha256": "f5f46632387b66f26e58a0e77717cbfa0813dd7f67911a834cea212df2f09882",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Sensors page"
+      },
+      {
+        "file": "space-diagnostics.png",
+        "sha256": "272cac52642c6c50057920b0bc9810b1e4fe4806c624319a8b483a9363d1fdbf",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Diagnostics and exact FLIGHT-SPACE build identity"
+      },
+      {
+        "file": "space-home-return.png",
+        "sha256": "31d772227453305d659dcec697f7edfb32025ca0d55397fa2fc7882c94bdc9e5",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Home returns to Flight with captured home0m in footer"
+      },
+      {
+        "file": "space-page-data.png",
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Normal PAGE> opens Data"
+      },
+      {
+        "file": "space-bank.png",
+        "sha256": "3a10d702d63603773184f13aea6fbc74f73711260ad7679a35a0511b38f3d67f",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Bank35 with readable P+0/R+35 and no fixed-bank-guide occlusion"
+      },
+      {
+        "file": "space-missing.png",
+        "sha256": "51935551c83859dfd94304f8c710035ac4018a57dac5bf5835b6259fd07071b8",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Missing telemetry: -- and explicit attitude unavailable, no invented P/R values"
+      },
+      {
+        "file": "space-zero.png",
+        "sha256": "789d8e23624a7d1f99d1870e8aa348c5d04874ea4332a9a3a61a043a9a9aacf7",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Zero numeric readings remain0, including signed P/R+0"
+      },
+      {
+        "file": "space-low-lq.png",
+        "sha256": "cbdcb79305efe3559d9f8470d53b797d9f8abc24d0111acea7d3b5cbc6563ad2",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Heading015 and LQ85 with actual saved Crit80/Low90 thresholds"
+      },
+      {
+        "file": "space-critical-lq.png",
+        "sha256": "7e8af78b99be3b386b1ec632e9ae3a8e6d5b930e3fb3a0537a5f115c81555b24",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Heading140 and LQ75 with actual saved Crit80/Low90 thresholds"
+      },
+      {
+        "file": "space-long-values.png",
+        "sha256": "060fcd87144fe63c7f4dc1157d42bbc5fbef0c186754ee902ce46cfca28865a3",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Narrow rails and tape windows contain extreme telemetry; heading359 wraps"
+      },
+      {
+        "file": "space-nose-up.png",
+        "sha256": "bd175f4ec2f09ca9c13a69211b7e961846982090f38afb97c496e36e3f03258a",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Raw pitch-20deg becomes P+20deg and nose-up horizon"
+      },
+      {
+        "file": "space-nose-down.png",
+        "sha256": "815e269c9ecaf532fde989ae56a18e6e48a99ca17def15c69d3f2fd4d5b9a90c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Raw pitch+20deg becomes P-20deg and nose-down horizon"
+      },
+      {
+        "file": "space-roll.png",
+        "sha256": "5f59f7adaef878aa3217bc5cb219d547e62413346a7ab1e2203fef108f9f7a2c",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Roll90: signed R+90deg, vertical horizon and separate captions"
+      },
+      {
+        "file": "space-inverted.png",
+        "sha256": "07b99568679634aa88ef9743f48ab435940cf030e9990b9a0bd096f8c18fc352",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "Roll180: signed R+180deg and correct inverted sky/ground clipping"
+      },
+      {
+        "file": "space-pitch-ten.png",
+        "sha256": "932284effb536a57b6b2efaea83b488921a9f8d110433baa2e4118676e18ae03",
+        "width": 480,
+        "height": 272,
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "visuallyInspected": true,
+        "purpose": "P+10deg readout and pitch10 caption clear of aircraft"
+      }
+    ],
+    "fixtures": [
+      {
+        "variant": "all",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "bank",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 0.6108652381980153
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "missing",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": true,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "zero",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": true,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "low-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 85,
+          "Hdg": 15
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      {
+        "variant": "critical-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 75,
+          "Hdg": 140
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      {
+        "variant": "long-values",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RxBt": 123.4,
+          "Capa": 9999999,
+          "TPWR": 99999,
+          "Curr": 999.9,
+          "1RSS": -1234,
+          "GSpd": 12345,
+          "GAlt": -99999,
+          "Sats": 999,
+          "Bat%": 100,
+          "Hdg": 359
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "nose-up",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": -0.3490658503988659
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "nose-down",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": 0.3490658503988659
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "roll",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 1.5707963267948966
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "inverted",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Roll": 3.141592653589793
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      {
+        "variant": "pitch-ten",
+        "runtime": "runtime-all",
+        "sourceSha256": "dce1def1c6d641f97cf4e7684479cd238c4e63d259a6fdd19dea74c0f64cccad",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "Ptch": -0.17453292519943295
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      }
+    ],
+    "priorSourceEvidenceCount": 0,
+    "layout": {
+      "fullHudRectangle": [
+        78,
+        62,
+        324,
+        182
+      ],
+      "nominalAttitudeViewport": [
+        124,
+        62,
+        232,
+        182
+      ],
+      "centralDatum": [
+        240,
+        153
+      ],
+      "leftMetricRail": [
+        4,
+        35,
+        70,
+        209
+      ],
+      "rightMetricRail": [
+        406,
+        35,
+        70,
+        209
+      ],
+      "tapeWidths": 46,
+      "tapeIndexWindowsY": [
+        137,
+        169
+      ],
+      "headingRibbon": [
+        78,
+        35,
+        288,
+        26
+      ],
+      "selectedHeadingBadge": [
+        216,
+        35,
+        48,
+        26
+      ],
+      "armStopsShortcut": [
+        368,
+        35,
+        34,
+        26
+      ],
+      "pitchReadout": {
+        "labelX": 128,
+        "valueX": 141,
+        "valueWidth": 63,
+        "y": 63,
+        "height": 18
+      },
+      "rollReadout": {
+        "labelX": 286,
+        "valueX": 300,
+        "valueWidth": 52,
+        "y": 63,
+        "height": 18
+      },
+      "flightFooter": [
+        "Flight mode",
+        "Local home distance",
+        "Satellite count",
+        "MSP state"
+      ],
+      "pfdBitmapAssetLoads": 0
+    },
+    "armStopsInputChecks": [
+      {
+        "action": "Touch Arm Stops shortcut",
+        "touch": [
+          384,
+          46
+        ],
+        "opened": "space-arm.png",
+        "returnedViaRtn": "space-arm-return.png",
+        "passed": true
+      },
+      {
+        "action": "ENTER focuses shield; second ENTER opens it",
+        "focused": "space-context-focus.png",
+        "opened": "space-arm-enter.png",
+        "returnedViaRtn": "space-arm-enter-return.png",
+        "passed": true
+      }
+    ],
+    "finalSourceChecks": {
+      "all12PagesVisuallyInspected": true,
+      "noOverlapObserved": true,
+      "noPartialCaptionsObserved": true,
+      "newBankGuideCollisionResolved": true,
+      "signedPitchRollReadoutsLegible": true,
+      "readoutCaptionExclusionWorks": true,
+      "normalDatumAlignedAtY153": true,
+      "zeroAndMissingDistinguished": true,
+      "customLqThresholdColorsCorrect": true,
+      "extremeValuesFitNarrowRailsAndTapeWindows": true,
+      "heading015140359WrapAndBadgeClearance": true,
+      "noseUpDown90BankAndInvertedClippingCorrect": true,
+      "settingsAndOtherPagesFit": true,
+      "newShieldTouchAndKeyboardReturnPathsPass": true
+    },
+    "visualChecks": [
+      "All36 screenshots, including all12 pages, are captured from exact finaldce1 source; no previous-source substitutions.",
+      "The expanded native HUD uses the space below the heading row; level horizon, aircraft and equal-width tape indexes align at240,153.",
+      "Signed pitch/roll readouts are readable at0,+10,\u00b120pitch and+35,+90,+180roll. Fixed bank-guide/pointer is absent, eliminating the earlier bank35 caption collision.",
+      "Moving pitch captions avoid readout/aircraft boxes; heading015/140 labels stay outside the badge, heading359 wraps, and index-window captions are complete.",
+      "Narrow metric rails and unique Flight FM/home/sats/MSP footer fit. SNR/current are readable; missing is--, zero remains0 and extreme values stay inside their cells.",
+      "Actual saved Crit80/Low90 thresholds produce amber85 and red75 with matching warning footers.",
+      "Touch384,46 opens Arm Stops and RTN returns; first ENTER focuses the shield, second ENTER opens it and RTN returns. Focus border stays clear of heading.",
+      "Native90/inverted views remain clipped correctly; raw pitch sign remains consistent in both\u00b120 cases.",
+      "Global navigation, other11 pages, Video CUSTOM/REFERENCE, long Arm Stops heading, settings row/action/edit states, Home and PAGE routing remain clean."
+    ],
+    "logs": [
+      {
+        "file": "work/edgetx/flight-space/capture-all.log",
+        "sha256": "feee44bce5eb5a0d8943d68f466c1b005dca13b6fbc1119dfa496923bdef900e",
+        "processExitCode": 0,
+        "acceptedShotCount": 25,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-bank.log",
+        "sha256": "1aa6f6efcd347eb68fbac02ae1094e4f85901438769db061db1221a99798c16b",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-missing.log",
+        "sha256": "f41b66cd4e0ec2f410129fb0c0e7de6d771a4b1201357e0db786ac21413f71da",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-zero.log",
+        "sha256": "274c9085a5e718a1d36a126638876d4404076c104c867a7084d344b1cce146e6",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-low-lq.log",
+        "sha256": "8ed48dee90d3ec6a9b7eb8dc2b273866d68307944b7ee40d2f6ac58bfa3eccec",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-critical-lq.log",
+        "sha256": "fbb6dc17ecc71852039738729a721b8a93af408f794b80fd19b116243a761e69",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-long-values.log",
+        "sha256": "be8907aab500a083b40e2e361fde82bb8f42111c0b19146217ff85b30abbadcd",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-nose-up.log",
+        "sha256": "275f066b780ba40eddf0b2e1ce10da12ddb7984d670e85a0e663d5b84f3fdab4",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-nose-down.log",
+        "sha256": "ab9e06c393ccd51d11cf147a7b627baa4103587f204735c95755bbd3a9b9a8ef",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-roll.log",
+        "sha256": "32f8ccbe47febe303cfaa86f46e7758a97a46b3a5d82c6ea1d420e8c319c4d53",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-inverted.log",
+        "sha256": "82386966f19916da3fa58967c3801904b4c1f247270afabf788350f51aab1ad5",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/flight-space/capture-pitch-ten.log",
+        "sha256": "6387e37c0c60a8aad6c45f54bde51dd278b849d443fbaf8ad38cc0b06f66c3ed",
+        "processExitCode": 0,
+        "acceptedShotCount": 1,
+        "luaOrFirmwareErrorsObserved": false
+      }
+    ],
+    "errorFreeLogs": true,
+    "knownHostNotices": [
+      "Node ExperimentalWarning: WASI is an experimental feature"
+    ],
+    "limitations": [
+      "Native simulator is EdgeTX3.0.0. Physical TX16S on EdgeTX2.12.4 rendering, live telemetry, FPS/memory and physical pose remain unverified.",
+      "Telemetry, switches and MSP responses are synthetic fixtures in a single isolated reused runtime. Production source contains no fixture. No radio was modified.",
+      "Desktop diagnostic draw-rate values are not hardware performance benchmarks.",
+      "Early6391178 level/bank/missing previews and their open bank-guide collision are excluded. All36 accepted screenshots use finaldce1 after that guide was replaced with live readouts.",
+      "The unrealistic9999999mAh stress input displays10000000 after native Lua rounding; this case tests numeric fitting, not sensor accuracy."
+    ]
+  },
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "tests": [
+    {
+      "name": "test_arm_status.lua",
+      "exit_code": 0,
+      "output": "PASS: STATUS_EX offsets, exact API1.46/1.47 flags, bytewise high/low bits, unknown APIs/counts, malformed rejection, no input mutation"
+    },
+    {
+      "name": "test_attitude_loop.lua",
+      "exit_code": 0,
+      "output": "PASS: 12000 callbacks; 27 source binds, zero runtime writes; attitude 100.0 Hz, draw 25.0 Hz (mock clock)"
+    },
+    {
+      "name": "test_configuration.lua",
+      "exit_code": 0,
+      "output": "PASS: 91 configuration UX assertions"
+    },
+    {
+      "name": "test_crsf_status.lua",
+      "exit_code": 0,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates"
+    },
+    {
+      "name": "test_fc_connection.lua",
+      "exit_code": 0,
+      "output": "PASS: empty TEST configuration auto-detects CRSF; armed/failsafe/unknown/stale/disabled/incompatible gates; exit cancels; transport before draw"
+    },
+    {
+      "name": "test_flight_layout.lua",
+      "exit_code": 0,
+      "output": "PASS: 2295 actual Flight checks; rectangular PFD, heading wrap, signed native-scale ladder, shared datum, missing/zero/long telemetry, and icon-only stable cache"
+    },
+    {
+      "name": "test_home_icon.lua",
+      "exit_code": 0,
+      "output": "PASS: 235 home icon cache, tint, GC, fallback and compatibility checks"
+    },
+    {
+      "name": "test_material_icons.lua",
+      "exit_code": 0,
+      "output": "PASS: 2107 Material icon native-size, cache, cold-GC, tint, lifetime and fallback checks"
+    },
+    {
+      "name": "test_pitch_direction.lua",
+      "exit_code": 0,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks"
+    },
+    {
+      "name": "test_rendering.lua",
+      "exit_code": 0,
+      "output": "PASS: stable qualified telemetry binding, explicit refresh, no legacy flight background loaders or source-binding bitmap reads"
+    },
+    {
+      "name": "test_telemetry.lua",
+      "exit_code": 0,
+      "output": "PASS: live without RSSI, units, flight mode, stale clearing, no demo via refresh or old startup setting"
+    },
+    {
+      "name": "test_ui_navigation.lua",
+      "exit_code": 0,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 18 dirty-exit, settings-return, draft-preservation, repeated-control, arming, warning-action and pitch-rendering scenarios"
+    }
+  ]
+}

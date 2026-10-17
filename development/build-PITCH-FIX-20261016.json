@@ -1,0 +1,218 @@
+{
+  "build": "PITCH-FIX-20261016",
+  "createdUtc": "2026-10-16T17:06:59.531914+00:00",
+  "sourceSha256": "07acc61a035126891419a1e33f61b63c205326b99b8f10119afbe578d4379368",
+  "installSha256": "e9c5863c8545f82cc67939b80f155a1bd306d37d1ed8e81f874c9d1dd09b455d",
+  "runtimeFiles": 80,
+  "installFiles": 89,
+  "unchangedRuntimeFiles": 79,
+  "widgetUnchanged": true,
+  "transportUnchanged": true,
+  "graphicsUnchanged": true,
+  "attitudeSchedulingUnchanged": true,
+  "portableSuitesPassed": 9,
+  "pitchDirectionAssertions": 54,
+  "navigationAndRendererScenarios": 27,
+  "hardwarePoseVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "installedOnRadio": true,
+  "lastVerifiedRadioBuild": "PITCH-FIX-20261016",
+  "previousVerifiedRadioBuild": "UX-CLEANUP-20261016",
+  "tests": [
+    {
+      "name": "test_crsf_status.lua",
+      "chunk_id": "1a40d8",
+      "wall_time_seconds": 1.782e-05,
+      "exit_code": 0,
+      "original_token_count": 39,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates\n"
+    },
+    {
+      "name": "test_fc_connection.lua",
+      "chunk_id": "2064e8",
+      "wall_time_seconds": 3.1198e-05,
+      "exit_code": 0,
+      "original_token_count": 36,
+      "output": "PASS: empty TEST configuration auto-detects CRSF; armed/failsafe/unknown/stale/disabled/incompatible gates; exit cancels; transport before draw\n"
+    },
+    {
+      "name": "test_configuration.lua",
+      "chunk_id": "4a0f36",
+      "wall_time_seconds": 2.0616e-05,
+      "exit_code": 0,
+      "original_token_count": 10,
+      "output": "PASS: 82 configuration UX assertions\n"
+    },
+    {
+      "name": "test_telemetry.lua",
+      "chunk_id": "a1bec2",
+      "wall_time_seconds": 1.4648e-05,
+      "exit_code": 0,
+      "original_token_count": 26,
+      "output": "PASS: live without RSSI, units, flight mode, stale clearing, no demo via refresh or old startup setting\n"
+    },
+    {
+      "name": "test_rendering.lua",
+      "chunk_id": "12f136",
+      "wall_time_seconds": 1.1926e-05,
+      "exit_code": 0,
+      "original_token_count": 31,
+      "output": "PASS: stable qualified telemetry binding, explicit refresh, partial bitmap failure retains background and reports failure\n"
+    },
+    {
+      "name": "test_attitude_loop.lua",
+      "chunk_id": "569189",
+      "wall_time_seconds": 0.124844635,
+      "exit_code": 0,
+      "original_token_count": 27,
+      "output": "PASS: 12000 callbacks; 27 source binds, zero runtime writes; attitude 100.0 Hz, draw 25.0 Hz (mock clock)\n"
+    },
+    {
+      "name": "test_arm_status.lua",
+      "chunk_id": "289eab",
+      "wall_time_seconds": 2.0135e-05,
+      "exit_code": 0,
+      "original_token_count": 34,
+      "output": "PASS: STATUS_EX offsets, exact API1.46/1.47 flags, bytewise high/low bits, unknown APIs/counts, malformed rejection, no input mutation\n"
+    },
+    {
+      "name": "test_ui_navigation.lua",
+      "chunk_id": "440845",
+      "wall_time_seconds": 0.247242911,
+      "exit_code": 0,
+      "original_token_count": 52,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 10 dirty-exit, settings-return, draft-preservation, repeated-control, arming, warning-action and pitch-rendering scenarios\n"
+    },
+    {
+      "name": "test_pitch_direction.lua",
+      "chunk_id": "d42c09",
+      "wall_time_seconds": 1.7712e-05,
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks\n"
+    }
+  ],
+  "deployedAt": "2026-10-16T19:05:59.018419+02:00",
+  "radioSafelyEjected": true,
+  "deploymentReport": "DEPLOYMENT.txt",
+  "nativePitchRendering": {
+    "build": "PITCH-FIX-20261016",
+    "sourceSha256": "07acc61a035126891419a1e33f61b63c205326b99b8f10119afbe578d4379368",
+    "screenshots": [
+      {
+        "file": "pitch-level-flight.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "3db0b81e3713dc5aa4646fc509631a792c9b157ea6843d846cd3209fb494467f"
+      },
+      {
+        "file": "pitch-level-video.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "bb56d905ae7b0e78dd78fb375f3a4f01aa9d60cb2529357f8456d1c7a03b5d41"
+      },
+      {
+        "file": "pitch-nose-down-flight.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "cc53ae3b20a22b5a681fa0aa16f39682648219d15b311714bb67101eb7764c5e"
+      },
+      {
+        "file": "pitch-nose-down-video.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "b5f92bd9937c22732c70677579ab3ad1f7d0f21a00360917c51bb4e79570e450"
+      },
+      {
+        "file": "pitch-nose-up-flight.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "4da5eee951b48749753a435edf70981af2585ab34cfce1f101caee33e2a91352"
+      },
+      {
+        "file": "pitch-nose-up-video.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "ca82cc8523356cfa64d6ed99500e7f35b6b77aca380610283887e037f0aa2c68"
+      }
+    ],
+    "simulatorVersion": "3.0.0",
+    "simulatorTarget": "TX16S",
+    "simulatorKind": "EdgeTX WASM native RGB565 framebuffer",
+    "rawPoses": [
+      {
+        "pose": "nose-up",
+        "rawPitchRadians": -0.3490658503988659,
+        "rawRollRadians": 0,
+        "expectedNormalizedPitchDegrees": 20,
+        "expectedNormalizedPitchSign": 1,
+        "observedVideoPitchDegrees": 20,
+        "observedVideoRollDegrees": 0,
+        "observedFlightHorizon": "below aperture center; more sky"
+      },
+      {
+        "pose": "level",
+        "rawPitchRadians": 0,
+        "rawRollRadians": 0,
+        "expectedNormalizedPitchDegrees": 0,
+        "expectedNormalizedPitchSign": 0,
+        "observedVideoPitchDegrees": 0,
+        "observedVideoRollDegrees": 0,
+        "observedFlightHorizon": "at aperture vertical center"
+      },
+      {
+        "pose": "nose-down",
+        "rawPitchRadians": 0.3490658503988659,
+        "rawRollRadians": 0,
+        "expectedNormalizedPitchDegrees": -20,
+        "expectedNormalizedPitchSign": -1,
+        "observedVideoPitchDegrees": -20,
+        "observedVideoRollDegrees": 0,
+        "observedFlightHorizon": "above aperture center; more ground"
+      }
+    ],
+    "errorFreeLogs": true,
+    "logs": [
+      {
+        "file": "work/edgetx/pitch-fix/capture-nose-up.log",
+        "sha256": "062ae8c8ccd15f37bf92343885afa25adf2e9b97c3f0fa47efd3d09640c79175",
+        "processExitCode": 0,
+        "screenshotCount": 2,
+        "frameBytes": 261120,
+        "errorMatches": [],
+        "knownHostNotice": "Node ExperimentalWarning for WASI only",
+        "knownHostNoticeLineCount": 8
+      },
+      {
+        "file": "work/edgetx/pitch-fix/capture-level.log",
+        "sha256": "9d38a6bed3f7bac6f3c303d68d068edfc42a91742ca0afc85b80d3c3109d622b",
+        "processExitCode": 0,
+        "screenshotCount": 2,
+        "frameBytes": 261120,
+        "errorMatches": [],
+        "knownHostNotice": "Node ExperimentalWarning for WASI only",
+        "knownHostNoticeLineCount": 8
+      },
+      {
+        "file": "work/edgetx/pitch-fix/capture-nose-down.log",
+        "sha256": "27906bbb9be07ab3e03a8d7c27e7802bf334c7a20886d200df29cea335d8b7f8",
+        "processExitCode": 0,
+        "screenshotCount": 2,
+        "frameBytes": 261120,
+        "errorMatches": [],
+        "knownHostNotice": "Node ExperimentalWarning for WASI only",
+        "knownHostNoticeLineCount": 8
+      }
+    ],
+    "hardwarePoseVerified": false,
+    "hardwarePerformanceMeasured": false,
+    "syntheticDataOnly": true,
+    "fixturePrefixShips": false,
+    "notes": [
+      "Video73px inset is fully sky/ground at normalized+20/-20 because the horizon reaches the crop boundary.",
+      "Level horizon is centered in each renderer aperture; no physical sensor calibration is established.",
+      "Only isolated runtimes were changed; no canonical/radio/shared-runtime edits.",
+      "Node logs contain the standard WASI ExperimentalWarning host notice; no Lua/firmware error, syntax or memory fault was observed."
+    ]
+  }
+}

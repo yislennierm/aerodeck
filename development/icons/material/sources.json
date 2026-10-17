@@ -1,0 +1,160 @@
+[
+  {
+    "name": "battery_full",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/battery_full/materialsymbolsoutlined/battery_full_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/battery_full.svg",
+    "originalSha256": "c53eed32ca27aca45c11e0d23249c8c9044399f8f4346cd2a693e5ed0980784d",
+    "modifiedMaster": "masters/battery_full.svg",
+    "masterSha256": "1f9eb36aa3a37ce3f8176455bd63443ce3225b06bcef3a1fb21c20aac470522f",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "bug_report",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/bug_report/materialsymbolsoutlined/bug_report_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/bug_report.svg",
+    "originalSha256": "b12e1d975fd2fed26578e3889f4cb2049c2e4d96a7f2660fd52528a47fcbf525",
+    "modifiedMaster": "masters/bug_report.svg",
+    "masterSha256": "940209d6f1f44bfbd2f7542b43aceed05cc01351fc20b1e54c969c3abdf6ef59",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "build",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/build/materialsymbolsoutlined/build_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/build.svg",
+    "originalSha256": "50ee5a9864ac7c63d533c28c2f05ddb3195e49f1e9a955e642c8fa273940e113",
+    "modifiedMaster": "masters/build.svg",
+    "masterSha256": "1c62f618908445f746019446ee39a18b129ac6a9136a5569296592222b42c335",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "cell_tower",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/cell_tower/materialsymbolsoutlined/cell_tower_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/cell_tower.svg",
+    "originalSha256": "37ab46690e1a16cbfb8b405c15b4f5564dae2ceeb98fc2ea550f18e7ce65aef5",
+    "modifiedMaster": "masters/cell_tower.svg",
+    "masterSha256": "3f512a824e4454cd8a386a636a0530c14207beba68a8a9a313bab50d68af7d23",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "gpp_bad",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/gpp_bad/materialsymbolsoutlined/gpp_bad_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/gpp_bad.svg",
+    "originalSha256": "23e5ffd981f8169896711caa770c3799fbc80358d407d0ac5b70cc03250d0684",
+    "modifiedMaster": "masters/gpp_bad.svg",
+    "masterSha256": "20e9f7e5eb6a9b531199c24da64dce30b635cd473da8e99fa00fc0e107f66620",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "head_mounted_device",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/head_mounted_device/materialsymbolsoutlined/head_mounted_device_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/head_mounted_device.svg",
+    "originalSha256": "5d3ddb003be54d7ec8a3b53f8d825ee690cd8b7f994a7883312291e05f47813c",
+    "modifiedMaster": "masters/head_mounted_device.svg",
+    "masterSha256": "dd42db1cc77af9f829619b80beeadd7713d766ce55fbdecf6f29e7a0303c8a1d",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "my_location",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/my_location/materialsymbolsoutlined/my_location_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/my_location.svg",
+    "originalSha256": "8e4f63bed1446eb726036a4b573ecef3b8a8261aeb50e31a89883e929758d067",
+    "modifiedMaster": "masters/my_location.svg",
+    "masterSha256": "4cbfe9803cacf1b7a860007b87a3ce01afdf233b983c6e74a90b56d503262b74",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "route",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/route/materialsymbolsoutlined/route_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/route.svg",
+    "originalSha256": "d7962e11c41b71ce30aa4c47b7f3eacb9d88d08f02421214f5f9d641d5a45956",
+    "modifiedMaster": "masters/route.svg",
+    "masterSha256": "3060e94277bd4bd02846b31d22f15732b6ddc50fa50dc7b56f00ed4e516005f0",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "satellite_alt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/satellite_alt/materialsymbolsoutlined/satellite_alt_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/satellite_alt.svg",
+    "originalSha256": "8545cc0de508b27b3d4276f7c90afa6fd8a0371bf58e0587d971702b8981a86a",
+    "modifiedMaster": "masters/satellite_alt.svg",
+    "masterSha256": "501b0ea114130ef4fd8d3819949b630a82abfe989912f594db9f450eb298caa3",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px footer variant rendered directly from this master.",
+    "fitReference": {
+      "rasterSize": [
+        960,
+        960
+      ],
+      "inkBounds": [
+        0,
+        8,
+        920,
+        928
+      ],
+      "viewBox": [
+        -70.76923076923072,
+        -1022.7692307692307,
+        1061.5384615384614,
+        1061.5384615384614
+      ]
+    }
+  },
+  {
+    "name": "sensors",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/sensors/materialsymbolsoutlined/sensors_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/sensors.svg",
+    "originalSha256": "ce0836da23371acbb0c74a7e68f17643c65d1e32dcfb491693c95a066c78ef15",
+    "modifiedMaster": "masters/sensors.svg",
+    "masterSha256": "e6e7997319405dfc1b0bcca7d2048a0bf97dd44ce795b2c231888de1efb2bb9f",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "speed",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/speed/materialsymbolsoutlined/speed_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/speed.svg",
+    "originalSha256": "8bc7560c91a3b04183520be7c266d308c2f1fb82126789cfe35e421a93997a0a",
+    "modifiedMaster": "masters/speed.svg",
+    "masterSha256": "b26687cb0a6e0f6fdfd36331408b415648f406d0ce52d0eb598a98cb38e75e4f",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "sports_esports",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/sports_esports/materialsymbolsoutlined/sports_esports_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/sports_esports.svg",
+    "originalSha256": "656495d83cb82b0f20c9cc26621a6c262f97b082fbf2c7279e1cc3b59ceeeeb1",
+    "modifiedMaster": "masters/sports_esports.svg",
+    "masterSha256": "9891aac54b92ed23062a5e8d9d1f06485abed066ff3c935264ab696759e54a46",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "table_chart",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/table_chart/materialsymbolsoutlined/table_chart_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/table_chart.svg",
+    "originalSha256": "313d38c549f6ff6952d716c83f375282bb010af61eb48a4d7740d952bee51ef9",
+    "modifiedMaster": "masters/table_chart.svg",
+    "masterSha256": "a7bddbbe4bb447fd58260e4e3a5509bc65300104edfefc1af949f97ba194778d",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  },
+  {
+    "name": "tune",
+    "sourceUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/tune/materialsymbolsoutlined/tune_24px.svg",
+    "license": "Apache-2.0",
+    "original": "originals/tune.svg",
+    "originalSha256": "b1a4320c966b3f7c421bf3dad47cabdb1ac8a18c1dfff1d8a51236beb2aa697e",
+    "modifiedMaster": "masters/tune.svg",
+    "masterSha256": "1eb06ebc1b2637620f8613cdc6a42883b8cb2361780a51ba6a04221e1150d8da",
+    "modifications": "Original path geometry retained; canvas30x30; viewBox fitted to26px maximum ink extent and centered; opaque white background;18px variants rendered from this master."
+  }
+]

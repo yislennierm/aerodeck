@@ -1,0 +1,29 @@
+AERODECK — PITCH-FIX-20261016
+INSTALLED AND VERIFIED: 2026-10-16T19:05:59.018419+02:00; safely ejected.
+
+Confirmed bug: CRSF Ptch in radians was converted with the same positive sign
+as Roll. Original Toolbox2.0 instead returns -math.deg(Ptch) for radian pitch.
+AERODECK now applies that pitch-only correction once in shared telemetry.
+The Flight horizon, pitch ladder, numeric values and Video inset all agree.
+Degree-valued pitch retains its convention; Roll/Yaw/Heading are unchanged.
+Level pitch is normalized to positive zero. No scheduling or MSP changes.
+
+Expected at level Roll: nose up moves the horizon down and shows more sky;
+nose down moves it up and shows more ground. The native EdgeTX renderer and
+our pitch ladder both use 1.85 pixels per degree. This is a sign fix.
+
+Verification: nine portable suites, including54 pitch sign/unit/source/stale
+checks and both real app renderers at -20/0/+20 degree raw pitch. Regression
+failed on the old conversion and passes on the corrected source. Synthetic
+native previews are separate from a physical-quad pose/performance check.
+
+Original Toolbox bytecode verified: GYRO pitch callback multiplies math.deg
+by -1; TLMUPDS calls that callback; AHR forwards corrected pitch to X.HR;
+X.HR is lcd.drawHudRectangle. The recovered TLMUPDS Lua omits the callback,
+so the original bytecode was checked. GYRO.luac SHA256:
+23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee
+
+Primary firmware sources:
+https://github.com/betaflight/betaflight/blob/2025.12.5/src/main/telemetry/crsf.c#L390-L408
+https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/telemetry/crossfire.cpp#L66-L68
+https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/api_colorlcd.cpp#L1224-L1236

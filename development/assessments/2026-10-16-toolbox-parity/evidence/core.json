@@ -1,0 +1,704 @@
+[
+  {
+    "id": "CORE-01",
+    "group": "Flight",
+    "feature": "Native attitude instrument and unavailable state",
+    "toolbox": "ATT/AHR modules draw a native horizon from converted Ptch/Roll; telemetry loss dims the instrument.",
+    "aerodeck": "Cockpit draws native drawHudRectangle plus original bitmap bezel; missing current Pitch/Roll shows ATTITUDE UNAVAILABLE. Executable path exists.",
+    "status": "working",
+    "consequence": "The instrument feature exists. This does not establish responsive telemetry on hardware.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/AHR.lua:148",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:887"
+    ],
+    "priority": "P0",
+    "ux": "Keep the original cockpit and explicit unavailable overlay; compare physical orientation with Toolbox."
+  },
+  {
+    "id": "CORE-02",
+    "group": "Flight",
+    "feature": "Consistent attitude response on the same radio",
+    "toolbox": "User reports stable response on the same TX16S/link. Verified original loop includes disarmed MSP before normal telemetry and attitude drawing.",
+    "aerodeck": "Installed read-only MSP client supplies the previously missing transaction path. Earlier standalone/main tests slowed despite20fps; no confirmed post-update hardware result.",
+    "status": "unknown",
+    "consequence": "The key performance requirement cannot be called complete from simulator FPS or source similarity.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/lifecycle-verification.txt:25",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1213",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/TELEMETRY-CONNECTION.txt:71"
+    ],
+    "priority": "P0",
+    "ux": "Release gate: compare complete installed AERODECK directly with Toolbox, same model/settings, beyond launch; do not substitute another isolated test."
+  },
+  {
+    "id": "CORE-03",
+    "group": "Flight",
+    "feature": "Flight telemetry instruments",
+    "toolbox": "Dashboard combines attitude, speed/altitude, pack/link gauges and mode information.",
+    "aerodeck": "Cockpit displays current speed/altitude tapes, LQ/RSSI, pack voltage/average/remaining/consumption, current and GPS course; unavailable values use dashes.",
+    "status": "working",
+    "consequence": "Core current-value cockpit instruments are implemented, with configured cell count and actual sensor availability limits.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DBD.lua:13",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:861"
+    ],
+    "priority": "P1",
+    "ux": "Retain composition and sharp assets; label cell average and GPS course accurately."
+  },
+  {
+    "id": "CORE-04",
+    "group": "Flight",
+    "feature": "Independent dashboard panel selection",
+    "toolbox": "Original MPN/SPN/BPN build independent capability-driven choices for main, side and bottom regions (AHR/BFV/BTC/FCD, ATT/CMP/GPS/POS, THR/MSP/MEM).",
+    "aerodeck": "Fixed cockpit plus separate pages; no panel choice, saved cockpit layout or equivalent fast inline switch.",
+    "status": "missing",
+    "consequence": "A page menu does not reproduce the dashboard configuration workflow.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:749",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:899",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:1043",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:861"
+    ],
+    "priority": "P2",
+    "ux": "Expose optional information without redesigning the accepted cockpit; measure the number of actions needed."
+  },
+  {
+    "id": "CORE-05",
+    "group": "Flight",
+    "feature": "Reported flight-mode text",
+    "toolbox": "FC_FM/FC_FM_NAME appears in DB1/FM and telemetry table.",
+    "aerodeck": "Mapped current FM text appears in the cockpit contextual tab and Telemetry table. It is not a command.",
+    "status": "working",
+    "consequence": "Basic reported flight mode is available; independent AUX modes are a separate missing feature.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FM.lua:9",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:412"
+    ],
+    "priority": "P1",
+    "ux": "Keep flight-mode text distinct from selected radio flight mode and from FC armed proof."
+  },
+  {
+    "id": "CORE-06",
+    "group": "Flight",
+    "feature": "Radio arm/cut source options",
+    "toolbox": "CFGIND supports physical switch positions and negations, logical switches1..64, and telemetry-related source options; INDUPD applies them.",
+    "aerodeck": "Config supports SA..SH/L01..L04 and Low/Centre/High; read-only ON/OFF indications appear in Arm Stops footer. No invert/not-position/full logical range.",
+    "status": "partial",
+    "consequence": "Some real models cannot express their existing arm/cut logic in AERODECK.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:2030",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:21",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:195"
+    ],
+    "priority": "P1",
+    "ux": "Use an actual source picker with inversion and Unknown state; never equate radio switch ON with FC armed."
+  },
+  {
+    "id": "CORE-07",
+    "group": "Flight",
+    "feature": "Independent Air/Turtle/RTH/Acro-Angle-Horizon indicators",
+    "toolbox": "CFGINDBF defines separate sources; INDUPD and FMI display simultaneous mode indicators.",
+    "aerodeck": "BETAFLIGHT INDICATORS contains FM mapping and explanatory notes only. No independent configurable Air/Turtle/etc. states.",
+    "status": "missing",
+    "consequence": "The configuration heading is not a functional replacement for Toolbox mode indicators.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:2764",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FMI.lua:21",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:197"
+    ],
+    "priority": "P1",
+    "ux": "Show independent sourced chips and Unknown when unavailable; one FM string may not encode simultaneous AUX states."
+  },
+  {
+    "id": "CORE-08",
+    "group": "Flight",
+    "feature": "Throttle/cut/limiter gauge",
+    "toolbox": "DB1/THR reads throttle and configured IND_THL source; shows throttle percent, THR CUT and limiter percent. CFGIND selects limiter source.",
+    "aerodeck": "Cut indicator exists, but no throttle percentage, limiter configuration or gauge.",
+    "status": "missing",
+    "consequence": "A useful readiness/launch check in Toolbox is absent.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/THR.lua:8",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:2067",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:196"
+    ],
+    "priority": "P2",
+    "ux": "Group throttle, limiter and cut near readiness information; display only, no output changes."
+  },
+  {
+    "id": "CORE-09",
+    "group": "Telemetry",
+    "feature": "Current sensor table and complete browsing",
+    "toolbox": "MOD/TLM builds its table from active protocol/category sensor records and supports scrolling beyond the visible grid.",
+    "aerodeck": "Current table has27 fixed rows, plus separate five-row paged Sensor Inspector. Arbitrary discovered sensors do not join the main table.",
+    "status": "partial",
+    "consequence": "Useful values exist, but full sensor browsing and table coverage differ.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:61",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/TLM.lua:15",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:799",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:655"
+    ],
+    "priority": "P1",
+    "ux": "One browsable sensor list with units/status and pinned cockpit fields; no duplicate lists that disagree."
+  },
+  {
+    "id": "CORE-10",
+    "group": "Telemetry",
+    "feature": "Telemetry MIN/MAX values and selector",
+    "toolbox": "Original MOD/TLM constructs LIVE/MIN/MAX; original TLMUPDS reads sourceID+1/+2 into min/max values.",
+    "aerodeck": "No MIN/MAX reads or selector.90-sample app traces are a different feature, not native sensor extrema.",
+    "status": "missing",
+    "consequence": "User cannot inspect minimum pack voltage or worst link/current values as in Toolbox.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:60",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/verified-LIB-TLM-TLMUPDS.txt:83",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:400"
+    ],
+    "priority": "P1",
+    "ux": "Visible Current/Min/Max selector, historical styling, reset scope; retain units and distinguish old extrema after link loss."
+  },
+  {
+    "id": "CORE-11",
+    "group": "Telemetry",
+    "feature": "Independent current/stale handling",
+    "toolbox": "Toolbox reads cached values and presents telemetry loss/dimming at link level; ordinary data and min/max paths are separate.",
+    "aerodeck": "Main sampler checks getSourceValue current; unavailable values become nil/dashes. Inspector reports CURRENT or STALE/NONE. No synthetic substitution.",
+    "status": "working",
+    "consequence": "Core missing/current state handling is implemented; current flag is not a measured packet frequency.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/verified-LIB-TLM-TLMUPDS.txt:22",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:302",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:686"
+    ],
+    "priority": "P1",
+    "ux": "Use freshness age only where known; do not label redraw FPS as live telemetry rate."
+  },
+  {
+    "id": "CORE-12",
+    "group": "Telemetry",
+    "feature": "Qualified telemetry identity across all views",
+    "toolbox": "Original TLMSADD binds getSourceIndex(CHAR_TELEMETRY..pName), avoiding named input collisions.",
+    "aerodeck": "Full app qualifies bindings; Sensor Inspector and compact widget still use unqualified getFieldInfo(name).",
+    "status": "partial",
+    "consequence": "Same-named radio inputs can make widget/inspector disagree with the full app.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/lifecycle-verification.txt:36",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:661",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua:14"
+    ],
+    "priority": "P1",
+    "ux": "Share the qualified identity/mapping layer everywhere; verify same-name input versus telemetry collision."
+  },
+  {
+    "id": "CORE-13",
+    "group": "Telemetry",
+    "feature": "Units and independent sensor families",
+    "toolbox": "Protocol-specific GPS/BARO/PITOT/GYRO records preserve separate altitude/speed/attitude roles and units.",
+    "aerodeck": "Converts radians/degrees, speed units and feet/metres; one alt field prefers GAlt then Alt, so GPS/baro are not independently mapped/displayed. Generic voltage/current mappings lack unit feedback.",
+    "status": "partial",
+    "consequence": "One Alt slot cannot replace both GPS altitude and barometric altitude.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BARO.lua:7",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/PITOT.lua:10",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:400",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:391"
+    ],
+    "priority": "P2",
+    "ux": "Show source and real unit; separate GPS/barometric altitude and ground/air/vertical speed."
+  },
+  {
+    "id": "CORE-14",
+    "group": "GPS",
+    "feature": "Position/satellites/speed/altitude/course details",
+    "toolbox": "MOD/GPS shows these fields and home details with explicit units.",
+    "aerodeck": "GPS Details displays current coordinates, satellite count, ground speed, altitude and GPS course; validates coordinate bounds. Basic fields work without MSP satellite detail.",
+    "status": "working",
+    "consequence": "The common CRSF GPS values are present; additional fix/satellite fields are separate gaps.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua:94",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:611",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:522"
+    ],
+    "priority": "P1",
+    "ux": "Keep DDEG precision readable and distinguish GPS course from magnetic/yaw heading."
+  },
+  {
+    "id": "CORE-15",
+    "group": "GPS",
+    "feature": "Fix-quality and HDOP indication",
+    "toolbox": "Original TBS/GPS line49 calls satellite-threshold result POS_FIX; line50 synthesizes HDOP from Sats-4. MOD/GPS labels3D FIX. This CRSF heuristic is not actual reported receiver fix/HDOP.",
+    "aerodeck": "Explicit FIX TYPE NOT REPORTED; no fix or HDOP reader. Deliberately avoids inferring3D fix from count.",
+    "status": "partial",
+    "consequence": "Visible parity differs, but copying Toolbox inferred labels would create false certainty.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3935",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3939",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:634"
+    ],
+    "priority": "P2",
+    "ux": "Use real reported fix/HDOP if acquired; otherwise preserve Not reported or explicitly label inferred quality."
+  },
+  {
+    "id": "CORE-16",
+    "group": "GPS",
+    "feature": "Per-satellite constellation/signal/status list",
+    "toolbox": "MOD/GPS enumerates SAT_TYPE/SAT_STAT and satellite records with used/status/signal plus scrolling; separate MSP path supplies them.",
+    "aerodeck": "Only aggregate Sats; no satellite list, constellation, signal or health state.",
+    "status": "missing",
+    "consequence": "The detailed left-hand Toolbox GPS pane is not implemented by showing a large Sats number.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua:22",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua:59",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:630"
+    ],
+    "priority": "P2",
+    "ux": "Conditional detailed list tied to an actual supported data path, with timestamp and count; no invented rows."
+  },
+  {
+    "id": "CORE-17",
+    "group": "GPS",
+    "feature": "Takeoff/home acquisition and lock policy",
+    "toolbox": "Original TBS/GPS updates prospective home then locks POS_FIXH when fix+armed; computes home continuously in its telemetry callback.",
+    "aerodeck": "Manual local home and opt-in first valid home above satellite threshold. No takeoff arm-lock or FC-home provenance; first capture occurs only when GPS/Nav renderer calls navSnapshot.",
+    "status": "partial",
+    "consequence": "Home may be captured after the aircraft has moved if user remains on Flight.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3963",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:542",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:548"
+    ],
+    "priority": "P1",
+    "ux": "Explicit local/FC home provenance and capture/lock policy; maintain acquisition outside page drawing."
+  },
+  {
+    "id": "CORE-18",
+    "group": "GPS",
+    "feature": "Home distance and absolute bearing",
+    "toolbox": "GPS module calculates great-circle distance and home ground-course bearing.",
+    "aerodeck": "geo() computes distance and absolute bearing; GPS Details and Track/Home display both when local home and current coordinates exist.",
+    "status": "working",
+    "consequence": "Geometry exists for the selected local home; this does not prove FC takeoff-home parity.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/GPS/GPSINIT.lua:40",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:529",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:648"
+    ],
+    "priority": "P1",
+    "ux": "Use Bearing to home label and explicit local-home source; never imply the FC home is read."
+  },
+  {
+    "id": "CORE-19",
+    "group": "GPS",
+    "feature": "Relative return-home vector/compass",
+    "toolbox": "TBS/GPS calculates DIR_RBH from current course and home course; DB1/GPS draws a relative home arrow and CMP compass.",
+    "aerodeck": "North-up track and absolute bearing only; no relative home arrow/compass integration.",
+    "status": "missing",
+    "consequence": "User cannot get the same glanceable return-home direction on the cockpit.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3954",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua:62",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:604"
+    ],
+    "priority": "P2",
+    "ux": "Relative arrow only when usable current course is known; stationary GPS course must remain qualified."
+  },
+  {
+    "id": "CORE-20",
+    "group": "GPS",
+    "feature": "Estimated travel time home",
+    "toolbox": "GPSINIT.calcTravelTime computes distance/speed; POS displays ETH hours/minutes/seconds.",
+    "aerodeck": "No ETA/home travel-time calculation or control/display.",
+    "status": "missing",
+    "consequence": "Toolbox recovery/navigation estimate is absent.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3957",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/POS.lua:15",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:647"
+    ],
+    "priority": "P2",
+    "ux": "Label estimate, with unavailable state for missing/near-zero speed; never treat as flight-endurance prediction."
+  },
+  {
+    "id": "CORE-21",
+    "group": "GPS",
+    "feature": "Page-independent home/position history",
+    "toolbox": "Position/home bookkeeping is a normal telemetry update callback; GPSINIT.addPosition keeps timestamped bounded records, optionally longer history.",
+    "aerodeck": "navSnapshot and one-second track accumulation run only on GPS/Nav pages. Coordinates lack per-point timestamp; app/compact transitions discard local state.",
+    "status": "partial",
+    "consequence": "Opening another page stops track acquisition; this is not a continuous flight history.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/GPS/GPSINIT.lua:59",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3946",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:552"
+    ],
+    "priority": "P1",
+    "ux": "Maintain bounded session data independent of page; expose last known location and age as historical on signal loss."
+  },
+  {
+    "id": "CORE-22",
+    "group": "Battery",
+    "feature": "Pack voltage/current/consumption/percentage",
+    "toolbox": "BTV/BTA register RxBt/Curr/Capa/Bat% and display numeric/gauge values.",
+    "aerodeck": "Mapped current values appear on Flight/Telemetry/Power; battery average is pack voltage/configured cell count.",
+    "status": "working",
+    "consequence": "Basic live flight-pack monitoring is implemented; cells and pack/session management are separate.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua:57",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.lua:40",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:946"
+    ],
+    "priority": "P1",
+    "ux": "Keep pack versus cell-average terminology explicit and values unavailable on stale inputs."
+  },
+  {
+    "id": "CORE-23",
+    "group": "Battery",
+    "feature": "Individual measured cell display",
+    "toolbox": "Original FRS/BTV supports Cels array; DB1/BTC shows individual cell voltages when available.",
+    "aerodeck": "No Cels array reader. CELL AVG is derived from pack/configured count.",
+    "status": "missing",
+    "consequence": "A pack average cannot reveal one weak cell; availability depends on actual sensor/transport.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:4226",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:1840",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:810"
+    ],
+    "priority": "P2",
+    "ux": "Only show an individual-cell pane with measured array data; never synthesize equal cells from RxBt."
+  },
+  {
+    "id": "CORE-24",
+    "group": "Battery",
+    "feature": "Automatic cell-count mode",
+    "toolbox": "BTCNO loops1..6 against max-cell voltage when no favorite selected; array sensor path can provide actual count.",
+    "aerodeck": "Count0 means Not set and disables average/per-cell checks; manual fixed count or selected preset required.",
+    "status": "missing",
+    "consequence": "The Toolbox config/auto sense option has no AERODECK runtime equivalent.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:4490",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:136"
+    ],
+    "priority": "P1",
+    "ux": "Clearly choose Auto/Fixed and show inferred versus measured count; ambiguous packs need an explicit override."
+  },
+  {
+    "id": "CORE-25",
+    "group": "Battery",
+    "feature": "Battery favorites definitions",
+    "toolbox": "Five enabled favorites with chemistry, cell count and capacity; config/auto option separate.",
+    "aerodeck": "Three presets with cell count/capacity plus Manual; no chemistry field or disabled-entry control.",
+    "status": "partial",
+    "consequence": "Only part of the Toolbox pack configuration can be represented.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:3499",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BFV.lua:7",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:190"
+    ],
+    "priority": "P1",
+    "ux": "Use named packs with cells/capacity/chemistry and active selection; preserve existing profiles on migration."
+  },
+  {
+    "id": "CORE-26",
+    "group": "Battery",
+    "feature": "Quick connected-pack selection",
+    "toolbox": "Original BFV dashboard pane selects pack by rotary/ENTER and persists active favorite.",
+    "aerodeck": "Active pack selection exists only inside general Battery Favorites settings; no cockpit/power quick picker.",
+    "status": "missing",
+    "consequence": "Between-pack workflow requires deeper configuration instead of a fast selection action.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:1374",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:1294",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:190"
+    ],
+    "priority": "P1",
+    "ux": "One action from Power/cockpit opens connected-pack selector; show what selection changes before applying."
+  },
+  {
+    "id": "CORE-27",
+    "group": "Battery",
+    "feature": "Capacity-based remaining estimate",
+    "toolbox": "TBS/BTA derives remaining from selected favorite capacity and consumed mAh, overriding when favorite active.",
+    "aerodeck": "Derives bounded capacity-based percent only when Bat% absent; labels Est%/EST. REMAINING. Policy intentionally differs from Toolbox preference.",
+    "status": "working",
+    "consequence": "Estimate function exists, with full-pack/reset-consumption assumptions; no automatic new-pack detector was verified in Toolbox.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua:44",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:424",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:845"
+    ],
+    "priority": "P1",
+    "ux": "Show reported versus estimated source and counter/reset scope; do not silently imply a fresh full pack."
+  },
+  {
+    "id": "CORE-28",
+    "group": "Battery",
+    "feature": "Cell-voltage threshold configuration/visual warning",
+    "toolbox": "CFGBAT exposes no-power/minimum/critical/low/maximum thresholds and alert type.",
+    "aerodeck": "Battery settings implement ordered validation, fixed/selected count and visual no-power/minimum/critical/low/max states, with verified SAVE/backup.",
+    "status": "working",
+    "consequence": "Functional threshold settings exist; they require a valid configured cell count.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua:13",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:98",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:138"
+    ],
+    "priority": "P1",
+    "ux": "Show threshold scope and active count next to warnings; saving must retain validation/error feedback."
+  },
+  {
+    "id": "CORE-29",
+    "group": "Battery",
+    "feature": "Distinct low/critical sound/haptic behavior",
+    "toolbox": "RD/SND contains different low and critical tone/haptic patterns; main loop gates separate repeat windows and mute.",
+    "aerodeck": "Sound/haptic/critical-only versus low+critical choices work; one generic1500Hz tone/haptic every10s for either severity, no separate patterns.",
+    "status": "partial",
+    "consequence": "Alert options exist but do not match severity recognition/cadence in Toolbox.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SND.lua:12",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SND.lua:26",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:142"
+    ],
+    "priority": "P1",
+    "ux": "Use recognizable bounded low/critical patterns and a visible current alert/mute state."
+  },
+  {
+    "id": "CORE-30",
+    "group": "Battery",
+    "feature": "Radio/transmitter battery monitor",
+    "toolbox": "RD/BAT reads tx-voltage and radio threshold settings; DB1/RDB plus MOD/BAT show a separate radio battery gauge.",
+    "aerodeck": "No tx-voltage read or radio-battery display anywhere in the full app; footer PACK is flight battery.",
+    "status": "missing",
+    "consequence": "Long fullscreen use hides a core radio-health value shown by Toolbox.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/BAT.lua:19",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/RDB.lua:13",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1156"
+    ],
+    "priority": "P1",
+    "ux": "Separate RADIO from PACK; radio battery stays available while quad/receiver telemetry is absent."
+  },
+  {
+    "id": "CORE-31",
+    "group": "RF",
+    "feature": "Bidirectional RC link values",
+    "toolbox": "TBS/RL registers RFMD/TRSS/TQly/TSNR/TPWR/1RSS/2RSS/RQly/RSNR.",
+    "aerodeck": "All these values sampled in27-field table; Link page shows key values and90-sample LQ trace. Valid/current values only.",
+    "status": "working",
+    "consequence": "Core numeric radio-link telemetry exists; presentation/decoding of mode is separate.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/RL.lua:94",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:400",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:959"
+    ],
+    "priority": "P1",
+    "ux": "Label uplink/downlink explicitly and keep antenna-specific readings distinguishable."
+  },
+  {
+    "id": "CORE-32",
+    "group": "RF",
+    "feature": "Protocol/version-specific RF mode caption",
+    "toolbox": "TBS/RL has separate XF/TRS/EL2/EL3 RFMD tables and config protocol/version.",
+    "aerodeck": "Displays raw numeric RFMD, with no protocol-version selection or verified packet-mode caption.",
+    "status": "missing",
+    "consequence": "User cannot directly read250Hz or other mode names from AERODECK.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/RL.lua:72",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:8406",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:966"
+    ],
+    "priority": "P2",
+    "ux": "Verified version-specific caption plus retained raw value; unknown mode remains numeric instead of a guessed rate."
+  },
+  {
+    "id": "CORE-33",
+    "group": "RF",
+    "feature": "Warning thresholds and protocol-specific interpretation",
+    "toolbox": "CFGRCL/TLMRLD change RSSI/RQLY defaults/ranges/units and row availability by protocol version; signal channels are interpreted separately.",
+    "aerodeck": "RSSI/LQ/SNR low/critical values are editable and functional. Generic fixed defaults; no protocol/version adaptation or RSSI diversity policy.",
+    "status": "partial",
+    "consequence": "Basic warnings work but changing profile does not carry Toolbox protocol semantics.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:7931",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua:72",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:345"
+    ],
+    "priority": "P2",
+    "ux": "Show units/source for each threshold, explain defaults, and preserve user changes when protocol changes."
+  },
+  {
+    "id": "CORE-34",
+    "group": "Timers",
+    "feature": "Selected EdgeTX Timer1–3 display",
+    "toolbox": "CFGIND chooses Timer1/2/3; DB1/TMR reads model.getTimer and displays running/countdown value.",
+    "aerodeck": "No model.getTimer call/selector; only app-local radio-arm seconds in Arm Stops footer.",
+    "status": "missing",
+    "consequence": "AERODECK does not show an existing EdgeTX flight/countdown timer.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:2074",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:1676",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:928"
+    ],
+    "priority": "P1",
+    "ux": "Read-only native timer selection first; expose running/countdown state without overwriting model timers."
+  },
+  {
+    "id": "CORE-35",
+    "group": "Timers",
+    "feature": "Managed arm timer start/stop/reset",
+    "toolbox": "CFGIND selects OS/ToolBox host; original RD/TMR starts/stops/resets the chosen radio timer on arm transitions.",
+    "aerodeck": "Local stopwatch increments while configured radioArm ON, caps any interval to1s, is reset on app reload and has no reset control/persistence.",
+    "status": "partial",
+    "consequence": "A text stopwatch does not reproduce a managed/native timer; long callbacks can undercount.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:4561",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/TMR.lua:12",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:933"
+    ],
+    "priority": "P1",
+    "ux": "Choose explicit read-only/managed scope; preserve nonselected timers; deliberate session reset and accurate elapsed-time accounting."
+  },
+  {
+    "id": "CORE-36",
+    "group": "Timers",
+    "feature": "Radio date/clock display",
+    "toolbox": "DB1/TIM draws date plus hour/minute.",
+    "aerodeck": "Shell shows cached hour/minute and model name, not date. Independent of receiver telemetry.",
+    "status": "partial",
+    "consequence": "Clock exists; full date/time presentation differs, a low-priority parity depth issue.",
+    "evidence": [
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TIM.lua:9",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1118"
+    ],
+    "priority": "P3",
+    "ux": "Keep clock as status metadata; date can be optional and must not compete with flight readability."
+  },
+  {
+    "id": "CORE-37",
+    "group": "Widget",
+    "feature": "Fullscreen app from widget",
+    "toolbox": "Original widget loader opens same Toolbox app in a full APP-size zone.",
+    "aerodeck": "EdgeTX fullscreen refresh loads the same telem.lua/init/run as the tool; compact/hidden callback releases it.",
+    "status": "working",
+    "consequence": "The requested tool/fullscreen-widget path exists; lifecycle continuity is a separate row.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/verified-WIDGET-loader.txt:112",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua:19"
+    ],
+    "priority": "P1",
+    "ux": "Keep mappings and feature availability identical between tool and fullscreen widget; prevent duplicate clients."
+  },
+  {
+    "id": "CORE-38",
+    "group": "Widget",
+    "feature": "Background monitoring/session continuity",
+    "toolbox": "Original widget declares background callback guarded by APP.initDone then calls APP.G.ML.bg; earlier bytecode audit found M exposes G.initDone, so actual continuous hidden operation is unproven.",
+    "aerodeck": "Explicitly stops/releases full app on compact/hidden refresh: no MSP, alerts, stopwatch or track acquisition continues there.",
+    "status": "unknown",
+    "consequence": "Do not claim Toolbox background parity or invent its behavior from callback presence; AERODECK foreground-only behavior is known.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/lifecycle-verification.txt:22",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua:39"
+    ],
+    "priority": "P1",
+    "ux": "Decide and label foreground-only versus bounded session continuation; verify actual lifecycle on hardware before promising hidden monitoring."
+  },
+  {
+    "id": "CORE-39",
+    "group": "Widget",
+    "feature": "Compact widget and settings/source consistency",
+    "toolbox": "Reference loader reports Select APP mode layout outside full-size zone; no equivalent compact live panel is established by original source.",
+    "aerodeck": "Adds compact voltage/current/LQ. It reads raw per-model config without main validation/.bak fallback, and uses unqualified sources.",
+    "status": "partial",
+    "consequence": "Useful extra AERODECK capability, not a completed Toolbox parity item; compact may disagree after corruption/name collision.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/verified-WIDGET-loader.txt:126",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua:4",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua:11"
+    ],
+    "priority": "P1",
+    "ux": "Share validated mappings/bindings with main app; keep useful compact panel, but exclude this addition from reference completion percentages."
+  },
+  {
+    "id": "CORE-40",
+    "group": "Actions",
+    "feature": "Quick mute/enable alerts",
+    "toolbox": "Original UI/QM T.mute toggles alert mute and updates action wording; SYS shows mute state.",
+    "aerodeck": "No quick mute action or visible mute state; changing battery alert configuration is the only way to silence configured app alerts.",
+    "status": "missing",
+    "consequence": "An in-session operational action has been replaced by deeper configuration.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:4741",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/SYS.lua:19",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:783"
+    ],
+    "priority": "P1",
+    "ux": "One action to mute/unmute with persistent icon; retain critical/low configuration values."
+  },
+  {
+    "id": "CORE-41",
+    "group": "Actions",
+    "feature": "Reset flight data / new-flight workflow",
+    "toolbox": "Original QM stages timer/telemetry/sensor/GPS/VTX resets; scopes are real state mutations, not page navigation.",
+    "aerodeck": "No session/new-flight reset action. Manual home sets only local home/track; histories/session and native extrema have no common reset path.",
+    "status": "missing",
+    "consequence": "Between-pack data can mix sessions; user must close/reopen or use native menus.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:4645",
+      "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/QM.lua:30",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:539"
+    ],
+    "priority": "P1",
+    "ux": "Explicit local-only/new-flight versus native timer/sensor reset scope; preserve model settings and make cancel atomic."
+  },
+  {
+    "id": "CORE-42",
+    "group": "Actions",
+    "feature": "Reload application / rebuild sources",
+    "toolbox": "Original QM Reload ToolBox queues reinitialization; CFGMDL queues runtime rebuilds after saves.",
+    "aerodeck": "Refresh sensors rescans bindings/units, but no Reload app action; some startup changes say reopen. Normal RTN exits.",
+    "status": "partial",
+    "consequence": "Source refresh exists; it does not rebuild the complete app or provide equivalent reload workflow.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:4646",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:6954",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:430",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:260"
+    ],
+    "priority": "P1",
+    "ux": "Separate Refresh sources from Reload application; retain saved settings and explain which state resets."
+  },
+  {
+    "id": "CORE-43",
+    "group": "Actions",
+    "feature": "Per-model configuration SAVE/REVERT",
+    "toolbox": "CFGFNUI supports backup/restore and save hooks; model configuration is persisted separately.",
+    "aerodeck": "Per-model cfg has working draft editing, SAVE/REVERT, validated readback and .bak fallback; hidden values persist.",
+    "status": "working",
+    "consequence": "Core local configuration persistence is implemented; functional coverage of individual controls is assessed separately.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:5304",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:97",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:254"
+    ],
+    "priority": "P1",
+    "ux": "Keep explicit saved/unsaved/error feedback; migrate without resetting existing model preferences."
+  },
+  {
+    "id": "CORE-44",
+    "group": "Actions",
+    "feature": "Capability-driven enable/off semantics",
+    "toolbox": "Original CFGMDL enables battery/current/gyro/baro/pitot/GPS/VTX families and queues real init work; CFGUPDP hides categories/rows from actual features and protocol.",
+    "aerodeck": "Twelve headings include notes/placeholders. Metadata hides lists, while sampler still reads all fixed fields; fcLink accepts RC protocol None and FC type None as auto. No true Off/Auto separation.",
+    "status": "partial",
+    "consequence": "Twelve categories are not twelve functional equivalents; None does not have Toolbox OFF semantics.",
+    "evidence": [
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:6954",
+      "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/icon-revision/audit-core-original-disassembly.txt:6304",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:362",
+      "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:410"
+    ],
+    "priority": "P1",
+    "ux": "Separate Auto from Off and show actual capability/dependency state; disabled features must change runtime work, not only visibility."
+  }
+]

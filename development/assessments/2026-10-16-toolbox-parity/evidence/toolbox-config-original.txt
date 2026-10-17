@@ -1,0 +1,993 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 28), ('F', 1, 28), ('D', 1, 28), ('X', 1, 28), ('T', 1, 28)]
+K0 'initVars'
+K1 'sortVars'
+K2 'updateVars'
+K3 'setViewPort'
+K4 'backupVars'
+K5 'restoreVars'
+K6 'getList'
+K7 'changeValue'
+K8 'changeLine'
+K9 'changePage'
+K10 'readDS'
+K11 'writeDS'
+K12 'e'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  17] CLOSURE   R5 = proto[0]
+   3 [  17] SETTABLE  R4[K0('initVars')] = R5
+   4 [  33] CLOSURE   R5 = proto[1]
+   5 [  33] SETTABLE  R4[K1('sortVars')] = R5
+   6 [  90] CLOSURE   R5 = proto[2]
+   7 [  90] SETTABLE  R4[K2('updateVars')] = R5
+   8 [ 102] CLOSURE   R5 = proto[3]
+   9 [ 102] SETTABLE  R4[K3('setViewPort')] = R5
+  10 [ 128] CLOSURE   R5 = proto[4]
+  11 [ 128] SETTABLE  R4[K4('backupVars')] = R5
+  12 [ 149] CLOSURE   R5 = proto[5]
+  13 [ 149] SETTABLE  R4[K5('restoreVars')] = R5
+  14 [ 163] CLOSURE   R5 = proto[6]
+  15 [ 163] SETTABLE  R4[K6('getList')] = R5
+  16 [ 180] CLOSURE   R5 = proto[7]
+  17 [ 180] SETTABLE  R4[K7('changeValue')] = R5
+  18 [ 204] CLOSURE   R5 = proto[8]
+  19 [ 204] SETTABLE  R4[K8('changeLine')] = R5
+  20 [ 218] CLOSURE   R5 = proto[9]
+  21 [ 218] SETTABLE  R4[K9('changePage')] = R5
+  22 [ 231] CLOSURE   R5 = proto[10]
+  23 [ 231] SETTABLE  R4[K10('readDS')] = R5
+  24 [ 245] CLOSURE   R5 = proto[11]
+  25 [ 245] SETTABLE  R4[K11('writeDS')] = R5
+  26 [ 319] CLOSURE   R5 = proto[12]
+  27 [ 319] SETTABLE  R4[K12('e')] = R5
+  28 [ 319] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 2 lines 12 17 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'sortVars'
+K1 'updateVars'
+   1 [  15] GETTABUP  R0 = UP0[K0('sortVars')]
+   2 [  15] CALL      A=0 B=1 C=1
+   3 [  16] GETTABUP  R0 = UP0[K1('updateVars')]
+   4 [  16] CALL      A=0 B=1 C=1
+   5 [  17] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 7 lines 19 33 source None
+UPVALUES [('T', (1, 4)), ('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('(for generator)', 12, 20), ('(for state)', 12, 20), ('(for control)', 12, 20), ('vN', 13, 18), ('vData', 13, 18), ('(for generator)', 28, 33), ('(for state)', 28, 33), ('(for control)', 28, 33), ('k', 29, 31), ('v', 29, 31)]
+K0 'cvS'
+K1 'clear'
+K2 '+cvS'
+K3 'pairs'
+K4 'cv'
+K5 1
+K6 'table'
+K7 'sort'
+K8 'k'
+K9 'o'
+K10 None
+   1 [  21] GETTABUP  R0 = UP0[K0('cvS')]
+   2 [  21] TEST      A=0 B=0 C=1
+   3 [  21] JMP       A=0 ->5
+   4 [  21] NEWTABLE  A=0 B=0 C=0
+   5 [  21] SETTABUP  UP0[K0('cvS')] = R0
+   6 [  22] GETTABUP  R0 = UP1[K1('clear')]
+   7 [  22] GETUPVAL  A=1 B=0 C=0
+   8 [  22] LOADK     R2 = K2 ('+cvS')
+   9 [  22] CALL      A=0 B=3 C=1
+  10 [  23] GETTABUP  R0 = UP2[K3('pairs')]
+  11 [  23] GETTABUP  R1 = UP0[K4('cv')]
+  12 [  23] CALL      A=0 B=2 C=4
+  13 [  23] JMP       A=0 ->19
+  14 [  24] GETTABUP  R5 = UP0[K0('cvS')]
+  15 [  24] GETTABUP  R6 = UP0[K0('cvS')]
+  16 [  24] LEN       A=6 B=6 C=0
+  17 [  24] ADD       A=6 B=6 C=261
+  18 [  24] SETTABLE  R5[R6] = R4
+  19 [  23] TFORCALL  A=0 B=0 C=2
+  20 [  23] TFORLOOP  A=2 ->14
+  21 [  26] GETTABUP  R0 = UP2[K6('table')]
+  22 [  26] GETTABLE  R0 = R0[K7('sort')]
+  23 [  26] GETTABUP  R1 = UP0[K0('cvS')]
+  24 [  26] CLOSURE   R2 = proto[0]
+  25 [  26] CALL      A=0 B=3 C=1
+  26 [  28] GETTABUP  R0 = UP2[K3('pairs')]
+  27 [  28] GETTABUP  R1 = UP0[K4('cv')]
+  28 [  28] CALL      A=0 B=2 C=4
+  29 [  28] JMP       A=0 ->32
+  30 [  29] SETTABLE  R4[K8('k')] = R3
+  31 [  30] SETTABLE  R4[K9('o')] = K10(None)
+  32 [  28] TFORCALL  A=0 B=0 C=2
+  33 [  28] TFORLOOP  A=2 ->30
+  34 [  33] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1/0 params 2 vararg 0 stack 4 lines 26 26 source None
+UPVALUES []
+LOCALS [('a', 0, 8), ('b', 0, 8)]
+K0 'o'
+   1 [  26] GETTABLE  R2 = R0[K0('o')]
+   2 [  26] GETTABLE  R3 = R1[K0('o')]
+   3 [  26] LT        A=1 R2, R3; skip-next if condition != A
+   4 [  26] JMP       A=0 ->6
+   5 [  26] LOADBOOL  A=2 B=0 C=1
+   6 [  26] LOADBOOL  A=2 B=1 C=0
+   7 [  26] RETURN    A=2 B=2 C=0
+   8 [  26] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 9 lines 35 90 source None
+UPVALUES [('_ENV', (0, 0)), ('T', (1, 4))]
+LOCALS [('(for generator)', 3, 155), ('(for state)', 3, 155), ('(for control)', 3, 155), ('vN', 4, 153), ('vD', 4, 153)]
+K0 'ipairs'
+K1 'cvS'
+K2 't'
+K3 'L'
+K4 'type'
+K5 'lv'
+K6 'table'
+K7 'v'
+K8 'dv'
+K9 'list error'
+K10 'e'
+K11 True
+K12 'm'
+K13 0
+K14 1
+K15 'x'
+K16 'math'
+K17 'min'
+K18 'max'
+K19 'out of range'
+K20 'N'
+K21 'NT'
+K22 'S'
+K23 'B'
+K24 'number'
+K25 'wrong value type'
+K26 'string'
+K27 'format'
+K28 'f'
+K29 'u'
+K30 ' '
+K31 ''
+K32 'ON'
+K33 'OFF'
+K34 'Yes'
+K35 'No'
+K36 'updateDisp'
+K37 'setViewPort'
+   1 [  38] GETTABUP  R0 = UP0[K0('ipairs')]
+   2 [  38] GETTABUP  R1 = UP1[K1('cvS')]
+   3 [  38] CALL      A=0 B=2 C=4
+   4 [  38] JMP       A=0 ->154
+   5 [  41] GETTABLE  R5 = R4[K2('t')]
+   6 [  41] EQ        A=0 R5, K3('L'); skip-next if condition != A
+   7 [  41] JMP       A=0 ->55
+   8 [  42] GETTABUP  R5 = UP0[K4('type')]
+   9 [  42] GETTABLE  R6 = R4[K5('lv')]
+  10 [  42] CALL      A=5 B=2 C=2
+  11 [  42] EQ        A=1 R5, K6('table'); skip-next if condition != A
+  12 [  42] JMP       A=0 ->18
+  13 [  44] NEWTABLE  A=5 B=0 C=0
+  14 [  44] SETTABLE  R4[K7('v')] = R5
+  15 [  45] SETTABLE  R4[K8('dv')] = K9('list error')
+  16 [  46] SETTABLE  R4[K10('e')] = K11(True)
+  17 [  46] JMP       A=0 ->154
+  18 [  48] GETTABLE  R5 = R4[K5('lv')]
+  19 [  48] GETTABLE  R5 = R5[K13(0)]
+  20 [  48] TEST      A=5 B=0 C=0
+  21 [  48] JMP       A=0 ->25
+  22 [  48] LOADK     R5 = K13 (0)
+  23 [  48] TEST      A=5 B=0 C=1
+  24 [  48] JMP       A=0 ->26
+  25 [  48] LOADK     R5 = K14 (1)
+  26 [  48] SETTABLE  R4[K12('m')] = R5
+  27 [  49] GETTABLE  R5 = R4[K5('lv')]
+  28 [  49] LEN       A=5 B=5 C=0
+  29 [  49] SETTABLE  R4[K15('x')] = R5
+  30 [  51] GETTABUP  R5 = UP0[K16('math')]
+  31 [  51] GETTABLE  R5 = R5[K17('min')]
+  32 [  51] GETTABUP  R6 = UP0[K16('math')]
+  33 [  51] GETTABLE  R6 = R6[K18('max')]
+  34 [  51] GETTABLE  R7 = R4[K7('v')]
+  35 [  51] GETTABLE  R8 = R4[K12('m')]
+  36 [  51] CALL      A=6 B=3 C=2
+  37 [  51] GETTABLE  R7 = R4[K15('x')]
+  38 [  51] CALL      A=5 B=3 C=2
+  39 [  51] SETTABLE  R4[K7('v')] = R5
+  40 [  52] GETTABLE  R5 = R4[K5('lv')]
+  41 [  52] GETTABLE  R6 = R4[K7('v')]
+  42 [  52] GETTABLE  R5 = R5[R6]
+  43 [  52] TEST      A=5 B=0 C=0
+  44 [  52] JMP       A=0 ->50
+  45 [  53] GETTABLE  R5 = R4[K5('lv')]
+  46 [  53] GETTABLE  R6 = R4[K7('v')]
+  47 [  53] GETTABLE  R5 = R5[R6]
+  48 [  53] SETTABLE  R4[K8('dv')] = R5
+  49 [  53] JMP       A=0 ->154
+  50 [  55] GETTABLE  R5 = R4[K12('m')]
+  51 [  55] SETTABLE  R4[K7('v')] = R5
+  52 [  56] SETTABLE  R4[K8('dv')] = K19('out of range')
+  53 [  57] SETTABLE  R4[K10('e')] = K11(True)
+  54 [  60] JMP       A=0 ->154
+  55 [  61] GETTABLE  R5 = R4[K2('t')]
+  56 [  61] EQ        A=1 R5, K20('N'); skip-next if condition != A
+  57 [  61] JMP       A=0 ->67
+  58 [  61] GETTABLE  R5 = R4[K2('t')]
+  59 [  61] EQ        A=1 R5, K21('NT'); skip-next if condition != A
+  60 [  61] JMP       A=0 ->67
+  61 [  61] GETTABLE  R5 = R4[K2('t')]
+  62 [  61] EQ        A=1 R5, K22('S'); skip-next if condition != A
+  63 [  61] JMP       A=0 ->67
+  64 [  61] GETTABLE  R5 = R4[K2('t')]
+  65 [  61] EQ        A=0 R5, K23('B'); skip-next if condition != A
+  66 [  61] JMP       A=0 ->154
+  67 [  62] GETTABUP  R5 = UP0[K4('type')]
+  68 [  62] GETTABLE  R6 = R4[K7('v')]
+  69 [  62] CALL      A=5 B=2 C=2
+  70 [  62] EQ        A=1 R5, K24('number'); skip-next if condition != A
+  71 [  62] JMP       A=0 ->76
+  72 [  63] SETTABLE  R4[K7('v')] = K13(0)
+  73 [  64] SETTABLE  R4[K8('dv')] = K25('wrong value type')
+  74 [  65] SETTABLE  R4[K10('e')] = K11(True)
+  75 [  65] JMP       A=0 ->154
+  76 [  67] GETTABLE  R5 = R4[K2('t')]
+  77 [  67] EQ        A=1 R5, K22('S'); skip-next if condition != A
+  78 [  67] JMP       A=0 ->82
+  79 [  67] GETTABLE  R5 = R4[K2('t')]
+  80 [  67] EQ        A=0 R5, K23('B'); skip-next if condition != A
+  81 [  67] JMP       A=0 ->85
+  82 [  67] LOADK     R5 = K13 (0)
+  83 [  67] TEST      A=5 B=0 C=1
+  84 [  67] JMP       A=0 ->86
+  85 [  67] GETTABLE  R5 = R4[K12('m')]
+  86 [  67] SETTABLE  R4[K12('m')] = R5
+  87 [  68] GETTABLE  R5 = R4[K2('t')]
+  88 [  68] EQ        A=1 R5, K22('S'); skip-next if condition != A
+  89 [  68] JMP       A=0 ->93
+  90 [  68] GETTABLE  R5 = R4[K2('t')]
+  91 [  68] EQ        A=0 R5, K23('B'); skip-next if condition != A
+  92 [  68] JMP       A=0 ->96
+  93 [  68] LOADK     R5 = K14 (1)
+  94 [  68] TEST      A=5 B=0 C=1
+  95 [  68] JMP       A=0 ->97
+  96 [  68] GETTABLE  R5 = R4[K15('x')]
+  97 [  68] SETTABLE  R4[K15('x')] = R5
+  98 [  70] GETTABUP  R5 = UP0[K16('math')]
+  99 [  70] GETTABLE  R5 = R5[K17('min')]
+ 100 [  70] GETTABUP  R6 = UP0[K16('math')]
+ 101 [  70] GETTABLE  R6 = R6[K18('max')]
+ 102 [  70] GETTABLE  R7 = R4[K7('v')]
+ 103 [  70] GETTABLE  R8 = R4[K12('m')]
+ 104 [  70] CALL      A=6 B=3 C=2
+ 105 [  70] GETTABLE  R7 = R4[K15('x')]
+ 106 [  70] CALL      A=5 B=3 C=2
+ 107 [  70] SETTABLE  R4[K7('v')] = R5
+ 108 [  71] GETTABLE  R5 = R4[K2('t')]
+ 109 [  71] EQ        A=0 R5, K20('N'); skip-next if condition != A
+ 110 [  71] JMP       A=0 ->128
+ 111 [  72] GETTABUP  R5 = UP0[K26('string')]
+ 112 [  72] GETTABLE  R5 = R5[K27('format')]
+ 113 [  72] GETTABLE  R6 = R4[K28('f')]
+ 114 [  72] GETTABLE  R7 = R4[K7('v')]
+ 115 [  72] CALL      A=5 B=3 C=2
+ 116 [  72] GETTABLE  R6 = R4[K29('u')]
+ 117 [  72] TEST      A=6 B=0 C=0
+ 118 [  72] JMP       A=0 ->124
+ 119 [  72] LOADK     R6 = K30 (' ')
+ 120 [  72] GETTABLE  R7 = R4[K29('u')]
+ 121 [  72] CONCAT    A=6 B=6 C=7
+ 122 [  72] TEST      A=6 B=0 C=1
+ 123 [  72] JMP       A=0 ->125
+ 124 [  72] LOADK     R6 = K31 ('')
+ 125 [  72] CONCAT    A=5 B=5 C=6
+ 126 [  72] SETTABLE  R4[K8('dv')] = R5
+ 127 [  72] JMP       A=0 ->154
+ 128 [  73] GETTABLE  R5 = R4[K2('t')]
+ 129 [  73] EQ        A=0 R5, K22('S'); skip-next if condition != A
+ 130 [  73] JMP       A=0 ->140
+ 131 [  74] GETTABLE  R5 = R4[K7('v')]
+ 132 [  74] EQ        A=0 R5, K14(1); skip-next if condition != A
+ 133 [  74] JMP       A=0 ->137
+ 134 [  74] LOADK     R5 = K32 ('ON')
+ 135 [  74] TEST      A=5 B=0 C=1
+ 136 [  74] JMP       A=0 ->138
+ 137 [  74] LOADK     R5 = K33 ('OFF')
+ 138 [  74] SETTABLE  R4[K8('dv')] = R5
+ 139 [  74] JMP       A=0 ->154
+ 140 [  75] GETTABLE  R5 = R4[K2('t')]
+ 141 [  75] EQ        A=0 R5, K23('B'); skip-next if condition != A
+ 142 [  75] JMP       A=0 ->152
+ 143 [  76] GETTABLE  R5 = R4[K7('v')]
+ 144 [  76] EQ        A=0 R5, K14(1); skip-next if condition != A
+ 145 [  76] JMP       A=0 ->149
+ 146 [  76] LOADK     R5 = K34 ('Yes')
+ 147 [  76] TEST      A=5 B=0 C=1
+ 148 [  76] JMP       A=0 ->150
+ 149 [  76] LOADK     R5 = K35 ('No')
+ 150 [  76] SETTABLE  R4[K8('dv')] = R5
+ 151 [  76] JMP       A=0 ->154
+ 152 [  78] GETTABLE  R5 = R4[K7('v')]
+ 153 [  78] SETTABLE  R4[K8('dv')] = R5
+ 154 [  38] TFORCALL  A=0 B=0 C=2
+ 155 [  38] TFORLOOP  A=2 ->5
+ 156 [  85] GETTABUP  R0 = UP1[K36('updateDisp')]
+ 157 [  85] TEST      A=0 B=0 C=0
+ 158 [  85] JMP       A=0 ->161
+ 159 [  86] GETTABUP  R0 = UP1[K36('updateDisp')]
+ 160 [  86] CALL      A=0 B=1 C=1
+ 161 [  89] GETTABUP  R0 = UP1[K37('setViewPort')]
+ 162 [  89] CALL      A=0 B=1 C=1
+ 163 [  90] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 0 vararg 0 stack 7 lines 92 102 source None
+UPVALUES [('T', (1, 4)), ('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('(for generator)', 12, 23), ('(for state)', 12, 23), ('(for control)', 12, 23), ('vN', 13, 21), ('vData', 13, 21)]
+K0 'cvV'
+K1 'clear'
+K2 '+cvV'
+K3 'ipairs'
+K4 'cvS'
+K5 'h'
+K6 1
+   1 [  94] GETTABUP  R0 = UP0[K0('cvV')]
+   2 [  94] TEST      A=0 B=0 C=1
+   3 [  94] JMP       A=0 ->5
+   4 [  94] NEWTABLE  A=0 B=0 C=0
+   5 [  94] SETTABUP  UP0[K0('cvV')] = R0
+   6 [  95] GETTABUP  R0 = UP1[K1('clear')]
+   7 [  95] GETUPVAL  A=1 B=0 C=0
+   8 [  95] LOADK     R2 = K2 ('+cvV')
+   9 [  95] CALL      A=0 B=3 C=1
+  10 [  96] GETTABUP  R0 = UP2[K3('ipairs')]
+  11 [  96] GETTABUP  R1 = UP0[K4('cvS')]
+  12 [  96] CALL      A=0 B=2 C=4
+  13 [  96] JMP       A=0 ->22
+  14 [  98] GETTABLE  R5 = R4[K5('h')]
+  15 [  98] TEST      A=5 B=0 C=1
+  16 [  98] JMP       A=0 ->22
+  17 [  99] GETTABUP  R5 = UP0[K0('cvV')]
+  18 [  99] GETTABUP  R6 = UP0[K0('cvV')]
+  19 [  99] LEN       A=6 B=6 C=0
+  20 [  99] ADD       A=6 B=6 C=262
+  21 [  99] SETTABLE  R5[R6] = R3
+  22 [  96] TFORCALL  A=0 B=0 C=2
+  23 [  96] TFORLOOP  A=2 ->14
+  24 [ 102] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4 params 0 vararg 0 stack 16 lines 105 128 source None
+UPVALUES [('T', (1, 4)), ('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('(for generator)', 12, 52), ('(for state)', 12, 52), ('(for control)', 12, 52), ('vN', 13, 50), ('vD', 13, 50), ('(for generator)', 19, 50), ('(for state)', 19, 50), ('(for control)', 19, 50), ('k', 20, 48), ('v', 20, 48), ('(for generator)', 37, 44), ('(for state)', 37, 44), ('(for control)', 37, 44), ('k2', 38, 42), ('v2', 38, 42)]
+K0 'cvB'
+K1 'clear'
+K2 '+cvB'
+K3 'ipairs'
+K4 'cvS'
+K5 'pairs'
+K6 'type'
+K7 'function'
+K8 'table'
+   1 [ 107] GETTABUP  R0 = UP0[K0('cvB')]
+   2 [ 107] TEST      A=0 B=0 C=1
+   3 [ 107] JMP       A=0 ->5
+   4 [ 107] NEWTABLE  A=0 B=0 C=0
+   5 [ 107] SETTABUP  UP0[K0('cvB')] = R0
+   6 [ 108] GETTABUP  R0 = UP1[K1('clear')]
+   7 [ 108] GETUPVAL  A=1 B=0 C=0
+   8 [ 108] LOADK     R2 = K2 ('+cvB')
+   9 [ 108] CALL      A=0 B=3 C=1
+  10 [ 109] GETTABUP  R0 = UP2[K3('ipairs')]
+  11 [ 109] GETTABUP  R1 = UP0[K4('cvS')]
+  12 [ 109] CALL      A=0 B=2 C=4
+  13 [ 109] JMP       A=0 ->51
+  14 [ 111] GETTABUP  R5 = UP0[K0('cvB')]
+  15 [ 111] NEWTABLE  A=6 B=0 C=0
+  16 [ 111] SETTABLE  R5[R3] = R6
+  17 [ 112] GETTABUP  R5 = UP2[K5('pairs')]
+  18 [ 112] MOVE      A=6 B=4 C=0
+  19 [ 112] CALL      A=5 B=2 C=4
+  20 [ 112] JMP       A=0 ->49
+  21 [ 113] GETTABUP  R10 = UP2[K6('type')]
+  22 [ 113] MOVE      A=11 B=9 C=0
+  23 [ 113] CALL      A=10 B=2 C=2
+  24 [ 113] EQ        A=1 R10, K7('function'); skip-next if condition != A
+  25 [ 113] JMP       A=0 ->49
+  26 [ 115] GETTABUP  R10 = UP2[K6('type')]
+  27 [ 115] MOVE      A=11 B=9 C=0
+  28 [ 115] CALL      A=10 B=2 C=2
+  29 [ 115] EQ        A=0 R10, K8('table'); skip-next if condition != A
+  30 [ 115] JMP       A=0 ->46
+  31 [ 116] GETTABUP  R10 = UP0[K0('cvB')]
+  32 [ 116] GETTABLE  R10 = R10[R3]
+  33 [ 116] NEWTABLE  A=11 B=0 C=0
+  34 [ 116] SETTABLE  R10[R8] = R11
+  35 [ 117] GETTABUP  R10 = UP2[K5('pairs')]
+  36 [ 117] MOVE      A=11 B=9 C=0
+  37 [ 117] CALL      A=10 B=2 C=4
+  38 [ 117] JMP       A=0 ->43
+  39 [ 118] GETTABUP  R15 = UP0[K0('cvB')]
+  40 [ 118] GETTABLE  R15 = R15[R3]
+  41 [ 118] GETTABLE  R15 = R15[R8]
+  42 [ 118] SETTABLE  R15[R13] = R14
+  43 [ 117] TFORCALL  A=10 B=0 C=2
+  44 [ 117] TFORLOOP  A=12 ->39
+  45 [ 120] JMP       A=0 ->49
+  46 [ 122] GETTABUP  R10 = UP0[K0('cvB')]
+  47 [ 122] GETTABLE  R10 = R10[R3]
+  48 [ 122] SETTABLE  R10[R8] = R9
+  49 [ 112] TFORCALL  A=5 B=0 C=2
+  50 [ 112] TFORLOOP  A=7 ->21
+  51 [ 109] TFORCALL  A=0 B=0 C=2
+  52 [ 109] TFORLOOP  A=2 ->14
+  53 [ 128] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5 params 0 vararg 0 stack 16 lines 131 149 source None
+UPVALUES [('_ENV', (0, 0)), ('T', (1, 4)), ('G', (1, 0))]
+LOCALS [('(for generator)', 3, 31), ('(for state)', 3, 31), ('(for control)', 3, 31), ('vN', 4, 29), ('vD', 4, 29), ('(for generator)', 7, 29), ('(for state)', 7, 29), ('(for control)', 7, 29), ('k', 8, 27), ('v', 8, 27), ('(for generator)', 16, 23), ('(for state)', 16, 23), ('(for control)', 16, 23), ('k2', 17, 21), ('v2', 17, 21)]
+K0 'pairs'
+K1 'cvB'
+K2 'type'
+K3 'table'
+K4 'cvS'
+K5 'clear'
+K6 '+cvB'
+   1 [ 133] GETTABUP  R0 = UP0[K0('pairs')]
+   2 [ 133] GETTABUP  R1 = UP1[K1('cvB')]
+   3 [ 133] CALL      A=0 B=2 C=4
+   4 [ 133] JMP       A=0 ->30
+   5 [ 135] GETTABUP  R5 = UP0[K0('pairs')]
+   6 [ 135] MOVE      A=6 B=4 C=0
+   7 [ 135] CALL      A=5 B=2 C=4
+   8 [ 135] JMP       A=0 ->28
+   9 [ 137] GETTABUP  R10 = UP0[K2('type')]
+  10 [ 137] MOVE      A=11 B=9 C=0
+  11 [ 137] CALL      A=10 B=2 C=2
+  12 [ 137] EQ        A=0 R10, K3('table'); skip-next if condition != A
+  13 [ 137] JMP       A=0 ->25
+  14 [ 138] GETTABUP  R10 = UP0[K0('pairs')]
+  15 [ 138] MOVE      A=11 B=9 C=0
+  16 [ 138] CALL      A=10 B=2 C=4
+  17 [ 138] JMP       A=0 ->22
+  18 [ 139] GETTABUP  R15 = UP1[K4('cvS')]
+  19 [ 139] GETTABLE  R15 = R15[R3]
+  20 [ 139] GETTABLE  R15 = R15[R8]
+  21 [ 139] SETTABLE  R15[R13] = R14
+  22 [ 138] TFORCALL  A=10 B=0 C=2
+  23 [ 138] TFORLOOP  A=12 ->18
+  24 [ 141] JMP       A=0 ->28
+  25 [ 143] GETTABUP  R10 = UP1[K4('cvS')]
+  26 [ 143] GETTABLE  R10 = R10[R3]
+  27 [ 143] SETTABLE  R10[R8] = R9
+  28 [ 135] TFORCALL  A=5 B=0 C=2
+  29 [ 135] TFORLOOP  A=7 ->9
+  30 [ 133] TFORCALL  A=0 B=0 C=2
+  31 [ 133] TFORLOOP  A=2 ->5
+  32 [ 148] GETTABUP  R0 = UP2[K5('clear')]
+  33 [ 148] GETUPVAL  A=1 B=1 C=0
+  34 [ 148] LOADK     R2 = K6 ('+cvB')
+  35 [ 148] CALL      A=0 B=3 C=1
+  36 [ 149] RETURN    A=0 B=1 C=0
+
+FUNCTION main/6 params 1 vararg 0 stack 8 lines 151 163 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('list_var', 0, 21), ('list', 5, 21), ('(for generator)', 13, 19), ('(for state)', 13, 19), ('(for control)', 13, 19), ('i', 14, 17), ('v', 14, 17)]
+K0 0
+K1 None
+K2 'ipairs'
+K3 1
+   1 [ 152] TEST      A=0 B=0 C=1
+   2 [ 152] JMP       A=0 ->5
+   3 [ 153] LOADNIL   A=1 B=0 C=0
+   4 [ 153] RETURN    A=1 B=2 C=0
+   5 [ 155] NEWTABLE  A=1 B=0 C=0
+   6 [ 156] GETTABLE  R2 = R0[K0(0)]
+   7 [ 156] EQ        A=1 R2, K1(None); skip-next if condition != A
+   8 [ 156] JMP       A=0 ->11
+   9 [ 157] GETTABLE  R2 = R0[K0(0)]
+  10 [ 157] SETTABLE  R1[K0(0)] = R2
+  11 [ 159] GETTABUP  R2 = UP0[K2('ipairs')]
+  12 [ 159] MOVE      A=3 B=0 C=0
+  13 [ 159] CALL      A=2 B=2 C=4
+  14 [ 159] JMP       A=0 ->18
+  15 [ 160] LEN       A=7 B=1 C=0
+  16 [ 160] ADD       A=7 B=7 C=259
+  17 [ 160] SETTABLE  R1[R7] = R6
+  18 [ 159] TFORCALL  A=2 B=0 C=2
+  19 [ 159] TFORLOOP  A=4 ->15
+  20 [ 162] RETURN    A=1 B=2 C=0
+  21 [ 163] RETURN    A=0 B=1 C=0
+
+FUNCTION main/7 params 1 vararg 0 stack 8 lines 166 180 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('dir', 0, 33), ('vD', 7, 33), ('inc', 12, 33), ('nv', 14, 33)]
+K0 0
+K1 'cvS'
+K2 'UI'
+K3 'cfgSelVarN'
+K4 'i'
+K5 1
+K6 'v'
+K7 'math'
+K8 'min'
+K9 'max'
+K10 'm'
+K11 'x'
+K12 'onChange'
+K13 'updateVars'
+   1 [ 168] TEST      A=0 B=0 C=1
+   2 [ 168] JMP       A=0 ->4
+   3 [ 168] LOADK     R0 = K0 (0)
+   4 [ 169] GETTABUP  R1 = UP0[K1('cvS')]
+   5 [ 169] GETTABUP  R2 = UP1[K2('UI')]
+   6 [ 169] GETTABLE  R2 = R2[K3('cfgSelVarN')]
+   7 [ 169] GETTABLE  R1 = R1[R2]
+   8 [ 170] GETTABLE  R2 = R1[K4('i')]
+   9 [ 170] TEST      A=2 B=0 C=1
+  10 [ 170] JMP       A=0 ->12
+  11 [ 170] LOADK     R2 = K5 (1)
+  12 [ 170] MUL       A=2 B=2 C=0
+  13 [ 171] GETTABLE  R3 = R1[K6('v')]
+  14 [ 171] ADD       A=3 B=3 C=2
+  15 [ 172] GETTABUP  R4 = UP2[K7('math')]
+  16 [ 172] GETTABLE  R4 = R4[K8('min')]
+  17 [ 172] GETTABUP  R5 = UP2[K7('math')]
+  18 [ 172] GETTABLE  R5 = R5[K9('max')]
+  19 [ 172] MOVE      A=6 B=3 C=0
+  20 [ 172] GETTABLE  R7 = R1[K10('m')]
+  21 [ 172] CALL      A=5 B=3 C=2
+  22 [ 172] GETTABLE  R6 = R1[K11('x')]
+  23 [ 172] CALL      A=4 B=3 C=2
+  24 [ 172] MOVE      A=3 B=4 C=0
+  25 [ 173] SETTABLE  R1[K6('v')] = R3
+  26 [ 175] GETTABLE  R4 = R1[K12('onChange')]
+  27 [ 175] TEST      A=4 B=0 C=0
+  28 [ 175] JMP       A=0 ->31
+  29 [ 176] GETTABLE  R4 = R1[K12('onChange')]
+  30 [ 176] CALL      A=4 B=1 C=1
+  31 [ 179] GETTABUP  R4 = UP0[K13('updateVars')]
+  32 [ 179] CALL      A=4 B=1 C=1
+  33 [ 180] RETURN    A=0 B=1 C=0
+
+FUNCTION main/8 params 1 vararg 0 stack 8 lines 183 204 source None
+UPVALUES [('_ENV', (0, 0)), ('T', (1, 4)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS [('dir', 0, 82), ('topLineMax', 12, 82), ('botLineMax', 18, 82)]
+K0 0
+K1 'math'
+K2 'max'
+K3 'cvV'
+K4 'lnMax'
+K5 1
+K6 'UI'
+K7 'cfgSelTopLineN'
+K8 'cfgSelLineN'
+K9 'next'
+K10 'setViewPort'
+K11 'cfgSelVarN'
+   1 [ 185] TEST      A=0 B=0 C=1
+   2 [ 185] JMP       A=0 ->4
+   3 [ 185] LOADK     R0 = K0 (0)
+   4 [ 186] GETTABUP  R1 = UP0[K1('math')]
+   5 [ 186] GETTABLE  R1 = R1[K2('max')]
+   6 [ 186] GETTABUP  R2 = UP1[K3('cvV')]
+   7 [ 186] LEN       A=2 B=2 C=0
+   8 [ 186] GETTABUP  R3 = UP1[K4('lnMax')]
+   9 [ 186] SUB       A=2 B=2 C=3
+  10 [ 186] ADD       A=2 B=2 C=261
+  11 [ 186] LOADK     R3 = K5 (1)
+  12 [ 186] CALL      A=1 B=3 C=2
+  13 [ 187] GETTABUP  R2 = UP1[K3('cvV')]
+  14 [ 187] LEN       A=2 B=2 C=0
+  15 [ 187] GETTABUP  R3 = UP2[K6('UI')]
+  16 [ 187] GETTABLE  R3 = R3[K7('cfgSelTopLineN')]
+  17 [ 187] SUB       A=2 B=2 C=3
+  18 [ 187] ADD       A=2 B=2 C=261
+  19 [ 188] LT        A=0 K0(0), R0; skip-next if condition != A
+  20 [ 188] JMP       A=0 ->45
+  21 [ 189] GETTABUP  R3 = UP2[K6('UI')]
+  22 [ 189] GETTABLE  R3 = R3[K8('cfgSelLineN')]
+  23 [ 189] GETTABUP  R4 = UP1[K4('lnMax')]
+  24 [ 189] EQ        A=0 R3, R4; skip-next if condition != A
+  25 [ 189] JMP       A=0 ->36
+  26 [ 190] GETTABUP  R3 = UP2[K6('UI')]
+  27 [ 190] GETTABUP  R4 = UP3[K9('next')]
+  28 [ 190] GETTABUP  R5 = UP2[K6('UI')]
+  29 [ 190] GETTABLE  R5 = R5[K7('cfgSelTopLineN')]
+  30 [ 190] ADD       A=5 B=5 C=261
+  31 [ 190] LOADK     R6 = K5 (1)
+  32 [ 190] MOVE      A=7 B=1 C=0
+  33 [ 190] CALL      A=4 B=4 C=2
+  34 [ 190] SETTABLE  R3[K7('cfgSelTopLineN')] = R4
+  35 [ 190] JMP       A=0 ->45
+  36 [ 192] GETTABUP  R3 = UP2[K6('UI')]
+  37 [ 192] GETTABUP  R4 = UP3[K9('next')]
+  38 [ 192] GETTABUP  R5 = UP2[K6('UI')]
+  39 [ 192] GETTABLE  R5 = R5[K8('cfgSelLineN')]
+  40 [ 192] ADD       A=5 B=5 C=261
+  41 [ 192] LOADK     R6 = K5 (1)
+  42 [ 192] MOVE      A=7 B=2 C=0
+  43 [ 192] CALL      A=4 B=4 C=2
+  44 [ 192] SETTABLE  R3[K8('cfgSelLineN')] = R4
+  45 [ 195] LT        A=0 R0, K0(0); skip-next if condition != A
+  46 [ 195] JMP       A=0 ->70
+  47 [ 196] GETTABUP  R3 = UP2[K6('UI')]
+  48 [ 196] GETTABLE  R3 = R3[K8('cfgSelLineN')]
+  49 [ 196] EQ        A=0 R3, K5(1); skip-next if condition != A
+  50 [ 196] JMP       A=0 ->61
+  51 [ 197] GETTABUP  R3 = UP2[K6('UI')]
+  52 [ 197] GETTABUP  R4 = UP3[K9('next')]
+  53 [ 197] GETTABUP  R5 = UP2[K6('UI')]
+  54 [ 197] GETTABLE  R5 = R5[K7('cfgSelTopLineN')]
+  55 [ 197] SUB       A=5 B=5 C=261
+  56 [ 197] LOADK     R6 = K5 (1)
+  57 [ 197] MOVE      A=7 B=1 C=0
+  58 [ 197] CALL      A=4 B=4 C=2
+  59 [ 197] SETTABLE  R3[K7('cfgSelTopLineN')] = R4
+  60 [ 197] JMP       A=0 ->70
+  61 [ 199] GETTABUP  R3 = UP2[K6('UI')]
+  62 [ 199] GETTABUP  R4 = UP3[K9('next')]
+  63 [ 199] GETTABUP  R5 = UP2[K6('UI')]
+  64 [ 199] GETTABLE  R5 = R5[K8('cfgSelLineN')]
+  65 [ 199] SUB       A=5 B=5 C=261
+  66 [ 199] LOADK     R6 = K5 (1)
+  67 [ 199] MOVE      A=7 B=2 C=0
+  68 [ 199] CALL      A=4 B=4 C=2
+  69 [ 199] SETTABLE  R3[K8('cfgSelLineN')] = R4
+  70 [ 202] GETTABUP  R3 = UP1[K10('setViewPort')]
+  71 [ 202] CALL      A=3 B=1 C=1
+  72 [ 203] GETTABUP  R3 = UP2[K6('UI')]
+  73 [ 203] GETTABUP  R4 = UP1[K3('cvV')]
+  74 [ 203] GETTABUP  R5 = UP2[K6('UI')]
+  75 [ 203] GETTABLE  R5 = R5[K7('cfgSelTopLineN')]
+  76 [ 203] GETTABUP  R6 = UP2[K6('UI')]
+  77 [ 203] GETTABLE  R6 = R6[K8('cfgSelLineN')]
+  78 [ 203] ADD       A=5 B=5 C=6
+  79 [ 203] SUB       A=5 B=5 C=261
+  80 [ 203] GETTABLE  R4 = R4[R5]
+  81 [ 203] SETTABLE  R3[K11('cfgSelVarN')] = R4
+  82 [ 204] RETURN    A=0 B=1 C=0
+
+FUNCTION main/9 params 1 vararg 0 stack 7 lines 207 218 source None
+UPVALUES [('D', (1, 2)), ('G', (1, 0)), ('T', (1, 4))]
+LOCALS [('dir', 0, 44)]
+K0 0
+K1 'S'
+K2 'UI_CFG_PN'
+K3 'next'
+K4 1
+K5 'MODCFG'
+K6 'pagesVisible'
+K7 'UI'
+K8 'cfgSelLineN'
+K9 'cfgSelTopLineN'
+K10 'cfgSelVarN'
+K11 'clear'
+K12 'cv'
+K13 'updateDisp'
+K14 None
+K15 'onSave'
+K16 'loadE'
+K17 'PLIBCFG'
+K18 'CFG'
+K19 'id'
+K20 'initVars'
+   1 [ 208] TEST      A=0 B=0 C=1
+   2 [ 208] JMP       A=0 ->4
+   3 [ 208] LOADK     R0 = K0 (0)
+   4 [ 210] GETTABUP  R1 = UP0[K1('S')]
+   5 [ 210] GETTABUP  R2 = UP1[K3('next')]
+   6 [ 210] GETTABUP  R3 = UP0[K1('S')]
+   7 [ 210] GETTABLE  R3 = R3[K2('UI_CFG_PN')]
+   8 [ 210] ADD       A=3 B=3 C=0
+   9 [ 210] LOADK     R4 = K4 (1)
+  10 [ 210] GETTABUP  R5 = UP0[K5('MODCFG')]
+  11 [ 210] GETTABLE  R5 = R5[K6('pagesVisible')]
+  12 [ 210] LEN       A=5 B=5 C=0
+  13 [ 210] LOADBOOL  A=6 B=1 C=0
+  14 [ 210] CALL      A=2 B=5 C=2
+  15 [ 210] SETTABLE  R1[K2('UI_CFG_PN')] = R2
+  16 [ 211] GETTABUP  R1 = UP0[K7('UI')]
+  17 [ 211] GETTABUP  R2 = UP0[K7('UI')]
+  18 [ 211] GETTABUP  R3 = UP0[K7('UI')]
+  19 [ 211] LOADK     R4 = K4 (1)
+  20 [ 211] LOADK     R5 = K4 (1)
+  21 [ 211] SETTABLE  R3[K10('cfgSelVarN')] = K4(1)
+  22 [ 211] SETTABLE  R2[K9('cfgSelTopLineN')] = R5
+  23 [ 211] SETTABLE  R1[K8('cfgSelLineN')] = R4
+  24 [ 212] GETTABUP  R1 = UP1[K11('clear')]
+  25 [ 212] GETUPVAL  A=2 B=2 C=0
+  26 [ 212] LOADK     R3 = K12 ('cv')
+  27 [ 212] CALL      A=1 B=3 C=1
+  28 [ 213] SETTABUP  UP2[K13('updateDisp')] = K14(None)
+  29 [ 214] SETTABUP  UP2[K15('onSave')] = K14(None)
+  30 [ 216] GETTABUP  R1 = UP1[K16('loadE')]
+  31 [ 216] GETTABUP  R2 = UP1[K17('PLIBCFG')]
+  32 [ 216] LOADK     R3 = K18 ('CFG')
+  33 [ 216] GETTABUP  R4 = UP0[K5('MODCFG')]
+  34 [ 216] GETTABLE  R4 = R4[K6('pagesVisible')]
+  35 [ 216] GETTABUP  R5 = UP0[K1('S')]
+  36 [ 216] GETTABLE  R5 = R5[K2('UI_CFG_PN')]
+  37 [ 216] GETTABLE  R4 = R4[R5]
+  38 [ 216] GETTABLE  R4 = R4[K19('id')]
+  39 [ 216] CONCAT    A=2 B=2 C=4
+  40 [ 216] GETUPVAL  A=3 B=2 C=0
+  41 [ 216] CALL      A=1 B=3 C=1
+  42 [ 217] GETTABUP  R1 = UP2[K20('initVars')]
+  43 [ 217] CALL      A=1 B=1 C=1
+  44 [ 218] RETURN    A=0 B=1 C=0
+
+FUNCTION main/10 params 0 vararg 0 stack 9 lines 220 231 source None
+UPVALUES [('_ENV', (0, 0)), ('T', (1, 4)), ('D', (1, 2))]
+LOCALS [('(for generator)', 3, 30), ('(for state)', 3, 30), ('(for control)', 3, 30), ('vK', 4, 28), ('vData', 4, 28)]
+K0 'pairs'
+K1 'cv'
+K2 'string'
+K3 'sub'
+K4 1
+K5 '_'
+K6 't'
+K7 'S'
+K8 'v'
+K9 0
+   1 [ 221] GETTABUP  R0 = UP0[K0('pairs')]
+   2 [ 221] GETTABUP  R1 = UP1[K1('cv')]
+   3 [ 221] CALL      A=0 B=2 C=4
+   4 [ 221] JMP       A=0 ->29
+   5 [ 222] GETTABUP  R5 = UP0[K2('string')]
+   6 [ 222] GETTABLE  R5 = R5[K3('sub')]
+   7 [ 222] MOVE      A=6 B=3 C=0
+   8 [ 222] LOADK     R7 = K4 (1)
+   9 [ 222] LOADK     R8 = K4 (1)
+  10 [ 222] CALL      A=5 B=4 C=2
+  11 [ 222] EQ        A=1 R5, K5('_'); skip-next if condition != A
+  12 [ 222] JMP       A=0 ->29
+  13 [ 223] GETTABLE  R5 = R4[K6('t')]
+  14 [ 223] EQ        A=0 R5, K7('S'); skip-next if condition != A
+  15 [ 223] JMP       A=0 ->26
+  16 [ 224] GETTABUP  R5 = UP2[K7('S')]
+  17 [ 224] GETTABLE  R5 = R5[R3]
+  18 [ 224] TEST      A=5 B=0 C=0
+  19 [ 224] JMP       A=0 ->23
+  20 [ 224] LOADK     R5 = K4 (1)
+  21 [ 224] TEST      A=5 B=0 C=1
+  22 [ 224] JMP       A=0 ->24
+  23 [ 224] LOADK     R5 = K9 (0)
+  24 [ 224] SETTABLE  R4[K8('v')] = R5
+  25 [ 224] JMP       A=0 ->29
+  26 [ 226] GETTABUP  R5 = UP2[K7('S')]
+  27 [ 226] GETTABLE  R5 = R5[R3]
+  28 [ 226] SETTABLE  R4[K8('v')] = R5
+  29 [ 221] TFORCALL  A=0 B=0 C=2
+  30 [ 221] TFORLOOP  A=2 ->5
+  31 [ 231] RETURN    A=0 B=1 C=0
+
+FUNCTION main/11 params 0 vararg 0 stack 9 lines 234 245 source None
+UPVALUES [('_ENV', (0, 0)), ('T', (1, 4)), ('D', (1, 2))]
+LOCALS [('(for generator)', 3, 28), ('(for state)', 3, 28), ('(for control)', 3, 28), ('vK', 4, 26), ('vData', 4, 26)]
+K0 'pairs'
+K1 'cv'
+K2 'string'
+K3 'sub'
+K4 1
+K5 '_'
+K6 't'
+K7 'S'
+K8 'v'
+   1 [ 235] GETTABUP  R0 = UP0[K0('pairs')]
+   2 [ 235] GETTABUP  R1 = UP1[K1('cv')]
+   3 [ 235] CALL      A=0 B=2 C=4
+   4 [ 235] JMP       A=0 ->27
+   5 [ 236] GETTABUP  R5 = UP0[K2('string')]
+   6 [ 236] GETTABLE  R5 = R5[K3('sub')]
+   7 [ 236] MOVE      A=6 B=3 C=0
+   8 [ 236] LOADK     R7 = K4 (1)
+   9 [ 236] LOADK     R8 = K4 (1)
+  10 [ 236] CALL      A=5 B=4 C=2
+  11 [ 236] EQ        A=1 R5, K5('_'); skip-next if condition != A
+  12 [ 236] JMP       A=0 ->27
+  13 [ 237] GETTABLE  R5 = R4[K6('t')]
+  14 [ 237] EQ        A=0 R5, K7('S'); skip-next if condition != A
+  15 [ 237] JMP       A=0 ->24
+  16 [ 238] GETTABUP  R5 = UP2[K7('S')]
+  17 [ 238] GETTABLE  R6 = R4[K8('v')]
+  18 [ 238] EQ        A=1 R6, K4(1); skip-next if condition != A
+  19 [ 238] JMP       A=0 ->21
+  20 [ 238] LOADBOOL  A=6 B=0 C=1
+  21 [ 238] LOADBOOL  A=6 B=1 C=0
+  22 [ 238] SETTABLE  R5[R3] = R6
+  23 [ 238] JMP       A=0 ->27
+  24 [ 240] GETTABUP  R5 = UP2[K7('S')]
+  25 [ 240] GETTABLE  R6 = R4[K8('v')]
+  26 [ 240] SETTABLE  R5[R3] = R6
+  27 [ 235] TFORCALL  A=0 B=0 C=2
+  28 [ 235] TFORLOOP  A=2 ->5
+  29 [ 245] RETURN    A=0 B=1 C=0
+
+FUNCTION main/12 params 1 vararg 0 stack 4 lines 248 319 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS [('w', 0, 146)]
+K0 'eMod'
+K1 'evt'
+K2 'K'
+K3 'EX'
+K4 False
+K5 'restoreVars'
+K6 'cvS'
+K7 'UI'
+K8 'cfgSelVarN'
+K9 'onCancel'
+K10 'updateVars'
+K11 0
+K12 'EN'
+K13 'onSave'
+K14 'writeDS'
+K15 'loadE'
+K16 'PLIBCFG'
+K17 'CFGUPD'
+K18 'pID'
+K19 'RT'
+K20 'RTR'
+K21 'changeValue'
+K22 1
+K23 'LT'
+K24 'LTR'
+K25 -1
+K26 'MODS'
+K27 'nextID'
+K28 'DBD'
+K29 True
+K30 'backupVars'
+K31 'DN'
+K32 'changeLine'
+K33 'UP'
+K34 'PN'
+K35 'changePage'
+K36 'PP'
+   1 [ 250] GETTABUP  R1 = UP0[K0('eMod')]
+   2 [ 250] TEST      A=1 B=0 C=0
+   3 [ 250] JMP       A=0 ->92
+   4 [ 252] GETTABUP  R1 = UP1[K1('evt')]
+   5 [ 252] GETTABUP  R2 = UP1[K2('K')]
+   6 [ 252] GETTABLE  R2 = R2[K3('EX')]
+   7 [ 252] EQ        A=0 R1, R2; skip-next if condition != A
+   8 [ 252] JMP       A=0 ->29
+   9 [ 254] SETTABUP  UP0[K0('eMod')] = K4(False)
+  10 [ 256] GETTABUP  R1 = UP0[K5('restoreVars')]
+  11 [ 256] CALL      A=1 B=1 C=1
+  12 [ 257] GETTABUP  R1 = UP0[K6('cvS')]
+  13 [ 257] GETTABUP  R2 = UP1[K7('UI')]
+  14 [ 257] GETTABLE  R2 = R2[K8('cfgSelVarN')]
+  15 [ 257] GETTABLE  R1 = R1[R2]
+  16 [ 257] GETTABLE  R1 = R1[K9('onCancel')]
+  17 [ 257] TEST      A=1 B=0 C=0
+  18 [ 257] JMP       A=0 ->25
+  19 [ 258] GETTABUP  R1 = UP0[K6('cvS')]
+  20 [ 258] GETTABUP  R2 = UP1[K7('UI')]
+  21 [ 258] GETTABLE  R2 = R2[K8('cfgSelVarN')]
+  22 [ 258] GETTABLE  R1 = R1[R2]
+  23 [ 258] GETTABLE  R1 = R1[K9('onCancel')]
+  24 [ 258] CALL      A=1 B=1 C=1
+  25 [ 260] GETTABUP  R1 = UP0[K10('updateVars')]
+  26 [ 260] CALL      A=1 B=1 C=1
+  27 [ 261] SETTABUP  UP1[K1('evt')] = K11(0)
+  28 [ 261] JMP       A=0 ->146
+  29 [ 265] GETTABUP  R1 = UP1[K1('evt')]
+  30 [ 265] GETTABUP  R2 = UP1[K2('K')]
+  31 [ 265] GETTABLE  R2 = R2[K12('EN')]
+  32 [ 265] EQ        A=0 R1, R2; skip-next if condition != A
+  33 [ 265] JMP       A=0 ->62
+  34 [ 268] GETTABUP  R1 = UP0[K6('cvS')]
+  35 [ 268] GETTABUP  R2 = UP1[K7('UI')]
+  36 [ 268] GETTABLE  R2 = R2[K8('cfgSelVarN')]
+  37 [ 268] GETTABLE  R1 = R1[R2]
+  38 [ 268] GETTABLE  R1 = R1[K13('onSave')]
+  39 [ 268] TEST      A=1 B=0 C=0
+  40 [ 268] JMP       A=0 ->47
+  41 [ 269] GETTABUP  R1 = UP0[K6('cvS')]
+  42 [ 269] GETTABUP  R2 = UP1[K7('UI')]
+  43 [ 269] GETTABLE  R2 = R2[K8('cfgSelVarN')]
+  44 [ 269] GETTABLE  R1 = R1[R2]
+  45 [ 269] GETTABLE  R1 = R1[K13('onSave')]
+  46 [ 269] CALL      A=1 B=1 C=1
+  47 [ 271] GETTABUP  R1 = UP0[K13('onSave')]
+  48 [ 271] TEST      A=1 B=0 C=0
+  49 [ 271] JMP       A=0 ->52
+  50 [ 272] GETTABUP  R1 = UP0[K13('onSave')]
+  51 [ 272] CALL      A=1 B=1 C=1
+  52 [ 275] GETTABUP  R1 = UP0[K14('writeDS')]
+  53 [ 275] CALL      A=1 B=1 C=1
+  54 [ 278] GETTABUP  R1 = UP2[K15('loadE')]
+  55 [ 278] GETTABUP  R2 = UP2[K16('PLIBCFG')]
+  56 [ 278] LOADK     R3 = K17 ('CFGUPD')
+  57 [ 278] CONCAT    A=2 B=2 C=3
+  58 [ 278] GETTABUP  R3 = UP0[K18('pID')]
+  59 [ 278] CALL      A=1 B=3 C=1
+  60 [ 279] SETTABUP  UP0[K0('eMod')] = K4(False)
+  61 [ 279] JMP       A=0 ->146
+  62 [ 281] GETTABUP  R1 = UP1[K1('evt')]
+  63 [ 281] GETTABUP  R2 = UP1[K2('K')]
+  64 [ 281] GETTABLE  R2 = R2[K19('RT')]
+  65 [ 281] EQ        A=1 R1, R2; skip-next if condition != A
+  66 [ 281] JMP       A=0 ->72
+  67 [ 281] GETTABUP  R1 = UP1[K1('evt')]
+  68 [ 281] GETTABUP  R2 = UP1[K2('K')]
+  69 [ 281] GETTABLE  R2 = R2[K20('RTR')]
+  70 [ 281] EQ        A=0 R1, R2; skip-next if condition != A
+  71 [ 281] JMP       A=0 ->76
+  72 [ 282] GETTABUP  R1 = UP0[K21('changeValue')]
+  73 [ 282] LOADK     R2 = K22 (1)
+  74 [ 282] CALL      A=1 B=2 C=1
+  75 [ 282] JMP       A=0 ->146
+  76 [ 284] GETTABUP  R1 = UP1[K1('evt')]
+  77 [ 284] GETTABUP  R2 = UP1[K2('K')]
+  78 [ 284] GETTABLE  R2 = R2[K23('LT')]
+  79 [ 284] EQ        A=1 R1, R2; skip-next if condition != A
+  80 [ 284] JMP       A=0 ->86
+  81 [ 284] GETTABUP  R1 = UP1[K1('evt')]
+  82 [ 284] GETTABUP  R2 = UP1[K2('K')]
+  83 [ 284] GETTABLE  R2 = R2[K24('LTR')]
+  84 [ 284] EQ        A=0 R1, R2; skip-next if condition != A
+  85 [ 284] JMP       A=0 ->90
+  86 [ 285] GETTABUP  R1 = UP0[K21('changeValue')]
+  87 [ 285] LOADK     R2 = K25 (-1)
+  88 [ 285] CALL      A=1 B=2 C=1
+  89 [ 285] JMP       A=0 ->146
+  90 [ 288] SETTABUP  UP1[K1('evt')] = K11(0)
+  91 [ 289] JMP       A=0 ->146
+  92 [ 294] GETTABUP  R1 = UP1[K1('evt')]
+  93 [ 294] GETTABUP  R2 = UP1[K2('K')]
+  94 [ 294] GETTABLE  R2 = R2[K3('EX')]
+  95 [ 294] EQ        A=0 R1, R2; skip-next if condition != A
+  96 [ 294] JMP       A=0 ->102
+  97 [ 295] GETTABUP  R1 = UP1[K7('UI')]
+  98 [ 295] GETTABLE  R1 = R1[K26('MODS')]
+  99 [ 295] SETTABLE  R1[K27('nextID')] = K28('DBD')
+ 100 [ 296] SETTABUP  UP1[K1('evt')] = K11(0)
+ 101 [ 296] JMP       A=0 ->146
+ 102 [ 298] GETTABUP  R1 = UP1[K1('evt')]
+ 103 [ 298] GETTABUP  R2 = UP1[K2('K')]
+ 104 [ 298] GETTABLE  R2 = R2[K12('EN')]
+ 105 [ 298] EQ        A=0 R1, R2; skip-next if condition != A
+ 106 [ 298] JMP       A=0 ->111
+ 107 [ 301] SETTABUP  UP0[K0('eMod')] = K29(True)
+ 108 [ 303] GETTABUP  R1 = UP0[K30('backupVars')]
+ 109 [ 303] CALL      A=1 B=1 C=1
+ 110 [ 303] JMP       A=0 ->146
+ 111 [ 305] GETTABUP  R1 = UP1[K1('evt')]
+ 112 [ 305] GETTABUP  R2 = UP1[K2('K')]
+ 113 [ 305] GETTABLE  R2 = R2[K31('DN')]
+ 114 [ 305] EQ        A=0 R1, R2; skip-next if condition != A
+ 115 [ 305] JMP       A=0 ->120
+ 116 [ 306] GETTABUP  R1 = UP0[K32('changeLine')]
+ 117 [ 306] LOADK     R2 = K22 (1)
+ 118 [ 306] CALL      A=1 B=2 C=1
+ 119 [ 306] JMP       A=0 ->146
+ 120 [ 308] GETTABUP  R1 = UP1[K1('evt')]
+ 121 [ 308] GETTABUP  R2 = UP1[K2('K')]
+ 122 [ 308] GETTABLE  R2 = R2[K33('UP')]
+ 123 [ 308] EQ        A=0 R1, R2; skip-next if condition != A
+ 124 [ 308] JMP       A=0 ->129
+ 125 [ 309] GETTABUP  R1 = UP0[K32('changeLine')]
+ 126 [ 309] LOADK     R2 = K25 (-1)
+ 127 [ 309] CALL      A=1 B=2 C=1
+ 128 [ 309] JMP       A=0 ->146
+ 129 [ 311] GETTABUP  R1 = UP1[K1('evt')]
+ 130 [ 311] GETTABUP  R2 = UP1[K2('K')]
+ 131 [ 311] GETTABLE  R2 = R2[K34('PN')]
+ 132 [ 311] EQ        A=0 R1, R2; skip-next if condition != A
+ 133 [ 311] JMP       A=0 ->138
+ 134 [ 312] GETTABUP  R1 = UP0[K35('changePage')]
+ 135 [ 312] LOADK     R2 = K22 (1)
+ 136 [ 312] CALL      A=1 B=2 C=1
+ 137 [ 312] JMP       A=0 ->146
+ 138 [ 314] GETTABUP  R1 = UP1[K1('evt')]
+ 139 [ 314] GETTABUP  R2 = UP1[K2('K')]
+ 140 [ 314] GETTABLE  R2 = R2[K36('PP')]
+ 141 [ 314] EQ        A=0 R1, R2; skip-next if condition != A
+ 142 [ 314] JMP       A=0 ->146
+ 143 [ 315] GETTABUP  R1 = UP0[K35('changePage')]
+ 144 [ 315] LOADK     R2 = K25 (-1)
+ 145 [ 315] CALL      A=1 B=2 C=1
+ 146 [ 319] RETURN    A=0 B=1 C=0

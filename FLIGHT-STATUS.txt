@@ -1,0 +1,77 @@
+AERODECK FLIGHT-STATUS-20261017 — LOCAL ONLY
+
+This revision has not been installed on the radio. Previous local build and
+last file-verified radio build: FLIGHT-PRIORITY-20261017, main SHA-256
+62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31.
+DEPLOYMENT.txt and FLIGHT-PRIORITY.txt preserve that earlier installation record.
+Physical rendering, live responsiveness, performance and viewing-distance
+readability are not validated by this local revision.
+
+SHARED FOOTER / FLIGHT SPACE
+All twelve pages use the same 26 px footer at y246:
+  x0–120: flight mode, without a repeated FM prefix
+  x120–240: app-local home distance
+  x240–304: satellite count
+  x304–432: current arming-block summary
+  x432–480: separate icon-only Arm Info control
+The first three readings are informational and missing values remain --.
+Home remains local to the app; satellite count alone does not prove a GPS fix.
+
+Warnings occupy x0–432, leaving the right 48 px control visible and usable.
+Touch or focused ENTER opens the relevant warning details or the separate
+Arm Info list. RTN from Arm Info returns to its originating page, preserving
+Setup category, draft and active value edit. PREV from the first Setup category
+can focus the footer control. Arm Info is read-only and does not arm the quad.
+If a warning clears while its Setup footer action is focused, focus returns
+to the normal category controls rather than leaving rotary/ENTER stranded.
+
+Flight no longer has an ARM INFO text button above the attitude display.
+The compass reclaims the full 324 px header. HUD/rail geometry, attitude datum,
+pitch direction, 1.85 px/degree scale and the preceding data priorities remain.
+Normal footers no longer repeat LQ/RSSI/voltage or display persistent MSP text.
+
+STATUS MEANING
+A fresh supported status shows the first arming-disable reason code plus a
+count of additional reasons. NO FLAGS means only that the received disable
+mask is clear. It never claims READY or ARMED. FLAGS -- means unavailable;
+STATUS OLD means the last status is stale; STATUS ERROR means it is malformed.
+Unknown API/count combinations keep numbered bits rather than guessed names.
+Footer and reason list share the existing eight-second freshness policy.
+The decoded result is cached per received status packet, not rebuilt each frame.
+
+BETAFLIGHT DECODER
+Verified maps are exact API/count pairs 1.46/26, 1.47/29 and 1.48/30.
+Stable Betaflight 2026.6.2 API 1.48 adds AUTOPILOT_SW at zero-based bit 28
+and moves ARM_SWITCH to bit 29; GPS is bit 18. GPS Rescue needs a valid fix and
+the configured minimum satellites. Existing API 1.46/1.47 maps are preserved.
+API 1.49 and mismatched counts remain unsupported numbered fallbacks.
+Official source URLs and exact release/line references are in arm-status.lua's
+sources table. Tests exercise all 30 API 1.48 flags, low/high multi-bit masks,
+GPS18, both older maps, malformed packets and unknown API/count combinations.
+
+SCOPE / SAFETY
+Package scope: 39 runtime files, 18 root documents, 57 ZIP entries. Only
+SCRIPTS/TOOLS/telem.lua and SCRIPTS/TOOLS/AERODECK/arm-status.lua change among
+runtime files; the other 37 remain byte-identical to FLIGHT-PRIORITY.
+Widget and CRSF transport are unchanged. The existing disarmed-only read-only
+MSP loop adds no requests, command writes or routine SD logging. Attitude/source
+sampling and the float32 battery-boundary correction are preserved.
+No models, RADIO settings, per-model .cfg/.bak preferences or old artwork are
+deleted. Install instructions in AERODECK.txt apply only when installation is
+authorized; this staged work neither installs to USB nor pushes to GitHub.
+
+RELEASE EVIDENCE
+Packaging requires all twelve fresh portable Lua suites plus native visual QA
+matching the exact final main and decoder hashes. Native coverage includes all
+twelve pages, full compass, normal/warning footer control touch and ENTER/RTN,
+origin/Setup-edit restoration, API 1.48 GPS18, zero flags, unknown API/count,
+stale/malformed status, missing/numeric-zero data and long values.
+After packaging, exact hashes/counts are in development/build-FLIGHT-STATUS-20261017.json;
+accepted captures and verification are under development/ui-previews/flight-status/.
+Source fixtures never ship. The install archive is a snapshot until rebuilt.
+
+The native runtime is TX16S EdgeTX 3.0.0 WASM with synthetic inputs. The radio
+target is EdgeTX 2.12.4. Software QA does not measure real RF latency, hardware
+attitude responsiveness, FPS/memory behavior or physical readability at the
+user's reported 30–40 cm viewing distance. Last verified installed build remains
+FLIGHT-PRIORITY-20261017 until a separate verified radio deployment is recorded.

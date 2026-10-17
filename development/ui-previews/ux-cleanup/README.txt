@@ -1,0 +1,2 @@
+RADIO DEPLOYMENT: UX-CLEANUP-20261016 installed and verified 2026-10-16T18:47:23.191384+02:00.
+UX-CLEANUP-20261016 native renders; exact production source plus isolated synthetic telemetry fixture and error-report wrapper. TX16S EdgeTX3.0.0 WASM; physical radio2.12.4. These are not radio/live-quad screenshots or performance benchmarks. No fixture ships. Source hash is in development/build-UX-CLEANUP-20261016.json.

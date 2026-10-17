@@ -1,0 +1,8 @@
+FLIGHT-PRIORITY-20261017 — FOCUSED NATIVE VISUAL QA PASS
+Source SHA256: 62d0822c45c5cebba2e0cc5f495bfac30af31f85ce4e1fdc5b36864bdf15ab31
+
+11 exact-source Flight screenshots visually inspected: level,bank35,missing,zero,long values,configured low/criticalLQ,capacity9999/99999mAh,full25.2V100%pack andcapacity-derived~100%. Other11pages/navigation were unchanged and not recaptured in this revision.
+
+All native processes exited0; logs contain no Lua/firmware errors. File hashes, fixture values/settings and log hashes are in verification.json. No source fixtures ship; no radio was touched.
+
+LIMITATION: EdgeTX3.0.0 TX16S WASM with synthetic data, not target2.12.4hardware. Physical readability, live telemetry, poses, FPS/memory and target-firmware behavior remain unverified.

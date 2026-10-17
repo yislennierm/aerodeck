@@ -11,7 +11,13 @@ end
 local function read(w,key,names)
  local choice=w.map[key];if choice=='None' then return nil end
  if choice and choice~='Auto' then names={choice}end
- for _,name in ipairs(names)do local f=getFieldInfo(name);if f then local v,current=getSourceValue(f.id);if current and type(v)=='number' then return v end end end
+ for _,name in ipairs(names)do
+  local id
+  if getSourceIndex and CHAR_TELEMETRY then
+   local source=getSourceIndex(CHAR_TELEMETRY..name);if type(source)=='number'and source>0 then id=source end
+  else local info=getFieldInfo(name);id=info and info.id end
+  if id then local v,current=getSourceValue(id);if current and type(v)=='number'then return v end end
+ end
 end
 local function refresh(w,event,touch)
  if event~=nil then
@@ -24,7 +30,7 @@ local function refresh(w,event,touch)
   else lcd.drawText(8,12,'Install SCRIPTS/TOOLS/telem.lua',SMLSIZE);if event==EVT_VIRTUAL_EXIT then lcd.exitFullScreen()end end
   return
  end
- if w.app then w.app=nil;w.modelName=nil;collectgarbage('collect')end
+ if w.app then if w.app.stop then w.app.stop()end;w.app=nil;w.modelName=nil;collectgarbage('collect')end
  mappings(w)
  local z=w.zone;local v=read(w,'voltage',{'RxBt','VFAS','Bat'});local lq=read(w,'lq',{'RQly','LQ'});local a=read(w,'current',{'Curr'})
  local bg=lcd.RGB(7,15,22);local white=lcd.RGB(235,243,245);local green=lcd.RGB(164,227,125);local muted=lcd.RGB(144,165,178)
@@ -37,6 +43,6 @@ local function refresh(w,event,touch)
  if z.h>=95 then text(8,57,fmt(a,'%.1f',' A'),muted);text(8,z.h-19,'FULL SCREEN: AERODECK',muted)end
 end
 local function background(w)
- if w.app then w.app=nil;w.modelName=nil;collectgarbage('collect')end
+ if w.app then if w.app.stop then w.app.stop()end;w.app=nil;w.modelName=nil;collectgarbage('collect')end
 end
 return {name='AERODECK',options={},create=create,update=update,refresh=refresh,background=background}

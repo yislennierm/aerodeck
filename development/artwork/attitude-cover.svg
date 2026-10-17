@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152">
+<title>AERODECK attitude corner mask</title>
+<desc>Native152px RGB mask. Black corners draw in the native custom background color; white circular aperture radius68 becomes transparent through Bitmap.toMask. Center76,76. Original AERODECK code-native artwork,2026-10-16.</desc>
+<rect width="152" height="152" fill="white"/>
+<path fill="black" fill-rule="evenodd" d="M0 0H152V152H0Z M144 76A68 68 0 1 0 8 76A68 68 0 1 0 144 76Z"/>
+</svg>

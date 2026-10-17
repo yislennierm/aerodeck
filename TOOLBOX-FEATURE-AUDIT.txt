@@ -1,54 +1,726 @@
-AERODECK / TOOLBOX2 IMPLEMENTATION AUDIT
-13 October 2026
+ASSESSMENT BASELINE: ICON-NAV-20261016.
+UX-CLEANUP-20261016 repairs navigation/input/layout defects; see UX-CLEANUP.txt.
+Backend feature gaps below remain. Full1:1 snapshot/evidence: development/assessments/2026-10-16-toolbox-parity/.
 
-Reference scope
-Reviewed recovered Toolbox2 module registry, 480x272 module screens, configuration registry/visibility, telemetry, FC/MSP, GPS and VTX folders. The supplied recovery report says 287 files recovered, 279 passing syntax checks, with unresolved MSP/parser/control-flow errors. Recovered code is evidence of intended behavior, not an executable specification. No Toolbox2 code, artwork, activation logic or licence-dependent features have been copied into this update. Icons and new renderers are original native Lua drawings.
+DEPLOYMENT UPDATE: ICON-NAV-20261016 installed and SHA-256 verified on the TX16S on 2026-10-16T12:34:28.859186+02:00. Hardware attitude performance remains unverified. See DEPLOYMENT.txt.
 
-REFERENCE FEATURE -> WHAT THE UI NEEDS -> AERODECK STATUS
+AERODECK / TOOLBOX2 — DELIVERY GAP ANALYSIS
+16 October 2026 | TX16S MkII 480x272 | EdgeTX 2.12.4 | Betaflight / ELRS
 
-Dashboard / DB1 (ATT, AHR, BAT, CEL, CMP, GPS, RCL, TIM, FMI)
-Needs attitude, pack/link condition, speed/altitude/course, flight mode and missing-data states. Flight now reads the same source selection as Telemetry and Power; unavailable attitude is masked rather than shown level. The restored original Flight artwork, twin gauges and moving tapes preserve the radio cockpit design. Battery/link alerts are displayed. Actual per-cell readings, hardware timer selection and compass rose remain unimplemented; cell average is explicitly an average from pack voltage/configured count.
+REFERENCE: fm2m-toolbox-200-edgetx (Toolbox 2.0). This is a source audit of
+the supplied reference, not every edition or a newer uninspected release.
+Original excerpts are mirrored under development/toolbox-gap-evidence/.
 
-MENU / quick navigation
-Needs predictable destinations, clear selected state and input handling. Implemented original 12-tile native icon launcher, touch/rotary selection, previous/next navigation and shared source-state footer. Tiles never issue aircraft commands. Reference-only VTX/Stick pages are labelled. Launcher icons are native; Flight keeps the original textured background and numeral artwork using native-resolution chrome pieces.
+RESULT
+AERODECK is a useful subset of Toolbox, not feature-complete parity. The icon
+redesign is implemented; the backend gaps below remain open. This audit replaces
+previous broad parity wording. A page/list bearing a feature name is not a
+working feature. Simulator screenshots are layout evidence, not radio evidence.
 
-MOD/TLM and LIB/TLM
-Needs sensor names/units, independent current/stale flags, mappings and discovery visibility. Existing TLM mappings retained; Flight/Power/Link use them too. Live sampling uses getSourceValue current flags rather than requiring a generic RSSI signal. Inspector shows CURRENT or STALE/NONE individually. Sensor discovery is still done in EdgeTX's native model menu. No remote sensor creation/deletion is performed.
+BUILD DISTINCTION
+R: installed radio source f072b9a1... (previous MENU/footer UI, MSP update).
+L: prior local/browser revision b3a335f4... (six sections, newer page renderers).
+I: ICON-NAV-20261016, this local revision. It changes native navigation symbols,
+   the all-screen chooser, exact hit bounds and visible diagnostic build ID.
+   Its backend capability is the same as L. It is now installed on the radio.
+   R/L descriptions below retain the audit-time baseline for comparison.
+The previous read-only MSP connection update and original cockpit assets remain
+unchanged. Sustained physical attitude responsiveness is still unverified.
 
-MOD/RCL
-Needs link quality, signal strength, SNR, transmit power, RF mode and warning conditions. Implemented dedicated RC Link page and up to 90 one-second samples of LQ. Critical warning takes precedence. RFMD remains a numeric protocol value: no unsupported packet-rate lookup is invented.
+STATUS MATRIX — source/fixture assessment, not a claim of hardware completion
+Area                           Current I coverage              Gap to deliver
+Attitude / native cockpit      Implemented path; P0 gate open  Sustained same-radio response and pose accuracy
+Sensor values / units          Current subset, qualified app  Shared qualified source layer in widget/inspector
+Telemetry browser              27 fixed current slots         Real Current/Min/Max; complete sensor browsing
+Radio battery                  Missing                        Independent tx-voltage/threshold/status
+Measured individual cells      Missing                        Real Cels array; never invent from pack average
+Cell count                     Fixed / configured profiles    Explicit Auto/Fixed and ambiguity policy
+Battery profiles               3 cell/capacity presets         5-equivalent profiles; chemistry; quick selection
+Remaining / alerts             Reported or labeled estimate   Session/reset provenance; differentiated alerts/mute
+Arm/cut / modes                Limited switch picker / FM     Full logical/inverted sources; independent modes
+Timer                          Local radio-arm session only   Read real EdgeTX Timer1-3; explicit managed mode later
+Throttle / limiter             Missing                        Display throttle/cut/limiter without output writes
+GPS current/local home         Partial, updated on GPS pages  Global state; deliberate takeoff-home policy
+GPS fix / PDOP                 Missing                        Real MSP106 fix boolean + PDOP, with source and age
+Satellites / FC home vector    Missing richer data            MSP164 legacy/enhanced; optional107 vector
+GPS recovery/history           Viewed-page bounded trail      Last valid position+age; bounded cross-page history
+RC protocol details            Basic link data + raw RFMD     Version-aware RF modes; named uplink/downlink
+Capability configuration       Conditional list visibility    Real Auto/Off semantics and feature dependencies
+Quick actions                  Destination launcher only      New flight / mute / reload / scoped reset
+Dashboard modularity           Fixed original cockpit         Optional panel choices or equally quick workflows
+Live VTX / FC tables           Local frequency notes only     MSP88 + parameterized137/138; identity-aware cache
+VTX apply / PIT / save         Missing                        Staged89, verified readback, separate250 persistence
+FC connection / status         BTFL/API/version/status reads  Typed queue; board/UID; useful150 diagnostics
+FC tuning / calibration        Reference only / unavailable   Separate future scope; Toolbox isn't a full PID editor
+Widget                         Compact + same full app        Qualified binding, validated config, lifecycle/session
+Themes / other radios / INAV   Outside this target scope      Separate scope decision; not required for TX16S/BF
 
-MOD/BAT; DB1/BAT, BTC, CEL, BFV
-Needs pack profiles, thresholds, capacity, current, history, measured versus estimated values. Existing configuration and three favourites retained; native Power now shows live voltage/current/consumption/remaining and sample history. Remaining estimate fallback uses selected capacity only if reported Bat% is missing; assumes full pack and reset consumption. Pack cell count is configured, not inferred. Per-cell imbalance tracking and battery-change detection remain unimplemented.
+REFERENCE CORRECTIONS
+- Original Toolbox CRSF GPS code infers POS_FIX from a satellite threshold and
+  derives its GPS_HDOP value from Sats-4. That is not measured HDOP or a verified
+  3D fix. We should improve this, not copy the badge. MSP106 supplies a fix
+  boolean and PDOP (where supported), not precise fix type or measured HDOP.
+- Toolbox's Flight Controller settings are MSP connection/polling preferences,
+  not a full PID/rate/motor configurator. Do not promise one from those headings.
+- Original VTX control has explicit send/read branches. Recovered Lua lost the
+  branch and fields. All implementation must follow original bytecode plus
+  official Betaflight formats, not execute the damaged recovery.
+- Toolbox widget background continuation is not proved by a callback alone;
+  AERODECK currently has no hidden alerts/MSP/session recording. State this scope.
 
-MOD/GPS; LIB/GPS
-Needs coordinates, current/fix status, home source, distance/bearing and satellite details. Existing GPS details and Nav plot retained, now tied to the shared source mode. Manual home and opt-in first-position home policies retained. Current samples reject stale GPS; explicit fix type/per-satellite/constellation data remains unavailable without its actual source. No 3D-fix claim based only on satellite count. Track retained only while GPS/Nav is viewed; it is not a terrain map or flight recorder.
+ORDER OF DELIVERY — each row has its own completion gate
+0. Establish a trustworthy baseline (P0).
+   Verify the complete installed app against Toolbox on this radio/model/link;
+   distinguish draw cadence from sensor updates and compare known physical poses.
+   Preserve MSP scheduling, source identity and the native cockpit while doing it.
+   I adds a visible build ID; it does not close the physical-performance gate.
+1. Fix monitoring consistency (P1, mostly existing API work).
+   Shared qualified source binding; meaningful Auto vs Off; global GPS/home state;
+   radio battery; readable actual timer; explicit current/missing/historical state.
+   Migration must preserve legacy None-as-auto profiles until explicitly changed;
+   introducing Off must not silently disable the installed MSP connection fix.
+   Gate: tool, compact widget and full-screen agree, even with renamed/colliding
+   sources, telemetry loss, page switches, reopen and changed model configuration.
+2. Complete pack/session workflows (P1, medium UI/state work).
+   Fast pack selector, chemistry/cells/capacity, new-flight/reset scope, mute,
+   Current/Min/Max and deliberately persistent versus session-only values.
+   Gate: swap/reuse packs without silently carrying wrong consumption/home/timer;
+   settings survive, cancellation has no partial changes, histories stay bounded.
+3. Deliver real connected read-only pages (P1, larger transport work).
+   Typed bounded job queue and FC identity, real VTX status/tables, GPS fix/PDOP;
+   then satellite details and optional FC-home vector. Passive CRSF remains the
+   source of live flight attitude; disarmed MSP metadata must show its age.
+   Gate: exact readouts match Configurator; partial/unknown/stale/custom tables
+   are handled honestly and table jobs do not starve the existing status cadence.
+4. Add deliberate VTX transactions (P2, after read-only validation).
+   Pending versus reported selection, Apply, readback result, and separate Save.
+   Gate: PIT on/off, timeout ambiguity, reject/mismatch/reconnect/armed cancellation,
+   and persistence after power cycle; no setting changes merely by highlighting.
+5. Broaden parity selectively (P2/P3).
+   Independent mode/RC details, actual cells when available, optional cockpit
+   modules and measured diagnostic support. Other radios/transports/themes are
+   explicit extensions, not hidden requirements for this TX16S/Betaflight target.
 
-MOD/AST; LIB/FC/BF/ASC; LIB/FC/IN/ASC
-Needs actual FC arming-disable reasons, flags and firmware version. NOT IMPLEMENTED: needs a validated FC transport and parser. New Flight Status shows configured radio arm/cut indicators, received FM and an in-app arm timer. It explicitly uses the configured switch; it is not proof that the FC is armed. No invented arming-disable messages.
+HOW TO IMPROVE THE UI OVER TOOLBOX — proposed acceptance, not a completed claim
+- Fewer navigation label pairs, distinctive native symbols, stable positions,
+  full-cell touch targets, active backplate plus marker, and physical-key routes.
+  The focused drawer caption/page title supplies orientation. Icon comprehension
+  still needs user evaluation: these custom symbols are not universally known.
+- Every value has current/historical/missing semantics; real fix/PDOP must replace
+  inferred quality labels. Keep local-home and FC-home provenance explicit.
+- Every command distinguishes pending, accepted, readback-confirmed and saved;
+  no fake Apply, no silent EEPROM save or blind retry of an ambiguous write.
+- Make common pack/mute/new-flight actions reachable from the cockpit with fewer
+  steps than general configuration. Record actual steps and failed selections.
+- Compare native 480x272 views, outdoor legibility, finger targets, rotary paths,
+  and several minutes of real-data use with Toolbox under the same conditions.
+  Release requires no ongoing slowdown, memory growth or state loss. Native WASM
+  checks prove layout/routing; they cannot establish superiority on the radio.
 
-LIB/MSP and WR transports
-Needs request/response sequence, CRC, retries, timeout, connection status, read/write separation and firmware-aware decoding. NOT IMPLEMENTED. The recovered main loop/parser contain unresolved errors. Future implementation must use the official protocol and be verified with the actual connected quad. No silent reuse of recovered executable code.
+IMPLEMENTED IN THIS REVISION
+Six icon-only section controls, a visible grid launcher, original 28px symbols,
+36px chooser symbols in a 4x3 layout, a single focused name/description, precise
+hit bounds and Diagnostics build ID. Page/context names and actions remain text;
+removing all meaningful text would hide data meaning rather than improve it.
+Static native geometry adds no bitmap allocation, source reads, transport jobs or
+file writes to the draw loop. The six controls use104 native primitives plus9
+for the grid per redraw. That bounded count is not a hardware timing guarantee.
+Original artwork, MSP client and widget source are byte-identical to baseline.
 
-MOD/VTX; LIB/VTX
-Needs actual transport/device/channel/power/pit-mode status plus confirmed write results. NOT IMPLEMENTED transport. Added explicit reference-only Video/VTX page showing the five saved frequency notes. No Apply/Power/Pit control is drawn when there is no working command path.
+Evidence and exact acceptance criteria follow in the detailed core and transport
+appendices. Recovered code is cited as evidence, not executable truth. No new
+VTX/FC/radio configuration writes are implemented or performed by this audit.
 
-MOD/STK
-Existing 12 verified stick-command diagrams and modes 1-4 retained. Reference only, no command execution. FC/version/configuration may limit command availability.
 
-MOD/CFG
-Existing 12 configuration categories and dynamic visibility retained. Model metadata gates visible lists; saved hidden values survive. Lists with no working transport stay honestly marked unavailable. Startup page, sources, thresholds, colour, refresh limit, local-home and battery profiles work. Configuration migration preserves existing per-model files.
+DETAILED CORE EVIDENCE / ACCEPTANCE
+========================================================================
 
-WIDGET/loader
-Added WIDGETS/AERODECK/main.lua. Compact panel uses current telemetry and configured source names. EdgeTX's Full screen command opens the same telem.lua app. App state is released when the widget returns to compact/hidden mode, preventing retained graphics. Compact and fullscreen are live-only; legacy demo startup preferences are ignored. No background alerts/timers are claimed when the app is not running.
+AERODECK / TOOLBOX 2.0 — CORE FEATURE GAP AUDIT
+Inspected 16 October 2026. Read-only feature review; no application or radio edits.
+Target: TX16S MkII, 480x272, EdgeTX 2.12.4, Betaflight + ELRS/CRSF.
 
-About / diagnostics / memory
-New Diagnostics reports EdgeTX version, model, source mode and honest transport capabilities. No memory figures are invented. Existing source version and configuration remain accessible locally. Error-file logging, screenshots and continuous flight logging are not implemented.
+BASELINES AND EVIDENCE
 
-Design decisions
-Keep AERODECK's navy/metal instrument palette, restrained lime/cyan/amber/red status colours and attitude bezel. Icons use one 24px geometric family: horizon, bars, track nodes, GPS target, battery, antenna, stopwatch, gimbals, sliders, waveform, display, information ring. Each has a text label and a mode/capability caption. Large controls and a fixed footer replace eight cramped tabs. Alert colours do not imply an aircraft command was executed.
+R = radio-installed telem.lua, SHA256 f072b9a1e3910dbc9521a91b62e4de4d823f1ccdab7180899e98d9deade51947.
+    Matches outputs/radio-backups/aerodeck-msp-20261016-000623/installed-sha256.json.
+    Also preserved in outputs/aerodeck-ui-backup-20261016-004939/sdcard/SCRIPTS/TOOLS/telem.lua.
+    It has the old MENU/footer UI, source mappings, native cockpit, basic GPS/Nav/Power/Link,
+    local radio-arm stopwatch, 12 configuration headings, and read-only CRSF MSP status client.
+L = canonical current local telem.lua at audit time, SHA256 b3a335f4397748ed082320df4fdb48f83121a387d40eea0e8c5f7fa7cd883012.
+    Same source as work/edgetx/ui-revision/project/sdcard/SCRIPTS/TOOLS/telem.lua.
+    Adds six-section navigation, 27-field table, new GPS renderer, decoded Arm Stops and
+    eight frequency favourites. This UI revision is NOT present on the mounted radio.
+    All shared graphic assets, widget source and crsf-msp.lua match the radio byte-for-byte.
+    Radio has no arm-status.lua. A current icon-only navigation revision is separate work.
 
-Important limits
-This is a substantial app/UI expansion, not full Toolbox2 feature parity. MSP arming diagnostics, VTX control, per-satellite data, individual cell telemetry, hardware timer integration and background logging remain outstanding. Saved model settings and radio/FC output configuration are not rewritten. Physical radio performance and live-quad behavior need another test after simulator verification.
+AERODECK shorthand A: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/.
+Toolbox shorthand T: /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/.
+Original bytecode O: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/.
 
-Flight resolution fix: the original chrome is split into five pixel-exact pieces (156,832 decoded bytes instead of 261,120). Flight no longer uses the half-resolution fallback or bitmap enlargement. Physical-radio verification remains pending.
+Recovered Lua is NOT an executable specification: previous reviews proved missing branches,
+function calls and table entries. For this audit, 24 relevant original .luac modules were
+independently disassembled into audit-core-original-disassembly.txt beside this file. That
+file retains original source line numbers. Where precise control flow was important, it
+was checked there. Other recovered files below are evidence of feature names/data paths;
+their damaged expressions should never be copied verbatim. Some original features are
+conditional on Toolbox edition/hardware; source presence does not imply every installation
+exposes them. No activation or license mechanism was used or copied.
+
+Status meanings: WORKING = actual executable path exists, with limits stated; PARTIAL = a
+subset exists; UNIMPLEMENTED = no functional path. These are source/fixture assessments,
+not claims that physical-radio performance or sensor availability has been verified.
+Priority: P0 = current acceptance blocker; P1 = core monitoring/workflow; P2 = parity depth;
+P3 = support/optional scope outside this radio/quad. Acceptance below describes a future
+verifiable result, not a request to create more isolated hardware tests now.
+
+SUMMARY
+
+The current project is a cockpit plus a subset of Toolbox monitoring and configuration.
+Twelve page names or configuration categories are not twelve equivalent capabilities.
+Config headings currently include explanatory notes in place of Toolbox's actual controls.
+The largest gaps are sensor history/min-max, battery and flight-session workflow, timer/
+indicator integration, reliable source identity in compact/inspection views, global GPS
+state, real radio battery status, and capability-driven configuration. The local visual
+revision improves visibility/navigation; it does not implement those missing backends.
+
+01. Attitude responsiveness and correct orientation — PARTIAL, R/L, P0
+Toolbox evidence: verified-MAIN-ML.txt original lines178-205 and228: disarmed MSP lifecycle,
+normal telemetry update, attitude conversion, then drawing. verified-LIB-TLM-TBS-GYRO.txt
+original line21 converts radians pitch with -math.deg; line26 roll/yaw with math.deg. There
+is no interpolation/history. verified-MSP scheduling and upstream ELRS temporary telemetry
+boost explain why passive sensor readers alone were not a complete reproduction.
+AERODECK evidence: A/SCRIPTS/TOOLS/telem.lua fcLink.init/update, telemetry.pollAttitude,
+cockpit; A/.../AERODECK/crsf-msp.lua identifies BTFL/API/version and sends STATUS_EX every3s
+only with current telemetry and disarmed FM. Native horizon and original chrome retained.
+Gap: source path is present, but persistent responsive attitude on physical hardware has
+not been established after the MSP update. Render FPS is not telemetry freshness. Pitch
+sign/orientation must be compared using known physical poses; differing source conventions
+alone do not prove which display is correct.
+UI: keep actual unavailable state; expose connection/read status and latest known change
+rate only as diagnostics, never present screen FPS as attitude update FPS.
+Acceptance: installed complete AERODECK and Toolbox, same model/link settings, retain
+consistent response beyond launch and across repeated open/close; known nose-up/right-bank
+poses display correctly. This direct comparison is the release gate for performance.
+
+02. Current sensor values and unit conversion — WORKING subset, R/L, P1
+Toolbox: T/LIB/TLM/TLMSADD.lua + original verified disassembly bind qualified sensor IDs,
+units and protocol-specific records; T/LIB/TLM/TLMINIT.lua activates categories from model
+capabilities. TBS/GYRO, BARO, PITOT and GPS convert their own data.
+AERODECK: cachedTelemetryField uses CHAR_TELEMETRY, numeric source IDs are cached; getData
+and configuration.value reject non-current data; angles, speed, altitude converted. L adds
+yaw/second RSSI/reverse RSSI/SNR/VSpd/ASpd. No synthetic live values inserted.
+Gap: a selected source has little unit/capability feedback; main altitude selection conflates
+GPS GAlt and fallback Alt. Barometric altitude and GPS altitude are not independent sources.
+UI: selected sensor, real unit and unsupported-unit reason; distinct GPS/baro/airspeed fields.
+Acceptance: renamed sources and feet/knots/radians map correctly; GPS GAlt and baro Alt can
+coexist with their correct labels, and absent/unsupported values remain unavailable.
+
+03. Qualified identity everywhere — PARTIAL/CONCRETE BUG, R/L, P1
+Toolbox original TLMSADD line66 uses getSourceIndex(CHAR_TELEMETRY .. pName).
+AERODECK full app is qualified, but scanSensors() still calls getFieldInfo(sensor.name),
+and A/WIDGETS/AERODECK/main.lua read() also calls unqualified getFieldInfo(name).
+Gap: compact widget and Sensor Inspector can resolve a same-named input/source instead of
+the actual telemetry sensor while the full screen reads the correct qualified source.
+UI: use the same identity/mapping layer across all three views; preserve per-sensor status.
+Acceptance: create an input named like an existing telemetry sensor; compact, inspector and
+full app still show identical actual telemetry values, not the input's value.
+
+04. Telemetry LIVE/MIN/MAX and complete sensor browsing — PARTIAL, R/L, P1
+Toolbox original UI/480X272/MOD/TLM line35 builds LIVE/MIN/MAX selector; T.e handles page
+events and sensor-list scrolling. Original TLMUPDS lines33-34 read srcID+1/+2 into rValMin/
+rValMax. TLM table is populated by active protocol/category sensor records, not a fixed27.
+AERODECK L telemetryScreen shows27 predefined current fields. R shows the older console.
+Both have a separate five-row paged Inspector; neither offers min/max or a complete table
+with history modes. L removed R's session minimum-voltage console display.
+UI: visible Current/Min/Max selector, sensor count/scroll position, units and historical
+timestamp/reset scope; historical values must not be colored as current live telemetry.
+Acceptance: varying voltage/LQ/current yields stable extrema in the correct units; Min/Max
+remain distinguishable after telemetry loss; every discovered/registered field can be read.
+
+05. Radio/transmitter battery and radio clock — PARTIAL, R/L, P1
+Toolbox: T/LIB/RD/BAT.lua F.RD_BT reads tx-voltage; thresholds come from getGeneralSettings
+battMin/battMax. DB1/RDB and MOD/BAT draw a separate RADIO battery gauge. DB1/TIM displays
+date and clock independently of receiver telemetry.
+AERODECK shows the model pack only. L shell adds hour/minute and short model name, R lacks
+that persistent shell clock. There is no radio battery reading, threshold or separate gauge.
+UI: unambiguous RADIO versus FLIGHT PACK, low-radio warning, clock/date where appropriate.
+Acceptance: with quad unpowered, radio voltage/clock remain valid; dropping model telemetry
+never erases radio battery; configured radio thresholds drive the radio warning correctly.
+
+06. Individual battery cells — UNIMPLEMENTED, R/L, P2 conditional on sensor
+Toolbox: original DB1/BTC draws values from BT_MD_CELL_V; original LIB/TLM/FRS/BTV contains
+Cels, BT_MD_CELLS_V and cell-array handling; MPN adds BTC only with actual cell data.
+AERODECK computes only pack voltage/configured cell count. There is no Cels table reader.
+Existing audit phrase 'per-cell imbalance tracking' should not imply Toolbox itself has
+verified imbalance analytics: confirmed source supports individual readings, not a measured
+pack-change detector or comprehensive imbalance history.
+UI: measured cell list plus minimum/spread only if implemented; distinguish CELL AVG.
+Acceptance: actual/simulated Cels array displays each cell and handles count changes/stale
+data; a standard CRSF RxBt pack never fabricates an array from its average.
+
+07. Automatic cell count — UNIMPLEMENTED, R/L, P1
+Toolbox: original LIB/TB/BTCNO lines11-30 loops1..6 against configured max-cell voltage;
+TBS/BTV uses it when no favorite selected; FRS/BTV can use actual Cels array length.
+AERODECK batteryConfig defaults to count0; no configured count/profile means no average
+or per-cell warning evaluation. 'Manual' profile remains manual, not an auto sense mode.
+UI: Auto versus Fixed count, detected/assumed provenance and override before flight.
+Acceptance: full/partly discharged packs have a documented detection policy and show count
+confidence; ambiguous cases require explicit selection rather than silent false certainty.
+
+08. Battery favorites and rapid pack selection — PARTIAL, R/L, P1
+Toolbox original DB1/BFV lines11-69 builds five enabled favorites plus config/auto; ENTER
+applies BT_FAV_SEL, BT_FAV_CELLS, BT_FAV_CAPA and persists selection. CFGBFV defines chemistry
+(LiPo/LiIon), cells, capacity per favorite with conditional rows.
+AERODECK has3 cell/capacity presets and Manual in configuration, no chemistry field or quick
+dashboard pack selector. L's8 favourites are VIDEO frequencies and do not close this gap.
+UI: a compact Pack selector reachable from cockpit/power, selected chemistry/cells/capacity,
+active profile and explicit 'new flight / retain consumption' choice.
+Acceptance: choose any enabled pack without traversing general settings; voltage thresholds,
+capacity estimate and labels update consistently; selected profile survives reopen/model.
+
+09. Remaining capacity provenance/reset — PARTIAL, R/L, P1
+Toolbox TBS/BTA BT_MD_LEFT_fn derives remaining from selected capacity when favorite active.
+AERODECK sample() prefers reported Bat%; only estimates 100*(1-Capa/configured capacity)
+when Bat% missing; L labels Est%, cockpit EST. REMAINING. That policy difference is useful
+to document, not automatically a defect. Both methods need consumption reset assumptions.
+Gap: no quick new-pack/reset workflow; no displayed source of consumed-capacity reset or
+way to distinguish a reused counter from new-pack consumption. Do not assume current source
+contains a verified Toolbox automatic pack-change detector—it was not found.
+UI: reported/estimated status, configured capacity and session scope; deliberate reset.
+Acceptance: reconnect/swap pack never silently implies100% based on a retained counter;
+reported percentage and estimate remain distinguishable and recover on source change.
+
+10. Battery alerts and mute — PARTIAL, R/L, P1
+Toolbox: RD/SND has distinct critical/low tone/haptic patterns; original MAIN/ML schedules
+critical/low windows; original UI/QM T.mute exposes Mute alerts/Enable alerts.
+AERODECK has visual thresholds and sound/haptic configuration with one generic tone/haptic
+every10s; only critical or critical+low selection. No quick mute/visible mute state.
+UI: mute control and clear persistent mute icon; distinguish low versus critical severity.
+Acceptance: threshold transitions produce chosen bounded sound/haptic patterns; mute takes
+effect immediately and restores correctly; alerts require valid voltage and cell count.
+
+11. Radio arm/cut indicator configuration — PARTIAL, R/L, P1
+Original CFGIND lines28-77 defines OFF/physical/logical/telemetry source choices, negated
+positions, logical switches1..64; INDINIT decodes source identities and INDUPD applies them.
+AERODECK supports SA..SH and only L01..L04, with Low/Centre/High thresholds via getValue.
+No full logical-switch range, inverted/not-position options, or telemetry-derived arm source.
+UI: full radio source picker, source provenance, invert/not-position semantics, Current/
+Unknown state. A radio switch must remain distinct from FC-confirmed armed state.
+Acceptance: L64, inverted3position and FM telemetry can be configured intentionally and
+each shows correct active/inactive/unknown status without altering channel outputs.
+
+12. Flight mode / Air / Turtle indicators — PARTIAL, R/L, P1
+Original CFGINDBF lines38-65 configures Acro/Horizon/Angle/Air/Turtle sources; INDUPD combines
+them; DB1/FMI draws independent Air/Turtle/RTH states alongside flight mode.
+AERODECK 'BETAFLIGHT INDICATORS' contains only FM source and explanatory notes. It displays
+the FM text but does not implement configurable independent mode indicators. Hardware FM
+alone may not transmit every simultaneous AUX mode; do not infer all states from one word.
+UI: separate state chips with configured source labels and Unknown when absent.
+Acceptance: Air plus Angle, or Turtle plus known arm switch, remain independently visible;
+unmapped modes do not appear off/false by default.
+
+13. Radio timer integration — UNIMPLEMENTED, R/L, P1
+Original CFGIND lines71-78 offers Arm Timer host OS/ToolBox and Timer1..3; DB1/TMR line15
+reads model.getTimer; RD/TMR lines11-22 can start/stop/reset selected timer. MAIN/ML changes
+timer on arm transitions. This is actual radio timer integration, not a custom text clock.
+AERODECK statusUpdate accumulates local flightSeconds while configured radioArm is ACTIVE;
+no timer selection, persistent timer, countdown, start/stop/reset UI or model.getTimer path.
+Reopen loses local session; compact/background stops it. L shows this session time only in
+Arm Stops footer; R in Flight Status. Neither provides cockpit timer parity.
+UI: clearly choose OS timer read-only first, then optional managed timer with explicit
+control scope; display correct running/countdown state and reset action.
+Acceptance: read Timer2 set in native EdgeTX, keep value when app closes; managed mode only
+changes chosen timer and handles arm/disarm/reset without touching the other two timers.
+
+14. Throttle position / cut / limiter — UNIMPLEMENTED beyond cut indication, R/L, P2
+Toolbox CFGIND _TL_srct chooses pots/sliders/trims; DB1/THR reads 'thr', normalizes0..100,
+draws throttle, THR CUT and configured limiter percentage/gauge.
+AERODECK can show cut ACTIVE/INACTIVE on status/config; no throttle or limiter sensor/UI.
+UI: live throttle and separately configured limiter, display only, near arm/cut/session.
+Acceptance: physical stick and selected limiter endpoints map correctly; cut state is
+visible; no output mix or channel is changed by the display.
+
+15. GPS and home computation — PARTIAL, R/L, P1
+Toolbox original TBS/GPS function43-75 updates coordinates/home lock on eligible arm+fix
+and computes distance, ground-course bearing, relative bearing and estimated time home.
+GPSINIT keeps home/current position log; DB1/GPS/CMP/POS show home vector/compass/ETA.
+AERODECK has current coordinates/speed/alt/course, manual local home, opt-in first-valid
+home and a north-up track. It computes absolute bearing/distance but no relative arrow,
+ETA, FC-home versus local-home source selection, or explicit takeoff-home lock workflow.
+Home auto-capture and track sampling occur only inside navSnapshot called by GPS/Nav pages.
+Consequently choosing auto-home and remaining on Flight does not establish home; visiting
+GPS later can capture a displaced point. New cockpit distance also depends on prior visit.
+UI: home provenance/locked status; capture policy; bearing vs course names; optional ETA
+based on valid speed with no zero-speed division; local values distinct from FC home.
+Acceptance: start on Flight, capture eligible takeoff location without opening GPS, fly
+away, then show stable home/vector/distance on every relevant view; loss of GPS never moves
+home; manual reset is explicit. Update flight-session state independently of current page.
+
+16. GPS history / recovery information — PARTIAL, R/L, P2
+Original GPSINIT addPosition stores date/time/ostime/lat/lon, keeps a bounded log if enabled;
+encodeToPlusCode exists. Gps screenshots alone do not show this support. AERODECK track is
+bounded90(default) one-second samples while viewed, no timestamp/age per point, no recovery
+last-position/PlusCode panel or persisted log. Existing audit properly says not a recorder.
+UI: last valid location and age, clearly historical; optional recovery format and explicit
+logging capability. Persistence needs its own implementation, not a claim from posLog.
+Acceptance: after lost telemetry, current fields go unavailable but a labeled last location
+with timestamp remains usable; bounded history records across page switches without growth.
+
+17. Fix quality / satellites — UNIMPLEMENTED richer data, R/L, P2 conditional
+Toolbox GPS module enumerates per-satellite system/status/used/signal and scrolls it; its
+MSP SATSVINFO path is separate from standard Sats telemetry (other audit covers transport).
+Important correction: original TBS/GPS line49 defines POS_FIX from satellite threshold;
+line50 synthesizes GPS_HDOP from Sats-4 clipped0..9. Thus Toolbox's CRSF '3D FIX'/HDOP
+indicators are NOT proof of real receiver fix/HDOP. AERODECK's NOT REPORTED wording is more
+honest and should remain until actual data is available.
+UI: reported fix/HDOP and satellite list only from verified fields/MSP, with source/age.
+Acceptance: same Sats with different reported fixes renders the actual fix correctly; when
+only standard CRSF Sats/GPS exists, do not upgrade that count into an asserted3D fix.
+
+18. RC link details and semantics — PARTIAL, R/L, P2
+Toolbox original RCPINIT contains protocol/version table; TBS/RL maps RFMD separately for
+XF/TRS/EL2/EL3 and combines receiver RSSI channels; CFGRCL sets protocol-specific thresholds/
+units. MOD/RCL separates ARM, telemetry link and RC link; DB1/RCL shows RSSI/SNR/power/mode.
+AERODECK dedicated Link shows LQ/RSSI1/SNR/power/numeric RFMD/downlink and90samples LQ. L
+table adds RSSI2/TRSS/TSNR. No protocol/version-aware RFMD caption or diversity policy;
+unknown RFMD numeric fallback is currently correct rather than invented lookup.
+UI: explicit uplink/downlink names, protocol version and measured antenna channels; known
+packet-mode caption with raw value retained; telemetry-loss distinct from aircraft arm.
+Acceptance: correct labeled uplink/downlink on ELRS3/4, unknown modes remain raw; loss of
+one optional antenna field never erases other link values or fabricates active antenna.
+
+19. Capability-driven model configuration — PARTIAL, R/L, P1
+Original CFGMDL defines separate battery/current/gyro/accel/baro/pitot/GPS/VTX enables and
+onSave queues real DATAINIT/FCINIT/RCPINIT/GPSINIT/TLMINIT/MSPINIT/VTXINIT/UI rebuilds.
+Original CFGUPDP lines16-36 builds visible lists from runtime capabilities and feature gates;
+CFGFNUI setViewPort applies per-row visibility. It is more than 12 category names.
+AERODECK has source selectors and metadata visibility only. Model Setup notes explicitly
+say gyro via Pitch/Roll and baro/pitot not implemented. Category5 is a fixed3s read-only MSP
+toggle, category7 mostly notes, category8 no live VTX settings, category12 mostly notes.
+RC protocol 'None' hides lists but getData still samples; fcLink explicitly accepts None as
+auto. FC type None is similarly accepted. This is not Toolbox OFF semantics.
+UI: distinguish Auto detection from Off, state actual enabled features and dependencies;
+hide/disable only corresponding controls and provide a reason. Retain hidden saved values.
+Acceptance: Off stops relevant runtime work; Auto detects supported CRSF; feature toggles
+change actual registration/data paths; unsupported combinations never show working controls.
+
+20. Configuration changes / reset workflow — PARTIAL, R/L, P1
+Toolbox CFGFNUI supports editable types, per-row onChange/onSave hooks, backup/restore and
+queued reinitialization; original QM exposes Reset Flight Data and Reload Toolbox. Reset
+is staged and includes timer, sensors, telemetry/GPS/VTX state. AERODECK SAVE+verifiedbackup
+and REVERT are implemented, but no common reset/new-flight/reload action exists. Several
+changes require reopen without a way to do that from the UI. Any future reset that changes
+OS timer/sensor minima must say exactly what it resets; preserve local-only alternative.
+UI: a concise action menu with New flight / Reload sensors / Mute, explicit reset scope.
+Acceptance: a new flight clears chosen histories/home/session while preserving per-model
+configuration; native sensor extrema/timer are reset only for the selected scope; no mixed
+old/new session values after reset or reconnect.
+
+21. Dashboard module selection and flight-at-a-glance content — PARTIAL, R/L, P2
+Original DBD layout and MPN/SPN/BPN disassemblies prove independent selectable panels:
+main AHR/BFV/BTC/VFV/FCD, side ATT/CMP/GPS/POS, bottom THR/MSP/MEM, conditional on capability.
+Original dashboard also has radio battery, timer, mode indicators and model metadata.
+AERODECK cockpit is a fixed native artwork/horizon/tapes/twin gauges with some course/home/
+current fields. It has page navigation instead of independently swappable cockpit panels.
+That can be a deliberate UI design, but not equivalent feature coverage.
+UI: retain AERODECK's original cockpit composition; expose equivalent quick inspection/
+selection flows without copying the reference layout or claiming absent telemetry.
+Acceptance: key pack/link/arm/cut/timer/home information is reachable with the defined
+number of actions while attitude stays readable; every displayed panel has a working path.
+
+22. Quick menu / mute / session reset / reload — UNIMPLEMENTED, R/L, P1
+Original UI/QM has real callbacks for Mute, Reset Flight Data, Reload ToolBox plus appended
+context actions. AERODECK launcher (both versions) is a destination menu, not an action menu.
+New section bar/icons do not provide those actions. These actions matter between packs
+and during troubleshooting as much as another visual telemetry card.
+UI: one consistent compact action menu, context-specific availability and state feedback.
+Acceptance: all actions reachable from both cockpit and fullscreen widget; mute indicator
+stays visible; reload preserves saved model settings; canceled action has no partial effect.
+
+23. Themes / overlay options — UNIMPLEMENTED equivalent, R/L, P3/design choice
+Original CFGUI lines20-21 offers Theme and Draw GFX overlay with THMLD reload; package has
+Carbon/Leather/Metal/Wood and 3display sizes. AERODECK accent selector changes one color,
+not a theme system; original cockpit artwork intentionally retained. No need to recreate
+Toolbox's visual theme inventory unless requested, but 'UI configuration parity' is false.
+Acceptance if scoped: all readable colors/assets transform coherently and settings persist;
+native480x272 assets remain sharp. Otherwise document this as intentionally out of scope.
+
+24. Widget lifecycle and support scope — WORKING narrower scope, R/L, P1/P3
+Actual Toolbox widget loader original refresh lines41-56 requires full APP-size zone and
+runs the app. Its background function checks APP.initDone then calls APP.G.ML.bg; existing
+bytecode audit notes M exposes G.initDone, so continuous Toolbox background behavior is NOT
+proven. Do not assert Toolbox has reliable hidden alerts simply because a callback exists.
+AERODECK compact widget is an additional useful V/A/LQ capability; fullscreen loads same
+app. Its background explicitly stops/releases app, so no hidden alerts, MSP, session timer,
+GPS recording or continuation of app-local home/traces. Compact source binding issue is03.
+Also settings reader has no .bak fallback/validation equivalent to main configuration.
+UI: state foreground-only scope; define whether resuming should restore session. Keep full
+screen and tool equivalent; no frozen instrument hidden behind compact LIVE label.
+Acceptance: tool/fullscreen same mappings/limits; compact invalid config uses validated
+fallback; no duplicate MSP clients when changing widget/fullscreen; memory recovers after
+repeated opens. Cross-radio480x320/800x480, INAV/FrSky/R9 support are P3 outside target.
+
+25. Diagnostics and operational evidence — PARTIAL, R/L, P1/P2
+Toolbox CFGAPP offers error-file logging; MEM panel exposes real memory; MSP panel shows
+transaction status. AERODECK Diagnostics has useful EdgeTX/model/API/transport/background/
+draw/change rate. No live heap, error-log setting/rotation, per-source binding+unit+current+
+freshness/last-change details, or session health summary. Historical runtime-check.txt must
+not be mistaken for current build logging; SD logging was deliberately removed from refresh.
+UI: bounded in-memory diagnostics with build identity and data age; optional explicit log
+capture that cannot degrade normal rendering or silently run continuous SD writes.
+Acceptance: identify installed build, current sources and last valid MSP reply; repeated
+open/run/page changes keep bounded memory; app errors are reviewable without fabricated FPS
+or telemetry rate claims. Hardware evidence must name build/model/link conditions.
+
+WHAT SHOULD BE DONE FIRST
+
+P0: prove the installed complete MSP-enabled baseline meets the actual attitude requirement.
+P1: fix shared source identity; implement real Auto/Off/capability semantics; add reported
+radio battery, clear arm/cut/timer integration, quick pack/new-flight/reset/mute workflows;
+maintain GPS/home state independently of viewed page; add Current/Min/Max sensor browsing.
+P2: cells when measured, richer mode/RC/GPS data and optional dashboard module choices.
+P3: themes/other display sizes/other FC and transport families as a separate scope decision.
+
+Acceptance of icon navigation is separate: icons route predictably to existing pages and
+preserve radio cockpit typography/artwork. It does not change any backend status above.
+
+
+TRANSPORT DELIVERY EVIDENCE / ACCEPTANCE
+========================================================================
+
+AERODECK / Toolbox2 transport and feature-gap delivery audit
+2026-10-16 — read-only audit, no backend/write implementation
+
+BASELINE
+Current AERODECK source audited: canonical LUA/sdcard/SCRIPTS/TOOLS/telem.lua,
+AERODECK/crsf-msp.lua and arm-status.lua. Transport allowlist remains reads
+2/1/3/150; request bodies are always empty. It identifies Betaflight, retains raw
+STATUS_EX and polls every 3s while fresh native CRSF FM explicitly says disarmed.
+The new arm-stop renderer decodes fresh status; VTX still contains local notes,
+not a connected controller. GPS uses current EdgeTX position/speed/course/sats
+and app-local home. No VTX, FC settings, calibration or reboot writes exist.
+
+Reference confidence: all 287 original Toolbox2 binaries matched the recovery
+report hashes. Relevant new evidence under work/edgetx/toolbox-200-reference:
+  VTXMSP-disassembly.txt — original send/read gates and write/save/readback
+  MSPC0089-disassembly.txt — real factory-byte consumption absent in decompile
+  GPS-TBS-disassembly.txt — actual inferred fix, quality score, local-home lock
+  MSPRPT-disassembly.txt, ML-disassembly.txt, MSPINIT-disassembly.txt,
+  MSPML-disassembly.txt, MSPWXF-disassembly.txt — scheduler/transport behavior
+Recovered Lua can omit branches and fields; do not copy it as executable code.
+
+1. SHARED TRANSPORT FOUNDATION — dependency for all new MSP features
+Toolbox original MAIN/ML source178-196 gates MSP on enabled+telemetry+disarmed,
+resets the deadline when blocked, and waits1s before requests. It runs protocol
+work before sensor reads. Original MSPINIT source106-109 sets five attempts,
+CRSF response wait5s, start delay1s; MSPML114-120 clears/reset the timed-out
+exchange and drops the queue head after attempt limit. Read/write jobs share
+one queue. Do not reproduce its unbounded clearBuffer loops in our UI callback.
+
+AERODECK already bounds one outstanding request,4pops/callback,256payload bytes,
+5s reply wait and busy/error backoff. Extend this with typed jobs, not arbitrary
+MSP execution: command, params, read/write kind, expected reply shape, deadline,
+retry budget, feature owner and target FC identity. Parameterized read jobs are
+required for137/138. Correlate their echoed index as well as command ID, because
+a late137 reply for the previous band must not populate the current band.
+Keep one CRSF consumer/dispatcher and one fresh-data snapshot for the UI.
+
+CRSF read request type0x7A, write0x7C, reply0x7B. Existing addresses are request
+C8,EA and responseEA,C8. Retain MSPv2 sequence/header validation and outer CRSF
+CRC boundary. Do not add a serial MSP CRC inside the CRSF body. Keep generic
+unsupported-command errors separate from no link and malformed replies.
+
+Acceptance: successful delayed/chunked replies; wrong echoed index, interleaved
+late replies, timeout, busy TX, reconnect, model change and armed/stale-FM stop
+cases all preserve bounded work and never commit another FC's cached settings.
+Attitude cadence must be checked on the actual radio alongside Toolbox before
+claiming the reported slowdown is resolved. The ELRS temporary reply boost from
+MSP explains a concrete difference; identical saved RF settings are not proof
+of identical active link behavior. Keep the current3s status job from starving
+behind table reads. No guaranteed in-flight boost: this path stops when armed.
+
+2. LIVE VTX STATUS + ACTUAL FC TABLES — highest missing user-facing capability
+Toolbox supports FC MSP and a separate direct TBS RX path. Implement FC MSP
+first, because this is the user's Betaflight/CRSF setup; direct TBS RX is not a
+necessary dependency for that path. Current favourite selection is only local.
+
+Read88 MSP_VTX_CONFIG, empty request. For verified API1.46/1.47 full response:
+ byte1 device/protocol type;2band;3channel;4power index;5PIT status;
+ 6-7frequencyMHz U16LE;8device ready;9low-power-disarm;
+ 10-11pit frequencyU16LE;12table available;13band count;14channel count;
+ 15power-level count. Earlier/unsupported replies need explicit partial state.
+Frequency/band/channel/power are FC settings, not measured RF output. Device
+ready and reported PIT are distinct from configured frequency and must remain
+visible. Never label the FC's reported setting as an independently measured
+transmit frequency or power.
+
+Read137 MSP_VTXTABLE_BAND: one-byte1-based band index. Reply: echoed indexU8,
+name lengthU8, name bytes, band letterU8, factory/custom flagU8, channel countU8,
+then channel frequenciesU16LE. Validate all lengths and count bounds. A zero
+frequency is unavailable, not selectable. Original Toolbox parser source14
+really consumes the factory flag; the recovered source dropped this field.
+
+Read138 MSP_VTXTABLE_POWERLEVEL: one-byte1-based power index. Reply: echoed
+indexU8, power valueU16LE, label lengthU8, label bytes. Preserve the FC label and
+index; the raw value is device dependent and is not universally milliwatts.
+Read tables once per identity/table generation; refresh status on demand or a
+bounded page interval. Original Toolbox repeats88 on Dashboard/VTX only when
+VTX is enabled through FC MSP and interval>0 (default10s; installed TEST VTX off).
+
+UI delivery: connected/offline/reading/error states; reported channel vs pending
+selection; actual FC band/channel grid; power labels; PIT/LPD/device-ready state;
+favourites linked to actual available frequencies. Keep local favourites when
+o FC is connected, clearly local. Incomplete tables must not look complete.
+
+Acceptance: compare88/137/138 with Betaflight Configurator on the same FC; handle
+custom bands, duplicate frequencies, zero/unavailable channels, power labels,
+missing/unsupported VTX, device-not-ready, truncated/late tables and reconnect.
+Read88/137/138 can register an MSP VTX client in firmware; they do not write FC
+configuration but are not devoid of protocol side effects. Keep normal gates.
+
+3. VTX APPLY / PIT / PERSISTENCE — follows validated reads; separate transaction
+Original VTXMSP bytecode source28-29 read branch only sets UI capability from
+mspReady AND channel-table-ready. Source33-64 executes writes only for explicit
+fn=='send'; decompiled Lua falsely appears to fall through into sending.
+Original send queues89(write) ->250(write/save) ->88(readback). The panel uses a
+long ENTER action and requires telemetry plus setable; global MSP gating stops
+wire traffic when armed. This is real Toolbox functionality currently absent.
+
+Original89 payload is four bytes: frequency-or-encoded-channelU16LE, powerIndexU8,
+PIT U8(0/1). With a ready table and band/channel arguments it encodes
+(band-1)*8+(channel-1); otherwise it sends MHz. Official modern API also accepts
+longer extensions for lowPowerDisarm, pitFrequency, explicit band/channel/freq
+and table modification. Those extensions are not necessary for initial parity
+and must not be emitted with guessed/default values that overwrite other fields.
+
+AERODECK proposal: stage a desired channel/power/PIT separately from reported
+state; allow Apply only after current disarmed FM, matched Betaflight identity,
+fresh88 and complete validated relevant tables. Preserve every unrelated field.
+Send only the intended typed89 transaction; verify88 after acknowledgment. A
+write acknowledgment proves acceptance, not the RF hardware achieved a setting.
+Expose distinct pending/accepted/readback-confirmed/mismatch/timeout states.
+Save250(empty body) is a separate persistence step; firmware rejects250 while
+armed. Read back again after save. Do not silently apply on tile highlight.
+
+Retries: an unanswered89/250 may already have executed. Resolve with readback
+before repeating; do not copy five blind EEPROM retries. Reconnect invalidates
+pending apply. Explicit PIT false must remain distinct from nil/no change;
+reference bytecode uses truthiness fallback in this parameter path, which is a
+reason to specify correct false handling rather than blindly copy expressions.
+
+Acceptance: physical supported VTX, disarmed, prop-free bench; compare FC readback
+and actual receiver/channel behavior; PIT on AND off; changes lost without save
+vs persisted after power cycle; rejected/timeout/mismatch path; armed/link-loss
+cancel. Unsupported VTX hardware remains unavailable rather than fake controls.
+This audit introduces no commands and performs no RF/FC writes.
+
+4. GPS FIX / DILUTION / SATELLITES / HOME — concrete improvements over reference
+Current app's split screen is structurally useful but only has basic CRSF
+sensors. Satellite count alone cannot prove fix type. Toolbox's original
+TBS/GPS source49 sets POS_FIX = Sats > configured threshold; source50 derives
+GPS_HDOP = clamp(Sats-4,0,9) when inferred fix is true. That internal quality
+value is not measured HDOP. Its source61-65 home coordinates are app-local and
+freeze after inferred fix plus ARMED, not read from the FC's home registers.
+Do not reproduce an inferred 3D-fix badge or call the derived value real HDOP.
+
+Read106 MSP_RAW_GPS, empty request: fix flagU8, satellitesU8, latitudeI32LE(E7),
+longitudeI32LE(E7), altitudeU16LE(m), ground speedU16LE(cm/s), courseU16LE(0.1deg).
+API>=1.44 source adds positional DOP U16LE(/100); use actual reply length/API
+checks. Label PDOP, not HDOP. The fix field is a boolean, not a 2D/3D fix-type
+enum. No basic106 field provides measured HDOP or precise fix classification.
+Read107 MSP_COMP_GPS: distance-to-FC-homeU16LE(m), bearingU16LE(deg), updateU8.
+It does not return FC-home latitude/longitude or prove that home was initialized.
+Keep LOCAL HOME vs FC HOME source labels and do not replace one silently.
+
+Read164 MSP_GPSSVINFO: countU8 +count records of four bytes: channel/GNSS ID,
+satellite ID, quality/flags, CNO. Official BF semantics differ: count<=16 is
+legacy channel data, count>16 is enhanced GNSS-ID data. Enhanced records use
+quality bits0-2 for lock quality and bit3 for used-in-solution; sentinel255 means
+unused record. GNSS IDs0GPS/1SBAS/2Galileo/3BeiDou/4IMES/5QZSS/6GLONASS are valid
+only in enhanced mode. Avoid mislabelling legacy channel numbers as constellations.
+Verified BF buffers are32records:129bytes including count, within current256 cap.
+Validate count/record length, filter unavailable entries, never manufacture
+constellation/lock data on NMEA/unsupported firmware. Original Toolbox schedules
+164 every10s on its GPS page. AERODECK can fetch on entry and refresh without
+letting satellite jobs delay status/attitude. All MSP metadata retains disarmed
+transport gates; passive CRSF position can continue in flight independently.
+
+32-bit Lua: retain signed rawE7 coordinates for validation, exact display and
+relative deltas before float conversion. Avoid unsigned U32 sum/float32 rounding
+losing low coordinate bits. Use bytewise flags as arm-status already does. UID
+hex formatting likewise should operate on bytes instead of unsigned U32 math.
+
+UI delivery: confirmed FC fix boolean/PDOP with age; constellation totals and
+per-satellite CNO/used status only when actually supplied; local home source and
+capture policy; optional separate FC distance/bearing. If precise fix/HDOP is
+unavailable, show unavailable. Keep historical track visibly historical.
+Acceptance: no fix/many sats, low sats/valid fix, enhanced32 vs legacy16 records,
+empty/255 rows, missing GPS build support, stale/reconnect, signed coordinates
+near0 and dateline, local vs FC home mismatch. Compare raw data with Configurator.
+
+5. FC STATUS / SETTINGS — distinguish app connection settings from FC tuning
+AERODECK already has firmware/API, raw150 and decoded arming-disable reasons.
+Expose remaining validated150 fields as useful diagnostics: active sensors,
+cycle time, I2C errors, CPU load, PID/rate profile indices, reboot flag and CPU
+temperature when the version/reply supplies them. These are not PID editors.
+Existing bytewise flags/freshness correctly avoid claiming armed from zero mask.
+
+Read4 BOARD_INFO empty: fixed8-byte prefix then length-prefixed target/board/
+manufacturer strings for audited API1.46/1.47. Original Toolbox parser skips8
+then reads those strings. Validate each length; preserve unsupported fields.
+Read160 UID empty:12bytes. Use identity to invalidate VTX cache and detect quad
+changes; do not use radio model name alone. Display a brief board target and
+keep UID as internal identity rather than extra cockpit clutter.
+
+Toolbox CFGFC source15-18 contains MSP enable, fixedversion2, status interval
+0..5s and VTX interval0..10s. Those are app connection settings, not FC PID/rate
+or motor settings. Original command registry contains no full PID/rate editor.
+AERODECK has enable/disable but fixed3s status and no VTX refresh. Add deliberate
+interval choices only after scheduler stability; slower status can remove the
+ELRS reply-bandwidth benefit. Do not promise all12 app lists are FC configurator.
+Stick calibration/profile diagrams are references; they are not transmitted.
+Calibration/reboot/PID/rate/motor writes are separate future scope and should
+not be smuggled into the VTX command allowlist.
+
+6. DELIVERY ORDER / COMPLETION CRITERIA
+P0: preserve/verify physical attitude responsiveness; single bounded typed job
+scheduler, stale/identity model and transport tests. This prevents another UI
+redesign being mistaken for a telemetry fix.
+P1: real read-only VTX88/137/138 + useful150/board/identity details; GPS106 real
+fix/PDOP. These yield visibly functional screens without aircraft writes.
+P2: real GPS164 constellation/signal views and optional107 FC-home vector; stage
+and validate VTX transactions89/readback, then persistence250 as a distinct step.
+P3: app polling controls, cache persistence keyed by FC identity, direct TBS RX
+if specifically useful, more transports/API versions after Betaflight baseline.
+
+Can improve over Toolbox: actual fix/PDOP vs satellite-count inference; explicit
+local/FC home distinction; legacy/enhanced sat handling; bounded allocation and
+queue work; bytewise32-bit-safe flags; staged vs confirmed vs saved VTX state;
+unknown firmware bits shown honestly; no stale/current ambiguity. These are
+achievable on the same TX16S480x272 hardware with Lua; they do not require a new
+screen concept or another attitude-only user test.
+
+Cannot deliver by repainting: unsupported/missing hardware fields, guaranteed
+armed telemetry rate, actual measured RF power, native HDOP/fix enum absent from
+these APIs, or successful VTX control without a functioning write/readback path.
+Hardware link/config availability is a validation dependency, not a Lua visual
+limit. Do not mark any of these complete solely from synthetic preview images.
+
+PRIMARY SOURCES / EVIDENCE
+Official request/response and write handling:
+https://github.com/betaflight/betaflight/blob/4.5.2/src/main/msp/msp.c
+  status995-1038; GPS1384-1407; VTX1950-1986; table2226-2266;
+  EEPROM3069-3086; VTXwrite3117-3190
+https://github.com/betaflight/betaflight/blob/2025.12.5/src/main/msp/msp.c
+  GPS1387-1411 (same audited basic layout)
+https://github.com/betaflight/betaflight/blob/4.5.2/src/main/io/gps.h
+  coordinate/DOP types214-238; legacy/enhanced satellite semantics297-326
+https://github.com/betaflight/betaflight/blob/4.5.2/src/main/io/gps.c
+  actual groundSpeed cm/s assignment2041/2062 (gps.h speed comment is misleading)
+https://github.com/betaflight/betaflight/blob/2025.12.5/src/main/io/gps.c
+  enhanced NAV-SAT data2172-2186; legacy SVINFO2147-2154
+https://github.com/betaflight/betaflight-configurator/blob/10.10.0/src/js/msp/MSPHelper.js
+  official consumer for API-versioned lengths and typed formats
+Exact original Toolbox source debug lines are in the disassembly evidence above;
+recovered source pointers are LIB/CFG/CFGFC, LIB/TLM/TBS/GPS, LIB/MSP/BF/MSPRPT,
+LIB/MSP/MSPTC+MSPTP, LIB/MSP/BF/C/MSPC0058+0089+008A, LIB/VTX/VTXMSP.

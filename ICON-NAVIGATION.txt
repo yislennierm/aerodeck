@@ -1,0 +1,39 @@
+HISTORICAL UI RECORD — current local source is UI-ALIGN-20261016; see UI-ALIGN.txt.
+This local-only build is not installed; last verified radio build remains HOME-ICON-20261016.
+See UX-CLEANUP.txt for current navigation and AERODECK.txt for controls.
+The ICON-NAV deployment below is historical; see DEPLOYMENT.txt for the current installation.
+
+DEPLOYMENT UPDATE: ICON-NAV-20261016 installed and SHA-256 verified on the TX16S on 2026-10-16T12:34:28.859186+02:00. Hardware attitude performance remains unverified. See DEPLOYMENT.txt.
+
+AERODECK ICON-NAV-20261016
+16 October 2026
+
+Six section buttons now contain icons only: horizon (Flight), table (Data),
+location pin (GPS), FPV goggles (Video), sliders (Setup), wrench (Tools).
+The left grid opens all twelve screens in a 4-column, 3-row icon chooser.
+Rotary/PAGE focus updates one name/description above the grid; ENTER opens it.
+Touch opens a tile directly. RTN closes the chooser before exiting the app.
+Clock/model text is status metadata, not a navigation control. Context tabs
+and page titles stay readable; command labels retain their actual meanings.
+
+Native 28px symbols / 36px chooser symbols share static geometry and stroke.
+Selected backplate plus underline provides a non-color-only state indication.
+No icon bitmaps, new sensor reads, transport jobs or draw-loop file I/O are added.
+The cockpit's artwork, instrument size and previous MSP connection remain intact.
+Diagnostics shows build ICON-NAV-20261016.
+
+This build is installed on the TX16S; see DEPLOYMENT.txt for the verified copy.
+Previews use synthetic data in TX16S EdgeTX3.0 WASM, not live quad data.
+The radio runs EdgeTX2.12.4. Hardware performance and icon recognition still
+require real-radio/user evaluation; high redraw FPS does not prove data freshness.
+
+TOOLBOX-FEATURE-AUDIT.txt contains the new delivery matrix, evidence and gates.
+NAVIGATION-UX.txt records primary UX guidance and this icon-only tradeoff.
+
+VALIDATION
+Eight portable suites pass, including exact six-cell boundaries, all twelve
+chooser tiles, focus captions, current/stale data, warnings and existing MSP
+gates. Actual TX16S EdgeTX3.0 WASM rendered twelve distinct pages, chooser,
+critical-battery and no-current-data states without errors. Local HTTP preview
+navigation and its gap-report link are checked. These are software/layout
+checks; physical-radio timing and user icon comprehension remain open.

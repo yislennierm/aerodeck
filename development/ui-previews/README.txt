@@ -1,0 +1,1 @@
+Current ui-*.png / overview: ICON-NAV-20261016, synthetic native simulator data. This UI code was deployed to the TX16S; screenshots are not live-quad captures. Prior section-label revision is preserved under history/section-labels/. See DEPLOYMENT.txt.

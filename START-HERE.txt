@@ -1,9 +1,22 @@
+CURRENT SOFTWARE: POWER-LIVE-20261017. See POWER-LIVE.txt and DEPLOYMENT.txt.
+The Flight-Status footer and GPS decoder are included. Power source recovery,
+source health/actions and five battery profiles are included. Live quad values
+require verification after reopening the installed app.
+
+HISTORICAL FLIGHT-STATUS NOTES FOLLOW
+CURRENT LOCAL BUILD: FLIGHT-STATUS-20261017 — LOCAL ONLY; not installed on the radio.
+Previous local and last verified radio build: FLIGHT-PRIORITY-20261017.
+The unchanged DEPLOYMENT.txt records that earlier installation.
+
 AERODECK / EdgeTX Lua development — RadioMaster TX16S MkII
 
-Open this LUA folder in VS Code, or open AERODECK.code-workspace.
-Install the recommended Lua extension. Editor settings are in .vscode.
+Open this LUA folder in VS Code, or open AERODECK.code-workspace. Install the
+recommended Lua extension. Editor settings are in .vscode.
 
 MAIN SOURCE
+Material SVG masters: development/icons/material/masters/
+Editable home icon: development/icons/home-outlined-30.svg
+Radio PNG mask: sdcard/SCRIPTS/TOOLS/AERODECK/icons/home.png
 sdcard/SCRIPTS/TOOLS/telem.lua
 Assets: sdcard/SCRIPTS/TOOLS/AERODECK/
 Also included: hello.lua and the experimental aerolab.lua with AEROLAB assets.
@@ -20,12 +33,12 @@ ON EACH COMPUTER
 4. Start the radio simulator and open SYS > Tools > AERODECK.
 5. Edit telem.lua, save, then exit and reopen AERODECK to reload.
 
-The .code-workspace uses relative paths. Lua bitmap paths beginning /SCRIPTS
-are SD-card-root paths and must stay that way for the radio.
+The .code-workspace uses relative paths. Lua bitmap paths beginning /SCRIPTS are
+SD-card-root paths and must stay that way for the radio.
 
 This move does not configure cloud sync or a Git remote. Use the folder's
-existing sync service if available. Avoid editing the same file concurrently
-on two computers. Install archives are snapshots; edit the source under sdcard.
+existing sync service if available. Avoid editing the same file concurrently on
+two computers. Install archives are snapshots; edit the source under sdcard.
 
 THIS MAC
 Project: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA
@@ -33,12 +46,46 @@ Companion SD folder: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdca
 A compatibility symlink at the previous Codex project location keeps existing
 local references working. Other computers should use their own local SD path.
 
-CURRENT INVESTIGATION — 2026-10-14
-Physical-radio attitude slowdown remains unresolved, including in a minimal
-numbers-only test at a steady 20 redraws/sec. Read ATTITUDE-TEST.txt for the
-installed raw-versus-current diagnostic, evidence, test commands and next step.
+CURRENT LOCAL UI: FLIGHT-STATUS-20261017 — NOT INSTALLED
+See FLIGHT-STATUS.txt. All twelve pages share mode, app-local home distance,
+satellites and current arming-block status, with a persistent icon-only Arm Info
+control at the right. It remains reachable during warnings. RTN returns to the
+originating page and preserves a Setup draft/active value edit. Flight's compass
+reclaims its full 324 px header; the ARM INFO text button is removed.
+The decoder now supports stable Betaflight 2026.6.2 API 1.48/count 30, including
+GPS bit 18, AUTOPILOT_SW bit 28 and ARM_SWITCH bit 29. Unknown API/count pairs
+stay numbered. NO FLAGS never means ready or armed; unavailable/stale/malformed
+status is explicit. The existing read-only transport, widget and sampling are
+unchanged; decoding is cached per reply, with no additional MSP requests.
 
-VALIDATION
-UI checks also ran in the TX16S EdgeTX 3.0.0 WASM simulator with synthetic
-inputs; they are not proof of hardware performance. Match Companion to your
-radio firmware when testing for deployment.
+FLIGHT-PRIORITY.txt records the preceding rail hierarchy: pack voltage, consumed
+mAh and current are primary battery readings; derived cell average is secondary.
+LQ, RSSI and SNR are primary link readings; TX power is supporting context.
+Per-cell battery comparisons now round to 0.1 mV so native float32 roundoff
+does not flag an exact full pack as ABOVE MAXIMUM; saved thresholds and alarm
+policy are unchanged in this revision.
+Measured native fonts target the reported 30–40 cm viewing distance; physical
+readability has not been measured. The HUD, tapes, rails and attitude datum keep
+their geometry; the compass header and global footer change as described above.
+Six stable icon sections share the same touch/PAGE order. SYS focuses that bar;
+rotary selects controls; ENTER activates; short RTN backs out before exiting.
+Setup is a category list with physical Save/Revert, scoped drafts and per-value
+cancellation. Normal footer readings remain status; full warning details and
+the separate Arm Info icon remain available.
+
+The last verified radio build is FLIGHT-PRIORITY-20261017, installed on
+2026-10-17T09:39:56.756759+02:00. See DEPLOYMENT.txt for the report and backup.
+The radio was safely ejected after that installation. FLIGHT-STATUS is local
+only; this work has not changed the connected radio. Physical rendering, live
+responsiveness and hardware performance remain unverified.
+
+VERIFICATION
+Release requires twelve fresh portable suites and native QA matching both the
+final main and decoder hashes. All twelve pages and the shared footer's normal,
+warning, GPS, zero-flags, unknown, stale and malformed states must be reviewed.
+Exact accepted test/capture counts belong to development/build-FLIGHT-STATUS-20261017.json
+after packaging. Native TX16S EdgeTX 3.0 WASM previews use isolated synthetic
+inputs; physical-radio latency, rendering and viewing distance are not measured.
+Current previews: development/ui-previews/flight-status/.
+Full Toolbox assessment: development/assessments/2026-10-16-toolbox-parity/.
+Later work includes feature parity and shared continuous GPS/home state.

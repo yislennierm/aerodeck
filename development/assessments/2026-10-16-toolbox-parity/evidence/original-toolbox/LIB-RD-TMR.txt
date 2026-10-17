@@ -1,0 +1,96 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/TMR.luac SHA256 d8f138d463fa09514edff3595ad54ded95a9dd03a6828d1688b2d77f8da6814f
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/RD/TMR.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 10), ('F', 1, 10), ('D', 1, 10), ('X', 1, 10), ('initCmd', 1, 10)]
+K0 'RD_TMR'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  26] CLOSURE   R5 = proto[0]
+   3 [  26] SETTABLE  R1[K0('RD_TMR')] = R5
+   4 [  28] TEST      A=4 B=0 C=0
+   5 [  28] JMP       A=0 ->9
+   6 [  29] GETTABLE  R5 = R1[K0('RD_TMR')]
+   7 [  29] MOVE      A=6 B=4 C=0
+   8 [  29] CALL      A=5 B=2 C=1
+   9 [  32] RETURN    A=0 B=1 C=0
+  10 [  32] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 4 lines 10 26 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('cmd', 0, 59)]
+K0 'S'
+K1 'TMR_host'
+K2 1
+K3 'reset'
+K4 'model'
+K5 'setTimer'
+K6 'TMR_no'
+K7 'mode'
+K8 0
+K9 'value'
+K10 'start'
+K11 'countdownBeep'
+K12 'minuteBeep'
+K13 False
+K14 'persistent'
+K15 'resetTimer'
+K16 'ARMED'
+   1 [  11] GETTABUP  R1 = UP0[K0('S')]
+   2 [  11] GETTABLE  R1 = R1[K1('TMR_host')]
+   3 [  11] EQ        A=0 R1, K2(1); skip-next if condition != A
+   4 [  11] JMP       A=0 ->58
+   5 [  12] EQ        A=0 R0, K3('reset'); skip-next if condition != A
+   6 [  12] JMP       A=0 ->39
+   7 [  13] GETTABUP  R1 = UP1[K4('model')]
+   8 [  13] GETTABLE  R1 = R1[K5('setTimer')]
+   9 [  13] GETTABUP  R2 = UP0[K0('S')]
+  10 [  13] GETTABLE  R2 = R2[K6('TMR_no')]
+  11 [  13] SUB       A=2 B=2 C=258
+  12 [  13] NEWTABLE  A=3 B=0 C=6
+  13 [  13] SETTABLE  R3[K7('mode')] = K8(0)
+  14 [  13] SETTABLE  R3[K9('value')] = K8(0)
+  15 [  13] SETTABLE  R3[K10('start')] = K8(0)
+  16 [  13] SETTABLE  R3[K11('countdownBeep')] = K8(0)
+  17 [  13] SETTABLE  R3[K12('minuteBeep')] = K13(False)
+  18 [  13] SETTABLE  R3[K14('persistent')] = K8(0)
+  19 [  13] CALL      A=1 B=3 C=1
+  20 [  14] GETTABUP  R1 = UP1[K4('model')]
+  21 [  14] GETTABLE  R1 = R1[K15('resetTimer')]
+  22 [  14] GETTABUP  R2 = UP0[K0('S')]
+  23 [  14] GETTABLE  R2 = R2[K6('TMR_no')]
+  24 [  14] SUB       A=2 B=2 C=258
+  25 [  14] CALL      A=1 B=2 C=1
+  26 [  15] GETTABUP  R1 = UP0[K0('S')]
+  27 [  15] GETTABLE  R1 = R1[K16('ARMED')]
+  28 [  15] TEST      A=1 B=0 C=0
+  29 [  15] JMP       A=0 ->58
+  30 [  16] GETTABUP  R1 = UP1[K4('model')]
+  31 [  16] GETTABLE  R1 = R1[K5('setTimer')]
+  32 [  16] GETTABUP  R2 = UP0[K0('S')]
+  33 [  16] GETTABLE  R2 = R2[K6('TMR_no')]
+  34 [  16] SUB       A=2 B=2 C=258
+  35 [  16] NEWTABLE  A=3 B=0 C=1
+  36 [  16] SETTABLE  R3[K7('mode')] = K2(1)
+  37 [  16] CALL      A=1 B=3 C=1
+  38 [  17] JMP       A=0 ->58
+  39 [  18] EQ        A=0 R0, K10('start'); skip-next if condition != A
+  40 [  18] JMP       A=0 ->50
+  41 [  19] GETTABUP  R1 = UP1[K4('model')]
+  42 [  19] GETTABLE  R1 = R1[K5('setTimer')]
+  43 [  19] GETTABUP  R2 = UP0[K0('S')]
+  44 [  19] GETTABLE  R2 = R2[K6('TMR_no')]
+  45 [  19] SUB       A=2 B=2 C=258
+  46 [  19] NEWTABLE  A=3 B=0 C=1
+  47 [  19] SETTABLE  R3[K7('mode')] = K2(1)
+  48 [  19] CALL      A=1 B=3 C=1
+  49 [  19] JMP       A=0 ->58
+  50 [  21] GETTABUP  R1 = UP1[K4('model')]
+  51 [  21] GETTABLE  R1 = R1[K5('setTimer')]
+  52 [  21] GETTABUP  R2 = UP0[K0('S')]
+  53 [  21] GETTABLE  R2 = R2[K6('TMR_no')]
+  54 [  21] SUB       A=2 B=2 C=258
+  55 [  21] NEWTABLE  A=3 B=0 C=1
+  56 [  21] SETTABLE  R3[K7('mode')] = K8(0)
+  57 [  21] CALL      A=1 B=3 C=1
+  58 [  25] RETURN    A=0 B=1 C=0
+  59 [  26] RETURN    A=0 B=1 C=0

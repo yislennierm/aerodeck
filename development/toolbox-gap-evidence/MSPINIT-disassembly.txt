@@ -1,0 +1,499 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/MSPINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 357), ('F', 1, 357), ('D', 1, 357), ('X', 1, 357), ('mspWrapSuffix', 116, 357)]
+K0 'MSP'
+K1 'clear'
+K2 '+MSP*'
+K3 'S'
+K4 'mspTxReady'
+K5 None
+K6 'mspCheck'
+K7 'mspInfo'
+K8 ''
+K9 'mspInfoWarn'
+K10 'mspFcReady'
+K11 'RCP_pID'
+K12 'OFF'
+K13 'RCP_pverID'
+K14 'dbg'
+K15 'MSPINIT'
+K16 'RC Link protocol or protocol version is OFF'
+K17 'RL_mspSupp'
+K18 'RCP'
+K19 'mspSuppList'
+K20 True
+K21 'MSP is not supported by selected RC link protocol or protocol is not set.'
+K22 'MDL_FC_ON'
+K23 'FC is not enabled in configuration'
+K24 'FC_MSP_ON'
+K25 'MSP is not enabled in configuration'
+K26 'MSP is supported and enabled in configuration'
+K27 'FC_FW_ID'
+K28 'FC_MSP_VER'
+K29 2
+K30 'CMDS'
+K31 'loadE'
+K32 'PLIBMSP'
+K33 '/C/MSPCMD'
+K34 'VER'
+K35 'V'
+K36 '/'
+K37 'FRS'
+K38 'SP'
+K39 'TBS'
+K40 'XF'
+K41 'MSP wrapper is not available'
+K42 'WRAP'
+K43 'WR/MSPW'
+K44 'INFN'
+K45 'OUTFN'
+K46 'IN'
+K47 'OUT'
+K48 'SIZE'
+K49 6
+K50 58
+K51 0
+K52 'cmd'
+K53 'data'
+K54 'ptr'
+K55 1
+K56 'seq'
+K57 'crc'
+K58 'len'
+K59 'errNo'
+K60 'errMax'
+K61 3
+K62 8
+K63 'save'
+K64 False
+K65 'attNo'
+K66 'attMax'
+K67 5
+K68 'RESP_WAIT'
+K69 800
+K70 500
+K71 200
+K72 'START_DELAY'
+K73 100
+K74 'respWait'
+K75 'respTimeout'
+K76 'PROTOCOL_VERSION'
+K77 'FLAG_VERSION'
+K78 'bit'
+K79 'lshift'
+K80 'FLAG_START'
+K81 4
+K82 'FLAG_V2'
+K83 'Q'
+K84 'RPT'
+K85 'idle'
+K86 'MSPML'
+K87 'MSPQAD'
+K88 'MSPP'
+K89 'MSPRST'
+K90 'MSPOUT'
+K91 'MSPIN'
+K92 '/MSPCFC'
+K93 '/MSPRPT'
+K94 'D.S.mspTxReady'
+   1 [  16] VARARG    A=0 B=5 C=0
+   2 [  20] GETTABLE  R4 = R2[K0('MSP')]
+   3 [  20] TEST      A=4 B=0 C=1
+   4 [  20] JMP       A=0 ->6
+   5 [  20] NEWTABLE  A=4 B=0 C=0
+   6 [  20] SETTABLE  R2[K0('MSP')] = R4
+   7 [  21] GETTABLE  R4 = R0[K1('clear')]
+   8 [  21] MOVE      A=5 B=2 C=0
+   9 [  21] LOADK     R6 = K2 ('+MSP*')
+  10 [  21] CALL      A=4 B=3 C=1
+  11 [  23] GETTABLE  R4 = R2[K3('S')]
+  12 [  23] SETTABLE  R4[K4('mspTxReady')] = K5(None)
+  13 [  24] GETTABLE  R4 = R2[K3('S')]
+  14 [  24] SETTABLE  R4[K6('mspCheck')] = K5(None)
+  15 [  25] GETTABLE  R4 = R2[K3('S')]
+  16 [  25] SETTABLE  R4[K7('mspInfo')] = K8('')
+  17 [  26] GETTABLE  R4 = R2[K3('S')]
+  18 [  26] SETTABLE  R4[K9('mspInfoWarn')] = K5(None)
+  19 [  27] GETTABLE  R4 = R2[K3('S')]
+  20 [  27] SETTABLE  R4[K10('mspFcReady')] = K5(None)
+  21 [  29] GETTABLE  R4 = R2[K3('S')]
+  22 [  29] GETTABLE  R4 = R4[K11('RCP_pID')]
+  23 [  29] EQ        A=1 R4, K12('OFF'); skip-next if condition != A
+  24 [  29] JMP       A=0 ->29
+  25 [  29] GETTABLE  R4 = R2[K3('S')]
+  26 [  29] GETTABLE  R4 = R4[K13('RCP_pverID')]
+  27 [  29] EQ        A=0 R4, K12('OFF'); skip-next if condition != A
+  28 [  29] JMP       A=0 ->34
+  29 [  30] GETTABLE  R4 = R0[K14('dbg')]
+  30 [  30] LOADK     R5 = K15 ('MSPINIT')
+  31 [  30] LOADK     R6 = K16 ('RC Link protocol or protocol version is OFF')
+  32 [  30] CALL      A=4 B=3 C=1
+  33 [  31] RETURN    A=0 B=1 C=0
+  34 [  34] GETTABLE  R4 = R2[K3('S')]
+  35 [  34] GETTABLE  R5 = R2[K18('RCP')]
+  36 [  34] GETTABLE  R5 = R5[K19('mspSuppList')]
+  37 [  34] GETTABLE  R6 = R2[K3('S')]
+  38 [  34] GETTABLE  R6 = R6[K11('RCP_pID')]
+  39 [  34] GETTABLE  R5 = R5[R6]
+  40 [  34] TEST      A=5 B=0 C=1
+  41 [  34] JMP       A=0 ->43
+  42 [  34] LOADBOOL  A=5 B=0 C=0
+  43 [  34] SETTABLE  R4[K17('RL_mspSupp')] = R5
+  44 [  37] GETTABLE  R4 = R2[K3('S')]
+  45 [  37] GETTABLE  R4 = R4[K17('RL_mspSupp')]
+  46 [  37] EQ        A=1 R4, K20(True); skip-next if condition != A
+  47 [  37] JMP       A=0 ->57
+  48 [  38] GETTABLE  R4 = R0[K14('dbg')]
+  49 [  38] LOADK     R5 = K21 ('MSP is not supported by selected RC link protocol or protocol is not set.')
+  50 [  38] GETTABLE  R6 = R2[K3('S')]
+  51 [  38] GETTABLE  R6 = R6[K11('RCP_pID')]
+  52 [  38] GETTABLE  R7 = R2[K3('S')]
+  53 [  38] GETTABLE  R7 = R7[K13('RCP_pverID')]
+  54 [  38] CALL      A=4 B=4 C=1
+  55 [  39] RETURN    A=0 B=1 C=0
+  56 [  39] JMP       A=0 ->84
+  57 [  40] GETTABLE  R4 = R2[K3('S')]
+  58 [  40] GETTABLE  R4 = R4[K22('MDL_FC_ON')]
+  59 [  40] TEST      A=4 B=0 C=1
+  60 [  40] JMP       A=0 ->66
+  61 [  41] GETTABLE  R4 = R0[K14('dbg')]
+  62 [  41] LOADK     R5 = K23 ('FC is not enabled in configuration')
+  63 [  41] CALL      A=4 B=2 C=1
+  64 [  42] RETURN    A=0 B=1 C=0
+  65 [  42] JMP       A=0 ->84
+  66 [  43] GETTABLE  R4 = R2[K3('S')]
+  67 [  43] GETTABLE  R4 = R4[K24('FC_MSP_ON')]
+  68 [  43] TEST      A=4 B=0 C=1
+  69 [  43] JMP       A=0 ->75
+  70 [  44] GETTABLE  R4 = R0[K14('dbg')]
+  71 [  44] LOADK     R5 = K25 ('MSP is not enabled in configuration')
+  72 [  44] CALL      A=4 B=2 C=1
+  73 [  45] RETURN    A=0 B=1 C=0
+  74 [  45] JMP       A=0 ->84
+  75 [  47] GETTABLE  R4 = R0[K14('dbg')]
+  76 [  47] LOADK     R5 = K26 ('MSP is supported and enabled in configuration')
+  77 [  47] GETTABLE  R6 = R2[K3('S')]
+  78 [  47] GETTABLE  R6 = R6[K11('RCP_pID')]
+  79 [  47] GETTABLE  R7 = R2[K3('S')]
+  80 [  47] GETTABLE  R7 = R7[K13('RCP_pverID')]
+  81 [  47] GETTABLE  R8 = R2[K3('S')]
+  82 [  47] GETTABLE  R8 = R8[K27('FC_FW_ID')]
+  83 [  47] CALL      A=4 B=5 C=1
+  84 [  50] GETTABLE  R4 = R2[K3('S')]
+  85 [  50] SETTABLE  R4[K28('FC_MSP_VER')] = K29(2)
+  86 [  53] GETTABLE  R4 = R2[K0('MSP')]
+  87 [  53] GETTABLE  R5 = R0[K31('loadE')]
+  88 [  53] GETTABLE  R6 = R0[K32('PLIBMSP')]
+  89 [  53] GETTABLE  R7 = R2[K3('S')]
+  90 [  53] GETTABLE  R7 = R7[K27('FC_FW_ID')]
+  91 [  53] LOADK     R8 = K33 ('/C/MSPCMD')
+  92 [  53] CONCAT    A=6 B=6 C=8
+  93 [  53] CALL      A=5 B=2 C=2
+  94 [  53] SETTABLE  R4[K30('CMDS')] = R5
+  95 [  54] GETTABLE  R4 = R2[K0('MSP')]
+  96 [  54] LOADK     R5 = K35 ('V')
+  97 [  54] GETTABLE  R6 = R2[K3('S')]
+  98 [  54] GETTABLE  R6 = R6[K28('FC_MSP_VER')]
+  99 [  54] LOADK     R7 = K36 ('/')
+ 100 [  54] CONCAT    A=5 B=5 C=7
+ 101 [  54] SETTABLE  R4[K34('VER')] = R5
+ 102 [  57] GETTABLE  R4 = R2[K3('S')]
+ 103 [  57] GETTABLE  R4 = R4[K11('RCP_pID')]
+ 104 [  57] EQ        A=0 R4, K37('FRS'); skip-next if condition != A
+ 105 [  57] JMP       A=0 ->109
+ 106 [  57] LOADK     R4 = K38 ('SP')
+ 107 [  57] TEST      A=4 B=0 C=1
+ 108 [  57] JMP       A=0 ->117
+ 109 [  57] GETTABLE  R4 = R2[K3('S')]
+ 110 [  57] GETTABLE  R4 = R4[K11('RCP_pID')]
+ 111 [  57] EQ        A=0 R4, K39('TBS'); skip-next if condition != A
+ 112 [  57] JMP       A=0 ->116
+ 113 [  57] LOADK     R4 = K40 ('XF')
+ 114 [  57] TEST      A=4 B=0 C=1
+ 115 [  57] JMP       A=0 ->117
+ 116 [  57] LOADNIL   A=4 B=0 C=0
+ 117 [  58] EQ        A=0 R4, K5(None); skip-next if condition != A
+ 118 [  58] JMP       A=0 ->127
+ 119 [  59] GETTABLE  R5 = R0[K14('dbg')]
+ 120 [  59] LOADK     R6 = K41 ('MSP wrapper is not available')
+ 121 [  59] GETTABLE  R7 = R2[K3('S')]
+ 122 [  59] GETTABLE  R7 = R7[K11('RCP_pID')]
+ 123 [  59] GETTABLE  R8 = R2[K3('S')]
+ 124 [  59] GETTABLE  R8 = R8[K13('RCP_pverID')]
+ 125 [  59] CALL      A=5 B=4 C=1
+ 126 [  60] RETURN    A=0 B=1 C=0
+ 127 [  62] GETTABLE  R5 = R2[K0('MSP')]
+ 128 [  62] LOADK     R6 = K43 ('WR/MSPW')
+ 129 [  62] MOVE      A=7 B=4 C=0
+ 130 [  62] CONCAT    A=6 B=6 C=7
+ 131 [  62] SETTABLE  R5[K42('WRAP')] = R6
+ 132 [  64] EQ        A=0 R4, K38('SP'); skip-next if condition != A
+ 133 [  64] JMP       A=0 ->141
+ 134 [  66] GETTABLE  R5 = R2[K0('MSP')]
+ 135 [  68] CLOSURE   R6 = proto[0]
+ 136 [  68] SETTABLE  R5[K44('INFN')] = R6
+ 137 [  69] GETTABLE  R5 = R2[K0('MSP')]
+ 138 [  71] CLOSURE   R6 = proto[1]
+ 139 [  71] SETTABLE  R5[K45('OUTFN')] = R6
+ 140 [  71] JMP       A=0 ->149
+ 141 [  73] EQ        A=0 R4, K40('XF'); skip-next if condition != A
+ 142 [  73] JMP       A=0 ->149
+ 143 [  74] GETTABLE  R5 = R2[K0('MSP')]
+ 144 [  76] CLOSURE   R6 = proto[2]
+ 145 [  76] SETTABLE  R5[K44('INFN')] = R6
+ 146 [  77] GETTABLE  R5 = R2[K0('MSP')]
+ 147 [  79] CLOSURE   R6 = proto[3]
+ 148 [  79] SETTABLE  R5[K45('OUTFN')] = R6
+ 149 [  84] GETTABLE  R5 = R2[K0('MSP')]
+ 150 [  84] NEWTABLE  A=6 B=0 C=0
+ 151 [  84] SETTABLE  R5[K46('IN')] = R6
+ 152 [  85] GETTABLE  R5 = R2[K0('MSP')]
+ 153 [  85] NEWTABLE  A=6 B=0 C=0
+ 154 [  85] SETTABLE  R5[K47('OUT')] = R6
+ 155 [  88] GETTABLE  R5 = R2[K0('MSP')]
+ 156 [  88] GETTABLE  R5 = R5[K46('IN')]
+ 157 [  88] EQ        A=0 R4, K38('SP'); skip-next if condition != A
+ 158 [  88] JMP       A=0 ->162
+ 159 [  88] LOADK     R6 = K49 (6)
+ 160 [  88] TEST      A=6 B=0 C=1
+ 161 [  88] JMP       A=0 ->168
+ 162 [  88] EQ        A=0 R4, K40('XF'); skip-next if condition != A
+ 163 [  88] JMP       A=0 ->167
+ 164 [  88] LOADK     R6 = K50 (58)
+ 165 [  88] TEST      A=6 B=0 C=1
+ 166 [  88] JMP       A=0 ->168
+ 167 [  88] LOADK     R6 = K51 (0)
+ 168 [  88] SETTABLE  R5[K48('SIZE')] = R6
+ 169 [  89] GETTABLE  R5 = R2[K0('MSP')]
+ 170 [  89] GETTABLE  R5 = R5[K46('IN')]
+ 171 [  89] SETTABLE  R5[K52('cmd')] = K51(0)
+ 172 [  90] GETTABLE  R5 = R2[K0('MSP')]
+ 173 [  90] GETTABLE  R5 = R5[K46('IN')]
+ 174 [  90] NEWTABLE  A=6 B=0 C=0
+ 175 [  90] SETTABLE  R5[K53('data')] = R6
+ 176 [  91] GETTABLE  R5 = R2[K0('MSP')]
+ 177 [  91] GETTABLE  R5 = R5[K46('IN')]
+ 178 [  91] SETTABLE  R5[K54('ptr')] = K55(1)
+ 179 [  92] GETTABLE  R5 = R2[K0('MSP')]
+ 180 [  92] GETTABLE  R5 = R5[K46('IN')]
+ 181 [  92] SETTABLE  R5[K56('seq')] = K51(0)
+ 182 [  93] GETTABLE  R5 = R2[K0('MSP')]
+ 183 [  93] GETTABLE  R5 = R5[K46('IN')]
+ 184 [  93] SETTABLE  R5[K57('crc')] = K51(0)
+ 185 [  94] GETTABLE  R5 = R2[K0('MSP')]
+ 186 [  94] GETTABLE  R5 = R5[K46('IN')]
+ 187 [  94] SETTABLE  R5[K58('len')] = K51(0)
+ 188 [  95] GETTABLE  R5 = R2[K0('MSP')]
+ 189 [  95] GETTABLE  R5 = R5[K46('IN')]
+ 190 [  95] SETTABLE  R5[K59('errNo')] = K51(0)
+ 191 [  96] GETTABLE  R5 = R2[K0('MSP')]
+ 192 [  96] GETTABLE  R5 = R5[K46('IN')]
+ 193 [  96] SETTABLE  R5[K60('errMax')] = K61(3)
+ 194 [  98] GETTABLE  R5 = R2[K0('MSP')]
+ 195 [  98] GETTABLE  R5 = R5[K47('OUT')]
+ 196 [  98] EQ        A=0 R4, K38('SP'); skip-next if condition != A
+ 197 [  98] JMP       A=0 ->201
+ 198 [  98] LOADK     R6 = K49 (6)
+ 199 [  98] TEST      A=6 B=0 C=1
+ 200 [  98] JMP       A=0 ->214
+ 201 [  98] EQ        A=0 R4, K40('XF'); skip-next if condition != A
+ 202 [  98] JMP       A=0 ->213
+ 203 [  98] GETTABLE  R6 = R2[K3('S')]
+ 204 [  98] GETTABLE  R6 = R6[K28('FC_MSP_VER')]
+ 205 [  98] EQ        A=0 R6, K29(2); skip-next if condition != A
+ 206 [  98] JMP       A=0 ->210
+ 207 [  98] LOADK     R6 = K50 (58)
+ 208 [  98] TEST      A=6 B=0 C=1
+ 209 [  98] JMP       A=0 ->214
+ 210 [  98] LOADK     R6 = K62 (8)
+ 211 [  98] TEST      A=6 B=0 C=1
+ 212 [  98] JMP       A=0 ->214
+ 213 [  98] LOADK     R6 = K51 (0)
+ 214 [  98] SETTABLE  R5[K48('SIZE')] = R6
+ 215 [  99] GETTABLE  R5 = R2[K0('MSP')]
+ 216 [  99] GETTABLE  R5 = R5[K47('OUT')]
+ 217 [  99] SETTABLE  R5[K52('cmd')] = K51(0)
+ 218 [ 100] GETTABLE  R5 = R2[K0('MSP')]
+ 219 [ 100] GETTABLE  R5 = R5[K47('OUT')]
+ 220 [ 100] NEWTABLE  A=6 B=0 C=0
+ 221 [ 100] SETTABLE  R5[K53('data')] = R6
+ 222 [ 101] GETTABLE  R5 = R2[K0('MSP')]
+ 223 [ 101] GETTABLE  R5 = R5[K47('OUT')]
+ 224 [ 101] SETTABLE  R5[K54('ptr')] = K55(1)
+ 225 [ 102] GETTABLE  R5 = R2[K0('MSP')]
+ 226 [ 102] GETTABLE  R5 = R5[K47('OUT')]
+ 227 [ 102] SETTABLE  R5[K56('seq')] = K51(0)
+ 228 [ 103] GETTABLE  R5 = R2[K0('MSP')]
+ 229 [ 103] GETTABLE  R5 = R5[K47('OUT')]
+ 230 [ 103] SETTABLE  R5[K57('crc')] = K51(0)
+ 231 [ 104] GETTABLE  R5 = R2[K0('MSP')]
+ 232 [ 104] GETTABLE  R5 = R5[K47('OUT')]
+ 233 [ 104] SETTABLE  R5[K63('save')] = K64(False)
+ 234 [ 105] GETTABLE  R5 = R2[K0('MSP')]
+ 235 [ 105] GETTABLE  R5 = R5[K47('OUT')]
+ 236 [ 105] SETTABLE  R5[K65('attNo')] = K55(1)
+ 237 [ 106] GETTABLE  R5 = R2[K0('MSP')]
+ 238 [ 106] GETTABLE  R5 = R5[K47('OUT')]
+ 239 [ 106] SETTABLE  R5[K66('attMax')] = K67(5)
+ 240 [ 108] GETTABLE  R5 = R2[K0('MSP')]
+ 241 [ 108] EQ        A=0 R4, K38('SP'); skip-next if condition != A
+ 242 [ 108] JMP       A=0 ->246
+ 243 [ 108] LOADK     R6 = K69 (800)
+ 244 [ 108] TEST      A=6 B=0 C=1
+ 245 [ 108] JMP       A=0 ->252
+ 246 [ 108] EQ        A=0 R4, K40('XF'); skip-next if condition != A
+ 247 [ 108] JMP       A=0 ->251
+ 248 [ 108] LOADK     R6 = K70 (500)
+ 249 [ 108] TEST      A=6 B=0 C=1
+ 250 [ 108] JMP       A=0 ->252
+ 251 [ 108] LOADK     R6 = K71 (200)
+ 252 [ 108] SETTABLE  R5[K68('RESP_WAIT')] = R6
+ 253 [ 109] GETTABLE  R5 = R2[K0('MSP')]
+ 254 [ 109] SETTABLE  R5[K72('START_DELAY')] = K73(100)
+ 255 [ 110] GETTABLE  R5 = R2[K0('MSP')]
+ 256 [ 110] SETTABLE  R5[K74('respWait')] = K64(False)
+ 257 [ 111] GETTABLE  R5 = R2[K0('MSP')]
+ 258 [ 111] SETTABLE  R5[K75('respTimeout')] = K51(0)
+ 259 [ 113] GETTABLE  R5 = R2[K0('MSP')]
+ 260 [ 113] SETTABLE  R5[K76('PROTOCOL_VERSION')] = K55(1)
+ 261 [ 114] GETTABLE  R5 = R2[K0('MSP')]
+ 262 [ 114] GETTABLE  R6 = R0[K78('bit')]
+ 263 [ 114] GETTABLE  R6 = R6[K79('lshift')]
+ 264 [ 114] GETTABLE  R7 = R2[K3('S')]
+ 265 [ 114] GETTABLE  R7 = R7[K28('FC_MSP_VER')]
+ 266 [ 114] LOADK     R8 = K67 (5)
+ 267 [ 114] CALL      A=6 B=3 C=2
+ 268 [ 114] SETTABLE  R5[K77('FLAG_VERSION')] = R6
+ 269 [ 115] GETTABLE  R5 = R2[K0('MSP')]
+ 270 [ 115] GETTABLE  R6 = R0[K78('bit')]
+ 271 [ 115] GETTABLE  R6 = R6[K79('lshift')]
+ 272 [ 115] LOADK     R7 = K55 (1)
+ 273 [ 115] LOADK     R8 = K81 (4)
+ 274 [ 115] CALL      A=6 B=3 C=2
+ 275 [ 115] SETTABLE  R5[K80('FLAG_START')] = R6
+ 276 [ 116] GETTABLE  R5 = R2[K0('MSP')]
+ 277 [ 116] SETTABLE  R5[K82('FLAG_V2')] = K51(0)
+ 278 [ 129] GETTABLE  R5 = R2[K3('S')]
+ 279 [ 129] SETTABLE  R5[K4('mspTxReady')] = K20(True)
+ 280 [ 131] GETTABLE  R5 = R2[K0('MSP')]
+ 281 [ 131] NEWTABLE  A=6 B=0 C=0
+ 282 [ 131] SETTABLE  R5[K83('Q')] = R6
+ 283 [ 136] GETTABLE  R5 = R2[K0('MSP')]
+ 284 [ 136] NEWTABLE  A=6 B=0 C=0
+ 285 [ 136] SETTABLE  R5[K84('RPT')] = R6
+ 286 [ 144] GETTABLE  R5 = R2[K0('MSP')]
+ 287 [ 144] SETTABLE  R5[K85('idle')] = K20(True)
+ 288 [ 146] GETTABLE  R5 = R0[K31('loadE')]
+ 289 [ 146] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 290 [ 146] LOADK     R7 = K86 ('MSPML')
+ 291 [ 146] CONCAT    A=6 B=6 C=7
+ 292 [ 146] CALL      A=5 B=2 C=1
+ 293 [ 147] GETTABLE  R5 = R0[K31('loadE')]
+ 294 [ 147] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 295 [ 147] GETTABLE  R7 = R2[K0('MSP')]
+ 296 [ 147] GETTABLE  R7 = R7[K42('WRAP')]
+ 297 [ 147] CONCAT    A=6 B=6 C=7
+ 298 [ 147] CALL      A=5 B=2 C=1
+ 299 [ 148] GETTABLE  R5 = R0[K31('loadE')]
+ 300 [ 148] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 301 [ 148] LOADK     R7 = K87 ('MSPQAD')
+ 302 [ 148] CONCAT    A=6 B=6 C=7
+ 303 [ 148] CALL      A=5 B=2 C=1
+ 304 [ 149] GETTABLE  R5 = R0[K31('loadE')]
+ 305 [ 149] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 306 [ 149] LOADK     R7 = K88 ('MSPP')
+ 307 [ 149] CONCAT    A=6 B=6 C=7
+ 308 [ 149] CALL      A=5 B=2 C=1
+ 309 [ 150] GETTABLE  R5 = R0[K31('loadE')]
+ 310 [ 150] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 311 [ 150] LOADK     R7 = K89 ('MSPRST')
+ 312 [ 150] CONCAT    A=6 B=6 C=7
+ 313 [ 150] CALL      A=5 B=2 C=1
+ 314 [ 151] GETTABLE  R5 = R0[K31('loadE')]
+ 315 [ 151] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 316 [ 151] GETTABLE  R7 = R2[K3('S')]
+ 317 [ 151] GETTABLE  R7 = R7[K27('FC_FW_ID')]
+ 318 [ 151] LOADK     R8 = K36 ('/')
+ 319 [ 151] GETTABLE  R9 = R2[K0('MSP')]
+ 320 [ 151] GETTABLE  R9 = R9[K34('VER')]
+ 321 [ 151] LOADK     R10 = K90 ('MSPOUT')
+ 322 [ 151] CONCAT    A=6 B=6 C=10
+ 323 [ 151] CALL      A=5 B=2 C=1
+ 324 [ 152] GETTABLE  R5 = R0[K31('loadE')]
+ 325 [ 152] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 326 [ 152] GETTABLE  R7 = R2[K3('S')]
+ 327 [ 152] GETTABLE  R7 = R7[K27('FC_FW_ID')]
+ 328 [ 152] LOADK     R8 = K36 ('/')
+ 329 [ 152] GETTABLE  R9 = R2[K0('MSP')]
+ 330 [ 152] GETTABLE  R9 = R9[K34('VER')]
+ 331 [ 152] LOADK     R10 = K91 ('MSPIN')
+ 332 [ 152] CONCAT    A=6 B=6 C=10
+ 333 [ 152] CALL      A=5 B=2 C=1
+ 334 [ 153] GETTABLE  R5 = R0[K31('loadE')]
+ 335 [ 153] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 336 [ 153] GETTABLE  R7 = R2[K3('S')]
+ 337 [ 153] GETTABLE  R7 = R7[K27('FC_FW_ID')]
+ 338 [ 153] LOADK     R8 = K92 ('/MSPCFC')
+ 339 [ 153] CONCAT    A=6 B=6 C=8
+ 340 [ 153] CALL      A=5 B=2 C=1
+ 341 [ 154] GETTABLE  R5 = R0[K31('loadE')]
+ 342 [ 154] GETTABLE  R6 = R0[K32('PLIBMSP')]
+ 343 [ 154] GETTABLE  R7 = R2[K3('S')]
+ 344 [ 154] GETTABLE  R7 = R7[K27('FC_FW_ID')]
+ 345 [ 154] LOADK     R8 = K93 ('/MSPRPT')
+ 346 [ 154] CONCAT    A=6 B=6 C=8
+ 347 [ 154] CALL      A=5 B=2 C=1
+ 348 [ 155] GETTABLE  R5 = R2[K3('S')]
+ 349 [ 155] SETTABLE  R5[K6('mspCheck')] = K55(1)
+ 350 [ 157] GETTABLE  R5 = R0[K14('dbg')]
+ 351 [ 157] LOADK     R6 = K15 ('MSPINIT')
+ 352 [ 157] LOADK     R7 = K94 ('D.S.mspTxReady')
+ 353 [ 157] GETTABLE  R8 = R2[K3('S')]
+ 354 [ 157] GETTABLE  R8 = R8[K4('mspTxReady')]
+ 355 [ 157] CALL      A=5 B=4 C=1
+ 356 [ 159] RETURN    A=0 B=1 C=0
+ 357 [ 159] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 2 lines 66 68 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS []
+K0 'sportTelemetryPop'
+   1 [  67] GETTABUP  R0 = UP0[K0('sportTelemetryPop')]
+   2 [  67] TAILCALL  A=0 B=1 C=0
+   3 [  67] RETURN    A=0 B=0 C=0
+   4 [  68] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 4 vararg 0 stack 9 lines 69 71 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('sensorID', 0, 8), ('frameID', 0, 8), ('dataID', 0, 8), ('value', 0, 8)]
+K0 'sportTelemetryPush'
+   1 [  70] GETTABUP  R4 = UP0[K0('sportTelemetryPush')]
+   2 [  70] MOVE      A=5 B=0 C=0
+   3 [  70] MOVE      A=6 B=1 C=0
+   4 [  70] MOVE      A=7 B=2 C=0
+   5 [  70] MOVE      A=8 B=3 C=0
+   6 [  70] TAILCALL  A=4 B=5 C=0
+   7 [  70] RETURN    A=4 B=0 C=0
+   8 [  71] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 2 lines 74 76 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS []
+K0 'crossfireTelemetryPop'
+   1 [  75] GETTABUP  R0 = UP0[K0('crossfireTelemetryPop')]
+   2 [  75] TAILCALL  A=0 B=1 C=0
+   3 [  75] RETURN    A=0 B=0 C=0
+   4 [  76] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 2 vararg 0 stack 5 lines 77 79 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('cmd', 0, 6), ('data', 0, 6)]
+K0 'crossfireTelemetryPush'
+   1 [  78] GETTABUP  R2 = UP0[K0('crossfireTelemetryPush')]
+   2 [  78] MOVE      A=3 B=0 C=0
+   3 [  78] MOVE      A=4 B=1 C=0
+   4 [  78] TAILCALL  A=2 B=3 C=0
+   5 [  78] RETURN    A=2 B=0 C=0
+   6 [  79] RETURN    A=0 B=1 C=0

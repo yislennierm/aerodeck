@@ -1,0 +1,67 @@
+{
+  "assets": [
+    {
+      "asset": "sdcard/SCRIPTS/TOOLS/AERODECK/attitude-flat.png",
+      "source": "development/artwork/attitude-flat.svg",
+      "width": 152,
+      "height": 152,
+      "mode": "RGBA",
+      "pngSha256": "39b3999bc6cef9743759d5d312e5e86cc845350e88759f76075f72e2f8711edb",
+      "svgSha256": "f1bbf00803afbeacb9fbbe86c4702a974147b6ad162b5888a5ddf4bd52d23578",
+      "role": "Transparent rim/ticks/index only; all corners and aperture alpha0."
+    },
+    {
+      "asset": "sdcard/SCRIPTS/TOOLS/AERODECK/attitude-cover.png",
+      "source": "development/artwork/attitude-cover.svg",
+      "width": 152,
+      "height": 152,
+      "mode": "RGB",
+      "pngSha256": "63c0dce3897223ac22a2440fc379b6b990d2629d02cf74a332b8989aae8d9e63",
+      "svgSha256": "22f1006cb9cdad41578087624330ec917a96ad03bd5243d334572ee45d444138",
+      "role": "Black corners and white aperture; cache Bitmap.toMask once and tint native p.black."
+    }
+  ],
+  "center": [
+    76,
+    76
+  ],
+  "transparentApertureRadius": 68,
+  "innerBorderRadius": 68.5,
+  "outerBorderRadius": 74,
+  "rollTickDegrees": [
+    -60,
+    -45,
+    -30,
+    -20,
+    -10,
+    10,
+    20,
+    30,
+    45,
+    60
+  ],
+  "placement": [
+    164,
+    64
+  ],
+  "globalCenter": [
+    240,
+    140
+  ],
+  "palette": {
+    "background": "native p.black (#050c13)",
+    "border": "#395464",
+    "muted": "#8ca4b3",
+    "accent": "#a4e37d"
+  },
+  "nativeScale": 100,
+  "newBitmapCount": 2,
+  "provenance": "Original AERODECK code-native SVG artwork. No generated image or external artwork.",
+  "drawOrder": [
+    "Existing native HUD rectangle/ladder",
+    "Native tinted corner mask at164,64, cached conversion once",
+    "Transparent attitude-flat rim at164,64",
+    "Existing moving roll marker and aircraft symbol"
+  ],
+  "geometryNote": "Full152x152 HUD and center unchanged. Native corner tint avoids RGBA ARGB4444 background quantization mismatch. Standard SVG antialiasing occurs at circular edge. Existing moving marker remains radius58."
+}

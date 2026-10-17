@@ -1,0 +1,47 @@
+AERODECK — FLIGHT-GLANCE-20261017
+LOCAL ONLY. Not installed on the radio.
+Previous local build: FLIGHT-SPACE-20261016.
+Last verified radio build remains HOME-ICON-20261016; DEPLOYMENT.txt is unchanged.
+
+This refinement is designed for the user's reported 30–40 cm viewing distance
+on the TX16S MkII's 4.3-inch, 480 × 272 display. Measured native font sizes are
+29 px for primary values, 17 px for secondary references, and 12 px for supporting
+captions/units. Long values are measured and fitted. Physical readability has
+not been measured.
+Manufacturer display specification:
+https://radiomasterrc.com/collections/tx16s/products/tx16s-mark-ii-radio-controller
+
+The compass trades its crowded tiny labels for nearby references: labelled
+30-degree marks within ±60 degrees, unlabelled 15-degree ticks and a larger
+centered numeric heading. The band is 30 px high; the numeric window is 64 px
+wide. A visible 78 × 28 px ARM INFO button replaces the unexplained shield. It
+opens the read-only Arm Stops page by touch or two ENTER presses from no focus.
+It never arms the aircraft. The six main navigation controls remain icons.
+
+The fixed aircraft is 88 px wide, with a 2 px gold stroke, 4 px dark halo and 6
+px center mark. The zero horizon is 2 px thick. Every 10-degree pitch rung
+remains; 20-degree major captions use 17 px text. Pitch geometry retains 1.85 px
+per degree. Signed live P/R angles remain visible; unavailable data does not
+invent angles. Tape references use 17 px text when it fits, falling back only
+for larger values.
+
+The visible attitude field is 232 × 180: 41,760 square pixels, 86.03% larger
+than the original 184 × 122 center. It retains 98.9% of Flight-Space's attitude
+area. The deliberate 2 px height trade gives the compass room for larger text.
+Full native HUD: (78, 64, 324, 180), shared zero (240, 154). The 70 px side
+rails and Flight's unique-data FM/home/satellites/MSP footer remain; full 26 px
+warning/detail banners are kept.
+
+No new runtime file is added. Sampling, freshness, verified pitch convention,
+read-only MSP scheduling, settings and widget behavior remain unchanged. There
+are no new transport requests, runtime SD writes or FC/model/output writes.
+Release requires 12 fresh portable suites and matching-source native QA for all
+12 pages. Exact counts/hashes: development/build-FLIGHT-GLANCE-20261017.json.
+Current synthetic previews: development/ui-previews/flight-glance/. They do not
+establish physical-radio rendering, live-link latency or a readability study.
+
+The local archive contains 39 runtime files and 16 root documents, 55 entries.
+Only the main runtime source changes. Historical assets remain locally; no files
+are deleted. The helper guards the prior local baseline and backs up changed
+targets. It offers package/apply only, with no radio deployment or
+installation-record command.

@@ -1,0 +1,71 @@
+HISTORICAL UI RECORD — current local source is UI-ALIGN-20261016; see UI-ALIGN.txt.
+This local-only build is not installed; last verified radio build remains HOME-ICON-20261016.
+See UX-CLEANUP.txt for current navigation and AERODECK.txt for controls.
+The ICON-NAV deployment below is historical; see DEPLOYMENT.txt for the current installation.
+
+AERODECK ICON-ONLY NAVIGATION — UX AUDIT
+Date: 2026-10-16
+Scope: 480x272 TX16S display, six persistent top-level sections. This is design guidance, not a claim of universal icon comprehension or physical-radio performance.
+
+Primary evidence
+1. Apple HIG, Tab bars
+https://developer.apple.com/design/human-interface-guidelines/tab-bars
+Apple treats tab bars as stable navigation between top-level areas and recommends short labels to clarify what each area contains. Familiar symbols help. Its icon-only special cases include a way to reveal labels. Therefore six custom unlabeled icons are a deliberate tradeoff against its default guidance. A persistent page heading and the focused name/description in the all-screens drawer should remain available; neither proves that a new user will recognize every symbol.
+
+2. Apple HIG, Toolbars
+https://developer.apple.com/design/human-interface-guidelines/toolbars
+Controls should have clear purpose and avoid crowding. Use a symbol where it communicates the action or destination. Do not mistake a generic action symbol for a top-level destination.
+
+3. Apple HIG, Buttons and Accessibility
+https://developer.apple.com/design/human-interface-guidelines/buttons
+https://developer.apple.com/design/human-interface-guidelines/accessibility
+Use sufficient hit regions, spacing, visible press feedback, clear contrast, consistent interactions, and more than one cue for important state. Apple dimensions are platform-specific points, not a direct native-pixel requirement for a radio. Test the actual TX16S touch target with a finger; the complete navigation cell should be active, rather than only the drawn symbol.
+
+4. Apple HIG, Color
+https://developer.apple.com/design/human-interface-guidelines/color
+Color should not be the sole indication of state. Selected and focused tabs must remain distinguishable in grayscale and in bright outdoor light.
+
+5. Original research, CHI 2024 Visualization Literacy workshop, Rose Pozos, Lennard Schmidt, Hilary Palmen:
+Iconography for international users: Developing a systematic approach to ensuring comprehension of UI icons at scale
+https://research.google/pubs/iconography-for-international-users-developing-a-systematic-approach-to-ensuring-comprehension-of-ui-icons-at-scale/
+The work motivates direct evaluation of icon legibility and comprehension across users and contexts. It does not establish a universal vocabulary for our six custom symbols. Judge confusion with target-selection tasks on the rendered screen.
+
+Recommended symbol vocabulary (design recommendations/inferences)
+Flight: artificial-horizon instrument ring with an aircraft/level chevron. The central horizon distinguishes it from geographic location.
+Telemetry: three compact reading rows or a small numeric table. Avoid wireless bars: the destination contains multiple data types and is not merely connection status.
+GPS: a location pin with a small central locator dot. A pin is more distinct from the flight instrument than another compass circle.
+Video/VTX: a monitor frame with a short antenna/radio-wave feature. A camera shutter implies photography, and a play triangle implies playback; neither describes VTX references.
+Setup: gear.
+Tools: wrench or crossed wrench/screwdriver. Keep its silhouette clearly different from the gear; avoid a second generic settings glyph.
+
+Geometry and interaction
+- Use a common optical box around 24–26 native pixels, centered in each existing cell. Use consistent weight, simple silhouettes, and few fine details. Do not enlarge the bar or reduce the instrument body to fit ornament.
+- The entire cell is a hit target. No overlap with the context band below; title-only regions must not accidentally change page or commit settings.
+- Selection should combine a distinct backplate or border with a lower marker and a brighter icon. Color is an additional cue. Press feedback should be visible without changing data.
+- Preserve stable ordering, remembered subpages, persistent textual page/context headings, and the focused name/description in the all-screens drawer.
+- Preserve PAGE/RTN/ENTER operation. If rotary focus is introduced into the top bar, give focus a separate outline from the selected destination and expose its name. Do not make a long press the only way to learn a destination.
+- A section switch must not reset sensor state, locally captured home, unsaved edits, or MSP transport. Save semantics must remain explicit.
+- This is improved sighted/low-vision and hardware-control usability. It is not a claim of full screen-reader accessibility; EdgeTX native drawing has no established semantic accessibility path in this implementation.
+
+Review acceptance criteria
+A. At native 480x272 size, all six silhouettes are distinguishable in grayscale. The user can identify destinations before being trained; record wrong guesses, especially Setup/Tools and Flight/GPS.
+B. Every existing page remains reachable through touch and physical controls. The active section and any keyboard/rotary focus remain obvious. The focused-caption drawer teaches the same symbols in the same order.
+C. Critical warning text, link/source freshness, and the current page name remain visible in normal, missing-data, stale-data, and warning screenshots.
+D. No icon implies an unsupported action. Video pages retain reference/no-write wording where controls are not implemented. Settings retain their existing commit/cancel behavior.
+E. Compare the actual rendered firmware view with Toolbox and with the previous AERODECK at native size. A desktop enlarged screenshot is insufficient evidence of readability outdoors or finger accuracy.
+
+Performance and hardware gates (engineering proposals, not UX-source claims)
+- Do not add a full-screen bitmap, frame-loop file I/O, extra telemetry source reads, or freshly allocated icon geometry tables per frame. Native fixed primitives are appropriate here.
+- Count icon primitives and inspect the drawing path. Keep icon complexity bounded; drawing the shell once per current frame must not introduce sensor polling or transport work. A primitive count alone cannot predict hardware timing.
+- Run the same model, quad, RF settings, page, MSP state, and physical motion before/after. Record both render cadence and the age/change cadence of real pitch/roll values; high draw FPS does not prove live telemetry.
+- Observe cold launch, continuous tilting, repeated page switches, and several minutes of operation for heap growth or degradation. Native firmware/WASM previews establish layout and input routing only; physical TX16S evidence is required for responsiveness claims.
+- An appropriate release gate is no sustained regression against the prior AERODECK on the same hardware, no extra source reads, and no new input latency. Claiming superiority to Toolbox requires a comparable real-radio run and feature/state coverage; redesigned icons alone do not establish it.
+
+Implemented source review, 2026-10-16
+Reviewed work/edgetx/icon-revision/project/sdcard/SCRIPTS/TOOLS/telem.lua, read only. Modified only development/test_ui_navigation.lua in that isolated project.
+- Six top icons are centered using each exact drawn cell width. Touch routing now uses those same floor-derived edges, including the previously mismatched one-pixel boundaries.
+- Geometry tables are created once; icon() creates no helper closures or geometry tables per call and performs one ink selection per glyph. The six section icons issue 104 native draw primitives per redraw, plus 9 for the grid. This is an operation count, not a measured TX16S timing result. Drawer symbols add bounded drawing while that menu is visible.
+- No new bitmap, file I/O, telemetry source access, transport write, or app-state mutation is present in the icon renderer. Selected state uses a backplate, bottom marker, and brighter symbol rather than hue alone.
+- No critical new routing issue found. Current drawer is icon-only with one focused caption, rather than twelve simultaneous labeled choices. Rotary navigation exposes labels before activation; a touch user taps directly into a destination. This is a discoverability tradeoff that should be described honestly.
+- PASS: luajit development/test_ui_navigation.lua. It exercises both edges of all six top cells; no visible header destination labels; visible selected page context; clock/model metadata non-action; both inner corners of all twelve drawer tiles in the new 4x3 layout; icon-only drawer body; rotary and hardware-page focus/wrap captions; ENTER selection and RTN close. It retains all prior battery save, stick input, warning visibility, MSP freshness, shared GPS sample, and stable arming-reason regressions.
+- Boundary mocks establish source behavior only. Root is capturing actual firmware renders. Physical TX16S input accuracy and real telemetry responsiveness remain separate hardware checks.

@@ -1,0 +1,886 @@
+AERODECK vs TOOLBOX2 — 1:1 FEATURE AND UI ASSESSMENT
+16 October2026 · ICON-NAV-20261016
+
+AERODECK has a stronger visual direction than its interaction model. It is not yet a Toolbox feature replacement. The current complexity comes from layering navigation and reference screens over incomplete workflows, not from needing more decoration. Preserve the accepted cockpit and icon family; fix the interaction contract and shared state before adding another skin.
+
+This audit inspects installed build ICON-NAV-20261016 (SHA256 f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8) and the supplied fm2m-toolbox-200-edgetx Toolbox2.0 reference. It does not claim coverage of an uninspected newer Toolbox edition. Original bytecode was checked where recovered Lua has damaged control flow. Native pictures use the exact app source plus isolated synthetic inputs, all29 arming-disable flags and one custom5000MHz favourite. Runtime is TX16S EdgeTX3.0.0 WASM; the physical radio has2.12.4. Font measurements and clipping are native-preview evidence, not new radio screenshots. Hardware latency, outdoor legibility, finger accuracy and sustained live attitude performance were not measured. App/widget/assets on the radio were not changed.
+
+READ THIS FIRST
+Native flight display: Working render/data paths; sustained physical response not measured by this audit.
+Telemetry: Current27-field table; Min/Max, complete browsing and consistent Inspector/widget sources still incomplete.
+Battery/session: Basic pack readings and warnings work; radio battery, real timers, five presets and quick pack/mute/new-flight actions are missing or partial.
+GPS/home: Current details and local plot work; home capture and track sampling run only on GPS pages, source changes do not clear history, real fix/quality/satellite metadata absent.
+FC/arming: Bounded read-only identity/status and real disable explanations work; no general FC editor is implied by Toolbox settings.
+VTX: Eight local frequency notes; device state/tables/PIT/power/apply/save are not implemented.
+Configuration: All12 headings mapped explicitly below. Similar list counts conceal different settings, placeholders and inconsistent enable/save semantics.
+
+The report contains44 core checks,12 explicit configuration-category mappings plus33 deeper settings/transport checks,14 workflow findings and12 task routes. These tables overlap; do not sum their status counts or publish a completion percentage. Working means an executable path with a runtime consumer, not full end-to-end certification. Compact-widget extras and other transport/FC extensions are not blockers for the selected TX16S/Betaflight/ELRS scope.
+
+CONFIRMED VISUAL / COMPOSITION FINDINGS
+
+VIS01 [MEDIUM] Custom VTX card label is overwritten
+In the native custom-frequency fixture, CUSTOM measures98px at x15. Its card spans x8–82; the next card starts x87 and paints over the text. This is reproduced clipping, not a general impression.
+Remedy: Use the frequency as the primary label when no standard channel exists; fit or wrap secondary text to a measured content box.
+Evidence: telem.lua1044–1059; screens/audit-video-custom.png; native lcd.sizeText measurement.
+
+VIS02 [LOW] Arming title has no right gutter
+Accelerometer not calibrated measures313px at x159, ending at x472, the panel edge. It fits in the inspected native runtime; it is not proven clipped.
+Remedy: Reserve an8px inner gutter and wrap the title by measured width, rather than shrinking every title.
+Evidence: telem.lua1017–1020; screens/audit-arm-24.png.
+
+VIS03 [MEDIUM] Read-only setup lists still offer editing actions
+VTX category8 contains four informational rows, including NOT IMPLEMENTED, but uses selection/edit styling and presents minus, plus, Save and Revert. Application category12 is mostly notes but its MSP control really works.
+Remedy: Render notes as status/help. Offer edit/commit controls only for editable items and show their scope. Do not remove the working MSP Off action.
+Evidence: telem.lua198,203–204,311–341; screens/audit-config-08.png.
+
+VIS04 [MEDIUM] Shell and page renderers both own the same header space
+Legacy page headers/status are drawn before the shell covers them. Examples include Sensor Inspector source count and prior live-data badges. This is actual render composition overlap, even where the final screenshot looks tidy.
+Remedy: Let the shell own header/footer rectangles; render each needed status exactly once in an assigned body region.
+Evidence: telem.lua669–671,771–777,865–872,1111–1165,1224–1227; WF06.
+
+VIS05 [LOW] Graphs show samples without usable scales
+Power and RC Link traces show a sample count but no time axis, numerical scale or min/max. Voltage uses a zero-based pack-dependent range and current a fixed0–100A range, so small changes can look flat.
+Remedy: Show units, latest/min/max and a defined time window; use stable bounded scales with gaps for missing data.
+Evidence: telem.lua931–968; screens/audit-power.png; screens/audit-link.png.
+
+VIS06 [MEDIUM] Technical values change meaning across views
+Telemetry converts attitude to degrees; Sensor Inspector displays raw0.19/0.49 radians without units. RFMD3 and DOWN99% are not explained. GPS Details accurately refuses to invent a fix, but the long unavailable message occupies the small satellite summary.
+Remedy: Use shared value formatting and source identity, decode RF captions only with known protocol/version, and place compact unavailable labels with detail on selection.
+Evidence: telem.lua404–429,655–689,959–968; CORE12/13/32; screens/audit-sensors.png.
+
+VIS07 [MEDIUM] Fixed metadata is styled as a command
+Track NORTH UP is drawn like adjacent enabled buttons, but no handler covers it. The LIVE SENSORS button refreshes binding metadata and has no confirmation; it does not change live/demo mode.
+Remedy: Draw North up as plot metadata. Name refresh by what it does and acknowledge completion.
+Evidence: telem.lua536–540,604–606,1207–1209; screens/audit-track.png.
+
+VIS08 [MEDIUM] Space is allocated to repeated status and navigation
+Top bar34px + context26px + footer26px =86/272px (31.6%). The shared main content is180px high. Flight repeats link and pack readings in sidebars/footer. The size alone is not a defect; redundant content must earn its space.
+Remedy: Preserve cockpit geometry initially. Remove redundant navigation before shrinking targets or instrument art; reuse a single stable status/alert presentation.
+Evidence: telem.lua1085–1165; workflow information_architecture; screens/audit-flight.png.
+
+SCREEN-BY-SCREEN VERDICT
+Flight: Keep the original chrome, instrument scale and unavailable state. Remove repeated navigation/status and active-page reloads.
+Telemetry: Dense but readable for sample values. Fixed27 slots; no Min/Max or full browsing. Test wide signed values and use shared formatting.
+Power: Good basic hierarchy. Add chart units/scales/time and a direct pack workflow; current footer repeats pack voltage.
+RC Link: Values fit. Decode raw RFMD/DOWN, label direction and units, and make trace scale/time useful.
+GPS Details: Coordinates fit. Satellite count is not a fix; retain honest missing metadata. Continuous home acquisition is a backend defect.
+Track / Home: Useful local plot. NORTH UP is inert; refresh is ambiguously named. Keep local-home provenance and add age/time.
+Arm Stops: Readable split layout; longest known title has zero gutter. Measure/wrap title width. Empty space is acceptable.
+Video: Confirmed CUSTOM clipping. This is an offline reference page, not connected VTX control; the dominant attitude inset does not close that gap.
+Setup: A changing list carousel, a rows pager, edit mode and two save stores are too many rules. Use category selection and one clear transaction model.
+Stick Guide: Diagrams and labels fit. Paging is touch-only, both arrows toggle, page position missing. It is a reference, not transmitted commands.
+Sensor Inspector: Fits but lacks units and visible page position. Header source count is covered, refresh and next are conflated, source lookup is unqualified.
+Diagnostics: Useful build/connection detail. Treat as a status destination; displayed audit FPS includes instrumentation overhead and is not a benchmark.
+
+RECOMMENDED DELIVERY ORDER
+
+1 · Repair the interaction contract
+Make menu/category/action/save/cancel reachable by hardware; make RTN back/cancel; ignore same-page navigation; remove overwritten header draws; fix measured VTX text bounds and inert button styling. Keep the existing cockpit and MSP loop.
+Gate: edit/save/revert/cancel entirely with physical controls and touch; no active-page bitmap reopen; long/reference/error screens fit.
+
+2 · Consolidate navigation and settings
+Six stable destinations in the same touch/PAGE order. Replace the duplicate12-tile chooser with useful quick actions. Put Power/Link in Telemetry detail, arm/connection/sensors in Status, reference tools in Setup. Use a settings category list instead of dynamic ordinal arrows.
+Gate: a new user finds each task without learning a second navigation map; no hidden Save scope or control that changes meaning without feedback.
+
+3 · Correct continuous state and source consistency
+Move home/history updates out of renderers, cap buffers after setting changes, invalidate source-dependent history deliberately, share qualified source binding and units across app/widget/inspector. Define Auto/Off with a safe legacy migration.
+Gate: home/track keep updating on Flight, mapping changes never retain an unrelated home, and all views agree on values and freshness.
+
+4 · Close common flight-workflow gaps
+Radio battery, read real Timer1–3, quick pack/new-flight/mute/reload, five useful presets, Current/Min/Max. Keep measured cells distinct from computed average.
+Gate: pack/session changes have explicit reset scopes; native timer and sensor extrema agree with EdgeTX; missing sensors stay unavailable.
+
+5 · Complete connected VTX and richer GPS
+Add bounded typed read jobs and device identity, VTX status/tables and measured GPS fix metadata. Only then add explicit VTX apply/readback and separate persistence. Retain existing status cadence and arm/link stop gates.
+Gate: values match the FC; custom/partial/stale tables are honest, reads do not starve status, writes distinguish requested/reported/saved and cancel appropriately.
+
+UX GUIDANCE AND INTERPRETATION
+Stable ordering and predictable operations are design recommendations backed by the source findings and consistent-navigation/focus guidance. W3C web criteria are cited as principles, not a certification claim for this radio. Apple recommends labels for tab icons; this design deliberately retains the user-requested icon-only main bar, with a readable current-page title and hardware-focus names. Original icon-comprehension research supports validating the custom symbols with users rather than assuming recognition. No requirement to restore paired labels everywhere is inferred.
+https://www.w3.org/WAI/WCAG22/Techniques/general/G61.html
+https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html
+https://developer.apple.com/design/human-interface-guidelines/tab-bars
+https://research.google/pubs/iconography-for-international-users-developing-a-systematic-approach-to-ensuring-comprehension-of-ui-icons-at-scale/
+
+DETAILED SOURCE-REFERENCED APPENDICES
+
+============================================================================
+core.txt
+============================================================================
+STRICT CORE PARITY REVIEW — 16 October 2026
+
+Baseline: installed ICON-NAV-20261016 main source SHA256
+f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8.
+Canonical runtime matches the independently verified deployment:80 runtime files and115
+protected radio files checked at installation. This assessment does not re-run hardware.
+Target is the same TX16S480x272/EdgeTX2.12.4/Betaflight/ELRS combination as Toolbox.
+
+core.json contains44 feature-level rows. Each row identifies the actual reference runtime,
+actual AERODECK runtime/control, strict status, user consequence and file:line evidence.
+Working means an executable source path exists, not that every sensor is present or that
+physical-radio performance is proven. Partial means a real subset/different workflow.
+Missing means no corresponding function. Unknown means physical/reference behavior is
+unproven. Counts are descriptive coverage, NOT a percentage of completion or effort:
+{"missing": 15, "partial": 15, "unknown": 2, "working": 12}
+
+CORE-39 compact widget includes an additional capability not established in Toolbox; do
+not count it as reference parity completion. Other source/edition capability guards may
+limit Toolbox controls. Unsupported transports/radios are outside this matrix. This
+matrix deliberately does not count each font setting/category note as a feature.
+
+Key findings
+
+1. Native attitude instrument exists; reliable sustained physical response remains unknown
+   after the MSP change. Screen FPS and telemetry data freshness must stay separate.
+2. GPS home/track updates only inside GPS/Nav renderers. Staying on Flight can delay
+   auto-home capture until a later location; a page menu is not a continuous flight model.
+3. OS Timer1–3 read/control/reset is absent. Local arm stopwatch clips callback intervals
+   to1s, stops with the app, and has no reset/persistence. A 'timer' label is not parity.
+4. Current27-field table exists; dynamic complete browsing, native Min/Max and selector
+   are missing. Compact widget/Inspector source bindings are still unqualified.
+5. Battery favorites are3 rather than5, lack chemistry, and have no quick connected-pack
+   selector. No individual cells, auto-count, radio battery or quick mute/new-flight flow.
+6. Capability metadata mostly controls list visibility; RC/FC None is accepted as Auto.
+   The12 configuration headings contain functional controls plus notes/placeholders.
+7. Toolbox CRSF fix/HDOP labels include satellite-count heuristics in original bytecode;
+   matching screenshots does not justify claiming those values are real receiver data.
+8. Toolbox widget background callback existence does not prove hidden operation because
+   its guard is unresolved. AERODECK explicitly releases its app in compact/hidden mode.
+
+UX priorities
+
+P0: direct full-application hardware response/orientation gate on the accepted cockpit.
+P1: shared source identity; Auto/Off/capability semantics; page-independent session/home;
+native timer read first; pack/new-flight/mute/reset/reload actions; sensor Current/Min/Max;
+distinct radio battery; sourced mode/arm/cut state. Use one action menu, do not substitute
+another destination tile for a missing action or add controls ahead of their backend.
+P2: conditional cells/satellite detail, relative home vector/ETA, protocol-aware captions,
+optional dashboard inspection. Retain honest unavailability when sources do not exist.
+
+Evidence method
+
+Actual production source read without edits. Recovered Toolbox Lua is not an executable
+specification: it has known branch/table/call damage. Critical source-family registrations,
+min/max, dashboard selection, favorites, timer controls, configuration gates, quick menu,
+GPS inference/home behavior and widget lifecycle use original .luac disassembly preserved
+in work/edgetx/icon-revision/audit-core-original-disassembly.txt and verified-*.txt.
+References into recovered source indicate straightforward names/data paths, not an
+endorsement of damaged expressions. No reference artwork/license logic was copied.
+
+
+============================================================================
+config-transport.txt
+============================================================================
+AERODECK / TOOLBOX2 CONFIGURATION AND TRANSPORT PARITY
+Build ICON-NAV-20261016 — 2026-10-16
+Source SHA256: f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8
+
+Status counts: partial=24, missing=17, working=2, unknown=1, out-of-scope=1
+
+Configuration categories/settings, FC/VTX/arming/GPS transport actions; read-only audit, no production/radio changes. Original Toolbox key branches verified by disassembly. No activation/licence keys inspected.
+
+Working denotes a real code consumer, not proof of radio/quad behavior.
+BUG rows and MISSING FEATURES are distinguished below. None is not an MSP OFF state.
+Application and Flight Controller both expose the same working mspMode Off control.
+
+CFG-01 | Configuration lists | PARTIAL | gap
+01 MDL / MODEL -> 01 MODEL SETUP
+Toolbox: Protocol, FC, battery/current/gyro/baro/pitot/GPS/VTX enable selections drive subsystem initialization and dependent lists. Accelerometer is declared but hidden, so it is not counted as a working reference feature.
+AERODECK: Protocol/FC profiles, VTX reference-list mode and 11 named sensor mappings are saved. Gyro uses pitch/roll mappings; baro/pitot setup is a note. Profiles mostly gate lists/MSP rather than selecting complete protocol/FC modules.
+Consequence: Matching the MODEL page name does not provide the same subsystem controls or transport selection.
+Recommendation: Keep useful custom sensor mappings; distinguish configured profile, enabled subsystem and detected capabilities.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua:14
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGMDL.txt:48
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:184
+
+CFG-02 | Configuration lists | PARTIAL | gap
+02 RCL / RC LINK -> 02 RC LINK
+Toolbox: Protocol version selects protocol-specific RSSI/RQLY defaults, ranges/units and visibility; user sets low/critical RSSI, RQLY and SNR.
+AERODECK: RSSI/LQ/SNR source mappings and six warning thresholds are functional; protocol version is a note, RSSI threshold ranges are always negative dBm.
+Consequence: CRSF settings work, but FrSky percentage RSSI/protocol-version defaults and conditional irrelevant thresholds lack parity.
+Recommendation: Derive units/defaults from selected/detected protocol, preserving user overrides.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua:12
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:187
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:345
+
+CFG-03 | Configuration lists | PARTIAL | gap
+03 BAT / BATTERY -> 03 MODEL BATTERY
+Toolbox: No-power/min/critical/low/max voltage, visual/sound/haptic alert modes and critical-only/critical+low alerts. Dependent voltage constraints update during editing; audible choice hides in visual-only mode.
+AERODECK: All core thresholds and alert modes feed runtime checks. Adds manual cell count; uses strict ordered-save validation and ten-second tone/haptic cadence. Audible row stays editable in visual-only mode.
+Consequence: Core warnings operate but editing constraints, irrelevant-row visibility and alert cadence differ.
+Recommendation: Retain validation; hide or disable audible subtype when it has no active consumer and document alert behavior.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua:11
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua:20
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:69
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:134
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SND.lua:7
+
+CFG-04 | Configuration lists | PARTIAL | gap
+04 BFV / BATTERY FAVS -> 04 BATTERY FAVOURITES
+Toolbox: Five separately enabled battery presets, each with cells and capacity; disabled presets hide their dependent rows.
+AERODECK: Three pack presets plus Manual cells; active pack affects cell count and estimated remaining capacity. No per-preset enable/OFF state.
+Consequence: Two presets and conditional per-preset editing are missing.
+Recommendation: Provide five usable presets with enable state, selected-pack identity and explicit reported-versus-estimated remaining.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBFV.lua:13
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGBFV.txt:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:190
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:191
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:423
+
+CFG-05 | Configuration lists | PARTIAL | gap
+05 FC / FLIGHT CONTROLLER -> 05 FLIGHT CONTROLLER
+Toolbox: MSP enable, fixed MSP version2, adjustable FC status interval0..5s and VTX interval0..10s. These are Toolbox connection preferences, not PID settings.
+AERODECK: mspMode Off/Auto-CRSF is a real control; connection/firmware notes update. Status interval is fixed3s, VTX reads/writes unavailable.
+Consequence: The page is functional for the current connection but its adjustable scheduling/VTX configuration is absent.
+Recommendation: Expose only supported connection options, then add page-aware VTX polling after a shared typed job queue.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFC.lua:15
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGFC.txt:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:194
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:7
+
+CFG-06 | Configuration lists | PARTIAL | gap
+06 IND / INDICATORS -> 06 INDICATORS
+Toolbox: Arm can use physical switch, logical switch or telemetry. Throttle-cut supports switch/logic. Six switch-position conditions, logical1..64, throttle-limiter source, OS/Toolbox timer host and timer1..3.
+AERODECK: Arm/cut source and Low/Centre/High positions feed actual displayed radio indicators and session timer. UI offers SA-SH and L01-L04 only; no telemetry indicator source, limiter or OS timer host.
+Consequence: A shortened switch-display list does not replace the complete indicator/timer setup.
+Recommendation: Use separate input type and input value, support logical switches through getSwitchValue, and label local timer versus radio timer.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:33
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:42
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGIND.txt:88
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:195
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:304
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:931
+
+CFG-07 | Configuration lists | PARTIAL | gap
+07 INDBF / INDICATORS BETAFLIGHT -> 07 BETAFLIGHT INDICATORS
+Toolbox: Separate source selections for Acro/Horizon/Angle plus Air/Turtle; physical/logical/telemetry options vary by mode. Consumers can override displayed mode indicators.
+AERODECK: One shared flightmode sensor mapping and informational rows; no independent Acro/Horizon/Angle/Air/Turtle source controls.
+Consequence: The list exists but most reference settings and indicator consumers do not.
+Recommendation: Either implement mode-specific indicators or merge this duplicate FM mapping into Model Setup and state the reduced scope.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua:33
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua:45
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDUPD.lua:25
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:197
+
+CFG-08 | Configuration lists | MISSING | gap
+08 VTX / VTX -> 08 VTX
+Toolbox: Select None/FC-MSP/TBS-RX, relevant device model/proxy and frequency-range display filter; save reinitializes VTX backend.
+AERODECK: All four rows are static notes: no connection selector, model/proxy/range settings or backend.
+Consequence: The eighth list is a placeholder, not functional VTX setup.
+Recommendation: Replace the placeholder with detected read-only device capability first; show write options only after a working transaction path.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua:16
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua:18
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:198
+
+CFG-09 | Configuration lists | PARTIAL | gap
+09 VFV / VTX FAVS -> 09 VTX FAVOURITES
+Toolbox: Eight favourites, each OFF or a valid channel/frequency drawn from the loaded VTX table; they drive the connected favourites interface.
+AERODECK: Eight saved integer MHz values5000..6000 drive reference cards; no OFF state, actual table validation or transmitter action.
+Consequence: Eight rows/card count matches while device-backed choice and execution semantics do not.
+Recommendation: Preserve local notes; distinguish local-only entries from confirmed available device channels and allow unused slots.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua:14
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua:33
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGVFV.txt:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:199
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:200
+
+CFG-10 | Configuration lists | PARTIAL | gap
+10 GPS / GPS -> 10 GPS
+Toolbox: Satellite threshold for app-local home lock, tied to inferred fix and arming.
+AERODECK: Opt-in first-position home capture, minimum satellites, retained track count and default zoom are real local consumers; fixed type/constellation is informational unavailable.
+Consequence: More local options exist, but home policy differs and live fix/satellite metadata remains unavailable.
+Recommendation: Name the home policy explicitly; add real fix metadata before calling a capture valid.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGGPS.lua:11
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:201
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:548
+
+CFG-11 | Configuration lists | PARTIAL | gap
+11 UI / USER INTERFACE -> 11 USER INTERFACE
+Toolbox: Theme selection and graphics-overlay toggle have theme renderer/reinitialization consumers.
+AERODECK: Accent colour, redraw target and opening-page selection are functional AERODECK alternatives; no theme/overlay setting.
+Consequence: The category is useful but implements a different preference set rather than all reference controls.
+Recommendation: Keep AERODECK design; decide explicitly whether alternate skin/overlay behavior is needed instead of implying theme parity.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUI.lua:17
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUI.lua:23
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:202
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1175
+
+CFG-12 | Configuration lists | PARTIAL | gap
+12 APP / APPLICATION -> 12 APPLICATION
+Toolbox: A real Log errors to file switch controls application error logging.
+AERODECK: Six descriptive notes plus a real duplicate mspMode control shared with Flight Controller. There is no log-errors setting/file logger.
+Consequence: Application is not entirely static: MSP Off works here too. The original application setting is missing.
+Recommendation: Keep the accessible MSP stop switch; group descriptive content separately from editable settings and implement optional error logging only if desired.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGAPP.lua:11
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:203
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:204
+
+CFG-13 | Configuration semantics | PARTIAL | gap
+Conditional list visibility and capability dependencies
+Toolbox: Four base pagesMDL/IND/UI/APP; RCL needs protocol; BAT/BFV need battery enable; FC needs FC enable; VTX needs VTX enable; VFV also connection; BF indicators need BF; GPS needs GPS+TBS. Edition/capability flags further gate pages.
+AERODECK: Four base lists too. Additional lists use draft rcProtocol, voltage, fcType, vtxMode and gps. INAV still permits VTX lists; GPS list appears for any selected protocol; BFV/VFV have different availability gates.
+Consequence: The 4-to-12 expansion works but twelve visible list names do not imply matched feature availability.
+Recommendation: Gate from working capabilities and user configuration; preserve hidden values deliberately. Do not replicate licensing/activation machinery.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua:10
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGUPDP.txt:16
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:205
+
+CFG-14 | Configuration semantics | PARTIAL | semantics
+Exact None / Off / Auto semantics
+Toolbox: RC protocolOFF exits telemetry/MSP initialization; saving it clears subsystem enable selections.
+AERODECK: rcProtocol=None and fcType=None mean unconfigured/auto-compatible for MSP: native current FM plus mspMode=Auto can still poll Betaflight. None hides protocol-dependent lists, not live sensor reads. mspMode=Off is the actual stop control in both FC and Application.
+Consequence: This is a deliberate Auto-support difference, not a dead MSP stop control; None is ambiguous when users expect OFF.
+Recommendation: Rename unconfigured profiles Auto or separate protocol Auto from Disabled; keep mspMode Off explicit.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMINIT.lua:31
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua:64
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:361
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:73
+
+TRN-01 | FC transport | WORKING | working
+MSP enable/disable control and stop gates
+Toolbox: MSP is enabled per model and gated by telemetry/disarmed state.
+AERODECK: The shared mspMode field is consumed each callback, cancels pending work when Off and is editable from FC and Application; FM stale/failsafe/armed/unknown stops reads.
+Consequence: This control has a real runtime consumer, unlike placeholder VTX settings.
+Recommendation: Retain both access points or link one to the shared setting; explain why MSP is stopped.
+Evidence:
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:361
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:204
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:73
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:76
+
+TRN-02 | FC transport | MISSING | gap
+Adjustable status/VTX polling intervals
+Toolbox: Status0..5s and VTX0..10s feed repeat queues; status150 and VTX88 are page/condition gated.
+AERODECK: Fixed3s status; no configurable status interval and no VTX job.
+Consequence: Reference polling preferences cannot be reproduced; an editable-looking status interval would be false until a scheduler consumer exists.
+Recommendation: Add a typed shared queue before adding controls; preserve the status cadence required for current disarmed link behavior.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFC.lua:17
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/MSPRPT-disassembly.txt:46
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:7
+
+TRN-03 | FC transport | MISSING | gap
+FrSky MSP and INAV operation
+Toolbox: Separate S.Port/CRSF wrappers and BF/IN modules exist; protocol/FC selections initialize those paths.
+AERODECK: FrSky/Other profiles disable transport, INAV/Other FC profiles disable transport, and any identified variant exceptBTFL is rejected. Passive mapped telemetry may still display.
+Consequence: Exposed profile names are not equivalent to implemented protocol/FC support.
+Recommendation: Label supported live capabilities; keep non-Betaflight transport unavailable until implemented.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/MSPINIT.lua:44
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/MSPINIT.lua:51
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:362
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:26
+
+TRN-04 | FC diagnostics | MISSING | gap
+Board target and FC identity / VTX cache identity
+Toolbox: Handshake reads UID160; board info4 provides target/board/manufacturer; UID keys VTX proxy-table cache.
+AERODECK: Only variant2/API1/version3/status150 are requested; no4/160/UID cache key.
+Consequence: No board identification or robust per-quad VTX cache isolation is available.
+Recommendation: Add bounded4/160 reads and invalidate device caches when UID changes, not merely model name.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/MSPCFC.lua:39
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0004.lua:8
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC00A0.lua:7
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6
+
+TRN-05 | FC diagnostics | PARTIAL | gap
+Additional STATUS_EX data
+Toolbox: Active-sensor mask and arming flags are parsed; Dashboard FC detail can show target/sensors.
+AERODECK: Raw status150 is retained and arm flags used; cycle/load/I2C/profile/sensor/reboot/CPU-temperature fields are otherwise not presented.
+Consequence: Already-received useful diagnostics remain unused; no new aircraft write is needed.
+Recommendation: Decode supported fields once per new packet and expose a compact FC details subpage.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0096.lua:14
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:41
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1076
+
+TRN-06 | Arming diagnostics | WORKING | working
+Real Betaflight disable-reason list/detail
+Toolbox: Actual status flags drive selected reason and suggested action descriptions.
+AERODECK: Fresh status150 is bytewise decoded for verifiedAPI1.46/count26 and1.47/count29; reason selection/detail and age are shown. Unknown maps retainbit numbers; stopped/old/invalid data clears.
+Consequence: This is functional code-level parity for supportedBF APIs; zero flags correctly does not assert armed.
+Recommendation: Retain current-data gating and verify against actual FC status while hardware is available.
+Evidence:
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:968
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1000
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua:79
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua:81
+
+TRN-07 | Arming diagnostics | UNKNOWN | unknown
+Armed state versus indicator and actual hardware responsiveness
+Toolbox: Reference is reported responsive on the same physical radio; arm display may follow telemetry/configured indicator.
+AERODECK: Radio arm/cut/session time are explicitly separate from last received FC disable flags. Latest transport hardware responsiveness has not been confirmed in the record.
+Consequence: A passing decoder/simulator does not establish fixed real-quad attitude cadence or FC armed state.
+Recommendation: Use the real app/Toolbox comparison as acceptance; do not create another speculative attitude-only test.
+Evidence:
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1030
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:986
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:72
+
+VTX-01 | VTX | MISSING | gap
+Read actual FC VTX status88
+Toolbox: Reads device type, configured band/channel/frequency/power, device-ready, PIT, low-power-disarm and table availability.
+AERODECK: No88 request/decoder exists; VTX page shows local frequencies and a telemetry attitude inset.
+Consequence: There is no live VTX connection or confirmed current setting behind the screen.
+Recommendation: Implement read-only88 state with age/device-ready/error before presenting VTX control.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0058.lua:12
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/MSPRPT-disassembly.txt:29
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1052
+
+VTX-02 | VTX | MISSING | gap
+Read FC band/channel and power tables137/138
+Toolbox: Parameterized one-byte indexed reads build device-specific tables; factory byte and unavailable channels matter.
+AERODECK: No137/138 or parameterized read job exists; local A/B/E/F/R constants only label matching frequencies.
+Consequence: Custom bands and power levels cannot be represented or validated; hardcoded channel labels are reference metadata.
+Recommendation: Add typed parameterized reads, index-echo validation and complete/partial table state; use actual FC table for live selection.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/MSPTC.lua:12
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/MSPTP.lua:19
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/MSPC0089-disassembly.txt:5
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:94
+
+VTX-03 | VTX actions | MISSING | gap
+Apply channel/power/PIT via89
+Toolbox: Original explicit send branch builds a four-byte setting payload and enqueues write89.
+AERODECK: No write branch or command0x7C exists; touching a favourite only changes vtxSelection.
+Consequence: Favourite selection does not tune or control hardware. This is currently a reference-only action.
+Recommendation: Introduce explicit staged Apply only after current confirmed identity/settings/table capability; preserve falsePIT separately from no-change.
+Evidence:
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/VTXMSP-disassembly.txt:116
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/VTXMSP-disassembly.txt:92
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1205
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:95
+
+VTX-04 | VTX actions | MISSING | gap
+Persist VTX changes250 and verify readback88
+Toolbox: Original queues89write ->250save ->88readback; pending/apply state appears in UI.
+AERODECK: No250save, acknowledgments, desired-versus-reported reconciliation or readback mismatch state.
+Consequence: No persistence or truthful applied/saved status can be claimed.
+Recommendation: Use separate accepted/readback-confirmed/saved states. Resolve ambiguous timeout with reads before repeating writes/EEPROM.
+Evidence:
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/VTXMSP-disassembly.txt:117
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/VTXMSP-disassembly.txt:120
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1069
+
+VTX-05 | VTX actions | MISSING | gap
+Direct TBS RX connection and device model/proxy
+Toolbox: TBS RX route reads CRSF type16 and sends device commands; FC MSP route can use UID-keyed proxy tables.
+AERODECK: No direct TBS VTX route, model/proxy config or device cache exists.
+Consequence: The VTX connection modes offered by Toolbox are not present beyond FC-MSP work still to do.
+Recommendation: Prioritize FC-MSP for the user hardware; keep TBS RX clearly unsupported until there is a tested backend.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/VTX/VTXTBS.lua:42
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua:17
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/VTX/VTXPXW.lua:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:198
+
+VTX-06 | Configuration consumers | PARTIAL | semantics
+vtxMode Off / Status-only / Status+favourites
+Toolbox: Model VTX enable and connection affect subsystem/modules and favourites availability.
+AERODECK: vtxMode is read only by visible() to show lists8/9. VTX destination/reference cards always exist; Off or Status-only does not change that page.
+Consequence: The value controls configuration-list visibility only; it is not a VTX runtime mode or master stop.
+Recommendation: Rename to Show VTX setup lists or connect the mode to actual VTX destination/content behavior.
+Evidence:
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:185
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:215
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:216
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1089
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1055
+
+VTX-07 | Configuration consumers | PARTIAL | gap
+Individual favourite OFF/table validation
+Toolbox: Each of eight favourites can beOFF or a channel present in the loaded table.
+AERODECK: All eight slots require a5000..6000MHz integer and render a card; there is no unused/OFF value or availability validation.
+Consequence: An unused slot cannot be removed and local notes may refer to unsupported hardware frequencies.
+Recommendation: Add a local enabled state and separate device-validated channel from custom reference frequency.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua:14
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:200
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1058
+
+BAT-01 | Battery behavior | MISSING | gap
+Automatic cell count
+Toolbox: BT_CNO estimates1..6cells from pack voltage/max-cell setting when no favourite overrides it.
+AERODECK: No automatic count: configured cells0 means Not set and disables cell-based checks; selected pack overrides with manual cells.
+Consequence: Equivalent default operation differs: warnings/cell average require explicit setup in AERODECK.
+Recommendation: Keep manual count honest; offer a clearly estimated count with confirmation only if automatic parity is desired.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/BTCNO.lua:7
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.lua:26
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:135
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:136
+
+BAT-02 | Battery behavior | PARTIAL | semantics
+Alert subtype conditional consumer
+Toolbox: Audible subtype hides for Visual-only; critical/low use different tone/haptic patterns and scheduler flags.
+AERODECK: The subtype row remains visible/editable but cannot produce output while alerts type0. Critical-only vs Critical+Low feeds warn; sound/haptic use a common ten-second rate limit.
+Consequence: The row is conditionally inert rather than dead; current UI makes its effect unclear and cadence differs.
+Recommendation: Disable/hide irrelevant subtype, and expose clear alert-pattern expectations without implying background radio alarms.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua:20
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SND.lua:11
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:139
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:140
+
+BAT-03 | Battery behavior | PARTIAL | gap
+Five enabled presets versus three active packs
+Toolbox: Five enable/cells/capacity triplets with disabled-row visibility.
+AERODECK: Three pack definitions, one global selector, no per-pack enabled state; cells/capacity are real consumers.
+Consequence: Matching a favourites list title understates the missing two packs and enable semantics.
+Recommendation: Add missing presets/enable logic or state supported pack count directly in UI.
+Evidence:
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-CFG-CFGBFV.txt:6
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBFV.lua:13
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:191
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:424
+
+IND-01 | Indicator behavior | PARTIAL | gap
+Logical and physical switch conditions
+Toolbox: Logical1..64 and physical up/mid/down/not-up/not-mid/not-down; logical evaluation uses getSwitchValue.
+AERODECK: UI lists onlyL01..L04 and three positions; getValue plus numeric threshold is used for every indicator source. Logical runtime behavior is not established by the UI list alone.
+Consequence: Many valid configurations are unavailable, and boolean logical-switch evaluation needs separate verification.
+Recommendation: Use source-kind-aware evaluation and enumerate actual switch capabilities rather than a short fixed list.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:21
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:36
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDUPD.lua:9
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:195
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:307
+
+IND-02 | Indicator behavior | MISSING | gap
+Throttle limiter input/display
+Toolbox: Indicator setup selects pot/slider/trim source and runtime stores throttle limiter value.
+AERODECK: No throttle limiter source, evaluator or cockpit indicator.
+Consequence: Reference throttle-limiter status cannot be displayed.
+Recommendation: Add a read-only limiter source/normalization/display if used by this radio model.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:41
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDINIT.lua:66
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:196
+
+IND-03 | Indicator behavior | MISSING | gap
+OS/Toolbox timer host and timer1..3
+Toolbox: Timer host and selected EdgeTX timer are configurable; Toolbox may start/stop/reset the chosen model timer.
+AERODECK: Only an internal app-session counter driven by configured radio arm exists, now shown on Arm Stops; no host/timer index/reset integration.
+Consequence: A session clock is not equivalent to the configured persistent/native timer workflow.
+Recommendation: Offer explicit session/native timer choice; any model-timer changes must be narrowly scoped and reviewable.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua:42
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/TMR.lua:11
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/parity-ux-assessment/evidence/LIB-RD-TMR.txt:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:928
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1030
+
+IND-04 | Indicator behavior | MISSING | gap
+Acro/Horizon/Angle/Air/Turtle inputs
+Toolbox: Individual source selectors are consumed by INDINIT/INDUPD and mode/arm display logic.
+AERODECK: Only FM text sensor is configurable; Acro/Angle/Horizon note and Air/Turtle no-command note have no separate input consumers.
+Consequence: The seventh list is largely explanatory rather than a replacement for reference indicator setup.
+Recommendation: Implement only actual desired display inputs; do not confuse indicator switches with sending aircraft commands.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua:33
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua:49
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDINIT.lua:68
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:197
+
+GPS-01 | GPS behavior | PARTIAL | semantics
+Home capture policy / source
+Toolbox: App-local position updates until inferred fix plus armed locks home; it is not FC-home coordinates.
+AERODECK: Manual home or opt-in first current position above minimum satellites, independent of arming. Track/home uses that app-local point.
+Consequence: Local-home function exists, but startup/arming semantics differ and first valid home does not mean confirmed GPS fix.
+Recommendation: Name capture policies First current/At arming/Manual; keep LOCAL source visible and use confirmed fix if available.
+Evidence:
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/GPS-TBS-disassembly.txt:192
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/GPS-TBS-disassembly.txt:208
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:539
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:548
+
+GPS-02 | GPS behavior | MISSING | gap
+Confirmed FC fix and measured dilution
+Toolbox: TBS sensor path infers POS_FIX fromSats>threshold and internal GPS_HDOP fromclamp(Sats-4); it is not measuredHDOP. Read106 handler only stores fix/sats.
+AERODECK: No106 read; GPS correctly says FIX TYPE NOT REPORTED. Current basic sensor position and satellite count do not supply fix classification or dilution.
+Consequence: Real confirmed fix/PDOP would be an improvement beyond the reference inference, not merely repainting its badge.
+Recommendation: Read106 with version/length checks for fix boolean andPDOP; never relabelPDOP asHDOP or boolean as precise2D/3D enum.
+Evidence:
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/GPS-TBS-disassembly.txt:184
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC006A.lua:7
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:634
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6
+
+GPS-03 | GPS behavior | MISSING | gap
+Per-satellite constellation/signal/used data164
+Toolbox: GPS page schedules164 and parses satellite records; reference can show constellation/signal/lock data.
+AERODECK: No164 job/decoder; only totalSats is sampled.
+Consequence: The reference satellite detail panel has no actual data path in AERODECK.
+Recommendation: Implement bounded164 records; distinguishlegacycount<=16 channelIDs fromenhanced>16 GNSS IDs and clear old entries on new packets.
+Evidence:
+  /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/MSPRPT-disassembly.txt:62
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC00A4.lua:22
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:630
+
+GPS-04 | GPS behavior | PARTIAL | bug
+Track limit after lowering trail setting
+Toolbox: Reference position log limit is configurable in its data path and reduces retained history by removals; this audit does not claim its shrink correctness without original path execution.
+AERODECK: Existing90samples remain90 after lowering limit10: eachappend removes exactlyone, leaving the old length unchanged. Reopening/resetting starts under the new limit.
+Consequence: A setting with a consumer has a concrete live-update bug; the advertised retained count is not enforced on existing data.
+Recommendation: On saving/changing the limit, trim repeatedly to the new cap or explicitly require/reset on reopen; cover90->10.
+Evidence:
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:552
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:201
+
+GPS-05 | GPS behavior | PARTIAL | bug
+GPS mapping/refresh invalidates home and track
+Toolbox: Saving model/source configuration enqueues GPSINIT/TLMINIT and reinitializes relevant GPS state.
+AERODECK: Save swaps active settings only; telemetry metadata refresh does not reset navHome/navTrack. navReset runs at initialNav setup or a mode transition that live-only operation never makes.
+Consequence: A newly mapped GPS source can inherit old-source home/track in the same app session; documentation claiming source changes clear them is unsupported.
+Recommendation: Track GPS source identity and reset/reconfirm local home/history when it changes; distinguish simple metadata refresh from source changes.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua:97
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:100
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:537
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:543
+
+UI-01 | Preference consumers | PARTIAL | gap
+Opening page selection covers all destinations
+Toolbox: Reference module/menu setup exposes enabled destinations through its navigation; exact default-start preference is not assumed equivalent.
+AERODECK: startPage is a real init consumer but options stillcover8legacy pages; cannot select RC Link, Arm Stops, VTX or Diagnostics as start screen. System/Tools labels refer to Sensors/Stick Guide.
+Consequence: A working preference has incomplete/ambiguous destination coverage after the12-screen expansion.
+Recommendation: Generate start choices from the current destination registry with stableIDs and accurate labels.
+Evidence:
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:202
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:501
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:769
+
+APP-01 | Application actions | MISSING | gap
+Optional error-file logging
+Toolbox: Log errors switch feeds APP_LOG_ERR/FSLOG; developer debug logging is separate.
+AERODECK: Runtime metrics are memory-only and no error-file logger exists; Application note rows do not offer this preference.
+Consequence: Reference diagnostics logging is absent by design; it should not be counted as working because an Application category exists.
+Recommendation: If added, use bounded event-triggered error logging rather than periodic hot-loop SD writes.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGAPP.lua:11
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua:164
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:203
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1233
+
+APP-02 | Application actions | MISSING | gap
+Quick mute, reset flight data and reload
+Toolbox: Quick menu provides mute/unmute alerts, reset timer/sensors/telemetry/GPS/VTX state and reload application.
+AERODECK: No corresponding quick actions; RTN/reopen reloads, GPS manualhome only clears localtrack, and no global app alert mute/reset exists.
+Consequence: Common operational workflows require exiting or individually changing preferences instead of direct actions.
+Recommendation: Add explicit scope-labelled Mute app alerts, Reset app flight data and Reload UI actions; do not reset all EdgeTX sensors silently.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/QM.lua:29
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/QM.lua:20
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1179
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:539
+
+ACT-01 | Reference actions | PARTIAL | gap
+Complete stick-command reference versus execution
+Toolbox: Betaflight static reference contains20 entries including8OSD menu commands; the page does not execute the stick combinations.
+AERODECK: Twelve calibration/profile/trim diagrams with modes1..4 are read-only; the8OSD command entries are absent. No execution is correct parity for this page.
+Consequence: The reference list is incomplete, but a missing Send/Execute button is not a missing Toolbox feature.
+Recommendation: Add the missing verifiedOSD entries and keep reference-only labeling; separate any future FC actions from diagrams.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua:7
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:694
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:706
+
+ACT-02 | Scope boundary | OUT-OF-SCOPE | scope
+Full Betaflight PID/rate/motor/configuration editor
+Toolbox: The audited FC list contains MSPconnection preferences; command registry includes identification/status/VTX/GPS, not a full tuning editor. Stick commands remain reference.
+AERODECK: No full FCconfiguration editor or calibration/reboot writes. Current mspMode is connection control only.
+Consequence: Do not invent a parity gap for a complete configurator that this reference does not provide. Actual VTXwrite/save remains a real missing feature.
+Recommendation: If requested later, define each read/write/version/confirmation separately rather than adding genericMSPexecution.
+Evidence:
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFC.lua:15
+  /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPCMD.lua:7
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6
+  /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:194
+
+DEDUPLICATION
+The first twelve rows summarize categories. Other rows expand their settings or transport dependencies. Do not add these row counts to a core feature matrix without semantic deduplication.
+Likely core-feature overlap: TRN-01, TRN-02, TRN-03, TRN-04, TRN-05, TRN-06, TRN-07, VTX-01, VTX-02, VTX-03, VTX-04, VTX-05, GPS-02, GPS-03, APP-02, ACT-01, ACT-02
+protocol_profile_and_none_semantics: CFG-01, CFG-13, CFG-14, TRN-01, TRN-03
+battery_thresholds_and_alerts: CFG-03, BAT-01, BAT-02
+battery_presets: CFG-04, BAT-03
+msp_preferences: CFG-05, CFG-12, TRN-01, TRN-02
+radio_indicators_and_timer: CFG-06, IND-01, IND-02, IND-03
+betaflight_mode_indicators: CFG-07, IND-04
+vtx_connection_and_transactions: CFG-08, VTX-01, VTX-02, VTX-03, VTX-04, VTX-05
+vtx_favourites_and_visibility: CFG-01, CFG-09, VTX-06, VTX-07
+gps_home_and_trail: CFG-10, GPS-01, GPS-04, GPS-05
+gps_status_and_satellites: GPS-02, GPS-03
+ui_preferences: CFG-11, UI-01
+application_logging: CFG-12, APP-01
+
+VERIFICATION NOTES
+Original CFGUPDP, CFGBFV, CFGIND, CFGINDBF, CFGFC, CFGVFV and CFGMDL were newly dumped with the32-bit Lua5.3parser. Previously verified original MSP/VTX/GPS disassemblies were reused. Capabilityflags inreference affectpagevisibility; no activation/license implementation is recommended.
+Source static checks establish that consumers or gaps exist. Logical-switch evaluation behavior is explicitly not assumed from the shortL01-L04 UI list. Hardware attitude performance after the currentMSPupdate remains unknown inthisrecord.
+No production, archive, Git or radio edits were made.
+
+
+============================================================================
+workflows.txt
+============================================================================
+AERODECK WORKFLOW / INFORMATION ARCHITECTURE AUDIT
+Revision ICON-NAV-20261016; canonical source reviewed read only; 2026-10-16.
+
+The user's criticism is supported by the implementation. The redesign improved icon consistency but retained several competing navigation systems and did not provide a complete radio-button workflow. Passing the earlier touch-routing tests did not establish intuitive operation or hardware parity. The most consequential problems are behavior, not ornament: physical input cannot open the drawer, settings cannot be committed without touch, RTN exits an edit, GPS home/track processing depends on the displayed page, and tapping the selected Flight reloads its graphics.
+
+QUANTITATIVE MAP
+There are12 screens in6 sections, exposed through5 global navigation surfaces:
+1. Six section icons, each remembering a subpage.
+2. Current-section context tabs.
+3. A flat12-icon drawer.
+4. A different-looking linear12-page PAGE cycle.
+5. Four footer shortcuts; a warning replaces all four with one alert destination.
+There are also3 local navigation families: Setup list/row paging; Stick/Sensor/arming-detail paging; and cross-links between GPS/VTX/setup pages.
+
+Top bar34 + context26 + footer26 reserve86/272 vertical pixels (31.6%). The main common content region is180px high. This reservation is not itself a bug, but adding legacy per-page headers beneath it wastes render work and hides page state.
+
+The section order is Flight(1,10), Data(5,3,9), GPS(7,2), VTX(11), Setup(8), Tools(6,4,12).
+The drawer/PAGE order is1,5,2,7,3,9,10,6,8,4,11,12.
+These orders do not form the same spatial sequence, so a user cannot transfer the grouped visual map to the physical PAGE cycle.
+
+Toolbox declares8 modules: Dashboard, Configuration, Telemetry, VTX, GPS, Arm Stops, Sticks, About. The common bar exposes up to7 because Dashboard is the return destination, and capabilities filter that same list. This does not mean Toolbox has no complexity or that every icon is self-evident; its smaller advantage is one consistent module model with page-local hardware interactions. Original bytecode verifies the menu/config/stick control claims below.
+
+MEASURED WORKFLOW PROBE
+The workspace-only workflow-probe.lua loads current canonical app source with the existing development LCD/telemetry/SD boundary mocks. It does not modify source or install a diagnostic on the radio. Results:
+- Flight, valid GPS/sats, autoHome enabled,35 callbacks: home=false, track samples0.
+- Visit GPS: home=true, track samples1.
+- Tap already-active Flight:26 Bitmap.open calls.
+- SYS: drawer stays closed.
+- PAGE from Model Setup: Sensors(page4), rather than the next Setup list.
+- Rotary edit + ENTER:0 writes, active value unchanged.
+- RTN after edit: app return1 (exit); reopen restores the old active value.
+- Stick rotary NEXT: stays page1. PREV taps:1->2->1.
+These are deterministic source-boundary results, not physical-radio latency measurements.
+
+PRIORITIZED FINDINGS
+
+WF01 [HIGH] Hardware navigation cannot open the all-screens drawer
+Impact: Rotary selection only works after touching the grid. A user navigating with the radio buttons must remember a twelve-page cycle; SYS/MENU does not expose the menu.
+Smallest remedy: Map one documented physical action to focus/open the existing drawer, with ENTER to select and RTN to cancel. Keep touch behavior.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1177–1200; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/MENU.lua:26–59
+Verification: Canonical app boundary probe: event42 representing SYS did not open the drawer. Static run() has no SYS/MENU/long-ENTER branch. Original Toolbox MENU bytecode confirms SY, EN, EX, RT/LT controls.
+
+WF02 [HIGH] Settings can be edited by rotary but cannot be saved or moved between lists without touch
+Impact: PAGE from Setup leaves for Sensors instead of selecting the next settings list. ENTER only toggles edit mode; neither SAVE nor REVERT is focusable. The hardware workflow reaches a dead end after adjustment.
+Smallest remedy: Make local settings interaction own PAGE while in Setup, and expose Save/Revert through the same focus model or explicit physical commit/cancel actions.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:107–116; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:276–290; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1194–1197; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.lua:180–220
+Verification: Probe: PAGE from Model Setup -> page4 Sensors; edit+rotary+ENTER -> zero writes and active value unchanged. Original Toolbox config bytecode confirms PN/PP changePage, EN commit, EX restore.
+
+WF03 [HIGH] RTN exits the full app while editing instead of backing out
+Impact: A familiar cancel/back action destroys the current editing session on reopen. Ordinary pages also have no physical 'back to Flight'; users must traverse the global cycle.
+Smallest remedy: Prioritize cancel-edit, close-local-view and return-to-Flight before full app exit. Keep a deliberate app-exit action distinct and do not silently commit.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1179; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:255–260; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:107–116; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.lua:180–220; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/MENU.lua:52–54
+Verification: Probe: RTN returns1 from an unsaved edit; reopening restores the old active value. Toolbox EX restores the edited value in edit mode and returns Dashboard outside edit mode.
+
+WF04 [HIGH] Auto-home and track recording depend on looking at a GPS page
+Impact: Starting on Flight with valid GPS and auto-home enabled leaves HOME blank. The track is not a record of the flight; it records only time spent on GPS Details/Track screens.
+Smallest remedy: Update navigation state from the existing sampled data once per foreground frame, independently of which page renders. Keep rendering read-only and do not add duplicate sensor reads.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:542–554; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:558; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:628; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:922–923; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1225; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua:147–159; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.lua:29–60
+Verification: Probe with autoHome1 and valid GPS/sats: 35 Flight frames -> home=false, samples0; one GPS frame -> home=true, samples1. Toolbox sensor/GPS processing is in its common foreground loop.
+
+WF05 [MEDIUM] Tapping the already-selected page reloads its graphics
+Impact: A harmless tap on the current icon/context/footer causes full garbage collection and reloads Flight chrome, bezel and digit glyphs. It can visibly stutter without changing page.
+Smallest remedy: Close the drawer if needed, but return early from a same-page selection unless the user explicitly requested a refresh. Preserve the current graphics cache.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:490–498; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1082; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1180–1184
+Verification: Canonical app renderer with LCD/Bitmap boundary mocks: tapping already-active Flight caused26 Bitmap.open calls. This is an API-call count, not a measured radio pause.
+
+WF06 [MEDIUM] The new shell is composed over legacy page headers
+Impact: Pages draw titles, telemetry badges, model/source counts and navigation summaries that are then completely covered by the shell. Important page-specific information vanishes, and the code retains competing layouts rather than one layout owner.
+Smallest remedy: Give the shell sole ownership of the header/context/footer and remove legacy drawing there. Place any still-needed page status once in the reserved body or shared status region.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:768–777; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:559–563; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:669–671; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:865–872; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1113–1141; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1224–1227
+Verification: Render order is explicit: page renderer then shell.draw. Native screenshots show only the shell; Sensor Inspector source-count heading and old live/alert badges are covered. Root is separately measuring visible overlap.
+
+WF07 [MEDIUM] Five global routes expose different mental maps of the same twelve screens
+Impact: Section icons, contextual tabs, flat drawer, linear PAGE order and footer shortcuts each require a different navigation rule. A section remembers a subpage, so the same icon can open a different destination on a later tap.
+Smallest remedy: Choose one primary navigation model and one secondary shortcut mechanism. Retain useful page memory but make current section/page explicit; align linear order with section order if kept.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:440–443; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:769; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1085–1091; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1165; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1185–1195; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/MDINIT.lua:10; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/MDUPD.lua:8–27
+Verification: AERODECK:6 groups,12 pages,5 global navigation surfaces plus3 local navigation families. Toolbox declares8 modules (Dashboard plus7 modules), and its visible module list is filtered from that single declaration.
+
+WF08 [MEDIUM] The icon-only drawer cannot teach unfamiliar icons to a touch user before activation
+Impact: Twelve similar line drawings are presented without simultaneous names. Only the focused caption is visible; touch selects immediately, so learning requires opening the wrong page. Rotary preview exists but the drawer itself needs a touch to open.
+Smallest remedy: Keep the requested icon-only top navigation, but add an intentional preview/focus affordance in the drawer or a compact labeled learning view. Do not rely on a universal-icon claim.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:781–791; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1128–1130; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1185–1191
+Verification: Native ui-menu.png and source. This supersedes the earlier optimistic description of a 'labeled drawer': it has one focused caption, not twelve labeled choices.
+
+WF09 [MEDIUM] Stick Guide paging is a toggle disguised as directional navigation
+Impact: PREV at the first page opens the second page, NEXT at the second page opens the first, and rotary motion does nothing. PAGE changes the global screen instead of the guide page. There is no visible1/2 page position.
+Smallest remedy: Show a small page count and provide one consistent directional paging path through touch and hardware. For only two pages, one clearly named 'More commands' toggle is smaller and more truthful.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:693–730; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1196–1203; /Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/STK.lua:47–64
+Verification: Probe: rotary NEXT kept commandPage1; PREV taps1->2->1. Toolbox RT/LT moves the visible command window and PN/PP changes reference stick mode.
+
+WF10 [MEDIUM] Off/None affects setup-list visibility but not the visible feature destination
+Impact: VTX reference lists Off still exposes eight favourite cards. RC protocol None reduces Setup to four lists while telemetry and eligible Auto/native MSP can work. Users cannot infer whether a setting disables behavior, hides configuration, or only changes a label.
+Smallest remedy: Define and label the setting's actual scope. Keep available live information visible, but show a clear capability/disabled explanation and a direct route to the controlling setting.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:184–220; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:355; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:360–362; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1051–1070; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1085–1091
+Verification: Static conditions: visible(draft) gates settings lists; groups/destinations are unconditional. MSP explicitly allows profileNone. No hardware inference required.
+
+WF11 [MEDIUM] SAVE and REVERT have two different scopes behind identical buttons
+Impact: General Save commits drafts across settings lists, while the battery page saves only its separate battery draft. Revert on one page does not revert the other draft. The user sees the same buttons without a scope explanation.
+Smallest remedy: Use one settings transaction model or explicitly label the separate battery save scope. Expose pending changes and do not imply that one Save commits every setting.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:97–114; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:257–260; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:278; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:287–288; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:315–322
+Verification: Two independent active/draft/path stores, two save() functions and input delegation for section3.
+
+WF12 [LOW] Some button-like controls have no action or no feedback
+Impact: NORTH UP is drawn like adjacent buttons but has no handler. SET CELL COUNT on Power looks actionable but is only text and has no direct route. Refresh buttons update source caches without completion feedback.
+Smallest remedy: Render fixed orientation as metadata, turn actionable setup hints into direct links, and provide a short refresh result/age indicator.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:604–606; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:954; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1207–1209; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:536–540
+Verification: Track touch handlers cover mode/zoom/home only; Power has no body input handler.
+
+WF13 [LOW] ENTER has unrelated and mostly invisible behavior across pages
+Impact: ENTER cycles stick mode, advances an arming reason, rescans Sensors, toggles settings edit, or refreshes telemetry source caches. Users must learn these by page, and most pages do not show the key's meaning.
+Smallest remedy: Show the primary page action consistently and make ENTER activate the selected visible control. Remove undocumented no-feedback refresh actions where no action is needed.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1196–1209; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:430–431; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:655–665
+Verification: Event dispatch directly demonstrates the five behavior classes.
+
+WF14 [LOW] Attitude is polled twice in a rendered frame
+Impact: The fast callback polls pitch/roll before the draw throttle, then sample() polls them again for every redraw. The extra pass adds API work and can use slightly different values for cadence metrics and the visible frame.
+Smallest remedy: Have sample() reuse the immediately preceding attitude snapshot; preserve the fast callback rate and transport ordering.
+Evidence: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:404–419; /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1213–1218
+Verification: Static call path; this is redundant work, not proof of the original slow-attitude cause.
+
+TASK COUNTS
+Counts are taps/PAGE events, not seconds; cold section memories and a starting Flight screen are assumed. The JSON contains full routes and caveats.
+- View telemetry: touch 1; hardware 1.
+- View GPS coordinates: touch 1; hardware 3.
+- View track: touch 2; hardware 2.
+- Read battery or link details: touch 1; hardware {"power":4,"link":5}.
+- Open arming-stop explanation: touch 1; hardware 6.
+- Open Sensor Inspector: touch 2; hardware 3.
+- Open all-screens drawer: touch 1; hardware incomplete. No physical opener. Rotary focus works only after touching the grid.
+- Edit and save battery cell count by one: touch 6; hardware incomplete. Can open Setup in4 PAGE presses, but list selection and Save need touch.
+- Read the second Stick Guide page: touch 2; hardware incomplete. PAGE opens a different screen and rotary NEXT has no guide handler.
+- Change one saved VTX frequency by1MHz: touch 5; hardware incomplete. No physical commit/list access; opening favourites is a touch action.
+- Cancel an unsaved edit: touch 1; hardware incomplete. RTN exits the full app; ENTER ends editing without applying; no physical revert control.
+- Capture automatic home while watching Flight: touch blocked/automatic failure; hardware incomplete. Automatic capture does not execute until a GPS renderer is visited.
+
+RECOMMENDED SMALLEST SEQUENCE
+1. Complete the physical menu/edit/cancel contract before changing appearance again.
+2. Move home/track state updates out of renderers; keep one shared telemetry sample.
+3. Stop same-page resource reloads and remove page headers overwritten by the shell.
+4. Reduce duplicate navigation or align its orders; retain the icon-only top bar requested by the user while giving unfamiliar drawer icons a learnable preview.
+5. Make local capability labels, Save scope and inert/reference controls explicit.
+6. Then verify native screenshots under long/missing/warning values and compare physical-radio responsiveness with identical radio/quad/RF state.
+
+The current audit does not recommend another wholesale visual restart. It identifies specific workflow and composition faults that can be corrected while retaining the cockpit texture, circular attitude instrument and the new icon family.
+

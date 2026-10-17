@@ -1,3 +1,7 @@
+RETIRED 2026-10-16 — standalone tool removed from source/install/radio.
+AERODECK now contains the read-only FC connection; see TELEMETRY-CONNECTION.txt.
+The following notes describe the historical investigation, not another test to run.
+
 ATTITUDE TEST — standalone TX16S diagnostic
 Status updated 2026-10-14. Investigation ongoing; no confirmed fix.
 

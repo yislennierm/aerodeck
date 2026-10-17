@@ -1,0 +1,46 @@
+AERODECK — MATERIAL-ICONS-20261016
+ICON ASSET RECORD. Current local build: UI-ALIGN-20261016; see UI-ALIGN.txt.
+Neither local Material nor UI-Align build is recorded as installed.
+Last verified radio build remains HOME-ICON-20261016; DEPLOYMENT.txt is unchanged.
+
+Material Symbols Outlined, 400 weight / 24 optical source family matching Home.
+Native 30 px main navigation:
+  Flight=speed; Data=table_chart; GPS=my_location;
+  Video=head_mounted_device; Setup=tune; Tools=build.
+Home remains the installed Material home30px image.
+
+Native 18 px context tabs, retaining labels:
+  Instruments=speed; ArmStops=gpp_bad; Telemetry=table_chart;
+  Power=battery_full; RCLink=cell_tower; GPSDetails=my_location;
+  Track/Home=route; Video=head_mounted_device; StickGuide=sports_esports;
+  Sensors=sensors; Diagnostics=bug_report.
+Setup retains its existing category header/list. Secondary symbols stay within
+context tabs; the main bar still contains six stable sections plus Home.
+
+Main masks 30x30 are centered in the 34 px bar at y2. Detail masks 18x18 sit at
+x+5,y39 inside 23 px tab rows; text starts x+28 and fits within each measured
+budget. FM / replaces the redundant FLIGHT / prefix to keep more mode text.
+Long captions are fitted with an ellipsis. Touch and physical-key hit areas,
+selected backplate, underline and focus remain unchanged. Navigation tints
+indicate selection; shield/bug icons do not imply current warnings.
+
+Files: sdcard/SCRIPTS/TOOLS/AERODECK/icons/*.png
+Editable SVGs: development/icons/material/masters/
+Unmodified SVGs: development/icons/material/originals/
+Asset dimensions/hashes and provenance: development/icons/material/assets.json
+Apache 2.0 license and source/modification notes accompany the radio assets.
+30px proposal masters are optically centered to 26 px maximum ink extent;
+18 px exports are rasterized once from those SVGs, not scaled at runtime.
+
+Bitmap.toMask converts opaque black-on-white RGB PNGs; grey smooths edges.
+A lazy cache retains each mask or a failed-load marker across pages. On cold
+loads only, collect prior decoded images before opening another bitmap to
+bound temporary bitmap memory. Warm draws have no SD reads, conversions,
+explicit collection or filename construction. Missing/wrong-size assets or
+unavailable APIs use the original line symbols without repeated load retries.
+Exit/reopen AERODECK after replacing a PNG.
+
+The verified pitch-only CRSF radian sign correction is preserved. Attitude
+polling, sensor binding/freshness, MSP, model settings and compact widget are
+unchanged. Verification uses portable tests and native synthetic previews;
+physical-radio pose, timing and icon recognition require user evaluation.

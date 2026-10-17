@@ -1,0 +1,177 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.luac SHA256 9a9386063bfc2ceb1228441de05c40b84459c173f6d05eadbe63e27844fffbb3
+
+FUNCTION main params 0 vararg 1 stack 12 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 135), ('F', 1, 135), ('D', 1, 135), ('X', 1, 135), ('(for generator)', 5, 9), ('(for state)', 5, 9), ('(for control)', 5, 9), ('i', 6, 7), ('v', 6, 7), ('(for generator)', 122, 134), ('(for state)', 122, 134), ('(for control)', 122, 134), ('i', 123, 132), ('v', 123, 132)]
+K0 'ipairs'
+K1 'MODCFG'
+K2 'pages'
+K3 'vis'
+K4 False
+K5 'pagesByID'
+K6 'MDL'
+K7 True
+K8 'IND'
+K9 'S'
+K10 'MDL_RCP_ON'
+K11 'RCL'
+K12 'fm'
+K13 'sxx'
+K14 'BAT'
+K15 'MDL_BTV_ON'
+K16 'BFV'
+K17 'pgg'
+K18 'FC'
+K19 'MDL_FC_ON'
+K20 'VTX'
+K21 'MDL_VTX_ON'
+K22 'VFV'
+K23 'VTX_CONN_TYPE'
+K24 0
+K25 'INDBF'
+K26 'MDL_FC'
+K27 1
+K28 'GPS'
+K29 'MDL_GPS_ON'
+K30 'RCP_pID'
+K31 'TBS'
+K32 'UI'
+K33 'APP'
+K34 'pagesVisible'
+K35 'table'
+K36 'insert'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABUP  R4 = UP0[K0('ipairs')]
+   3 [  12] GETTABLE  R5 = R2[K1('MODCFG')]
+   4 [  12] GETTABLE  R5 = R5[K2('pages')]
+   5 [  12] CALL      A=4 B=2 C=4
+   6 [  12] JMP       A=0 ->8
+   7 [  13] SETTABLE  R8[K3('vis')] = K4(False)
+   8 [  12] TFORCALL  A=4 B=0 C=2
+   9 [  12] TFORLOOP  A=6 ->7
+  10 [  16] GETTABLE  R4 = R2[K1('MODCFG')]
+  11 [  16] GETTABLE  R4 = R4[K5('pagesByID')]
+  12 [  16] GETTABLE  R4 = R4[K6('MDL')]
+  13 [  16] SETTABLE  R4[K3('vis')] = K7(True)
+  14 [  17] GETTABLE  R4 = R2[K1('MODCFG')]
+  15 [  17] GETTABLE  R4 = R4[K5('pagesByID')]
+  16 [  17] GETTABLE  R4 = R4[K8('IND')]
+  17 [  17] SETTABLE  R4[K3('vis')] = K7(True)
+  18 [  18] GETTABLE  R4 = R2[K9('S')]
+  19 [  18] GETTABLE  R4 = R4[K10('MDL_RCP_ON')]
+  20 [  18] TEST      A=4 B=0 C=0
+  21 [  18] JMP       A=0 ->108
+  22 [  19] GETTABLE  R4 = R2[K1('MODCFG')]
+  23 [  19] GETTABLE  R4 = R4[K5('pagesByID')]
+  24 [  19] GETTABLE  R4 = R4[K11('RCL')]
+  25 [  19] GETTABLE  R5 = R2[K9('S')]
+  26 [  19] GETTABLE  R5 = R5[K10('MDL_RCP_ON')]
+  27 [  19] SETTABLE  R4[K3('vis')] = R5
+  28 [  20] GETTABLE  R4 = R0[K12('fm')]
+  29 [  20] GETTABLE  R4 = R4[K13('sxx')]
+  30 [  20] TEST      A=4 B=0 C=0
+  31 [  20] JMP       A=0 ->108
+  32 [  21] GETTABLE  R4 = R2[K1('MODCFG')]
+  33 [  21] GETTABLE  R4 = R4[K5('pagesByID')]
+  34 [  21] GETTABLE  R4 = R4[K14('BAT')]
+  35 [  21] GETTABLE  R5 = R2[K9('S')]
+  36 [  21] GETTABLE  R5 = R5[K15('MDL_BTV_ON')]
+  37 [  21] SETTABLE  R4[K3('vis')] = R5
+  38 [  22] GETTABLE  R4 = R2[K1('MODCFG')]
+  39 [  22] GETTABLE  R4 = R4[K5('pagesByID')]
+  40 [  22] GETTABLE  R4 = R4[K16('BFV')]
+  41 [  22] GETTABLE  R5 = R0[K12('fm')]
+  42 [  22] GETTABLE  R5 = R5[K17('pgg')]
+  43 [  22] TEST      A=5 B=0 C=0
+  44 [  22] JMP       A=0 ->47
+  45 [  22] GETTABLE  R5 = R2[K9('S')]
+  46 [  22] GETTABLE  R5 = R5[K15('MDL_BTV_ON')]
+  47 [  22] SETTABLE  R4[K3('vis')] = R5
+  48 [  23] GETTABLE  R4 = R2[K1('MODCFG')]
+  49 [  23] GETTABLE  R4 = R4[K5('pagesByID')]
+  50 [  23] GETTABLE  R4 = R4[K18('FC')]
+  51 [  23] GETTABLE  R5 = R2[K9('S')]
+  52 [  23] GETTABLE  R5 = R5[K19('MDL_FC_ON')]
+  53 [  23] SETTABLE  R4[K3('vis')] = R5
+  54 [  24] GETTABLE  R4 = R2[K1('MODCFG')]
+  55 [  24] GETTABLE  R4 = R4[K5('pagesByID')]
+  56 [  24] GETTABLE  R4 = R4[K20('VTX')]
+  57 [  24] GETTABLE  R5 = R2[K9('S')]
+  58 [  24] GETTABLE  R5 = R5[K21('MDL_VTX_ON')]
+  59 [  24] SETTABLE  R4[K3('vis')] = R5
+  60 [  25] GETTABLE  R4 = R2[K1('MODCFG')]
+  61 [  25] GETTABLE  R4 = R4[K5('pagesByID')]
+  62 [  25] GETTABLE  R4 = R4[K22('VFV')]
+  63 [  25] GETTABLE  R5 = R0[K12('fm')]
+  64 [  25] GETTABLE  R5 = R5[K17('pgg')]
+  65 [  25] TEST      A=5 B=0 C=0
+  66 [  25] JMP       A=0 ->77
+  67 [  25] GETTABLE  R5 = R2[K9('S')]
+  68 [  25] GETTABLE  R5 = R5[K21('MDL_VTX_ON')]
+  69 [  25] TEST      A=5 B=0 C=0
+  70 [  25] JMP       A=0 ->77
+  71 [  25] GETTABLE  R5 = R2[K9('S')]
+  72 [  25] GETTABLE  R5 = R5[K23('VTX_CONN_TYPE')]
+  73 [  25] LT        A=1 K24(0), R5; skip-next if condition != A
+  74 [  25] JMP       A=0 ->76
+  75 [  25] LOADBOOL  A=5 B=0 C=1
+  76 [  25] LOADBOOL  A=5 B=1 C=0
+  77 [  25] SETTABLE  R4[K3('vis')] = R5
+  78 [  26] GETTABLE  R4 = R2[K1('MODCFG')]
+  79 [  26] GETTABLE  R4 = R4[K5('pagesByID')]
+  80 [  26] GETTABLE  R4 = R4[K25('INDBF')]
+  81 [  26] SETTABLE  R4[K3('vis')] = K4(False)
+  82 [  27] GETTABLE  R4 = R2[K9('S')]
+  83 [  27] GETTABLE  R4 = R4[K19('MDL_FC_ON')]
+  84 [  27] TEST      A=4 B=0 C=0
+  85 [  27] JMP       A=0 ->94
+  86 [  28] GETTABLE  R4 = R2[K9('S')]
+  87 [  28] GETTABLE  R4 = R4[K26('MDL_FC')]
+  88 [  28] EQ        A=0 R4, K27(1); skip-next if condition != A
+  89 [  28] JMP       A=0 ->94
+  90 [  29] GETTABLE  R4 = R2[K1('MODCFG')]
+  91 [  29] GETTABLE  R4 = R4[K5('pagesByID')]
+  92 [  29] GETTABLE  R4 = R4[K25('INDBF')]
+  93 [  29] SETTABLE  R4[K3('vis')] = K7(True)
+  94 [  32] GETTABLE  R4 = R2[K1('MODCFG')]
+  95 [  32] GETTABLE  R4 = R4[K5('pagesByID')]
+  96 [  32] GETTABLE  R4 = R4[K28('GPS')]
+  97 [  32] GETTABLE  R5 = R2[K9('S')]
+  98 [  32] GETTABLE  R5 = R5[K29('MDL_GPS_ON')]
+  99 [  32] TEST      A=5 B=0 C=0
+ 100 [  32] JMP       A=0 ->107
+ 101 [  32] GETTABLE  R5 = R2[K9('S')]
+ 102 [  32] GETTABLE  R5 = R5[K30('RCP_pID')]
+ 103 [  32] EQ        A=1 R5, K31('TBS'); skip-next if condition != A
+ 104 [  32] JMP       A=0 ->106
+ 105 [  32] LOADBOOL  A=5 B=0 C=1
+ 106 [  32] LOADBOOL  A=5 B=1 C=0
+ 107 [  32] SETTABLE  R4[K3('vis')] = R5
+ 108 [  35] GETTABLE  R4 = R2[K1('MODCFG')]
+ 109 [  35] GETTABLE  R4 = R4[K5('pagesByID')]
+ 110 [  35] GETTABLE  R4 = R4[K32('UI')]
+ 111 [  35] SETTABLE  R4[K3('vis')] = K7(True)
+ 112 [  36] GETTABLE  R4 = R2[K1('MODCFG')]
+ 113 [  36] GETTABLE  R4 = R4[K5('pagesByID')]
+ 114 [  36] GETTABLE  R4 = R4[K33('APP')]
+ 115 [  36] SETTABLE  R4[K3('vis')] = K7(True)
+ 116 [  38] GETTABLE  R4 = R2[K1('MODCFG')]
+ 117 [  38] NEWTABLE  A=5 B=0 C=0
+ 118 [  38] SETTABLE  R4[K34('pagesVisible')] = R5
+ 119 [  40] GETTABUP  R4 = UP0[K0('ipairs')]
+ 120 [  40] GETTABLE  R5 = R2[K1('MODCFG')]
+ 121 [  40] GETTABLE  R5 = R5[K2('pages')]
+ 122 [  40] CALL      A=4 B=2 C=4
+ 123 [  40] JMP       A=0 ->133
+ 124 [  41] GETTABLE  R9 = R8[K3('vis')]
+ 125 [  41] TEST      A=9 B=0 C=0
+ 126 [  41] JMP       A=0 ->133
+ 127 [  42] GETTABUP  R9 = UP0[K35('table')]
+ 128 [  42] GETTABLE  R9 = R9[K36('insert')]
+ 129 [  42] GETTABLE  R10 = R2[K1('MODCFG')]
+ 130 [  42] GETTABLE  R10 = R10[K34('pagesVisible')]
+ 131 [  42] MOVE      A=11 B=8 C=0
+ 132 [  42] CALL      A=9 B=3 C=1
+ 133 [  40] TFORCALL  A=4 B=0 C=2
+ 134 [  40] TFORLOOP  A=6 ->124
+ 135 [  44] RETURN    A=0 B=1 C=0

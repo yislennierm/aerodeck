@@ -1,0 +1,49 @@
+AERODECK — FLIGHT-SPACE-20261016
+LOCAL ONLY. Not installed on the radio.
+Previous local build: FLIGHT-CENTER-20261016.
+Last verified radio build remains HOME-ICON-20261016; DEPLOYMENT.txt is unchanged.
+
+Flight now gives useful instrument data more of the480x272 screen. The visible
+attitude area is232x182 instead of184x122:88.1% more area. The full native HUD
+field is324x182 at(78,62), centered on(240,153). Aircraft, zero-pitch horizon and
+both primary tape readouts share that datum. True10-degree pitch marks retain
+the native1.85px/degree scale. Ground-speed ticks remain nonnegative.
+Compact live P/R readouts show signed pitch/roll degrees in the upper corners.
+They replace the bank arc so guide marks do not cross pitch captions. Missing
+attitude does not produce synthetic angles.
+
+The six-icon navigation is retained. The permanent Flight/Arm Stops tab row is
+replaced on Flight by the heading ribbon and a compact shield control. Touch
+the shield to open Arm Stops. With no current focus, press ENTER once to focus
+the shield and again to open its read-only reasons page; RTN returns to Flight.
+Other pages retain their context tabs and controls. No FC arming command is sent.
+
+Side panels narrow from88px to70px. Caption units allow the main readings to
+retain the native29px MIDSIZE font. Link quality, RSSI and TX power remain on
+the left, with actual SNR telemetry in dB below. The right rail retains pack/
+cell voltage and remaining, adds current in its own block, and keeps used mAh.
+Remaining estimated from capacity retains its ~ prefix. Missing values stay --.
+
+The normal Flight footer now contains only flight mode, local-home distance,
+satellite count and MSP status. It no longer repeats the side-panel LQ, RSSI or
+pack voltage. Existing HOME/current body cards are removed to extend the HUD.
+Battery/link/no-telemetry warnings still replace the full26px footer and retain
+their detail action. Satellite count is not a GPS fix-type claim; local home
+does not alter the FC home. Other pages keep their existing status footer.
+
+No new runtime image is added. Attitude uses the native HUD primitive and
+existing cached icons. Telemetry sources, freshness, pitch convention, read-only
+MSP scheduling, settings formats and the full/compact widget are unchanged.
+There are no new transport requests, runtime SD writes or FC/model/output writes.
+
+Release requires12 passing portable suites and matching-source native QA across
+all12 pages. Exact counts and hashes are recorded dynamically in
+development/build-FLIGHT-SPACE-20261016.json. Current native previews:
+development/ui-previews/flight-space/. These use synthetic fixture telemetry;
+physical-radio rendering, pose and latency are not newly verified here.
+
+AERODECK-install.zip contains the same39 runtime filenames plus15 root documents,
+54 entries in total. Only the main runtime source changes. Existing artwork is
+retained locally as inactive history where unused; this release deletes no
+files. The helper has only package/apply commands, guards the prior local
+baseline and backs up changed targets. Nothing is deployed to the radio.

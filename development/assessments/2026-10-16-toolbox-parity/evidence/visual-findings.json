@@ -1,0 +1,66 @@
+[
+  {
+    "id": "VIS01",
+    "severity": "medium",
+    "title": "Custom VTX card label is overwritten",
+    "observed": "In the native custom-frequency fixture, CUSTOM measures98px at x15. Its card spans x8\u201382; the next card starts x87 and paints over the text. This is reproduced clipping, not a general impression.",
+    "remedy": "Use the frequency as the primary label when no standard channel exists; fit or wrap secondary text to a measured content box.",
+    "evidence": "telem.lua1044\u20131059; screens/audit-video-custom.png; native lcd.sizeText measurement."
+  },
+  {
+    "id": "VIS02",
+    "severity": "low",
+    "title": "Arming title has no right gutter",
+    "observed": "Accelerometer not calibrated measures313px at x159, ending at x472, the panel edge. It fits in the inspected native runtime; it is not proven clipped.",
+    "remedy": "Reserve an8px inner gutter and wrap the title by measured width, rather than shrinking every title.",
+    "evidence": "telem.lua1017\u20131020; screens/audit-arm-24.png."
+  },
+  {
+    "id": "VIS03",
+    "severity": "medium",
+    "title": "Read-only setup lists still offer editing actions",
+    "observed": "VTX category8 contains four informational rows, including NOT IMPLEMENTED, but uses selection/edit styling and presents minus, plus, Save and Revert. Application category12 is mostly notes but its MSP control really works.",
+    "remedy": "Render notes as status/help. Offer edit/commit controls only for editable items and show their scope. Do not remove the working MSP Off action.",
+    "evidence": "telem.lua198,203\u2013204,311\u2013341; screens/audit-config-08.png."
+  },
+  {
+    "id": "VIS04",
+    "severity": "medium",
+    "title": "Shell and page renderers both own the same header space",
+    "observed": "Legacy page headers/status are drawn before the shell covers them. Examples include Sensor Inspector source count and prior live-data badges. This is actual render composition overlap, even where the final screenshot looks tidy.",
+    "remedy": "Let the shell own header/footer rectangles; render each needed status exactly once in an assigned body region.",
+    "evidence": "telem.lua669\u2013671,771\u2013777,865\u2013872,1111\u20131165,1224\u20131227; WF06."
+  },
+  {
+    "id": "VIS05",
+    "severity": "low",
+    "title": "Graphs show samples without usable scales",
+    "observed": "Power and RC Link traces show a sample count but no time axis, numerical scale or min/max. Voltage uses a zero-based pack-dependent range and current a fixed0\u2013100A range, so small changes can look flat.",
+    "remedy": "Show units, latest/min/max and a defined time window; use stable bounded scales with gaps for missing data.",
+    "evidence": "telem.lua931\u2013968; screens/audit-power.png; screens/audit-link.png."
+  },
+  {
+    "id": "VIS06",
+    "severity": "medium",
+    "title": "Technical values change meaning across views",
+    "observed": "Telemetry converts attitude to degrees; Sensor Inspector displays raw0.19/0.49 radians without units. RFMD3 and DOWN99% are not explained. GPS Details accurately refuses to invent a fix, but the long unavailable message occupies the small satellite summary.",
+    "remedy": "Use shared value formatting and source identity, decode RF captions only with known protocol/version, and place compact unavailable labels with detail on selection.",
+    "evidence": "telem.lua404\u2013429,655\u2013689,959\u2013968; CORE12/13/32; screens/audit-sensors.png."
+  },
+  {
+    "id": "VIS07",
+    "severity": "medium",
+    "title": "Fixed metadata is styled as a command",
+    "observed": "Track NORTH UP is drawn like adjacent enabled buttons, but no handler covers it. The LIVE SENSORS button refreshes binding metadata and has no confirmation; it does not change live/demo mode.",
+    "remedy": "Draw North up as plot metadata. Name refresh by what it does and acknowledge completion.",
+    "evidence": "telem.lua536\u2013540,604\u2013606,1207\u20131209; screens/audit-track.png."
+  },
+  {
+    "id": "VIS08",
+    "severity": "medium",
+    "title": "Space is allocated to repeated status and navigation",
+    "observed": "Top bar34px + context26px + footer26px =86/272px (31.6%). The shared main content is180px high. Flight repeats link and pack readings in sidebars/footer. The size alone is not a defect; redundant content must earn its space.",
+    "remedy": "Preserve cockpit geometry initially. Remove redundant navigation before shrinking targets or instrument art; reuse a single stable status/alert presentation.",
+    "evidence": "telem.lua1085\u20131165; workflow information_architecture; screens/audit-flight.png."
+  }
+]

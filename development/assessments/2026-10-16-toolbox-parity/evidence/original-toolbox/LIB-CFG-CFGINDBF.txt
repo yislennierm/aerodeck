@@ -1,0 +1,745 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.luac SHA256 11488ed418cd6c24e1dde2f8d6d5a959e75ee2e785468c88dd6cb9e3bac3ca3b
+
+FUNCTION main params 0 vararg 1 stack 14 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 330), ('F', 1, 330), ('D', 1, 330), ('X', 1, 330), ('T', 1, 330), ('listInd', 21, 330), ('listInd2', 25, 330), ('listSwPos', 75, 330)]
+K0 'pID'
+K1 'INDBF'
+K2 'pN'
+K3 'BETAFLIGHT INDICATORS'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 350
+K8 320
+K9 170
+K10 100
+K11 0
+K12 'OFF'
+K13 'Switch'
+K14 'srcTypes'
+K15 'fm'
+K16 'pgg'
+K17 1
+K18 2
+K19 3
+K20 'table'
+K21 'insert'
+K22 'Logic Switch'
+K23 'sxx'
+K24 'Telemetry'
+K25 '---'
+K26 'up'
+K27 'mid'
+K28 'down'
+K29 'not up'
+K30 'not mid'
+K31 'not down'
+K32 'updateSwDisplay'
+K33 'cv'
+K34 '_FMAC_srct'
+K35 'o'
+K36 1
+K37 'l'
+K38 'Acro mode'
+K39 'v'
+K40 0
+K41 't'
+K42 'L'
+K43 'lv'
+K44 '_FMAC_swn'
+K45 2
+K46 ' switch name'
+K47 'NT'
+K48 'm'
+K49 'x'
+K50 'RD'
+K51 'SW'
+K52 'i'
+K53 '_FMAC_swp'
+K54 ' switch positon'
+K55 '_FMAC_lsn'
+K56 4
+K57 ' logical switch number'
+K58 'N'
+K59 64
+K60 'f'
+K61 '%1d'
+K62 '_FMHR_srct'
+K63 5
+K64 'Horizon mode'
+K65 '_FMHR_swn'
+K66 6
+K67 '_FMHR_swp'
+K68 7
+K69 '_FMHR_lsn'
+K70 8
+K71 '_FMAN_srct'
+K72 9
+K73 'Angle mode'
+K74 '_FMAN_swn'
+K75 10
+K76 '_FMAN_swp'
+K77 11
+K78 '_FMAN_lsn'
+K79 12
+K80 '_AM_srct'
+K81 13
+K82 'Air mode'
+K83 '_AM_swn'
+K84 14
+K85 '_AM_swp'
+K86 15
+K87 '_AM_lsn'
+K88 16
+K89 '_TU_srct'
+K90 17
+K91 'Tutrtle mode'
+K92 '_TU_swn'
+K93 18
+K94 '_TU_swp'
+K95 19
+K96 '_TU_lsn'
+K97 20
+K98 'frun'
+K99 'PLIBCFG'
+K100 'CFGSWDE'
+K101 'FMAC'
+K102 'S'
+K103 'IN_FMAC_src'
+K104 'FMHR'
+K105 'IN_FMHR_src'
+K106 'FMAN'
+K107 'IN_FMAN_src'
+K108 'AM'
+K109 'IN_AM_src'
+K110 'TU'
+K111 'IN_TU_src'
+K112 'updateDisp'
+K113 'onSave'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('INDBF')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('BETAFLIGHT INDICATORS')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (350)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (170)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (100)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  14] NEWTABLE  A=5 B=1 C=1
+  19 [  14] SETTABLE  R5[K11(0)] = K12('OFF')
+  20 [  14] LOADK     R6 = K13 ('Switch')
+  21 [  14] SETLIST   A=5 B=1 C=1
+  22 [  15] NEWTABLE  A=6 B=1 C=1
+  23 [  15] SETTABLE  R6[K11(0)] = K12('OFF')
+  24 [  15] LOADK     R7 = K13 ('Switch')
+  25 [  15] SETLIST   A=6 B=1 C=1
+  26 [  16] GETTABLE  R7 = R0[K15('fm')]
+  27 [  16] GETTABLE  R7 = R7[K16('pgg')]
+  28 [  16] TEST      A=7 B=0 C=0
+  29 [  16] JMP       A=0 ->38
+  30 [  16] NEWTABLE  A=7 B=3 C=1
+  31 [  16] SETTABLE  R7[K11(0)] = K11(0)
+  32 [  16] LOADK     R8 = K17 (1)
+  33 [  16] LOADK     R9 = K18 (2)
+  34 [  16] LOADK     R10 = K19 (3)
+  35 [  16] SETLIST   A=7 B=3 C=1
+  36 [  16] TEST      A=7 B=0 C=1
+  37 [  16] JMP       A=0 ->43
+  38 [  16] NEWTABLE  A=7 B=2 C=1
+  39 [  16] SETTABLE  R7[K11(0)] = K11(0)
+  40 [  16] LOADK     R8 = K17 (1)
+  41 [  16] LOADK     R9 = K19 (3)
+  42 [  16] SETLIST   A=7 B=2 C=1
+  43 [  16] SETTABLE  R4[K14('srcTypes')] = R7
+  44 [  17] GETTABLE  R7 = R0[K15('fm')]
+  45 [  17] GETTABLE  R7 = R7[K16('pgg')]
+  46 [  17] TEST      A=7 B=0 C=0
+  47 [  17] JMP       A=0 ->58
+  48 [  18] GETTABUP  R7 = UP0[K20('table')]
+  49 [  18] GETTABLE  R7 = R7[K21('insert')]
+  50 [  18] MOVE      A=8 B=5 C=0
+  51 [  18] LOADK     R9 = K22 ('Logic Switch')
+  52 [  18] CALL      A=7 B=3 C=1
+  53 [  19] GETTABUP  R7 = UP0[K20('table')]
+  54 [  19] GETTABLE  R7 = R7[K21('insert')]
+  55 [  19] MOVE      A=8 B=6 C=0
+  56 [  19] LOADK     R9 = K22 ('Logic Switch')
+  57 [  19] CALL      A=7 B=3 C=1
+  58 [  21] GETTABLE  R7 = R0[K15('fm')]
+  59 [  21] GETTABLE  R7 = R7[K23('sxx')]
+  60 [  21] TEST      A=7 B=0 C=0
+  61 [  21] JMP       A=0 ->67
+  62 [  21] GETTABUP  R7 = UP0[K20('table')]
+  63 [  21] GETTABLE  R7 = R7[K21('insert')]
+  64 [  21] MOVE      A=8 B=5 C=0
+  65 [  21] LOADK     R9 = K24 ('Telemetry')
+  66 [  21] CALL      A=7 B=3 C=1
+  67 [  23] NEWTABLE  A=7 B=6 C=1
+  68 [  23] SETTABLE  R7[K11(0)] = K25('---')
+  69 [  23] LOADK     R8 = K26 ('up')
+  70 [  23] LOADK     R9 = K27 ('mid')
+  71 [  23] LOADK     R10 = K28 ('down')
+  72 [  23] LOADK     R11 = K29 ('not up')
+  73 [  23] LOADK     R12 = K30 ('not mid')
+  74 [  23] LOADK     R13 = K31 ('not down')
+  75 [  23] SETLIST   A=7 B=6 C=1
+  76 [  34] CLOSURE   R8 = proto[0]
+  77 [  34] SETTABLE  R4[K32('updateSwDisplay')] = R8
+  78 [  37] NEWTABLE  A=8 B=0 C=0
+  79 [  37] SETTABLE  R4[K33('cv')] = R8
+  80 [  38] GETTABLE  R8 = R4[K33('cv')]
+  81 [  38] NEWTABLE  A=9 B=0 C=5
+  82 [  38] SETTABLE  R9[K35('o')] = K36(1)
+  83 [  38] SETTABLE  R9[K37('l')] = K38('Acro mode')
+  84 [  38] SETTABLE  R9[K39('v')] = K40(0)
+  85 [  38] SETTABLE  R9[K41('t')] = K42('L')
+  86 [  38] SETTABLE  R9[K43('lv')] = R5
+  87 [  38] SETTABLE  R8[K34('_FMAC_srct')] = R9
+  88 [  39] GETTABLE  R8 = R4[K33('cv')]
+  89 [  39] NEWTABLE  A=9 B=0 C=7
+  90 [  39] SETTABLE  R9[K35('o')] = K45(2)
+  91 [  39] SETTABLE  R9[K37('l')] = K46(' switch name')
+  92 [  39] SETTABLE  R9[K39('v')] = K40(0)
+  93 [  39] SETTABLE  R9[K41('t')] = K47('NT')
+  94 [  39] SETTABLE  R9[K48('m')] = K40(0)
+  95 [  39] GETTABLE  R10 = R2[K50('RD')]
+  96 [  39] GETTABLE  R10 = R10[K51('SW')]
+  97 [  39] LEN       A=10 B=10 C=0
+  98 [  39] SETTABLE  R9[K49('x')] = R10
+  99 [  39] SETTABLE  R9[K52('i')] = K36(1)
+ 100 [  39] SETTABLE  R8[K44('_FMAC_swn')] = R9
+ 101 [  40] GETTABLE  R8 = R4[K33('cv')]
+ 102 [  40] NEWTABLE  A=9 B=0 C=5
+ 103 [  40] SETTABLE  R9[K35('o')] = K19(3)
+ 104 [  40] SETTABLE  R9[K37('l')] = K54(' switch positon')
+ 105 [  40] SETTABLE  R9[K39('v')] = K40(0)
+ 106 [  40] SETTABLE  R9[K41('t')] = K42('L')
+ 107 [  40] SETTABLE  R9[K43('lv')] = R7
+ 108 [  40] SETTABLE  R8[K53('_FMAC_swp')] = R9
+ 109 [  41] GETTABLE  R8 = R4[K33('cv')]
+ 110 [  41] NEWTABLE  A=9 B=0 C=8
+ 111 [  41] SETTABLE  R9[K35('o')] = K56(4)
+ 112 [  41] SETTABLE  R9[K37('l')] = K57(' logical switch number')
+ 113 [  41] SETTABLE  R9[K39('v')] = K36(1)
+ 114 [  41] SETTABLE  R9[K41('t')] = K58('N')
+ 115 [  41] SETTABLE  R9[K48('m')] = K36(1)
+ 116 [  41] SETTABLE  R9[K49('x')] = K59(64)
+ 117 [  41] SETTABLE  R9[K52('i')] = K36(1)
+ 118 [  41] SETTABLE  R9[K60('f')] = K61('%1d')
+ 119 [  41] SETTABLE  R8[K55('_FMAC_lsn')] = R9
+ 120 [  43] GETTABLE  R8 = R4[K33('cv')]
+ 121 [  43] NEWTABLE  A=9 B=0 C=5
+ 122 [  43] SETTABLE  R9[K35('o')] = K63(5)
+ 123 [  43] SETTABLE  R9[K37('l')] = K64('Horizon mode')
+ 124 [  43] SETTABLE  R9[K39('v')] = K40(0)
+ 125 [  43] SETTABLE  R9[K41('t')] = K42('L')
+ 126 [  43] SETTABLE  R9[K43('lv')] = R5
+ 127 [  43] SETTABLE  R8[K62('_FMHR_srct')] = R9
+ 128 [  44] GETTABLE  R8 = R4[K33('cv')]
+ 129 [  44] NEWTABLE  A=9 B=0 C=7
+ 130 [  44] SETTABLE  R9[K35('o')] = K66(6)
+ 131 [  44] SETTABLE  R9[K37('l')] = K46(' switch name')
+ 132 [  44] SETTABLE  R9[K39('v')] = K40(0)
+ 133 [  44] SETTABLE  R9[K41('t')] = K47('NT')
+ 134 [  44] SETTABLE  R9[K48('m')] = K40(0)
+ 135 [  44] GETTABLE  R10 = R2[K50('RD')]
+ 136 [  44] GETTABLE  R10 = R10[K51('SW')]
+ 137 [  44] LEN       A=10 B=10 C=0
+ 138 [  44] SETTABLE  R9[K49('x')] = R10
+ 139 [  44] SETTABLE  R9[K52('i')] = K36(1)
+ 140 [  44] SETTABLE  R8[K65('_FMHR_swn')] = R9
+ 141 [  45] GETTABLE  R8 = R4[K33('cv')]
+ 142 [  45] NEWTABLE  A=9 B=0 C=5
+ 143 [  45] SETTABLE  R9[K35('o')] = K68(7)
+ 144 [  45] SETTABLE  R9[K37('l')] = K54(' switch positon')
+ 145 [  45] SETTABLE  R9[K39('v')] = K40(0)
+ 146 [  45] SETTABLE  R9[K41('t')] = K42('L')
+ 147 [  45] SETTABLE  R9[K43('lv')] = R7
+ 148 [  45] SETTABLE  R8[K67('_FMHR_swp')] = R9
+ 149 [  46] GETTABLE  R8 = R4[K33('cv')]
+ 150 [  46] NEWTABLE  A=9 B=0 C=8
+ 151 [  46] SETTABLE  R9[K35('o')] = K70(8)
+ 152 [  46] SETTABLE  R9[K37('l')] = K57(' logical switch number')
+ 153 [  46] SETTABLE  R9[K39('v')] = K36(1)
+ 154 [  46] SETTABLE  R9[K41('t')] = K58('N')
+ 155 [  46] SETTABLE  R9[K48('m')] = K36(1)
+ 156 [  46] SETTABLE  R9[K49('x')] = K59(64)
+ 157 [  46] SETTABLE  R9[K52('i')] = K36(1)
+ 158 [  46] SETTABLE  R9[K60('f')] = K61('%1d')
+ 159 [  46] SETTABLE  R8[K69('_FMHR_lsn')] = R9
+ 160 [  48] GETTABLE  R8 = R4[K33('cv')]
+ 161 [  48] NEWTABLE  A=9 B=0 C=5
+ 162 [  48] SETTABLE  R9[K35('o')] = K72(9)
+ 163 [  48] SETTABLE  R9[K37('l')] = K73('Angle mode')
+ 164 [  48] SETTABLE  R9[K39('v')] = K40(0)
+ 165 [  48] SETTABLE  R9[K41('t')] = K42('L')
+ 166 [  48] SETTABLE  R9[K43('lv')] = R5
+ 167 [  48] SETTABLE  R8[K71('_FMAN_srct')] = R9
+ 168 [  49] GETTABLE  R8 = R4[K33('cv')]
+ 169 [  49] NEWTABLE  A=9 B=0 C=7
+ 170 [  49] SETTABLE  R9[K35('o')] = K75(10)
+ 171 [  49] SETTABLE  R9[K37('l')] = K46(' switch name')
+ 172 [  49] SETTABLE  R9[K39('v')] = K40(0)
+ 173 [  49] SETTABLE  R9[K41('t')] = K47('NT')
+ 174 [  49] SETTABLE  R9[K48('m')] = K40(0)
+ 175 [  49] GETTABLE  R10 = R2[K50('RD')]
+ 176 [  49] GETTABLE  R10 = R10[K51('SW')]
+ 177 [  49] LEN       A=10 B=10 C=0
+ 178 [  49] SETTABLE  R9[K49('x')] = R10
+ 179 [  49] SETTABLE  R9[K52('i')] = K36(1)
+ 180 [  49] SETTABLE  R8[K74('_FMAN_swn')] = R9
+ 181 [  50] GETTABLE  R8 = R4[K33('cv')]
+ 182 [  50] NEWTABLE  A=9 B=0 C=5
+ 183 [  50] SETTABLE  R9[K35('o')] = K77(11)
+ 184 [  50] SETTABLE  R9[K37('l')] = K54(' switch positon')
+ 185 [  50] SETTABLE  R9[K39('v')] = K40(0)
+ 186 [  50] SETTABLE  R9[K41('t')] = K42('L')
+ 187 [  50] SETTABLE  R9[K43('lv')] = R7
+ 188 [  50] SETTABLE  R8[K76('_FMAN_swp')] = R9
+ 189 [  51] GETTABLE  R8 = R4[K33('cv')]
+ 190 [  51] NEWTABLE  A=9 B=0 C=8
+ 191 [  51] SETTABLE  R9[K35('o')] = K79(12)
+ 192 [  51] SETTABLE  R9[K37('l')] = K57(' logical switch number')
+ 193 [  51] SETTABLE  R9[K39('v')] = K36(1)
+ 194 [  51] SETTABLE  R9[K41('t')] = K58('N')
+ 195 [  51] SETTABLE  R9[K48('m')] = K36(1)
+ 196 [  51] SETTABLE  R9[K49('x')] = K59(64)
+ 197 [  51] SETTABLE  R9[K52('i')] = K36(1)
+ 198 [  51] SETTABLE  R9[K60('f')] = K61('%1d')
+ 199 [  51] SETTABLE  R8[K78('_FMAN_lsn')] = R9
+ 200 [  53] GETTABLE  R8 = R4[K33('cv')]
+ 201 [  53] NEWTABLE  A=9 B=0 C=5
+ 202 [  53] SETTABLE  R9[K35('o')] = K81(13)
+ 203 [  53] SETTABLE  R9[K37('l')] = K82('Air mode')
+ 204 [  53] SETTABLE  R9[K39('v')] = K40(0)
+ 205 [  53] SETTABLE  R9[K41('t')] = K42('L')
+ 206 [  53] SETTABLE  R9[K43('lv')] = R6
+ 207 [  53] SETTABLE  R8[K80('_AM_srct')] = R9
+ 208 [  54] GETTABLE  R8 = R4[K33('cv')]
+ 209 [  54] NEWTABLE  A=9 B=0 C=7
+ 210 [  54] SETTABLE  R9[K35('o')] = K84(14)
+ 211 [  54] SETTABLE  R9[K37('l')] = K46(' switch name')
+ 212 [  54] SETTABLE  R9[K39('v')] = K40(0)
+ 213 [  54] SETTABLE  R9[K41('t')] = K47('NT')
+ 214 [  54] SETTABLE  R9[K48('m')] = K40(0)
+ 215 [  54] GETTABLE  R10 = R2[K50('RD')]
+ 216 [  54] GETTABLE  R10 = R10[K51('SW')]
+ 217 [  54] LEN       A=10 B=10 C=0
+ 218 [  54] SETTABLE  R9[K49('x')] = R10
+ 219 [  54] SETTABLE  R9[K52('i')] = K36(1)
+ 220 [  54] SETTABLE  R8[K83('_AM_swn')] = R9
+ 221 [  55] GETTABLE  R8 = R4[K33('cv')]
+ 222 [  55] NEWTABLE  A=9 B=0 C=5
+ 223 [  55] SETTABLE  R9[K35('o')] = K86(15)
+ 224 [  55] SETTABLE  R9[K37('l')] = K54(' switch positon')
+ 225 [  55] SETTABLE  R9[K39('v')] = K40(0)
+ 226 [  55] SETTABLE  R9[K41('t')] = K42('L')
+ 227 [  55] SETTABLE  R9[K43('lv')] = R7
+ 228 [  55] SETTABLE  R8[K85('_AM_swp')] = R9
+ 229 [  56] GETTABLE  R8 = R4[K33('cv')]
+ 230 [  56] NEWTABLE  A=9 B=0 C=8
+ 231 [  56] SETTABLE  R9[K35('o')] = K88(16)
+ 232 [  56] SETTABLE  R9[K37('l')] = K57(' logical switch number')
+ 233 [  56] SETTABLE  R9[K39('v')] = K36(1)
+ 234 [  56] SETTABLE  R9[K41('t')] = K58('N')
+ 235 [  56] SETTABLE  R9[K48('m')] = K36(1)
+ 236 [  56] SETTABLE  R9[K49('x')] = K59(64)
+ 237 [  56] SETTABLE  R9[K52('i')] = K36(1)
+ 238 [  56] SETTABLE  R9[K60('f')] = K61('%1d')
+ 239 [  56] SETTABLE  R8[K87('_AM_lsn')] = R9
+ 240 [  58] GETTABLE  R8 = R4[K33('cv')]
+ 241 [  58] NEWTABLE  A=9 B=0 C=5
+ 242 [  58] SETTABLE  R9[K35('o')] = K90(17)
+ 243 [  58] SETTABLE  R9[K37('l')] = K91('Tutrtle mode')
+ 244 [  58] SETTABLE  R9[K39('v')] = K40(0)
+ 245 [  58] SETTABLE  R9[K41('t')] = K42('L')
+ 246 [  58] SETTABLE  R9[K43('lv')] = R6
+ 247 [  58] SETTABLE  R8[K89('_TU_srct')] = R9
+ 248 [  59] GETTABLE  R8 = R4[K33('cv')]
+ 249 [  59] NEWTABLE  A=9 B=0 C=7
+ 250 [  59] SETTABLE  R9[K35('o')] = K93(18)
+ 251 [  59] SETTABLE  R9[K37('l')] = K46(' switch name')
+ 252 [  59] SETTABLE  R9[K39('v')] = K40(0)
+ 253 [  59] SETTABLE  R9[K41('t')] = K47('NT')
+ 254 [  59] SETTABLE  R9[K48('m')] = K40(0)
+ 255 [  59] GETTABLE  R10 = R2[K50('RD')]
+ 256 [  59] GETTABLE  R10 = R10[K51('SW')]
+ 257 [  59] LEN       A=10 B=10 C=0
+ 258 [  59] SETTABLE  R9[K49('x')] = R10
+ 259 [  59] SETTABLE  R9[K52('i')] = K36(1)
+ 260 [  59] SETTABLE  R8[K92('_TU_swn')] = R9
+ 261 [  60] GETTABLE  R8 = R4[K33('cv')]
+ 262 [  60] NEWTABLE  A=9 B=0 C=5
+ 263 [  60] SETTABLE  R9[K35('o')] = K95(19)
+ 264 [  60] SETTABLE  R9[K37('l')] = K54(' switch positon')
+ 265 [  60] SETTABLE  R9[K39('v')] = K40(0)
+ 266 [  60] SETTABLE  R9[K41('t')] = K42('L')
+ 267 [  60] SETTABLE  R9[K43('lv')] = R7
+ 268 [  60] SETTABLE  R8[K94('_TU_swp')] = R9
+ 269 [  61] GETTABLE  R8 = R4[K33('cv')]
+ 270 [  61] NEWTABLE  A=9 B=0 C=8
+ 271 [  61] SETTABLE  R9[K35('o')] = K97(20)
+ 272 [  61] SETTABLE  R9[K37('l')] = K57(' logical switch number')
+ 273 [  61] SETTABLE  R9[K39('v')] = K36(1)
+ 274 [  61] SETTABLE  R9[K41('t')] = K58('N')
+ 275 [  61] SETTABLE  R9[K48('m')] = K36(1)
+ 276 [  61] SETTABLE  R9[K49('x')] = K59(64)
+ 277 [  61] SETTABLE  R9[K52('i')] = K36(1)
+ 278 [  61] SETTABLE  R9[K60('f')] = K61('%1d')
+ 279 [  61] SETTABLE  R8[K96('_TU_lsn')] = R9
+ 280 [  64] GETTABLE  R8 = R0[K98('frun')]
+ 281 [  64] GETTABLE  R9 = R0[K99('PLIBCFG')]
+ 282 [  64] LOADK     R10 = K100 ('CFGSWDE')
+ 283 [  64] CONCAT    A=9 B=9 C=10
+ 284 [  64] MOVE      A=10 B=4 C=0
+ 285 [  64] LOADK     R11 = K101 ('FMAC')
+ 286 [  64] GETTABLE  R12 = R2[K102('S')]
+ 287 [  64] GETTABLE  R12 = R12[K103('IN_FMAC_src')]
+ 288 [  64] CALL      A=8 B=5 C=1
+ 289 [  65] GETTABLE  R8 = R0[K98('frun')]
+ 290 [  65] GETTABLE  R9 = R0[K99('PLIBCFG')]
+ 291 [  65] LOADK     R10 = K100 ('CFGSWDE')
+ 292 [  65] CONCAT    A=9 B=9 C=10
+ 293 [  65] MOVE      A=10 B=4 C=0
+ 294 [  65] LOADK     R11 = K104 ('FMHR')
+ 295 [  65] GETTABLE  R12 = R2[K102('S')]
+ 296 [  65] GETTABLE  R12 = R12[K105('IN_FMHR_src')]
+ 297 [  65] CALL      A=8 B=5 C=1
+ 298 [  66] GETTABLE  R8 = R0[K98('frun')]
+ 299 [  66] GETTABLE  R9 = R0[K99('PLIBCFG')]
+ 300 [  66] LOADK     R10 = K100 ('CFGSWDE')
+ 301 [  66] CONCAT    A=9 B=9 C=10
+ 302 [  66] MOVE      A=10 B=4 C=0
+ 303 [  66] LOADK     R11 = K106 ('FMAN')
+ 304 [  66] GETTABLE  R12 = R2[K102('S')]
+ 305 [  66] GETTABLE  R12 = R12[K107('IN_FMAN_src')]
+ 306 [  66] CALL      A=8 B=5 C=1
+ 307 [  67] GETTABLE  R8 = R0[K98('frun')]
+ 308 [  67] GETTABLE  R9 = R0[K99('PLIBCFG')]
+ 309 [  67] LOADK     R10 = K100 ('CFGSWDE')
+ 310 [  67] CONCAT    A=9 B=9 C=10
+ 311 [  67] MOVE      A=10 B=4 C=0
+ 312 [  67] LOADK     R11 = K108 ('AM')
+ 313 [  67] GETTABLE  R12 = R2[K102('S')]
+ 314 [  67] GETTABLE  R12 = R12[K109('IN_AM_src')]
+ 315 [  67] CALL      A=8 B=5 C=1
+ 316 [  68] GETTABLE  R8 = R0[K98('frun')]
+ 317 [  68] GETTABLE  R9 = R0[K99('PLIBCFG')]
+ 318 [  68] LOADK     R10 = K100 ('CFGSWDE')
+ 319 [  68] CONCAT    A=9 B=9 C=10
+ 320 [  68] MOVE      A=10 B=4 C=0
+ 321 [  68] LOADK     R11 = K110 ('TU')
+ 322 [  68] GETTABLE  R12 = R2[K102('S')]
+ 323 [  68] GETTABLE  R12 = R12[K111('IN_TU_src')]
+ 324 [  68] CALL      A=8 B=5 C=1
+ 325 [  88] CLOSURE   R8 = proto[1]
+ 326 [  88] SETTABLE  R4[K112('updateDisp')] = R8
+ 327 [  98] CLOSURE   R8 = proto[2]
+ 328 [  98] SETTABLE  R4[K113('onSave')] = R8
+ 329 [ 158] RETURN    A=0 B=1 C=0
+ 330 [ 158] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 9 lines 25 34 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2))]
+LOCALS [('iName', 0, 152), ('uiSrcType', 7, 152), ('srcType', 15, 152)]
+K0 'cv'
+K1 '_'
+K2 '_srct'
+K3 'v'
+K4 'srcTypes'
+K5 '_swn'
+K6 'h'
+K7 1
+K8 '_swp'
+K9 0
+K10 '_lsn'
+K11 2
+K12 'dv'
+K13 '---'
+K14 'RD'
+K15 'SW'
+K16 'cdv'
+K17 '???'
+   1 [  26] GETTABUP  R1 = UP0[K0('cv')]
+   2 [  26] LOADK     R2 = K1 ('_')
+   3 [  26] MOVE      A=3 B=0 C=0
+   4 [  26] LOADK     R4 = K2 ('_srct')
+   5 [  26] CONCAT    A=2 B=2 C=4
+   6 [  26] GETTABLE  R1 = R1[R2]
+   7 [  26] GETTABLE  R1 = R1[K3('v')]
+   8 [  27] GETTABUP  R2 = UP0[K4('srcTypes')]
+   9 [  27] TEST      A=2 B=0 C=0
+  10 [  27] JMP       A=0 ->15
+  11 [  27] GETTABUP  R2 = UP0[K4('srcTypes')]
+  12 [  27] GETTABLE  R2 = R2[R1]
+  13 [  27] TEST      A=2 B=0 C=1
+  14 [  27] JMP       A=0 ->16
+  15 [  27] MOVE      A=2 B=1 C=0
+  16 [  28] GETTABUP  R3 = UP0[K0('cv')]
+  17 [  28] LOADK     R4 = K1 ('_')
+  18 [  28] MOVE      A=5 B=0 C=0
+  19 [  28] LOADK     R6 = K5 ('_swn')
+  20 [  28] CONCAT    A=4 B=4 C=6
+  21 [  28] GETTABLE  R3 = R3[R4]
+  22 [  28] EQ        A=1 R2, K7(1); skip-next if condition != A
+  23 [  28] JMP       A=0 ->27
+  24 [  28] LOADBOOL  A=4 B=1 C=0
+  25 [  28] TEST      A=4 B=0 C=1
+  26 [  28] JMP       A=0 ->28
+  27 [  28] LOADNIL   A=4 B=0 C=0
+  28 [  28] SETTABLE  R3[K6('h')] = R4
+  29 [  29] GETTABUP  R3 = UP0[K0('cv')]
+  30 [  29] LOADK     R4 = K1 ('_')
+  31 [  29] MOVE      A=5 B=0 C=0
+  32 [  29] LOADK     R6 = K8 ('_swp')
+  33 [  29] CONCAT    A=4 B=4 C=6
+  34 [  29] GETTABLE  R3 = R3[R4]
+  35 [  29] GETTABUP  R4 = UP0[K0('cv')]
+  36 [  29] LOADK     R5 = K1 ('_')
+  37 [  29] MOVE      A=6 B=0 C=0
+  38 [  29] LOADK     R7 = K5 ('_swn')
+  39 [  29] CONCAT    A=5 B=5 C=7
+  40 [  29] GETTABLE  R4 = R4[R5]
+  41 [  29] GETTABLE  R4 = R4[K3('v')]
+  42 [  29] EQ        A=0 R4, K9(0); skip-next if condition != A
+  43 [  29] JMP       A=0 ->47
+  44 [  29] LOADBOOL  A=4 B=1 C=0
+  45 [  29] TEST      A=4 B=0 C=1
+  46 [  29] JMP       A=0 ->48
+  47 [  29] LOADNIL   A=4 B=0 C=0
+  48 [  29] SETTABLE  R3[K6('h')] = R4
+  49 [  30] GETTABUP  R3 = UP0[K0('cv')]
+  50 [  30] LOADK     R4 = K1 ('_')
+  51 [  30] MOVE      A=5 B=0 C=0
+  52 [  30] LOADK     R6 = K8 ('_swp')
+  53 [  30] CONCAT    A=4 B=4 C=6
+  54 [  30] GETTABLE  R3 = R3[R4]
+  55 [  30] EQ        A=1 R2, K7(1); skip-next if condition != A
+  56 [  30] JMP       A=0 ->60
+  57 [  30] LOADBOOL  A=4 B=1 C=0
+  58 [  30] TEST      A=4 B=0 C=1
+  59 [  30] JMP       A=0 ->67
+  60 [  30] GETTABUP  R4 = UP0[K0('cv')]
+  61 [  30] LOADK     R5 = K1 ('_')
+  62 [  30] MOVE      A=6 B=0 C=0
+  63 [  30] LOADK     R7 = K8 ('_swp')
+  64 [  30] CONCAT    A=5 B=5 C=7
+  65 [  30] GETTABLE  R4 = R4[R5]
+  66 [  30] GETTABLE  R4 = R4[K6('h')]
+  67 [  30] SETTABLE  R3[K6('h')] = R4
+  68 [  31] GETTABUP  R3 = UP0[K0('cv')]
+  69 [  31] LOADK     R4 = K1 ('_')
+  70 [  31] MOVE      A=5 B=0 C=0
+  71 [  31] LOADK     R6 = K10 ('_lsn')
+  72 [  31] CONCAT    A=4 B=4 C=6
+  73 [  31] GETTABLE  R3 = R3[R4]
+  74 [  31] EQ        A=1 R2, K11(2); skip-next if condition != A
+  75 [  31] JMP       A=0 ->79
+  76 [  31] LOADBOOL  A=4 B=1 C=0
+  77 [  31] TEST      A=4 B=0 C=1
+  78 [  31] JMP       A=0 ->80
+  79 [  31] LOADNIL   A=4 B=0 C=0
+  80 [  31] SETTABLE  R3[K6('h')] = R4
+  81 [  32] GETTABUP  R3 = UP0[K0('cv')]
+  82 [  32] LOADK     R4 = K1 ('_')
+  83 [  32] MOVE      A=5 B=0 C=0
+  84 [  32] LOADK     R6 = K5 ('_swn')
+  85 [  32] CONCAT    A=4 B=4 C=6
+  86 [  32] GETTABLE  R3 = R3[R4]
+  87 [  32] GETTABUP  R4 = UP0[K0('cv')]
+  88 [  32] LOADK     R5 = K1 ('_')
+  89 [  32] MOVE      A=6 B=0 C=0
+  90 [  32] LOADK     R7 = K5 ('_swn')
+  91 [  32] CONCAT    A=5 B=5 C=7
+  92 [  32] GETTABLE  R4 = R4[R5]
+  93 [  32] GETTABLE  R4 = R4[K3('v')]
+  94 [  32] EQ        A=0 R4, K9(0); skip-next if condition != A
+  95 [  32] JMP       A=0 ->99
+  96 [  32] LOADK     R4 = K13 ('---')
+  97 [  32] TEST      A=4 B=0 C=1
+  98 [  32] JMP       A=0 ->125
+  99 [  32] GETTABUP  R4 = UP1[K14('RD')]
+ 100 [  32] GETTABLE  R4 = R4[K15('SW')]
+ 101 [  32] GETTABUP  R5 = UP0[K0('cv')]
+ 102 [  32] LOADK     R6 = K1 ('_')
+ 103 [  32] MOVE      A=7 B=0 C=0
+ 104 [  32] LOADK     R8 = K5 ('_swn')
+ 105 [  32] CONCAT    A=6 B=6 C=8
+ 106 [  32] GETTABLE  R5 = R5[R6]
+ 107 [  32] GETTABLE  R5 = R5[K3('v')]
+ 108 [  32] GETTABLE  R4 = R4[R5]
+ 109 [  32] TEST      A=4 B=0 C=0
+ 110 [  32] JMP       A=0 ->124
+ 111 [  32] GETTABUP  R4 = UP1[K14('RD')]
+ 112 [  32] GETTABLE  R4 = R4[K15('SW')]
+ 113 [  32] GETTABUP  R5 = UP0[K0('cv')]
+ 114 [  32] LOADK     R6 = K1 ('_')
+ 115 [  32] MOVE      A=7 B=0 C=0
+ 116 [  32] LOADK     R8 = K5 ('_swn')
+ 117 [  32] CONCAT    A=6 B=6 C=8
+ 118 [  32] GETTABLE  R5 = R5[R6]
+ 119 [  32] GETTABLE  R5 = R5[K3('v')]
+ 120 [  32] GETTABLE  R4 = R4[R5]
+ 121 [  32] GETTABLE  R4 = R4[K16('cdv')]
+ 122 [  32] TEST      A=4 B=0 C=1
+ 123 [  32] JMP       A=0 ->125
+ 124 [  32] LOADK     R4 = K17 ('???')
+ 125 [  32] SETTABLE  R3[K12('dv')] = R4
+ 126 [  33] GETTABUP  R3 = UP0[K0('cv')]
+ 127 [  33] LOADK     R4 = K1 ('_')
+ 128 [  33] MOVE      A=5 B=0 C=0
+ 129 [  33] LOADK     R6 = K8 ('_swp')
+ 130 [  33] CONCAT    A=4 B=4 C=6
+ 131 [  33] GETTABLE  R3 = R3[R4]
+ 132 [  33] GETTABUP  R4 = UP0[K0('cv')]
+ 133 [  33] LOADK     R5 = K1 ('_')
+ 134 [  33] MOVE      A=6 B=0 C=0
+ 135 [  33] LOADK     R7 = K5 ('_swn')
+ 136 [  33] CONCAT    A=5 B=5 C=7
+ 137 [  33] GETTABLE  R4 = R4[R5]
+ 138 [  33] GETTABLE  R4 = R4[K3('v')]
+ 139 [  33] EQ        A=0 R4, K9(0); skip-next if condition != A
+ 140 [  33] JMP       A=0 ->144
+ 141 [  33] LOADK     R4 = K13 ('---')
+ 142 [  33] TEST      A=4 B=0 C=1
+ 143 [  33] JMP       A=0 ->151
+ 144 [  33] GETTABUP  R4 = UP0[K0('cv')]
+ 145 [  33] LOADK     R5 = K1 ('_')
+ 146 [  33] MOVE      A=6 B=0 C=0
+ 147 [  33] LOADK     R7 = K8 ('_swp')
+ 148 [  33] CONCAT    A=5 B=5 C=7
+ 149 [  33] GETTABLE  R4 = R4[R5]
+ 150 [  33] GETTABLE  R4 = R4[K12('dv')]
+ 151 [  33] SETTABLE  R3[K12('dv')] = R4
+ 152 [  34] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 2 lines 70 88 source None
+UPVALUES [('T', (1, 4)), ('G', (1, 0))]
+LOCALS []
+K0 'updateSwDisplay'
+K1 'FMAC'
+K2 'FMHR'
+K3 'FMAN'
+K4 'AM'
+K5 'TU'
+K6 'fm'
+K7 'sxx'
+K8 'cv'
+K9 '_AM_srct'
+K10 'h'
+K11 True
+K12 '_AM_swn'
+K13 '_AM_swp'
+K14 '_AM_lsn'
+K15 '_TU_srct'
+K16 '_TU_swn'
+K17 '_TU_swp'
+K18 '_TU_lsn'
+   1 [  71] GETTABUP  R0 = UP0[K0('updateSwDisplay')]
+   2 [  71] LOADK     R1 = K1 ('FMAC')
+   3 [  71] CALL      A=0 B=2 C=1
+   4 [  72] GETTABUP  R0 = UP0[K0('updateSwDisplay')]
+   5 [  72] LOADK     R1 = K2 ('FMHR')
+   6 [  72] CALL      A=0 B=2 C=1
+   7 [  73] GETTABUP  R0 = UP0[K0('updateSwDisplay')]
+   8 [  73] LOADK     R1 = K3 ('FMAN')
+   9 [  73] CALL      A=0 B=2 C=1
+  10 [  74] GETTABUP  R0 = UP0[K0('updateSwDisplay')]
+  11 [  74] LOADK     R1 = K4 ('AM')
+  12 [  74] CALL      A=0 B=2 C=1
+  13 [  75] GETTABUP  R0 = UP0[K0('updateSwDisplay')]
+  14 [  75] LOADK     R1 = K5 ('TU')
+  15 [  75] CALL      A=0 B=2 C=1
+  16 [  77] GETTABUP  R0 = UP1[K6('fm')]
+  17 [  77] GETTABLE  R0 = R0[K7('sxx')]
+  18 [  77] TEST      A=0 B=0 C=1
+  19 [  77] JMP       A=0 ->44
+  20 [  78] GETTABUP  R0 = UP0[K8('cv')]
+  21 [  78] GETTABLE  R0 = R0[K9('_AM_srct')]
+  22 [  78] SETTABLE  R0[K10('h')] = K11(True)
+  23 [  79] GETTABUP  R0 = UP0[K8('cv')]
+  24 [  79] GETTABLE  R0 = R0[K12('_AM_swn')]
+  25 [  79] SETTABLE  R0[K10('h')] = K11(True)
+  26 [  80] GETTABUP  R0 = UP0[K8('cv')]
+  27 [  80] GETTABLE  R0 = R0[K13('_AM_swp')]
+  28 [  80] SETTABLE  R0[K10('h')] = K11(True)
+  29 [  81] GETTABUP  R0 = UP0[K8('cv')]
+  30 [  81] GETTABLE  R0 = R0[K14('_AM_lsn')]
+  31 [  81] SETTABLE  R0[K10('h')] = K11(True)
+  32 [  82] GETTABUP  R0 = UP0[K8('cv')]
+  33 [  82] GETTABLE  R0 = R0[K15('_TU_srct')]
+  34 [  82] SETTABLE  R0[K10('h')] = K11(True)
+  35 [  83] GETTABUP  R0 = UP0[K8('cv')]
+  36 [  83] GETTABLE  R0 = R0[K16('_TU_swn')]
+  37 [  83] SETTABLE  R0[K10('h')] = K11(True)
+  38 [  84] GETTABUP  R0 = UP0[K8('cv')]
+  39 [  84] GETTABLE  R0 = R0[K17('_TU_swp')]
+  40 [  84] SETTABLE  R0[K10('h')] = K11(True)
+  41 [  85] GETTABUP  R0 = UP0[K8('cv')]
+  42 [  85] GETTABLE  R0 = R0[K18('_TU_lsn')]
+  43 [  85] SETTABLE  R0[K10('h')] = K11(True)
+  44 [  88] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 4 lines 90 98 source None
+UPVALUES [('G', (1, 0)), ('T', (1, 4))]
+LOCALS []
+K0 'frun'
+K1 'PLIBCFG'
+K2 'CFGSWEN'
+K3 'FMAC'
+K4 'FMHR'
+K5 'FMAN'
+K6 'AM'
+K7 'TU'
+K8 'PLIBTB'
+K9 'INDINIT'
+   1 [  91] GETTABUP  R0 = UP0[K0('frun')]
+   2 [  91] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+   3 [  91] LOADK     R2 = K2 ('CFGSWEN')
+   4 [  91] CONCAT    A=1 B=1 C=2
+   5 [  91] GETUPVAL  A=2 B=1 C=0
+   6 [  91] LOADK     R3 = K3 ('FMAC')
+   7 [  91] CALL      A=0 B=4 C=1
+   8 [  92] GETTABUP  R0 = UP0[K0('frun')]
+   9 [  92] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+  10 [  92] LOADK     R2 = K2 ('CFGSWEN')
+  11 [  92] CONCAT    A=1 B=1 C=2
+  12 [  92] GETUPVAL  A=2 B=1 C=0
+  13 [  92] LOADK     R3 = K4 ('FMHR')
+  14 [  92] CALL      A=0 B=4 C=1
+  15 [  93] GETTABUP  R0 = UP0[K0('frun')]
+  16 [  93] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+  17 [  93] LOADK     R2 = K2 ('CFGSWEN')
+  18 [  93] CONCAT    A=1 B=1 C=2
+  19 [  93] GETUPVAL  A=2 B=1 C=0
+  20 [  93] LOADK     R3 = K5 ('FMAN')
+  21 [  93] CALL      A=0 B=4 C=1
+  22 [  94] GETTABUP  R0 = UP0[K0('frun')]
+  23 [  94] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+  24 [  94] LOADK     R2 = K2 ('CFGSWEN')
+  25 [  94] CONCAT    A=1 B=1 C=2
+  26 [  94] GETUPVAL  A=2 B=1 C=0
+  27 [  94] LOADK     R3 = K6 ('AM')
+  28 [  94] CALL      A=0 B=4 C=1
+  29 [  95] GETTABUP  R0 = UP0[K0('frun')]
+  30 [  95] GETTABUP  R1 = UP0[K1('PLIBCFG')]
+  31 [  95] LOADK     R2 = K2 ('CFGSWEN')
+  32 [  95] CONCAT    A=1 B=1 C=2
+  33 [  95] GETUPVAL  A=2 B=1 C=0
+  34 [  95] LOADK     R3 = K7 ('TU')
+  35 [  95] CALL      A=0 B=4 C=1
+  36 [  97] GETTABUP  R0 = UP0[K0('frun')]
+  37 [  97] GETTABUP  R1 = UP0[K8('PLIBTB')]
+  38 [  97] LOADK     R2 = K9 ('INDINIT')
+  39 [  97] CONCAT    A=1 B=1 C=2
+  40 [  97] CALL      A=0 B=2 C=1
+  41 [  98] RETURN    A=0 B=1 C=0

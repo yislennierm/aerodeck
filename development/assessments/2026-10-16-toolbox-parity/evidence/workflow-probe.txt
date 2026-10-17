@@ -1,0 +1,16 @@
+flight_autoHome_set=false
+flight_track_samples=0
+gps_autoHome_set=true
+gps_track_samples=1
+active_flight_tap_bitmap_loads=26
+SYS_opens_drawer=false
+initial_config_model_setup=true
+PAGE_from_config_destination=4
+rotary_edit_writes=0
+active_rc_after_rotary_enter=ELRS / CRSF
+RTN_after_edit_return=1
+rc_after_reopen=ELRS / CRSF
+stick_page_start=1
+stick_rotary_next_page=1
+stick_PREV_first=2
+stick_PREV_second=1

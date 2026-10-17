@@ -1,0 +1,1071 @@
+{
+  "build": "FLIGHT-FLAT-20261016",
+  "status": "PASS",
+  "sourceSha256": "712a7e999022e0bd5d0ddee29602286dc12844881900ed109f43314153926c53",
+  "syntheticDataOnly": true,
+  "fixturePrefixShips": false,
+  "simulator": {
+    "version": "3.0.0",
+    "target": "RadioMaster TX16S",
+    "renderer": "Native EdgeTX WASM",
+    "framebuffer": "RGB565 little endian,480x272",
+    "pngConversion": "Pillow Image.frombytes RGB/raw/BGR;16; red/green/blue565 primaries checked",
+    "host": "work/edgetx/native-sim/host.cjs"
+  },
+  "hardwareVerified": false,
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "radioInstalledByThisQA": false,
+  "pageScreenCount": 12,
+  "totalAcceptedScreenshotCount": 29,
+  "screenshots": [
+    {
+      "file": "flat-arm.png",
+      "sha256": "ec5d93e7cfc03c8e7e4bd9cafae0b2eb672d7797885a0a15d6f8fdc15ac92c7b",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Arm Stops with NO_ACC_CAL long explanation"
+    },
+    {
+      "file": "flat-battery-edit.png",
+      "sha256": "960b97bde89131e4f99dbcfbcf40bceec72e80edb102bef89e994d4976e04e72",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Audible-alert edit state"
+    },
+    {
+      "file": "flat-battery.png",
+      "sha256": "1579389f97f1675f874d09f305f1e3432ec998a51cf71e1b94e9df2b23c12f7b",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Battery category all eight rows and actions"
+    },
+    {
+      "file": "flat-categories-second.png",
+      "sha256": "eb9451f31d06150e40a4faa6b4821294215c4119be5ace3f5f3e16f15e4c66a0",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Setup categories second page"
+    },
+    {
+      "file": "flat-context-focus.png",
+      "sha256": "2cae0b9ef3b45213877ba0ac01ffd68f0c95e00578c054c85690f7634cb1ff75",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "ENTER context keyboard focus"
+    },
+    {
+      "file": "flat-critical-lq.png",
+      "sha256": "4cb2c4475804c022a7f7eebf290fbd43ebe77f9844d077d3119993f37091e8f4",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Actual saved thresholds Crit80/Low90: LQ75 red and LINK CRITICAL"
+    },
+    {
+      "file": "flat-diagnostics.png",
+      "sha256": "111b8805a59c5d84f325cbfd5f944de7b4f1f6843341d922ee770ef93c6b0f11",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Diagnostics page and FLAT / NATIVE identity"
+    },
+    {
+      "file": "flat-flight.png",
+      "sha256": "1466a2c45514efa29cbff7155f35ac3b1049824ec14e2cab06ddc4ede31b19f8",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Flight normal: level attitude, HORIZON*, flat native panels and units"
+    },
+    {
+      "file": "flat-gps.png",
+      "sha256": "0f20f3633439b7cbd641254bbef49c2f55672a8743af3b536273833aa7f5173a",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "GPS Details page"
+    },
+    {
+      "file": "flat-home-return.png",
+      "sha256": "169e2036e1ab604276f42361a1bf9e32a13df2203286502e20d345d8f8638eeb",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Home returns Flight; auto-captured home gives 0m"
+    },
+    {
+      "file": "flat-link.png",
+      "sha256": "7102f9e8d9ca1df311e24e5a4941a02aff3c3213a10611f0e9e9661b9a32dcdf",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "RC Link page"
+    },
+    {
+      "file": "flat-long-values.png",
+      "sha256": "1d2e32a2c443a53741b968954a869f7a192eca39e7ec2f925fa5c15a5ad010cc",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Extreme values stay inside cells; tape labels fitted in27px"
+    },
+    {
+      "file": "flat-low-lq.png",
+      "sha256": "95a13f2f972b957743a9b8476c154ef8056fa3c1ddaf0f75fe3298cb681ca6e9",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Actual saved thresholds Crit80/Low90: LQ85 amber and LINK LOW"
+    },
+    {
+      "file": "flat-missing.png",
+      "sha256": "13b5d9f2e25b6336c716c14dad8deb2178e0003ee524a12ae5fc8244723747b9",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "All live source reads missing: -- and attitude unavailable"
+    },
+    {
+      "file": "flat-model-mid.png",
+      "sha256": "6d62280d4d654d9e9e09bc9afcb3d0ed45d678a1144d972ff855f8763203416c",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Model settings middle rows"
+    },
+    {
+      "file": "flat-model-settings.png",
+      "sha256": "f41fe37f0b1ab8d51010f2137e04ec036168764a95c9e7137bc514106d0bf87d",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Model settings first seven rows"
+    },
+    {
+      "file": "flat-nav-focus.png",
+      "sha256": "abc8ffcb8a47df7f41119309d0893c7d30064f50d782d8a7726f0b63150ed73c",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "SYS section focus plate"
+    },
+    {
+      "file": "flat-nose-up.png",
+      "sha256": "9a24d7558dbb65de3aae4785992f7e9823c398f340829b6ac65ca7f284d7f0e2",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Raw pitch -20 degrees normalizes +20 nose-up"
+    },
+    {
+      "file": "flat-page-data.png",
+      "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "PAGE> opens Data from Flight"
+    },
+    {
+      "file": "flat-power.png",
+      "sha256": "61680c4cd0b7cb13c3f5f82ba6df43f225de7e72ae35347ea41fc2f4ed613c66",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Power page"
+    },
+    {
+      "file": "flat-roll.png",
+      "sha256": "b96998741325679e09788a54e54ee3d08033b583b11714c3c24e4af8d3de28fa",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Raw roll +30 degrees: rotated horizon, circular clip preserved"
+    },
+    {
+      "file": "flat-sensors.png",
+      "sha256": "f5f46632387b66f26e58a0e77717cbfa0813dd7f67911a834cea212df2f09882",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Sensors page"
+    },
+    {
+      "file": "flat-settings-save.png",
+      "sha256": "3c2dea5b811fefba94bfffa05470de873a85d33160ba8b4e25c8d17fe089e85b",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Save Settings focused"
+    },
+    {
+      "file": "flat-setup.png",
+      "sha256": "2d5c490ac4d61dc09bc2a3e4cf6638cad9335713800a8ecbea01988f67d68b19",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Setup category list first page"
+    },
+    {
+      "file": "flat-sticks.png",
+      "sha256": "2ae1c966f08ee7fa39070a7850b7c368dc35817d7b6faa9fa1a513695eda2cb0",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Stick Guide page"
+    },
+    {
+      "file": "flat-telemetry.png",
+      "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Telemetry dense three-column page"
+    },
+    {
+      "file": "flat-track.png",
+      "sha256": "3f862fa0521d29091f55324575f08d97368dc4c59731a6df50efe4ffa6ec92b6",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Track / Home page"
+    },
+    {
+      "file": "flat-video.png",
+      "sha256": "4583edd5d2ca6a770b0e553b7eeb325bcd606c6216ac985ac27ebe62194f860c",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Video CUSTOM and REFERENCE layout"
+    },
+    {
+      "file": "flat-zero.png",
+      "sha256": "291e2b5240171566f10dbdfaa7f50eb9a679e42eef6487d43137958f1f16d269",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "purpose": "Zero numeric source values remain visible as0 rather than --"
+    }
+  ],
+  "normalFixture": {
+    "flightMode": "HORIZON*",
+    "rawPitchRadians": 0,
+    "rawRollRadians": 0,
+    "voltage": 22.8,
+    "current": 25,
+    "usedMah": 2762,
+    "lq": 100,
+    "rssi": -61,
+    "satellites": 13,
+    "armingFlag": "NO_ACC_CAL bit23 only"
+  },
+  "additionalFixtures": {
+    "missing": {
+      "values": {},
+      "allReadsMissing": true,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    "zero": {
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": true,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    "low-lq": {
+      "values": {
+        "RQly": 85
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1",
+      "actualSettingsFile": "work/edgetx/flight-flat/runtime-low-lq/sd/SCRIPTS/TOOLS/AERODECK/settings-554920524556494557.cfg"
+    },
+    "critical-lq": {
+      "values": {
+        "RQly": 75
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1",
+      "actualSettingsFile": "work/edgetx/flight-flat/runtime-critical-lq/sd/SCRIPTS/TOOLS/AERODECK/settings-554920524556494557.cfg"
+    },
+    "long-values": {
+      "values": {
+        "RxBt": 123.4,
+        "Capa": 9999999,
+        "TPWR": 99999,
+        "Curr": 999.9,
+        "1RSS": -1234,
+        "GSpd": 12345,
+        "GAlt": -99999,
+        "Sats": 999,
+        "Bat%": 100
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    "nose-up": {
+      "values": {
+        "Ptch": -0.3490658503988659
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    "roll": {
+      "values": {
+        "Roll": 0.5235987755982988
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    }
+  },
+  "flatAttitudeAssets": [
+    {
+      "asset": "sdcard/SCRIPTS/TOOLS/AERODECK/attitude-flat.png",
+      "source": "development/artwork/attitude-flat.svg",
+      "width": 152,
+      "height": 152,
+      "mode": "RGBA",
+      "pngSha256": "39b3999bc6cef9743759d5d312e5e86cc845350e88759f76075f72e2f8711edb",
+      "svgSha256": "f1bbf00803afbeacb9fbbe86c4702a974147b6ad162b5888a5ddf4bd52d23578",
+      "role": "Transparent rim/ticks/index only; all corners and aperture alpha0."
+    },
+    {
+      "asset": "sdcard/SCRIPTS/TOOLS/AERODECK/attitude-cover.png",
+      "source": "development/artwork/attitude-cover.svg",
+      "width": 152,
+      "height": 152,
+      "mode": "RGB",
+      "pngSha256": "63c0dce3897223ac22a2440fc379b6b990d2629d02cf74a332b8989aae8d9e63",
+      "svgSha256": "22f1006cb9cdad41578087624330ec917a96ad03bd5243d334572ee45d444138",
+      "role": "Black corners and white aperture; cache Bitmap.toMask once and tint native p.black."
+    }
+  ],
+  "attitudeGeometry": {
+    "width": 152,
+    "height": 152,
+    "center": [
+      76,
+      76
+    ],
+    "placement": [
+      164,
+      64
+    ],
+    "globalCenter": [
+      240,
+      140
+    ],
+    "apertureRadius": 68,
+    "innerRimRadius": 68.5,
+    "outerRimRadius": 74,
+    "nativeTintedCoverCachedOnce": true,
+    "transparentRimDrawnAfterCover": true
+  },
+  "cornerBodyPixelChecks": [
+    {
+      "screenshot": "flat-flight.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-missing.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-zero.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-low-lq.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-critical-lq.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-long-values.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-nose-up.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-roll.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-home-return.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-nav-focus.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    },
+    {
+      "screenshot": "flat-context-focus.png",
+      "bodyCoordinate": [
+        160,
+        62
+      ],
+      "bodyRgb": [
+        0,
+        12,
+        16
+      ],
+      "cornerCoordinates": [
+        [
+          164,
+          64
+        ],
+        [
+          315,
+          64
+        ],
+        [
+          164,
+          215
+        ],
+        [
+          315,
+          215
+        ]
+      ],
+      "cornerRgb": [
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ],
+        [
+          0,
+          12,
+          16
+        ]
+      ],
+      "exactMatch": true
+    }
+  ],
+  "visualChecks": [
+    "All12 pages inspected from the final source; all29 accepted filenames regenerated after the final cover/rim correction.",
+    "Flight is flat: native panel surfaces, horizontal percentage meters, consistent units and information row; no carbon textures or silver bezel.",
+    "The circular native HUD clips cleanly with no square corner tint difference; all four corners exactly match body RGB(0,12,16) in11 Flight states.",
+    "Normal, missing and zero values remain distinguishable; zero is displayed literally, missing is --, and missing attitude is explicitly unavailable.",
+    "Actual cfg thresholds Crit80/Low90 produce amber85% and red75% with matching LINK LOW/CRITICAL footer warnings.",
+    "Extreme voltage, RSSI, RF power, used capacity, speed, altitude and current fit within their assigned cells; tape labels truncate within27px.",
+    "Native raw pitch -20 degrees renders nose-up +20; roll +30 degrees rotates horizon without clipping or leaking into corners.",
+    "HORIZON*, longest Arm Stops heading, CUSTOM/REFERENCE Video layout, all settings row/action states and section/context focus fit without overlap.",
+    "Home returns Flight and PAGE> opens Data; no asset error, mask white box or runtime error observed."
+  ],
+  "noOverlapObserved": true,
+  "noWhiteMaskBoxObserved": true,
+  "noTextureAssetsLoadedByFlightSource": true,
+  "logs": [
+    {
+      "file": "work/edgetx/flight-flat/capture-all.log",
+      "sha256": "2a0ebf50de236a2e510b2895c824ebd3eb639a94fb105113c2fba59397653ab0",
+      "processExitCode": 0,
+      "acceptedShotCount": 22,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-missing.log",
+      "sha256": "052647be61e9291997bfb062ddcd90cdd3bf70b9c922cc67f68b2df37961229e",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-zero.log",
+      "sha256": "678b858190dd5905e38834aef1f271521ebba41df89795ca9282d2b5d47d97bb",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-low-lq.log",
+      "sha256": "2e42679d84de96ad7d58bf98ed78a2187e46d716364700c8b668ea1f67a6ef4e",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-critical-lq.log",
+      "sha256": "7272500dcc7e96dd64f29b0e2de25b7f58cdf0c2273cda21f7fb8a23aa5a787b",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-long-values.log",
+      "sha256": "a3090c3ad2c2ca8a793b004c8851a00a94e5dec50e874dbb639604f05628b7af",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-nose-up.log",
+      "sha256": "e13175c0918c989b9865576fff0a3b7d122846ad80691e9eee016f7e17789e25",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-flat/capture-roll.log",
+      "sha256": "28a41d794a345cfa336b9f42873c20376065a1558d7348fc5850f71e97bb776c",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    }
+  ],
+  "errorFreeLogs": true,
+  "knownHostNotices": [
+    "Node ExperimentalWarning: WASI is an experimental feature"
+  ],
+  "limitations": [
+    "Native simulator is EdgeTX3.0.0; the physical TX16S on EdgeTX2.12.4 has not been checked for this release.",
+    "Synthetic telemetry/MSP fixtures are isolated in runtime-*; production source contains none. This QA did not install to or modify the radio.",
+    "Desktop draw-rate values are not hardware FPS/memory measurements. No live-radio performance or pose claim is made.",
+    "Initial pre-fix frames showed a152px RGBA4444 corner/body tint difference; they were rejected and all accepted29 captures were regenerated with final712a source and split cover/rim assets.",
+    "The extreme9999999mAh fixture displays10000000 after native Lua numeric rounding; this intentionally unrealistic stress value tests cell fitting, not sensor accuracy."
+  ]
+}

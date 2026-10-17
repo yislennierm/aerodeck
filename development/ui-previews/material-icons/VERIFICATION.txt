@@ -1,0 +1,11 @@
+PASS — MATERIAL-ICONS-20261016
+
+Production source SHA256: c49c95c01dc5883b534914efacb22c75df6951404b4875424cfb07364def4ece
+
+19 visually inspected native 480x272 captures: all 12 pages, six navigation/input states, and raw -20 degree nose-up. Correct icons, grey/white tint and spacing; no white mask boxes, header collisions, or regressions found. HORIZON*, the longest NO_ACC_CAL title and Video REFERENCE badge fit. SYS, rotary, PAGE focus, ENTER, Home and normal PAGE routing behave as expected.
+
+All 18 expected masks (17 new Material assets + existing Home) were independently observed through real native Bitmap.open, Bitmap.toMask and lcd.drawBitmapPattern calls; no expected icon used its fallback. The wrappers and synthetic fixture remain solely in isolated test runtimes and are absent from production source.
+
+Both successful capture processes exited 0. No Lua/firmware error observed; Node emitted its standard WASI experimental-feature notice. Rejected initial wrong-tool captures were overwritten. Logs are hashed in verification.json.
+
+This is native EdgeTX 3.0.0 TX16S simulation with synthetic telemetry. Physical EdgeTX 2.12.4 radio rendering, live telemetry, hardware FPS/memory and physical pose were not verified. No canonical project, radio or shared preview runtime was modified.

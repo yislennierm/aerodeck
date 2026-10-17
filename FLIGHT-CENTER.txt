@@ -1,0 +1,44 @@
+AERODECK — FLIGHT-CENTER-20261016
+LOCAL ONLY. Not installed on the radio.
+Previous local build: FLIGHT-FLAT-20261016.
+Last verified radio build remains HOME-ICON-20261016; DEPLOYMENT.txt is unchanged.
+
+The center is now one integrated rectangular flight display. The previous
+circle discarded useful attitude area and separated its readings from narrow
+tapes. Its zero-pitch horizon, aircraft and tape readouts also used different
+vertical references. They now share the single datum(240,147).
+
+The native HUD field is(100,86,280,122), with48px ground-speed and altitude tapes
+overlaid at its sides. Primary readout boxes are32px high and centered on the
+same zero. Ground-speed ticks never show negative speed; altitude can remain
+negative when reported. The ground-speed caption explicitly identifies GS.
+The existing side panels, six-section navigation and global footer are kept.
+
+A heading ribbon above the attitude shows wrapped heading/cardinal references
+and a centered numeric heading. Missing heading remains --. The pitch ladder
+uses real10-degree marks:18.5px per10degrees, matching EdgeTX's1.85px per degree.
+A small upper bank scale keeps the attitude field open. No artificial angle,
+heading or other synthetic data is substituted when telemetry is missing.
+
+Home distance and current occupy two clear bottom cells. Heading has moved to
+its own ribbon, giving the bottom readings more room. Numbers and units use
+native radio fonts, measured fitting and aligned baselines.
+
+No Flight-specific background, rim or mask bitmap is loaded or converted.
+The existing small navigation/status icons retain their caches. Attitude still
+uses the native HUD primitive; pitch sign/unit handling, freshness checks,
+telemetry sampling and read-only MSP scheduling are unchanged. There are no
+new transport requests, runtime SD writes, model changes or FC/output writes.
+
+Release requires all12 portable suites plus matching-source native QA across
+all12 pages. Exact suite counts, source/archive hashes and native results are
+recorded in development/build-FLIGHT-CENTER-20261016.json. Current previews:
+development/ui-previews/flight-center/. They use synthetic fixture telemetry;
+physical-radio pose, rendering and latency are not newly verified here.
+
+AERODECK-install.zip contains39 runtime files and14 root documents,53 entries.
+No new runtime images are added. The unused attitude-flat.png and
+attitude-cover.png are omitted from the prior Flat archive. Those images and
+all older art remain locally as inactive historical assets; applying the local
+release never deletes them. The helper backs up changed existing targets and
+has only package/apply commands. No radio update or deployment record is made.

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152">
+  <title>AERODECK flat attitude surround</title>
+  <desc>Native152px RGBA transparent rim/ticks/index only. Center76,76; pair with the native-tinted attitude-cover mask. Original AERODECK code-native artwork,2026-10-16.</desc>
+  <circle cx="76" cy="76" r="74" fill="none" stroke="#395464" stroke-width="1" />
+  <circle cx="76" cy="76" r="68.5" fill="none" stroke="#395464" stroke-width="1" />
+  <g fill="none" stroke="#8ca4b3" stroke-width="1" stroke-linecap="butt">
+    <path d="M15.8112 41.2500L11.9141 39.0000" />
+    <path d="M26.1490 26.1490L24.0277 24.0277" />
+    <path d="M41.2500 15.8112L39.0000 11.9141" />
+    <path d="M51.8876 9.7517L50.8615 6.9326" />
+    <path d="M63.7578 6.5711L63.2369 3.6166" />
+    <path d="M88.2422 6.5711L88.7631 3.6166" />
+    <path d="M100.1124 9.7517L101.1385 6.9326" />
+    <path d="M110.7500 15.8112L113.0000 11.9141" />
+    <path d="M125.8510 26.1490L127.9723 24.0277" />
+    <path d="M136.1888 41.2500L140.0859 39.0000" />
+  </g>
+  <path d="M73 3H79L76 7Z" fill="#a4e37d" />
+</svg>

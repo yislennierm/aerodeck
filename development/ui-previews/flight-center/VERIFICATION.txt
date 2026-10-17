@@ -1,0 +1,13 @@
+PASS — FLIGHT-CENTER-20261016
+
+Final source SHA256: 00f7d2dd31948fd7f62742667cfa9e00de35ca47737a63dcaa0fdde8b1d0377e
+
+28 final-source native480x272 screenshots inspected, covering all12 pages plus normal/bank35/pitch10/roll90/inverted180 and heading015/140. No overlap or partial-caption defect observed.
+
+Rectangular PFD center240,147 is shared by horizon, aircraft datum and equal48px tape indexes. Bank35 pitch captions are separated. Atroll90 four captions (30,10,-20,-40) remain complete and separate. Inverted180 is correctly oriented and clipped. Pitch+10 caption clears the wing; heading015/140 labels clear the badge; ALT33 no longer shows a clipped40 caption above its selected window. Settings rows/actions, shared shell and other pages remain clean.
+
+Seven final native processes exited0 with no Lua/firmware error. Standard Node WASI notice remains. No PFD bitmap background/mask/silver bezel is loaded. Fixtures stay isolated; no canonical project, radio or shared preview runtime modified.
+
+Five additional missing/zero/long-values/±20pitch screenshots are preserved under prior-6b5c87/ and explicitly attributed to that earlier source. They are NOT counted as final-source accepted screenshots. verification.json records each file hash, exact source and evidence scope.
+
+Scope: EdgeTX3.0.0 TX16S native simulation, synthetic data only. Physical EdgeTX2.12.4 rendering, live telemetry, hardware FPS/memory and physical pose remain unverified.

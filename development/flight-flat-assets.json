@@ -1,0 +1,40 @@
+{
+  "build": "FLIGHT-FLAT-20261016",
+  "sourceSha256": "712a7e999022e0bd5d0ddee29602286dc12844881900ed109f43314153926c53",
+  "existingHome30Unchanged": true,
+  "assets": [
+    {
+      "runtime": "SCRIPTS/TOOLS/AERODECK/attitude-flat.png",
+      "width": 152,
+      "height": 152,
+      "mode": "RGBA",
+      "sha256": "39b3999bc6cef9743759d5d312e5e86cc845350e88759f76075f72e2f8711edb",
+      "purpose": "Transparent rim/ticks/index only; all corners and aperture alpha0.",
+      "sourceMaster": "development/artwork/attitude-flat.svg",
+      "sourceMasterSha256": "f1bbf00803afbeacb9fbbe86c4702a974147b6ad162b5888a5ddf4bd52d23578",
+      "geometryRecord": "development/artwork/attitude-flat.json"
+    },
+    {
+      "runtime": "SCRIPTS/TOOLS/AERODECK/attitude-cover.png",
+      "width": 152,
+      "height": 152,
+      "mode": "RGB",
+      "sha256": "63c0dce3897223ac22a2440fc379b6b990d2629d02cf74a332b8989aae8d9e63",
+      "purpose": "Black corners and white aperture; cache Bitmap.toMask once and tint native p.black.",
+      "sourceMaster": "development/artwork/attitude-cover.svg",
+      "sourceMasterSha256": "22f1006cb9cdad41578087624330ec917a96ad03bd5243d334572ee45d444138",
+      "geometryRecord": "development/artwork/attitude-flat.json"
+    },
+    {
+      "runtime": "SCRIPTS/TOOLS/AERODECK/icons/home-18.png",
+      "file": "home-18.png",
+      "width": 18,
+      "height": 18,
+      "mode": "RGB",
+      "sha256": "9ac516212f71704bb8a6b9364f976e1d3a14b0ef8a16492b23b8ebf50e8d9ac0",
+      "sourceMaster": "development/icons/home-outlined-30.svg",
+      "sourceMasterSha256": "c9a764ee7a83cbd23e1385ebd098b4019cb7a282a041cb0a2e815d1d8d5ec171",
+      "modification": "Native18px RGB raster export from the existing licensed Home SVG; original30px runtime Home remains unchanged."
+    }
+  ]
+}

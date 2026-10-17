@@ -1,0 +1,7 @@
+{
+  "build": "ICON-NAV-20261016",
+  "sha256": "f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8",
+  "productionModified": false,
+  "fixture": "Synthetic sample telemetry; all arming-disable flags; custom VTX frequency5000MHz",
+  "nativeRuntime": "EdgeTX3.0.0 WASM TX16S; physical firmware2.12.4"
+}

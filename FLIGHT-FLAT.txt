@@ -1,0 +1,45 @@
+AERODECK — FLIGHT-FLAT-20261016
+LOCAL ONLY. Not installed on the radio.
+Previous local build: UI-ALIGN-20261016.
+Last verified radio build remains HOME-ICON-20261016; DEPLOYMENT.txt is unchanged.
+
+The Flight page now uses flat native surfaces instead of visible carbon/chrome
+backgrounds. The circular horizon remains152x152 at(164,64), with the existing
+pitch/roll convention, aircraft marker, instrument tapes, navigation and footer.
+Three runtime images are added: attitude-flat.png supplies the transparent
+152px rim/ticks/index, attitude-cover.png supplies the native-tinted corner
+mask, and icons/home-18.png marks local-home distance. The small Home image is
+exported from the existing licensed SVG; the30px Home artwork is unchanged.
+Native corner colour matches the surrounding flat page without a faint square.
+
+The left panel presents link quality first, RSSI second and TX power third.
+A compact horizontal quality meter replaces the tall repeated scale. Matching
+left/right card geometry and clear separators distribute the readings evenly.
+The right panel retains pack voltage, remaining, average cell voltage and used
+capacity. Large native numeric text and smaller bottom-aligned unit labels
+replace bitmap digit sprites. Estimated remaining carries the ~ prefix. Link colours use the configured
+critical/low quality thresholds. Missing data remains --; alerts retain their
+existing meaning and detail destination.
+
+Speed/altitude tapes use native text. A single bottom instrument row presents
+local-home distance, heading and current. The same telemetry values, freshness
+checks and native attitude drawing are retained. The image cache loads the
+corner mask and transparent rim once and retains the converted native pattern.
+Warm Flight draws do not reopen images or repeat mask conversion; no sprite/
+glyph loads are used.
+No telemetry rate, transport eligibility, settings or model/output writes are
+introduced by this visual change. The widget and read-only MSP loop remain
+unchanged. Physical-radio rendering and timing are not newly measured here.
+
+The release requires all12 portable suites: the previous11 plus the Flight
+layout regression suite. Exact counts and source/archive hashes are recorded
+in development/build-FLIGHT-FLAT-20261016.json. Matching-source native TX16S
+screens cover all12 pages under development/ui-previews/flight-flat/. Their
+telemetry is synthetic fixture data, not live quad data.
+
+AERODECK-install.zip contains41 runtime files and13 root documents,54 entries
+in total. It omits63 unused legacy files from the prior archive:10 chrome
+BMP/PNG tiles, the old bezel.png and52 bitmap digit sprites. Their existing
+files in the local project are retained as inactive historical art. Applying
+this local release copies only changed files and backs up existing changed
+targets; it does not delete art or touch the radio/deployment history.

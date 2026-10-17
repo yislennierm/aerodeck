@@ -1,0 +1,55 @@
+AERODECK — FLIGHT-PRIORITY-20261017
+INSTALLED AND FILE-VERIFIED: 2026-10-17T09:39:56.756759+02:00.
+See DEPLOYMENT.txt for the report and backup.
+Previous local build: FLIGHT-GLANCE-20261017.
+Last verified radio build: FLIGHT-PRIORITY-20261017; see DEPLOYMENT.txt.
+
+This revision refines the Flight data hierarchy without changing its geometry.
+It is designed for the user's reported 30–40 cm viewing distance on the TX16S
+MkII. Native font sizes are measured; physical readability has not been measured.
+
+The right rail gives pack voltage, consumed mAh and current the primary 29 px
+value slots. Consumed capacity moves out of the small bottom row. Derived
+AVG CELL V moves to the 17 px bottom slot: it is pack voltage divided by the
+configured cell count, not telemetry from individual cells. The left rail
+prioritizes LQ, RSSI and SNR at 29 px; TX power moves to the 17 px bottom slot.
+Long values use the existing measured fitting, so not every digit count remains
+29 px. Missing values stay --, never synthetic zeroes.
+
+The remaining-percentage label keeps its ~ prefix when estimated. Its bar
+shrinks when needed to fit the label, including ~100%; the label sits above
+the separator. Missing-data icons are muted. The LQ icon follows the configured
+critical/low thresholds, and the battery icon is orange during a battery warning.
+
+The visible attitude field remains 232 × 180, with full HUD (78, 64, 324, 180)
+and shared zero (240, 154). No attitude area is gained or lost in this revision.
+The 70 px rails, six navigation icons, header, compass, aircraft datum, tapes,
+ARM INFO control and full 26 px warning banners retain their geometry.
+Flight's unique-data footer keeps FM, app-local home distance, satellite count
+and MSP status; it does not duplicate the link or battery values. A satellite
+count is not a GPS-fix claim, and app-local home is not FC home.
+
+Battery boundary fix: per-cell voltage is rounded to 0.1 mV before comparison
+with the existing saved 0.1 V thresholds. This prevents native float32 roundoff
+from falsely flagging an exact full pack, such as 6S at 25.2 V with a 4.2 V
+maximum, as ABOVE MAXIMUM. Saved settings and the alarm policy are unchanged;
+the boundary classification is corrected.
+
+Attitude sampling, telemetry freshness rules, pitch convention, read-only MSP
+scheduling, widget behavior and runtime asset files are unchanged. No new rates,
+transport requests, runtime SD writes or FC/RF/model/output writes are added.
+
+Release requires twelve fresh portable suites and exact-source native QA of
+at least ten Flight states. This is a focused Flight check, not a repeated
+twelve-page native tour. The other eleven pages are not recaptured for this
+revision. Current evidence: development/ui-previews/flight-priority/.
+Exact counts/hashes: development/build-FLIGHT-PRIORITY-20261017.json.
+Native previews use synthetic fixtures that do not ship in the app. EdgeTX
+3.0.0 WASM checks do not establish target-radio 2.12.4 rendering, live RF latency,
+physical readability, pose accuracy or hardware FPS.
+
+The local archive contains 39 runtime files and 17 root documents: 56 entries.
+Only the main runtime source changes. Historical assets remain locally; no
+files are deleted. The helper offers local package/apply only, verifies the
+previous baseline, and backs up changed targets. It does not deploy to the
+radio, record an installation, push to GitHub or change DEPLOYMENT.txt.

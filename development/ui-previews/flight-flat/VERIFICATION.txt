@@ -1,0 +1,13 @@
+PASS — FLIGHT-FLAT-20261016
+
+Final source SHA256: 712a7e999022e0bd5d0ddee29602286dc12844881900ed109f43314153926c53
+
+29 accepted native480x272 captures inspected: all12 pages, focus/settings states, and seven Flight stress/pose fixtures. No layout overlap, asset failure or mask white box observed. Flat panels/meters/native text replace textures and silver bezel.
+
+Resolved native defect: RGBA4444 quantized the opaque bezel corners differently from native p.black. A cached RGB corner mask now draws with the native background tint, followed by a transparent rim. In11 Flight states all four152px-square corners exactly match surrounding body RGB(0,12,16).
+
+Missing/zero are distinct; zero stays0. Actual saved Crit80/Low90 thresholds produce85 amber and75 red. Extreme voltage/RSSI/power/capacity/speed/altitude/current fit their cells, with27px tape-label truncation. Raw pitch-20deg renders nose-up+20; roll+30deg stays circularly clipped. All12 pages, HORIZON*, long Arm Stops heading, Video CUSTOM/REFERENCE, settings rows/actions and focus states fit.
+
+Eight final native processes exited0; no Lua/firmware error observed. Standard Node WASI notice remains. Initial pre-fix captures were rejected; all29 accepted filenames were regenerated after correction. Hashes/logs/settings/pixel evidence are in verification.json.
+
+Scope: EdgeTX3.0.0 TX16S native simulation and synthetic data only. Physical EdgeTX2.12.4 rendering, live telemetry, hardware FPS/memory and physical pose remain unverified. No canonical project, radio or shared preview runtime was modified by this QA.

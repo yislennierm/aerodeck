@@ -1,0 +1,71 @@
+AERODECK — read-only Betaflight connection — 2026-10-16
+
+The installed Toolbox configuration on active radio model TEST enables MSP
+with a 3-second FC status interval. Its critical compiled files match the
+original Toolbox 2.0 package audited during the investigation. TEST has native
+CRSF Ptch/Roll/FM sensors with filtering off, but no saved AERODECK settings.
+
+AERODECK now detects the native CRSF FM sensor even with an unsaved profile.
+Read-only FC connection defaults to Auto / CRSF; it can be turned Off under
+Configuration > Application, or Flight Controller for configured FC profiles.
+The supported full app and fullscreen widget identify Betaflight with read
+commands 2, 1, 3, then read status command 150 every 3 seconds. Attitude still
+comes from current, real mapped EdgeTX Ptch/Roll sensors. The cockpit rendering
+and assets are unchanged by this connection update.
+
+The transport runs before sensor sampling and redraw limiting. It allows one
+request at a time, processes at most four queued CRSF frames per callback,
+bounds incoming payloads, waits up to 5 seconds for replies and backs off on
+errors/busy transport. Current flight-mode telemetry must explicitly report a
+disarmed marker (*, ! or ?). Armed, unknown, failsafe or stale/missing FM stops
+requests. Exiting or leaving fullscreen stops the connection too. Explicit
+INAV/Other FC or FrSky/Other protocol profiles disable this Betaflight transport.
+Unknown FC variants are rejected after identification. FC/model/RF setting
+writes are not implemented; requests use CRSF type 0x7A only, with empty bodies.
+
+ExpressLRS temporarily boosts reply bandwidth after MSP uplink traffic. This
+explains how an actively polling app can behave differently from a passive
+sensor reader despite the same saved RF settings. The actual saved ratio is
+unchanged. This update matches the installed Toolbox exchange while disarmed;
+it does not claim a guaranteed in-flight attitude rate. The physical-radio
+response after this install still needs the user's confirmation.
+
+Diagnostics now shows MSP connection state and detected firmware/API. Identity
+is cached across a stopped connection; the connection state indicates whether
+it is currently active. READY can indicate completed identification; WAITING,
+TIMEOUT and rejection messages describe the current exchange. No runtime SD
+logs are written.
+
+The separate ATTITUDE TEST script and its compiled cache are removed from the
+radio, source and install archive. ATTITUDE-TEST.txt remains historical evidence.
+
+Validation from this LUA directory:
+  luajit development/test_crsf_status.lua
+  luajit development/test_fc_connection.lua
+  luajit development/test_configuration.lua
+  luajit development/test_telemetry.lua
+  luajit development/test_rendering.lua
+  luajit development/test_attitude_loop.lua
+Protocol tests exercise original request bytes, the outer CRSF checksum
+boundary, response sequencing/chunks, malformed replies, bounds, timeout,
+backpressure, firmware rejection and stop conditions. Adapter tests cover an
+unsaved TEST profile with detected native sensors. Mock timing and simulator
+fixtures are not measurements of the physical RF link.
+
+Sources:
+https://github.com/betaflight/betaflight/blob/4.5.2/src/main/telemetry/msp_shared.c
+https://github.com/ExpressLRS/ExpressLRS/blob/3.5.6/src/src/tx_main.cpp
+https://github.com/ExpressLRS/ExpressLRS/blob/3.5.6/src/src/common.cpp
+
+Deployment and firmware check
+2026-10-16: installed telem.lua, AERODECK/crsf-msp.lua and widget main.lua on
+the connected radio. SHA-256 copies verified. Removed attest.lua/attest.luac
+and stale app/widget caches after backup. All 172 protected existing model,
+radio, Toolbox-config and asset files were unchanged; radio safely ejected.
+
+The actual TX16S EdgeTX 3.0.0 WASM runtime completed 2/1/3/150 and recurring
+status reads with synthetic CRSF replies, showing MSP READY and FC/API. The
+original cockpit rendered correctly. A fixture-only error from mutating the
+firmware model API table was corrected with lexical mocks; no production code
+change was required. Simulator fixtures are not included in shipped files.
+The radio is EdgeTX 2.12.4; live RF performance still awaits user confirmation.

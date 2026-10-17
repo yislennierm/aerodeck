@@ -1,27 +1,192 @@
-local f=assert(io.open('sdcard/SCRIPTS/TOOLS/telem.lua'));local app=f:read('*a');f:close()
-local a=assert(string.find(app,'local configuration=(function()',1,true));local b=assert(string.find(app,'local telemetry=(function()',a,true));local source=string.sub(app,a,b-1)..'\nreturn configuration'
-local disk={};local fail=false
-io={open=function(p,m)if m=='r' and not disk[p] then return nil end;if m=='w' and fail then return nil end;return {p=p}end,read=function(f)return disk[f.p]end,write=function(f,s)disk[f.p]=s end,close=function()end}
-model={getInfo=function()return {name='Test A'}end,getSensor=function(i)if i==0 then return {name='CustomV'}end end}
-getFieldInfo=function(n)if n=='CustomV' then return {id=1}end end
-getSourceValue=function()return 16.2,true end
-EVT_VIRTUAL_ENTER=2;EVT_TOUCH_TAP=1;EVT_VIRTUAL_NEXT=3;EVT_VIRTUAL_PREV=4
-local c=assert(loadstring(source))();c.init()
-local function tap(x,y)c.input(1,{x=x,y=y})end
-local function list()return table.concat(c.visible(),',')end
-assert(list()=='1,6,11,12')
-tap(120,231);assert(list()=='1,2,3,4,6,10,11,12')
-tap(200,90);tap(120,231);assert(list()=='1,2,3,4,5,6,7,10,11,12')
-tap(200,110);tap(120,231);tap(120,231);assert(#c.visible()==12)
-assert(c.save());c.init();assert(#c.visible()==12)
--- Explicitly disabling voltage hides both battery sections.
-tap(200,130);tap(120,231);assert(list()=='1,2,5,6,7,8,9,10,11,12')
--- Disabling GPS hides GPS configuration.
-tap(200,210);tap(200,70);tap(120,231);assert(list()=='1,2,5,6,7,8,9,11,12')
--- Revert restores all saved feature selections.
-tap(380,231);assert(#c.visible()==12)
--- Protocol None collapses to the four base lists; hidden settings survive save/reopen.
-tap(200,210);tap(200,210);tap(200,70);tap(35,231)
-assert(list()=='1,6,11,12');assert(c.save());c.init();assert(c.get('fcType')=='Betaflight' and c.get('vtxMode')==2)
-tap(120,231);assert(#c.visible()==12)
-print('PASS: 4/8/10/12 visibility, voltage/GPS dependency, revert, persistent hidden values, re-enable')
+-- Behavioral regression tests for this project's actual configuration and battery closures.
+-- The fake filesystem implements EdgeTX io signatures, not host io signatures.
+local hostio=io
+local scriptPath=(arg and arg[0])or ''
+local scriptDirectory=scriptPath:match('^(.*)/[^/]+$')or '.'
+local f=assert(hostio.open(scriptDirectory..'/../sdcard/SCRIPTS/TOOLS/telem.lua','r'));local main=f:read('*a');f:close()
+local a=assert(string.find(main,'local batteryConfig=(function()',1,true));local b=assert(string.find(main,'-- The full app maintains',a,true))
+local batterySource=string.sub(main,a,b-1)
+a=assert(string.find(main,'local configuration=(function()',1,true));b=assert(string.find(main,'function fcLink.update',a,true))
+local configurationSource=string.sub(main,a,b-1)
+local files={};local failWrite=false
+io={open=function(path,mode)if mode=='r' and not files[path]then return nil end;if mode=='w' and failWrite then return nil end;return {path=path,mode=mode}end,
+ read=function(f,n)return files[f.path]:sub(1,n)end,write=function(f,s)files[f.path]=s end,close=function()end}
+model={getInfo=function()return {name='UX TEST'}end,getSensor=function(i)if i==0 then return {name='GPS'}end end}
+EVT_VIRTUAL_ENTER=1;EVT_VIRTUAL_NEXT=2;EVT_VIRTUAL_PREV=3;EVT_TOUCH_TAP=4;EVT_VIRTUAL_EXIT=5;EVT_VIRTUAL_NEXT_PAGE=6
+CUSTOM_COLOR=0;SMLSIZE=0;RIGHT=0
+local texts,textColors,textPositions,currentColor={},{},{},nil
+lcd={RGB=function(r,g,b)return r*65536+g*256+b end,setColor=function(_,color)currentColor=color end,drawFilledRectangle=function()end,drawText=function(x,y,s)texts[#texts+1]=tostring(s);textColors[tostring(s)]=currentColor;textPositions[tostring(s)]={x,y} end}
+getTime=function()return 100 end;playTone=function()end;playHaptic=function()end
+local source='local fcLink={state={status="DISARMED",firmware="BF"}}\nlocal function cachedTelemetryField()return nil end\nlocal function cachedField()return nil end\n'..batterySource..configurationSource..'\nreturn batteryConfig,configuration'
+local factory,why=loadstring(source,'@config-closures');assert(factory,why)
+local battery,config=factory()
+local function event(e)assert(config.input(e),'expected handled event '..e)end
+local function touch(x,y)assert(config.input(EVT_TOUCH_TAP,{x=x,y=y}),'expected handled touch')end
+local function contains(value)for _,v in ipairs(texts)do if v==value then return true end end;return false end
+local function draw()texts={};textColors={};textPositions={};config.draw()end
+local function nextN(n)for _=1,n do event(EVT_VIRTUAL_NEXT)end end
+local function saveApp()touch(190,230)end
+local function editFirst(delta)
+ event(EVT_VIRTUAL_ENTER)
+ for _=1,math.abs(delta)do event(delta>0 and EVT_VIRTUAL_NEXT or EVT_VIRTUAL_PREV)end
+ event(EVT_VIRTUAL_ENTER)
+end
+local assertions=0
+local function check(ok,label)assert(ok,label);assertions=assertions+1 end
+battery.init();config.init()
+check(config.isList(),'setup starts on category list')
+check(#config.visible()==4,'default conditional list visibility preserved')
+draw();check(not contains('PREVIOUS') and not contains('NEXT'),'single-page category list hides paging buttons')
+check(not config.input(EVT_TOUCH_TAP,{x=300,y=230}),'hidden paging controls have no touch action')
+check(not config.hasChanges(),'new defaults are clean')
+check(config.get('rcProtocol')=='None' and config.get('fcType')=='None' and config.get('mspMode')==1,'None-as-auto and enabled MSP defaults preserved')
+check(not config.input(EVT_VIRTUAL_NEXT_PAGE),'global PAGE is not consumed by setup')
+check(not config.input(EVT_VIRTUAL_EXIT),'root owns RTN dispatch')
+check(not config.back(),'list back delegates to root')
+
+assert(config.openSection(1));event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT)
+check(config.isEditing() and config.hasChanges(),'editing creates pending draft')
+check(config.get('rcProtocol')=='None','draft has no runtime effect')
+check(config.back(),'RTN cancels only current edit')
+check(not config.isEditing() and not config.hasChanges(),'cancel restores original single value')
+editFirst(1)
+check(config.get('rcProtocol')=='None' and config.hasChanges(),'accepting value still requires Settings save')
+event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT);check(config.back() and config.hasChanges(),'cancelling a later edit preserves the previously accepted draft value')
+check(config.back() and config.isList() and config.hasChanges(),'category back retains staged Settings changes')
+draw();check(contains('SETTINGS* '),'category list exposes pending Settings store')
+config.openSection(1);saveApp()
+check(config.get('rcProtocol')=='ELRS / CRSF' and not config.hasChanges(),'Save App activates staged values')
+local appPath='/SCRIPTS/TOOLS/AERODECK/settings-55582054455354.cfg'
+local batPath='/SCRIPTS/TOOLS/AERODECK/battery-55582054455354.cfg'
+check(files[appPath] and files[appPath]:sub(1,7)=='ADCFG1\n' and files[appPath..'.bak'],'existing Settings format and backup preserved')
+
+-- The duplicated Application connection setting is functional even when FC list is hidden.
+config.openSection(12);editFirst(-1)
+check(config.get('mspMode')==1 and config.hasChanges(),'shared MSP edit remains staged')
+event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER)
+check(config.get('mspMode')==0 and not config.hasChanges(),'rotary skips six note rows and can focus Save App')
+
+-- Enable the remaining conditional lists without changing the stored schema.
+config.openSection(1);event(EVT_VIRTUAL_NEXT);editFirst(1);event(EVT_VIRTUAL_NEXT);editFirst(2);saveApp()
+check(config.get('fcType')=='Betaflight' and config.get('vtxMode')==2 and #config.visible()==12,'all twelve existing categories remain available under their conditions')
+config.openSection(5);editFirst(1);saveApp()
+config.openSection(12);draw();check(contains('Auto / CRSF'),'Flight Controller and Application share the same MSP value')
+touch(100,70);check(not config.isEditing(),'touching an informational note does not enter editing')
+config.openSection(1);nextN(16);event(EVT_VIRTUAL_ENTER);draw()
+check(contains('Barometer / pitot setup'),'rotary can reach trailing informational rows through More Rows')
+for id=1,12 do check(config.openSection(id) and not config.isList(),'category '..id..' opens');check(config.back() and config.isList(),'category '..id..' returns to list')end
+-- Paging buttons are visibly disabled at the bounds and never wrap.
+config.openSection(1);config.back();draw()
+check(textColors.PREVIOUS==lcd.RGB(144,165,178) and textColors.NEXT==lcd.RGB(164,227,125),'first page disables Previous and enables Next')
+touch(100,230);event(EVT_VIRTUAL_PREV);event(EVT_VIRTUAL_ENTER);draw();check(contains('MODEL SETUP'),'first-page touch and rotary stay bounded at first category')
+config.back();touch(300,230);draw()
+check(textColors.PREVIOUS==lcd.RGB(164,227,125) and textColors.NEXT==lcd.RGB(144,165,178),'last page enables Previous and disables Next')
+touch(300,230);event(EVT_VIRTUAL_ENTER);draw();check(contains('VTX'),'disabled Next does not wrap or move category selection')
+config.back();config.openSection(12);config.back();event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER);draw();check(contains('APPLICATION'),'rotary remains bounded at last category')
+-- Touch the second list page and open its first entry (category8).
+config.openSection(1);config.back();touch(300,230);touch(100,70);draw()
+for _,label in ipairs({'VTX connection','NOT IMPLEMENTED','Channel / power writes','Unavailable','VTX control','Use existing VTX tool','Favourites','Offline frequency notes only'})do check(contains(label),'notes-only VTX renders '..label)end
+check(contains('VTX') and not contains('SAVE SETTINGS') and not contains('REVERT SETTINGS') and not contains('+') and not contains('-'),'notes-only VTX page has no misleading adjustment/save controls')
+check(config.input(EVT_VIRTUAL_ENTER) and not config.hasChanges(),'notes-only page cannot become editable')
+check(not config.isEditing(),'notes are not edit targets')
+
+-- Battery is a separate file/store, with independent cancellation and physical actions.
+config.openSection(3);event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT)
+local _,cells=battery.check(16,false)
+check(cells==0 and battery.hasChanges(),'battery draft does not affect active thresholds')
+check(config.back() and not battery.hasChanges() and not config.isList(),'battery RTN cancels value before leaving category')
+editFirst(1);nextN(8);event(EVT_VIRTUAL_ENTER)
+_,cells=battery.check(16,false)
+check(cells==1 and not battery.hasChanges(),'rotary can reach Save Battery')
+check(files[batPath] and files[batPath]:sub(1,7)=='ADBAT1 ' and files[batPath..'.bak'],'existing battery format and backup preserved')
+config.openSection(3);editFirst(1);event(EVT_VIRTUAL_PREV);event(EVT_VIRTUAL_ENTER)
+check(not battery.hasChanges(),'rotary can reach Revert Battery')
+_,cells=battery.check(16,false);check(cells==1,'battery revert preserves runtime value')
+
+config.openSection(1);editFirst(1)
+config.openSection(3);editFirst(1);touch(190,230)
+check(config.hasAppChanges() and not battery.hasChanges(),'Save Battery does not apply Settings draft')
+config.back();draw();check(contains('SETTINGS* '),'dirty Settings badge survives saving battery')
+config.openSection(1);saveApp()
+config.openSection(3);editFirst(1)
+config.openSection(1);editFirst(1);saveApp()
+check(battery.hasChanges() and not config.hasAppChanges(),'Save Settings does not apply battery draft')
+config.openSection(nil);draw();check(contains('BATTERY*'),'pending battery badge appears on category list')
+config.discardAll()
+check(not config.hasChanges() and not config.isEditing(),'exit guard can explicitly discard both drafts')
+
+-- Failed validation and storage writes must never activate staged settings.
+config.openSection(3);nextN(3);editFirst(-4)
+check(not battery.save() and battery.hasChanges(),'invalid voltage order cannot be saved')
+battery.revert();check(not battery.hasChanges(),'invalid battery draft is reversible')
+config.openSection(1);local oldProtocol=config.get('rcProtocol');editFirst(1);failWrite=true
+check(not config.save() and config.get('rcProtocol')==oldProtocol and config.hasChanges(),'failed Settings storage write leaves active values unchanged and draft available')
+failWrite=false;config.discardAll()
+
+-- Reopening preserves both successful stores and starts at the category list.
+battery.init();config.init()
+check(config.isList() and not config.hasChanges(),'reinit starts clean on list')
+check(config.get('rcProtocol')==oldProtocol,'Settings saved state reloads')
+_,cells=battery.check(16,false);check(cells==2,'battery saved state reloads independently')
+local measurements=0
+lcd.sizeText=function()measurements=measurements+1;return 20,19 end
+config.openSection(nil);draw()
+check(measurements==1,'category list measures font height once per draw')
+check(textPositions['SETUP CATEGORIES'][2]==38,'category header centers measured19px font inside26px header')
+check(textPositions['MODEL SETUP'][2]==63,'category row centers measured19px font inside18px row')
+check(textPositions.NEXT[2]==223,'category paging centers measured19px font inside21px action')
+measurements=0;config.openSection(3);draw()
+check(measurements==2,'battery view measures once in each of its two local draw functions')
+check(textPositions['MODEL BATTERY'][2]==38 and textPositions['Pack cell count'][2]==63,'battery header and first row use measured height')
+check(textPositions['SAVE BATTERY'][2]==223,'battery action uses measured height')
+lcd.sizeText=function()return 20,17 end
+config.openSection(1);draw()
+check(textPositions['RC protocol profile'][2]==64,'native17px settings row has zero extra top padding')
+check(textPositions['SAVE SETTINGS'][2]==224,'native17px settings action centers in21px box')
+lcd.sizeText=nil
+
+-- Native Lua uses float32. A valid full 6S pack can arrive slightly above 25.2
+-- when represented in that format; the previous direct comparison called it overcharged.
+files[batPath]='ADBAT1 6,27,30,34,36,42,0,0\n'
+battery.init()
+local nativeFullPack=25.200000762939453
+check(nativeFullPack/6*10>42,'the old unquantized comparison reproduces the native false-maximum warning')
+local tones,haptics=0,0
+playTone=function()tones=tones+1 end;playHaptic=function()haptics=haptics+1 end
+local boundaryCases={
+ -- No power includes its exact limit; the next interval is below minimum.
+ {16.194,'NO PACK POWER','below no-power'},
+ {16.2,'NO PACK POWER','exact no-power'},
+ {16.206,'BELOW MINIMUM','above no-power'},
+ -- Minimum uses strict<; its exact limit already belongs to critical.
+ {17.994,'BELOW MINIMUM','below minimum'},
+ {18,'BATTERY CRITICAL','exact minimum'},
+ {18.006,'BATTERY CRITICAL','above minimum'},
+ -- Critical and low retain their inclusive upper bounds.
+ {20.394,'BATTERY CRITICAL','below critical'},
+ {20.4,'BATTERY CRITICAL','exact critical'},
+ {20.406,'BATTERY LOW','above critical'},
+ {21.594,'BATTERY LOW','below low'},
+ {21.6,'BATTERY LOW','exact low'},
+ {21.606,nil,'above low'},
+ -- Maximum uses strict>; a meaningful 1 mV/cell increase must still warn.
+ {25.194,nil,'below maximum'},
+ {25.2,nil,'exact maximum'},
+ {25.206,'ABOVE MAXIMUM','above maximum'},
+ -- Explicit float32 encodings exercise the actual radio representation.
+ {16.200000762939453,'NO PACK POWER','native no-power'},
+ {20.399999618530273,'BATTERY CRITICAL','native critical'},
+ {21.600000381469727,'BATTERY LOW','native low'},
+ {nativeFullPack,nil,'native maximum'},
+ {0,'NO PACK POWER','real zero pack voltage'},
+}
+for _,case in ipairs(boundaryCases)do
+ local status,count=battery.check(case[1],false,6)
+ check(status==case[2],case[3]..' preserves the existing battery boundary policy; got '..tostring(status))
+ check(count==6,case[3]..' uses the explicit 6-cell override')
+end
+local missingStatus,missingCells=battery.check(nil,false,6)
+check(missingStatus==nil and missingCells==6,'missing voltage cannot produce a synthetic battery warning')
+check(tones==0 and haptics==0,'the visual-only saved profile remains silent across all boundary checks')
+io=hostio
+print('PASS: '..assertions..' configuration UX and native battery-boundary assertions')

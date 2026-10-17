@@ -1,0 +1,165 @@
+{
+  "main": [
+    {
+      "screen": "FLIGHT",
+      "icon": "speed",
+      "file": "speed.png",
+      "size": 30
+    },
+    {
+      "screen": "DATA",
+      "icon": "table_chart",
+      "file": "table_chart.png",
+      "size": 30
+    },
+    {
+      "screen": "GPS",
+      "icon": "my_location",
+      "file": "my_location.png",
+      "size": 30
+    },
+    {
+      "screen": "VIDEO",
+      "icon": "head_mounted_device",
+      "file": "head_mounted_device.png",
+      "size": 30
+    },
+    {
+      "screen": "SETUP",
+      "icon": "tune",
+      "file": "tune.png",
+      "size": 30
+    },
+    {
+      "screen": "TOOLS",
+      "icon": "build",
+      "file": "build.png",
+      "size": 30
+    }
+  ],
+  "secondary": [
+    {
+      "screen": "POWER",
+      "icon": "battery_full"
+    },
+    {
+      "screen": "RC LINK",
+      "icon": "cell_tower"
+    },
+    {
+      "screen": "ARM STOPS",
+      "icon": "gpp_bad"
+    },
+    {
+      "screen": "TRACK / HOME",
+      "icon": "route"
+    },
+    {
+      "screen": "STICK GUIDE",
+      "icon": "sports_esports"
+    },
+    {
+      "screen": "SENSORS",
+      "icon": "sensors"
+    },
+    {
+      "screen": "DIAGNOSTICS",
+      "icon": "bug_report"
+    }
+  ],
+  "context": [
+    {
+      "page": 1,
+      "screen": "FLIGHT",
+      "icon": "speed",
+      "file": "speed-18.png",
+      "size": 18
+    },
+    {
+      "page": 2,
+      "screen": "TRACK / HOME",
+      "icon": "route",
+      "file": "route-18.png",
+      "size": 18
+    },
+    {
+      "page": 3,
+      "screen": "POWER",
+      "icon": "battery_full",
+      "file": "battery_full-18.png",
+      "size": 18
+    },
+    {
+      "page": 4,
+      "screen": "SENSORS",
+      "icon": "sensors",
+      "file": "sensors-18.png",
+      "size": 18
+    },
+    {
+      "page": 5,
+      "screen": "TELEMETRY",
+      "icon": "table_chart",
+      "file": "table_chart-18.png",
+      "size": 18
+    },
+    {
+      "page": 6,
+      "screen": "STICK GUIDE",
+      "icon": "sports_esports",
+      "file": "sports_esports-18.png",
+      "size": 18
+    },
+    {
+      "page": 7,
+      "screen": "GPS DETAILS",
+      "icon": "my_location",
+      "file": "my_location-18.png",
+      "size": 18
+    },
+    {
+      "page": 9,
+      "screen": "RC LINK",
+      "icon": "cell_tower",
+      "file": "cell_tower-18.png",
+      "size": 18
+    },
+    {
+      "page": 10,
+      "screen": "ARM STOPS",
+      "icon": "gpp_bad",
+      "file": "gpp_bad-18.png",
+      "size": 18
+    },
+    {
+      "page": 11,
+      "screen": "VIDEO",
+      "icon": "head_mounted_device",
+      "file": "head_mounted_device-18.png",
+      "size": 18
+    },
+    {
+      "page": 12,
+      "screen": "DIAGNOSTICS",
+      "icon": "bug_report",
+      "file": "bug_report-18.png",
+      "size": 18
+    }
+  ],
+  "footer": [
+    {
+      "purpose": "PACK VOLTAGE",
+      "icon": "battery_full",
+      "file": "battery_full-18.png",
+      "size": 18,
+      "id": 3
+    },
+    {
+      "purpose": "GPS SATELLITE COUNT",
+      "icon": "satellite_alt",
+      "file": "satellite_alt-18.png",
+      "size": 18,
+      "id": 14
+    }
+  ]
+}

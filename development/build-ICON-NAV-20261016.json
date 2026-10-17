@@ -1,0 +1,21 @@
+{
+  "build": "ICON-NAV-20261016",
+  "unchangedAssetsAndTransport": 77,
+  "widgetUnchanged": true,
+  "sourceSha256": "f4d5d17879f7aae8858f11f9ec09d631ad524b1326e8ff95772a79d42526bdd8",
+  "installSha256": "7c336fff06552baa30a1d031434888aa0b9893b64d13c528d0c42f5cae2b30cb",
+  "installFiles": 87,
+  "portableSuitesPassed": 8,
+  "nativeRuntime": "TX16S EdgeTX3.0.0 WASM",
+  "radioFirmware": "2.12.4",
+  "hardwareAttitudeVerified": false,
+  "installedOnRadio": true,
+  "browserPageStatesVerified": 12,
+  "warningStatesVerified": [
+    "critical battery",
+    "no current telemetry"
+  ],
+  "deployedAt": "2026-10-16T12:34:28.859186+02:00",
+  "radioSafelyEjected": true,
+  "deploymentReport": "DEPLOYMENT.txt"
+}

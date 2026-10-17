@@ -1,0 +1,78 @@
+AERODECK UX-CLEANUP-20261016
+16 October 2026 — first interaction and layout cleanup
+
+RADIO DEPLOYMENT VERIFIED: 2026-10-16T18:47:23.191384+02:00
+UX-CLEANUP-20261016 is installed; the radio was safely ejected.
+DEPLOYMENT.txt records verification and the previous-version backup.
+
+WHAT CHANGED
+- One six-section order for the icon bar and physical PAGE: Flight, Data, GPS,
+  Video, Setup, Tools. Each icon opens its stable root, not a remembered subpage.
+- SYS (short press) focuses that same bar. Rotary or PAGE moves focus; ENTER
+  opens the highlighted section; RTN cancels section selection. MDL also opens
+  the bar where EdgeTX supplies its virtual-menu event.
+- The home symbol returns to Flight. The separate twelve-tile chooser and
+  ordinary footer shortcuts are removed. Normal footer readings are status.
+  A warning retains its explicit arrow/touch route to the corresponding detail.
+- On ordinary pages, rotary focuses visible tabs/actions and ENTER activates.
+  ENTER with no focus first highlights an available action. Repeated ENTER on
+  a focused control (for example Zoom or Stick Mode) continues that action.
+  Arm Stops uses rotary to select its reason list; settings own their rows.
+- RTN returns from a detail to its owning page, then Flight. In settings it
+  first cancels an active single-value edit, then returns to categories, then
+  the originating page. Short RTN on Flight exits. Pending drafts offer Keep
+  Editing or Discard/Exit. Firmware-held RTN remains EdgeTX's forced exit.
+- Setup opens named categories instead of a changing numbered-list carousel.
+  Existing capability conditions still determine which categories are present;
+  hidden settings and existing configuration file formats are preserved.
+- Rotary can select values, edit them, and reach Save/Revert and More Rows.
+  Notes cannot enter edit mode. Categories containing only notes show no
+  adjustment or Save controls. Category paging is bounded and disabled/hidden
+  when it is not useful.
+- SAVE SETTINGS applies the shared non-battery draft. SAVE BATTERY applies
+  only cell count/voltage/alert preferences. Labels and pending badges expose
+  those two existing stores; saving one does not silently commit the other.
+- Selecting the already open page does not flush/reload bitmaps. Legacy
+  per-page headers no longer draw text that the shell then paints over.
+- Custom VTX labels fit the measured card width; long arm titles have a right
+  gutter. North Up and Local Home captions are metadata, not inert buttons.
+  Sensors shows source/page counts and separates Next Sources from Refresh.
+  Stick Guide shows its page position and disables unavailable directions.
+  Pack footer captions fit their small panel and show NO DATA without voltage.
+
+PRESERVED
+Native cockpit art, 152x152 attitude area, numeral assets, tapes and gauges.
+The shared telemetry module, source binding, read-only MSP transport, eligibility
+gates, status interval and poll-before-redraw ordering. Widget code and graphic
+assets are unchanged. No FC, RF, model, or output-channel settings are written.
+Existing .cfg/.bak files keep their formats and defaults, including legacy
+None-as-auto protocol/FC profiles and the real mspMode Off control.
+
+THIS DOES NOT CLOSE THE FEATURE GAPS
+Connected VTX status/tables/power/PIT/apply/save, telemetry Min/Max, radio battery,
+native Timer1-3, quick pack/new-flight/mute actions, shared widget/inspector source
+identity and continuous GPS/home state are later work. Home capture and track
+sampling still run only while a GPS page is viewed; this is not a flight log.
+GPS mapping changes still require deliberate home/history reset/reopening.
+The six-section Status/Tools reorganization in the assessment remains a later
+proposal; this first stage simplifies the existing six sections.
+
+VERIFICATION
+Eight portable Lua suites pass. Configuration has 82 behavior assertions.
+Navigation has 24 scenarios using release-pinned TX16S EdgeTX2.12.4 key aliases,
+including SYS/PAGE focus, rotary actions, Back, both draft stores, warnings and
+zero additional bitmap opens for active-page selections. Other suites retain
+transport stop/CRC/bounds checks, sensor units/current flags, decoder behavior
+and the 12,000-callback no-runtime-SD-write attitude-loop regression.
+
+Native layout/input captures use TX16S EdgeTX3.0.0 WASM with isolated synthetic
+inputs. The radio runs2.12.4. No preview fixture ships in the app. These checks
+verify software and layout, not live telemetry latency or physical-radio FPS.
+Previews: development/ui-previews/ux-cleanup/.
+The previous installed-build assessment is retained under development/assessments/.
+
+INSTALL / DEVELOPMENT
+Edit sdcard/SCRIPTS/TOOLS/telem.lua; fullscreen widget loads that same app.
+Exit AERODECK before replacing app files. Preserve settings-*.cfg, battery-*.cfg
+and backups. Remove stale SCRIPTS/TOOLS/telem.luac, then reopen the app. The
+archive contains app/runtime assets and docs, not model/preferences/fixtures.

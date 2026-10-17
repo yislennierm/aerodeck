@@ -1,0 +1,2761 @@
+{
+  "build": "FLIGHT-STATUS-20261017",
+  "status": "PASS",
+  "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+  "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+  "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+  "syntheticDataOnly": true,
+  "fixturePrefixShips": false,
+  "simulator": {
+    "version": "3.0.0",
+    "target": "RadioMaster TX16S",
+    "renderer": "Native EdgeTX WASM",
+    "framebuffer": "RGB565 little endian, 480x272",
+    "pngConversion": "Pillow RGB/raw/BGR;16; primary colors validated",
+    "host": "work/edgetx/native-sim/host.cjs"
+  },
+  "intendedRadioFirmware": "EdgeTX 2.12.4",
+  "hardwareVerified": false,
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "radioInstalledByThisQA": false,
+  "physicalViewingDistanceVerified": false,
+  "pageScreenCount": 12,
+  "pageScreens": {
+    "Flight": "status-flight.png",
+    "Arm Info": "status-arm.png",
+    "Telemetry": "status-telemetry.png",
+    "Power": "status-power.png",
+    "RC Link": "status-link.png",
+    "GPS Details": "status-gps.png",
+    "Track/Home": "status-track.png",
+    "Video": "status-video.png",
+    "Setup": "status-setup.png",
+    "Stick Guide": "status-sticks.png",
+    "Sensors": "status-sensors.png",
+    "Diagnostics": "status-diagnostics.png"
+  },
+  "totalAcceptedScreenshotCount": 61,
+  "screenshots": [
+    {
+      "file": "status-flight.png",
+      "sha256": "d574c31e517cfa5ed1390a1278662729878b6d908cfbfe3f82d001e6e4053a46",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-nav-focus.png",
+      "sha256": "e548ff173d5b1328e069d6e6b4018dfcf0f018214aca95633225b07b5331ccbb",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-context-focus.png",
+      "sha256": "0831fdcbd2c8d39e5f30a83802c674c7db5489fdbfd605a695d647afac6b6fc3",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-arm.png",
+      "sha256": "964940295f4d697bf76623cb9dcdd1b58e1574705a584affeb5cca0022589e65",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-arm-return.png",
+      "sha256": "d574c31e517cfa5ed1390a1278662729878b6d908cfbfe3f82d001e6e4053a46",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-arm-enter.png",
+      "sha256": "26e3e2a4192a3795ddc687014150a701bc365adcab4aeea1189bca2751663728",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-arm-enter-return.png",
+      "sha256": "d574c31e517cfa5ed1390a1278662729878b6d908cfbfe3f82d001e6e4053a46",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-telemetry.png",
+      "sha256": "5992f7a2d3e1c6a3ef8acd77b862b064da14c0ba14d08b7b428d3d1149468397",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-power.png",
+      "sha256": "14c05f3e04bf915e195dee43eb6804f3ddd588580a7dc4a1d67c84756469198c",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-link.png",
+      "sha256": "3057cda2d2808678a296408f179c3754d0533464d0d2737df02fd6b47c364546",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-gps.png",
+      "sha256": "80df69e207a9629b080a8627bd0dec2b3fed5cba796dcf713e6c10999c0e2d47",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-gps-arm.png",
+      "sha256": "08bb112c7c8b5c27b2b2c9db4b85e7a2d82c58a56692b5aff26e47d7fd15ca90",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-gps-arm-return.png",
+      "sha256": "80df69e207a9629b080a8627bd0dec2b3fed5cba796dcf713e6c10999c0e2d47",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-track.png",
+      "sha256": "414197e2466dd7cea3e019298ad0665e6ed0b5ec93119ad218a4bf9007d4d275",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-video.png",
+      "sha256": "15a94ebc2d6a956b085ebcbe079c5886d70d88c2cad87db6951817178cabddf2",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup.png",
+      "sha256": "80b4e241811507902f3f98a9a2d8d25b675bc87a3ab8c99bd7982883b7a286ec",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup-footer-focus.png",
+      "sha256": "1a1e7468b61c5da929e8504db6566972a332e7c27aba956a0e2f636fe5527c9b",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup-arm.png",
+      "sha256": "480ae6eada9d6293102d68871f379e85b374bf67dd5808436bdae67e3e858537",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup-arm-return.png",
+      "sha256": "80b4e241811507902f3f98a9a2d8d25b675bc87a3ab8c99bd7982883b7a286ec",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-battery.png",
+      "sha256": "69c1109a7aa9d912007f197526080868b07ae42107f889eaeaff49b05fed79ee",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-battery-edit.png",
+      "sha256": "cae8073fc18bca9388c72a7a48c66d107b2047430c995320991d7ec2e8201de7",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup-edit-arm.png",
+      "sha256": "772b48ca4bc16ea49a9ecaf5fe49cb968d04b72fcb605a3363f8fc52c15b9abf",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup-edit-return.png",
+      "sha256": "cae8073fc18bca9388c72a7a48c66d107b2047430c995320991d7ec2e8201de7",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-model-settings.png",
+      "sha256": "09dc59cf888043d1ab23dc8051cb82d694838a412dd34317f8ae16b4148b3345",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-model-mid.png",
+      "sha256": "823f0bb8b7a874798468b2da0f7b4efe5ffdbb0ade2bbc09c0d7e3b4d38ce5c8",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-settings-save.png",
+      "sha256": "8506ff67b071cd1cae194afe5847b7f4d835f2301bca6febfb4d9a36a95abc2f",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-categories-second.png",
+      "sha256": "5756b2cbb370039dd25da1f314ce25d5a34e91ee4066b83b02b8a220f81037d4",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-sticks.png",
+      "sha256": "81ff9a1b48dd3f7842e36ef53248cb8ca4ecb730ba9af6903e45ff5f858f2ffb",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-sensors.png",
+      "sha256": "9d3560927940bfeb51ea1d4f6250c8d77f67dac3d3068c7e51b28f54581d988e",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-diagnostics.png",
+      "sha256": "b42d055e583a1046b1641e2f02be591fa4b6eca474c1084c9625db8a08e44227",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-home-return.png",
+      "sha256": "d36b24e11a4c871d60eb4f23cb6e559b5b5db47dff468592f4cc9b58bec65cdb",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-page-data.png",
+      "sha256": "8e629bbd9cf480d540291bb2d8e8b204d5f7ba310f1de8ccd82cddf33f072ec6",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "all"
+    },
+    {
+      "file": "status-setup-warning-focus.png",
+      "sha256": "cc0659b271d3dd49c4cdf6f3c7891c11d82f9fff069a0ed77d0f867399fe88c5",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "setup-recovery"
+    },
+    {
+      "file": "status-setup-warning-cleared.png",
+      "sha256": "f5890caf87e6013dbbfcc19c2330369380235147bdf2c77ac771758a20bbce23",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "setup-recovery"
+    },
+    {
+      "file": "status-setup-warning-enter.png",
+      "sha256": "0b53fd35218c2ea4e2e8404f2e44f41a6d09e8b9e8dee03960a881f118eae77e",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "setup-recovery"
+    },
+    {
+      "file": "status-setup-warning-return.png",
+      "sha256": "f5890caf87e6013dbbfcc19c2330369380235147bdf2c77ac771758a20bbce23",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "setup-recovery"
+    },
+    {
+      "file": "status-no-status-flight.png",
+      "sha256": "d21a1d31ae40f8e8ec53f137dc0dea21cfac7046b3f3875fd7b4cca618bd27e2",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "no-status"
+    },
+    {
+      "file": "status-no-status-arm.png",
+      "sha256": "b819210763f3682402cf3221716d7d39f9c67583dd54fc8657633a8cc9560c5a",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "no-status"
+    },
+    {
+      "file": "status-malformed-status-flight.png",
+      "sha256": "e382cb20ec9e17a2c404b70076860e6ff3bfdf5c8594865b66b4dca02e73640d",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "malformed-status"
+    },
+    {
+      "file": "status-malformed-status-arm.png",
+      "sha256": "2af2d8a9364737f91db7983f9545b7bdf6bfbce599bc8683a917ef52e03b53b2",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "malformed-status"
+    },
+    {
+      "file": "status-zero-flags-flight.png",
+      "sha256": "4d31ff1dcb07169d34ad1327371e3d3a220621191abfc89865a38333a86322c7",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "zero-flags"
+    },
+    {
+      "file": "status-zero-flags-arm.png",
+      "sha256": "13c3f6f5875da705ed368802ff647bc80c2577c088df53f36ebd90cde27adbbb",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "zero-flags"
+    },
+    {
+      "file": "status-unknown-api-flight.png",
+      "sha256": "2a444fdc36ac2c0065295fc255239a73eef74e6a881f94ec2b3c173fbb36bf07",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "unknown-api"
+    },
+    {
+      "file": "status-unknown-api-arm.png",
+      "sha256": "99fbb3e1d8475c65cf35769a2b0eba95c2826210f83d1b1e1c347baf29b6435f",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "unknown-api"
+    },
+    {
+      "file": "status-unknown-count-flight.png",
+      "sha256": "2a444fdc36ac2c0065295fc255239a73eef74e6a881f94ec2b3c173fbb36bf07",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "unknown-count"
+    },
+    {
+      "file": "status-unknown-count-arm.png",
+      "sha256": "61b55d8f4c7759653c7d4e80dfdbaa2ee7ad99b2d4699d7ce43712ceb6428174",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "unknown-count"
+    },
+    {
+      "file": "status-stale-flight.png",
+      "sha256": "ca18308aec44763a3ef3ff3edd832751eb29c543cc816a7f2ae1ae3efe727383",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "stale"
+    },
+    {
+      "file": "status-stale-arm.png",
+      "sha256": "b53b6b7cec56e7d567ca567e49c7c8a4b4c0c866b5a2a9db452ccb270abb6416",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "stale"
+    },
+    {
+      "file": "status-multi-flags-flight.png",
+      "sha256": "5e7f13cbe5e2909576fb87afbcf1cf04d25e18d2e5f7eeb7538561b6c0d6d4e1",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "multi-flags"
+    },
+    {
+      "file": "status-multi-flags-arm.png",
+      "sha256": "b4efbd1783dde96058ae4be835308cfd4acf5aeee8c8233f80b3813d4267ecc7",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "multi-flags"
+    },
+    {
+      "file": "status-multi-flags-gps.png",
+      "sha256": "54f4671c46444c5684a500bda2d134540f686331afb9795d2de99045f79315dd",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "multi-flags"
+    },
+    {
+      "file": "status-missing.png",
+      "sha256": "ba78c6d69fecefff3d7f8f6d1a9d9938878e641bc7dfe957a92756011965d055",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "missing"
+    },
+    {
+      "file": "status-zero.png",
+      "sha256": "607cca6e7d7ecd4e0e4936a1a2c65af2cc5da136477ab73bc8df56669d5d5d43",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "zero"
+    },
+    {
+      "file": "status-long-values.png",
+      "sha256": "478d24d286ee873b76e25f71de1ec52ae06c0957889aaa690c469b4e86684d44",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "long-values"
+    },
+    {
+      "file": "status-low-lq-flight.png",
+      "sha256": "5ec0dbc696f2616b03a8d4b432df2693410d092ffede078aa34f42a35f4b6085",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "low-lq"
+    },
+    {
+      "file": "status-low-lq-arm-touch.png",
+      "sha256": "1b060b90d2b8e5d5eac754885dea1b3e3017f91edd094878993421ba010419bb",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "low-lq"
+    },
+    {
+      "file": "status-low-lq-return.png",
+      "sha256": "5ec0dbc696f2616b03a8d4b432df2693410d092ffede078aa34f42a35f4b6085",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "low-lq"
+    },
+    {
+      "file": "status-low-lq-focus.png",
+      "sha256": "4218975c081a0783c3ab5c68f2016d8261de6a6aaa545bae881ab4a9498c243f",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "low-lq"
+    },
+    {
+      "file": "status-low-lq-arm-key.png",
+      "sha256": "15fa359a707b4a18f92cae09cf39b286b481096a3d89082ace8f812ade82be9f",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "low-lq"
+    },
+    {
+      "file": "status-low-lq-key-return.png",
+      "sha256": "5ec0dbc696f2616b03a8d4b432df2693410d092ffede078aa34f42a35f4b6085",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "low-lq"
+    },
+    {
+      "file": "status-critical-lq.png",
+      "sha256": "0ff3b68018a39a8576da1c3df85dc1a5370a435174f7bf04d76fa0420d29a0a2",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "visuallyInspected": true,
+      "case": "critical-lq"
+    }
+  ],
+  "priorSourceEvidenceCount": 0,
+  "fixtures": [
+    {
+      "variant": "all",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "setup-recovery",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RQly": 85
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "dynamicLq": {
+        "initial": 85,
+        "clearAfterTicks": 800,
+        "recovered": 100
+      },
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+    },
+    {
+      "variant": "no-status",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": 0
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "malformed-status",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          31
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          0,
+          128
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          0,
+          128,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "zero-flags",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [],
+        "maskBytesLE": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "unknown-api",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 99,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "unknown-count",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 31,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          31,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "stale",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": 1
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "multi-flags",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          7,
+          18,
+          23
+        ],
+        "maskBytesLE": [
+          128,
+          0,
+          132,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          128,
+          0,
+          132,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "missing",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": true,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "zero",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {},
+      "allReadsMissing": false,
+      "allNumericReadsZero": true,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "long-values",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RxBt": 123.4,
+        "Capa": 9999999,
+        "TPWR": 99999,
+        "Curr": 999.9,
+        "1RSS": -1234,
+        "GSpd": 12345,
+        "GAlt": -99999,
+        "Sats": 999,
+        "Bat%": 100,
+        "Hdg": 359
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 80,
+        "critical": 60
+      },
+      "dynamicLq": null,
+      "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+    },
+    {
+      "variant": "low-lq",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RQly": 85,
+        "Hdg": 15
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "dynamicLq": null,
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+    },
+    {
+      "variant": "critical-lq",
+      "runtime": "runtime-all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "values": {
+        "RQly": 75,
+        "Hdg": 140
+      },
+      "allReadsMissing": false,
+      "allNumericReadsZero": false,
+      "mspFixture": {
+        "apiMajor": 1,
+        "apiMinor": 48,
+        "flagCount": 30,
+        "setBits": [
+          18
+        ],
+        "maskBytesLE": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "statusPayload": [
+          125,
+          0,
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          35,
+          0,
+          3,
+          0,
+          0,
+          30,
+          0,
+          0,
+          4,
+          0,
+          0,
+          45,
+          0
+        ],
+        "statusResponseLimit": null
+      },
+      "lqThresholds": {
+        "low": 90,
+        "critical": 80
+      },
+      "dynamicLq": null,
+      "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+    }
+  ],
+  "captureRecords": [
+    {
+      "case": "all",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "all",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-all.log",
+      "logSha256": "8a2fd69f8fd6beea32fb6f965e6fe400887ea7cdec2c6b502c665c2fc3ade16c",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-flight.png",
+        "status-nav-focus.png",
+        "status-context-focus.png",
+        "status-arm.png",
+        "status-arm-return.png",
+        "status-arm-enter.png",
+        "status-arm-enter-return.png",
+        "status-telemetry.png",
+        "status-power.png",
+        "status-link.png",
+        "status-gps.png",
+        "status-gps-arm.png",
+        "status-gps-arm-return.png",
+        "status-track.png",
+        "status-video.png",
+        "status-setup.png",
+        "status-setup-footer-focus.png",
+        "status-setup-arm.png",
+        "status-setup-arm-return.png",
+        "status-battery.png",
+        "status-battery-edit.png",
+        "status-setup-edit-arm.png",
+        "status-setup-edit-return.png",
+        "status-model-settings.png",
+        "status-model-mid.png",
+        "status-settings-save.png",
+        "status-categories-second.png",
+        "status-sticks.png",
+        "status-sensors.png",
+        "status-diagnostics.png",
+        "status-home-return.png",
+        "status-page-data.png"
+      ]
+    },
+    {
+      "case": "setup-recovery",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "setup-recovery",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 85
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "dynamicLq": {
+          "initial": 85,
+          "clearAfterTicks": 800,
+          "recovered": 100
+        },
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      "log": "capture-setup-recovery.log",
+      "logSha256": "07663ae84ac6a55097e738e7790c44eeb93c8da644578bc347064ec2fd9fc315",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-setup-warning-focus.png",
+        "status-setup-warning-cleared.png",
+        "status-setup-warning-enter.png",
+        "status-setup-warning-return.png"
+      ]
+    },
+    {
+      "case": "no-status",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "no-status",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": 0
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-no-status.log",
+      "logSha256": "2b4fdd4844224f30011199333424995b3c5bbcf9966030554a8fca63702f2df1",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-no-status-flight.png",
+        "status-no-status-arm.png"
+      ]
+    },
+    {
+      "case": "malformed-status",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "malformed-status",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            31
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            0,
+            128
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            128,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-malformed-status.log",
+      "logSha256": "42d1b88b6f6bbaaa9ae6e0532439d6302f6ed4a9a8be3b908886e554347a297f",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-malformed-status-flight.png",
+        "status-malformed-status-arm.png"
+      ]
+    },
+    {
+      "case": "zero-flags",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "zero-flags",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [],
+          "maskBytesLE": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-zero-flags.log",
+      "logSha256": "92b266bbf8724336c1eeaf6b02cd3a253a1713e8cea4c92c0d32bdb6c9e7e35d",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-zero-flags-flight.png",
+        "status-zero-flags-arm.png"
+      ]
+    },
+    {
+      "case": "unknown-api",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "unknown-api",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 99,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-unknown-api.log",
+      "logSha256": "2b273747848bb93d8e035a431950ad4edc8a0206a113eb08df2a3ae7e5128e7a",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-unknown-api-flight.png",
+        "status-unknown-api-arm.png"
+      ]
+    },
+    {
+      "case": "unknown-count",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "unknown-count",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 31,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            31,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-unknown-count.log",
+      "logSha256": "b9e1d56a596a133b997adae230a10b4b921ba2c76d483d47587c1d52ee8d4872",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-unknown-count-flight.png",
+        "status-unknown-count-arm.png"
+      ]
+    },
+    {
+      "case": "stale",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "stale",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": 1
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-stale.log",
+      "logSha256": "d0535e3457ad3ba8261d9f1c89a095d2e781811b9665fb67ee4370a413adc5ab",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-stale-flight.png",
+        "status-stale-arm.png"
+      ]
+    },
+    {
+      "case": "multi-flags",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "multi-flags",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            7,
+            18,
+            23
+          ],
+          "maskBytesLE": [
+            128,
+            0,
+            132,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            128,
+            0,
+            132,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-multi-flags.log",
+      "logSha256": "cacd7660c92c1d86b899396878d9bed014cbbaa11c5c8ec33c109e1ead54f07a",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-multi-flags-flight.png",
+        "status-multi-flags-arm.png",
+        "status-multi-flags-gps.png"
+      ]
+    },
+    {
+      "case": "missing",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "missing",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": true,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-missing.log",
+      "logSha256": "81f9e71f081defdc9952d9081080b38e62c7953cc79e901ab12184fa7aadc589",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-missing.png"
+      ]
+    },
+    {
+      "case": "zero",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "zero",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {},
+        "allReadsMissing": false,
+        "allNumericReadsZero": true,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-zero.log",
+      "logSha256": "136fe3603ca0c26cd136ac6098decfd8e40257e4364b3698881be9e35a0aea78",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-zero.png"
+      ]
+    },
+    {
+      "case": "long-values",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "long-values",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RxBt": 123.4,
+          "Capa": 9999999,
+          "TPWR": 99999,
+          "Curr": 999.9,
+          "1RSS": -1234,
+          "GSpd": 12345,
+          "GAlt": -99999,
+          "Sats": 999,
+          "Bat%": 100,
+          "Hdg": 359
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 80,
+          "critical": 60
+        },
+        "dynamicLq": null,
+        "settingsSha256": "e05a2bdbabda7ad1771ccf744362397cf58bda5b0bb110b8ffa1479855ce7b7b"
+      },
+      "log": "capture-long-values.log",
+      "logSha256": "56d4e66c35bbffa0c5744accb01bb635e784765010329c77606af531ebf477bd",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-long-values.png"
+      ]
+    },
+    {
+      "case": "low-lq",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "low-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 85,
+          "Hdg": 15
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "dynamicLq": null,
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      "log": "capture-low-lq.log",
+      "logSha256": "d377645e24fcb7974fd34120f70582f0e9c24e942f2cac286046271a2aede372",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-low-lq-flight.png",
+        "status-low-lq-arm-touch.png",
+        "status-low-lq-return.png",
+        "status-low-lq-focus.png",
+        "status-low-lq-arm-key.png",
+        "status-low-lq-key-return.png"
+      ]
+    },
+    {
+      "case": "critical-lq",
+      "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "critical-lq",
+        "runtime": "runtime-all",
+        "sourceSha256": "e5d50b21591530c1fb1cfa5c7d7d9aeab5a121c888dd9dc4f9ed5b34550a6d2d",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "values": {
+          "RQly": 75,
+          "Hdg": 140
+        },
+        "allReadsMissing": false,
+        "allNumericReadsZero": false,
+        "mspFixture": {
+          "apiMajor": 1,
+          "apiMinor": 48,
+          "flagCount": 30,
+          "setBits": [
+            18
+          ],
+          "maskBytesLE": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "statusPayload": [
+            125,
+            0,
+            0,
+            0,
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0,
+            0,
+            4,
+            0,
+            0,
+            45,
+            0
+          ],
+          "statusResponseLimit": null
+        },
+        "lqThresholds": {
+          "low": 90,
+          "critical": 80
+        },
+        "dynamicLq": null,
+        "settingsSha256": "cc6b2547d93ea5d1334eea044e5722cd01611566afce943e23d17212320c02d1"
+      },
+      "log": "capture-critical-lq.log",
+      "logSha256": "5852b719d723cf649cf73996f3e49afa792873552d50355aeb685a5cf8612dbf",
+      "processExitCode": 0,
+      "screenshots": [
+        "status-critical-lq.png"
+      ]
+    }
+  ],
+  "layout": {
+    "armingControl": [
+      432,
+      246,
+      48,
+      26
+    ],
+    "armingControlTouch": [
+      456,
+      259
+    ],
+    "armingGlyph": [
+      447,
+      250,
+      18,
+      18
+    ],
+    "warningDetailRegion": [
+      0,
+      246,
+      432,
+      26
+    ],
+    "normalFooterRegions": {
+      "mode": [
+        0,
+        120
+      ],
+      "home": [
+        120,
+        240
+      ],
+      "satellites": [
+        240,
+        304
+      ],
+      "armingReason": [
+        304,
+        432
+      ],
+      "armingControl": [
+        432,
+        480
+      ]
+    },
+    "fullCompassNominalBounds": [
+      78,
+      34,
+      324,
+      30
+    ],
+    "freshArmingMaxAgeSeconds": 8
+  },
+  "finalSourceChecks": {
+    "all12PagesVisuallyInspected": true,
+    "allAcceptedScreenshotsVisuallyInspected": true,
+    "noUnintendedOverlapObservedInCapturedCases": true,
+    "fullCompassHasNoArmingButton": true,
+    "globalFooterContainsNoMspStatusText": true,
+    "api148Count30GpsBit18Named": true,
+    "multipleReasonsAndGpsDetailClear": true,
+    "zeroMaskDoesNotClaimReadyOrArmed": true,
+    "unknownApiAndCountUseNumberedFallback": true,
+    "staleStatusIsExplicit": true,
+    "malformedStatusIsExplicit": true,
+    "missingAndNumericZeroRemainDistinct": true,
+    "noStatusFooterShowsFlagsUnavailable": true,
+    "warningArmingControlTouchAndEnterRtnWork": true,
+    "normalArmingControlTouchAndEnterRtnWork": true,
+    "gpsOriginRestoredAfterArmRtn": true,
+    "setupPrevFooterEnterRtnWorks": true,
+    "setupWarningClearRestoresCategoryFocus": true,
+    "setupEditAndDraftRestoredAfterArmRtn": true
+  },
+  "visualChecks": [
+    "All accepted images were regenerated from the exact final main and decoder hashes. Every image was visually reviewed at native 480x272.",
+    "The compass uses the full area above the attitude display. The arming shortcut is icon only in its reserved right footer target; normal status and warning text stay inside the remaining footer area.",
+    "All 12 pages retain a clear footer. The top compass button and persistent MSP text are absent. Global navigation, configuration edits/actions and other content remain clear.",
+    "Known API1.48/count30/bit18 displays the named GPS reason. Multi-reason state permits reading GPS separately; unknown API/count remains numbered, zero mask does not assert readiness, absent status displays FLAGS --, old status is explicit, and bit31 outside count30 produces STATUS ERROR.",
+    "The dynamic Setup regression focuses the alert while LQ85 is low, then restores category highlight in the same rendered state after LQ100 recovery; ENTER opens the first category. Setup PREV from first category focuses Arm, ENTER opens it and RTN restores Setup. GPS origin and an active changed battery edit are restored after Arm/RTN. Normal and warning-state arming control touch and ENTER focus/activation open Arm Info; RTN returns. Missing telemetry and valid numeric zero remain distinct."
+  ],
+  "logs": [
+    {
+      "file": "work/edgetx/flight-status/capture-all.log",
+      "sha256": "8a2fd69f8fd6beea32fb6f965e6fe400887ea7cdec2c6b502c665c2fc3ade16c",
+      "processExitCode": 0,
+      "acceptedShotCount": 32,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-setup-recovery.log",
+      "sha256": "07663ae84ac6a55097e738e7790c44eeb93c8da644578bc347064ec2fd9fc315",
+      "processExitCode": 0,
+      "acceptedShotCount": 4,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-no-status.log",
+      "sha256": "2b4fdd4844224f30011199333424995b3c5bbcf9966030554a8fca63702f2df1",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-malformed-status.log",
+      "sha256": "42d1b88b6f6bbaaa9ae6e0532439d6302f6ed4a9a8be3b908886e554347a297f",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-zero-flags.log",
+      "sha256": "92b266bbf8724336c1eeaf6b02cd3a253a1713e8cea4c92c0d32bdb6c9e7e35d",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-unknown-api.log",
+      "sha256": "2b273747848bb93d8e035a431950ad4edc8a0206a113eb08df2a3ae7e5128e7a",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-unknown-count.log",
+      "sha256": "b9e1d56a596a133b997adae230a10b4b921ba2c76d483d47587c1d52ee8d4872",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-stale.log",
+      "sha256": "d0535e3457ad3ba8261d9f1c89a095d2e781811b9665fb67ee4370a413adc5ab",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-multi-flags.log",
+      "sha256": "cacd7660c92c1d86b899396878d9bed014cbbaa11c5c8ec33c109e1ead54f07a",
+      "processExitCode": 0,
+      "acceptedShotCount": 3,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-missing.log",
+      "sha256": "81f9e71f081defdc9952d9081080b38e62c7953cc79e901ab12184fa7aadc589",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-zero.log",
+      "sha256": "136fe3603ca0c26cd136ac6098decfd8e40257e4364b3698881be9e35a0aea78",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-long-values.log",
+      "sha256": "56d4e66c35bbffa0c5744accb01bb635e784765010329c77606af531ebf477bd",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-low-lq.log",
+      "sha256": "d377645e24fcb7974fd34120f70582f0e9c24e942f2cac286046271a2aede372",
+      "processExitCode": 0,
+      "acceptedShotCount": 6,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/flight-status/capture-critical-lq.log",
+      "sha256": "5852b719d723cf649cf73996f3e49afa792873552d50355aeb685a5cf8612dbf",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    }
+  ],
+  "errorFreeLogs": true,
+  "knownHostNotices": [
+    "Node ExperimentalWarning: WASI is an experimental feature"
+  ],
+  "limitations": [
+    "The native simulator is EdgeTX3.0.0 WASM; target radio EdgeTX2.12.4 rendering/API behavior, live telemetry, physical poses and hardware performance remain unverified.",
+    "Telemetry, switches and MSP replies are synthetic inputs in one isolated reused runtime. UI LIVE/CURRENT wording describes fixture freshness, not a real quad during this run. Production contains no fixture prefix; no radio was modified.",
+    "Desktop draw-rate diagnostics are not a radio FPS or memory benchmark. Physical readability at30-40cm has not been measured.",
+    "Unknown APIs or counts intentionally use numbered fallback; a clear disable mask never proves the aircraft armed or ready."
+  ]
+}

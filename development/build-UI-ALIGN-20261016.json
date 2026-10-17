@@ -1,0 +1,556 @@
+{
+  "build": "UI-ALIGN-20261016",
+  "createdUtc": "2026-10-16T20:43:45.992340+00:00",
+  "sourceSha256": "17d09af0b1bb741f069fc4261da3fd3ebd961236f4aa3d9027205168eb473a6d",
+  "installSha256": "7b783bf537986cf039709e2ad2d20e47e9722e7e17c72a24c2adb76cd0acdc04",
+  "runtimeFiles": 101,
+  "rootDocuments": 12,
+  "installFiles": 113,
+  "unchangedRuntimeFiles": 98,
+  "changedRuntimeFiles": [
+    "SCRIPTS/TOOLS/telem.lua",
+    "SCRIPTS/TOOLS/AERODECK/icons/README.txt"
+  ],
+  "newRuntimeFiles": [
+    "SCRIPTS/TOOLS/AERODECK/icons/satellite_alt-18.png"
+  ],
+  "previousLocalBuild": "MATERIAL-ICONS-20261016",
+  "previousLocalSourceSha256": "c49c95c01dc5883b534914efacb22c75df6951404b4875424cfb07364def4ece",
+  "installedOnRadio": false,
+  "lastVerifiedRadioBuild": "HOME-ICON-20261016",
+  "previousVerifiedRadioBuild": "HOME-ICON-20261016",
+  "deploymentHistoryUnchanged": true,
+  "deploymentHistorySha256": "989646759de7151f43ac68a6779b70ed8f581a1c1931f036b2e4dbcede1ba5d2",
+  "attitudeFixIncluded": true,
+  "attitudeSchedulingUnchanged": true,
+  "transportUnchanged": true,
+  "widgetUnchanged": true,
+  "portableSuitesPassed": 11,
+  "testCounts": {
+    "test_crsf_status.lua": [],
+    "test_fc_connection.lua": [],
+    "test_configuration.lua": [
+      91
+    ],
+    "test_telemetry.lua": [],
+    "test_rendering.lua": [],
+    "test_attitude_loop.lua": [
+      12000
+    ],
+    "test_arm_status.lua": [],
+    "test_ui_navigation.lua": [
+      17,
+      15
+    ],
+    "test_pitch_direction.lua": [
+      54
+    ],
+    "test_home_icon.lua": [
+      235
+    ],
+    "test_material_icons.lua": [
+      2107
+    ]
+  },
+  "configurationAssertions": 91,
+  "pitchDirectionAssertions": 54,
+  "navigationAndRendererScenarios": 32,
+  "materialIconAssertions": 2107,
+  "nativePreviewFolder": "development/ui-previews/ui-align",
+  "nativePreview": {
+    "build": "UI-ALIGN-20261016",
+    "status": "PASS",
+    "sourceSha256": "17d09af0b1bb741f069fc4261da3fd3ebd961236f4aa3d9027205168eb473a6d",
+    "simulator": {
+      "version": "3.0.0",
+      "target": "RadioMaster TX16S",
+      "renderer": "Native EdgeTX WASM",
+      "framebuffer": "480x272 RGB565",
+      "host": "work/edgetx/native-sim/host.cjs"
+    },
+    "syntheticDataOnly": true,
+    "fixturePrefixShips": false,
+    "hardwarePoseVerified": false,
+    "hardwareRenderingVerified": false,
+    "hardwarePerformanceMeasured": false,
+    "fixture": {
+      "flightMode": "HORIZON*",
+      "pitchRadians": 0,
+      "rollRadians": 0,
+      "voltage": 22.8,
+      "satellites": 13,
+      "lq": 100,
+      "rssi": -61,
+      "armingFlag": "NO_ACC_CAL bit23 only",
+      "missingSourceNames": [
+        "RxBt",
+        "Sats"
+      ],
+      "longModelName": "Gyro pjqy long model name",
+      "criticalVoltage": 19.8,
+      "noCurrentTelemetry": "all source reads return nil,false,false"
+    },
+    "screenshots": [
+      {
+        "file": "align-arm.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "5131d9064de3ab3bd94a153371664d3b8a02b7a0dea7c13d6f18d2c9fc78c729",
+        "purpose": "Arm Stops: longest NO_ACC_CAL explanation heading",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-battery-edit.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "960b97bde89131e4f99dbcfbcf40bceec72e80edb102bef89e994d4976e04e72",
+        "purpose": "Battery audible-alert edit highlight and action baseline",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-battery.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "1579389f97f1675f874d09f305f1e3432ec998a51cf71e1b94e9df2b23c12f7b",
+        "purpose": "Category 3: all eight battery rows and actions",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-categories-second.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "eb9451f31d06150e40a4faa6b4821294215c4119be5ace3f5f3e16f15e4c66a0",
+        "purpose": "Setup category list page 2 and action baseline",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-context-focus.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "fef2fbfbd2fe1e75444c97c5dfb901f22cdb3850a7bf016fb350af53131eb9e8",
+        "purpose": "ENTER exposes visible context keyboard focus rectangle",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-critical-data.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "cda46f8cf173a38458cab42d622b8b5b36fa6d241dc41dac8b59cfed26a58925",
+        "purpose": "Battery critical footer and 3.30V cell on Telemetry",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-critical-flight.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "0d7895467021148cf22117f95c331585aa08c40be05411d95366dd53f6b460af",
+        "purpose": "Battery critical footer with 19.8V / LQ100% right aligned",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-diagnostics.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "b23722ef3775886acbeb3b294ba0401fd19d5471825ddfb18efc0331102c7fe4",
+        "purpose": "Diagnostics and build identity",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-flight.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "25e802d3de1fe21b1c2c441c265846dbadcd1e980e17508e8196c45157f95d02",
+        "purpose": "Flight: centered HORIZON* context and live footer",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-gps.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "0f20f3633439b7cbd641254bbef49c2f55672a8743af3b536273833aa7f5173a",
+        "purpose": "GPS Details: centered detail tab and coordinates",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-home-return.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "a554fea7b1923db490c03c04b7af0f5177d6b8a205748ae5496a82f18b619e55",
+        "purpose": "Home touch returns to Flight",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-link.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "7102f9e8d9ca1df311e24e5a4941a02aff3c3213a10611f0e9e9661b9a32dcdf",
+        "purpose": "RC Link: centered context and link metrics",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-missing-footer.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "b16d5f250b6b09f72644409d80720ed5fe23b8e0f675d263e42b3b654f39dab1",
+        "purpose": "Voltage/satellite unavailable: grey icon + --; long model with descenders",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-missing-video.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "de6b88c7b229041a52ec313def0d053097f6bcedcf973b6ba01a152a4aeb447e",
+        "purpose": "Long model truncation and Video layout with no voltage/satellites",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-model-mid.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "6d62280d4d654d9e9e09bc9afcb3d0ed45d678a1144d972ff855f8763203416c",
+        "purpose": "Model settings middle rows and MORE ROWS focus",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-model-settings.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "f41fe37f0b1ab8d51010f2137e04ec036168764a95c9e7137bc514106d0bf87d",
+        "purpose": "Model settings first seven rows and action baseline",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-nav-focus.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "a39423bb156bf14ce596134b57456c4a02b811641e04731d2a9a8b5337cd0a9e",
+        "purpose": "SYS section focus: 44x32 plate around 30px icon",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-page-data.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "purpose": "Normal PAGE> from Flight opens Data",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-power.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "61680c4cd0b7cb13c3f5f82ba6df43f225de7e72ae35347ea41fc2f4ed613c66",
+        "purpose": "Power: centered context and numeric data",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-sensors.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "f5f46632387b66f26e58a0e77717cbfa0813dd7f67911a834cea212df2f09882",
+        "purpose": "Sensors context and row alignment",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-settings-save.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "3c2dea5b811fefba94bfffa05470de873a85d33160ba8b4e25c8d17fe089e85b",
+        "purpose": "Save Settings focused after activation",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-setup.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "2d5c490ac4d61dc09bc2a3e4cf6638cad9335713800a8ecbea01988f67d68b19",
+        "purpose": "Setup category list page 1",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-sticks.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "2ae1c966f08ee7fa39070a7850b7c368dc35817d7b6faa9fa1a513695eda2cb0",
+        "purpose": "Stick Guide and tool context alignment",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-telemetry.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "21138830ca0b0e16359116910ccc8fc25b9417e92b2f99824a8ad9ae53be1dc6",
+        "purpose": "Telemetry: three centered context tabs and dense data",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-track.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "3f862fa0521d29091f55324575f08d97368dc4c59731a6df50efe4ffa6ec92b6",
+        "purpose": "Track / Home: NORTH UP aligned with bottom action row",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-video.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "4583edd5d2ca6a770b0e553b7eeb325bcd606c6216ac985ac27ebe62194f860c",
+        "purpose": "Video: CUSTOM favourite, new action baseline, REFERENCE badge",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-warning-data.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "a24d9862bb7cc5dce2e5059550c25505dc4c8263d5a8d214c5617643aaf0534a",
+        "purpose": "No-current-telemetry warning and -- data on Telemetry",
+        "visuallyInspected": true
+      },
+      {
+        "file": "align-warning-flight.png",
+        "width": 480,
+        "height": 272,
+        "sha256": "7d05a72855be19a743a038456b0dbf84eb728f6e3148b32739c56246c55d10c5",
+        "purpose": "No-current-telemetry warning on Flight",
+        "visuallyInspected": true
+      }
+    ],
+    "pageScreenCount": 12,
+    "totalAcceptedScreenshotCount": 28,
+    "nativeFontMetrics": [
+      {
+        "font": "SMLSIZE",
+        "flags": 768,
+        "sample": "Agjpqy",
+        "width": 39,
+        "height": 17
+      },
+      {
+        "font": "TINSIZE",
+        "flags": 512,
+        "sample": "Agjpqy",
+        "width": 27,
+        "height": 12
+      }
+    ],
+    "headerRows": {
+      "barHeight": 34,
+      "clock": {
+        "x": 43,
+        "y": 0,
+        "font": "SMLSIZE",
+        "nativeHeight": 17,
+        "bottomExclusive": 17
+      },
+      "model": {
+        "x": 43,
+        "y": 19,
+        "font": "TINSIZE",
+        "nativeHeight": 12,
+        "bottomExclusive": 31,
+        "longShownCaption": "Gyro pjqy lo...",
+        "reservedWidth": 54
+      },
+      "rowsFit": true
+    },
+    "geometryChecks": {
+      "selectedPlate": [
+        44,
+        32
+      ],
+      "mainIcons": [
+        30,
+        30
+      ],
+      "plateHorizontalMargin": 7,
+      "contextIconSize": 18,
+      "contextIconY": 38,
+      "contextTextY": 38,
+      "footerIconSize": 18,
+      "footerIconY": 250,
+      "footerTextY": 250,
+      "overlapObserved": false,
+      "whiteMaskBoxObserved": false,
+      "activeInactiveTintCorrect": true
+    },
+    "nativeMasks": {
+      "expectedCount": 19,
+      "observedNativeDrawCount": 19,
+      "names": [
+        "battery_full-18.png",
+        "bug_report-18.png",
+        "build.png",
+        "cell_tower-18.png",
+        "gpp_bad-18.png",
+        "head_mounted_device-18.png",
+        "head_mounted_device.png",
+        "home.png",
+        "my_location-18.png",
+        "my_location.png",
+        "route-18.png",
+        "satellite_alt-18.png",
+        "sensors-18.png",
+        "speed-18.png",
+        "speed.png",
+        "sports_esports-18.png",
+        "table_chart-18.png",
+        "table_chart.png",
+        "tune.png"
+      ],
+      "includesNewSatelliteAlt": true,
+      "fallbackUsedForExpectedIcons": false,
+      "method": "Isolated lexical wrappers forward real Bitmap.open/Bitmap.toMask and real lcd.drawBitmapPattern(mask,x,y,flags). A short five-section tour logs each native mask draw once per pathname; worker duplicate lines are deduplicated. Production and actual rendering arguments remain unchanged."
+    },
+    "visualChecks": [
+      "All 12 pages fit the shared shell; original cockpit textures, circular bezel and level attitude remain intact.",
+      "Native 30px main icons are centered within matching 44x32 selected/focus plates; 18px icon/caption groups are centered in their contexts.",
+      "Clock and model, including long descender text truncated in TINSIZE, fit inside the 34px bar.",
+      "Footer shows native cell-tower icon +100%/-61dBm, battery+22.8V, satellite+13 and MSP LIVE with consistent baseline.",
+      "Missing voltage/satellites show grey icons and --. Battery critical and no-current-telemetry warnings fit without touching the right values.",
+      "HORIZON* and Accelerometer not calibrated fit. Video CUSTOM, REFERENCE badge, labels and actions fit.",
+      "Setup list, both category pages, eight battery rows, edit state, model first/middle rows and Save/More Rows focus align within their row and action rectangles.",
+      "SYS reveals section focus, ENTER reveals visible context focus, Home returns Flight and PAGE> opens Data. RTN from Flight exits by contract."
+    ],
+    "logs": [
+      {
+        "file": "work/edgetx/ui-align/capture-all.log",
+        "sha256": "ec219fb51bc6440a04a4b128dc501c42f3c0bb7a43a1d232b708b1084ee54613",
+        "processExitCode": 0,
+        "acceptedShotCount": 22,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/ui-align/capture-missing.log",
+        "sha256": "4c446d59c4b77e4a4d455fb58fbe912f5bd8cdaa93569dd30c265e4a74b4174e",
+        "processExitCode": 0,
+        "acceptedShotCount": 2,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/ui-align/capture-warning.log",
+        "sha256": "ec05593b2ead765543818677bf10791aee00260b8ec9faab87bba0c62c8deaa5",
+        "processExitCode": 0,
+        "acceptedShotCount": 2,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/ui-align/capture-critical.log",
+        "sha256": "ef254af726ea3f7b72bee67bc10fc17e4b0a6252192ffea3c1f949b5259f9db6",
+        "processExitCode": 0,
+        "acceptedShotCount": 2,
+        "luaOrFirmwareErrorsObserved": false
+      },
+      {
+        "file": "work/edgetx/ui-align/capture-mask-probe.log",
+        "sha256": "0f015d76cd3d6d15f78bb6de5ca0005331b6134c0db385eb43524a8881dc1a89",
+        "processExitCode": 0,
+        "acceptedShotCount": 0,
+        "luaOrFirmwareErrorsObserved": false
+      }
+    ],
+    "errorFreeLogs": true,
+    "knownHostNotices": [
+      "Node ExperimentalWarning: WASI is an experimental feature"
+    ],
+    "limitations": [
+      "Native rendering is EdgeTX 3.0.0; physical TX16S on EdgeTX 2.12.4 has not been checked for this release.",
+      "Telemetry/switch/MSP data are synthetic. No live-radio telemetry, hardware FPS/memory or physical-pose claims are made.",
+      "Initial tour frames after deliberate RTN exit were rejected; all accepted 28 filenames were overwritten using the final 17d09 source.",
+      "The initial mask logging proxy inspected its third argument instead of the first, so it produced no mask-count evidence; a corrected proxy and dedicated five-section native draw probe establish all 19 counts. Visual screenshots forward the same native arguments in both cases."
+    ]
+  },
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "tests": [
+    {
+      "name": "test_crsf_status.lua",
+      "chunk_id": "a38e24",
+      "wall_time_seconds": 2.1796e-05,
+      "exit_code": 0,
+      "original_token_count": 39,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates\n"
+    },
+    {
+      "name": "test_fc_connection.lua",
+      "chunk_id": "e07bfe",
+      "wall_time_seconds": 1.4262e-05,
+      "exit_code": 0,
+      "original_token_count": 36,
+      "output": "PASS: empty TEST configuration auto-detects CRSF; armed/failsafe/unknown/stale/disabled/incompatible gates; exit cancels; transport before draw\n"
+    },
+    {
+      "name": "test_configuration.lua",
+      "chunk_id": "c8905f",
+      "wall_time_seconds": 1.2267e-05,
+      "exit_code": 0,
+      "original_token_count": 10,
+      "output": "PASS: 91 configuration UX assertions\n"
+    },
+    {
+      "name": "test_telemetry.lua",
+      "chunk_id": "442820",
+      "wall_time_seconds": 1.3133e-05,
+      "exit_code": 0,
+      "original_token_count": 26,
+      "output": "PASS: live without RSSI, units, flight mode, stale clearing, no demo via refresh or old startup setting\n"
+    },
+    {
+      "name": "test_rendering.lua",
+      "chunk_id": "eaf311",
+      "wall_time_seconds": 1.976e-05,
+      "exit_code": 0,
+      "original_token_count": 31,
+      "output": "PASS: stable qualified telemetry binding, explicit refresh, partial bitmap failure retains background and reports failure\n"
+    },
+    {
+      "name": "test_attitude_loop.lua",
+      "chunk_id": "7b7983",
+      "wall_time_seconds": 0.269264004,
+      "exit_code": 0,
+      "original_token_count": 27,
+      "output": "PASS: 12000 callbacks; 27 source binds, zero runtime writes; attitude 100.0 Hz, draw 25.0 Hz (mock clock)\n"
+    },
+    {
+      "name": "test_arm_status.lua",
+      "chunk_id": "cfb6e6",
+      "wall_time_seconds": 3.3056e-05,
+      "exit_code": 0,
+      "original_token_count": 34,
+      "output": "PASS: STATUS_EX offsets, exact API1.46/1.47 flags, bytewise high/low bits, unknown APIs/counts, malformed rejection, no input mutation\n"
+    },
+    {
+      "name": "test_ui_navigation.lua",
+      "chunk_id": "dded85",
+      "wall_time_seconds": 0.769206152,
+      "exit_code": 0,
+      "original_token_count": 52,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 15 dirty-exit, settings-return, draft-preservation, repeated-control, arming, warning-action and pitch-rendering scenarios\n"
+    },
+    {
+      "name": "test_pitch_direction.lua",
+      "chunk_id": "10bbc4",
+      "wall_time_seconds": 2.6468e-05,
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks\n"
+    },
+    {
+      "name": "test_home_icon.lua",
+      "chunk_id": "134160",
+      "wall_time_seconds": 2.2496e-05,
+      "exit_code": 0,
+      "original_token_count": 18,
+      "output": "PASS: 235 home icon cache, tint, GC, fallback and compatibility checks\n"
+    },
+    {
+      "name": "test_material_icons.lua",
+      "chunk_id": "afb6e9",
+      "wall_time_seconds": 1.6044e-05,
+      "exit_code": 0,
+      "original_token_count": 23,
+      "output": "PASS: 2107 Material icon native-size, cache, cold-GC, tint, lifetime and fallback checks\n"
+    }
+  ]
+}
