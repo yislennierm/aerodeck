@@ -4,8 +4,10 @@ Copy the following prompt when opening this repository with an AI coding assista
 
 ```text
 Work on AERODECK as an independent EdgeTX product. Read AGENTS.md, README.md,
-docs/USER-MANUAL.md, docs/PROJECT-STATUS.md, CONTRIBUTING.md and VERSION.json
-before proposing changes. Then inspect the actual Lua, tests and relevant evidence.
+docs/USER-MANUAL.md, docs/PROJECT-STATUS.md, docs/development/PROJECT-STATE.md,
+CONTRIBUTING.md and VERSION.json
+before proposing changes. Run python3 tools/context.py --check from the product
+checkout. Then inspect the actual Lua, tests and relevant evidence.
 
 Produce or update a source-backed project overview covering:
 1. End-user purpose, supported/verified hardware, install/update/rollback and controls.

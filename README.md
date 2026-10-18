@@ -1,44 +1,39 @@
-# AERODECK
+![AERODECK — flight instruments for EdgeTX](docs/images/header.svg)
 
-AERODECK puts flight instruments, power, GPS, radio-link information and flight-controller diagnostics on an EdgeTX radio. Open it as a tool or use it as a full-screen App mode widget.
+A flight dashboard and telemetry toolkit for your radio. See attitude, aircraft power, GPS and flight-controller status in one place—as a Tool or a full-screen App mode widget.
 
-**Current version: 2026.10.0-alpha.** The primary development target is the RadioMaster TX16S MkII with its 480 × 272 display. This is a development prerelease. Wider radio and protocol support is implemented in parts and still needs target-specific verification.
+**[Download](https://github.com/yislennierm/aerodeck/releases) · [User manual](docs/USER-MANUAL.md) · [Report a problem](https://github.com/yislennierm/aerodeck/issues) · [Develop](CONTRIBUTING.md)**
 
-![AERODECK flight screen with sample telemetry](docs/images/flight.png)
+<p align="center"><img src="docs/images/flight.png" width="480" height="272" alt="AERODECK flight screen: link status, attitude, heading and aircraft power" /></p>
 
-*Native TX16S simulator capture with sample telemetry. Actual values depend on your aircraft and sensor configuration.*
+<p align="center"><sub>Native TX16S simulator capture · sample telemetry</sub></p>
 
-## Install and start
+## Your aircraft at a glance
 
-1. Back up your radio’s SD card. Download an AERODECK installation ZIP from [Releases](https://github.com/yislennierm/aerodeck/releases) when one is available. A GitHub source ZIP is not an installation package.
-2. Extract the installation ZIP. Merge its `SCRIPTS`, `WIDGETS` and `LICENSES` folders into the SD-card root. Keep existing folders and your per-model settings files.
-3. Safely eject the SD card, disconnect USB and restart the radio.
-4. Open **SYS → Tools → AERODECK**, or select **App mode** in a screen’s layout and choose the **AERODECK** widget.
-5. With your aircraft connected, discover its telemetry sensors in the EdgeTX model Telemetry page. Open AERODECK Setup to check source mappings, battery profile and control indicators.
+| Flight | Navigation | Aircraft tools |
+|---|---|---|
+| Attitude and heading | GPS track and local home | Arming explanations |
+| Link quality and signal | Distance, bearing and motion | VTX controls and favourites |
+| Voltage, current and capacity | Coordinates and position details | Sensors, diagnostics and stick guides |
 
-For the full-screen widget, long-press the display and select the native full-screen/focus action when shown to give AERODECK input focus. Long-press **RTN** to release it. A small ordinary widget zone shows compact telemetry instead of the full application.
+Choose a full dashboard for flying or a compact widget for an ordinary home-screen zone. Preferences are saved per model. Missing telemetry stays visibly unavailable.
 
-Read the [user manual](docs/USER-MANUAL.md) for setup, controls, every screen, settings, updates and troubleshooting. For first aircraft setup, work with propellers removed.
+## Get started
 
-## What you can use
+1. **Install:** back up the SD card, then download an **installation ZIP** from [Releases](https://github.com/yislennierm/aerodeck/releases). Merge its `SCRIPTS`, `WIDGETS` and `LICENSES` folders into the card root, preserving existing settings.
+2. **Open:** safely eject, disconnect USB and restart. Select **SYS → Tools → AERODECK**, or add the **AERODECK** widget to an **App mode** screen layout.
+3. **Connect:** discover your aircraft’s sensors in EdgeTX, then check source mappings and the battery profile in AERODECK Setup.
 
-- Flight attitude, compass, link and power instruments.
-- Unified GPS track view, home reference and position inspector.
-- Live telemetry, native extrema and discovered sensors.
-- Battery profiles, thresholds, consumption and session information.
-- VTX channel/power controls with explicit Apply and readback.
-- Arming explanations, manual stick-command guides and diagnostics.
-- Per-model preferences and App mode/compact widget support.
+The [user manual](docs/USER-MANUAL.md) covers widget focus, screen controls, configuration, updating and troubleshooting. Remove propellers for initial aircraft setup. GitHub’s source ZIP is not an installation package.
 
-AERODECK shows received data; missing values remain unavailable. It does not create missing sensors or replace flight-controller setup. Stick-command guides are references, not buttons that send commands. No activation key is required.
+## Compatibility and release status
 
-## Project links
+Development focuses on the **RadioMaster TX16S MkII, 480 × 272**, with EdgeTX and Betaflight/ExpressLRS. Wider display and protocol paths need their own validation; see [current support and limitations](docs/PROJECT-STATUS.md).
 
-- [User manual](docs/USER-MANUAL.md)
-- [Current status and known limits](docs/PROJECT-STATUS.md)
-- [Development and packaging](CONTRIBUTING.md)
-- [AI handover prompt](docs/AI-HANDOVER.md)
-- [Version policy](VERSIONING.txt)
-- [Third-party notices](THIRD-PARTY-NOTICES.md)
+Check [Releases](https://github.com/yislennierm/aerodeck/releases) for available builds and prerelease status. VTX support depends on the connected equipment. Stick guides explain manual commands; they do not transmit them.
 
-AERODECK is maintained independently. The private `fpv` equipment repository includes a pinned AERODECK submodule; aircraft settings and personal deployment history belong there.
+## Work on AERODECK
+
+[Development guide](CONTRIBUTING.md) · [Repository map](docs/development/REPOSITORY.md) · [Continue a coding chat](docs/development/CONTINUITY.md) · [Third-party notices](THIRD-PARTY-NOTICES.md)
+
+[![Portable acceptance](https://github.com/yislennierm/aerodeck/actions/workflows/checks.yml/badge.svg)](https://github.com/yislennierm/aerodeck/actions/workflows/checks.yml)

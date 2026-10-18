@@ -13,9 +13,9 @@ jobs:
       - name: Install LuaJIT and compiler dependencies
         run: sudo apt-get update && sudo apt-get install -y luajit build-essential
       - run: python3 tools/build_lua32.py
-      - run: python3 development/set_version.py --check
-      - run: python3 development/run_checks.py --lua luajit --report .build/checks-luajit.json
-      - run: python3 development/run_checks.py --lua .build/lua-5.3.6/src/lua --report .build/checks-lua32.json
+      - run: python3 tools/set_version.py --check
+      - run: python3 tools/run_checks.py --lua luajit --report .build/checks-luajit.json
+      - run: python3 tools/run_checks.py --lua .build/lua-5.3.6/src/lua --report .build/checks-lua32.json
       - run: python3 tools/package.py --reports .build/checks-luajit.json .build/checks-lua32.json
       - uses: actions/upload-artifact@v4
         with:

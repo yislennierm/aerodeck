@@ -11,7 +11,6 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'development'))
 from set_version import stamp
 from runtime_inventory import inventory
 
@@ -27,7 +26,7 @@ def main():
     args = parser.parse_args()
     build = stamp(check=True)
     runtime = inventory(ROOT)
-    expected_tests = {str(p.relative_to(ROOT)) for p in (ROOT / 'development').glob('test_*.lua')}
+    expected_tests = {str(p.relative_to(ROOT)) for p in (ROOT / 'tests').glob('test_*.lua')}
     evidence = []
     representations = set()
     for path in args.reports:
@@ -43,7 +42,7 @@ def main():
     payload = {name.removeprefix('sdcard/'): (ROOT / name).read_bytes() for name in runtime}
     for name in ['SCRIPTS/TOOLS/AERODECK/icons/LICENSE.txt', 'SCRIPTS/TOOLS/AERODECK/icons/README.txt']:
         payload[name] = (ROOT / 'sdcard' / name).read_bytes()
-    payload['LICENSES/open-location-code.txt'] = (ROOT / 'development/navigation-utils/LICENSE').read_bytes()
+    payload['LICENSES/open-location-code.txt'] = (ROOT / 'tests/data/navigation-utils/LICENSE').read_bytes()
     payload['USER-MANUAL.md'] = (ROOT / 'docs/USER-MANUAL.md').read_bytes()
     payload['INSTALL.txt'] = (f'AERODECK {build}\nMerge SCRIPTS, WIDGETS and LICENSES into the SD root.\nPreserve settings, safely eject and restart the radio.\nSee USER-MANUAL.md.\n').encode()
     payload['AERODECK-MANIFEST.json'] = (json.dumps({'version': build, 'runtimeSHA256': {name.removeprefix('sdcard/'): h for name, h in runtime.items()}, 'portableReports': evidence, 'hardwareAcceptanceClaimed': False}, indent=2) + '\n').encode()

@@ -28,7 +28,7 @@ Modification notice: Original Google path geometry is retained. Edited masters u
 Existing home.png remains unchanged (30x30RGB); its original/modification notice and source are retained below.
 Source: https://github.com/google/material-design-icons/blob/master/symbols/web/home/materialsymbolsoutlined/home_24px.svg
 Modified:30x30canvas; viewBox fitted to26px ink height; opaque white background.
-Editable home master: development/icons/home-outlined-30.svg.
+Editable home master: assets/icons/home-outlined-30.svg.
 
 New runtime files:
 speed.png: 30x30RGB; SHA256 dde260c9abcbb85db55a13ba28d87fa678d8d4a6d6779b866a9029f28d16ad39
@@ -70,22 +70,22 @@ tune: https://raw.githubusercontent.com/google/material-design-icons/master/symb
 satellite_alt: https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/satellite_alt/materialsymbolsoutlined/satellite_alt_24px.svg
 
 Editable originals and masters, per-file hashes, mapping and license:
-development/icons/material/{originals,masters,sources.json,mapping.json,assets.json,LICENSE.txt}
+assets/icons/material/{originals,masters,sources.json,mapping.json,assets.json,LICENSE.txt}
 Originals are preserved unedited. All originals correspond to mapped runtime icons.
 Replacing an icon requires its stated native dimensions and RGB format; exit/reopen AERODECK to reload caches.
 
 home-18.png: 18x18RGB; SHA256 9ac516212f71704bb8a6b9364f976e1d3a14b0ef8a16492b23b8ebf50e8d9ac0
 Flight local-home distance uses this native18px export from the existing licensed
-Home master: development/icons/home-outlined-30.svg. Its Google source/modification
+Home master: assets/icons/home-outlined-30.svg. Its Google source/modification
 notice remains above. Existing30px home.png is byte-identical. No runtime scaling.
 
 GPS-SIMPLE-20261018: aircraft position is a native white dot with a dark halo.
 The former neutral/directional quad PNGs are no longer shipped or loaded.
-Editable original artwork remains under development/icons for historical reference.
+Editable original artwork remains under assets/icons for historical reference.
 Home uses the existing Material home mask; no runtime aircraft bitmap is needed.
 
 Startup branding:
 branding/aerodeck-logo-120.png is the approved original AERODECK AD monogram,
 generated with the built-in image tool and exported at120x120 RGBA. It is not
 a Google Material icon or an alpha-mask asset. Source master and prompt are
-in development/branding/aerodeck-v2/. startup-screen.lua draws it as a native bitmap.
+in assets/branding/aerodeck-v2/. startup-screen.lua draws it as a native bitmap.

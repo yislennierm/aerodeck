@@ -7,35 +7,29 @@ git clone https://github.com/yislennierm/aerodeck.git
 cd aerodeck
 ```
 
-The repository is currently private; your GitHub account needs access. Use Python 3.12+, LuaJIT, a C compiler and `make` for the portable checks. Node 22+ and a compatible EdgeTX WASI-threads TX16S simulator are additional dependencies for the optional native browser preview. System package installation remains your choice; no bootstrap script changes your system packages.
+Use Python 3.12+, LuaJIT, a C compiler and `make` for the portable checks. Node 22+ and a compatible EdgeTX WASI-threads TX16S simulator are additional dependencies for the optional native browser preview. System package installation remains your choice; no bootstrap script changes your system packages.
 
 ## Source layout
 
-- `sdcard/SCRIPTS/TOOLS/telem.lua`: application entry and screen composition.
-- `sdcard/SCRIPTS/TOOLS/AERODECK/`: telemetry/protocol/storage/session/UI helpers and runtime assets.
-- `sdcard/WIDGETS/AERODECK/main.lua`: compact, hidden and full App mode lifecycle.
-- `development/test_*.lua`: portable behavioural checks, each run in its own process.
-- `development/`: editable assets, parity work and frozen historical evidence.
-- `tools/`: current portable package and preview entry points.
-- `docs/`: user manual, project status and AI handover.
+`sdcard/` is the installable runtime, `assets/` holds editable artwork, `tests/` holds current checks/fixtures, and `tools/` contains the supported entry points. User and developer documentation live in `docs/`; frozen imports live in `archive/`. See the [repository map](docs/development/REPOSITORY.md).
 
-The product's SD export contains only AERODECK. Personal model files, hardware deployment logs, Toolbox and other Lua applications belong in `fpv`. Old top-level `.txt` notes and dated evidence are retained for provenance; the README/manual and current entry points supersede their operational instructions.
+Start a continuing session with `python3 tools/context.py --check` and [the project state](docs/development/PROJECT-STATE.md). The root workspace file opens this product alone; the equipment repository has its own integration workspace.
 
 ## Check and package
 
 Run these commands from the repository root:
 
 ```sh
-python3 development/set_version.py --check
+python3 tools/set_version.py --check
 python3 tools/build_lua32.py
-python3 development/run_checks.py --lua luajit --report .build/checks-luajit.json
-python3 development/run_checks.py --lua .build/lua-5.3.6/src/lua --report .build/checks-lua32.json
+python3 tools/run_checks.py --lua luajit --report .build/checks-luajit.json
+python3 tools/run_checks.py --lua .build/lua-5.3.6/src/lua --report .build/checks-lua32.json
 python3 tools/package.py --reports .build/checks-luajit.json .build/checks-lua32.json
 ```
 
 The Lua build uses [official Lua 5.3.6 source and its published checksum](https://www.lua.org/ftp/), builds into `.build/`, and verifies 4-byte integer/float representations. The packaging command checks every runtime and test hash against both passing reports. It includes only production Lua/icons, required licences, the manual and installation/manifest files. Outputs and checksums go in `dist/`; none of these commands touches a radio.
 
-The old `development/package_release.py` and dated generators belong to historical releases. Use `tools/package.py` for new builds. Portable checks do not establish on-radio appearance, throughput or performance.
+The old `archive/imported/development/package_release.py` and dated generators belong to historical releases. Use `tools/package.py` for new builds. Portable checks do not establish on-radio appearance, throughput or performance.
 
 ## Browser preview
 
@@ -55,12 +49,14 @@ The externally built simulator must export the `simuLcd*`, touch/key, FatFS and 
 
 1. Inspect `git status`, then create a short feature branch from `main`.
 2. Read the relevant source and tests before changing behaviour.
-3. Keep `VERSION.json` authoritative. After editing it, run `python3 development/set_version.py` to synchronize the Tool/widget literals.
+3. Keep `VERSION.json` authoritative. After editing it, run `python3 tools/set_version.py` to synchronize the Tool/widget literals.
 4. Run relevant checks during editing and both complete portable suites before packaging. Review changed screens at native resolution in the simulator.
 5. Record hardware acceptance separately: version/hash, radio/firmware/model/protocol, reproduction steps and result. User equipment records belong in `fpv`; sanitized general results may be added here.
 6. Merge a reviewed change. Tag a candidate only after its intended acceptance checks; publish installation ZIPs/checksums as release assets, rather than committing repeated ZIPs.
 
-Keep `main` usable. Use the calendar version policy in `VERSIONING.txt`; `-alpha` denotes ongoing development, and a version string is not a hardware acceptance result.
+Keep `main` usable. Use the calendar version policy in `docs/development/VERSIONING.md`; `-alpha` denotes ongoing development, and a version string is not a hardware acceptance result.
+
+Keep the README independent of individual release numbers: link to Releases for published versions and prerelease status. `VERSION.json` identifies the checkout's build version; tagged releases preserve the matching source and documentation. Update the user manual when behaviour or instructions change, rather than editing the README for every version bump.
 
 ## Work through fpv
 

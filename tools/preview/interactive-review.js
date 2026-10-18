@@ -57,8 +57,10 @@ document.addEventListener('keydown',event=>{if((event.key==='ArrowUp'||event.key
 </script></html>`;
 // Serve verified recorded startup artwork independently of live simulator input.
 function startupCapture(){
- const root=snapshot.canonicalRoot,manifest=JSON.parse(fs.readFileSync(path.join(root,'development','build-'+snapshot.build+'.json'),'utf8'));
- const reportPath=path.join(root,manifest.nativeEvidence.file),reportBytes=fs.readFileSync(reportPath);
+ const root=snapshot.canonicalRoot;
+ const record=relative=>{const current=path.join(root,relative);return fs.existsSync(current)?current:path.join(root,'archive','imported',relative);};
+ const manifest=JSON.parse(fs.readFileSync(record(path.join('development','build-'+snapshot.build+'.json')),'utf8'));
+ const reportPath=record(manifest.nativeEvidence.file),reportBytes=fs.readFileSync(reportPath);
  if(digest(reportBytes)!==manifest.nativeEvidence.sha256)throw Error('Startup evidence changed');
  const report=JSON.parse(reportBytes);
  if(report.mainSHA256!==SOURCE||Object.keys(snapshot.runtimeSHA256).some(n=>report.runtimeSHA256[n]!==snapshot.runtimeSHA256[n]))throw Error('Startup capture belongs to another build');
