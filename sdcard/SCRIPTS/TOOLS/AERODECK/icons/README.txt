@@ -83,3 +83,9 @@ GPS-SIMPLE-20261018: aircraft position is a native white dot with a dark halo.
 The former neutral/directional quad PNGs are no longer shipped or loaded.
 Editable original artwork remains under development/icons for historical reference.
 Home uses the existing Material home mask; no runtime aircraft bitmap is needed.
+
+Startup branding:
+branding/aerodeck-logo-120.png is the approved original AERODECK AD monogram,
+generated with the built-in image tool and exported at120x120 RGBA. It is not
+a Google Material icon or an alpha-mask asset. Source master and prompt are
+in development/branding/aerodeck-v2/. startup-screen.lua draws it as a native bitmap.

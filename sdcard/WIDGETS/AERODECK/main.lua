@@ -1,7 +1,19 @@
--- One session per widget: full screen renders it, compact/hidden views sample it.
+-- One session per widget: App mode/full screen renders it; compact/hidden views sample it.
 local APP='/SCRIPTS/TOOLS/telem.lua'
+local BUILD='2026.10.0-alpha'
+local startupScreen,startupAttempted
 local colors,heights
 local function create(zone,options)return {zone=zone,options=options,app=nil,attempted=false}end
+local function prepareStartup()
+ startupAttempted=true
+ local ok,chunk=pcall(loadScript,'/SCRIPTS/TOOLS/AERODECK/startup-screen.lua')
+ if ok and type(chunk)=='function'then
+  local loaded,factory=pcall(chunk)
+  if loaded and type(factory)=='table'and type(factory.new)=='function'then
+   startupScreen=factory.new({lcd=lcd,bitmap=Bitmap,width=LCD_W,height=LCD_H});startupScreen.prepare()
+  end
+ end
+end
 local function closeFailedSession(w)
  local app=w.app
  if not app then return false end
@@ -30,6 +42,8 @@ end
 local function bootstrap(w)
  if w.app then w.loading=nil;return w.app end
  if w.attempted and not w.bootstrapStage then return end
+ -- One cold branding callback precedes compilation of the large app chunk.
+ if w.fullStartup and not startupAttempted then prepareStartup();return end
  -- EdgeTX allows about 20,000 VM instructions for the entire widget callback.
  -- Nested pcall does not create another budget. Cold load, chunk execution and
  -- session initialization therefore occupy separate callbacks, with no live
@@ -44,6 +58,7 @@ local function bootstrap(w)
   local loaded,app=pcall(w.loader);w.loader=nil
   if not loaded or type(app)~='table'then w.bootstrapStage=nil;w.loading=nil;w.error='APP LOAD FAILED';return end
   if type(app.setRetained)=='function'then app.setRetained(true)end
+  if startupScreen and type(app.setStartupScreen)=='function'then app.setStartupScreen(startupScreen)end
   w.pendingApp=app;w.bootstrapStage='INIT';w.loading='STARTING SESSION';return
  end
  local app=w.pendingApp
@@ -169,26 +184,43 @@ local function drawCompact(w,d)
   text(w,pad,z.h-19,width,17,'FULL SCREEN: AERODECK',c.muted,TINSIZE or SMLSIZE)
  end
 end
+local function drawStartup(w,message)
+ if startupScreen then startupScreen.draw(message,BUILD,w.error~=nil);return end
+ -- Keep a dark, centered text fallback if the branding module is unavailable.
+ local c=palette();local width,height=LCD_W or 480,LCD_H or 272
+ lcd.setColor(CUSTOM_COLOR,c.bg);lcd.drawFilledRectangle(0,0,width,height,CUSTOM_COLOR)
+ local function row(value,y,font)
+  local tw=measure(value,font);lcd.setColor(CUSTOM_COLOR,w.error and c.warning or c.white)
+  lcd.drawText(math.floor((width-tw)/2),y,value,CUSTOM_COLOR+font)
+ end
+ row('AERODECK',math.floor(height/2)-20,MIDSIZE);row(message,math.floor(height/2)+24,SMLSIZE)
+end
 local function refresh(w,event,touch)
- if event~=nil then
+ local focused=event~=nil
+ local z=w.zone
+ -- App mode owns the whole display before EdgeTX grants input focus. Size
+ -- chooses presentation; event presence only chooses who owns key/touch input.
+ local fullsize=z.x==0 and z.y==0 and z.w==LCD_W and z.h==LCD_H
+ if focused or fullsize then
+  w.fullStartup=true
   local app=bootstrap(w);w.view='full'
   if w.backgroundFailed then
-   drawCompact(w,nil)
+   drawStartup(w,w.recoveryMessage or w.error or'SESSION ERROR')
    if event==EVT_VIRTUAL_EXIT then w.view='compact';if lcd.exitFullScreen then lcd.exitFullScreen()end end
    return
   end
   if app and type(app.run)=='function'then
-   if app.run(event,touch)==1 then
+   if app.run(event or 0,focused and touch or nil)==1 and focused then
     service(w,'compact')
     if lcd.exitFullScreen then lcd.exitFullScreen()end
    end
   else
-   drawCompact(w,nil)
+   drawStartup(w,w.error or w.loading or'LOADING APP')
    if event==EVT_VIRTUAL_EXIT then w.view='compact';if lcd.exitFullScreen then lcd.exitFullScreen()end end
   end
   return
  end
- service(w,'compact');drawCompact(w,snapshot(w))
+ w.fullStartup=false;service(w,'compact');drawCompact(w,snapshot(w))
 end
-local function background(w)service(w,'hidden')end
+local function background(w)w.fullStartup=false;service(w,'hidden')end
 return {name='AERODECK',options={},create=create,update=update,refresh=refresh,background=background}

@@ -1,0 +1,27 @@
+{
+  "asset": "AERODECK AD monogram v2",
+  "generator": "built-in image_gen",
+  "runtimeIntegrated": false,
+  "radioInstalled": false,
+  "export": {
+    "width": 120,
+    "height": 120,
+    "mode": "RGBA",
+    "transparent": true,
+    "tool": "macOS sips"
+  },
+  "files": {
+    "aerodeck-logo-120-v2.png": {
+      "sha256": "f012740a736ac58adb0a72c4a845a58d0113af1eae4395db1862f4a526eb6089",
+      "bytes": 6548
+    },
+    "aerodeck-logo-master-v2.png": {
+      "sha256": "de3bbcc7898154b284824cf502ed1eb69298356d160c3a3a79d00c3aad8a95d6",
+      "bytes": 407848
+    },
+    "prompt.txt": {
+      "sha256": "0976c56b97e53fd7ee9da7faca8c08085e03ebecdaeb47a067c6b547bf5c3779",
+      "bytes": 1923
+    }
+  }
+}

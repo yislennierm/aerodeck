@@ -12,7 +12,7 @@ local function compile(source,environment)
 end
 local function harness(factory)
  local h={loads=0,chunks=0,inits=0,backgrounds=0,runs=0,stops=0,exits=0,rgb=0,commands={},apps={},model='ONE',v=22.8,a=0,lq=100,pct=83}
- local e=setmetatable({SMLSIZE=0,MIDSIZE=1,TINSIZE=2,CUSTOM_COLOR=128,EVT_VIRTUAL_EXIT=99},{__index=_G})
+ local e=setmetatable({SMLSIZE=0,MIDSIZE=1,TINSIZE=2,CUSTOM_COLOR=128,EVT_VIRTUAL_EXIT=99,LCD_W=480,LCD_H=272},{__index=_G})
  local function forbidden()error('Widget must not maintain a separate telemetry reader or settings parser')end
  e.io={open=forbidden};e.model={getInfo=forbidden,getSensor=forbidden};e.getFieldInfo=forbidden;e.getSourceIndex=forbidden;e.getSourceValue=forbidden;e.getValue=forbidden
  e.collectgarbage=function()error('No refresh-time session teardown/collection')end
@@ -21,6 +21,7 @@ local function harness(factory)
   drawText=function(x,y,s,flags)h.commands[#h.commands+1]={x=x,y=y,text=tostring(s),font=flags-128,color=h.ink}end,
   exitFullScreen=function()h.exits=h.exits+1 end}
  e.loadScript=function(path)
+  if path=='/SCRIPTS/TOOLS/AERODECK/startup-screen.lua'then return nil end
   check(path=='/SCRIPTS/TOOLS/telem.lua','Widget loads the actual app path')
   h.loads=h.loads+1
   local loader
@@ -40,7 +41,7 @@ local function harness(factory)
     if h.pendingSnapshot then return nil end
     return data
    end
-   function app.run(event)h.runs=h.runs+1;return event==99 and 1 or 0 end
+   function app.run(event,touch)h.runs=h.runs+1;h.lastEvent=event;h.lastTouch=touch;return event==99 and 1 or 0 end
    function app.stop()h.stops=h.stops+1 end
    h.apps[#h.apps+1]=app;return app
   end end
@@ -148,6 +149,8 @@ check(missing.loads==2,'Explicit widget update retries failed bootstrap')
 -- Fullscreen entry/exit cannot accidentally advance two cold stages within
 -- one native callback (its instruction allowance is shared by nested pcall).
 local coldFull=harness();local fw=coldFull.instance()
+coldFull.widget.refresh(fw,0)
+check(coldFull.loads==0 and coldFull.runs==0,'Cold full-screen branding callback yields before app compilation')
 coldFull.widget.refresh(fw,99)
 check(coldFull.loads==1 and coldFull.chunks==0 and coldFull.inits==0 and coldFull.exits==1,'RTN during first fullscreen loading callback exits without executing another cold stage')
 coldFull.widget.refresh(fw,0)
@@ -156,6 +159,42 @@ coldFull.widget.refresh(fw,0)
 check(coldFull.inits==1 and coldFull.runs==0 and coldFull.backgrounds==0,'Cold fullscreen initialization is isolated from app run/background')
 coldFull.widget.refresh(fw,0)
 check(coldFull.runs==1 and coldFull.loads==1 and coldFull.chunks==1 and coldFull.inits==1,'Fullscreen first live run follows the three independent cold callbacks')
+-- App mode must show the real app without input focus. Fullscreen focus on
+-- a smaller zone remains supported; blur/hidden/re-entry share one session.
+local mode=harness();local aw=mode.instance({x=0,y=0,w=480,h=272})
+mode.compact(aw)
+check(mode.loads==0 and mode.runs==0,'App mode branding callback yields before app compilation')
+mode.compact(aw)
+check(mode.loads==1 and mode.chunks==0 and mode.runs==0,'App mode cold callback one only loads the widget-owned app')
+mode.compact(aw)
+check(mode.chunks==1 and mode.inits==0 and mode.runs==0,'App mode cold callback two only executes its chunk')
+mode.compact(aw)
+check(mode.inits==1 and mode.runs==0 and mode.backgrounds==0,'App mode init keeps its separate callback budget')
+mode.compact(aw)
+check(mode.runs==1 and mode.lastEvent==0 and mode.lastTouch==nil,'Unfocused full-display widget renders app with a neutral event')
+check(not mode.has('FULL SCREEN: AERODECK')and not mode.has('22.8 V'),'App mode never substitutes the compact summary after bootstrap')
+local modeApp=aw.app;local touch={x=300,y=150}
+mode.widget.refresh(aw,0,touch)
+check(mode.runs==2 and mode.lastTouch==touch and aw.app==modeApp,'Focused App mode forwards actual touch to the existing app')
+mode.widget.refresh(aw,nil,touch)
+check(mode.runs==3 and mode.lastEvent==0 and mode.lastTouch==nil and aw.app==modeApp,'Unfocused App mode discards touch not owned by the app')
+local beforeHiddenRuns,beforeHiddenDraws=mode.runs,#mode.commands
+mode.widget.background(aw)
+local modeHistory=modeApp.history
+check(mode.runs==beforeHiddenRuns and #mode.commands==beforeHiddenDraws and mode.backgrounds==1,'Hidden App mode services without rendering')
+mode.compact(aw)
+check(mode.runs==4 and aw.app==modeApp and modeApp.history==modeHistory and mode.loads==1 and mode.inits==1,'Returning without focus keeps full rendering, retained app and history')
+mode.widget.refresh(aw,99)
+check(mode.exits==1 and aw.app==modeApp and mode.stops==0,'Focused app exit releases focus without destroying its session')
+mode.compact(aw)
+check(mode.runs==6 and aw.app==modeApp and mode.lastEvent==0,'Released App mode remains a full dashboard')
+mode.env.LCD_W=800;mode.env.LCD_H=480
+local large=mode.instance({x=0,y=0,w=800,h=480});local oldRuns=mode.runs;mode.start(large)
+check(mode.runs==oldRuns+1 and large.app~=modeApp,'App mode uses native display dimensions on larger radios')
+local small=mode.instance({x=0,y=0,w=480,h=272});oldRuns=mode.runs;mode.start(small)
+check(mode.runs==oldRuns and mode.has('22.8 V'),'A smaller ordinary widget keeps its compact presentation')
+local offset=mode.instance({x=7,y=9,w=800,h=480});mode.start(offset)
+check(mode.runs==oldRuns,'An offset widget cannot claim the full-display origin')
 local chunkFailure=harness(function()return function()error('chunk failure')end end);local cw=chunkFailure.instance();chunkFailure.start(cw)
 check(chunkFailure.loads==1 and chunkFailure.chunks==1 and chunkFailure.inits==0 and chunkFailure.has('APP LOAD FAILED'),'Chunk failure is explicit and cached across later callbacks')
 

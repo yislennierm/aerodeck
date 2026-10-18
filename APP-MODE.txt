@@ -1,0 +1,43 @@
+APP-MODE-20261018
+Local build. Radio deployment deferred by user; installed authority is DEPLOYMENT.txt.
+Original GPS-UNIFIED colors retained; the TX16S green/blue experiment is withdrawn.
+
+SETUP ON THE RADIO AFTER INSTALLATION
+1. Return to the EdgeTX main screen and open Screen settings.
+2. Select + to add a main view if needed.
+3. Set Layout to App mode (not merely a one-panel layout).
+4. Setup widgets > select the full area > AERODECK. Return to the main view.
+5. The complete AERODECK dashboard now renders without having input focus.
+6. Long-press the display to give AERODECK input focus for its own controls.
+   Long-press RTN to release focus. EdgeTX shows its own top-left badge while
+   unfocused; it is part of the firmware's focus/navigation mechanism.
+
+IMPLEMENTATION
+Toolbox WIDGET/loader.lua checks zone.w==LCD_W and zone.h==LCD_H, renders its
+application even for nil events, and asks for App mode on smaller layouts.
+AERODECK now selects full rendering for a zone at0,0 with native LCD_W/LCD_H.
+Explicit full-screen focus from a smaller widget remains supported. Ordinary
+smaller widgets retain their compact summary. In App mode, a nil event becomes
+neutral0 for rendering; unowned touch data is discarded. Only focused callbacks
+can request exitFullScreen. Focus loss, hiding and re-entry retain one app/session;
+hidden callbacks use the existing background service without LCD work.
+
+The three widget bootstrap phases remain separate callbacks. No new runtime
+modules, bitmaps, effects or parallel telemetry readers. App mode reuses the
+same full renderer, background cadence, cached icons and attitude loop. Main
+app changed only in its build identifier; the functional change is in the wrapper.
+
+VALIDATION
+59 portable suites PASS in both LuaJIT and Lua5.3 int32/float32. Existing widget
+lifecycle suite now checks142 assertions, including no-focus native-size startup,
+focus/touch ownership, same-session exit/re-entry, hidden service, compact zones
+and800x480native-size detection. Actual TX16S native App mode simulator exercised
+the byte-exact production widget through a private synthetic-input bootstrap.
+Dashboard captured before any UI input, then focused, navigated and released.
+No CPU-limit/script errors; native20000-instruction callback budget unchanged.
+These checks do not measure physical radio performance.
+
+Package: AERODECK-app-mode-install.zip (66 runtime files plus licences/install notes).
+Preview: http://127.0.0.1:8766/ (development sample data; not connected to the quad).
+Reference: toolbox2_source/APPS/TOOLBOX2/WIDGET/loader.lua:28
+Firmware reference: https://github.com/EdgeTX/edgetx/pull/5248

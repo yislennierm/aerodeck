@@ -1,0 +1,11 @@
+{
+  "requestedAt": "2026-10-18T13:46:36.144391+00:00",
+  "reason": "Physical LCD colors did not match preview; user requested previous colors.",
+  "build": "GPS-UNIFIED-20261018",
+  "sourceSHA256": "e3eb82d2323194054c0dbcf0b7ab18707f2b8e10b607480e6948666cd9827e97",
+  "runtimeFilesVerified": 66,
+  "portableSuitesPerVM": 59,
+  "radioRollbackInstalled": false,
+  "currentlyVerifiedRadioBuild": "TX16S-THEME-20261018",
+  "widgetAlreadyIncluded": true
+}

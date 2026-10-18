@@ -10,7 +10,7 @@
 local nativeLcd=lcd
 local lcd=nativeLcd
 local display,displayError
-local BUILD_ID='GPS-UNIFIED-20261018'
+local BUILD_ID='2026.10.0-alpha'
 local uiTheme
 local alertsMuted=false
 local alertPlayback={queue=function(event)
@@ -1318,6 +1318,7 @@ local function init()
  local info=model.getInfo();modelName=info.name or'MODEL';modelIdentity=inputRuntime.modelIdentity(info);started=getTime();page=1
  renderStats.radioVersion=getVersion and tostring(getVersion())or'--';renderStats.ramKB=nil;renderStats.peakKB=nil
  sharedData=nil;sessionState=nil;lastSample=-100;inputRuntime.sampleRevision=-1;inputRuntime.sampleBatteryRevision=-1;inputRuntime.pendingData=nil;foreground=false;alertsMuted=false
+ inputRuntime.startupVisible=retainedSession
  local state={info=info,deferred=retainedSession,phase=1,view={initializing='DISPLAY',ok=false}}
  if retainedSession then inputRuntime.startup=state
  else inputRuntime.startup=nil;for number=1,13 do inputRuntime.initPhase(number,state)end end
@@ -1363,7 +1364,30 @@ end)()
 local function smallText(x,y,s,c)
  ink(c);lcd.drawText(x,y,s,SMLSIZE+CUSTOM_COLOR)
 end
+function inputRuntime.setStartupScreen(screen)
+ inputRuntime.startupScreen=screen;inputRuntime.startupScreenAttempted=true
+end
+function inputRuntime.drawStartup(message,warning)
+ if not inputRuntime.startupScreenAttempted then
+  inputRuntime.startupScreenAttempted=true
+  local chunk=loadScript and loadScript(ROOT..'startup-screen.lua');local factory=chunk and chunk()
+  if factory and factory.new then
+   inputRuntime.startupScreen=factory.new({lcd=nativeLcd,bitmap=Bitmap,width=LCD_W or 480,height=LCD_H or 272})
+   inputRuntime.startupScreen.prepare()
+  end
+ end
+ local screen=inputRuntime.startupScreen
+ if screen then screen.draw(message,BUILD_ID,warning);return end
+ nativeLcd.setColor(CUSTOM_COLOR,nativeLcd.RGB(5,12,19));nativeLcd.drawFilledRectangle(0,0,LCD_W or 480,LCD_H or 272,CUSTOM_COLOR)
+ local width=LCD_W or 480
+ nativeLcd.setColor(CUSTOM_COLOR,nativeLcd.RGB(232,242,245))
+ local title='AERODECK';local tw=nativeLcd.sizeText and nativeLcd.sizeText(title,MIDSIZE)or 112
+ nativeLcd.drawText(math.floor((width-tw)/2),100,title,MIDSIZE+CUSTOM_COLOR)
+ tw=nativeLcd.sizeText and nativeLcd.sizeText(message,SMLSIZE)or #message*7
+ nativeLcd.drawText(math.floor((width-tw)/2),146,message,SMLSIZE+CUSTOM_COLOR)
+end
 function inputRuntime.progress(message)
+ if inputRuntime.startup or inputRuntime.startupVisible then inputRuntime.drawStartup(message);return end
  local p=palette or{black=nativeLcd.RGB(5,12,19),cyan=nativeLcd.RGB(104,221,237),white=nativeLcd.RGB(232,242,245)}
  nativeLcd.setColor(CUSTOM_COLOR,p.black);nativeLcd.drawFilledRectangle(0,0,LCD_W or 480,LCD_H or 272,CUSTOM_COLOR)
  vlabel(20,78,40,'AERODECK',p.cyan,MIDSIZE)
@@ -2812,7 +2836,7 @@ local function diagnostics(d)
  elseif diagnosticView==6 then
   if not modelImage then local chunk=loadScript and loadScript(ROOT..'model-image.lua');local factory=chunk and chunk();modelImage=factory and factory.new({Bitmap=Bitmap,lcd=lcd})or nil end
   local image=modelImage and modelImage.set(model.getInfo().bitmap,configuration.get('modelImage')==1,modelIdentity)
-  local texts={{'Model',modelName},{'Build',BUILD_ID},{'Radio OS',renderStats.radioVersion or'--'},{'Date / LCD',(renderStats.date or'--')..' / '..tostring(LCD_W or 480)..'x'..tostring(LCD_H or 272)}}
+  local texts={{'Model',modelName},{'Version',BUILD_ID},{'Radio OS',renderStats.radioVersion or'--'},{'Date / LCD',(renderStats.date or'--')..' / '..tostring(LCD_W or 480)..'x'..tostring(LCD_H or 272)}}
   for i,r in ipairs(texts)do local y=89+(i-1)*17;vlabel(18,y,17,r[1],p.muted);local shown,font=fittedText(r[2],220,SMLSIZE);vlabel(335,y,17,shown,p.white,font,true)end
   rect(350,89,112,70,p.black)
   if not image or image.status~='READY'or not modelImage.draw(352,91,108,66)then
@@ -2839,7 +2863,7 @@ local function diagnostics(d)
    vlabel(18,175,20,'SAVE LOG writes the pending RAM events.',p.muted)
   end
  else
-  rows={{'Build',BUILD_ID},{'Protocol',d.protocol and d.protocol.id or 'UNKNOWN'},
+  rows={{'Version',BUILD_ID},{'Protocol',d.protocol and d.protocol.id or 'UNKNOWN'},
    {'FC / API',(state.firmware or '--')..' / '..(state.api or '--')},{'FC connection',state.status},
    {'Timer',(d.timerOwner and d.timerOwner.owned and 'AERODECK / 'or'RADIO / ')..(d.session and d.session.modelTimer and('T'..d.session.modelTimer.index..' / '..tostring(d.session.modelTimer.value)..' s')or string.format('APP %02d:%02d',math.floor(flightSeconds/60),math.floor(flightSeconds)%60))},
    {'Rendering',string.format('%.1f fps / %.1f value Hz',renderStats.fps,renderStats.attitudeHz)},
@@ -3278,11 +3302,10 @@ local function run(event,touch)
  if not started then init() end
  if inputRuntime.advanceStartup()then
   if event==EVT_VIRTUAL_EXIT and leaveFull()then return 1 end
-  nativeLcd.clear();nativeLcd.drawText(12,20,'STARTING AERODECK',MIDSIZE)
-  local state=inputRuntime.startup;nativeLcd.drawText(12,62,state and state.view.initializing or'READY',SMLSIZE)
+  local state=inputRuntime.startup;inputRuntime.drawStartup(state and state.view.initializing or'READY')
   return 0
  end
- if displayError then nativeLcd.clear();nativeLcd.drawText(10,20,displayError,SMLSIZE);if event==EVT_VIRTUAL_EXIT then if leaveFull()then return 1 end end;return 0 end
+ if displayError then inputRuntime.drawStartup(displayError,true);if event==EVT_VIRTUAL_EXIT then if leaveFull()then return 1 end end;return 0 end
  if display and touch then touch=display.touch(touch)end
  local info=model.getInfo();local identity=inputRuntime.modelIdentity(info);modelName=info.name or'MODEL'
  runtimeServices.modelInfo(info)
@@ -3480,6 +3503,7 @@ local function run(event,touch)
  if packPicker and packPicker.active()then packPicker.draw()end
  quick.draw()
  if exitOpen then exitDialog()end
+ inputRuntime.startupVisible=false -- First complete app frame ends startup presentation.
  renderStats.frames=renderStats.frames+1;renderStats.cost=renderStats.cost+(getTime()-now)*10
  if now-renderStats.window>=200 then
   local seconds=(now-renderStats.window)/100
@@ -3501,4 +3525,4 @@ local function background()
  if foreground then inputRuntime.stop();if packPicker then packPicker.stop()end;fcLink.stop();if referenceUi then referenceUi.stop()end;telemetry.cancelExtrema();inputRuntime.historyActive=false;foreground=false end
  serviceData(false)
 end
-return {init=init,run=run,stop=fcLink.stop,close=closeApp,setRetained=function(value)retainedSession=value==true end,background=background,snapshot=function()return inputRuntime.startup and inputRuntime.startup.view or sharedData end}
+return {init=init,run=run,stop=fcLink.stop,close=closeApp,setStartupScreen=inputRuntime.setStartupScreen,setRetained=function(value)retainedSession=value==true end,background=background,snapshot=function()return inputRuntime.startup and inputRuntime.startup.view or sharedData end}

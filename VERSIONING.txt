@@ -1,0 +1,29 @@
+AERODECK versioning
+
+Source of truth: VERSION.json
+Format: YYYY.M.PATCH, following Betaflight's calendar-versioning model.
+Reference: https://betaflight.com/blog/2025/09/01/Calendar%20Versioning%20Change
+
+YYYY.M identifies an AERODECK release series by its planned release year/month.
+The month has no leading zero. PATCH starts at 0; subsequent maintenance releases
+increment it (2026.10.0, 2026.10.1,...). A new release series resets PATCH to 0.
+Use -alpha for development, -beta for feature freeze/testing, and -rc1, -rc2,...
+for release candidates. Remove the suffix only for a validated final release.
+The current local version is 2026.10.0-alpha. This is not a stable-release claim.
+
+AERODECK versions identify AERODECK releases, independently of the connected
+Betaflight firmware. Matching numbers do not imply a compatibility requirement.
+We adopt Betaflight's version format; our release dates need not be June/December.
+
+After changing VERSION.json:
+  python3 development/set_version.py
+  python3 development/set_version.py --check
+
+The same literal is stamped into the Tool and widget; no extra runtime module,
+SD-card access or parsing is introduced. Portable checks reject mismatched labels.
+The loading screen and About/diagnostics show this product version. Source hashes
+in test/build manifests identify exact bytes; use a new rc number or patch for a
+new published candidate/release. Do not rename historical evidence or archives.
+
+The installed radio version is recorded separately in DEPLOYMENT.txt. A version
+change locally does not modify the radio, existing packages or deployment history.

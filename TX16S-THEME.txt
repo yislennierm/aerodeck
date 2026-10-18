@@ -1,0 +1,26 @@
+TX16S-THEME-20261018
+Local AERODECK theme; not an EdgeTX firmware theme or a power-LED control.
+Radio remains GPS-UNIFIED-20261018 (see DEPLOYMENT.txt).
+
+The former default Dark palette is now named TX16S (same saved theme=0).
+Green #00FF00: healthy status, radio battery gauge, default active underline,
+link/capacity gauges and selection emphasis. Blue #0000FF: selected toolbar
+backplate, with white foreground. Light blue #70A8FF: readable controls,
+keyboard focus, GPS track and instrument accents against the dark background.
+The two pure RGB values are nominal LED-channel equivalents, not measured
+physical LED colors. The lighter foreground avoids pure blue text on black.
+
+Setup > User interface > Display palette: TX16S. Default Highlight colour:
+Green. The former Cyan highlight option is now Blue; custom highlight selection
+continues to work. Health/shield colors remain independent of custom highlights.
+Saved Dark selections adopt TX16S without rewriting settings. Daylight, Night
+and High contrast remain available. Warning/error amber/red and conventional
+sky/ground colors retain their meaning.
+
+Rendering: cached palette, existing icons, same draw count, no new runtime
+assets, image decodes or animations. Existing telemetry/attitude loops untouched.
+Both59-suite portable reports PASS; four native screens visually inspected at
+480x272 with the unchanged20000-instruction callback limit. These checks do
+not measure physical radio performance or actual LCD-to-LED color matching.
+Preview: http://127.0.0.1:8766/ (native simulator with sample telemetry).
+Package: AERODECK-tx16s-theme-install.zip

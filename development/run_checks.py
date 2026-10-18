@@ -14,6 +14,7 @@ import shutil
 import subprocess
 import sys
 import time
+from set_version import stamp
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = re.search(r"local BUILD_ID='([^']+)'", (ROOT / 'sdcard/SCRIPTS/TOOLS/telem.lua').read_text()).group(1)
@@ -24,6 +25,7 @@ def sha(path):
 
 
 def main():
+    stamp(check=True)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--lua', default=shutil.which('luajit') or shutil.which('lua'))
     parser.add_argument('--report', type=Path, default=ROOT / 'development' / ('test-results-' + BUILD + '.json'))

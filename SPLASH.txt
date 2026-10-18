@@ -1,0 +1,40 @@
+SPLASH-20261018
+Local build; not installed. Current radio authority: DEPLOYMENT.txt (APP-MODE).
+
+Approved AD monogram v2 is now the startup artwork. Runtime PNG is exactly the
+approved120x120 RGBA export, placed at icons/branding/aerodeck-logo-120.png.
+Original AERODECK navy, white/cyan and warning colors retained. No flight-page
+layout, telemetry behavior or attitude convention changes.
+
+The shared startup-screen.lua renderer paints an explicit opaque navy background,
+a centered native-size logo and AERODECK title, readable stage text and build ID.
+This covers initial widget bootstrap, the actual15app phases and first telemetry
+acquisition through the first completed dashboard. The previous white inherited
+background and left-side startup/progress transition are removed. Normal runtime
+action-progress behavior remains separate after the first complete app frame.
+Tool synchronous initialization timing is preserved; no artificial splash delay.
+
+One separate foreground branding callback loads the small renderer and approved
+PNG before the large app chunk. Existing compilation/chunk/init callbacks remain
+separate. The same prepared renderer is passed into the main app. Bitmap is opened
+once and retained; no repeated PNG decoding, animation or forced GC. Small/hidden
+widgets do not prepare the artwork; existing background session behavior remains.
+Missing/bad artwork has a centered text fallback and one cached failed read.
+
+VALIDATION
+60portable suites PASS in both LuaJIT and Lua5.3 int32/float32. Actual renderer
+checks120x120 RGBA header, centering, opaque palette, readable stage names,
+load lifetime and missing/invalid bitmap fallback. Lifecycle checks preserve
+hidden behavior, deferred startup and failure recovery. Native TX16S App mode
+uses the byte-exact production widget/main/helper/artwork with synthetic inputs;
+after its fixture setup it captures the actual splash stages and live dashboard.
+One logo-read event observed (native trace repeats each message on two channels).
+No CPU-limit/script errors; native20000-instruction callback budget unchanged.
+Physical radio appearance, startup duration and performance still require radio use.
+
+Use Screen settings > Layout: App mode > Setup widgets > AERODECK.
+Long-press to take input focus; long-press RTN to release. EdgeTX owns its
+unfocused badge; AERODECK does not override the native focus/navigation mechanism.
+Package: AERODECK-splash-install.zip (68runtime files plus licences/install notes).
+Preview: http://127.0.0.1:8766/ (development sample data).
+Artwork source/prompt: development/branding/aerodeck-v2/

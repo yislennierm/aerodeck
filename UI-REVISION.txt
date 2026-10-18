@@ -1,3 +1,61 @@
+CURRENT LOCAL VERSION: 2026.10.0-alpha
+Betaflight-style calendar versioning (YYYY.M.PATCH with prerelease suffixes).
+Tool, widget, loading screen and About/diagnostics use the same version.
+VERSION.json is authoritative; development/set_version.py stamps both constants.
+No extra runtime I/O, telemetry or layout changes. See VERSIONING.txt.
+60suites PASS in both VMs; native480x272 version placement verified.
+Package:AERODECK-2026.10.0-alpha-install.zip.
+Local only. Radio remains SPLASH-20261018; see DEPLOYMENT.txt.
+Existing install packages/evidence retain their historical version identifiers.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: SPLASH-20261018
+Approved AD logo integrated at native120x120. Shared dark centered loading
+screen throughout widget/app startup and first telemetry acquisition. Original
+colors retained.68runtime files;60suites PASS in both VMs. Native stages and
+handoff verified with one logo read and unchanged20000-instruction budget.
+Package:AERODECK-splash-install.zip. Installed;68runtime files verified,
+including approved AD artwork. SD safely ejected. See DEPLOYMENT.txt.
+See SPLASH.txt and DEPLOYMENT.txt. Preview:http://127.0.0.1:8766/ (sample data).
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: APP-MODE-20261018
+Original colors restored. Full-dashboard widget renders automatically in EdgeTX
+App mode, including before input focus. Smaller zones keep compact telemetry.
+Use Screen settings > Layout: App mode > Setup widgets > AERODECK.
+Long-press display to focus; long-press RTN to release. See APP-MODE.txt.
+59suites PASS in both numeric VMs; real native App mode/focus lifecycle reviewed.
+Package:AERODECK-app-mode-install.zip. Installed;66runtime files verified
+and SD safely ejected. Original colors restored. See DEPLOYMENT.txt.
+Set Screen settings > Layout: App mode > Setup widgets > AERODECK.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: GPS-UNIFIED-20261018 / ORIGINAL COLORS RESTORED
+TX16S green/blue theme withdrawn after physical display feedback.
+Original colors and exact tested GPS-UNIFIED runtime restored locally.
+Package:AERODECK-gps-unified-install.zip.59suites PASS in both source-bound
+reports. Radio rollback is pending; see DEPLOYMENT.txt for installed authority.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Widget already included: /WIDGETS/AERODECK/main.lua. Add AERODECK through
+EdgeTX Screen settings > Setup widgets; long-press widget > Full screen.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: TX16S-THEME-20261018
+Default palette: TX16S / green and blue. Green health/active markers, blue
+selected toolbar surfaces, readable light-blue controls. Flat UI retained.
+59suites PASS in both Lua runtimes; Flight/GPS/Telemetry/Setup reviewed natively.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-tx16s-theme-install.zip. Installed on the radio;66runtime
+files read back and verified, SD safely ejected (see DEPLOYMENT.txt).
+Hardware/live telemetry acceptance pending. See TX16S-THEME.txt for build notes.
+
+PREVIOUS BUILD NOTES FOLLOW
+
 CURRENT LOCAL BUILD: GPS-UNIFIED-20261018
 Source:e3eb82d23231;59suites PASS in both numeric VMs.
 GPS shares Flight's75px rails/font hierarchy, with four compact readouts per

@@ -1,0 +1,27 @@
+{
+  "asset": "AERODECK startup emblem v1",
+  "generator": "built-in image_gen",
+  "runtimeIntegrated": false,
+  "radioInstalled": false,
+  "export": {
+    "width": 120,
+    "height": 120,
+    "mode": "RGBA",
+    "transparent": true,
+    "tool": "macOS sips"
+  },
+  "files": {
+    "aerodeck-logo-120-v1.png": {
+      "sha256": "af0de68154901d9bd21fe5d83b6b00b532761c46f60cfa00aa4c364bdc665f47",
+      "bytes": 8407
+    },
+    "aerodeck-logo-master-v1.png": {
+      "sha256": "5a618be02daaf188655807c879900953b7ecfd3dcf98c2ce6fb0fa32804fe7ee",
+      "bytes": 498564
+    },
+    "prompt.txt": {
+      "sha256": "12e197d44f6abea9f13904867c28979a69ea950bc000e94f69756587084991ee",
+      "bytes": 1958
+    }
+  }
+}

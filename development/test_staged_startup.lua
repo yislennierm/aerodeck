@@ -12,7 +12,7 @@ check(a.snapshot()and a.snapshot().initializing and a.snapshot().ok==false,'reta
 check(a.inputs.startup.phase==1,'init never runs the first heavy phase in the widget init callback')
 lcd.clear=function()end
 a.send(0)
-check(a.inputs.startup.phase==2 and a.visible('STARTING AERODECK'),'full screen advances one cold phase and displays startup rather than telemetry')
+check(a.inputs.startup.phase==2 and a.visible('AERODECK'),'full screen advances one cold phase and displays startup rather than telemetry')
 local callbacks,inventoryCallbacks=1,0
 while a.inputs.startup do
  local before=a.inputs.startup.phase
@@ -25,6 +25,9 @@ check(callbacks>=10 and inventoryCallbacks>0,'startup separates every module pha
 check(a.snapshot()==nil,'final initialization callback yields before starting normal telemetry work')
 a.background(20)
 check(a.snapshot()and not a.snapshot().initializing and a.snapshot().session.current and a.snapshot().session.home,'next scheduled callback starts a real shared GPS/home session')
+check(a.inputs.startupVisible==true,'branding remains active until the first complete dashboard, including initial telemetry acquisition')
+for i=1,8 do a.send(0);if not a.inputs.startupVisible then break end end
+check(a.inputs.startupVisible==false and a.hud()~=nil,'the first full dashboard ends startup branding without a forced display delay')
 check(a.writes()==writes,'startup and discovery perform no implicit settings writes')
 local scans=a.sourceScans();for i=1,30 do a.background(20)end
 check(a.sourceScans()==scans,'complete warm startup never repeats native sensor inventory enumeration')
