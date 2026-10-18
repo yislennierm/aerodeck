@@ -1,0 +1,460 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/INIT.luac
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/MAIN/INIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 343), ('F', 1, 343), ('D', 1, 343), ('X', 1, 343)]
+K0 'INIT_steps'
+K1 'var'
+K2 'Initializing'
+K3 'ver'
+K4 'Version check'
+K5 'cfg'
+K6 'Loading user config'
+K7 'data'
+K8 'Initializing data'
+K9 'ui'
+K10 'Initializing menus'
+K11 'tlm'
+K12 'Loading telemetry settings'
+K13 'ind'
+K14 'Initializing indicators'
+K15 'fc'
+K16 'Initializing FC'
+K17 'msp'
+K18 'Initializing MSP'
+K19 'vtx'
+K20 'Initializing VTX'
+K21 'gps'
+K22 'Initializing GPS'
+K23 'mod'
+K24 'Initializing modules'
+K25 'tmr'
+K26 'Initializing UI'
+K27 'INIT_nN'
+K28 'INIT_nND'
+K29 'INIT_sN'
+K30 'lcd'
+K31 'clear'
+K32 'BLACK'
+K33 'drawBitmap'
+K34 'initLogo'
+K35 'LCD_W'
+K36 2
+K37 'initLogoW'
+K38 'LCD_H'
+K39 'initLogoH'
+K40 'drawText'
+K41 'ToolBox '
+K42 'AI'
+K43 'VER'
+K44 ' '
+K45 'REL'
+K46 ''
+K47 'MIDSIZE'
+K48 'CENTER'
+K49 'WHITE'
+K50 45
+K51 'S'
+K52 '+S*'
+K53 '+CFGSTR'
+K54 '+MODCFG'
+K55 '+FC*'
+K56 '+IND*'
+K57 '+MSP*'
+K58 '+VTX*'
+K59 '+GPS*'
+K60 '+TLM*'
+K61 '+MODS*'
+K62 'SEN'
+K63 '+SEN*'
+K64 'UI'
+K65 '+UI*'
+K66 '+CD*'
+K67 '+C*'
+K68 'TI'
+K69 '+TI*'
+K70 'dbg'
+K71 'Variables cleared'
+K72 'loadE'
+K73 'PLIBOS'
+K74 'UETX'
+K75 'fm'
+K76 'v0'
+K77 'PLIBCFG'
+K78 'CFGINIT'
+K79 'PLIBTB'
+K80 'DATAINIT'
+K81 'DBG'
+K82 'PLIBFC'
+K83 'FCINIT'
+K84 'sxx'
+K85 'Loading GPSINIT'
+K86 'PLIBGPS'
+K87 'GPSINIT'
+K88 'PLIBTLM'
+K89 'RCPINIT'
+K90 'TLMINIT'
+K91 'INDINIT'
+K92 'INDUPD'
+K93 'PLIBMSP'
+K94 'MSPINIT'
+K95 'PLIBVTX'
+K96 'VTXINIT'
+K97 'misc'
+K98 'now'
+K99 'getTime'
+K100 'tmrUpdate'
+K101 False
+K102 'PLIBRD'
+K103 'TMR'
+K104 'RD_TMR'
+K105 'reset'
+K106 'SND'
+K107 'PUI'
+K108 'UIINIT'
+K109 'CFGUPDP'
+K110 'BAT'
+K111 'RD_BT'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  13] NEWTABLE  A=4 B=0 C=13
+   3 [  14] SETTABLE  R4[K1('var')] = K2('Initializing')
+   4 [  15] SETTABLE  R4[K3('ver')] = K4('Version check')
+   5 [  16] SETTABLE  R4[K5('cfg')] = K6('Loading user config')
+   6 [  17] SETTABLE  R4[K7('data')] = K8('Initializing data')
+   7 [  18] SETTABLE  R4[K9('ui')] = K10('Initializing menus')
+   8 [  19] SETTABLE  R4[K11('tlm')] = K12('Loading telemetry settings')
+   9 [  20] SETTABLE  R4[K13('ind')] = K14('Initializing indicators')
+  10 [  21] SETTABLE  R4[K15('fc')] = K16('Initializing FC')
+  11 [  22] SETTABLE  R4[K17('msp')] = K18('Initializing MSP')
+  12 [  23] SETTABLE  R4[K19('vtx')] = K20('Initializing VTX')
+  13 [  24] SETTABLE  R4[K21('gps')] = K22('Initializing GPS')
+  14 [  25] SETTABLE  R4[K23('mod')] = K24('Initializing modules')
+  15 [  26] SETTABLE  R4[K25('tmr')] = K26('Initializing UI')
+  16 [  27] SETTABLE  R2[K0('INIT_steps')] = R4
+  17 [  28] GETTABLE  R4 = R2[K27('INIT_nN')]
+  18 [  28] TEST      A=4 B=0 C=1
+  19 [  28] JMP       A=0 ->21
+  20 [  28] LOADK     R4 = K1 ('var')
+  21 [  28] SETTABLE  R2[K27('INIT_nN')] = R4
+  22 [  29] GETTABLE  R4 = R2[K0('INIT_steps')]
+  23 [  29] GETTABLE  R5 = R2[K27('INIT_nN')]
+  24 [  29] GETTABLE  R4 = R4[R5]
+  25 [  29] TEST      A=4 B=0 C=1
+  26 [  29] JMP       A=0 ->28
+  27 [  29] LOADK     R4 = K2 ('Initializing')
+  28 [  29] SETTABLE  R2[K28('INIT_nND')] = R4
+  29 [  30] GETTABLE  R4 = R2[K29('INIT_sN')]
+  30 [  30] TEST      A=4 B=0 C=1
+  31 [  30] JMP       A=0 ->33
+  32 [  30] GETTABLE  R4 = R2[K27('INIT_nN')]
+  33 [  30] SETTABLE  R2[K29('INIT_sN')] = R4
+  34 [  32] GETTABUP  R4 = UP0[K30('lcd')]
+  35 [  32] GETTABLE  R4 = R4[K31('clear')]
+  36 [  32] GETTABUP  R5 = UP0[K32('BLACK')]
+  37 [  32] CALL      A=4 B=2 C=1
+  38 [  33] GETTABUP  R4 = UP0[K30('lcd')]
+  39 [  33] GETTABLE  R4 = R4[K33('drawBitmap')]
+  40 [  33] GETTABLE  R5 = R0[K34('initLogo')]
+  41 [  33] GETTABUP  R6 = UP0[K35('LCD_W')]
+  42 [  33] DIV       A=6 B=6 C=292
+  43 [  33] GETTABLE  R7 = R0[K37('initLogoW')]
+  44 [  33] DIV       A=7 B=7 C=292
+  45 [  33] SUB       A=6 B=6 C=7
+  46 [  33] GETTABUP  R7 = UP0[K38('LCD_H')]
+  47 [  33] DIV       A=7 B=7 C=292
+  48 [  33] GETTABLE  R8 = R0[K39('initLogoH')]
+  49 [  33] SUB       A=7 B=7 C=8
+  50 [  33] CALL      A=4 B=4 C=1
+  51 [  34] GETTABUP  R4 = UP0[K30('lcd')]
+  52 [  34] GETTABLE  R4 = R4[K40('drawText')]
+  53 [  34] GETTABUP  R5 = UP0[K35('LCD_W')]
+  54 [  34] DIV       A=5 B=5 C=292
+  55 [  34] GETTABUP  R6 = UP0[K38('LCD_H')]
+  56 [  34] DIV       A=6 B=6 C=292
+  57 [  34] LOADK     R7 = K41 ('ToolBox ')
+  58 [  34] GETTABLE  R8 = R2[K42('AI')]
+  59 [  34] GETTABLE  R8 = R8[K43('VER')]
+  60 [  34] LOADK     R9 = K44 (' ')
+  61 [  34] GETTABLE  R10 = R2[K42('AI')]
+  62 [  34] GETTABLE  R10 = R10[K45('REL')]
+  63 [  34] CONCAT    A=9 B=9 C=10
+  64 [  34] TEST      A=9 B=0 C=1
+  65 [  34] JMP       A=0 ->67
+  66 [  34] LOADK     R9 = K46 ('')
+  67 [  34] CONCAT    A=7 B=7 C=9
+  68 [  34] GETTABUP  R8 = UP0[K47('MIDSIZE')]
+  69 [  34] GETTABUP  R9 = UP0[K48('CENTER')]
+  70 [  34] ADD       A=8 B=8 C=9
+  71 [  34] GETTABUP  R9 = UP0[K49('WHITE')]
+  72 [  34] ADD       A=8 B=8 C=9
+  73 [  34] CALL      A=4 B=5 C=1
+  74 [  35] GETTABUP  R4 = UP0[K30('lcd')]
+  75 [  35] GETTABLE  R4 = R4[K40('drawText')]
+  76 [  35] GETTABUP  R5 = UP0[K35('LCD_W')]
+  77 [  35] DIV       A=5 B=5 C=292
+  78 [  35] GETTABUP  R6 = UP0[K38('LCD_H')]
+  79 [  35] DIV       A=6 B=6 C=292
+  80 [  35] ADD       A=6 B=6 C=306
+  81 [  35] GETTABLE  R7 = R2[K28('INIT_nND')]
+  82 [  35] GETTABUP  R8 = UP0[K48('CENTER')]
+  83 [  35] GETTABUP  R9 = UP0[K49('WHITE')]
+  84 [  35] ADD       A=8 B=8 C=9
+  85 [  35] CALL      A=4 B=5 C=1
+  86 [  38] GETTABLE  R4 = R2[K29('INIT_sN')]
+  87 [  38] EQ        A=0 R4, K1('var'); skip-next if condition != A
+  88 [  38] JMP       A=0 ->179
+  89 [  40] GETTABLE  R4 = R2[K51('S')]
+  90 [  40] TEST      A=4 B=0 C=1
+  91 [  40] JMP       A=0 ->93
+  92 [  40] NEWTABLE  A=4 B=0 C=0
+  93 [  40] SETTABLE  R2[K51('S')] = R4
+  94 [  41] GETTABLE  R4 = R0[K31('clear')]
+  95 [  41] MOVE      A=5 B=2 C=0
+  96 [  41] LOADK     R6 = K52 ('+S*')
+  97 [  41] CALL      A=4 B=3 C=1
+  98 [  43] GETTABLE  R4 = R0[K31('clear')]
+  99 [  43] MOVE      A=5 B=2 C=0
+ 100 [  43] LOADK     R6 = K53 ('+CFGSTR')
+ 101 [  43] CALL      A=4 B=3 C=1
+ 102 [  44] GETTABLE  R4 = R0[K31('clear')]
+ 103 [  44] MOVE      A=5 B=2 C=0
+ 104 [  44] LOADK     R6 = K54 ('+MODCFG')
+ 105 [  44] CALL      A=4 B=3 C=1
+ 106 [  45] GETTABLE  R4 = R0[K31('clear')]
+ 107 [  45] MOVE      A=5 B=2 C=0
+ 108 [  45] LOADK     R6 = K55 ('+FC*')
+ 109 [  45] CALL      A=4 B=3 C=1
+ 110 [  46] GETTABLE  R4 = R0[K31('clear')]
+ 111 [  46] MOVE      A=5 B=2 C=0
+ 112 [  46] LOADK     R6 = K56 ('+IND*')
+ 113 [  46] CALL      A=4 B=3 C=1
+ 114 [  47] GETTABLE  R4 = R0[K31('clear')]
+ 115 [  47] MOVE      A=5 B=2 C=0
+ 116 [  47] LOADK     R6 = K57 ('+MSP*')
+ 117 [  47] CALL      A=4 B=3 C=1
+ 118 [  48] GETTABLE  R4 = R0[K31('clear')]
+ 119 [  48] MOVE      A=5 B=2 C=0
+ 120 [  48] LOADK     R6 = K58 ('+VTX*')
+ 121 [  48] CALL      A=4 B=3 C=1
+ 122 [  49] GETTABLE  R4 = R0[K31('clear')]
+ 123 [  49] MOVE      A=5 B=2 C=0
+ 124 [  49] LOADK     R6 = K59 ('+GPS*')
+ 125 [  49] CALL      A=4 B=3 C=1
+ 126 [  50] GETTABLE  R4 = R0[K31('clear')]
+ 127 [  50] MOVE      A=5 B=2 C=0
+ 128 [  50] LOADK     R6 = K60 ('+TLM*')
+ 129 [  50] CALL      A=4 B=3 C=1
+ 130 [  51] GETTABLE  R4 = R0[K31('clear')]
+ 131 [  51] MOVE      A=5 B=2 C=0
+ 132 [  51] LOADK     R6 = K61 ('+MODS*')
+ 133 [  51] CALL      A=4 B=3 C=1
+ 134 [  53] GETTABLE  R4 = R2[K62('SEN')]
+ 135 [  53] TEST      A=4 B=0 C=1
+ 136 [  53] JMP       A=0 ->138
+ 137 [  53] NEWTABLE  A=4 B=0 C=0
+ 138 [  53] SETTABLE  R2[K62('SEN')] = R4
+ 139 [  54] GETTABLE  R4 = R0[K31('clear')]
+ 140 [  54] MOVE      A=5 B=2 C=0
+ 141 [  54] LOADK     R6 = K63 ('+SEN*')
+ 142 [  54] CALL      A=4 B=3 C=1
+ 143 [  56] GETTABLE  R4 = R2[K64('UI')]
+ 144 [  56] TEST      A=4 B=0 C=1
+ 145 [  56] JMP       A=0 ->147
+ 146 [  56] NEWTABLE  A=4 B=0 C=0
+ 147 [  56] SETTABLE  R2[K64('UI')] = R4
+ 148 [  57] GETTABLE  R4 = R0[K31('clear')]
+ 149 [  57] MOVE      A=5 B=2 C=0
+ 150 [  57] LOADK     R6 = K65 ('+UI*')
+ 151 [  57] CALL      A=4 B=3 C=1
+ 152 [  58] GETTABLE  R4 = R0[K31('clear')]
+ 153 [  58] MOVE      A=5 B=2 C=0
+ 154 [  58] LOADK     R6 = K66 ('+CD*')
+ 155 [  58] CALL      A=4 B=3 C=1
+ 156 [  59] GETTABLE  R4 = R0[K31('clear')]
+ 157 [  59] MOVE      A=5 B=2 C=0
+ 158 [  59] LOADK     R6 = K67 ('+C*')
+ 159 [  59] CALL      A=4 B=3 C=1
+ 160 [  61] GETTABLE  R4 = R2[K68('TI')]
+ 161 [  61] TEST      A=4 B=0 C=1
+ 162 [  61] JMP       A=0 ->164
+ 163 [  61] NEWTABLE  A=4 B=0 C=0
+ 164 [  61] SETTABLE  R2[K68('TI')] = R4
+ 165 [  62] GETTABLE  R4 = R0[K31('clear')]
+ 166 [  62] MOVE      A=5 B=2 C=0
+ 167 [  62] LOADK     R6 = K69 ('+TI*')
+ 168 [  62] CALL      A=4 B=3 C=1
+ 169 [  65] GETTABLE  R4 = R0[K70('dbg')]
+ 170 [  65] LOADK     R5 = K71 ('Variables cleared')
+ 171 [  65] CALL      A=4 B=2 C=1
+ 172 [  68] GETTABLE  R4 = R0[K72('loadE')]
+ 173 [  68] GETTABLE  R5 = R0[K73('PLIBOS')]
+ 174 [  68] LOADK     R6 = K74 ('UETX')
+ 175 [  68] CONCAT    A=5 B=5 C=6
+ 176 [  68] CALL      A=4 B=2 C=1
+ 177 [  70] SETTABLE  R2[K27('INIT_nN')] = K3('ver')
+ 178 [  70] JMP       A=0 ->339
+ 179 [  72] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 180 [  72] EQ        A=0 R4, K3('ver'); skip-next if condition != A
+ 181 [  72] JMP       A=0 ->187
+ 182 [  74] GETTABLE  R4 = R0[K75('fm')]
+ 183 [  74] GETTABLE  R4 = R4[K76('v0')]
+ 184 [  74] CALL      A=4 B=1 C=1
+ 185 [  76] SETTABLE  R2[K27('INIT_nN')] = K5('cfg')
+ 186 [  76] JMP       A=0 ->339
+ 187 [  78] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 188 [  78] EQ        A=0 R4, K5('cfg'); skip-next if condition != A
+ 189 [  78] JMP       A=0 ->197
+ 190 [  80] GETTABLE  R4 = R0[K72('loadE')]
+ 191 [  80] GETTABLE  R5 = R0[K77('PLIBCFG')]
+ 192 [  80] LOADK     R6 = K78 ('CFGINIT')
+ 193 [  80] CONCAT    A=5 B=5 C=6
+ 194 [  80] CALL      A=4 B=2 C=1
+ 195 [  81] SETTABLE  R2[K27('INIT_nN')] = K7('data')
+ 196 [  81] JMP       A=0 ->339
+ 197 [  83] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 198 [  83] EQ        A=0 R4, K7('data'); skip-next if condition != A
+ 199 [  83] JMP       A=0 ->209
+ 200 [  85] GETTABLE  R4 = R0[K72('loadE')]
+ 201 [  85] GETTABLE  R5 = R0[K79('PLIBTB')]
+ 202 [  85] LOADK     R6 = K80 ('DATAINIT')
+ 203 [  85] CONCAT    A=5 B=5 C=6
+ 204 [  85] CALL      A=4 B=2 C=1
+ 205 [  87] NEWTABLE  A=4 B=0 C=0
+ 206 [  87] SETTABLE  R2[K81('DBG')] = R4
+ 207 [  90] SETTABLE  R2[K27('INIT_nN')] = K15('fc')
+ 208 [  90] JMP       A=0 ->339
+ 209 [  92] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 210 [  92] EQ        A=0 R4, K15('fc'); skip-next if condition != A
+ 211 [  92] JMP       A=0 ->219
+ 212 [  94] GETTABLE  R4 = R0[K72('loadE')]
+ 213 [  94] GETTABLE  R5 = R0[K82('PLIBFC')]
+ 214 [  94] LOADK     R6 = K83 ('FCINIT')
+ 215 [  94] CONCAT    A=5 B=5 C=6
+ 216 [  94] CALL      A=4 B=2 C=1
+ 217 [  95] SETTABLE  R2[K27('INIT_nN')] = K21('gps')
+ 218 [  95] JMP       A=0 ->339
+ 219 [  97] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 220 [  97] EQ        A=0 R4, K21('gps'); skip-next if condition != A
+ 221 [  97] JMP       A=0 ->236
+ 222 [  99] GETTABLE  R4 = R0[K75('fm')]
+ 223 [  99] GETTABLE  R4 = R4[K84('sxx')]
+ 224 [  99] TEST      A=4 B=0 C=0
+ 225 [  99] JMP       A=0 ->234
+ 226 [ 100] GETTABLE  R4 = R0[K70('dbg')]
+ 227 [ 100] LOADK     R5 = K85 ('Loading GPSINIT')
+ 228 [ 100] CALL      A=4 B=2 C=1
+ 229 [ 101] GETTABLE  R4 = R0[K72('loadE')]
+ 230 [ 101] GETTABLE  R5 = R0[K86('PLIBGPS')]
+ 231 [ 101] LOADK     R6 = K87 ('GPSINIT')
+ 232 [ 101] CONCAT    A=5 B=5 C=6
+ 233 [ 101] CALL      A=4 B=2 C=1
+ 234 [ 103] SETTABLE  R2[K27('INIT_nN')] = K11('tlm')
+ 235 [ 103] JMP       A=0 ->339
+ 236 [ 105] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 237 [ 105] EQ        A=0 R4, K11('tlm'); skip-next if condition != A
+ 238 [ 105] JMP       A=0 ->251
+ 239 [ 107] GETTABLE  R4 = R0[K72('loadE')]
+ 240 [ 107] GETTABLE  R5 = R0[K88('PLIBTLM')]
+ 241 [ 107] LOADK     R6 = K89 ('RCPINIT')
+ 242 [ 107] CONCAT    A=5 B=5 C=6
+ 243 [ 107] CALL      A=4 B=2 C=1
+ 244 [ 108] GETTABLE  R4 = R0[K72('loadE')]
+ 245 [ 108] GETTABLE  R5 = R0[K88('PLIBTLM')]
+ 246 [ 108] LOADK     R6 = K90 ('TLMINIT')
+ 247 [ 108] CONCAT    A=5 B=5 C=6
+ 248 [ 108] CALL      A=4 B=2 C=1
+ 249 [ 109] SETTABLE  R2[K27('INIT_nN')] = K13('ind')
+ 250 [ 109] JMP       A=0 ->339
+ 251 [ 111] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 252 [ 111] EQ        A=0 R4, K13('ind'); skip-next if condition != A
+ 253 [ 111] JMP       A=0 ->266
+ 254 [ 113] GETTABLE  R4 = R0[K72('loadE')]
+ 255 [ 113] GETTABLE  R5 = R0[K79('PLIBTB')]
+ 256 [ 113] LOADK     R6 = K91 ('INDINIT')
+ 257 [ 113] CONCAT    A=5 B=5 C=6
+ 258 [ 113] CALL      A=4 B=2 C=1
+ 259 [ 114] GETTABLE  R4 = R0[K72('loadE')]
+ 260 [ 114] GETTABLE  R5 = R0[K79('PLIBTB')]
+ 261 [ 114] LOADK     R6 = K92 ('INDUPD')
+ 262 [ 114] CONCAT    A=5 B=5 C=6
+ 263 [ 114] CALL      A=4 B=2 C=1
+ 264 [ 116] SETTABLE  R2[K27('INIT_nN')] = K17('msp')
+ 265 [ 116] JMP       A=0 ->339
+ 266 [ 118] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 267 [ 118] EQ        A=0 R4, K17('msp'); skip-next if condition != A
+ 268 [ 118] JMP       A=0 ->280
+ 269 [ 120] GETTABLE  R4 = R0[K75('fm')]
+ 270 [ 120] GETTABLE  R4 = R4[K84('sxx')]
+ 271 [ 120] TEST      A=4 B=0 C=0
+ 272 [ 120] JMP       A=0 ->278
+ 273 [ 121] GETTABLE  R4 = R0[K72('loadE')]
+ 274 [ 121] GETTABLE  R5 = R0[K93('PLIBMSP')]
+ 275 [ 121] LOADK     R6 = K94 ('MSPINIT')
+ 276 [ 121] CONCAT    A=5 B=5 C=6
+ 277 [ 121] CALL      A=4 B=2 C=1
+ 278 [ 123] SETTABLE  R2[K27('INIT_nN')] = K19('vtx')
+ 279 [ 123] JMP       A=0 ->339
+ 280 [ 125] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 281 [ 125] EQ        A=0 R4, K19('vtx'); skip-next if condition != A
+ 282 [ 125] JMP       A=0 ->294
+ 283 [ 127] GETTABLE  R4 = R0[K75('fm')]
+ 284 [ 127] GETTABLE  R4 = R4[K84('sxx')]
+ 285 [ 127] TEST      A=4 B=0 C=0
+ 286 [ 127] JMP       A=0 ->292
+ 287 [ 128] GETTABLE  R4 = R0[K72('loadE')]
+ 288 [ 128] GETTABLE  R5 = R0[K95('PLIBVTX')]
+ 289 [ 128] LOADK     R6 = K96 ('VTXINIT')
+ 290 [ 128] CONCAT    A=5 B=5 C=6
+ 291 [ 128] CALL      A=4 B=2 C=1
+ 292 [ 130] SETTABLE  R2[K27('INIT_nN')] = K97('misc')
+ 293 [ 130] JMP       A=0 ->339
+ 294 [ 132] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 295 [ 132] EQ        A=0 R4, K97('misc'); skip-next if condition != A
+ 296 [ 132] JMP       A=0 ->318
+ 297 [ 134] GETTABLE  R4 = R2[K68('TI')]
+ 298 [ 134] GETTABUP  R5 = UP0[K99('getTime')]
+ 299 [ 134] CALL      A=5 B=1 C=2
+ 300 [ 134] SETTABLE  R4[K98('now')] = R5
+ 301 [ 135] GETTABLE  R4 = R2[K68('TI')]
+ 302 [ 135] SETTABLE  R4[K100('tmrUpdate')] = K101(False)
+ 303 [ 137] GETTABLE  R4 = R0[K72('loadE')]
+ 304 [ 137] GETTABLE  R5 = R0[K102('PLIBRD')]
+ 305 [ 137] LOADK     R6 = K103 ('TMR')
+ 306 [ 137] CONCAT    A=5 B=5 C=6
+ 307 [ 137] CALL      A=4 B=2 C=1
+ 308 [ 138] GETTABLE  R4 = R1[K104('RD_TMR')]
+ 309 [ 138] LOADK     R5 = K105 ('reset')
+ 310 [ 138] CALL      A=4 B=2 C=1
+ 311 [ 139] GETTABLE  R4 = R0[K72('loadE')]
+ 312 [ 139] GETTABLE  R5 = R0[K102('PLIBRD')]
+ 313 [ 139] LOADK     R6 = K106 ('SND')
+ 314 [ 139] CONCAT    A=5 B=5 C=6
+ 315 [ 139] CALL      A=4 B=2 C=1
+ 316 [ 141] SETTABLE  R2[K27('INIT_nN')] = K9('ui')
+ 317 [ 141] JMP       A=0 ->339
+ 318 [ 143] GETTABLE  R4 = R2[K29('INIT_sN')]
+ 319 [ 143] EQ        A=0 R4, K9('ui'); skip-next if condition != A
+ 320 [ 143] JMP       A=0 ->339
+ 321 [ 145] GETTABLE  R4 = R0[K72('loadE')]
+ 322 [ 145] GETTABLE  R5 = R0[K107('PUI')]
+ 323 [ 145] LOADK     R6 = K108 ('UIINIT')
+ 324 [ 145] CONCAT    A=5 B=5 C=6
+ 325 [ 145] CALL      A=4 B=2 C=1
+ 326 [ 146] GETTABLE  R4 = R0[K72('loadE')]
+ 327 [ 146] GETTABLE  R5 = R0[K77('PLIBCFG')]
+ 328 [ 146] LOADK     R6 = K109 ('CFGUPDP')
+ 329 [ 146] CONCAT    A=5 B=5 C=6
+ 330 [ 146] CALL      A=4 B=2 C=1
+ 331 [ 148] GETTABLE  R4 = R0[K72('loadE')]
+ 332 [ 148] GETTABLE  R5 = R0[K102('PLIBRD')]
+ 333 [ 148] LOADK     R6 = K110 ('BAT')
+ 334 [ 148] CONCAT    A=5 B=5 C=6
+ 335 [ 148] CALL      A=4 B=2 C=1
+ 336 [ 149] GETTABLE  R4 = R1[K111('RD_BT')]
+ 337 [ 149] CALL      A=4 B=1 C=1
+ 338 [ 151] RETURN    A=0 B=1 C=0
+ 339 [ 155] GETTABLE  R4 = R2[K27('INIT_nN')]
+ 340 [ 155] SETTABLE  R2[K29('INIT_sN')] = R4
+ 341 [ 156] LOADBOOL  A=4 B=1 C=0
+ 342 [ 156] RETURN    A=4 B=2 C=0
+ 343 [ 156] RETURN    A=0 B=1 C=0

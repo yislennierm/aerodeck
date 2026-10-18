@@ -1,0 +1,38 @@
+GPS-CENTER-20261018
+Main SHA256: 8f4ed60e998b26cfb6ad0ff5b26e797c6f5620c1129ec14f8d69ebacfd221266
+Local build; last file-verified radio remains ATTITUDE-CLEAN-20261018.
+
+The GPS overview is map-first: a320x180north-up plot centered at(240,154),
+flanked by72px rails. Left: home distance/metres and return bearing/degrees.
+Right: ground speed/kmh and GPS altitude/metres. Supporting values use native
+MID text with measured fallback for long values; no oversized numeric cards.
+The white position dot, home reference, full track, selectors and warning
+priority are retained. No heading row, image aircraft or progress counter.
+
+Metric grid/rings follow zoom and the actual published trail frame together.
+Wide(.35px/m):100m grid,100/200m rings at35/70px.
+Medium(.7px/m):50m grid,50/100m rings at35/70px.
+Close(1.4px/m):20m grid,20/40m rings at28/56px.
+Each circle is labelled with its radius in metres. Grid lines are centered on
+the same geographic origin at the stated metre interval. This is manual zoom;
+no automatic zoom changes while the aircraft moves. During bounded projection
+work, rings/grid/current position retain the published trail scale until its
+replacement is complete. No old trail is displayed with new range labels.
+
+The native plot and cached projection share the new center/clip rectangle.
+All180retained samples are still published/drawn, with no additional asset
+loading, sensor scans, runtime rotation, forced GC or increased callback budget.
+Twenty icon masks remain. Supporting GPS views, exact coordinates, satellite
+paging, quality and recovery fields remain accessible through direct selection.
+
+59suites PASS in LuaJIT and int32/float32 Lua5.3. Checks include full180point
+trails, translated projection, all three metric ring states and pending zoom
+coherence, position dot, GPS loss, source freshness, direct controls and warning
+priority. Native320x180layout and zoom captures reviewed with unchanged20000
+instruction callback budget; no script/CPU-limit errors. Simulator uses sample
+data and does not establish physical radio/quad performance.
+
+Preview: http://127.0.0.1:8766/
+Package: AERODECK-gps-center-install.zip
+Evidence: development/runtime-evidence/gps-center-20261018/
+No radio install or GitHub push. See DEPLOYMENT.txt.

@@ -1,0 +1,72 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/ACC.luac
+
+FUNCTION main params 0 vararg 1 stack 9 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TBS/ACC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 45), ('F', 1, 45), ('D', 1, 45), ('X', 1, 45), ('add', 1, 45), ('sensors', 8, 45)]
+K0 'S'
+K1 'ACC_X'
+K2 None
+K3 'ACC_Y'
+K4 'ACC_Z'
+K5 'table'
+K6 'insert'
+K7 'sName'
+K8 'pName'
+K9 'AccX'
+K10 'sLabel'
+K11 'Acceleration X'
+K12 'dUnit'
+K13 'G'
+K14 'sMin'
+K15 -32
+K16 'sMax'
+K17 32
+K18 'AccY'
+K19 'Acceleration Y'
+K20 'AccZ'
+K21 'Acceleration Z'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('ACC_X')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('ACC_Y')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('ACC_Z')] = K2(None)
+   8 [  16] NEWTABLE  A=5 B=0 C=0
+   9 [  18] TEST      A=4 B=0 C=0
+  10 [  18] JMP       A=0 ->44
+  11 [  20] GETTABUP  R6 = UP0[K5('table')]
+  12 [  20] GETTABLE  R6 = R6[K6('insert')]
+  13 [  20] MOVE      A=7 B=5 C=0
+  14 [  20] NEWTABLE  A=8 B=0 C=6
+  15 [  20] SETTABLE  R8[K7('sName')] = K1('ACC_X')
+  16 [  20] SETTABLE  R8[K8('pName')] = K9('AccX')
+  17 [  20] SETTABLE  R8[K10('sLabel')] = K11('Acceleration X')
+  18 [  20] SETTABLE  R8[K12('dUnit')] = K13('G')
+  19 [  20] SETTABLE  R8[K14('sMin')] = K15(-32)
+  20 [  20] SETTABLE  R8[K16('sMax')] = K17(32)
+  21 [  20] CALL      A=6 B=3 C=1
+  22 [  21] GETTABUP  R6 = UP0[K5('table')]
+  23 [  21] GETTABLE  R6 = R6[K6('insert')]
+  24 [  21] MOVE      A=7 B=5 C=0
+  25 [  21] NEWTABLE  A=8 B=0 C=6
+  26 [  21] SETTABLE  R8[K7('sName')] = K3('ACC_Y')
+  27 [  21] SETTABLE  R8[K8('pName')] = K18('AccY')
+  28 [  21] SETTABLE  R8[K10('sLabel')] = K19('Acceleration Y')
+  29 [  21] SETTABLE  R8[K12('dUnit')] = K13('G')
+  30 [  21] SETTABLE  R8[K14('sMin')] = K15(-32)
+  31 [  21] SETTABLE  R8[K16('sMax')] = K17(32)
+  32 [  21] CALL      A=6 B=3 C=1
+  33 [  22] GETTABUP  R6 = UP0[K5('table')]
+  34 [  22] GETTABLE  R6 = R6[K6('insert')]
+  35 [  22] MOVE      A=7 B=5 C=0
+  36 [  22] NEWTABLE  A=8 B=0 C=6
+  37 [  22] SETTABLE  R8[K7('sName')] = K4('ACC_Z')
+  38 [  22] SETTABLE  R8[K8('pName')] = K20('AccZ')
+  39 [  22] SETTABLE  R8[K10('sLabel')] = K21('Acceleration Z')
+  40 [  22] SETTABLE  R8[K12('dUnit')] = K13('G')
+  41 [  22] SETTABLE  R8[K14('sMin')] = K15(-32)
+  42 [  22] SETTABLE  R8[K16('sMax')] = K17(32)
+  43 [  22] CALL      A=6 B=3 C=1
+  44 [  26] RETURN    A=5 B=2 C=0
+  45 [  26] RETURN    A=0 B=1 C=0

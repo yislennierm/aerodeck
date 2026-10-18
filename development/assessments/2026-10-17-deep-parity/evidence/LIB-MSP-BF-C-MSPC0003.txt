@@ -1,0 +1,36 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0003.luac 
+SHA256 53da89fab0d4be527dd3255c5392eb7269991b4e331684976940a5082c1a6bc0
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0003.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 23), ('F', 1, 23), ('D', 1, 23), ('X', 1, 23)]
+K0 'FC'
+K1 'FW_VER'
+K2 'MSPP'
+K3 'U8'
+K4 '.'
+K5 'dbgMSP'
+K6 'D.FC.FW_VER'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R2[K0('FC')]
+   3 [  11] GETTABLE  R5 = R1[K2('MSPP')]
+   4 [  11] LOADK     R6 = K3 ('U8')
+   5 [  11] CALL      A=5 B=2 C=2
+   6 [  11] LOADK     R6 = K4 ('.')
+   7 [  11] GETTABLE  R7 = R1[K2('MSPP')]
+   8 [  11] LOADK     R8 = K3 ('U8')
+   9 [  11] CALL      A=7 B=2 C=2
+  10 [  11] LOADK     R8 = K4 ('.')
+  11 [  11] GETTABLE  R9 = R1[K2('MSPP')]
+  12 [  11] LOADK     R10 = K3 ('U8')
+  13 [  11] CALL      A=9 B=2 C=2
+  14 [  11] CONCAT    A=5 B=5 C=9
+  15 [  11] SETTABLE  R4[K1('FW_VER')] = R5
+  16 [  12] GETTABLE  R4 = R0[K5('dbgMSP')]
+  17 [  12] LOADK     R5 = K2 ('MSPP')
+  18 [  12] LOADK     R6 = K6 ('D.FC.FW_VER')
+  19 [  12] GETTABLE  R7 = R2[K0('FC')]
+  20 [  12] GETTABLE  R7 = R7[K1('FW_VER')]
+  21 [  12] CALL      A=4 B=4 C=1
+  22 [  14] RETURN    A=0 B=1 C=0
+  23 [  14] RETURN    A=0 B=1 C=0

@@ -1,0 +1,60 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPQAD.luac
+SHA256: f04b28d5f02ad3beb89b2e4e323510e1a62754cfedeca24cdbfc493b3c9fb62f
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/MSPQAD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'MSPQAD'
+   1 [  17] VARARG    A=0 B=5 C=0
+   2 [  39] CLOSURE   R4 = proto[0]
+   3 [  39] SETTABLE  R1[K0('MSPQAD')] = R4
+   4 [  41] RETURN    A=0 B=1 C=0
+   5 [  41] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 4 vararg 0 stack 10 lines 19 39 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('nodup', 0, 38), ('mCmd', 0, 38), ('mData', 0, 38), ('mSave', 0, 38), ('(for generator)', 19, 26), ('(for state)', 19, 26), ('(for control)', 19, 26), ('i', 20, 24), ('data', 20, 24)]
+K0 'ipairs'
+K1 'MSP'
+K2 'Q'
+K3 1
+K4 'table'
+K5 'insert'
+   1 [  24] TEST      A=1 B=0 C=1
+   2 [  24] JMP       A=0 ->4
+   3 [  24] RETURN    A=0 B=1 C=0
+   4 [  25] TEST      A=0 B=0 C=1
+   5 [  25] JMP       A=0 ->7
+   6 [  25] LOADBOOL  A=0 B=0 C=0
+   7 [  26] TEST      A=2 B=0 C=1
+   8 [  26] JMP       A=0 ->11
+   9 [  26] NEWTABLE  A=4 B=0 C=0
+  10 [  26] MOVE      A=2 B=4 C=0
+  11 [  27] TEST      A=3 B=0 C=1
+  12 [  27] JMP       A=0 ->14
+  13 [  27] LOADBOOL  A=3 B=0 C=0
+  14 [  28] TEST      A=0 B=0 C=0
+  15 [  28] JMP       A=0 ->27
+  16 [  29] GETTABUP  R4 = UP0[K0('ipairs')]
+  17 [  29] GETTABUP  R5 = UP1[K1('MSP')]
+  18 [  29] GETTABLE  R5 = R5[K2('Q')]
+  19 [  29] CALL      A=4 B=2 C=4
+  20 [  29] JMP       A=0 ->25
+  21 [  30] GETTABLE  R9 = R8[K3(1)]
+  22 [  30] EQ        A=0 R1, R9; skip-next if condition != A
+  23 [  30] JMP       A=0 ->25
+  24 [  32] RETURN    A=0 B=1 C=0
+  25 [  29] TFORCALL  A=4 B=0 C=2
+  26 [  29] TFORLOOP  A=6 ->21
+  27 [  37] GETTABUP  R4 = UP0[K4('table')]
+  28 [  37] GETTABLE  R4 = R4[K5('insert')]
+  29 [  37] GETTABUP  R5 = UP1[K1('MSP')]
+  30 [  37] GETTABLE  R5 = R5[K2('Q')]
+  31 [  37] NEWTABLE  A=6 B=3 C=0
+  32 [  37] MOVE      A=7 B=1 C=0
+  33 [  37] MOVE      A=8 B=2 C=0
+  34 [  37] MOVE      A=9 B=3 C=0
+  35 [  37] SETLIST   A=6 B=3 C=1
+  36 [  37] CALL      A=4 B=3 C=1
+  37 [  38] RETURN    A=0 B=1 C=0
+  38 [  39] RETURN    A=0 B=1 C=0

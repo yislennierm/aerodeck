@@ -1,0 +1,2222 @@
+[
+  {
+    "id": "CTL-001",
+    "area": "MSP transport",
+    "feature": "Betaflight identity and firmware handshake",
+    "toolbox": "Stages FC_VARIANT2 → API_VERSION1 → FC_VERSION3; requires BTFL and API>=1.44, then UID160.",
+    "aerodeck": "Same first three reads and BTFL rejection; firmware/API displayed, but no UID stage.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPCFC.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPCFC.luac",
+        "sha256": "3300569edf6f6741f79d360f0f22cf7dab6c0c08a2b1bf85fcabdd1acfb2f994",
+        "originalSha256": "4e566da81c26c2f600759cc40810ff0b511dbd92901d0df2d458e2b7214c9f7b",
+        "portableFile": "evidence/LIB-MSP-BF-MSPCFC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPCFC.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-MSPCFC.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 23,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:23"
+      }
+    ],
+    "dependencies": [
+      "CRSF or S.Port transport",
+      "FC family setting"
+    ],
+    "userImpact": "FC variant/version known; identity needed for per-board caches is absent.",
+    "acceptance": [
+      "BTFL handshake succeeds and mismatched family gives explicit error.",
+      "API/FW fields remain absent until valid replies.",
+      "Fetch and bind UID to the connected FC; never reuse another FC cache."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx for MSP init",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-002",
+    "area": "MSP transport",
+    "feature": "INAV identity and version support",
+    "toolbox": "INAV handshake2/1/3; requires INAV firmware>=8.0.",
+    "aerodeck": "INAV app option blocks MSP and client rejects non-BTFL.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPCFC.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/MSPCFC.luac",
+        "sha256": "47f2608198f5a91fefc81148457aa7c8a8c72c841e0b3b861858bbc0d67ee1aa",
+        "originalSha256": "d42b004009b8d76f5b3d8b6a87ce16266c68b24bd1b528f0339bab2bc0343a61",
+        "portableFile": "evidence/LIB-MSP-IN-MSPCFC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPCFC.txt",
+        "excerptKey": "evidence/LIB-MSP-IN-MSPCFC.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 514,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:514"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 26,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:26"
+      }
+    ],
+    "dependencies": [
+      "INAV decoder family",
+      "CRSF and S.Port transports"
+    ],
+    "userImpact": "INAV models cannot use FC status, sensors or associated control backends.",
+    "acceptance": [
+      "INAV8+ responds through supported transports without being treated as Betaflight.",
+      "Wrong variant/unsupported firmware produce explicit capability state."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-003",
+    "area": "MSP transport",
+    "feature": "CRSF MSPv2 request/reply framing",
+    "toolbox": "MSPWXF wraps MSP body in0x7A/0x7C with C8 destination/EA origin; replies0x7B EA/C8; MSPv2 fragmentation sequenced.",
+    "aerodeck": "Bounded CRSF MSPv2 reader sends0x7A empty read bodies; max4 pops,256B payload and strict sequence checks.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWXF.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/WR/MSPWXF.luac",
+        "sha256": "a9be82f6d77a0d198e735395d29f15412245311c2cded87563f83ad956fbb00f",
+        "originalSha256": "8bacac5e63e3bc788f7b08a616b0059d88714fa7d978277c9019fa1925d41ac5",
+        "portableFile": "evidence/LIB-MSP-WR-MSPWXF.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWXF.txt",
+        "excerptKey": "evidence/LIB-MSP-WR-MSPWXF.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-V2-MSPOUT.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/V2/MSPOUT.luac",
+        "sha256": "2a0414836097ee4a8d029a0d8ed839bc69d6edceeaeb39930fc111562e1598a0",
+        "originalSha256": "25e79a6cc2b0351acdbf26e429d57353a650224bd1c52e718c87ec7d0b1b5110",
+        "portableFile": "evidence/LIB-MSP-BF-V2-MSPOUT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-V2-MSPOUT.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-V2-MSPOUT.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 48,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:48"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 92,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:92"
+      }
+    ],
+    "dependencies": [
+      "Shared dispatcher",
+      "General read/write command descriptors"
+    ],
+    "userImpact": "Current wire client handles four empty reads, not Toolbox-sized parameterized reads/writes.",
+    "acceptance": [
+      "Parameterized and empty reads and writes reassemble across chunk boundaries.",
+      "Reject wrong address/command/sequence/error/oversize replies without accepting partial state.",
+      "Keep bounded callback processing on radio."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-004",
+    "area": "MSP transport",
+    "feature": "FrSky S.Port MSPv2 transport",
+    "toolbox": "MSPWSP uses six-byte chunks, sensor0x0D/frame0x30 outgoing; accepts sensor0 or0x1B/frame0x32 replies, U16+U32 packing.",
+    "aerodeck": "No sportTelemetryPush/Pop path; FrSky selection disables FC client.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWSP.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/WR/MSPWSP.luac",
+        "sha256": "1eef094dc15db7e823a68eeca7ffcd39b29ee8468dd38d6e0c2753a4c9e8bb94",
+        "originalSha256": "82ccffe3bc9c6e6bb5d29b61d86351ec330844a1480898fc638b7b29d67318a6",
+        "portableFile": "evidence/LIB-MSP-WR-MSPWSP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWSP.txt",
+        "excerptKey": "evidence/LIB-MSP-WR-MSPWSP.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPINIT.luac",
+        "sha256": "2cc96caeed4cf4bea00a6043b4b27cafc7fa80728c0917c111b6fbac2aad41d9",
+        "originalSha256": "7aad0722f500af69141813d7345bddd7e51e80b19192f45aaadc298ea823676d",
+        "portableFile": "evidence/LIB-MSP-MSPINIT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPINIT.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 514,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:514"
+      }
+    ],
+    "dependencies": [
+      "FrSky ACCST/R9 telemetry configuration",
+      "S.Port byte packing and MSP2 codec"
+    ],
+    "userImpact": "FrSky cannot operate live FC/VTX backend despite being a Toolbox-supported protocol.",
+    "acceptance": [
+      "Run same FC read/write transaction fixtures over6-byte S.Port chunks.",
+      "Verify exact U16/U32 shifts in original bytecode, not damaged recovered wrapper.",
+      "Hardware acceptance on FrSky supported radio/receiver path."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-005",
+    "area": "MSP transport",
+    "feature": "Protocol/version feature routing",
+    "toolbox": "Original RCPINIT lists Crossfire,Tracer,ELRS2.x,ELRS3.x,ELRS Gemini and FrSky ACCST/R9; chooses shared TBS or FRS stack.",
+    "aerodeck": "App has ELRS/CRSF,TBS Crossfire,FrSky,Other labels; no subtype selector and only native CRSF/BTFL client.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-TLM-RCPINIT.txt",
+        "line": 27,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/RCPINIT.luac",
+        "sha256": "9176491d845bf9f36a5d865c4f5d191e818140405cbf9129df46e2345caf8733",
+        "originalSha256": "66094d810ef6a19b61f12f89326315c22806c3a88db08c5d020fc673e82138ac",
+        "portableFile": "evidence/LIB-TLM-RCPINIT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-TLM-RCPINIT.txt",
+        "excerptKey": "evidence/LIB-TLM-RCPINIT.txt:27"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPINIT.luac",
+        "sha256": "2cc96caeed4cf4bea00a6043b4b27cafc7fa80728c0917c111b6fbac2aad41d9",
+        "originalSha256": "7aad0722f500af69141813d7345bddd7e51e80b19192f45aaadc298ea823676d",
+        "portableFile": "evidence/LIB-MSP-MSPINIT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPINIT.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 513,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:513"
+      }
+    ],
+    "dependencies": [
+      "Protocol profile settings and telemetry reader families"
+    ],
+    "userImpact": "A local protocol label does not prove the underlying stack or all subtype fields work.",
+    "acceptance": [
+      "Each supported original subtype selects real field/parser/transport behavior.",
+      "First delivery may validate TX16S/BF/ELRS; full completion still requires FrSky,Tracer,Gemini and INAV paths."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "sxx for advanced UI/MSP",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-006",
+    "area": "MSP transport",
+    "feature": "Shared request queue and read/write arbitration",
+    "toolbox": "MSPQAD inserts{cmd,data,save}; nodup compares command; table index requests deliberately allow duplicates. MSPML services one transaction.",
+    "aerodeck": "Fixed private stage list; no generic queue, write transactions or multiple request consumers.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPQAD.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPQAD.luac",
+        "sha256": "10a7eeec2e4d5d84606b7c928ae7d8310aa3223f93455c94bc86b02e76f15c09",
+        "note": "PCs14–26 original dedup loop is absent from recovered source.",
+        "originalSha256": "f04b28d5f02ad3beb89b2e4e323510e1a62754cfedeca24cdbfc493b3c9fb62f",
+        "portableFile": "evidence/LIB-MSP-MSPQAD.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPQAD.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPQAD.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPML.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPML.luac",
+        "sha256": "0818d5acd9c64bd1913d33e73d3babe7026c29254d0e1b6ad335283c9a0d0ff1",
+        "originalSha256": "dc8f927e5b62766df9d88abc4fd2efbfd6c7d97da6b50399f1ec9f8f9e27eb55",
+        "portableFile": "evidence/LIB-MSP-MSPML.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPML.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPML.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 6,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6"
+      }
+    ],
+    "dependencies": [
+      "Transaction scheduler",
+      "Per-command payload validation"
+    ],
+    "userImpact": "Adding VTX/GPS readers independently would contend for reply frames and can starve current status.",
+    "acceptance": [
+      "One bounded dispatcher owns pop and routes MSP and native VTX frames.",
+      "Different table indices are all requested; duplicate UI submits do not duplicate writes.",
+      "Status freshness continues during table reads and recoverable failures."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-007",
+    "area": "MSP transport",
+    "feature": "Native CRSF VTX reply multiplexing",
+    "toolbox": "MSPWXF forwards type0x10 native VTX reports to SN_VTX(read) while polling MSP.",
+    "aerodeck": "CRSF client ignores all non0x7B pops after consuming them; no VTX consumer.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWXF.txt",
+        "line": 45,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/WR/MSPWXF.luac",
+        "sha256": "a9be82f6d77a0d198e735395d29f15412245311c2cded87563f83ad956fbb00f",
+        "originalSha256": "8bacac5e63e3bc788f7b08a616b0059d88714fa7d978277c9019fa1925d41ac5",
+        "portableFile": "evidence/LIB-MSP-WR-MSPWXF.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWXF.txt",
+        "excerptKey": "evidence/LIB-MSP-WR-MSPWXF.txt:45"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "line": 197,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXTBS.luac",
+        "sha256": "7c5cdac5649e88c3be3627a04426629e0235d8cf9fc2a37950af5ea9930b5885",
+        "originalSha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+        "portableFile": "evidence/LIB-VTX-VTXTBS.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXTBS.txt:197"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 49,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:49"
+      }
+    ],
+    "dependencies": [
+      "Shared CRSF dispatcher",
+      "Native TBS VTX parser"
+    ],
+    "userImpact": "A future separate native VTX reader could lose frames to MSP pop.",
+    "acceptance": [
+      "Interleave0x10 VTX,0x7B MSP and unrelated frames without losing either requested capability.",
+      "Bound pop counts and do not introduce frame-drain loops."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-008",
+    "area": "MSP transport",
+    "feature": "Timeout/retry and transaction failure lifecycle",
+    "toolbox": "MSPINIT uses5 attempts,5s CRSF/8s S.Port response wait; MSPML retries then cancels.",
+    "aerodeck": "Each four-read stage retries periodically after5s timeout; no write acknowledgement lifecycle.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+        "line": 73,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPINIT.luac",
+        "sha256": "2cc96caeed4cf4bea00a6043b4b27cafc7fa80728c0917c111b6fbac2aad41d9",
+        "originalSha256": "7aad0722f500af69141813d7345bddd7e51e80b19192f45aaadc298ea823676d",
+        "portableFile": "evidence/LIB-MSP-MSPINIT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPINIT.txt:73"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPML.txt",
+        "line": 46,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPML.luac",
+        "sha256": "0818d5acd9c64bd1913d33e73d3babe7026c29254d0e1b6ad335283c9a0d0ff1",
+        "originalSha256": "dc8f927e5b62766df9d88abc4fd2efbfd6c7d97da6b50399f1ec9f8f9e27eb55",
+        "portableFile": "evidence/LIB-MSP-MSPML.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPML.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPML.txt:46"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPRST.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPRST.luac",
+        "sha256": "1ddd97c5a09735a22b2b1821e75a82c605c26987e7b7df006109c2e2ce20b7ac",
+        "originalSha256": "c6b51b42f9388a27ab10c5b119e120e3f0c0cd98b56abbfaae3f27749fb03b69",
+        "portableFile": "evidence/LIB-MSP-MSPRST.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPRST.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPRST.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 88,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:88"
+      }
+    ],
+    "dependencies": [
+      "Transaction queue",
+      "Explicit operation outcomes"
+    ],
+    "userImpact": "Reads recover, but no facility can safely distinguish unsent/pending/acknowledged/applied/failed writes.",
+    "acceptance": [
+      "Inject busy transport,timeout,FC rejection and partial reply.",
+      "Bound attempts, preserve UI, clear pending state and report failure.",
+      "A write never reports applied solely because push returned true."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-009",
+    "area": "MSP transport",
+    "feature": "Disarmed/live-link guards",
+    "toolbox": "MAIN/ML requires FC_MSP_ON,TLM_ON and not ARMED, then start delay; guarded MSP is original behavior.",
+    "aerodeck": "Requires enabled supported profile, native FM sensor,current FM,Tele switch if present and explicit disarmed FM punctuation.",
+    "status": "equivalent",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+        "line": 130,
+        "kind": "recovered-source",
+        "sha256": "b562289729075603251476440da7426011df5d4a1cb0b9a296d663cb65f1d566",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua:130"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-ML.txt",
+        "line": 463,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/ML.luac",
+        "sha256": "b784537e9b8c5092480a9c3ca84a183411dd0951dc29254360522a430eea47c7",
+        "originalSha256": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6",
+        "portableFile": "evidence/MAIN-ML.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-ML.txt",
+        "excerptKey": "evidence/MAIN-ML.txt:463"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 514,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:514"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 72,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:72"
+      }
+    ],
+    "dependencies": [
+      "Reliable family-specific armed state"
+    ],
+    "userImpact": "Backend reads should not be initiated armed/offline; existing guard must survive expansion.",
+    "acceptance": [
+      "Link loss,armed or unknown state cancels transport and invalidates current-operation state.",
+      "No write can bypass the same guard.",
+      "Family-specific armed/disarmed parsing is validated, rather than assuming all FM strings match BF."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-010",
+    "area": "FC data",
+    "feature": "FC UID read for device identity",
+    "toolbox": "BF handshake reads UID160 and decoder concatenates three U32 fields; used as VTX proxy cache identity.",
+    "aerodeck": "No UID read or display/cache binding.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPCFC.txt",
+        "line": 41,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPCFC.luac",
+        "sha256": "3300569edf6f6741f79d360f0f22cf7dab6c0c08a2b1bf85fcabdd1acfb2f994",
+        "originalSha256": "4e566da81c26c2f600759cc40810ff0b511dbd92901d0df2d458e2b7214c9f7b",
+        "portableFile": "evidence/LIB-MSP-BF-MSPCFC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPCFC.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-MSPCFC.txt:41"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00A0.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC00A0.luac",
+        "sha256": "854b780b6c2ae7cacf36bd6d59ab14713b502b2efab2339e12b0e5ad04e3e540",
+        "originalSha256": "2cf69110ebf52c39744ee6f31124b09c949c00e6f4aa254dabb2d9368ad67c87",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC00A0.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00A0.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC00A0.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 6,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6"
+      }
+    ],
+    "dependencies": [
+      "General parameterized-read client"
+    ],
+    "userImpact": "No reliable distinction between FCs when caching future tables.",
+    "acceptance": [
+      "Parse12-byte UID without lossy numeric conversion.",
+      "Invalidate all device-dependent caches on identity change."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-011",
+    "area": "FC data",
+    "feature": "Board target/board/manufacturer information",
+    "toolbox": "BOARD_INFO4 decoder skips8B then reads length-prefixed target,board,manufacturer; requested on gated FCD pane.",
+    "aerodeck": "No BOARD_INFO request; diagnostics only EdgeTX/build/model,FC FW/API.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0004.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0004.luac",
+        "sha256": "9d2cd4d3ee8886479ce97a2e0adf7446d100f2fe90e0db0309aa044e3d297a0a",
+        "originalSha256": "d3f4390de833d47bd6dda21a0f51013fcc3de5ee9b7ca780153d28ca1d80f682",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0004.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0004.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0004.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+        "line": 57,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.luac",
+        "sha256": "c54c060b66057787bebe2953ace437d2842109bd7ab596138b0c9936bc309324",
+        "originalSha256": "582ebade13d1d87a93a7cca3896351e70f8bbb10e4c2014f7601d13e0c1bc37b",
+        "portableFile": "evidence/LIB-MSP-BF-MSPRPT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-MSPRPT.txt:57"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-FCD.txt",
+        "line": 91,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/FCD.luac",
+        "sha256": "f437a5057c4a2dcfd27abe68c3338a8f1a390088787200dce1a7a98e45970b80",
+        "originalSha256": "bb81b20f6c1e7ebd6777ecd92b7c7135bdd2f8b89e88b505f5dc0315ce2dba1b",
+        "portableFile": "evidence/UI-480X272-DB1-FCD.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-FCD.txt",
+        "excerptKey": "evidence/UI-480X272-DB1-FCD.txt:91"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1464,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1464"
+      }
+    ],
+    "dependencies": [
+      "Version-aware bounded strings",
+      "FC pane"
+    ],
+    "userImpact": "Cannot identify connected FC target/manufacturer in app.",
+    "acceptance": [
+      "Populate fields only from a complete valid board response.",
+      "Show unsupported/missing separately; verify INAV layout independently."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg for pane/read scheduling",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-012",
+    "area": "FC data",
+    "feature": "Betaflight active FC sensor inventory",
+    "toolbox": "STATUS_EX150 active sensor bitset maps ACC,BARO,MAG,GPS,rangefinder,GYRO into FCD.",
+    "aerodeck": "Raw150 is already received; arm decoder uses flags only and UI has no FC sensor inventory.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "line": 17,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0096.luac",
+        "sha256": "13a7003de5d04e790e9b92f7a339d05135dbc77161f7805ac52daa1945afa42c",
+        "originalSha256": "c8502cf1f6343ce2b700f88d6a6751dbd3b6d08f027d176ad221803645c76378",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0096.txt:17"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-FCD.txt",
+        "line": 119,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/FCD.luac",
+        "sha256": "f437a5057c4a2dcfd27abe68c3338a8f1a390088787200dce1a7a98e45970b80",
+        "originalSha256": "bb81b20f6c1e7ebd6777ecd92b7c7135bdd2f8b89e88b505f5dc0315ce2dba1b",
+        "portableFile": "evidence/UI-480X272-DB1-FCD.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-FCD.txt",
+        "excerptKey": "evidence/UI-480X272-DB1-FCD.txt:119"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 38,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:38"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1365,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1365"
+      }
+    ],
+    "dependencies": [
+      "STATUS_EX prefix parser",
+      "FC sensor pane"
+    ],
+    "userImpact": "Existing response data is left unused; users cannot see detected FC sensors.",
+    "acceptance": [
+      "Decode sensor bits from valid150 prefix and display named detected states.",
+      "Do not equate BF presence bits with INAV health codes.",
+      "Stale/absent response must not look healthy."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg for FCD pane",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-013",
+    "area": "FC data",
+    "feature": "INAV FC sensor health inventory",
+    "toolbox": "INAV151 decoder reads seven per-sensor states (gyro,acc,mag,baro,GPS,rangefinder,pitot); FCD maps1ACTIVE,2UNAVAILABLE,3UNHEALTHY.",
+    "aerodeck": "No INAV handshake151 or health UI.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0097.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC0097.luac",
+        "sha256": "2f652c1b70fef73ab7ceb90153bdf65981c9ec0cc24eb5f71a035aa617b5e44d",
+        "originalSha256": "963680eade05c3102b817fae9f375d0b89485533e004bfad2df02316e9cc0cc4",
+        "portableFile": "evidence/LIB-MSP-IN-C-MSPC0097.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0097.txt",
+        "excerptKey": "evidence/LIB-MSP-IN-C-MSPC0097.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPRPT.txt",
+        "line": 56,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/MSPRPT.luac",
+        "sha256": "d1e75f37e00b413ece3a64e911d2de50291bc4f7bd7ee50a9068f067cad1850f",
+        "originalSha256": "35e9a6226563986630859bebc583669557371f7eefd4497bbe1e67608a2837e2",
+        "portableFile": "evidence/LIB-MSP-IN-MSPRPT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPRPT.txt",
+        "excerptKey": "evidence/LIB-MSP-IN-MSPRPT.txt:56"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua",
+        "line": 7,
+        "kind": "recovered-source",
+        "sha256": "eaa7a922685cf493686b81337d5ca82101893c3b8c38196837d8c2af2592997b",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua:7"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 514,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:514"
+      }
+    ],
+    "dependencies": [
+      "INAV transport/family",
+      "FC sensor pane"
+    ],
+    "userImpact": "INAV sensor diagnostics absent.",
+    "acceptance": [
+      "Request151 on demand,validate length and retain all distinct health states.",
+      "Exercise0/1/2/3 and unknown values without optimistic health assumptions."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "pgg",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-014",
+    "area": "Arming",
+    "feature": "Live Betaflight disabling flags and explanations",
+    "toolbox": "STATUS_EX flags → family ASCS IDs → ASC titles/help; AST lists actual flags or full catalogue.",
+    "aerodeck": "API1.46/1.47/1.48 maps with bytewise high-bit-safe decoder, current8s policy,list/detail and unknown-bit fallback.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0096.luac",
+        "sha256": "13a7003de5d04e790e9b92f7a339d05135dbc77161f7805ac52daa1945afa42c",
+        "originalSha256": "c8502cf1f6343ce2b700f88d6a6751dbd3b6d08f027d176ad221803645c76378",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0096.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASC.txt",
+        "line": 122,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/ASC.luac",
+        "sha256": "c8b00faa80217511d5cdbbb92a4b9b1b8a38b1e75c69b5396ad6ff5c8fe55dad",
+        "originalSha256": "c9a88d29bbadce66038c360c7ceee1326d2d1bdef53e5d09e73b7f67d7aa4490",
+        "portableFile": "evidence/LIB-FC-BF-ASC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASC.txt",
+        "excerptKey": "evidence/LIB-FC-BF-ASC.txt:122"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "line": 73,
+        "kind": "aerodeck-source",
+        "sha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua:73"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1365,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1365"
+      }
+    ],
+    "dependencies": [
+      "Status transport",
+      "Firmware/API-specific names"
+    ],
+    "userImpact": "Live BF flags work; full Toolbox reference/beep capability is absent, and hardware interpretation still needs current FC confirmation.",
+    "acceptance": [
+      "Every asserted bit maps correctly for verified API/count combinations.",
+      "Unknown API/count gives numbered bit, never an older ARM_SWITCH mapping.",
+      "Zero flags means no reported disables, not proof of ready/armed."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg for AST UI; sxx transport",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-015",
+    "area": "Arming",
+    "feature": "Live INAV disabling flags and explanations",
+    "toolbox": "MSP2_INAV_STATUS8192 reads active sensor bits and32-bit arm flags; decodes bits6..30 using INAV catalogue.",
+    "aerodeck": "Client blocks INAV, no8192 or INAV metadata.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC2000.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC2000.luac",
+        "sha256": "aad608c7d199fa3ef700b29cd2ea1c1438a2c987cdcd6c270b30a1b57737e607",
+        "originalSha256": "173e6c420ee94548a540b6e106e95ac627fc47589361b5bb068c201506874ae5",
+        "portableFile": "evidence/LIB-MSP-IN-C-MSPC2000.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC2000.txt",
+        "excerptKey": "evidence/LIB-MSP-IN-C-MSPC2000.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASC.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/IN/ASC.luac",
+        "sha256": "431c47b8c8461e2cf59d367e263bd356d92a6978a40c070a247c8ed2e233d1a9",
+        "originalSha256": "61d513ea048c1af1f7b055f0eebb7740e156a249f432a220324672dd64ac3154",
+        "portableFile": "evidence/LIB-FC-IN-ASC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASC.txt",
+        "excerptKey": "evidence/LIB-FC-IN-ASC.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 514,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:514"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 6,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:6"
+      }
+    ],
+    "dependencies": [
+      "INAV family",
+      "Versioned arming decoder"
+    ],
+    "userImpact": "No INAV live reason list.",
+    "acceptance": [
+      "Bounded decoder validated against supported INAV version; do not reuse BF offsets/labels.",
+      "List/detail updates current flags and handles missing/stale state honestly."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "pgg",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-016",
+    "area": "Arming",
+    "feature": "Offline full arming-reason catalogue",
+    "toolbox": "BF/IN ASC returns all reasons when no live ARMSTOPS, allowing browsing descriptions/help without active error.",
+    "aerodeck": "ARM STOPS renders NO STATUS/NO FLAGS with no selectable complete catalogue.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASC.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/ASC.luac",
+        "sha256": "c8b00faa80217511d5cdbbb92a4b9b1b8a38b1e75c69b5396ad6ff5c8fe55dad",
+        "originalSha256": "c9a88d29bbadce66038c360c7ceee1326d2d1bdef53e5d09e73b7f67d7aa4490",
+        "portableFile": "evidence/LIB-FC-BF-ASC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASC.txt",
+        "excerptKey": "evidence/LIB-FC-BF-ASC.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASC.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/IN/ASC.luac",
+        "sha256": "431c47b8c8461e2cf59d367e263bd356d92a6978a40c070a247c8ed2e233d1a9",
+        "originalSha256": "61d513ea048c1af1f7b055f0eebb7740e156a249f432a220324672dd64ac3154",
+        "portableFile": "evidence/LIB-FC-IN-ASC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASC.txt",
+        "excerptKey": "evidence/LIB-FC-IN-ASC.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua",
+        "line": 40,
+        "kind": "recovered-source",
+        "sha256": "128d8b44975ba84f6ddeebf17b26b6cbd4a88634082cf0a13b5e247ec1dc9a08",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua:40"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1407,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1407"
+      }
+    ],
+    "dependencies": [
+      "Family/API selector",
+      "Verified local catalogue"
+    ],
+    "userImpact": "Cannot look up a beep code or error unless it is currently reported.",
+    "acceptance": [
+      "Explicit reference mode browses full supported catalogue offline.",
+      "Keep reference entries visibly separate from active flags.",
+      "Actual current list remains readily reachable."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-017",
+    "area": "Arming",
+    "feature": "Arming beep-code visualization",
+    "toolbox": "AST draws long and short markers from code floor(id/5),id%5.",
+    "aerodeck": "No beep-code diagram.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-AST.txt",
+        "line": 249,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/AST.luac",
+        "sha256": "233bdf0e6d9650ca46f08194b6683c8557e2ac8884a24c124263ca7fa293f459",
+        "originalSha256": "4ecf27b01b3d10632a7694d92db5b682e17b3427e419ae8ab0c76b4cd0b08a70",
+        "portableFile": "evidence/UI-480X272-MOD-AST.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-AST.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-AST.txt:249"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+        "line": 167,
+        "kind": "recovered-source",
+        "sha256": "42bd35b31e3490e5a00906c1ddd562449806cc5a918d7c156375174a1488c982",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua:167"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1399,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1399"
+      }
+    ],
+    "dependencies": [
+      "Verified family/version beep metadata"
+    ],
+    "userImpact": "No visual decoder for FC audible disable codes.",
+    "acceptance": [
+      "Show code and exact long/short pattern for supported reason.",
+      "Do not derive beep IDs from current bit index without version/source validation."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-018",
+    "area": "Arming",
+    "feature": "Play selected arming beep-code example",
+    "toolbox": "AST ENTER calls playAsCode with2400Hz,350ms long/100ms short tones and pauses.",
+    "aerodeck": "No playback action.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-AST.txt",
+        "line": 240,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/AST.luac",
+        "sha256": "233bdf0e6d9650ca46f08194b6683c8557e2ac8884a24c124263ca7fa293f459",
+        "originalSha256": "4ecf27b01b3d10632a7694d92db5b682e17b3427e419ae8ab0c76b4cd0b08a70",
+        "portableFile": "evidence/UI-480X272-MOD-AST.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-AST.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-AST.txt:240"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+        "line": 95,
+        "kind": "recovered-source",
+        "sha256": "42bd35b31e3490e5a00906c1ddd562449806cc5a918d7c156375174a1488c982",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua:95"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1384,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1384"
+      }
+    ],
+    "dependencies": [
+      "Beep metadata",
+      "Radio audio API"
+    ],
+    "userImpact": "Users cannot compare heard FC pattern with an example.",
+    "acceptance": [
+      "Physical/touch action plays the selected verified pattern once.",
+      "Keep action local; no FC command or unsolicited repeated playback."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-019",
+    "area": "VTX read",
+    "feature": "Live MSP VTX hardware and operating status",
+    "toolbox": "88 reads protocolID,band,channel,powerID,PIT,frequency,ready,LPD and table dimensions.",
+    "aerodeck": "Only eight local saved frequencies and attitude inset; no VTX reply state.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0058.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0058.luac",
+        "sha256": "7d24736cea7dea0820d3889bfc8bdc61a901ea8b40245591aae6366fa5d3a850",
+        "originalSha256": "45506022ec8facb666fe737844152a8f5f93aedb6d726611ff36b3bd9f388182",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0058.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0058.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0058.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "line": 19,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXMSP.luac",
+        "sha256": "6614122290d6ea07ff2c3fde67f80f6bee236e438c4cd458c42354a02cff613f",
+        "originalSha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+        "portableFile": "evidence/LIB-VTX-VTXMSP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXMSP.txt:19"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1438,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1438"
+      }
+    ],
+    "dependencies": [
+      "Transaction queue",
+      "88 decoder",
+      "VTX family config"
+    ],
+    "userImpact": "Video page is a reference, not live VTX management.",
+    "acceptance": [
+      "Display actual frequency/channel,power,PIT,LPD,ready and hardware protocol from complete88 replies.",
+      "Missing/stale/unsupported are distinct from zero/off."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-020",
+    "area": "VTX read",
+    "feature": "Discover FC channel table",
+    "toolbox": "MSPTC requests137 for each reported band index then88/150; reads bandID,length-name,letter,factory byte,count,U16 frequencies.",
+    "aerodeck": "No137 requests or dynamic table.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTC.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPTC.luac",
+        "sha256": "79b023b1a1c0f4f58611ba462fe56cdf28a070d900c5e5c50f2e342adab3d410",
+        "originalSha256": "01b39419775ed271c0f4acf31c7b4fde6056c2e8f082a9ab4cc02dff82216475",
+        "portableFile": "evidence/LIB-MSP-MSPTC.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTC.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPTC.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0089.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0089.luac",
+        "sha256": "92dd1a25864368d87ce8a7f2746d5f4b94302153e0063fe775be82716a9cac76",
+        "note": "Factory byte preceding channel count is present in original but omitted by recovered source.",
+        "originalSha256": "9fff51071788ef453b7086df0fedb1ea3443d8fa04e3201ac439b9990f9d3b26",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0089.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0089.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0089.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1423,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1423"
+      }
+    ],
+    "dependencies": [
+      "88 table counts",
+      "Parameterized requests",
+      "Bounds for bands/channels"
+    ],
+    "userImpact": "Cannot use the connected VTX table or custom bands.",
+    "acceptance": [
+      "Read every band with correct offsets and bounds.",
+      "Preserve frequency/channel association and ignore zero entries.",
+      "Reject truncated table rows without corrupting live selection."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-021",
+    "area": "VTX read",
+    "feature": "Discover FC power table and labels",
+    "toolbox": "MSPTP requests138 for each power index; parser readsindex,U16value,length-prefixedlabel, trims label spaces.",
+    "aerodeck": "No138 or hardware-specific power levels.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTP.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPTP.luac",
+        "sha256": "a4770a699902f03e79a566b7b012a7ca8b3541c4f86f963b7b770b5737de38c9",
+        "originalSha256": "3a7de23307fe82ccd1a1bc9f78e8ec2247052bc7cc720e24376781dc3f712c65",
+        "portableFile": "evidence/LIB-MSP-MSPTP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTP.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPTP.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC008A.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC008A.luac",
+        "sha256": "d2afb8713c7278619cc4443c25e9053f61c9ebdc71754a4452cdd3f6dc826946",
+        "originalSha256": "3d90b30229aa5d29728ef7ac774b91fb3788f9b214d2a016c212a1c8f4e82357",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC008A.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC008A.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC008A.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1438,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1438"
+      }
+    ],
+    "dependencies": [
+      "88 power count",
+      "Parameterized requests"
+    ],
+    "userImpact": "No truthful available power selections or live label mapping.",
+    "acceptance": [
+      "Read all power entries and preserve numeric value and display label separately.",
+      "Handle labels that are not numeric milliwatts.",
+      "Index outside table is explicit unknown ID."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx; pgg controls power edit",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-022",
+    "area": "VTX read",
+    "feature": "Per-FC VTX table cache",
+    "toolbox": "Proxy reads/writes per-UID SD config containing band frequencies,power values/labels; UI refresh deletes current cache and reinitializes.",
+    "aerodeck": "No cache/UID/table backend.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0058.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0058.luac",
+        "sha256": "7d24736cea7dea0820d3889bfc8bdc61a901ea8b40245591aae6366fa5d3a850",
+        "originalSha256": "45506022ec8facb666fe737844152a8f5f93aedb6d726611ff36b3bd9f388182",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0058.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0058.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0058.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXPXW.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXPXW.luac",
+        "sha256": "7df8336a62f3e56dd04fa8678e0d8fbc7c276b2b71c9f9f39e9663ab2261e1eb",
+        "originalSha256": "28a70128c17e42bf19f0a3afeefb0f04089286eae5b1964a5c4e4f5fe06495cf",
+        "portableFile": "evidence/LIB-VTX-VTXPXW.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXPXW.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXPXW.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "line": 275,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/VTX.luac",
+        "sha256": "8350734729333e35595644a2e78888d70dbaa3e17ac4e23b169bd2040e152cc8",
+        "originalSha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+        "portableFile": "evidence/UI-480X272-MOD-VTX.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-VTX.txt:275"
+      }
+    ],
+    "dependencies": [
+      "UID",
+      "Table decoders",
+      "Explicit refresh"
+    ],
+    "userImpact": "Repeated table load can be slow; stale table must not follow a different FC.",
+    "acceptance": [
+      "Cache data by verified device identity and schema version.",
+      "Refresh invalidates only active device cache and requests new tables.",
+      "Prefer bounded data parsing rather than executing an SD Lua cache."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx/proxy setting",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-023",
+    "area": "VTX UI",
+    "feature": "Channel grid/frequency selection with current versus pending state",
+    "toolbox": "Full VTX UI selects frequency-sorted channel entries; current and requested values distinct; RTN resets pending freq,power,PIT.",
+    "aerodeck": "Favourites highlights a local chosen card; no full grid or current/pending distinction.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "line": 613,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/VTX.luac",
+        "sha256": "8350734729333e35595644a2e78888d70dbaa3e17ac4e23b169bd2040e152cc8",
+        "originalSha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+        "portableFile": "evidence/UI-480X272-MOD-VTX.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-VTX.txt:613"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXBFR.txt",
+        "line": 16,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXBFR.luac",
+        "sha256": "bd3877c2b7c6bebbfc97c0772a32294d8882f256142fb6ec0ead5ba5bde7995a",
+        "originalSha256": "17194b9ed025b7e748c73555766899ad2344e575c3bc037e230926077da68e49",
+        "portableFile": "evidence/LIB-VTX-VTXBFR.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXBFR.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXBFR.txt:16"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1440,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1440"
+      }
+    ],
+    "dependencies": [
+      "Live current state",
+      "Dynamic table",
+      "Operation lifecycle"
+    ],
+    "userImpact": "A highlighted saved card cannot be mistaken for transmitted or actual VTX state.",
+    "acceptance": [
+      "Navigate actual table with touch and physical controls.",
+      "Clearly separate observed current,unsent edits and pending apply.",
+      "Cancel restores every pending field without sending."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-024",
+    "area": "VTX write",
+    "feature": "Apply channel/frequency through FC MSP",
+    "toolbox": "Long ENTER with telemetry and setable VTX invokes SN_VTX(send);89 payload encodes channel indexLE or MHzLE plus power/PIT;250 persists;88 rereads.",
+    "aerodeck": "No VTX commands; selecting a favourite never transmits.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "line": 613,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/VTX.luac",
+        "sha256": "8350734729333e35595644a2e78888d70dbaa3e17ac4e23b169bd2040e152cc8",
+        "originalSha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+        "portableFile": "evidence/UI-480X272-MOD-VTX.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-VTX.txt:613"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "line": 84,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXMSP.luac",
+        "sha256": "6614122290d6ea07ff2c3fde67f80f6bee236e438c4cd458c42354a02cff613f",
+        "originalSha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+        "portableFile": "evidence/LIB-VTX-VTXMSP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXMSP.txt:84"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1457,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1457"
+      }
+    ],
+    "dependencies": [
+      "Live status",
+      "Tables",
+      "Write safeguards",
+      "Ack/readback lifecycle"
+    ],
+    "userImpact": "Cannot change VTX channel from radio.",
+    "acceptance": [
+      "Explicit apply sends89 only after reviewing pending frequency.",
+      "While disarmed/current/ready and correct FC identified.",
+      "250 is acknowledged and88 readback confirms requested frequency.",
+      "Busy,timeout,reject or different readback remain failure/pending, not applied."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-025",
+    "area": "VTX write",
+    "feature": "Select and apply available output power",
+    "toolbox": "Original VTX PN key cycles actual power table; pgg gated; long ENTER sends changed power with89 or native TBS.",
+    "aerodeck": "No power edit/transmit.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "line": 652,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/VTX.luac",
+        "sha256": "8350734729333e35595644a2e78888d70dbaa3e17ac4e23b169bd2040e152cc8",
+        "originalSha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+        "portableFile": "evidence/UI-480X272-MOD-VTX.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-VTX.txt:652"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "line": 84,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXMSP.luac",
+        "sha256": "6614122290d6ea07ff2c3fde67f80f6bee236e438c4cd458c42354a02cff613f",
+        "originalSha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+        "portableFile": "evidence/LIB-VTX-VTXMSP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXMSP.txt:84"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1457,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1457"
+      }
+    ],
+    "dependencies": [
+      "Power table",
+      "Apply lifecycle"
+    ],
+    "userImpact": "No VTX power control.",
+    "acceptance": [
+      "Only choose advertised supported power entries.",
+      "Preserve channel and PIT when changing power.",
+      "Readback confirms actual level before UI treats it as applied."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg; actual function remains required",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-026",
+    "area": "VTX write",
+    "feature": "Select and apply PIT on/off",
+    "toolbox": "Original UI PP key toggles pending PIT; pgg gated; writer includes PIT field. Original boolean fallback appears to prevent true→false MSP transition.",
+    "aerodeck": "No PIT control.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "line": 613,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/VTX.luac",
+        "sha256": "8350734729333e35595644a2e78888d70dbaa3e17ac4e23b169bd2040e152cc8",
+        "originalSha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+        "portableFile": "evidence/UI-480X272-MOD-VTX.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-VTX.txt:613"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "line": 84,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXMSP.luac",
+        "sha256": "6614122290d6ea07ff2c3fde67f80f6bee236e438c4cd458c42354a02cff613f",
+        "note": "PCs75–91: explicit false follows existing-state fallback; bytecode-level Toolbox defect, not hardware-tested.",
+        "originalSha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+        "portableFile": "evidence/LIB-VTX-VTXMSP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXMSP.txt:84"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1457,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1457"
+      }
+    ],
+    "dependencies": [
+      "Advertised PIT capability",
+      "Apply lifecycle"
+    ],
+    "userImpact": "PIT cannot be controlled; independent implementation must correct false-vs-absent handling.",
+    "acceptance": [
+      "Exercise PIT off→on and on→off independently with unchanged power.",
+      "Use nil for unchanged and explicit false for OFF.",
+      "Apply/readback verifies state; do not copy original fallback bug."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg; actual function remains required",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-027",
+    "area": "VTX write",
+    "feature": "Acknowledgement, persistence and readback outcome",
+    "toolbox": "89 ack clears setInP;250 ack clears eSave; queued88 rereads state. Generic retry5. Pending flags may survive final timeout because MSPRST does not clear them.",
+    "aerodeck": "No write outcomes.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0059.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0059.luac",
+        "sha256": "1d0cd4cfbc41fd818356be2b87f78ca4fa581bc47e18628cd6262c5793d6fc50",
+        "originalSha256": "a5b6c43082fa552b1383576d72ea2fa6758a4cc93c080d8c0d19cfec269f93eb",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0059.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0059.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0059.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00FA.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC00FA.luac",
+        "sha256": "ead6bbc9fa5f0e926a81899fce3e3b621678f28bcacd2576bbc5910f95d44855",
+        "originalSha256": "c330c2f8d6985613c733b50a429c14cddea658cbb596115e481584c2def5afaf",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC00FA.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00FA.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC00FA.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPRST.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPRST.luac",
+        "sha256": "1ddd97c5a09735a22b2b1821e75a82c605c26987e7b7df006109c2e2ce20b7ac",
+        "originalSha256": "c6b51b42f9388a27ab10c5b119e120e3f0c0cd98b56abbfaae3f27749fb03b69",
+        "portableFile": "evidence/LIB-MSP-MSPRST.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPRST.txt",
+        "excerptKey": "evidence/LIB-MSP-MSPRST.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "line": 84,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXMSP.luac",
+        "sha256": "6614122290d6ea07ff2c3fde67f80f6bee236e438c4cd458c42354a02cff613f",
+        "originalSha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+        "portableFile": "evidence/LIB-VTX-VTXMSP.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXMSP.txt:84"
+      }
+    ],
+    "dependencies": [
+      "Transaction state machine",
+      "Command-specific response validation"
+    ],
+    "userImpact": "A replacement needs a trustworthy apply result, not copied indefinite spinner or optimistic success.",
+    "acceptance": [
+      "Track queued/sent/acknowledged/persisted/readback/failed separately.",
+      "Do not send persist after a rejected prerequisite write.",
+      "Bound retries and clear transient flags on disconnect/final timeout."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-028",
+    "area": "VTX read",
+    "feature": "Native TBS receiver/VTX reports",
+    "toolbox": "VTXTBS read parses CRSF0x10 reports, prefers0xEC VTX source over0xCE receiver, frequencyBE,powerdBm,PITbit; selected hardware power map providesmW.",
+    "aerodeck": "No0x10 report decoder.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "line": 197,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXTBS.luac",
+        "sha256": "7c5cdac5649e88c3be3627a04426629e0235d8cf9fc2a37950af5ea9930b5885",
+        "originalSha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+        "portableFile": "evidence/LIB-VTX-VTXTBS.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXTBS.txt:197"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXINIT.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXINIT.luac",
+        "sha256": "07c44f9fa7cb71c9f7383bcb37187d1540ae155ce4c19b3d1a433fabd9babc9a",
+        "originalSha256": "ccf2014aa018fbd797980ee73a5d4af57fe640c8afff358be89909f7f09f5cf7",
+        "portableFile": "evidence/LIB-VTX-VTXINIT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXINIT.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXINIT.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 49,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:49"
+      }
+    ],
+    "dependencies": [
+      "TBS Crossfire/Tracer path",
+      "Shared dispatcher"
+    ],
+    "userImpact": "No FC-independent TBS VTX status.",
+    "acceptance": [
+      "Decode current source and retain priority without flicker.",
+      "Reject malformed short report; show unknown power values honestly.",
+      "Confirm on supported TBS hardware."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-029",
+    "area": "VTX write",
+    "feature": "Native TBS frequency control",
+    "toolbox": "VTXTBS sends CRSF0x32 data{CE,EA,08,02,MHzHi,MHzLo}. Push return is ignored in original; updated report is observable truth.",
+    "aerodeck": "No native TBS send path.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "line": 197,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXTBS.luac",
+        "sha256": "7c5cdac5649e88c3be3627a04426629e0235d8cf9fc2a37950af5ea9930b5885",
+        "note": "PCs194–219 implement native frequency send.",
+        "originalSha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+        "portableFile": "evidence/LIB-VTX-VTXTBS.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXTBS.txt:197"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1457,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1457"
+      }
+    ],
+    "dependencies": [
+      "Native TBS status",
+      "Explicit apply",
+      "Supported hardware"
+    ],
+    "userImpact": "Cannot change native TBS VTX without FC MSP.",
+    "acceptance": [
+      "Encode exact destination/origin/subcommand and frequency endian.",
+      "Busy send is retriable; actual0x10 report confirms state."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-030",
+    "area": "VTX write",
+    "feature": "Native TBS power/PIT control and hardware maps",
+    "toolbox": "VTXTBS supports8named VTX hardware power maps;0x32{CE,EA,08,08,dBm}, zero requests PIT. Truthy PIT sendszero; false with unchanged power may not sendoff.",
+    "aerodeck": "No hardware selection/decoder/control.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "line": 30,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXTBS.luac",
+        "sha256": "7c5cdac5649e88c3be3627a04426629e0235d8cf9fc2a37950af5ea9930b5885",
+        "originalSha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+        "portableFile": "evidence/LIB-VTX-VTXTBS.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXTBS.txt:30"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "line": 197,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXTBS.luac",
+        "sha256": "7c5cdac5649e88c3be3627a04426629e0235d8cf9fc2a37950af5ea9930b5885",
+        "note": "PCs220–252 implement PIT-on or indexed power command; no explicit ack.",
+        "originalSha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+        "portableFile": "evidence/LIB-VTX-VTXTBS.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+        "excerptKey": "evidence/LIB-VTX-VTXTBS.txt:197"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1457,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1457"
+      }
+    ],
+    "dependencies": [
+      "Native TBS status",
+      "Per-model hardware capability"
+    ],
+    "userImpact": "No native TBS power/PIT operations.",
+    "acceptance": [
+      "Only advertised hardware-supported powers selectable.",
+      "PIT on and off both work independently; leaving PIT restores valid desired power.",
+      "Observe report before declaring applied; no fabricated ack."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "pgg for UI power/PIT editing",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-031",
+    "area": "VTX favourites",
+    "feature": "Store eight per-model VTX favourite frequencies",
+    "toolbox": "CFGVFV creates8options from actual table,OFF=0; saves VTXF delimited frequencies.",
+    "aerodeck": "Eight per-model numeric frequencies persist in app cfg; fixed default lookup lacksL band; current cards label all values as notes.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVFV.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGVFV.luac",
+        "sha256": "edf5d0d32cca84b149b42679b94021eb786e3107f59ba45eeb0773f3f38ab9f3",
+        "originalSha256": "4687d13abcb3375bafd7547c89dee9aec0ec90e8d84d09ca34a5fc45866e42df",
+        "portableFile": "evidence/LIB-CFG-CFGVFV.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVFV.txt",
+        "excerptKey": "evidence/LIB-CFG-CFGVFV.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua",
+        "line": 33,
+        "kind": "recovered-source",
+        "sha256": "fa188ee233648959ea1952481a54952dac01e28302aa13334eae37cee46ebb98",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua:33"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1440,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1440"
+      }
+    ],
+    "dependencies": [
+      "Model-scoped app settings",
+      "Dynamic channel table"
+    ],
+    "userImpact": "The count matches, but OFF/table membership/live-device context do not.",
+    "acceptance": [
+      "All8values persist independently per model.",
+      "Support disabled favourite and table-derived code/custom MHz labels.",
+      "Device table refresh does not silently overwrite saved frequencies."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg for favourites pane",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-032",
+    "area": "VTX favourites",
+    "feature": "Apply selected saved favourite",
+    "toolbox": "VFV long ENTER checksfrequency>0,telemetry,setable,ready then calls shared VTX writer preserving power/PIT.",
+    "aerodeck": "Local favourite selection only; no apply action.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-VFV.txt",
+        "line": 79,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/VFV.luac",
+        "sha256": "03f7d51ae2e1b217032d40dde075241562a4b2d314826710d03e620624c05932",
+        "originalSha256": "9d1dd1f615a6af1379ae52fc76baffa61bf162697ac8ac98fee41768a400462f",
+        "portableFile": "evidence/UI-480X272-DB1-VFV.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-VFV.txt",
+        "excerptKey": "evidence/UI-480X272-DB1-VFV.txt:79"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VFV.lua",
+        "line": 23,
+        "kind": "recovered-source",
+        "sha256": "70aaf7948a1f55467797d1c56838e79c013a3536a016c9bc1d417217513967bd",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VFV.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VFV.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VFV.lua:23"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1457,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1457"
+      }
+    ],
+    "dependencies": [
+      "Shared VTX apply lifecycle"
+    ],
+    "userImpact": "Saved favourites cannot actually tune VTX.",
+    "acceptance": [
+      "Short selection only stages; explicit action applies through same safe path.",
+      "OFF is not sent; preserve current power/PIT.",
+      "Observed readback marks active card."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "pgg; actual function remains required",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-033",
+    "area": "Stick guide",
+    "feature": "Betaflight save/profile/calibration/trim reference patterns",
+    "toolbox": "BF STK catalogue has12non-OSD patterns including3PID profiles; UI only diagrams real stick actions.",
+    "aerodeck": "All12are present, explicitly BETAFLIGHT/REFERENCE, modes1–4.",
+    "status": "equivalent",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-STK.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/STK.luac",
+        "sha256": "4be84e828343d169f9c4942680e2788c6b5ec2c29b4c4f38ebf868f4bb899d96",
+        "originalSha256": "784493d306fd5cf66b67637dbabaa28295a9473ccc37ba6bd469a97ad416ccf7",
+        "portableFile": "evidence/LIB-FC-BF-STK.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-STK.txt",
+        "excerptKey": "evidence/LIB-FC-BF-STK.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-STK.txt",
+        "line": 257,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/STK.luac",
+        "sha256": "1c3ced65f6fc274ec2fe918ca4439a72dae4db095d015e52f707dbad7738f5c0",
+        "originalSha256": "50e8a55f9fe3a6e0c23b7da6fab04d93768a6ead0ea0794f102c7036e2d68164",
+        "portableFile": "evidence/UI-480X272-MOD-STK.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-STK.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-STK.txt:257"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 916,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:916"
+      }
+    ],
+    "dependencies": [
+      "Correct axis mode transform"
+    ],
+    "userImpact": "Basic guide parity exists; these are instructions, not automatic writes.",
+    "acceptance": [
+      "Each t/y/p/r tuple matches verified catalogue and modes1–4 transform correctly.",
+      "No RC output/model changes when selecting a reference entry."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx for STK navigation",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-034",
+    "area": "Stick guide",
+    "feature": "Betaflight OSD menu reference patterns",
+    "toolbox": "BF catalogue includes8OSD gestures:open,exit,enter/exit submenu,previous/next option,previous/next value.",
+    "aerodeck": "Catalogue stops at12non-OSD patterns; noOSD gestures.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-STK.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/STK.luac",
+        "sha256": "4be84e828343d169f9c4942680e2788c6b5ec2c29b4c4f38ebf868f4bb899d96",
+        "originalSha256": "784493d306fd5cf66b67637dbabaa28295a9473ccc37ba6bd469a97ad416ccf7",
+        "portableFile": "evidence/LIB-FC-BF-STK.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-STK.txt",
+        "excerptKey": "evidence/LIB-FC-BF-STK.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua",
+        "line": 7,
+        "kind": "recovered-source",
+        "sha256": "3648233b08fc79108f5a8f30b195cc69c49dd4f514247fff039d3ab755588048",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua:7"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 928,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:928"
+      }
+    ],
+    "dependencies": [
+      "Guide pagination",
+      "Axis mode transform"
+    ],
+    "userImpact": "User cannot find OSD navigation gestures in AERODECK.",
+    "acceptance": [
+      "All8OSD patterns shown with clear action labels and correct modes1–4.",
+      "Reference only; do not represent them as a live OSD editor."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-035",
+    "area": "Stick guide",
+    "feature": "INAV save/profile/battery/calibration/mission/OSD reference patterns",
+    "toolbox": "INAV STK has28patterns including battery profiles,waypoint mission load/save/unload/ID and bypass-arming-check gesture. UI diagrams only.",
+    "aerodeck": "No INAV catalogue; fixed BF label/patterns regardless FC setting.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-STK.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/IN/STK.luac",
+        "sha256": "8d68dbc0d78eac10425e0102069a9a4a896542c1d692b78aae7ce19276fdeb81",
+        "originalSha256": "ce68da50e4c6d0c6972633ad514b73fe214fd94d44b71a49cfe7d8166c1cad07",
+        "portableFile": "evidence/LIB-FC-IN-STK.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-STK.txt",
+        "excerptKey": "evidence/LIB-FC-IN-STK.txt:4"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-STK.txt",
+        "line": 57,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/STK.luac",
+        "sha256": "1c3ced65f6fc274ec2fe918ca4439a72dae4db095d015e52f707dbad7738f5c0",
+        "originalSha256": "50e8a55f9fe3a6e0c23b7da6fab04d93768a6ead0ea0794f102c7036e2d68164",
+        "portableFile": "evidence/UI-480X272-MOD-STK.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-STK.txt",
+        "excerptKey": "evidence/UI-480X272-MOD-STK.txt:57"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 936,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:936"
+      }
+    ],
+    "dependencies": [
+      "INAV family setting",
+      "Verified pattern catalogue"
+    ],
+    "userImpact": "Wrong family reference lacks INAV-specific operations.",
+    "acceptance": [
+      "Switch family selects full28INAV catalogue with modes1–4.",
+      "Preserve independent distinction between reference gestures and automated control.",
+      "Check original duplicate save/unload waypoint tuples against official supported INAV before presenting instructions."
+    ],
+    "priority": "P2",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-036",
+    "area": "Configuration dependency",
+    "feature": "VTX settings activate real backend after save",
+    "toolbox": "Toolbox FC MSP/TBS RX selection,hardware,proxy and modelVTX settings reinitialize VTX/MSP/UI; not a remote VTX write by itself.",
+    "aerodeck": "VTX setup category is four explanatory notes; no connection/model/proxy edit or backend activation.",
+    "status": "missing",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVTX.txt",
+        "line": 236,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGVTX.luac",
+        "sha256": "0718ae0c81da66e9be5abda86a0dd0bb1dbbb7be2fd5624a17c11be64cb449d3",
+        "originalSha256": "edb8074d9aa662d5286b415fbae4a9e7e8948a34b70445055eec9cb1a55dbcfb",
+        "portableFile": "evidence/LIB-CFG-CFGVTX.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVTX.txt",
+        "excerptKey": "evidence/LIB-CFG-CFGVTX.txt:236"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua",
+        "line": 41,
+        "kind": "recovered-source",
+        "sha256": "bbb49c221e615c4544c4a926583f28571e420f516540627586abc97510375382",
+        "portableFile": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua",
+        "excerptKey": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua:41"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "line": 1438,
+        "kind": "aerodeck-source",
+        "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua:1438"
+      }
+    ],
+    "dependencies": [
+      "Full configuration matrix owned by root",
+      "VTX backend"
+    ],
+    "userImpact": "Cannot choose which VTX path the app should manage.",
+    "acceptance": [
+      "Saved setting selects actual backend and rebuilds only affected caches.",
+      "Notes-only rows cannot appear to configure hardware.",
+      "Settings save must not itself transmit unreviewed VTX changes."
+    ],
+    "priority": "P1",
+    "confidence": "high",
+    "toolboxGate": "sxx",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-037",
+    "area": "MSP transport",
+    "feature": "On-demand multi-feature polling with configured intervals",
+    "toolbox": "Original BF scheduler installs88 only ondashboard/VTX while enabled and interval>0;150 dependsprotocol/page/ARM_STOP_TLM, with API1.46 override;164 onGPS at10s.",
+    "aerodeck": "150 repeats atfixed3s across pages while supported/disarmed; VTX/status interval config not consumed.",
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.luac",
+        "sha256": "c54c060b66057787bebe2953ace437d2842109bd7ab596138b0c9936bc309324",
+        "originalSha256": "582ebade13d1d87a93a7cca3896351e70f8bbb10e4c2014f7601d13e0c1bc37b",
+        "portableFile": "evidence/LIB-MSP-BF-MSPRPT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-MSPRPT.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPRPT.txt",
+        "line": 14,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/MSPRPT.luac",
+        "sha256": "d1e75f37e00b413ece3a64e911d2de50291bc4f7bd7ee50a9068f067cad1850f",
+        "originalSha256": "35e9a6226563986630859bebc583669557371f7eefd4497bbe1e67608a2837e2",
+        "portableFile": "evidence/LIB-MSP-IN-MSPRPT.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPRPT.txt",
+        "excerptKey": "evidence/LIB-MSP-IN-MSPRPT.txt:14"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "line": 7,
+        "kind": "aerodeck-source",
+        "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua:7"
+      }
+    ],
+    "dependencies": [
+      "Queue",
+      "Configuration consumers",
+      "Arming telemetry fallback"
+    ],
+    "userImpact": "Feature expansion needs deliberate scheduling; saved intervals currently cannot govern these missing reads.",
+    "acceptance": [
+      "Each displayed interval setting changes the relevant actual schedule.",
+      "Off stops requests; page changes add/remove optional polling without losing required status.",
+      "Bounded work remains stable after minutes and after disconnect/reconnect."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": "sxx; some tasks pgg",
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  },
+  {
+    "id": "CTL-038",
+    "area": "Arming",
+    "feature": "Version-aware unknown flag safety beyond original mapping",
+    "toolbox": "Toolbox catalog switches some BF labels based firmware/API but recovered U32 parser risks32-bit/float and fixed bit assumptions.",
+    "aerodeck": "Known API1.46/1.47/1.48 names and explicit generic numbered flags; bytewise mask retains bit31+low bits.",
+    "status": "addition",
+    "evidence": [
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "line": 19,
+        "kind": "aerodeck-source",
+        "sha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua:19"
+      },
+      {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "line": 81,
+        "kind": "aerodeck-source",
+        "sha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "portableFile": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+        "excerptKey": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua:81"
+      },
+      {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0096.luac",
+        "sha256": "13a7003de5d04e790e9b92f7a339d05135dbc77161f7805ac52daa1945afa42c",
+        "originalSha256": "c8502cf1f6343ce2b700f88d6a6751dbd3b6d08f027d176ad221803645c76378",
+        "portableFile": "evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+        "excerptKey": "evidence/LIB-MSP-BF-C-MSPC0096.txt:4"
+      }
+    ],
+    "dependencies": [
+      "Verified firmware source metadata"
+    ],
+    "userImpact": "Preserve current correctness advantage while adding missing features.",
+    "acceptance": [
+      "High bits and low bits survive EdgeTX32-bit arithmetic.",
+      "Unrecognized API does not mislabel changed final ARM_SWITCH bit.",
+      "No zero-mask readiness claim."
+    ],
+    "priority": "P0",
+    "confidence": "high",
+    "toolboxGate": null,
+    "requiredForReplacement": true,
+    "hardwareVerified": false,
+    "domain": "control"
+  }
+]

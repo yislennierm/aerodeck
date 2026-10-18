@@ -1,0 +1,472 @@
+{
+  "totalOriginalPackageModules": 287,
+  "disassembledHere": 65,
+  "groups": {
+    "MSP": 33,
+    "VTX": 6,
+    "UI dependencies": 8,
+    "FC": 7,
+    "startup/licence/lifecycle": 4,
+    "data dependencies": 2,
+    "configuration dependencies": 5
+  },
+  "citedReviewModules": 48,
+  "coverageCaveat": "Cited review is branch/field/capability scope,not full instruction coverage. Modules outside this index are owned by other sections or not semantically reviewed here. Licensing algorithm intentionally not audited or copied.",
+  "modules": [
+    {
+      "module": "LIB/MSP/BF/C/MSPCMD.luac",
+      "group": "MSP",
+      "sha256": "c07404beab66466400683cc20ecb70cd23872192839ec8f40f4774c15c842207",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPCMD.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPCMD.luac",
+      "group": "MSP",
+      "sha256": "2703046e61894213e79b8194d732a7c260e06573a0017cc83f907924ea5d5c22",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPCMD.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/MSPCFC.luac",
+      "group": "MSP",
+      "sha256": "4e566da81c26c2f600759cc40810ff0b511dbd92901d0df2d458e2b7214c9f7b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPCFC.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/IN/MSPCFC.luac",
+      "group": "MSP",
+      "sha256": "d42b004009b8d76f5b3d8b6a87ce16266c68b24bd1b528f0339bab2bc0343a61",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPCFC.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/MSPRPT.luac",
+      "group": "MSP",
+      "sha256": "582ebade13d1d87a93a7cca3896351e70f8bbb10e4c2014f7601d13e0c1bc37b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/IN/MSPRPT.luac",
+      "group": "MSP",
+      "sha256": "35e9a6226563986630859bebc583669557371f7eefd4497bbe1e67608a2837e2",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPRPT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/MSPML.luac",
+      "group": "MSP",
+      "sha256": "dc8f927e5b62766df9d88abc4fd2efbfd6c7d97da6b50399f1ec9f8f9e27eb55",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPML.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/MSPQAD.luac",
+      "group": "MSP",
+      "sha256": "f04b28d5f02ad3beb89b2e4e323510e1a62754cfedeca24cdbfc493b3c9fb62f",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPQAD.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/MSPTC.luac",
+      "group": "MSP",
+      "sha256": "01b39419775ed271c0f4acf31c7b4fde6056c2e8f082a9ab4cc02dff82216475",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTC.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/MSPTP.luac",
+      "group": "MSP",
+      "sha256": "3a7de23307fe82ccd1a1bc9f78e8ec2247052bc7cc720e24376781dc3f712c65",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTP.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/MSPP.luac",
+      "group": "MSP",
+      "sha256": "8dcf1505b1746a45f1c5222cdc44210cd48c2cddf788b22f7a3f44f59af011b5",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPP.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/MSPRST.luac",
+      "group": "MSP",
+      "sha256": "c6b51b42f9388a27ab10c5b119e120e3f0c0cd98b56abbfaae3f27749fb03b69",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPRST.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/WR/MSPWSP.luac",
+      "group": "MSP",
+      "sha256": "82ccffe3bc9c6e6bb5d29b61d86351ec330844a1480898fc638b7b29d67318a6",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWSP.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/WR/MSPWXF.luac",
+      "group": "MSP",
+      "sha256": "8bacac5e63e3bc788f7b08a616b0059d88714fa7d978277c9019fa1925d41ac5",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWXF.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/V2/MSPIN.luac",
+      "group": "MSP",
+      "sha256": "b4ada1a793b2e0ec475855c48f53c321bcdcb49684cc37de21cc1ffde77ccf7b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-V2-MSPIN.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/BF/V2/MSPOUT.luac",
+      "group": "MSP",
+      "sha256": "25e79a6cc2b0351acdbf26e429d57353a650224bd1c52e718c87ec7d0b1b5110",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-V2-MSPOUT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0058.luac",
+      "group": "MSP",
+      "sha256": "45506022ec8facb666fe737844152a8f5f93aedb6d726611ff36b3bd9f388182",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0058.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0059.luac",
+      "group": "MSP",
+      "sha256": "a5b6c43082fa552b1383576d72ea2fa6758a4cc93c080d8c0d19cfec269f93eb",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0059.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0089.luac",
+      "group": "MSP",
+      "sha256": "9fff51071788ef453b7086df0fedb1ea3443d8fa04e3201ac439b9990f9d3b26",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0089.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC008A.luac",
+      "group": "MSP",
+      "sha256": "3d90b30229aa5d29728ef7ac774b91fb3788f9b214d2a016c212a1c8f4e82357",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC008A.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC00FA.luac",
+      "group": "MSP",
+      "sha256": "c330c2f8d6985613c733b50a429c14cddea658cbb596115e481584c2def5afaf",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00FA.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0004.luac",
+      "group": "MSP",
+      "sha256": "d3f4390de833d47bd6dda21a0f51013fcc3de5ee9b7ca780153d28ca1d80f682",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0004.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC00A0.luac",
+      "group": "MSP",
+      "sha256": "2cf69110ebf52c39744ee6f31124b09c949c00e6f4aa254dabb2d9368ad67c87",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00A0.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC2000.luac",
+      "group": "MSP",
+      "sha256": "173e6c420ee94548a540b6e106e95ac627fc47589361b5bb068c201506874ae5",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC2000.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC0097.luac",
+      "group": "MSP",
+      "sha256": "963680eade05c3102b817fae9f375d0b89485533e004bfad2df02316e9cc0cc4",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0097.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/VTX/VTXMSP.luac",
+      "group": "VTX",
+      "sha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/VTX/VTXTBS.luac",
+      "group": "VTX",
+      "sha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/VTX/VTXINIT.luac",
+      "group": "VTX",
+      "sha256": "ccf2014aa018fbd797980ee73a5d4af57fe640c8afff358be89909f7f09f5cf7",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXINIT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/480X272/MOD/VTX.luac",
+      "group": "UI dependencies",
+      "sha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/480X272/DB1/VFV.luac",
+      "group": "UI dependencies",
+      "sha256": "9d1dd1f615a6af1379ae52fc76baffa61bf162697ac8ac98fee41768a400462f",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-VFV.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/480X272/DB1/FCD.luac",
+      "group": "UI dependencies",
+      "sha256": "bb81b20f6c1e7ebd6777ecd92b7c7135bdd2f8b89e88b505f5dc0315ce2dba1b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-FCD.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/480X272/MOD/STK.luac",
+      "group": "UI dependencies",
+      "sha256": "50e8a55f9fe3a6e0c23b7da6fab04d93768a6ead0ea0794f102c7036e2d68164",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-STK.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/480X272/MOD/MENU.luac",
+      "group": "UI dependencies",
+      "sha256": "109305ee21e7313d26dee0fe4fa5dc42d5374108a77e80c48d825e472fafe297",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-MENU.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/FC/BF/STK.luac",
+      "group": "FC",
+      "sha256": "784493d306fd5cf66b67637dbabaa28295a9473ccc37ba6bd469a97ad416ccf7",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-STK.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/FC/IN/STK.luac",
+      "group": "FC",
+      "sha256": "ce68da50e4c6d0c6972633ad514b73fe214fd94d44b71a49cfe7d8166c1cad07",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-STK.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "MAIN/INIT.luac",
+      "group": "startup/licence/lifecycle",
+      "sha256": "ba438661659e481f6d94b4bd56f005fefa69ad1fe2fa04df819cc1e6389f2792",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-INIT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC00A4.luac",
+      "group": "MSP",
+      "sha256": "927edda4ecd54d13a0d88e232cc6faccbba14821611c96d706bc60b5787b6dbf",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00A4.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC006A.luac",
+      "group": "MSP",
+      "sha256": "4a59ac3cb78429e7229d3e7a0f3fbd1323c8b5c774665fffd85691cb4c59adfd",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC006A.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC00A4.luac",
+      "group": "MSP",
+      "sha256": "1f391a03c0516a9777234ccf03f94b0bbd9c4f9a5cf8138df8dd9514908acb2b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC00A4.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC006A.luac",
+      "group": "MSP",
+      "sha256": "49cf0e7d375b5a4cb76a7bac483de107a3871d55650e2c0181377bcacade0e1c",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC006A.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/MSPINIT.luac",
+      "group": "MSP",
+      "sha256": "7aad0722f500af69141813d7345bddd7e51e80b19192f45aaadc298ea823676d",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "MAIN/GF.luac",
+      "group": "startup/licence/lifecycle",
+      "sha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-GF.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "M.luac",
+      "group": "startup/licence/lifecycle",
+      "sha256": "ee0742ca4f3ff3ca2e323982941194e75eea071ac0cf97b93dc55a931f12148c",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/M.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/FC/FCINIT.luac",
+      "group": "FC",
+      "sha256": "f85163c956957c0a81bd0f15d95bbfa63535c82a6e7a9471318a22577165797f",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-FCINIT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/TLM/RCPINIT.luac",
+      "group": "data dependencies",
+      "sha256": "66094d810ef6a19b61f12f89326315c22806c3a88db08c5d020fc673e82138ac",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-TLM-RCPINIT.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/480X272/MOD/AST.luac",
+      "group": "UI dependencies",
+      "sha256": "4ecf27b01b3d10632a7694d92db5b682e17b3427e419ae8ab0c76b4cd0b08a70",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-AST.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "MAIN/ML.luac",
+      "group": "startup/licence/lifecycle",
+      "sha256": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-ML.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0096.luac",
+      "group": "MSP",
+      "sha256": "c8502cf1f6343ce2b700f88d6a6751dbd3b6d08f027d176ad221803645c76378",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC0004.luac",
+      "group": "MSP",
+      "sha256": "5e9b47fcb2e08d0e7c1b75fd8445d45efdc16ad963e842e49671d75d9318320b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0004.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC00A0.luac",
+      "group": "MSP",
+      "sha256": "4cb699fd931c08b0d3580a69d6092ee3bb254df89827229fb58c3a9bd30f2f5f",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC00A0.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/VTX/VTXPXW.luac",
+      "group": "VTX",
+      "sha256": "28a70128c17e42bf19f0a3afeefb0f04089286eae5b1964a5c4e4f5fe06495cf",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXPXW.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/VTX/VTXBFR.luac",
+      "group": "VTX",
+      "sha256": "17194b9ed025b7e748c73555766899ad2344e575c3bc037e230926077da68e49",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXBFR.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/VTX/VTXFCH.luac",
+      "group": "VTX",
+      "sha256": "5ce93c990f7932cd390336f6a25ac4920981a66dead3d299dc97048b789ae172",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXFCH.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/CFG/CFGVTX.luac",
+      "group": "configuration dependencies",
+      "sha256": "edb8074d9aa662d5286b415fbae4a9e7e8948a34b70445055eec9cb1a55dbcfb",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVTX.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/CFG/CFGVFV.luac",
+      "group": "configuration dependencies",
+      "sha256": "4687d13abcb3375bafd7547c89dee9aec0ec90e8d84d09ca34a5fc45866e42df",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVFV.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/MDUPD.luac",
+      "group": "UI dependencies",
+      "sha256": "0257242ccb3e3e0d28a1b672b92a33460cb7b3bff391926832cd4be9de76f5f5",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-MDUPD.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "UI/THMINIT.luac",
+      "group": "UI dependencies",
+      "sha256": "aa2eaa69f8d9c42503bbd8282f5ee8a66cf6cf9cb80d034f1231b039e0943303",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-THMINIT.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/TB/DATAINIT.luac",
+      "group": "data dependencies",
+      "sha256": "b88f1e8e0901908ec71c99cb394b336f6fc629057d7bb65e0a50d1317fccec5b",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-TB-DATAINIT.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/CFG/CFGUPDP.luac",
+      "group": "configuration dependencies",
+      "sha256": "9a9386063bfc2ceb1228441de05c40b84459c173f6d05eadbe63e27844fffbb3",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGUPDP.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/CFG/CFGIND.luac",
+      "group": "configuration dependencies",
+      "sha256": "81143b6a9771a5b09dd6387f7f9b85b3ab8a5b05ecb575edb0d6d70a06cbb98f",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGIND.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/CFG/CFGMDL.luac",
+      "group": "configuration dependencies",
+      "sha256": "deb8e461a60ebfd2426748374905f3a195fc995430e6c3b8b76416da8335ab2d",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGMDL.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/FC/BF/ASCS.luac",
+      "group": "FC",
+      "sha256": "0088591f83745cfb947dc63b0265e147dd4bb6dc3cde7db561f9a1ca1d4d3751",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASCS.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/FC/IN/ASCS.luac",
+      "group": "FC",
+      "sha256": "1058bfc487f8eca67304e761328d9c7f73a0c3b68674a1e862a8a740244fb269",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASCS.txt",
+      "review": "Disassembled for inventory/context; no complete semantic review claimed"
+    },
+    {
+      "module": "LIB/FC/BF/ASC.luac",
+      "group": "FC",
+      "sha256": "c9a88d29bbadce66038c360c7ceee1326d2d1bdef53e5d09e73b7f67d7aa4490",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASC.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    },
+    {
+      "module": "LIB/FC/IN/ASC.luac",
+      "group": "FC",
+      "sha256": "61d513ea048c1af1f7b055f0eebb7740e156a249f432a220324672dd64ac3154",
+      "evidence": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASC.txt",
+      "review": "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+    }
+  ]
+}

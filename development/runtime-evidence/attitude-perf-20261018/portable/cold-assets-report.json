@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T22:56:02.030189+00:00",
+  "sourceSha256": "c10f5ab3b4db3b2c0e5131051b4e6ebd7dd377e3e875a9090c706c5cc561664e",
+  "files": {
+    "cold-assets-baseline.lua": "816d3e32658d15bafec95de25cd5c836213bd5d5ca14ff695b857f4267cec10a",
+    "cold-assets-candidate.lua": "c10f5ab3b4db3b2c0e5131051b4e6ebd7dd377e3e875a9090c706c5cc561664e",
+    "cold-assets-candidate.patch": "dcaaa4b51342c8be8e19ad232073a0b6e8b442abb3b6addbce079757a8e0c8ea",
+    "test_cold_icon_startup.lua": "a03038b395638b7dba9259e5c55570d1f361e82882a2a2d58f4172bc425f8e2b",
+    "test_home_icon.lua": "7a5c6c3cf9afd81c3023010494bacb9bdb0438522b515744dd91eff8ba0427f9",
+    "test_material_icons.lua": "ee6dd802242916acbdc93541f31bc5a98b260e7c943f1b9dee6afcae910bf9e8"
+  },
+  "scope": "Workspace candidate only; parent integrates production source.",
+  "changes": [
+    "Retained startup phase14 primes exactly one uncached native icon variant per callback before first normal telemetry/render.",
+    "Seven30px navigation plus thirteen18px detail variants; same-resolution reload reuses successful and failed cache entries.",
+    "Cache context invalidates on changed physical asset namespace/dimensions or native image APIs; no stale-resolution mask reuse.",
+    "No explicit full collection in cold icon loading or page changes; cache retains only masks, not decoded bitmaps."
+  ],
+  "nativeMaskPayloadPixels": 10512,
+  "tests": [
+    {
+      "name": "test_cold_icon_startup.lua",
+      "checks": 468,
+      "luaJit": "PASS",
+      "int32Float32": "PASS"
+    },
+    {
+      "name": "test_home_icon.lua",
+      "checks": 235,
+      "luaJit": "PASS",
+      "int32Float32": "PASS"
+    },
+    {
+      "name": "test_material_icons.lua",
+      "checks": 2055,
+      "luaJit": "PASS",
+      "int32Float32": "PASS"
+    }
+  ],
+  "acceptance": [
+    "No initial prepaint warms test icons before actual retained startup.",
+    "Exactly20 dedicated icon callbacks; every startup callback opens at most one asset.",
+    "All13 real first page visits and150 warm frames cause zero additional icon SD reads.",
+    "No explicit full collection across startup, navigation or warm frames.",
+    "Same-resolution reinit keeps complete positive and negative caches.",
+    "Missing battery asset attempts once and all routes use geometric fallback.",
+    "Actual800x480 display-adapter namespace change invalidates20 native variants.",
+    "Decoded bitmap wrappers remain collectible after conversion while cached masks survive forced test collection."
+  ],
+  "limitations": [
+    "Native20,000-instruction callback proof belongs to parent/sensor comparison agent and is pending this workspace test report.",
+    "10,512pixels is mask payload only, not total Lua heap or native allocator usage.",
+    "Standalone initialization remains synchronous13phases; retained sessions alone use phase14 preload."
+  ]
+}

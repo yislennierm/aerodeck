@@ -1,0 +1,88 @@
+{
+  "result": "SUPPLEMENTARY PROBE",
+  "scope": "Source-instrumented2b6 native costs; stable180table seed then actualsession rotates, not naturalgrowth acceptance.20k unchanged.",
+  "cases": [
+    {
+      "case": "step-fixed",
+      "baseSHA256": "2b6a64acc485404778ef4c8ba26c3aaed8b5b882573723afbc67844921e50b0a",
+      "firstJobStartTick": 2145,
+      "firstObserved180FrameTick": 2860,
+      "CPUErrorCount": 0,
+      "phases": {
+        "begin-or-noop": {
+          "loggedCalls": 9,
+          "entryMax": 17,
+          "exitMax": 19,
+          "deltaMax": 5,
+          "deltaMedian": 2
+        },
+        "middle-geodesic": {
+          "loggedCalls": 46,
+          "entryMax": 18,
+          "exitMax": 23,
+          "deltaMax": 5,
+          "deltaMedian": 5.0
+        },
+        "middle-cached": {
+          "loggedCalls": 32,
+          "entryMax": 18,
+          "exitMax": 24,
+          "deltaMax": 6,
+          "deltaMedian": 6.0
+        },
+        "final": {
+          "loggedCalls": 2,
+          "entryMax": 18,
+          "exitMax": 21,
+          "deltaMax": 3,
+          "deltaMedian": 3.0
+        }
+      },
+      "lastPaint": [
+        "6359",
+        "180",
+        "1",
+        "21",
+        "true",
+        "32",
+        "180",
+        "180",
+        "1"
+      ]
+    },
+    {
+      "case": "step-nohome",
+      "baseSHA256": "2b6a64acc485404778ef4c8ba26c3aaed8b5b882573723afbc67844921e50b0a",
+      "firstJobStartTick": 2138,
+      "firstObserved180FrameTick": 2752,
+      "CPUErrorCount": 0,
+      "phases": {
+        "begin-or-noop": {
+          "loggedCalls": 1,
+          "entryMax": 17,
+          "exitMax": 22,
+          "deltaMax": 5,
+          "deltaMedian": 5
+        },
+        "middle-geodesic": {
+          "loggedCalls": 89,
+          "entryMax": 18,
+          "exitMax": 22,
+          "deltaMax": 4,
+          "deltaMedian": 4
+        }
+      },
+      "lastPaint": [
+        "6350",
+        "180",
+        "1",
+        "21",
+        "true",
+        "114",
+        "180",
+        "180",
+        "1"
+      ]
+    }
+  ]
+}

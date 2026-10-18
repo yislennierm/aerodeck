@@ -1,0 +1,2519 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/GF.luac
+
+FUNCTION main params 0 vararg 1 stack 24 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/MAIN/GF.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 156), ('F', 1, 156), ('D', 1, 156), ('X', 1, 156), ('_n3', 39, 156), ('_p8', 40, 156), ('_x9', 61, 156), ('_r4', 77, 156), ('_zt', 87, 156), ('_u6', 88, 156), ('_h2', 89, 156), ('_m7', 90, 156), ('_d4', 91, 156), ('_t6', 92, 156), ('_g5', 93, 156), ('_w1', 94, 156)]
+K0 'fnNIL'
+K1 'fnESTR'
+K2 'print'
+K3 'load'
+K4 'loadE'
+K5 'frun'
+K6 'cg'
+K7 'logAdd'
+K8 'mspLogAdd'
+K9 'mspLogWrite'
+K10 'logWrite'
+K11 'mc'
+K12 'fsCheck'
+K13 'fm'
+K14 'v0'
+K15 'fm'
+K16 '_o4'
+K17 'fm'
+K18 'v1'
+K19 203
+K20 192
+K21 159
+K22 128
+K23 206
+K24 197
+K25 200
+K26 198
+K27 222
+K28 216
+K29 219
+K30 173
+K31 194
+K32 207
+K33 70
+K34 77
+K35 50
+K36 45
+K37 'fm'
+K38 'v2'
+K39 'clear'
+K40 'next'
+K41 'round'
+K42 'split'
+K43 'strFind'
+K44 'strHex'
+K45 'bit'
+K46 'bnot'
+K47 'band'
+K48 'bor'
+K49 'bxor'
+K50 'lshift'
+K51 'rshift'
+K52 'extract'
+K53 'btest'
+K54 'bcheck'
+K55 'dtstamp'
+K56 'getDT'
+K57 'getDateTime'
+K58 'strBin'
+K59 'tblCon'
+K60 'dbg'
+K61 'dbgMSP'
+K62 'dbgT'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  13] CLOSURE   R4 = proto[0]
+   3 [  13] SETTABLE  R0[K0('fnNIL')] = R4
+   4 [  16] CLOSURE   R4 = proto[1]
+   5 [  16] SETTABLE  R0[K1('fnESTR')] = R4
+   6 [  23] CLOSURE   R4 = proto[2]
+   7 [  23] SETTABLE  R0[K2('print')] = R4
+   8 [  35] CLOSURE   R4 = proto[3]
+   9 [  35] SETTABLE  R0[K3('load')] = R4
+  10 [  42] CLOSURE   R4 = proto[4]
+  11 [  42] SETTABLE  R0[K4('loadE')] = R4
+  12 [  53] CLOSURE   R4 = proto[5]
+  13 [  53] SETTABLE  R0[K5('frun')] = R4
+  14 [  59] CLOSURE   R4 = proto[6]
+  15 [  59] SETTABLE  R0[K6('cg')] = R4
+  16 [  73] CLOSURE   R4 = proto[7]
+  17 [  73] SETTABLE  R0[K7('logAdd')] = R4
+  18 [  86] CLOSURE   R4 = proto[8]
+  19 [  86] SETTABLE  R0[K8('mspLogAdd')] = R4
+  20 [ 102] CLOSURE   R4 = proto[9]
+  21 [ 102] SETTABLE  R0[K9('mspLogWrite')] = R4
+  22 [ 122] CLOSURE   R4 = proto[10]
+  23 [ 122] SETTABLE  R0[K10('logWrite')] = R4
+  24 [ 128] CLOSURE   R4 = proto[11]
+  25 [ 128] SETTABLE  R0[K11('mc')] = R4
+  26 [ 148] CLOSURE   R4 = proto[12]
+  27 [ 148] SETTABLE  R0[K12('fsCheck')] = R4
+  28 [ 151] NEWTABLE  A=4 B=0 C=0
+  29 [ 151] SETTABLE  R0[K13('fm')] = R4
+  30 [ 153] GETTABLE  R4 = R0[K13('fm')]
+  31 [ 166] CLOSURE   R5 = proto[13]
+  32 [ 166] SETTABLE  R4[K14('v0')] = R5
+  33 [ 168] GETTABLE  R4 = R0[K15('fm')]
+  34 [ 249] CLOSURE   R5 = proto[14]
+  35 [ 249] SETTABLE  R4[K16('_o4')] = R5
+  36 [ 252] GETTABLE  R4 = R0[K17('fm')]
+  37 [ 300] CLOSURE   R5 = proto[15]
+  38 [ 300] SETTABLE  R4[K18('v1')] = R5
+  39 [ 308] CLOSURE   R4 = proto[16]
+  40 [ 316] CLOSURE   R5 = proto[17]
+  41 [ 318] MOVE      A=6 B=5 C=0
+  42 [ 318] NEWTABLE  A=7 B=16 C=0
+  43 [ 318] LOADK     R8 = K19 (203)
+  44 [ 318] LOADK     R9 = K20 (192)
+  45 [ 318] LOADK     R10 = K21 (159)
+  46 [ 318] LOADK     R11 = K20 (192)
+  47 [ 318] LOADK     R12 = K22 (128)
+  48 [ 318] LOADK     R13 = K23 (206)
+  49 [ 318] LOADK     R14 = K24 (197)
+  50 [ 318] LOADK     R15 = K25 (200)
+  51 [ 318] LOADK     R16 = K23 (206)
+  52 [ 318] LOADK     R17 = K26 (198)
+  53 [ 318] LOADK     R18 = K27 (222)
+  54 [ 318] LOADK     R19 = K28 (216)
+  55 [ 318] LOADK     R20 = K20 (192)
+  56 [ 318] LOADK     R21 = K22 (128)
+  57 [ 318] LOADK     R22 = K29 (219)
+  58 [ 318] LOADK     R23 = K21 (159)
+  59 [ 318] SETLIST   A=7 B=16 C=1
+  60 [ 318] LOADK     R8 = K30 (173)
+  61 [ 318] CALL      A=6 B=3 C=2
+  62 [ 319] MOVE      A=7 B=5 C=0
+  63 [ 319] NEWTABLE  A=8 B=11 C=0
+  64 [ 319] LOADK     R9 = K19 (203)
+  65 [ 319] LOADK     R10 = K20 (192)
+  66 [ 319] LOADK     R11 = K21 (159)
+  67 [ 319] LOADK     R12 = K20 (192)
+  68 [ 319] LOADK     R13 = K22 (128)
+  69 [ 319] LOADK     R14 = K31 (194)
+  70 [ 319] LOADK     R15 = K32 (207)
+  71 [ 319] LOADK     R16 = K19 (203)
+  72 [ 319] LOADK     R17 = K22 (128)
+  73 [ 319] LOADK     R18 = K29 (219)
+  74 [ 319] LOADK     R19 = K21 (159)
+  75 [ 319] SETLIST   A=8 B=11 C=1
+  76 [ 319] LOADK     R9 = K30 (173)
+  77 [ 319] CALL      A=7 B=3 C=2
+  78 [ 320] MOVE      A=8 B=4 C=0
+  79 [ 320] NEWTABLE  A=9 B=6 C=0
+  80 [ 320] LOADK     R10 = K33 (70)
+  81 [ 320] LOADK     R11 = K34 (77)
+  82 [ 320] LOADK     R12 = K35 (50)
+  83 [ 320] LOADK     R13 = K34 (77)
+  84 [ 320] LOADK     R14 = K35 (50)
+  85 [ 320] LOADK     R15 = K36 (45)
+  86 [ 320] SETLIST   A=9 B=6 C=1
+  87 [ 320] CALL      A=8 B=2 C=2
+  88 [ 332] CLOSURE   R9 = proto[18]
+  89 [ 342] CLOSURE   R10 = proto[19]
+  90 [ 348] CLOSURE   R11 = proto[20]
+  91 [ 364] CLOSURE   R12 = proto[21]
+  92 [ 420] CLOSURE   R13 = proto[22]
+  93 [ 435] CLOSURE   R14 = proto[23]
+  94 [ 469] CLOSURE   R15 = proto[24]
+  95 [ 471] GETTABLE  R16 = R0[K37('fm')]
+  96 [ 531] CLOSURE   R17 = proto[25]
+  97 [ 531] SETTABLE  R16[K38('v2')] = R17
+  98 [ 579] CLOSURE   R16 = proto[26]
+  99 [ 579] SETTABLE  R0[K39('clear')] = R16
+ 100 [ 597] CLOSURE   R16 = proto[27]
+ 101 [ 597] SETTABLE  R0[K40('next')] = R16
+ 102 [ 602] CLOSURE   R16 = proto[28]
+ 103 [ 602] SETTABLE  R0[K41('round')] = R16
+ 104 [ 616] CLOSURE   R16 = proto[29]
+ 105 [ 616] SETTABLE  R0[K42('split')] = R16
+ 106 [ 621] CLOSURE   R16 = proto[30]
+ 107 [ 621] SETTABLE  R0[K43('strFind')] = R16
+ 108 [ 628] CLOSURE   R16 = proto[31]
+ 109 [ 628] SETTABLE  R0[K44('strHex')] = R16
+ 110 [ 631] NEWTABLE  A=16 B=0 C=0
+ 111 [ 631] SETTABLE  R0[K45('bit')] = R16
+ 112 [ 633] GETTABLE  R16 = R0[K45('bit')]
+ 113 [ 633] CLOSURE   R17 = proto[32]
+ 114 [ 633] SETTABLE  R16[K46('bnot')] = R17
+ 115 [ 635] GETTABLE  R16 = R0[K45('bit')]
+ 116 [ 635] CLOSURE   R17 = proto[33]
+ 117 [ 635] SETTABLE  R16[K47('band')] = R17
+ 118 [ 637] GETTABLE  R16 = R0[K45('bit')]
+ 119 [ 637] CLOSURE   R17 = proto[34]
+ 120 [ 637] SETTABLE  R16[K48('bor')] = R17
+ 121 [ 639] GETTABLE  R16 = R0[K45('bit')]
+ 122 [ 639] CLOSURE   R17 = proto[35]
+ 123 [ 639] SETTABLE  R16[K49('bxor')] = R17
+ 124 [ 641] GETTABLE  R16 = R0[K45('bit')]
+ 125 [ 641] CLOSURE   R17 = proto[36]
+ 126 [ 641] SETTABLE  R16[K50('lshift')] = R17
+ 127 [ 643] GETTABLE  R16 = R0[K45('bit')]
+ 128 [ 643] CLOSURE   R17 = proto[37]
+ 129 [ 643] SETTABLE  R16[K51('rshift')] = R17
+ 130 [ 645] GETTABLE  R16 = R0[K45('bit')]
+ 131 [ 649] CLOSURE   R17 = proto[38]
+ 132 [ 649] SETTABLE  R16[K52('extract')] = R17
+ 133 [ 651] GETTABLE  R16 = R0[K45('bit')]
+ 134 [ 651] CLOSURE   R17 = proto[39]
+ 135 [ 651] SETTABLE  R16[K53('btest')] = R17
+ 136 [ 653] GETTABLE  R16 = R0[K45('bit')]
+ 137 [ 653] CLOSURE   R17 = proto[40]
+ 138 [ 653] SETTABLE  R16[K54('bcheck')] = R17
+ 139 [ 659] CLOSURE   R16 = proto[41]
+ 140 [ 659] SETTABLE  R0[K55('dtstamp')] = R16
+ 141 [ 664] CLOSURE   R16 = proto[42]
+ 142 [ 664] SETTABLE  R0[K56('getDT')] = R16
+ 143 [ 671] CLOSURE   R16 = proto[43]
+ 144 [ 671] SETTABLE  R0[K57('getDateTime')] = R16
+ 145 [ 674] GETTABLE  R16 = R0[K1('fnESTR')]
+ 146 [ 674] SETTABLE  R0[K58('strBin')] = R16
+ 147 [ 675] GETTABLE  R16 = R0[K1('fnESTR')]
+ 148 [ 675] SETTABLE  R0[K59('tblCon')] = R16
+ 149 [ 676] GETTABLE  R16 = R0[K1('fnESTR')]
+ 150 [ 676] SETTABLE  R0[K60('dbg')] = R16
+ 151 [ 677] GETTABLE  R16 = R0[K1('fnESTR')]
+ 152 [ 677] SETTABLE  R0[K61('dbgMSP')] = R16
+ 153 [ 678] GETTABLE  R16 = R0[K1('fnESTR')]
+ 154 [ 678] SETTABLE  R0[K62('dbgT')] = R16
+ 155 [ 680] RETURN    A=0 B=1 C=0
+ 156 [ 680] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 2 lines 13 13 source None
+UPVALUES []
+LOCALS []
+   1 [  13] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 2 lines 16 16 source None
+UPVALUES []
+LOCALS []
+K0 ''
+   1 [  16] LOADK     R0 = K0 ('')
+   2 [  16] RETURN    A=0 B=2 C=0
+   3 [  16] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 1 stack 2 lines 18 23 source None
+UPVALUES [('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS []
+K0 'print'
+K1 'LOGDEBUG'
+K2 'logAdd'
+   1 [  19] GETTABUP  R0 = UP0[K0('print')]
+   2 [  19] VARARG    A=1 B=0 C=0
+   3 [  19] CALL      A=0 B=0 C=1
+   4 [  20] GETTABUP  R0 = UP1[K1('LOGDEBUG')]
+   5 [  20] TEST      A=0 B=0 C=0
+   6 [  20] JMP       A=0 ->13
+   7 [  20] GETTABUP  R0 = UP1[K2('logAdd')]
+   8 [  20] TEST      A=0 B=0 C=0
+   9 [  20] JMP       A=0 ->13
+  10 [  21] GETTABUP  R0 = UP1[K2('logAdd')]
+  11 [  21] VARARG    A=1 B=0 C=0
+  12 [  21] CALL      A=0 B=0 C=1
+  13 [  23] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 1 vararg 0 stack 6 lines 26 35 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('file', 0, 19), ('chunk', 8, 19)]
+K0 'dbg'
+K1 'G.load'
+K2 'loadScript'
+K3 'SLM'
+K4 'error'
+K5 'File: '
+K6 ' not found.'
+   1 [  27] GETTABUP  R1 = UP0[K0('dbg')]
+   2 [  27] LOADK     R2 = K1 ('G.load')
+   3 [  27] MOVE      A=3 B=0 C=0
+   4 [  27] CALL      A=1 B=3 C=1
+   5 [  28] GETTABUP  R1 = UP1[K2('loadScript')]
+   6 [  28] MOVE      A=2 B=0 C=0
+   7 [  28] GETTABUP  R3 = UP0[K3('SLM')]
+   8 [  28] CALL      A=1 B=3 C=2
+   9 [  30] TEST      A=1 B=0 C=0
+  10 [  30] JMP       A=0 ->13
+  11 [  31] RETURN    A=1 B=2 C=0
+  12 [  31] JMP       A=0 ->19
+  13 [  33] GETTABUP  R2 = UP1[K4('error')]
+  14 [  33] LOADK     R3 = K5 ('File: ')
+  15 [  33] MOVE      A=4 B=0 C=0
+  16 [  33] LOADK     R5 = K6 (' not found.')
+  17 [  33] CONCAT    A=3 B=3 C=5
+  18 [  33] CALL      A=2 B=2 C=1
+  19 [  35] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4 params 1 vararg 1 stack 8 lines 38 42 source None
+UPVALUES [('G', (1, 0)), ('F', (1, 1)), ('D', (1, 2)), ('X', (1, 3))]
+LOCALS [('file', 0, 12), ('fn', 3, 12)]
+K0 'load'
+   1 [  40] GETTABUP  R1 = UP0[K0('load')]
+   2 [  40] MOVE      A=2 B=0 C=0
+   3 [  40] CALL      A=1 B=2 C=2
+   4 [  41] MOVE      A=2 B=1 C=0
+   5 [  41] GETUPVAL  A=3 B=0 C=0
+   6 [  41] GETUPVAL  A=4 B=1 C=0
+   7 [  41] GETUPVAL  A=5 B=2 C=0
+   8 [  41] GETUPVAL  A=6 B=3 C=0
+   9 [  41] VARARG    A=7 B=0 C=0
+  10 [  41] TAILCALL  A=2 B=0 C=0
+  11 [  41] RETURN    A=2 B=0 C=0
+  12 [  42] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5 params 1 vararg 1 stack 8 lines 45 53 source None
+UPVALUES [('_ENV', (0, 0)), ('F', (1, 1)), ('G', (1, 0)), ('D', (1, 2)), ('X', (1, 3))]
+LOCALS [('file', 0, 22), ('fname', 6, 22)]
+K0 'string'
+K1 'gsub'
+K2 '.*/'
+K3 ''
+K4 'load'
+   1 [  47] GETTABUP  R1 = UP0[K0('string')]
+   2 [  47] GETTABLE  R1 = R1[K1('gsub')]
+   3 [  47] MOVE      A=2 B=0 C=0
+   4 [  47] LOADK     R3 = K2 ('.*/')
+   5 [  47] LOADK     R4 = K3 ('')
+   6 [  47] CALL      A=1 B=4 C=2
+   7 [  49] GETTABUP  R2 = UP1[R1]
+   8 [  49] TEST      A=2 B=0 C=1
+   9 [  49] JMP       A=0 ->14
+  10 [  50] GETTABUP  R2 = UP2[K4('load')]
+  11 [  50] MOVE      A=3 B=0 C=0
+  12 [  50] CALL      A=2 B=2 C=2
+  13 [  50] SETTABUP  UP1[R1] = R2
+  14 [  52] GETTABUP  R2 = UP1[R1]
+  15 [  52] GETUPVAL  A=3 B=2 C=0
+  16 [  52] GETUPVAL  A=4 B=1 C=0
+  17 [  52] GETUPVAL  A=5 B=3 C=0
+  18 [  52] GETUPVAL  A=6 B=4 C=0
+  19 [  52] VARARG    A=7 B=0 C=0
+  20 [  52] TAILCALL  A=2 B=0 C=0
+  21 [  52] RETURN    A=2 B=0 C=0
+  22 [  53] RETURN    A=0 B=1 C=0
+
+FUNCTION main/6 params 0 vararg 0 stack 2 lines 56 59 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS []
+K0 'collectgarbage'
+   1 [  57] GETTABUP  R0 = UP0[K0('collectgarbage')]
+   2 [  57] CALL      A=0 B=1 C=1
+   3 [  58] GETTABUP  R0 = UP0[K0('collectgarbage')]
+   4 [  58] CALL      A=0 B=1 C=1
+   5 [  59] RETURN    A=0 B=1 C=0
+
+FUNCTION main/7 params 0 vararg 1 stack 19 lines 61 73 source None
+UPVALUES [('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('d', 2, 76), ('t', 4, 76), ('a', 7, 76), ('c', 8, 76), ('(for generator)', 11, 20), ('(for state)', 11, 20), ('(for control)', 11, 20), ('i', 12, 18), ('v', 12, 18), ('ts', 66, 76)]
+K0 'getDateTime'
+K1 'getTime'
+K2 ''
+K3 'ipairs'
+K4 'tostring'
+K5 '|'
+K6 'string'
+K7 'sub'
+K8 1
+K9 -2
+K10 'year'
+K11 '-'
+K12 'format'
+K13 '%02d'
+K14 'mon'
+K15 'day'
+K16 ' '
+K17 'hour'
+K18 ':'
+K19 'min'
+K20 'sec'
+K21 '%06d'
+K22 '  '
+K23 'LOGQ'
+   1 [  63] GETTABUP  R0 = UP0[K0('getDateTime')]
+   2 [  63] CALL      A=0 B=1 C=2
+   3 [  64] GETTABUP  R1 = UP0[K1('getTime')]
+   4 [  64] CALL      A=1 B=1 C=2
+   5 [  65] NEWTABLE  A=2 B=0 C=0
+   6 [  65] VARARG    A=3 B=0 C=0
+   7 [  65] SETLIST   A=2 B=0 C=1
+   8 [  66] LOADK     R3 = K2 ('')
+   9 [  67] GETTABUP  R4 = UP0[K3('ipairs')]
+  10 [  67] MOVE      A=5 B=2 C=0
+  11 [  67] CALL      A=4 B=2 C=4
+  12 [  67] JMP       A=0 ->19
+  13 [  68] MOVE      A=9 B=3 C=0
+  14 [  68] GETTABUP  R10 = UP0[K4('tostring')]
+  15 [  68] MOVE      A=11 B=8 C=0
+  16 [  68] CALL      A=10 B=2 C=2
+  17 [  68] LOADK     R11 = K5 ('|')
+  18 [  68] CONCAT    A=3 B=9 C=11
+  19 [  67] TFORCALL  A=4 B=0 C=2
+  20 [  67] TFORLOOP  A=6 ->13
+  21 [  70] GETTABUP  R4 = UP0[K6('string')]
+  22 [  70] GETTABLE  R4 = R4[K7('sub')]
+  23 [  70] MOVE      A=5 B=3 C=0
+  24 [  70] LOADK     R6 = K8 (1)
+  25 [  70] LOADK     R7 = K9 (-2)
+  26 [  70] CALL      A=4 B=4 C=2
+  27 [  70] MOVE      A=3 B=4 C=0
+  28 [  71] GETTABLE  R4 = R0[K10('year')]
+  29 [  71] LOADK     R5 = K11 ('-')
+  30 [  71] GETTABUP  R6 = UP0[K6('string')]
+  31 [  71] GETTABLE  R6 = R6[K12('format')]
+  32 [  71] LOADK     R7 = K13 ('%02d')
+  33 [  71] GETTABLE  R8 = R0[K14('mon')]
+  34 [  71] CALL      A=6 B=3 C=2
+  35 [  71] LOADK     R7 = K11 ('-')
+  36 [  71] GETTABUP  R8 = UP0[K6('string')]
+  37 [  71] GETTABLE  R8 = R8[K12('format')]
+  38 [  71] LOADK     R9 = K13 ('%02d')
+  39 [  71] GETTABLE  R10 = R0[K15('day')]
+  40 [  71] CALL      A=8 B=3 C=2
+  41 [  71] LOADK     R9 = K16 (' ')
+  42 [  71] GETTABUP  R10 = UP0[K6('string')]
+  43 [  71] GETTABLE  R10 = R10[K12('format')]
+  44 [  71] LOADK     R11 = K13 ('%02d')
+  45 [  71] GETTABLE  R12 = R0[K17('hour')]
+  46 [  71] CALL      A=10 B=3 C=2
+  47 [  71] LOADK     R11 = K18 (':')
+  48 [  71] GETTABUP  R12 = UP0[K6('string')]
+  49 [  71] GETTABLE  R12 = R12[K12('format')]
+  50 [  71] LOADK     R13 = K13 ('%02d')
+  51 [  71] GETTABLE  R14 = R0[K19('min')]
+  52 [  71] CALL      A=12 B=3 C=2
+  53 [  71] LOADK     R13 = K18 (':')
+  54 [  71] GETTABUP  R14 = UP0[K6('string')]
+  55 [  71] GETTABLE  R14 = R14[K12('format')]
+  56 [  71] LOADK     R15 = K13 ('%02d')
+  57 [  71] GETTABLE  R16 = R0[K20('sec')]
+  58 [  71] CALL      A=14 B=3 C=2
+  59 [  71] LOADK     R15 = K16 (' ')
+  60 [  71] GETTABUP  R16 = UP0[K6('string')]
+  61 [  71] GETTABLE  R16 = R16[K12('format')]
+  62 [  71] LOADK     R17 = K21 ('%06d')
+  63 [  71] MOVE      A=18 B=1 C=0
+  64 [  71] CALL      A=16 B=3 C=2
+  65 [  71] LOADK     R17 = K22 ('  ')
+  66 [  71] CONCAT    A=4 B=4 C=17
+  67 [  72] GETTABUP  R5 = UP1[K23('LOGQ')]
+  68 [  72] GETTABUP  R6 = UP1[K23('LOGQ')]
+  69 [  72] LEN       A=6 B=6 C=0
+  70 [  72] ADD       A=6 B=6 C=264
+  71 [  72] MOVE      A=7 B=4 C=0
+  72 [  72] LOADK     R8 = K16 (' ')
+  73 [  72] MOVE      A=9 B=3 C=0
+  74 [  72] CONCAT    A=7 B=7 C=9
+  75 [  72] SETTABLE  R5[R6] = R7
+  76 [  73] RETURN    A=0 B=1 C=0
+
+FUNCTION main/8 params 0 vararg 1 stack 19 lines 75 86 source None
+UPVALUES [('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('d', 2, 76), ('t', 4, 76), ('a', 7, 76), ('c', 8, 76), ('(for generator)', 11, 20), ('(for state)', 11, 20), ('(for control)', 11, 20), ('i', 12, 18), ('v', 12, 18), ('ts', 66, 76)]
+K0 'getDateTime'
+K1 'getTime'
+K2 ''
+K3 'ipairs'
+K4 'tostring'
+K5 '|'
+K6 'string'
+K7 'sub'
+K8 1
+K9 -2
+K10 'year'
+K11 '-'
+K12 'format'
+K13 '%02d'
+K14 'mon'
+K15 'day'
+K16 ' '
+K17 'hour'
+K18 ':'
+K19 'min'
+K20 'sec'
+K21 '%06d'
+K22 '  '
+K23 'MSPLOGQ'
+   1 [  76] GETTABUP  R0 = UP0[K0('getDateTime')]
+   2 [  76] CALL      A=0 B=1 C=2
+   3 [  77] GETTABUP  R1 = UP0[K1('getTime')]
+   4 [  77] CALL      A=1 B=1 C=2
+   5 [  78] NEWTABLE  A=2 B=0 C=0
+   6 [  78] VARARG    A=3 B=0 C=0
+   7 [  78] SETLIST   A=2 B=0 C=1
+   8 [  79] LOADK     R3 = K2 ('')
+   9 [  80] GETTABUP  R4 = UP0[K3('ipairs')]
+  10 [  80] MOVE      A=5 B=2 C=0
+  11 [  80] CALL      A=4 B=2 C=4
+  12 [  80] JMP       A=0 ->19
+  13 [  81] MOVE      A=9 B=3 C=0
+  14 [  81] GETTABUP  R10 = UP0[K4('tostring')]
+  15 [  81] MOVE      A=11 B=8 C=0
+  16 [  81] CALL      A=10 B=2 C=2
+  17 [  81] LOADK     R11 = K5 ('|')
+  18 [  81] CONCAT    A=3 B=9 C=11
+  19 [  80] TFORCALL  A=4 B=0 C=2
+  20 [  80] TFORLOOP  A=6 ->13
+  21 [  83] GETTABUP  R4 = UP0[K6('string')]
+  22 [  83] GETTABLE  R4 = R4[K7('sub')]
+  23 [  83] MOVE      A=5 B=3 C=0
+  24 [  83] LOADK     R6 = K8 (1)
+  25 [  83] LOADK     R7 = K9 (-2)
+  26 [  83] CALL      A=4 B=4 C=2
+  27 [  83] MOVE      A=3 B=4 C=0
+  28 [  84] GETTABLE  R4 = R0[K10('year')]
+  29 [  84] LOADK     R5 = K11 ('-')
+  30 [  84] GETTABUP  R6 = UP0[K6('string')]
+  31 [  84] GETTABLE  R6 = R6[K12('format')]
+  32 [  84] LOADK     R7 = K13 ('%02d')
+  33 [  84] GETTABLE  R8 = R0[K14('mon')]
+  34 [  84] CALL      A=6 B=3 C=2
+  35 [  84] LOADK     R7 = K11 ('-')
+  36 [  84] GETTABUP  R8 = UP0[K6('string')]
+  37 [  84] GETTABLE  R8 = R8[K12('format')]
+  38 [  84] LOADK     R9 = K13 ('%02d')
+  39 [  84] GETTABLE  R10 = R0[K15('day')]
+  40 [  84] CALL      A=8 B=3 C=2
+  41 [  84] LOADK     R9 = K16 (' ')
+  42 [  84] GETTABUP  R10 = UP0[K6('string')]
+  43 [  84] GETTABLE  R10 = R10[K12('format')]
+  44 [  84] LOADK     R11 = K13 ('%02d')
+  45 [  84] GETTABLE  R12 = R0[K17('hour')]
+  46 [  84] CALL      A=10 B=3 C=2
+  47 [  84] LOADK     R11 = K18 (':')
+  48 [  84] GETTABUP  R12 = UP0[K6('string')]
+  49 [  84] GETTABLE  R12 = R12[K12('format')]
+  50 [  84] LOADK     R13 = K13 ('%02d')
+  51 [  84] GETTABLE  R14 = R0[K19('min')]
+  52 [  84] CALL      A=12 B=3 C=2
+  53 [  84] LOADK     R13 = K18 (':')
+  54 [  84] GETTABUP  R14 = UP0[K6('string')]
+  55 [  84] GETTABLE  R14 = R14[K12('format')]
+  56 [  84] LOADK     R15 = K13 ('%02d')
+  57 [  84] GETTABLE  R16 = R0[K20('sec')]
+  58 [  84] CALL      A=14 B=3 C=2
+  59 [  84] LOADK     R15 = K16 (' ')
+  60 [  84] GETTABUP  R16 = UP0[K6('string')]
+  61 [  84] GETTABLE  R16 = R16[K12('format')]
+  62 [  84] LOADK     R17 = K21 ('%06d')
+  63 [  84] MOVE      A=18 B=1 C=0
+  64 [  84] CALL      A=16 B=3 C=2
+  65 [  84] LOADK     R17 = K22 ('  ')
+  66 [  84] CONCAT    A=4 B=4 C=17
+  67 [  85] GETTABUP  R5 = UP1[K23('MSPLOGQ')]
+  68 [  85] GETTABUP  R6 = UP1[K23('MSPLOGQ')]
+  69 [  85] LEN       A=6 B=6 C=0
+  70 [  85] ADD       A=6 B=6 C=264
+  71 [  85] MOVE      A=7 B=4 C=0
+  72 [  85] LOADK     R8 = K16 (' ')
+  73 [  85] MOVE      A=9 B=3 C=0
+  74 [  85] CONCAT    A=7 B=7 C=9
+  75 [  85] SETTABLE  R5[R6] = R7
+  76 [  86] RETURN    A=0 B=1 C=0
+
+FUNCTION main/9 params 0 vararg 0 stack 11 lines 88 102 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('file', 11, 49), ('fmode', 18, 49), ('fh', 23, 49), ('(for index)', 32, 42), ('(for limit)', 32, 42), ('(for step)', 32, 42), ('i', 33, 41)]
+K0 'MSPLOGQ'
+K1 'MSPLOGQP'
+K2 'PLOGS'
+K3 '/'
+K4 'msp_debug.txt'
+K5 0
+K6 'w'
+K7 'a'
+K8 'io'
+K9 'open'
+K10 1
+K11 'write'
+K12 '\r\n'
+K13 'close'
+   1 [  89] GETTABUP  R0 = UP0[K0('MSPLOGQ')]
+   2 [  89] LEN       A=0 B=0 C=0
+   3 [  89] GETTABUP  R1 = UP0[K1('MSPLOGQP')]
+   4 [  89] LT        A=0 R1, R0; skip-next if condition != A
+   5 [  89] JMP       A=0 ->50
+   6 [  90] GETTABUP  R0 = UP0[K2('PLOGS')]
+   7 [  90] TEST      A=0 B=0 C=1
+   8 [  90] JMP       A=0 ->10
+   9 [  90] LOADK     R0 = K3 ('/')
+  10 [  90] LOADK     R1 = K4 ('msp_debug.txt')
+  11 [  90] CONCAT    A=0 B=0 C=1
+  12 [  91] GETTABUP  R1 = UP0[K1('MSPLOGQP')]
+  13 [  91] EQ        A=0 R1, K5(0); skip-next if condition != A
+  14 [  91] JMP       A=0 ->18
+  15 [  91] LOADK     R1 = K6 ('w')
+  16 [  91] TEST      A=1 B=0 C=1
+  17 [  91] JMP       A=0 ->19
+  18 [  91] LOADK     R1 = K7 ('a')
+  19 [  92] GETTABUP  R2 = UP1[K8('io')]
+  20 [  92] GETTABLE  R2 = R2[K9('open')]
+  21 [  92] MOVE      A=3 B=0 C=0
+  22 [  92] MOVE      A=4 B=1 C=0
+  23 [  92] CALL      A=2 B=3 C=2
+  24 [  93] TEST      A=2 B=0 C=0
+  25 [  93] JMP       A=0 ->50
+  26 [  94] GETTABUP  R3 = UP0[K1('MSPLOGQP')]
+  27 [  94] ADD       A=3 B=3 C=266
+  28 [  94] SETTABUP  UP0[K1('MSPLOGQP')] = R3
+  29 [  95] GETTABUP  R3 = UP0[K1('MSPLOGQP')]
+  30 [  95] GETTABUP  R4 = UP0[K0('MSPLOGQ')]
+  31 [  95] LEN       A=4 B=4 C=0
+  32 [  95] LOADK     R5 = K10 (1)
+  33 [  95] FORPREP   A=3 ->42
+  34 [  96] GETTABUP  R7 = UP1[K8('io')]
+  35 [  96] GETTABLE  R7 = R7[K11('write')]
+  36 [  96] MOVE      A=8 B=2 C=0
+  37 [  96] GETTABUP  R9 = UP0[K0('MSPLOGQ')]
+  38 [  96] GETTABLE  R9 = R9[R6]
+  39 [  96] LOADK     R10 = K12 ('\r\n')
+  40 [  96] CONCAT    A=9 B=9 C=10
+  41 [  96] CALL      A=7 B=3 C=1
+  42 [  95] FORLOOP   A=3 ->34
+  43 [  98] GETTABUP  R3 = UP1[K8('io')]
+  44 [  98] GETTABLE  R3 = R3[K13('close')]
+  45 [  98] MOVE      A=4 B=2 C=0
+  46 [  98] CALL      A=3 B=2 C=1
+  47 [  99] GETTABUP  R3 = UP0[K0('MSPLOGQ')]
+  48 [  99] LEN       A=3 B=3 C=0
+  49 [  99] SETTABUP  UP0[K1('MSPLOGQP')] = R3
+  50 [ 102] RETURN    A=0 B=1 C=0
+
+FUNCTION main/10 params 0 vararg 0 stack 10 lines 104 122 source None
+UPVALUES [('G', (1, 0)), ('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('var', 16, 16), ('file', 27, 56), ('fh', 32, 56), ('(for index)', 39, 49), ('(for limit)', 39, 49), ('(for step)', 39, 49), ('i', 40, 48)]
+K0 'LOGINIT'
+K1 False
+K2 'RD'
+K3 'table'
+K4 'insert'
+K5 'LOGQ'
+K6 1
+K7 '*** LOG START ***'
+K8 'LOGQP'
+K9 'PLOGS'
+K10 '/'
+K11 'lua_log.txt'
+K12 'io'
+K13 'open'
+K14 'a'
+K15 'write'
+K16 '\r\n'
+K17 'close'
+K18 'mspLogWrite'
+   1 [ 105] GETTABUP  R0 = UP0[K0('LOGINIT')]
+   2 [ 105] TEST      A=0 B=0 C=0
+   3 [ 105] JMP       A=0 ->17
+   4 [ 106] SETTABUP  UP0[K0('LOGINIT')] = K1(False)
+   5 [ 107] GETUPVAL  A=0 B=1 C=0
+   6 [ 107] TEST      A=0 B=0 C=0
+   7 [ 107] JMP       A=0 ->17
+   8 [ 107] GETTABUP  R0 = UP1[K2('RD')]
+   9 [ 107] TEST      A=0 B=0 C=0
+  10 [ 107] JMP       A=0 ->17
+  11 [ 109] GETTABUP  R0 = UP2[K3('table')]
+  12 [ 109] GETTABLE  R0 = R0[K4('insert')]
+  13 [ 109] GETTABUP  R1 = UP0[K5('LOGQ')]
+  14 [ 109] LOADK     R2 = K6 (1)
+  15 [ 109] LOADK     R3 = K7 ('*** LOG START ***')
+  16 [ 109] CALL      A=0 B=4 C=2
+  17 [ 111] GETTABUP  R0 = UP0[K5('LOGQ')]
+  18 [ 111] LEN       A=0 B=0 C=0
+  19 [ 111] GETTABUP  R1 = UP0[K8('LOGQP')]
+  20 [ 111] LT        A=0 R1, R0; skip-next if condition != A
+  21 [ 111] JMP       A=0 ->57
+  22 [ 112] GETTABUP  R0 = UP0[K9('PLOGS')]
+  23 [ 112] TEST      A=0 B=0 C=1
+  24 [ 112] JMP       A=0 ->26
+  25 [ 112] LOADK     R0 = K10 ('/')
+  26 [ 112] LOADK     R1 = K11 ('lua_log.txt')
+  27 [ 112] CONCAT    A=0 B=0 C=1
+  28 [ 113] GETTABUP  R1 = UP2[K12('io')]
+  29 [ 113] GETTABLE  R1 = R1[K13('open')]
+  30 [ 113] MOVE      A=2 B=0 C=0
+  31 [ 113] LOADK     R3 = K14 ('a')
+  32 [ 113] CALL      A=1 B=3 C=2
+  33 [ 114] GETTABUP  R2 = UP0[K8('LOGQP')]
+  34 [ 114] ADD       A=2 B=2 C=262
+  35 [ 114] SETTABUP  UP0[K8('LOGQP')] = R2
+  36 [ 115] GETTABUP  R2 = UP0[K8('LOGQP')]
+  37 [ 115] GETTABUP  R3 = UP0[K5('LOGQ')]
+  38 [ 115] LEN       A=3 B=3 C=0
+  39 [ 115] LOADK     R4 = K6 (1)
+  40 [ 115] FORPREP   A=2 ->49
+  41 [ 116] GETTABUP  R6 = UP2[K12('io')]
+  42 [ 116] GETTABLE  R6 = R6[K15('write')]
+  43 [ 116] MOVE      A=7 B=1 C=0
+  44 [ 116] GETTABUP  R8 = UP0[K5('LOGQ')]
+  45 [ 116] GETTABLE  R8 = R8[R5]
+  46 [ 116] LOADK     R9 = K16 ('\r\n')
+  47 [ 116] CONCAT    A=8 B=8 C=9
+  48 [ 116] CALL      A=6 B=3 C=1
+  49 [ 115] FORLOOP   A=2 ->41
+  50 [ 118] GETTABUP  R2 = UP2[K12('io')]
+  51 [ 118] GETTABLE  R2 = R2[K17('close')]
+  52 [ 118] MOVE      A=3 B=1 C=0
+  53 [ 118] CALL      A=2 B=2 C=1
+  54 [ 119] GETTABUP  R2 = UP0[K5('LOGQ')]
+  55 [ 119] LEN       A=2 B=2 C=0
+  56 [ 119] SETTABUP  UP0[K8('LOGQP')] = R2
+  57 [ 121] GETTABUP  R0 = UP0[K18('mspLogWrite')]
+  58 [ 121] CALL      A=0 B=1 C=1
+  59 [ 122] RETURN    A=0 B=1 C=0
+
+FUNCTION main/11 params 0 vararg 0 stack 3 lines 125 128 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS []
+K0 'memC'
+K1 'math'
+K2 'floor'
+K3 'collectgarbage'
+K4 'count'
+K5 10
+K6 'memX'
+K7 'max'
+K8 0
+   1 [ 126] GETTABUP  R0 = UP1[K1('math')]
+   2 [ 126] GETTABLE  R0 = R0[K2('floor')]
+   3 [ 126] GETTABUP  R1 = UP1[K3('collectgarbage')]
+   4 [ 126] LOADK     R2 = K4 ('count')
+   5 [ 126] CALL      A=1 B=2 C=2
+   6 [ 126] MUL       A=1 B=1 C=261
+   7 [ 126] CALL      A=0 B=2 C=2
+   8 [ 126] DIV       A=0 B=0 C=261
+   9 [ 126] SETTABUP  UP0[K0('memC')] = R0
+  10 [ 127] GETTABUP  R0 = UP1[K1('math')]
+  11 [ 127] GETTABLE  R0 = R0[K7('max')]
+  12 [ 127] GETTABUP  R1 = UP0[K0('memC')]
+  13 [ 127] GETTABUP  R2 = UP0[K6('memX')]
+  14 [ 127] TEST      A=2 B=0 C=1
+  15 [ 127] JMP       A=0 ->17
+  16 [ 127] LOADK     R2 = K8 (0)
+  17 [ 127] CALL      A=0 B=3 C=2
+  18 [ 127] SETTABUP  UP0[K6('memX')] = R0
+  19 [ 128] RETURN    A=0 B=1 C=0
+
+FUNCTION main/12 params 1 vararg 0 stack 7 lines 131 148 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('fName', 0, 73), ('info', 40, 73)]
+K0 'dbg'
+K1 'G.fsCheck'
+K2 'string'
+K3 'sub'
+K4 -1
+K5 '/'
+K6 1
+K7 -2
+K8 'strFind'
+K9 '%.'
+K10 '.lua'
+K11 'SLC'
+K12 'c'
+K13 ''
+K14 'fstat'
+K15 None
+K16 'folder'
+K17 'Folder '
+K18 'File '
+K19 ' exists'
+K20 " doesn't exists"
+   1 [ 132] GETTABUP  R1 = UP0[K0('dbg')]
+   2 [ 132] LOADK     R2 = K1 ('G.fsCheck')
+   3 [ 132] MOVE      A=3 B=0 C=0
+   4 [ 132] CALL      A=1 B=3 C=1
+   5 [ 134] GETTABUP  R1 = UP1[K2('string')]
+   6 [ 134] GETTABLE  R1 = R1[K3('sub')]
+   7 [ 134] MOVE      A=2 B=0 C=0
+   8 [ 134] LOADK     R3 = K4 (-1)
+   9 [ 134] CALL      A=1 B=3 C=2
+  10 [ 134] EQ        A=0 R1, K5('/'); skip-next if condition != A
+  11 [ 134] JMP       A=0 ->20
+  12 [ 135] GETTABUP  R1 = UP1[K2('string')]
+  13 [ 135] GETTABLE  R1 = R1[K3('sub')]
+  14 [ 135] MOVE      A=2 B=0 C=0
+  15 [ 135] LOADK     R3 = K6 (1)
+  16 [ 135] LOADK     R4 = K7 (-2)
+  17 [ 135] CALL      A=1 B=4 C=2
+  18 [ 135] MOVE      A=0 B=1 C=0
+  19 [ 135] JMP       A=0 ->38
+  20 [ 137] GETTABUP  R1 = UP0[K8('strFind')]
+  21 [ 137] MOVE      A=2 B=0 C=0
+  22 [ 137] LOADK     R3 = K9 ('%.')
+  23 [ 137] CALL      A=1 B=3 C=2
+  24 [ 137] TEST      A=1 B=0 C=0
+  25 [ 137] JMP       A=0 ->28
+  26 [ 137] TEST      A=0 B=0 C=1
+  27 [ 137] JMP       A=0 ->38
+  28 [ 137] MOVE      A=1 B=0 C=0
+  29 [ 137] LOADK     R2 = K10 ('.lua')
+  30 [ 137] GETTABUP  R3 = UP0[K11('SLC')]
+  31 [ 137] TEST      A=3 B=0 C=0
+  32 [ 137] JMP       A=0 ->36
+  33 [ 137] LOADK     R3 = K12 ('c')
+  34 [ 137] TEST      A=3 B=0 C=1
+  35 [ 137] JMP       A=0 ->37
+  36 [ 137] LOADK     R3 = K13 ('')
+  37 [ 137] CONCAT    A=0 B=1 C=3
+  38 [ 140] GETTABUP  R1 = UP1[K14('fstat')]
+  39 [ 140] MOVE      A=2 B=0 C=0
+  40 [ 140] CALL      A=1 B=2 C=2
+  41 [ 141] EQ        A=1 R1, K15(None); skip-next if condition != A
+  42 [ 141] JMP       A=0 ->58
+  43 [ 142] GETTABUP  R2 = UP0[K0('dbg')]
+  44 [ 142] LOADK     R3 = K1 ('G.fsCheck')
+  45 [ 142] GETTABUP  R4 = UP1[K16('folder')]
+  46 [ 142] TEST      A=4 B=0 C=0
+  47 [ 142] JMP       A=0 ->51
+  48 [ 142] LOADK     R4 = K17 ('Folder ')
+  49 [ 142] TEST      A=4 B=0 C=1
+  50 [ 142] JMP       A=0 ->52
+  51 [ 142] LOADK     R4 = K18 ('File ')
+  52 [ 142] MOVE      A=5 B=0 C=0
+  53 [ 142] LOADK     R6 = K19 (' exists')
+  54 [ 142] CONCAT    A=4 B=4 C=6
+  55 [ 142] CALL      A=2 B=3 C=1
+  56 [ 143] LOADBOOL  A=2 B=1 C=0
+  57 [ 143] RETURN    A=2 B=2 C=0
+  58 [ 146] GETTABUP  R2 = UP0[K0('dbg')]
+  59 [ 146] LOADK     R3 = K1 ('G.fsCheck')
+  60 [ 146] GETTABUP  R4 = UP1[K16('folder')]
+  61 [ 146] TEST      A=4 B=0 C=0
+  62 [ 146] JMP       A=0 ->66
+  63 [ 146] LOADK     R4 = K17 ('Folder ')
+  64 [ 146] TEST      A=4 B=0 C=1
+  65 [ 146] JMP       A=0 ->67
+  66 [ 146] LOADK     R4 = K18 ('File ')
+  67 [ 146] MOVE      A=5 B=0 C=0
+  68 [ 146] LOADK     R6 = K20 (" doesn't exists")
+  69 [ 146] CONCAT    A=4 B=4 C=6
+  70 [ 146] CALL      A=2 B=3 C=1
+  71 [ 147] LOADBOOL  A=2 B=0 C=0
+  72 [ 147] RETURN    A=2 B=2 C=0
+  73 [ 148] RETURN    A=0 B=1 C=0
+
+FUNCTION main/13 params 0 vararg 0 stack 6 lines 153 166 source None
+UPVALUES [('G', (1, 0)), ('D', (1, 2))]
+LOCALS [('ok', 17, 36), ('code', 17, 36), ('data', 17, 36)]
+K0 'fm'
+K1 'sxx'
+K2 False
+K3 'pgg'
+K4 'AI'
+K5 'ui'
+K6 None
+K7 'un'
+K8 'rid'
+K9 'licenceDetail'
+K10 'licenceVersion'
+K11 'v1'
+K12 'dbg'
+K13 'G.fm'
+K14 'k0'
+   1 [ 154] GETTABUP  R0 = UP0[K0('fm')]
+   2 [ 154] SETTABLE  R0[K1('sxx')] = K2(False)
+   3 [ 155] GETTABUP  R0 = UP0[K0('fm')]
+   4 [ 155] SETTABLE  R0[K3('pgg')] = K2(False)
+   5 [ 156] GETTABUP  R0 = UP1[K4('AI')]
+   6 [ 156] SETTABLE  R0[K5('ui')] = K6(None)
+   7 [ 157] GETTABUP  R0 = UP1[K4('AI')]
+   8 [ 157] SETTABLE  R0[K7('un')] = K6(None)
+   9 [ 158] GETTABUP  R0 = UP1[K4('AI')]
+  10 [ 158] SETTABLE  R0[K8('rid')] = K6(None)
+  11 [ 159] GETTABUP  R0 = UP1[K4('AI')]
+  12 [ 159] SETTABLE  R0[K9('licenceDetail')] = K6(None)
+  13 [ 160] GETTABUP  R0 = UP1[K4('AI')]
+  14 [ 160] SETTABLE  R0[K10('licenceVersion')] = K6(None)
+  15 [ 161] GETTABUP  R0 = UP0[K0('fm')]
+  16 [ 161] GETTABLE  R0 = R0[K11('v1')]
+  17 [ 161] CALL      A=0 B=1 C=4
+  18 [ 162] GETTABUP  R3 = UP0[K12('dbg')]
+  19 [ 162] LOADK     R4 = K13 ('G.fm')
+  20 [ 162] LOADK     R5 = K14 ('k0')
+  21 [ 162] CALL      A=3 B=3 C=1
+  22 [ 163] GETTABUP  R3 = UP0[K12('dbg')]
+  23 [ 163] LOADK     R4 = K1 ('sxx')
+  24 [ 163] GETTABUP  R5 = UP0[K0('fm')]
+  25 [ 163] GETTABLE  R5 = R5[K1('sxx')]
+  26 [ 163] CALL      A=3 B=3 C=1
+  27 [ 164] GETTABUP  R3 = UP0[K12('dbg')]
+  28 [ 164] LOADK     R4 = K3 ('pgg')
+  29 [ 164] GETTABUP  R5 = UP0[K0('fm')]
+  30 [ 164] GETTABLE  R5 = R5[K3('pgg')]
+  31 [ 164] CALL      A=3 B=3 C=1
+  32 [ 165] MOVE      A=3 B=0 C=0
+  33 [ 165] MOVE      A=4 B=1 C=0
+  34 [ 165] MOVE      A=5 B=2 C=0
+  35 [ 165] RETURN    A=3 B=4 C=0
+  36 [ 166] RETURN    A=0 B=1 C=0
+
+FUNCTION main/14 params 0 vararg 0 stack 24 lines 168 249 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('fn', 3, 232), ('fh', 8, 232), ('bf', 50, 232), ('_s', 68, 232), ('_x', 68, 232), ('(for index)', 71, 102), ('(for limit)', 71, 102), ('(for step)', 71, 102), ('i', 72, 101), ('_c', 78, 101), ('_b', 82, 101), ('_n', 85, 101), ('_d', 115, 232), ('_c1', 118, 232), ('_m', 131, 232), ('_n', 147, 232), ('_f', 150, 232), ('_c2', 162, 232), ('(for index)', 165, 183), ('(for limit)', 165, 183), ('(for step)', 165, 183), ('i', 166, 182), ('(for index)', 170, 182), ('(for limit)', 170, 182), ('(for step)', 170, 182), ('i2', 171, 181)]
+K0 'PKEYS'
+K1 'vc.fm2m'
+K2 'io'
+K3 'open'
+K4 'r'
+K5 'dbg'
+K6 'G.fm'
+K7 'o4n '
+K8 'FP'
+K9 'VC/vc.fm2m'
+K10 'e11'
+K11 'o4r '
+K12 'read'
+K13 256
+K14 ''
+K15 'close'
+K16 1
+K17 'o4e '
+K18 'e12'
+K19 'string'
+K20 'sub'
+K21 'byte'
+K22 10
+K23 32
+K24 93
+K25 124
+K26 'char'
+K27 'o4d'
+K28 'e13'
+K29 'split'
+K30 '|'
+K31 'tonumber'
+K32 'type'
+K33 'number'
+K34 'o4c'
+K35 'e14'
+K36 2
+K37 'o4m'
+K38 'e15'
+K39 3
+K40 4
+K41 0
+K42 'o4f'
+K43 'e16'
+K44 'o4x'
+K45 'AI'
+K46 'ui'
+K47 'tostring'
+K48 'un'
+K49 'rid'
+K50 None
+K51 'licenceDetail'
+K52 'licenceVersion'
+K53 'v1'
+K54 'fm'
+K55 'sxx'
+K56 True
+K57 'pgg'
+K58 False
+K59 'o4ok '
+K60 ' / '
+K61 'OK'
+   1 [ 169] GETTABUP  R0 = UP0[K0('PKEYS')]
+   2 [ 169] LOADK     R1 = K1 ('vc.fm2m')
+   3 [ 169] CONCAT    A=0 B=0 C=1
+   4 [ 170] GETTABUP  R1 = UP1[K2('io')]
+   5 [ 170] GETTABLE  R1 = R1[K3('open')]
+   6 [ 170] MOVE      A=2 B=0 C=0
+   7 [ 170] LOADK     R3 = K4 ('r')
+   8 [ 170] CALL      A=1 B=3 C=2
+   9 [ 171] TEST      A=1 B=0 C=1
+  10 [ 171] JMP       A=0 ->26
+  11 [ 172] GETTABUP  R2 = UP0[K5('dbg')]
+  12 [ 172] LOADK     R3 = K6 ('G.fm')
+  13 [ 172] LOADK     R4 = K7 ('o4n ')
+  14 [ 172] MOVE      A=5 B=0 C=0
+  15 [ 172] CONCAT    A=4 B=4 C=5
+  16 [ 172] CALL      A=2 B=3 C=1
+  17 [ 173] GETTABUP  R2 = UP0[K8('FP')]
+  18 [ 173] LOADK     R3 = K9 ('VC/vc.fm2m')
+  19 [ 173] CONCAT    A=0 B=2 C=3
+  20 [ 174] GETTABUP  R2 = UP1[K2('io')]
+  21 [ 174] GETTABLE  R2 = R2[K3('open')]
+  22 [ 174] MOVE      A=3 B=0 C=0
+  23 [ 174] LOADK     R4 = K4 ('r')
+  24 [ 174] CALL      A=2 B=3 C=2
+  25 [ 174] MOVE      A=1 B=2 C=0
+  26 [ 176] TEST      A=1 B=0 C=1
+  27 [ 176] JMP       A=0 ->37
+  28 [ 177] GETTABUP  R2 = UP0[K5('dbg')]
+  29 [ 177] LOADK     R3 = K6 ('G.fm')
+  30 [ 177] LOADK     R4 = K7 ('o4n ')
+  31 [ 177] MOVE      A=5 B=0 C=0
+  32 [ 177] CONCAT    A=4 B=4 C=5
+  33 [ 177] CALL      A=2 B=3 C=1
+  34 [ 178] LOADBOOL  A=2 B=0 C=0
+  35 [ 178] LOADK     R3 = K10 ('e11')
+  36 [ 178] RETURN    A=2 B=3 C=0
+  37 [ 181] GETTABUP  R2 = UP0[K5('dbg')]
+  38 [ 181] LOADK     R3 = K6 ('G.fm')
+  39 [ 181] LOADK     R4 = K11 ('o4r ')
+  40 [ 181] MOVE      A=5 B=0 C=0
+  41 [ 181] CONCAT    A=4 B=4 C=5
+  42 [ 181] CALL      A=2 B=3 C=1
+  43 [ 182] GETTABUP  R2 = UP1[K2('io')]
+  44 [ 182] GETTABLE  R2 = R2[K12('read')]
+  45 [ 182] MOVE      A=3 B=1 C=0
+  46 [ 182] LOADK     R4 = K13 (256)
+  47 [ 182] CALL      A=2 B=3 C=2
+  48 [ 182] TEST      A=2 B=0 C=1
+  49 [ 182] JMP       A=0 ->51
+  50 [ 182] LOADK     R2 = K14 ('')
+  51 [ 183] GETTABUP  R3 = UP1[K2('io')]
+  52 [ 183] GETTABLE  R3 = R3[K15('close')]
+  53 [ 183] MOVE      A=4 B=1 C=0
+  54 [ 183] CALL      A=3 B=2 C=1
+  55 [ 185] LEN       A=3 B=2 C=0
+  56 [ 185] LE        A=0 R3, K16(1); skip-next if condition != A
+  57 [ 185] JMP       A=0 ->67
+  58 [ 186] GETTABUP  R3 = UP0[K5('dbg')]
+  59 [ 186] LOADK     R4 = K6 ('G.fm')
+  60 [ 186] LOADK     R5 = K17 ('o4e ')
+  61 [ 186] MOVE      A=6 B=0 C=0
+  62 [ 186] CONCAT    A=5 B=5 C=6
+  63 [ 186] CALL      A=3 B=3 C=1
+  64 [ 187] LOADBOOL  A=3 B=0 C=0
+  65 [ 187] LOADK     R4 = K18 ('e12')
+  66 [ 187] RETURN    A=3 B=3 C=0
+  67 [ 190] LOADK     R3 = K14 ('')
+  68 [ 190] LOADBOOL  A=4 B=0 C=0
+  69 [ 191] LOADK     R5 = K16 (1)
+  70 [ 191] LEN       A=6 B=2 C=0
+  71 [ 191] LOADK     R7 = K16 (1)
+  72 [ 191] FORPREP   A=5 ->102
+  73 [ 192] GETTABUP  R9 = UP1[K19('string')]
+  74 [ 192] GETTABLE  R9 = R9[K20('sub')]
+  75 [ 192] MOVE      A=10 B=2 C=0
+  76 [ 192] MOVE      A=11 B=8 C=0
+  77 [ 192] MOVE      A=12 B=8 C=0
+  78 [ 192] CALL      A=9 B=4 C=2
+  79 [ 193] GETTABUP  R10 = UP1[K19('string')]
+  80 [ 193] GETTABLE  R10 = R10[K21('byte')]
+  81 [ 193] MOVE      A=11 B=9 C=0
+  82 [ 193] CALL      A=10 B=2 C=2
+  83 [ 194] EQ        A=1 R10, K22(10); skip-next if condition != A
+  84 [ 194] JMP       A=0 ->103
+  85 [ 195] SUB       A=11 B=10 C=8
+  86 [ 196] LT        A=0 R11, K23(32); skip-next if condition != A
+  87 [ 196] JMP       A=0 ->91
+  88 [ 196] ADD       A=12 B=11 C=280
+  89 [ 196] TESTSET   A=11 B=12 C=1
+  90 [ 196] JMP       A=0 ->91
+  91 [ 197] EQ        A=1 R11, K22(10); skip-next if condition != A
+  92 [ 197] JMP       A=0 ->103
+  93 [ 198] EQ        A=0 R11, K25(124); skip-next if condition != A
+  94 [ 198] JMP       A=0 ->96
+  95 [ 198] LOADBOOL  A=4 B=1 C=0
+  96 [ 199] MOVE      A=12 B=3 C=0
+  97 [ 199] GETTABUP  R13 = UP1[K19('string')]
+  98 [ 199] GETTABLE  R13 = R13[K26('char')]
+  99 [ 199] MOVE      A=14 B=11 C=0
+ 100 [ 199] CALL      A=13 B=2 C=2
+ 101 [ 199] CONCAT    A=3 B=12 C=13
+ 102 [ 191] FORLOOP   A=5 ->73
+ 103 [ 202] TEST      A=4 B=0 C=1
+ 104 [ 202] JMP       A=0 ->112
+ 105 [ 203] GETTABUP  R5 = UP0[K5('dbg')]
+ 106 [ 203] LOADK     R6 = K6 ('G.fm')
+ 107 [ 203] LOADK     R7 = K27 ('o4d')
+ 108 [ 203] CALL      A=5 B=3 C=1
+ 109 [ 204] LOADBOOL  A=5 B=0 C=0
+ 110 [ 204] LOADK     R6 = K28 ('e13')
+ 111 [ 204] RETURN    A=5 B=3 C=0
+ 112 [ 207] GETTABUP  R5 = UP0[K29('split')]
+ 113 [ 207] MOVE      A=6 B=3 C=0
+ 114 [ 207] LOADK     R7 = K30 ('|')
+ 115 [ 207] CALL      A=5 B=3 C=2
+ 116 [ 208] GETTABUP  R6 = UP1[K31('tonumber')]
+ 117 [ 208] GETTABLE  R7 = R5[K16(1)]
+ 118 [ 208] CALL      A=6 B=2 C=2
+ 119 [ 209] GETTABUP  R7 = UP1[K32('type')]
+ 120 [ 209] MOVE      A=8 B=6 C=0
+ 121 [ 209] CALL      A=7 B=2 C=2
+ 122 [ 209] EQ        A=1 R7, K33('number'); skip-next if condition != A
+ 123 [ 209] JMP       A=0 ->131
+ 124 [ 210] GETTABUP  R7 = UP0[K5('dbg')]
+ 125 [ 210] LOADK     R8 = K6 ('G.fm')
+ 126 [ 210] LOADK     R9 = K34 ('o4c')
+ 127 [ 210] CALL      A=7 B=3 C=1
+ 128 [ 211] LOADBOOL  A=7 B=0 C=0
+ 129 [ 211] LOADK     R8 = K35 ('e14')
+ 130 [ 211] RETURN    A=7 B=3 C=0
+ 131 [ 214] GETTABLE  R7 = R5[K36(2)]
+ 132 [ 215] GETTABUP  R8 = UP1[K32('type')]
+ 133 [ 215] MOVE      A=9 B=7 C=0
+ 134 [ 215] CALL      A=8 B=2 C=2
+ 135 [ 215] EQ        A=1 R8, K19('string'); skip-next if condition != A
+ 136 [ 215] JMP       A=0 ->144
+ 137 [ 216] GETTABUP  R8 = UP0[K5('dbg')]
+ 138 [ 216] LOADK     R9 = K6 ('G.fm')
+ 139 [ 216] LOADK     R10 = K37 ('o4m')
+ 140 [ 216] CALL      A=8 B=3 C=1
+ 141 [ 217] LOADBOOL  A=8 B=0 C=0
+ 142 [ 217] LOADK     R9 = K38 ('e15')
+ 143 [ 217] RETURN    A=8 B=3 C=0
+ 144 [ 220] GETTABLE  R8 = R5[K39(3)]
+ 145 [ 220] TEST      A=8 B=0 C=1
+ 146 [ 220] JMP       A=0 ->148
+ 147 [ 220] LOADK     R8 = K14 ('')
+ 148 [ 221] GETTABUP  R9 = UP1[K31('tonumber')]
+ 149 [ 221] GETTABLE  R10 = R5[K40(4)]
+ 150 [ 221] CALL      A=9 B=2 C=2
+ 151 [ 222] TEST      A=9 B=0 C=0
+ 152 [ 222] JMP       A=0 ->155
+ 153 [ 222] EQ        A=0 R9, K41(0); skip-next if condition != A
+ 154 [ 222] JMP       A=0 ->162
+ 155 [ 223] GETTABUP  R10 = UP0[K5('dbg')]
+ 156 [ 223] LOADK     R11 = K6 ('G.fm')
+ 157 [ 223] LOADK     R12 = K42 ('o4f')
+ 158 [ 223] CALL      A=10 B=3 C=1
+ 159 [ 224] LOADBOOL  A=10 B=0 C=0
+ 160 [ 224] LOADK     R11 = K43 ('e16')
+ 161 [ 224] RETURN    A=10 B=3 C=0
+ 162 [ 227] LOADK     R10 = K41 (0)
+ 163 [ 228] LOADK     R11 = K36 (2)
+ 164 [ 228] LEN       A=12 B=5 C=0
+ 165 [ 228] LOADK     R13 = K16 (1)
+ 166 [ 228] FORPREP   A=11 ->183
+ 167 [ 229] LOADK     R15 = K16 (1)
+ 168 [ 229] GETTABLE  R16 = R5[R14]
+ 169 [ 229] LEN       A=16 B=16 C=0
+ 170 [ 229] LOADK     R17 = K16 (1)
+ 171 [ 229] FORPREP   A=15 ->182
+ 172 [ 230] GETTABUP  R19 = UP1[K19('string')]
+ 173 [ 230] GETTABLE  R19 = R19[K21('byte')]
+ 174 [ 230] GETTABUP  R20 = UP1[K19('string')]
+ 175 [ 230] GETTABLE  R20 = R20[K20('sub')]
+ 176 [ 230] GETTABLE  R21 = R5[R14]
+ 177 [ 230] MOVE      A=22 B=18 C=0
+ 178 [ 230] MOVE      A=23 B=18 C=0
+ 179 [ 230] CALL      A=20 B=4 C=0
+ 180 [ 230] CALL      A=19 B=0 C=2
+ 181 [ 230] ADD       A=10 B=10 C=19
+ 182 [ 229] FORLOOP   A=15 ->172
+ 183 [ 228] FORLOOP   A=11 ->167
+ 184 [ 234] EQ        A=1 R6, R10; skip-next if condition != A
+ 185 [ 234] JMP       A=0 ->193
+ 186 [ 235] GETTABUP  R11 = UP0[K5('dbg')]
+ 187 [ 235] LOADK     R12 = K6 ('G.fm')
+ 188 [ 235] LOADK     R13 = K44 ('o4x')
+ 189 [ 235] CALL      A=11 B=3 C=1
+ 190 [ 236] LOADBOOL  A=11 B=0 C=0
+ 191 [ 236] LOADK     R12 = K35 ('e14')
+ 192 [ 236] RETURN    A=11 B=3 C=0
+ 193 [ 239] GETTABUP  R11 = UP2[K45('AI')]
+ 194 [ 239] GETTABUP  R12 = UP1[K47('tostring')]
+ 195 [ 239] MOVE      A=13 B=9 C=0
+ 196 [ 239] CALL      A=12 B=2 C=2
+ 197 [ 239] SETTABLE  R11[K46('ui')] = R12
+ 198 [ 240] GETTABUP  R11 = UP2[K45('AI')]
+ 199 [ 240] EQ        A=1 R8, K14(''); skip-next if condition != A
+ 200 [ 240] JMP       A=0 ->203
+ 201 [ 240] TESTSET   A=12 B=8 C=1
+ 202 [ 240] JMP       A=0 ->204
+ 203 [ 240] MOVE      A=12 B=7 C=0
+ 204 [ 240] SETTABLE  R11[K48('un')] = R12
+ 205 [ 241] GETTABUP  R11 = UP2[K45('AI')]
+ 206 [ 241] SETTABLE  R11[K49('rid')] = K50(None)
+ 207 [ 242] GETTABUP  R11 = UP2[K45('AI')]
+ 208 [ 242] SETTABLE  R11[K51('licenceDetail')] = R7
+ 209 [ 243] GETTABUP  R11 = UP2[K45('AI')]
+ 210 [ 243] SETTABLE  R11[K52('licenceVersion')] = K53('v1')
+ 211 [ 244] GETTABUP  R11 = UP0[K54('fm')]
+ 212 [ 244] SETTABLE  R11[K55('sxx')] = K56(True)
+ 213 [ 245] GETTABUP  R11 = UP0[K54('fm')]
+ 214 [ 245] SETTABLE  R11[K57('pgg')] = K58(False)
+ 215 [ 247] GETTABUP  R11 = UP0[K5('dbg')]
+ 216 [ 247] LOADK     R12 = K6 ('G.fm')
+ 217 [ 247] LOADK     R13 = K59 ('o4ok ')
+ 218 [ 247] GETTABUP  R14 = UP1[K47('tostring')]
+ 219 [ 247] GETTABUP  R15 = UP2[K45('AI')]
+ 220 [ 247] GETTABLE  R15 = R15[K46('ui')]
+ 221 [ 247] CALL      A=14 B=2 C=2
+ 222 [ 247] LOADK     R15 = K60 (' / ')
+ 223 [ 247] GETTABUP  R16 = UP1[K47('tostring')]
+ 224 [ 247] GETTABUP  R17 = UP2[K45('AI')]
+ 225 [ 247] GETTABLE  R17 = R17[K48('un')]
+ 226 [ 247] CALL      A=16 B=2 C=2
+ 227 [ 247] CONCAT    A=13 B=13 C=16
+ 228 [ 247] CALL      A=11 B=3 C=1
+ 229 [ 248] LOADBOOL  A=11 B=1 C=0
+ 230 [ 248] LOADK     R12 = K61 ('OK')
+ 231 [ 248] RETURN    A=11 B=3 C=0
+ 232 [ 249] RETURN    A=0 B=1 C=0
+
+FUNCTION main/15 params 0 vararg 0 stack 13 lines 252 300 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('fn', 3, 148), ('f', 12, 148), ('fh', 28, 148), ('k', 48, 148), ('v', 83, 148), ('r', 83, 148)]
+K0 'PKEYS'
+K1 'ETXTB2.fm2m'
+K2 'dbg'
+K3 'G.fm'
+K4 'k1c '
+K5 'fsCheck'
+K6 'k1n '
+K7 'fm'
+K8 '_o4'
+K9 'io'
+K10 'open'
+K11 'k1o '
+K12 'read'
+K13 256
+K14 ''
+K15 'close'
+K16 'string'
+K17 'gsub'
+K18 '%s+'
+K19 'sub'
+K20 1
+K21 6
+K22 'FM2M2-'
+K23 'k1v '
+K24 'v2'
+K25 'G.fm.v1'
+K26 'k1f '
+K27 'tostring'
+K28 'd'
+K29 'ETXTB2'
+K30 'k1p '
+K31 'AI'
+K32 'ui'
+K33 'b'
+K34 'un'
+K35 'c'
+K36 'rid'
+K37 None
+K38 'licenceDetail'
+K39 'licenceVersion'
+K40 'sxx'
+K41 True
+K42 'pgg'
+K43 'k1ok '
+K44 ' / '
+K45 'OK'
+   1 [ 253] GETTABUP  R0 = UP0[K0('PKEYS')]
+   2 [ 253] LOADK     R1 = K1 ('ETXTB2.fm2m')
+   3 [ 253] CONCAT    A=0 B=0 C=1
+   4 [ 254] GETTABUP  R1 = UP0[K2('dbg')]
+   5 [ 254] LOADK     R2 = K3 ('G.fm')
+   6 [ 254] LOADK     R3 = K4 ('k1c ')
+   7 [ 254] MOVE      A=4 B=0 C=0
+   8 [ 254] CONCAT    A=3 B=3 C=4
+   9 [ 254] CALL      A=1 B=3 C=1
+  10 [ 255] GETTABUP  R1 = UP0[K5('fsCheck')]
+  11 [ 255] MOVE      A=2 B=0 C=0
+  12 [ 255] CALL      A=1 B=2 C=2
+  13 [ 256] TEST      A=1 B=0 C=1
+  14 [ 256] JMP       A=0 ->25
+  15 [ 257] GETTABUP  R2 = UP0[K2('dbg')]
+  16 [ 257] LOADK     R3 = K3 ('G.fm')
+  17 [ 257] LOADK     R4 = K6 ('k1n ')
+  18 [ 257] MOVE      A=5 B=0 C=0
+  19 [ 257] CONCAT    A=4 B=4 C=5
+  20 [ 257] CALL      A=2 B=3 C=1
+  21 [ 258] GETTABUP  R2 = UP0[K7('fm')]
+  22 [ 258] GETTABLE  R2 = R2[K8('_o4')]
+  23 [ 258] TAILCALL  A=2 B=1 C=0
+  24 [ 258] RETURN    A=2 B=0 C=0
+  25 [ 261] GETTABUP  R2 = UP1[K9('io')]
+  26 [ 261] GETTABLE  R2 = R2[K10('open')]
+  27 [ 261] MOVE      A=3 B=0 C=0
+  28 [ 261] CALL      A=2 B=2 C=2
+  29 [ 262] TEST      A=2 B=0 C=1
+  30 [ 262] JMP       A=0 ->41
+  31 [ 263] GETTABUP  R3 = UP0[K2('dbg')]
+  32 [ 263] LOADK     R4 = K3 ('G.fm')
+  33 [ 263] LOADK     R5 = K11 ('k1o ')
+  34 [ 263] MOVE      A=6 B=0 C=0
+  35 [ 263] CONCAT    A=5 B=5 C=6
+  36 [ 263] CALL      A=3 B=3 C=1
+  37 [ 264] GETTABUP  R3 = UP0[K7('fm')]
+  38 [ 264] GETTABLE  R3 = R3[K8('_o4')]
+  39 [ 264] TAILCALL  A=3 B=1 C=0
+  40 [ 264] RETURN    A=3 B=0 C=0
+  41 [ 267] GETTABUP  R3 = UP1[K9('io')]
+  42 [ 267] GETTABLE  R3 = R3[K12('read')]
+  43 [ 267] MOVE      A=4 B=2 C=0
+  44 [ 267] LOADK     R5 = K13 (256)
+  45 [ 267] CALL      A=3 B=3 C=2
+  46 [ 267] TEST      A=3 B=0 C=1
+  47 [ 267] JMP       A=0 ->49
+  48 [ 267] LOADK     R3 = K14 ('')
+  49 [ 268] GETTABUP  R4 = UP1[K9('io')]
+  50 [ 268] GETTABLE  R4 = R4[K15('close')]
+  51 [ 268] MOVE      A=5 B=2 C=0
+  52 [ 268] CALL      A=4 B=2 C=1
+  53 [ 269] GETTABUP  R4 = UP1[K16('string')]
+  54 [ 269] GETTABLE  R4 = R4[K17('gsub')]
+  55 [ 269] MOVE      A=5 B=3 C=0
+  56 [ 269] LOADK     R6 = K18 ('%s+')
+  57 [ 269] LOADK     R7 = K14 ('')
+  58 [ 269] CALL      A=4 B=4 C=2
+  59 [ 269] MOVE      A=3 B=4 C=0
+  60 [ 271] EQ        A=1 R3, K14(''); skip-next if condition != A
+  61 [ 271] JMP       A=0 ->70
+  62 [ 271] GETTABUP  R4 = UP1[K16('string')]
+  63 [ 271] GETTABLE  R4 = R4[K19('sub')]
+  64 [ 271] MOVE      A=5 B=3 C=0
+  65 [ 271] LOADK     R6 = K20 (1)
+  66 [ 271] LOADK     R7 = K21 (6)
+  67 [ 271] CALL      A=4 B=4 C=2
+  68 [ 271] EQ        A=1 R4, K22('FM2M2-'); skip-next if condition != A
+  69 [ 271] JMP       A=0 ->80
+  70 [ 272] GETTABUP  R4 = UP0[K2('dbg')]
+  71 [ 272] LOADK     R5 = K3 ('G.fm')
+  72 [ 272] LOADK     R6 = K23 ('k1v ')
+  73 [ 272] MOVE      A=7 B=0 C=0
+  74 [ 272] CONCAT    A=6 B=6 C=7
+  75 [ 272] CALL      A=4 B=3 C=1
+  76 [ 273] GETTABUP  R4 = UP0[K7('fm')]
+  77 [ 273] GETTABLE  R4 = R4[K8('_o4')]
+  78 [ 273] TAILCALL  A=4 B=1 C=0
+  79 [ 273] RETURN    A=4 B=0 C=0
+  80 [ 276] GETTABUP  R4 = UP0[K7('fm')]
+  81 [ 276] GETTABLE  R4 = R4[K24('v2')]
+  82 [ 276] MOVE      A=5 B=3 C=0
+  83 [ 276] CALL      A=4 B=2 C=3
+  84 [ 277] TEST      A=4 B=0 C=1
+  85 [ 277] JMP       A=0 ->98
+  86 [ 278] GETTABUP  R6 = UP0[K2('dbg')]
+  87 [ 278] LOADK     R7 = K25 ('G.fm.v1')
+  88 [ 278] LOADK     R8 = K26 ('k1f ')
+  89 [ 278] GETTABUP  R9 = UP1[K27('tostring')]
+  90 [ 278] MOVE      A=10 B=5 C=0
+  91 [ 278] CALL      A=9 B=2 C=2
+  92 [ 278] CONCAT    A=8 B=8 C=9
+  93 [ 278] CALL      A=6 B=3 C=1
+  94 [ 279] GETTABUP  R6 = UP0[K7('fm')]
+  95 [ 279] GETTABLE  R6 = R6[K8('_o4')]
+  96 [ 279] TAILCALL  A=6 B=1 C=0
+  97 [ 279] RETURN    A=6 B=0 C=0
+  98 [ 282] GETTABLE  R6 = R5[K28('d')]
+  99 [ 282] EQ        A=1 R6, K29('ETXTB2'); skip-next if condition != A
+ 100 [ 282] JMP       A=0 ->113
+ 101 [ 283] GETTABUP  R6 = UP0[K2('dbg')]
+ 102 [ 283] LOADK     R7 = K3 ('G.fm')
+ 103 [ 283] LOADK     R8 = K30 ('k1p ')
+ 104 [ 283] GETTABUP  R9 = UP1[K27('tostring')]
+ 105 [ 283] GETTABLE  R10 = R5[K28('d')]
+ 106 [ 283] CALL      A=9 B=2 C=2
+ 107 [ 283] CONCAT    A=8 B=8 C=9
+ 108 [ 283] CALL      A=6 B=3 C=1
+ 109 [ 284] GETTABUP  R6 = UP0[K7('fm')]
+ 110 [ 284] GETTABLE  R6 = R6[K8('_o4')]
+ 111 [ 284] TAILCALL  A=6 B=1 C=0
+ 112 [ 284] RETURN    A=6 B=0 C=0
+ 113 [ 287] GETTABUP  R6 = UP2[K31('AI')]
+ 114 [ 287] GETTABLE  R7 = R5[K33('b')]
+ 115 [ 287] SETTABLE  R6[K32('ui')] = R7
+ 116 [ 288] GETTABUP  R6 = UP2[K31('AI')]
+ 117 [ 288] GETTABLE  R7 = R5[K35('c')]
+ 118 [ 288] SETTABLE  R6[K34('un')] = R7
+ 119 [ 289] GETTABUP  R6 = UP2[K31('AI')]
+ 120 [ 289] SETTABLE  R6[K36('rid')] = K37(None)
+ 121 [ 290] GETTABUP  R6 = UP2[K31('AI')]
+ 122 [ 290] GETTABLE  R7 = R5[K33('b')]
+ 123 [ 290] SETTABLE  R6[K38('licenceDetail')] = R7
+ 124 [ 291] GETTABUP  R6 = UP2[K31('AI')]
+ 125 [ 291] SETTABLE  R6[K39('licenceVersion')] = K24('v2')
+ 126 [ 295] GETTABUP  R6 = UP0[K7('fm')]
+ 127 [ 295] SETTABLE  R6[K40('sxx')] = K41(True)
+ 128 [ 296] GETTABUP  R6 = UP0[K7('fm')]
+ 129 [ 296] SETTABLE  R6[K42('pgg')] = K41(True)
+ 130 [ 298] GETTABUP  R6 = UP0[K2('dbg')]
+ 131 [ 298] LOADK     R7 = K3 ('G.fm')
+ 132 [ 298] LOADK     R8 = K43 ('k1ok ')
+ 133 [ 298] GETTABUP  R9 = UP1[K27('tostring')]
+ 134 [ 298] GETTABUP  R10 = UP2[K31('AI')]
+ 135 [ 298] GETTABLE  R10 = R10[K32('ui')]
+ 136 [ 298] CALL      A=9 B=2 C=2
+ 137 [ 298] LOADK     R10 = K44 (' / ')
+ 138 [ 298] GETTABUP  R11 = UP1[K27('tostring')]
+ 139 [ 298] GETTABUP  R12 = UP2[K31('AI')]
+ 140 [ 298] GETTABLE  R12 = R12[K34('un')]
+ 141 [ 298] CALL      A=11 B=2 C=2
+ 142 [ 298] CONCAT    A=8 B=8 C=11
+ 143 [ 298] CALL      A=6 B=3 C=1
+ 144 [ 299] LOADBOOL  A=6 B=1 C=0
+ 145 [ 299] LOADK     R7 = K45 ('OK')
+ 146 [ 299] MOVE      A=8 B=5 C=0
+ 147 [ 299] RETURN    A=6 B=4 C=0
+ 148 [ 300] RETURN    A=0 B=1 C=0
+
+FUNCTION main/16 params 1 vararg 0 stack 8 lines 302 308 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('tbl', 0, 17), ('out', 1, 17), ('(for index)', 4, 11), ('(for limit)', 4, 11), ('(for step)', 4, 11), ('i', 5, 10)]
+K0 1
+K1 'string'
+K2 'char'
+K3 'table'
+K4 'concat'
+   1 [ 303] NEWTABLE  A=1 B=0 C=0
+   2 [ 304] LOADK     R2 = K0 (1)
+   3 [ 304] LEN       A=3 B=0 C=0
+   4 [ 304] LOADK     R4 = K0 (1)
+   5 [ 304] FORPREP   A=2 ->11
+   6 [ 305] GETTABUP  R6 = UP0[K1('string')]
+   7 [ 305] GETTABLE  R6 = R6[K2('char')]
+   8 [ 305] GETTABLE  R7 = R0[R5]
+   9 [ 305] CALL      A=6 B=2 C=2
+  10 [ 305] SETTABLE  R1[R5] = R6
+  11 [ 304] FORLOOP   A=2 ->6
+  12 [ 307] GETTABUP  R2 = UP0[K3('table')]
+  13 [ 307] GETTABLE  R2 = R2[K4('concat')]
+  14 [ 307] MOVE      A=3 B=1 C=0
+  15 [ 307] TAILCALL  A=2 B=2 C=0
+  16 [ 307] RETURN    A=2 B=0 C=0
+  17 [ 308] RETURN    A=0 B=1 C=0
+
+FUNCTION main/17 params 2 vararg 0 stack 9 lines 310 316 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('tbl', 0, 19), ('_k', 0, 19), ('out', 1, 19), ('(for index)', 4, 13), ('(for limit)', 4, 13), ('(for step)', 4, 13), ('i', 5, 12)]
+K0 1
+K1 'string'
+K2 'char'
+K3 255
+K4 'table'
+K5 'concat'
+   1 [ 311] NEWTABLE  A=2 B=0 C=0
+   2 [ 312] LOADK     R3 = K0 (1)
+   3 [ 312] LEN       A=4 B=0 C=0
+   4 [ 312] LOADK     R5 = K0 (1)
+   5 [ 312] FORPREP   A=3 ->13
+   6 [ 313] GETTABUP  R7 = UP0[K1('string')]
+   7 [ 313] GETTABLE  R7 = R7[K2('char')]
+   8 [ 313] GETTABLE  R8 = R0[R6]
+   9 [ 313] BXOR      A=8 B=8 C=1
+  10 [ 313] BAND      A=8 B=8 C=259
+  11 [ 313] CALL      A=7 B=2 C=2
+  12 [ 313] SETTABLE  R2[R6] = R7
+  13 [ 312] FORLOOP   A=3 ->6
+  14 [ 315] GETTABUP  R3 = UP0[K4('table')]
+  15 [ 315] GETTABLE  R3 = R3[K5('concat')]
+  16 [ 315] MOVE      A=4 B=2 C=0
+  17 [ 315] TAILCALL  A=3 B=2 C=0
+  18 [ 315] RETURN    A=3 B=0 C=0
+  19 [ 316] RETURN    A=0 B=1 C=0
+
+FUNCTION main/18 params 2 vararg 0 stack 9 lines 322 332 source None
+UPVALUES []
+LOCALS [('a', 0, 15), ('b', 0, 15), ('a0', 1, 15), ('a1', 3, 15), ('b0', 4, 15), ('b1', 6, 15), ('lo', 7, 15), ('mid', 11, 15)]
+K0 65535
+K1 16
+   1 [ 323] BAND      A=2 B=0 C=256
+   2 [ 324] SHR       A=3 B=0 C=257
+   3 [ 324] BAND      A=3 B=3 C=256
+   4 [ 325] BAND      A=4 B=1 C=256
+   5 [ 326] SHR       A=5 B=1 C=257
+   6 [ 326] BAND      A=5 B=5 C=256
+   7 [ 328] MUL       A=6 B=2 C=4
+   8 [ 329] MUL       A=7 B=3 C=4
+   9 [ 329] MUL       A=8 B=2 C=5
+  10 [ 329] ADD       A=7 B=7 C=8
+  11 [ 329] BAND      A=7 B=7 C=256
+  12 [ 331] SHL       A=8 B=7 C=257
+  13 [ 331] ADD       A=8 B=6 C=8
+  14 [ 331] RETURN    A=8 B=2 C=0
+  15 [ 332] RETURN    A=0 B=1 C=0
+
+FUNCTION main/19 params 1 vararg 0 stack 10 lines 334 342 source None
+UPVALUES [('_ENV', (0, 0)), ('_u6', (1, 9))]
+LOCALS [('text', 0, 20), ('hash', 1, 20), ('prime', 2, 20), ('(for index)', 5, 18), ('(for limit)', 5, 18), ('(for step)', 5, 18), ('i', 6, 17)]
+K0 -2128831035
+K1 16777619
+K2 1
+K3 'string'
+K4 'byte'
+   1 [ 335] LOADK     R1 = K0 (-2128831035)
+   2 [ 336] LOADK     R2 = K1 (16777619)
+   3 [ 337] LOADK     R3 = K2 (1)
+   4 [ 337] LEN       A=4 B=0 C=0
+   5 [ 337] LOADK     R5 = K2 (1)
+   6 [ 337] FORPREP   A=3 ->18
+   7 [ 338] GETTABUP  R7 = UP0[K3('string')]
+   8 [ 338] GETTABLE  R7 = R7[K4('byte')]
+   9 [ 338] MOVE      A=8 B=0 C=0
+  10 [ 338] MOVE      A=9 B=6 C=0
+  11 [ 338] CALL      A=7 B=3 C=2
+  12 [ 338] BXOR      A=1 B=1 C=7
+  13 [ 339] GETUPVAL  A=7 B=1 C=0
+  14 [ 339] MOVE      A=8 B=1 C=0
+  15 [ 339] MOVE      A=9 B=2 C=0
+  16 [ 339] CALL      A=7 B=3 C=2
+  17 [ 339] MOVE      A=1 B=7 C=0
+  18 [ 337] FORLOOP   A=3 ->7
+  19 [ 341] RETURN    A=1 B=2 C=0
+  20 [ 342] RETURN    A=0 B=1 C=0
+
+FUNCTION main/20 params 1 vararg 0 stack 9 lines 344 348 source None
+UPVALUES [('_x9', (1, 6)), ('_h2', (1, 10)), ('_ENV', (0, 0))]
+LOCALS [('_v', 0, 20), ('_s', 4, 20), ('h', 7, 20)]
+K0 '|'
+K1 'string'
+K2 'format'
+K3 '%02X%02X%02X%02X'
+K4 24
+K5 255
+K6 16
+K7 8
+   1 [ 345] MOVE      A=1 B=0 C=0
+   2 [ 345] LOADK     R2 = K0 ('|')
+   3 [ 345] GETUPVAL  A=3 B=0 C=0
+   4 [ 345] CONCAT    A=1 B=1 C=3
+   5 [ 346] GETUPVAL  A=2 B=1 C=0
+   6 [ 346] MOVE      A=3 B=1 C=0
+   7 [ 346] CALL      A=2 B=2 C=2
+   8 [ 347] GETTABUP  R3 = UP2[K1('string')]
+   9 [ 347] GETTABLE  R3 = R3[K2('format')]
+  10 [ 347] LOADK     R4 = K3 ('%02X%02X%02X%02X')
+  11 [ 347] SHR       A=5 B=2 C=260
+  12 [ 347] BAND      A=5 B=5 C=261
+  13 [ 347] SHR       A=6 B=2 C=262
+  14 [ 347] BAND      A=6 B=6 C=261
+  15 [ 347] SHR       A=7 B=2 C=263
+  16 [ 347] BAND      A=7 B=7 C=261
+  17 [ 347] BAND      A=8 B=2 C=261
+  18 [ 347] TAILCALL  A=3 B=6 C=0
+  19 [ 347] RETURN    A=3 B=0 C=0
+  20 [ 348] RETURN    A=0 B=1 C=0
+
+FUNCTION main/21 params 2 vararg 0 stack 12 lines 350 364 source None
+UPVALUES []
+LOCALS [('_bt', 0, 28), ('shift', 0, 28), ('n', 1, 28), ('s', 5, 28), ('out', 9, 28), ('head', 10, 28), ('(for index)', 13, 18), ('(for limit)', 13, 18), ('(for step)', 13, 18), ('i', 14, 17), ('(for index)', 21, 26), ('(for limit)', 21, 26), ('(for step)', 21, 26), ('i', 22, 25)]
+K0 0
+K1 1
+   1 [ 351] LEN       A=2 B=0 C=0
+   2 [ 352] EQ        A=0 R2, K0(0); skip-next if condition != A
+   3 [ 352] JMP       A=0 ->5
+   4 [ 352] RETURN    A=0 B=2 C=0
+   5 [ 353] MOD       A=3 B=1 C=2
+   6 [ 354] EQ        A=0 R3, K0(0); skip-next if condition != A
+   7 [ 354] JMP       A=0 ->9
+   8 [ 354] RETURN    A=0 B=2 C=0
+   9 [ 355] NEWTABLE  A=4 B=0 C=0
+  10 [ 356] SUB       A=5 B=2 C=3
+  11 [ 357] LOADK     R6 = K1 (1)
+  12 [ 357] MOVE      A=7 B=3 C=0
+  13 [ 357] LOADK     R8 = K1 (1)
+  14 [ 357] FORPREP   A=6 ->18
+  15 [ 358] ADD       A=10 B=5 C=9
+  16 [ 358] GETTABLE  R10 = R0[R10]
+  17 [ 358] SETTABLE  R4[R9] = R10
+  18 [ 357] FORLOOP   A=6 ->15
+  19 [ 360] LOADK     R6 = K1 (1)
+  20 [ 360] MOVE      A=7 B=5 C=0
+  21 [ 360] LOADK     R8 = K1 (1)
+  22 [ 360] FORPREP   A=6 ->26
+  23 [ 361] ADD       A=10 B=3 C=9
+  24 [ 361] GETTABLE  R11 = R0[R9]
+  25 [ 361] SETTABLE  R4[R10] = R11
+  26 [ 360] FORLOOP   A=6 ->23
+  27 [ 363] RETURN    A=4 B=2 C=0
+  28 [ 364] RETURN    A=0 B=1 C=0
+
+FUNCTION main/22 params 1 vararg 0 stack 21 lines 366 420 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('data', 0, 136), ('chars', 1, 136), ('map', 2, 136), ('(for index)', 5, 14), ('(for limit)', 5, 14), ('(for step)', 5, 14), ('i', 6, 13), ('s', 20, 136), ('out', 36, 136), ('o', 37, 136), ('(for index)', 40, 119), ('(for limit)', 40, 119), ('(for step)', 40, 119), ('i', 41, 118), ('c1', 46, 118), ('c2', 51, 118), ('c3', 56, 118), ('c4', 61, 118), ('v1', 66, 118), ('v2', 67, 118), ('b1', 77, 118), ('v3', 88, 118), ('b2', 97, 118), ('v4', 108, 118), ('b3', 116, 118), ('chars_out', 120, 136), ('(for index)', 123, 130), ('(for limit)', 123, 130), ('(for step)', 123, 130), ('i', 124, 129)]
+K0 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+K1 1
+K2 'string'
+K3 'byte'
+K4 'gsub'
+K5 '-'
+K6 '+'
+K7 '_'
+K8 '/'
+K9 4
+K10 0
+K11 '='
+K12 2
+K13 3
+K14 None
+K15 255
+K16 15
+K17 6
+K18 'char'
+K19 'table'
+K20 'concat'
+   1 [ 367] LOADK     R1 = K0 ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/')
+   2 [ 368] NEWTABLE  A=2 B=0 C=0
+   3 [ 369] LOADK     R3 = K1 (1)
+   4 [ 369] LEN       A=4 B=1 C=0
+   5 [ 369] LOADK     R5 = K1 (1)
+   6 [ 369] FORPREP   A=3 ->14
+   7 [ 370] GETTABUP  R7 = UP0[K2('string')]
+   8 [ 370] GETTABLE  R7 = R7[K3('byte')]
+   9 [ 370] MOVE      A=8 B=1 C=0
+  10 [ 370] MOVE      A=9 B=6 C=0
+  11 [ 370] CALL      A=7 B=3 C=2
+  12 [ 370] SUB       A=8 B=6 C=257
+  13 [ 370] SETTABLE  R2[R7] = R8
+  14 [ 369] FORLOOP   A=3 ->7
+  15 [ 373] GETTABUP  R3 = UP0[K2('string')]
+  16 [ 373] GETTABLE  R3 = R3[K4('gsub')]
+  17 [ 373] MOVE      A=4 B=0 C=0
+  18 [ 373] LOADK     R5 = K5 ('-')
+  19 [ 373] LOADK     R6 = K6 ('+')
+  20 [ 373] CALL      A=3 B=4 C=2
+  21 [ 374] GETTABUP  R4 = UP0[K2('string')]
+  22 [ 374] GETTABLE  R4 = R4[K4('gsub')]
+  23 [ 374] MOVE      A=5 B=3 C=0
+  24 [ 374] LOADK     R6 = K7 ('_')
+  25 [ 374] LOADK     R7 = K8 ('/')
+  26 [ 374] CALL      A=4 B=4 C=2
+  27 [ 374] MOVE      A=3 B=4 C=0
+  28 [ 375] LEN       A=4 B=3 C=0
+  29 [ 375] MOD       A=4 B=4 C=265
+  30 [ 375] EQ        A=1 R4, K10(0); skip-next if condition != A
+  31 [ 375] JMP       A=0 ->36
+  32 [ 376] MOVE      A=4 B=3 C=0
+  33 [ 376] LOADK     R5 = K11 ('=')
+  34 [ 376] CONCAT    A=3 B=4 C=5
+  35 [ 376] JMP       A=0 ->28
+  36 [ 379] NEWTABLE  A=4 B=0 C=0
+  37 [ 380] LOADK     R5 = K1 (1)
+  38 [ 382] LOADK     R6 = K1 (1)
+  39 [ 382] LEN       A=7 B=3 C=0
+  40 [ 382] LOADK     R8 = K9 (4)
+  41 [ 382] FORPREP   A=6 ->119
+  42 [ 383] GETTABUP  R10 = UP0[K2('string')]
+  43 [ 383] GETTABLE  R10 = R10[K3('byte')]
+  44 [ 383] MOVE      A=11 B=3 C=0
+  45 [ 383] MOVE      A=12 B=9 C=0
+  46 [ 383] CALL      A=10 B=3 C=2
+  47 [ 384] GETTABUP  R11 = UP0[K2('string')]
+  48 [ 384] GETTABLE  R11 = R11[K3('byte')]
+  49 [ 384] MOVE      A=12 B=3 C=0
+  50 [ 384] ADD       A=13 B=9 C=257
+  51 [ 384] CALL      A=11 B=3 C=2
+  52 [ 385] GETTABUP  R12 = UP0[K2('string')]
+  53 [ 385] GETTABLE  R12 = R12[K3('byte')]
+  54 [ 385] MOVE      A=13 B=3 C=0
+  55 [ 385] ADD       A=14 B=9 C=268
+  56 [ 385] CALL      A=12 B=3 C=2
+  57 [ 386] GETTABUP  R13 = UP0[K2('string')]
+  58 [ 386] GETTABLE  R13 = R13[K3('byte')]
+  59 [ 386] MOVE      A=14 B=3 C=0
+  60 [ 386] ADD       A=15 B=9 C=269
+  61 [ 386] CALL      A=13 B=3 C=2
+  62 [ 388] EQ        A=1 R10, K14(None); skip-next if condition != A
+  63 [ 388] JMP       A=0 ->120
+  64 [ 388] EQ        A=1 R11, K14(None); skip-next if condition != A
+  65 [ 388] JMP       A=0 ->120
+  66 [ 390] GETTABLE  R14 = R2[R10]
+  67 [ 391] GETTABLE  R15 = R2[R11]
+  68 [ 392] EQ        A=1 R14, K14(None); skip-next if condition != A
+  69 [ 392] JMP       A=0 ->72
+  70 [ 392] EQ        A=0 R15, K14(None); skip-next if condition != A
+  71 [ 392] JMP       A=0 ->74
+  72 [ 392] LOADNIL   A=16 B=0 C=0
+  73 [ 392] RETURN    A=16 B=2 C=0
+  74 [ 394] SHL       A=16 B=14 C=268
+  75 [ 394] SHR       A=17 B=15 C=265
+  76 [ 394] BOR       A=16 B=16 C=17
+  77 [ 394] BAND      A=16 B=16 C=271
+  78 [ 395] SETTABLE  R4[R5] = R16
+  79 [ 396] ADD       A=5 B=5 C=257
+  80 [ 398] EQ        A=1 R12, K14(None); skip-next if condition != A
+  81 [ 398] JMP       A=0 ->119
+  82 [ 398] GETTABUP  R17 = UP0[K2('string')]
+  83 [ 398] GETTABLE  R17 = R17[K3('byte')]
+  84 [ 398] LOADK     R18 = K11 ('=')
+  85 [ 398] CALL      A=17 B=2 C=2
+  86 [ 398] EQ        A=1 R12, R17; skip-next if condition != A
+  87 [ 398] JMP       A=0 ->119
+  88 [ 399] GETTABLE  R17 = R2[R12]
+  89 [ 400] EQ        A=0 R17, K14(None); skip-next if condition != A
+  90 [ 400] JMP       A=0 ->93
+  91 [ 400] LOADNIL   A=18 B=0 C=0
+  92 [ 400] RETURN    A=18 B=2 C=0
+  93 [ 401] BAND      A=18 B=15 C=272
+  94 [ 401] SHL       A=18 B=18 C=265
+  95 [ 401] SHR       A=19 B=17 C=268
+  96 [ 401] BOR       A=18 B=18 C=19
+  97 [ 401] BAND      A=18 B=18 C=271
+  98 [ 402] SETTABLE  R4[R5] = R18
+  99 [ 403] ADD       A=5 B=5 C=257
+ 100 [ 405] EQ        A=1 R13, K14(None); skip-next if condition != A
+ 101 [ 405] JMP       A=0 ->119
+ 102 [ 405] GETTABUP  R19 = UP0[K2('string')]
+ 103 [ 405] GETTABLE  R19 = R19[K3('byte')]
+ 104 [ 405] LOADK     R20 = K11 ('=')
+ 105 [ 405] CALL      A=19 B=2 C=2
+ 106 [ 405] EQ        A=1 R13, R19; skip-next if condition != A
+ 107 [ 405] JMP       A=0 ->119
+ 108 [ 406] GETTABLE  R19 = R2[R13]
+ 109 [ 407] EQ        A=0 R19, K14(None); skip-next if condition != A
+ 110 [ 407] JMP       A=0 ->113
+ 111 [ 407] LOADNIL   A=20 B=0 C=0
+ 112 [ 407] RETURN    A=20 B=2 C=0
+ 113 [ 408] BAND      A=20 B=17 C=269
+ 114 [ 408] SHL       A=20 B=20 C=273
+ 115 [ 408] BOR       A=20 B=20 C=19
+ 116 [ 408] BAND      A=20 B=20 C=271
+ 117 [ 409] SETTABLE  R4[R5] = R20
+ 118 [ 410] ADD       A=5 B=5 C=257
+ 119 [ 382] FORLOOP   A=6 ->42
+ 120 [ 415] NEWTABLE  A=6 B=0 C=0
+ 121 [ 416] LOADK     R7 = K1 (1)
+ 122 [ 416] LEN       A=8 B=4 C=0
+ 123 [ 416] LOADK     R9 = K1 (1)
+ 124 [ 416] FORPREP   A=7 ->130
+ 125 [ 417] GETTABUP  R11 = UP0[K2('string')]
+ 126 [ 417] GETTABLE  R11 = R11[K18('char')]
+ 127 [ 417] GETTABLE  R12 = R4[R10]
+ 128 [ 417] CALL      A=11 B=2 C=2
+ 129 [ 417] SETTABLE  R6[R10] = R11
+ 130 [ 416] FORLOOP   A=7 ->125
+ 131 [ 419] GETTABUP  R7 = UP0[K19('table')]
+ 132 [ 419] GETTABLE  R7 = R7[K20('concat')]
+ 133 [ 419] MOVE      A=8 B=6 C=0
+ 134 [ 419] TAILCALL  A=7 B=2 C=0
+ 135 [ 419] RETURN    A=7 B=0 C=0
+ 136 [ 420] RETURN    A=0 B=1 C=0
+
+FUNCTION main/23 params 2 vararg 0 stack 11 lines 422 435 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('s', 0, 33), ('sep', 0, 33), ('out', 1, 33), ('start', 2, 33), ('p1', 9, 30), ('p2', 9, 30)]
+K0 1
+K1 'string'
+K2 'find'
+K3 'sub'
+   1 [ 423] NEWTABLE  A=2 B=0 C=0
+   2 [ 424] LOADK     R3 = K0 (1)
+   3 [ 426] GETTABUP  R4 = UP0[K1('string')]
+   4 [ 426] GETTABLE  R4 = R4[K2('find')]
+   5 [ 426] MOVE      A=5 B=0 C=0
+   6 [ 426] MOVE      A=6 B=1 C=0
+   7 [ 426] MOVE      A=7 B=3 C=0
+   8 [ 426] LOADBOOL  A=8 B=1 C=0
+   9 [ 426] CALL      A=4 B=5 C=3
+  10 [ 427] TEST      A=4 B=0 C=1
+  11 [ 427] JMP       A=0 ->21
+  12 [ 428] LEN       A=6 B=2 C=0
+  13 [ 428] ADD       A=6 B=6 C=256
+  14 [ 428] GETTABUP  R7 = UP0[K1('string')]
+  15 [ 428] GETTABLE  R7 = R7[K3('sub')]
+  16 [ 428] MOVE      A=8 B=0 C=0
+  17 [ 428] MOVE      A=9 B=3 C=0
+  18 [ 428] CALL      A=7 B=3 C=2
+  19 [ 428] SETTABLE  R2[R6] = R7
+  20 [ 428] JMP       A=0 ->32
+  21 [ 431] LEN       A=6 B=2 C=0
+  22 [ 431] ADD       A=6 B=6 C=256
+  23 [ 431] GETTABUP  R7 = UP0[K1('string')]
+  24 [ 431] GETTABLE  R7 = R7[K3('sub')]
+  25 [ 431] MOVE      A=8 B=0 C=0
+  26 [ 431] MOVE      A=9 B=3 C=0
+  27 [ 431] SUB       A=10 B=4 C=256
+  28 [ 431] CALL      A=7 B=4 C=2
+  29 [ 431] SETTABLE  R2[R6] = R7
+  30 [ 432] ADD       A=3 B=5 C=256
+  31 [ 432] JMP       A=0 ->3
+  32 [ 434] RETURN    A=2 B=2 C=0
+  33 [ 435] RETURN    A=0 B=1 C=0
+
+FUNCTION main/24 params 1 vararg 0 stack 13 lines 437 469 source None
+UPVALUES [('_t6', (1, 13)), ('_ENV', (0, 0)), ('_d4', (1, 12)), ('_h2', (1, 10)), ('_r4', (1, 7)), ('_u6', (1, 9))]
+LOCALS [('tkn', 0, 75), ('_dd', 3, 75), ('_bt', 9, 75), ('(for index)', 12, 20), ('(for limit)', 12, 20), ('(for step)', 12, 20), ('i', 13, 19), ('_rv', 21, 75), ('(for index)', 24, 30), ('(for limit)', 24, 30), ('(for step)', 24, 30), ('i', 25, 29), ('shift', 34, 75), ('sd', 42, 75), ('(for index)', 45, 58), ('(for limit)', 45, 58), ('(for step)', 45, 58), ('i', 46, 57), ('k', 53, 57), ('chars', 59, 75), ('(for index)', 62, 69), ('(for limit)', 62, 69), ('(for step)', 62, 69), ('i', 63, 68)]
+K0 'e03'
+K1 1
+K2 'string'
+K3 'byte'
+K4 -1
+K5 13
+K6 5
+K7 1664525
+K8 1013904223
+K9 24
+K10 255
+K11 'char'
+K12 'table'
+K13 'concat'
+   1 [ 438] GETUPVAL  A=1 B=0 C=0
+   2 [ 438] MOVE      A=2 B=0 C=0
+   3 [ 438] CALL      A=1 B=2 C=2
+   4 [ 439] TEST      A=1 B=0 C=1
+   5 [ 439] JMP       A=0 ->9
+   6 [ 440] LOADNIL   A=2 B=0 C=0
+   7 [ 440] LOADK     R3 = K0 ('e03')
+   8 [ 440] RETURN    A=2 B=3 C=0
+   9 [ 443] NEWTABLE  A=2 B=0 C=0
+  10 [ 444] LOADK     R3 = K1 (1)
+  11 [ 444] LEN       A=4 B=1 C=0
+  12 [ 444] LOADK     R5 = K1 (1)
+  13 [ 444] FORPREP   A=3 ->20
+  14 [ 445] GETTABUP  R7 = UP1[K2('string')]
+  15 [ 445] GETTABLE  R7 = R7[K3('byte')]
+  16 [ 445] MOVE      A=8 B=1 C=0
+  17 [ 445] MOVE      A=9 B=6 C=0
+  18 [ 445] CALL      A=7 B=3 C=2
+  19 [ 445] SETTABLE  R2[R6] = R7
+  20 [ 444] FORLOOP   A=3 ->14
+  21 [ 448] NEWTABLE  A=3 B=0 C=0
+  22 [ 449] LEN       A=4 B=2 C=0
+  23 [ 449] LOADK     R5 = K1 (1)
+  24 [ 449] LOADK     R6 = K4 (-1)
+  25 [ 449] FORPREP   A=4 ->30
+  26 [ 450] LEN       A=8 B=3 C=0
+  27 [ 450] ADD       A=8 B=8 C=257
+  28 [ 450] GETTABLE  R9 = R2[R7]
+  29 [ 450] SETTABLE  R3[R8] = R9
+  30 [ 449] FORLOOP   A=4 ->26
+  31 [ 452] MOVE      A=2 B=3 C=0
+  32 [ 454] LEN       A=4 B=2 C=0
+  33 [ 454] MOD       A=4 B=4 C=261
+  34 [ 454] ADD       A=4 B=4 C=262
+  35 [ 455] GETUPVAL  A=5 B=2 C=0
+  36 [ 455] MOVE      A=6 B=2 C=0
+  37 [ 455] MOVE      A=7 B=4 C=0
+  38 [ 455] CALL      A=5 B=3 C=2
+  39 [ 455] MOVE      A=2 B=5 C=0
+  40 [ 457] GETUPVAL  A=5 B=3 C=0
+  41 [ 457] GETUPVAL  A=6 B=4 C=0
+  42 [ 457] CALL      A=5 B=2 C=2
+  43 [ 458] LOADK     R6 = K1 (1)
+  44 [ 458] LEN       A=7 B=2 C=0
+  45 [ 458] LOADK     R8 = K1 (1)
+  46 [ 458] FORPREP   A=6 ->58
+  47 [ 459] GETUPVAL  A=10 B=5 C=0
+  48 [ 459] MOVE      A=11 B=5 C=0
+  49 [ 459] LOADK     R12 = K7 (1664525)
+  50 [ 459] CALL      A=10 B=3 C=2
+  51 [ 459] ADD       A=5 B=10 C=264
+  52 [ 460] SHR       A=10 B=5 C=265
+  53 [ 460] BAND      A=10 B=10 C=266
+  54 [ 461] GETTABLE  R11 = R2[R9]
+  55 [ 461] BXOR      A=11 B=11 C=10
+  56 [ 461] BAND      A=11 B=11 C=266
+  57 [ 461] SETTABLE  R2[R9] = R11
+  58 [ 458] FORLOOP   A=6 ->47
+  59 [ 464] NEWTABLE  A=6 B=0 C=0
+  60 [ 465] LOADK     R7 = K1 (1)
+  61 [ 465] LEN       A=8 B=2 C=0
+  62 [ 465] LOADK     R9 = K1 (1)
+  63 [ 465] FORPREP   A=7 ->69
+  64 [ 466] GETTABUP  R11 = UP1[K2('string')]
+  65 [ 466] GETTABLE  R11 = R11[K11('char')]
+  66 [ 466] GETTABLE  R12 = R2[R10]
+  67 [ 466] CALL      A=11 B=2 C=2
+  68 [ 466] SETTABLE  R6[R10] = R11
+  69 [ 465] FORLOOP   A=7 ->64
+  70 [ 468] GETTABUP  R7 = UP1[K12('table')]
+  71 [ 468] GETTABLE  R7 = R7[K13('concat')]
+  72 [ 468] MOVE      A=8 B=6 C=0
+  73 [ 468] TAILCALL  A=7 B=2 C=0
+  74 [ 468] RETURN    A=7 B=0 C=0
+  75 [ 469] RETURN    A=0 B=1 C=0
+
+FUNCTION main/25 params 1 vararg 0 stack 16 lines 471 531 source None
+UPVALUES [('_ENV', (0, 0)), ('_zt', (1, 8)), ('_w1', (1, 15)), ('_g5', (1, 14)), ('_m7', (1, 11))]
+LOCALS [('_k', 0, 162), ('_a0', 28, 162), ('_a1', 31, 162), ('_a2', 31, 162), ('_a3', 40, 162), ('_b0', 47, 162), ('_b1', 54, 162), ('_b2', 55, 162), ('_b3', 56, 162), ('(for index)', 117, 133), ('(for limit)', 117, 133), ('(for step)', 117, 133), ('i', 118, 132), ('b', 123, 132), ('_c1', 146, 162), ('_c2', 149, 162)]
+K0 'type'
+K1 'string'
+K2 'e01'
+K3 'sub'
+K4 1
+K5 'e02'
+K6 '|'
+K7 4
+K8 'e04'
+K9 'upper'
+K10 2
+K11 ''
+K12 3
+K13 8
+K14 'match'
+K15 '^[0-9A-F]+$'
+K16 'e06'
+K17 10
+K18 '^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]+$'
+K19 'e05'
+K20 64
+K21 'byte'
+K22 32
+K23 -1
+K24 'find'
+K25 '  '
+K26 'e07'
+K27 126
+K28 124
+K29 'ETXTB2'
+K30 'ETHTB2'
+K31 'e08'
+K32 'a'
+K33 'b'
+K34 'c'
+K35 'd'
+   1 [ 472] GETTABUP  R1 = UP0[K0('type')]
+   2 [ 472] MOVE      A=2 B=0 C=0
+   3 [ 472] CALL      A=1 B=2 C=2
+   4 [ 472] EQ        A=1 R1, K1('string'); skip-next if condition != A
+   5 [ 472] JMP       A=0 ->9
+   6 [ 473] LOADBOOL  A=1 B=0 C=0
+   7 [ 473] LOADK     R2 = K2 ('e01')
+   8 [ 473] RETURN    A=1 B=3 C=0
+   9 [ 476] GETTABUP  R1 = UP0[K1('string')]
+  10 [ 476] GETTABLE  R1 = R1[K3('sub')]
+  11 [ 476] MOVE      A=2 B=0 C=0
+  12 [ 476] LOADK     R3 = K4 (1)
+  13 [ 476] GETUPVAL  A=4 B=1 C=0
+  14 [ 476] LEN       A=4 B=4 C=0
+  15 [ 476] CALL      A=1 B=4 C=2
+  16 [ 476] GETUPVAL  A=2 B=1 C=0
+  17 [ 476] EQ        A=1 R1, R2; skip-next if condition != A
+  18 [ 476] JMP       A=0 ->22
+  19 [ 477] LOADBOOL  A=1 B=0 C=0
+  20 [ 477] LOADK     R2 = K5 ('e02')
+  21 [ 477] RETURN    A=1 B=3 C=0
+  22 [ 480] GETTABUP  R1 = UP0[K1('string')]
+  23 [ 480] GETTABLE  R1 = R1[K3('sub')]
+  24 [ 480] MOVE      A=2 B=0 C=0
+  25 [ 480] GETUPVAL  A=3 B=1 C=0
+  26 [ 480] LEN       A=3 B=3 C=0
+  27 [ 480] ADD       A=3 B=3 C=260
+  28 [ 480] CALL      A=1 B=3 C=2
+  29 [ 481] GETUPVAL  A=2 B=2 C=0
+  30 [ 481] MOVE      A=3 B=1 C=0
+  31 [ 481] CALL      A=2 B=2 C=3
+  32 [ 482] TEST      A=2 B=0 C=1
+  33 [ 482] JMP       A=0 ->37
+  34 [ 483] LOADBOOL  A=4 B=0 C=0
+  35 [ 483] MOVE      A=5 B=3 C=0
+  36 [ 483] RETURN    A=4 B=3 C=0
+  37 [ 486] GETUPVAL  A=4 B=3 C=0
+  38 [ 486] MOVE      A=5 B=2 C=0
+  39 [ 486] LOADK     R6 = K6 ('|')
+  40 [ 486] CALL      A=4 B=3 C=2
+  41 [ 487] LEN       A=5 B=4 C=0
+  42 [ 487] EQ        A=1 R5, K7(4); skip-next if condition != A
+  43 [ 487] JMP       A=0 ->47
+  44 [ 488] LOADBOOL  A=5 B=0 C=0
+  45 [ 488] LOADK     R6 = K8 ('e04')
+  46 [ 488] RETURN    A=5 B=3 C=0
+  47 [ 491] GETTABLE  R5 = R4[K4(1)]
+  48 [ 492] GETTABUP  R6 = UP0[K1('string')]
+  49 [ 492] GETTABLE  R6 = R6[K9('upper')]
+  50 [ 492] GETTABLE  R7 = R4[K10(2)]
+  51 [ 492] TEST      A=7 B=0 C=1
+  52 [ 492] JMP       A=0 ->54
+  53 [ 492] LOADK     R7 = K11 ('')
+  54 [ 492] CALL      A=6 B=2 C=2
+  55 [ 493] GETTABLE  R7 = R4[K12(3)]
+  56 [ 494] GETTABLE  R8 = R4[K7(4)]
+  57 [ 496] LEN       A=9 B=5 C=0
+  58 [ 496] EQ        A=0 R9, K13(8); skip-next if condition != A
+  59 [ 496] JMP       A=0 ->67
+  60 [ 496] GETTABUP  R9 = UP0[K1('string')]
+  61 [ 496] GETTABLE  R9 = R9[K14('match')]
+  62 [ 496] MOVE      A=10 B=5 C=0
+  63 [ 496] LOADK     R11 = K15 ('^[0-9A-F]+$')
+  64 [ 496] CALL      A=9 B=3 C=2
+  65 [ 496] TEST      A=9 B=0 C=1
+  66 [ 496] JMP       A=0 ->70
+  67 [ 497] LOADBOOL  A=9 B=0 C=0
+  68 [ 497] LOADK     R10 = K16 ('e06')
+  69 [ 497] RETURN    A=9 B=3 C=0
+  70 [ 500] LEN       A=9 B=6 C=0
+  71 [ 500] EQ        A=0 R9, K17(10); skip-next if condition != A
+  72 [ 500] JMP       A=0 ->80
+  73 [ 500] GETTABUP  R9 = UP0[K1('string')]
+  74 [ 500] GETTABLE  R9 = R9[K14('match')]
+  75 [ 500] MOVE      A=10 B=6 C=0
+  76 [ 500] LOADK     R11 = K18 ('^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]+$')
+  77 [ 500] CALL      A=9 B=3 C=2
+  78 [ 500] TEST      A=9 B=0 C=1
+  79 [ 500] JMP       A=0 ->83
+  80 [ 501] LOADBOOL  A=9 B=0 C=0
+  81 [ 501] LOADK     R10 = K19 ('e05')
+  82 [ 501] RETURN    A=9 B=3 C=0
+  83 [ 504] LEN       A=9 B=7 C=0
+  84 [ 504] LT        A=1 R9, K4(1); skip-next if condition != A
+  85 [ 504] JMP       A=0 ->112
+  86 [ 504] LEN       A=9 B=7 C=0
+  87 [ 504] LT        A=1 K20(64), R9; skip-next if condition != A
+  88 [ 504] JMP       A=0 ->112
+  89 [ 504] GETTABUP  R9 = UP0[K1('string')]
+  90 [ 504] GETTABLE  R9 = R9[K21('byte')]
+  91 [ 504] MOVE      A=10 B=7 C=0
+  92 [ 504] LOADK     R11 = K4 (1)
+  93 [ 504] CALL      A=9 B=3 C=2
+  94 [ 504] EQ        A=1 R9, K22(32); skip-next if condition != A
+  95 [ 504] JMP       A=0 ->112
+  96 [ 505] GETTABUP  R9 = UP0[K1('string')]
+  97 [ 505] GETTABLE  R9 = R9[K21('byte')]
+  98 [ 505] MOVE      A=10 B=7 C=0
+  99 [ 505] LOADK     R11 = K23 (-1)
+ 100 [ 505] CALL      A=9 B=3 C=2
+ 101 [ 505] EQ        A=1 R9, K22(32); skip-next if condition != A
+ 102 [ 505] JMP       A=0 ->112
+ 103 [ 505] GETTABUP  R9 = UP0[K1('string')]
+ 104 [ 505] GETTABLE  R9 = R9[K24('find')]
+ 105 [ 505] MOVE      A=10 B=7 C=0
+ 106 [ 505] LOADK     R11 = K25 ('  ')
+ 107 [ 505] LOADK     R12 = K4 (1)
+ 108 [ 505] LOADBOOL  A=13 B=1 C=0
+ 109 [ 505] CALL      A=9 B=5 C=2
+ 110 [ 505] TEST      A=9 B=0 C=0
+ 111 [ 505] JMP       A=0 ->115
+ 112 [ 506] LOADBOOL  A=9 B=0 C=0
+ 113 [ 506] LOADK     R10 = K26 ('e07')
+ 114 [ 506] RETURN    A=9 B=3 C=0
+ 115 [ 508] LOADK     R9 = K4 (1)
+ 116 [ 508] LEN       A=10 B=7 C=0
+ 117 [ 508] LOADK     R11 = K4 (1)
+ 118 [ 508] FORPREP   A=9 ->133
+ 119 [ 509] GETTABUP  R13 = UP0[K1('string')]
+ 120 [ 509] GETTABLE  R13 = R13[K21('byte')]
+ 121 [ 509] MOVE      A=14 B=7 C=0
+ 122 [ 509] MOVE      A=15 B=12 C=0
+ 123 [ 509] CALL      A=13 B=3 C=2
+ 124 [ 510] LT        A=1 R13, K22(32); skip-next if condition != A
+ 125 [ 510] JMP       A=0 ->130
+ 126 [ 510] LT        A=1 K27(126), R13; skip-next if condition != A
+ 127 [ 510] JMP       A=0 ->130
+ 128 [ 510] EQ        A=0 R13, K28(124); skip-next if condition != A
+ 129 [ 510] JMP       A=0 ->133
+ 130 [ 511] LOADBOOL  A=14 B=0 C=0
+ 131 [ 511] LOADK     R15 = K26 ('e07')
+ 132 [ 511] RETURN    A=14 B=3 C=0
+ 133 [ 508] FORLOOP   A=9 ->119
+ 134 [ 515] EQ        A=1 R8, K29('ETXTB2'); skip-next if condition != A
+ 135 [ 515] JMP       A=0 ->141
+ 136 [ 515] EQ        A=1 R8, K30('ETHTB2'); skip-next if condition != A
+ 137 [ 515] JMP       A=0 ->141
+ 138 [ 516] LOADBOOL  A=9 B=0 C=0
+ 139 [ 516] LOADK     R10 = K31 ('e08')
+ 140 [ 516] RETURN    A=9 B=3 C=0
+ 141 [ 519] MOVE      A=9 B=6 C=0
+ 142 [ 519] LOADK     R10 = K6 ('|')
+ 143 [ 519] MOVE      A=11 B=7 C=0
+ 144 [ 519] LOADK     R12 = K6 ('|')
+ 145 [ 519] MOVE      A=13 B=8 C=0
+ 146 [ 519] CONCAT    A=9 B=9 C=13
+ 147 [ 520] GETUPVAL  A=10 B=4 C=0
+ 148 [ 520] MOVE      A=11 B=9 C=0
+ 149 [ 520] CALL      A=10 B=2 C=2
+ 150 [ 521] EQ        A=1 R5, R10; skip-next if condition != A
+ 151 [ 521] JMP       A=0 ->155
+ 152 [ 522] LOADBOOL  A=11 B=0 C=0
+ 153 [ 522] LOADK     R12 = K16 ('e06')
+ 154 [ 522] RETURN    A=11 B=3 C=0
+ 155 [ 525] LOADBOOL  A=11 B=1 C=0
+ 156 [ 525] NEWTABLE  A=12 B=0 C=4
+ 157 [ 526] SETTABLE  R12[K32('a')] = R5
+ 158 [ 527] SETTABLE  R12[K33('b')] = R6
+ 159 [ 528] SETTABLE  R12[K34('c')] = R7
+ 160 [ 529] SETTABLE  R12[K35('d')] = R8
+ 161 [ 530] RETURN    A=11 B=3 C=0
+ 162 [ 531] RETURN    A=0 B=1 C=0
+
+FUNCTION main/26 params 2 vararg 0 stack 15 lines 560 579 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('t', 0, 82), ('cvn', 0, 82), ('del', 14, 81), ('wc', 34, 81), ('(for generator)', 47, 81), ('(for state)', 47, 81), ('(for control)', 47, 81), ('vn', 48, 79), ('v', 48, 79), ('(for generator)', 75, 79), ('(for state)', 75, 79), ('(for control)', 75, 79), ('k', 76, 77)]
+K0 'string'
+K1 'sub'
+K2 1
+K3 '+'
+K4 2
+K5 -1
+K6 '*'
+K7 -2
+K8 'pairs'
+K9 0
+K10 None
+K11 'type'
+K12 'table'
+   1 [ 561] TEST      A=0 B=0 C=0
+   2 [ 561] JMP       A=0 ->82
+   3 [ 562] GETTABUP  R2 = UP0[K0('string')]
+   4 [ 562] GETTABLE  R2 = R2[K1('sub')]
+   5 [ 562] MOVE      A=3 B=1 C=0
+   6 [ 562] LOADK     R4 = K2 (1)
+   7 [ 562] LOADK     R5 = K2 (1)
+   8 [ 562] CALL      A=2 B=4 C=2
+   9 [ 562] EQ        A=1 R2, K3('+'); skip-next if condition != A
+  10 [ 562] JMP       A=0 ->14
+  11 [ 562] LOADBOOL  A=2 B=1 C=0
+  12 [ 562] TEST      A=2 B=0 C=1
+  13 [ 562] JMP       A=0 ->15
+  14 [ 562] LOADBOOL  A=2 B=0 C=0
+  15 [ 563] GETTABUP  R3 = UP0[K0('string')]
+  16 [ 563] GETTABLE  R3 = R3[K1('sub')]
+  17 [ 563] MOVE      A=4 B=1 C=0
+  18 [ 563] TEST      A=2 B=0 C=0
+  19 [ 563] JMP       A=0 ->23
+  20 [ 563] LOADK     R5 = K2 (1)
+  21 [ 563] TEST      A=5 B=0 C=1
+  22 [ 563] JMP       A=0 ->24
+  23 [ 563] LOADK     R5 = K4 (2)
+  24 [ 563] CALL      A=3 B=3 C=2
+  25 [ 563] MOVE      A=1 B=3 C=0
+  26 [ 564] GETTABUP  R3 = UP0[K0('string')]
+  27 [ 564] GETTABLE  R3 = R3[K1('sub')]
+  28 [ 564] MOVE      A=4 B=1 C=0
+  29 [ 564] LOADK     R5 = K5 (-1)
+  30 [ 564] CALL      A=3 B=3 C=2
+  31 [ 564] EQ        A=1 R3, K6('*'); skip-next if condition != A
+  32 [ 564] JMP       A=0 ->34
+  33 [ 564] LOADBOOL  A=3 B=0 C=1
+  34 [ 564] LOADBOOL  A=3 B=1 C=0
+  35 [ 565] TEST      A=3 B=0 C=0
+  36 [ 565] JMP       A=0 ->45
+  37 [ 565] GETTABUP  R4 = UP0[K0('string')]
+  38 [ 565] GETTABLE  R4 = R4[K1('sub')]
+  39 [ 565] MOVE      A=5 B=1 C=0
+  40 [ 565] LOADK     R6 = K2 (1)
+  41 [ 565] LOADK     R7 = K7 (-2)
+  42 [ 565] CALL      A=4 B=4 C=2
+  43 [ 565] TESTSET   A=1 B=4 C=1
+  44 [ 565] JMP       A=0 ->45
+  45 [ 567] GETTABUP  R4 = UP0[K8('pairs')]
+  46 [ 567] MOVE      A=5 B=0 C=0
+  47 [ 567] CALL      A=4 B=2 C=4
+  48 [ 567] JMP       A=0 ->80
+  49 [ 568] TEST      A=3 B=0 C=0
+  50 [ 568] JMP       A=0 ->62
+  51 [ 568] LEN       A=9 B=1 C=0
+  52 [ 568] EQ        A=1 R9, K9(0); skip-next if condition != A
+  53 [ 568] JMP       A=0 ->64
+  54 [ 568] GETTABUP  R9 = UP0[K0('string')]
+  55 [ 568] GETTABLE  R9 = R9[K1('sub')]
+  56 [ 568] MOVE      A=10 B=7 C=0
+  57 [ 568] LOADK     R11 = K2 (1)
+  58 [ 568] LEN       A=12 B=1 C=0
+  59 [ 568] CALL      A=9 B=4 C=2
+  60 [ 568] EQ        A=1 R1, R9; skip-next if condition != A
+  61 [ 568] JMP       A=0 ->64
+  62 [ 568] EQ        A=0 R1, R7; skip-next if condition != A
+  63 [ 568] JMP       A=0 ->80
+  64 [ 569] TEST      A=2 B=0 C=0
+  65 [ 569] JMP       A=0 ->68
+  66 [ 570] SETTABLE  R0[R7] = K10(None)
+  67 [ 570] JMP       A=0 ->80
+  68 [ 571] GETTABUP  R9 = UP0[K11('type')]
+  69 [ 571] MOVE      A=10 B=8 C=0
+  70 [ 571] CALL      A=9 B=2 C=2
+  71 [ 571] EQ        A=0 R9, K12('table'); skip-next if condition != A
+  72 [ 571] JMP       A=0 ->80
+  73 [ 572] GETTABUP  R9 = UP0[K8('pairs')]
+  74 [ 572] MOVE      A=10 B=8 C=0
+  75 [ 572] CALL      A=9 B=2 C=4
+  76 [ 572] JMP       A=0 ->78
+  77 [ 573] SETTABLE  R8[R12] = K10(None)
+  78 [ 572] TFORCALL  A=9 B=0 C=1
+  79 [ 572] TFORLOOP  A=11 ->77
+  80 [ 567] TFORCALL  A=4 B=0 C=2
+  81 [ 567] TFORLOOP  A=6 ->49
+  82 [ 579] RETURN    A=0 B=1 C=0
+
+FUNCTION main/27 params 5 vararg 0 stack 6 lines 582 597 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('vN', 0, 52), ('m', 0, 52), ('x', 0, 52), ('l', 0, 52), ('z', 0, 52), ('rv', 50, 52)]
+K0 0
+K1 1
+K2 'math'
+K3 'huge'
+   1 [ 584] TEST      A=0 B=0 C=1
+   2 [ 584] JMP       A=0 ->9
+   3 [ 584] TEST      A=4 B=0 C=0
+   4 [ 584] JMP       A=0 ->8
+   5 [ 584] LOADK     R5 = K0 (0)
+   6 [ 584] TESTSET   A=0 B=5 C=1
+   7 [ 584] JMP       A=0 ->9
+   8 [ 584] LOADK     R0 = K1 (1)
+   9 [ 586] TEST      A=1 B=0 C=1
+  10 [ 586] JMP       A=0 ->17
+  11 [ 586] TEST      A=4 B=0 C=0
+  12 [ 586] JMP       A=0 ->16
+  13 [ 586] LOADK     R5 = K0 (0)
+  14 [ 586] TESTSET   A=1 B=5 C=1
+  15 [ 586] JMP       A=0 ->17
+  16 [ 586] LOADK     R1 = K1 (1)
+  17 [ 588] TEST      A=2 B=0 C=1
+  18 [ 588] JMP       A=0 ->21
+  19 [ 588] GETTABUP  R5 = UP0[K2('math')]
+  20 [ 588] GETTABLE  R2 = R5[K3('huge')]
+  21 [ 590] TEST      A=3 B=0 C=1
+  22 [ 590] JMP       A=0 ->24
+  23 [ 590] LOADBOOL  A=3 B=0 C=0
+  24 [ 592] TEST      A=4 B=0 C=1
+  25 [ 592] JMP       A=0 ->27
+  26 [ 592] LOADBOOL  A=4 B=0 C=0
+  27 [ 594] LT        A=0 R2, R0; skip-next if condition != A
+  28 [ 594] JMP       A=0 ->39
+  29 [ 594] TEST      A=3 B=0 C=0
+  30 [ 594] JMP       A=0 ->37
+  31 [ 594] LT        A=0 R2, R0; skip-next if condition != A
+  32 [ 594] JMP       A=0 ->35
+  33 [ 594] TESTSET   A=5 B=1 C=1
+  34 [ 594] JMP       A=0 ->51
+  35 [ 594] TESTSET   A=5 B=0 C=1
+  36 [ 594] JMP       A=0 ->51
+  37 [ 594] TESTSET   A=5 B=2 C=1
+  38 [ 594] JMP       A=0 ->51
+  39 [ 594] LT        A=0 R0, R1; skip-next if condition != A
+  40 [ 594] JMP       A=0 ->50
+  41 [ 594] TEST      A=3 B=0 C=0
+  42 [ 594] JMP       A=0 ->48
+  43 [ 594] SUB       A=5 B=0 C=1
+  44 [ 594] ADD       A=5 B=5 C=257
+  45 [ 594] ADD       A=5 B=2 C=5
+  46 [ 594] TEST      A=5 B=0 C=1
+  47 [ 594] JMP       A=0 ->51
+  48 [ 594] TESTSET   A=5 B=1 C=1
+  49 [ 594] JMP       A=0 ->51
+  50 [ 594] MOVE      A=5 B=0 C=0
+  51 [ 596] RETURN    A=5 B=2 C=0
+  52 [ 597] RETURN    A=0 B=1 C=0
+
+FUNCTION main/28 params 2 vararg 0 stack 5 lines 599 602 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('num', 0, 12), ('dec', 0, 12), ('m', 4, 12)]
+K0 0
+K1 10
+K2 'math'
+K3 'floor'
+K4 0.5
+   1 [ 600] TESTSET   A=2 B=1 C=1
+   2 [ 600] JMP       A=0 ->4
+   3 [ 600] LOADK     R2 = K0 (0)
+   4 [ 600] POW       A=2 B=257 C=2
+   5 [ 601] GETTABUP  R3 = UP0[K2('math')]
+   6 [ 601] GETTABLE  R3 = R3[K3('floor')]
+   7 [ 601] MUL       A=4 B=0 C=2
+   8 [ 601] ADD       A=4 B=4 C=260
+   9 [ 601] CALL      A=3 B=2 C=2
+  10 [ 601] DIV       A=3 B=3 C=2
+  11 [ 601] RETURN    A=3 B=2 C=0
+  12 [ 602] RETURN    A=0 B=1 C=0
+
+FUNCTION main/29 params 3 vararg 0 stack 12 lines 604 616 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('str', 0, 32), ('ss', 0, 32), ('fid', 0, 32), ('t', 16, 32), ('i', 16, 32), ('sp', 20, 32), ('(for generator)', 25, 30), ('(for state)', 25, 30), ('(for control)', 25, 30), ('s', 26, 28)]
+K0 'dbg'
+K1 'G.split'
+K2 'missing str or ss'
+K3 1
+K4 '([^'
+K5 ']+)'
+K6 'string'
+K7 'gmatch'
+   1 [ 605] TEST      A=0 B=0 C=0
+   2 [ 605] JMP       A=0 ->5
+   3 [ 605] TEST      A=1 B=0 C=1
+   4 [ 605] JMP       A=0 ->13
+   5 [ 606] GETTABUP  R3 = UP0[K0('dbg')]
+   6 [ 606] LOADK     R4 = K1 ('G.split')
+   7 [ 606] LOADK     R5 = K2 ('missing str or ss')
+   8 [ 606] MOVE      A=6 B=0 C=0
+   9 [ 606] MOVE      A=7 B=1 C=0
+  10 [ 606] CALL      A=3 B=5 C=1
+  11 [ 607] NEWTABLE  A=3 B=0 C=0
+  12 [ 607] RETURN    A=3 B=2 C=0
+  13 [ 609] NEWTABLE  A=3 B=0 C=0
+  14 [ 609] TESTSET   A=4 B=2 C=1
+  15 [ 609] JMP       A=0 ->17
+  16 [ 609] LOADK     R4 = K3 (1)
+  17 [ 610] LOADK     R5 = K4 ('([^')
+  18 [ 610] MOVE      A=6 B=1 C=0
+  19 [ 610] LOADK     R7 = K5 (']+)')
+  20 [ 610] CONCAT    A=5 B=5 C=7
+  21 [ 611] GETTABUP  R6 = UP1[K6('string')]
+  22 [ 611] GETTABLE  R6 = R6[K7('gmatch')]
+  23 [ 611] MOVE      A=7 B=0 C=0
+  24 [ 611] MOVE      A=8 B=5 C=0
+  25 [ 611] CALL      A=6 B=3 C=4
+  26 [ 611] JMP       A=0 ->29
+  27 [ 612] SETTABLE  R3[R4] = R9
+  28 [ 613] ADD       A=4 B=4 C=259
+  29 [ 611] TFORCALL  A=6 B=0 C=1
+  30 [ 611] TFORLOOP  A=8 ->27
+  31 [ 615] RETURN    A=3 B=2 C=0
+  32 [ 616] RETURN    A=0 B=1 C=0
+
+FUNCTION main/30 params 2 vararg 0 stack 7 lines 618 621 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('str', 0, 16), ('ss', 0, 16), ('i', 8, 16)]
+K0 'string'
+K1 'match'
+K2 '.*'
+K3 '()'
+K4 None
+K5 1
+   1 [ 619] GETTABUP  R2 = UP0[K0('string')]
+   2 [ 619] GETTABLE  R2 = R2[K1('match')]
+   3 [ 619] MOVE      A=3 B=0 C=0
+   4 [ 619] LOADK     R4 = K2 ('.*')
+   5 [ 619] MOVE      A=5 B=1 C=0
+   6 [ 619] LOADK     R6 = K3 ('()')
+   7 [ 619] CONCAT    A=4 B=4 C=6
+   8 [ 619] CALL      A=2 B=3 C=2
+   9 [ 620] EQ        A=0 R2, K4(None); skip-next if condition != A
+  10 [ 620] JMP       A=0 ->14
+  11 [ 620] LOADNIL   A=3 B=0 C=0
+  12 [ 620] RETURN    A=3 B=2 C=0
+  13 [ 620] JMP       A=0 ->16
+  14 [ 620] SUB       A=3 B=2 C=261
+  15 [ 620] RETURN    A=3 B=2 C=0
+  16 [ 621] RETURN    A=0 B=1 C=0
+
+FUNCTION main/31 params 2 vararg 0 stack 7 lines 625 628 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('n', 0, 21), ('bytes', 0, 21), ('d', 6, 21)]
+K0 2
+K1 'string'
+K2 'format'
+K3 '%0'
+K4 'X'
+K5 'nil'
+   1 [ 626] TEST      A=1 B=0 C=0
+   2 [ 626] JMP       A=0 ->6
+   3 [ 626] MUL       A=2 B=1 C=256
+   4 [ 626] TEST      A=2 B=0 C=1
+   5 [ 626] JMP       A=0 ->7
+   6 [ 626] LOADK     R2 = K0 (2)
+   7 [ 627] TEST      A=0 B=0 C=0
+   8 [ 627] JMP       A=0 ->19
+   9 [ 627] GETTABUP  R3 = UP0[K1('string')]
+  10 [ 627] GETTABLE  R3 = R3[K2('format')]
+  11 [ 627] LOADK     R4 = K3 ('%0')
+  12 [ 627] MOVE      A=5 B=2 C=0
+  13 [ 627] LOADK     R6 = K4 ('X')
+  14 [ 627] CONCAT    A=4 B=4 C=6
+  15 [ 627] MOVE      A=5 B=0 C=0
+  16 [ 627] CALL      A=3 B=3 C=2
+  17 [ 627] TEST      A=3 B=0 C=1
+  18 [ 627] JMP       A=0 ->20
+  19 [ 627] LOADK     R3 = K5 ('nil')
+  20 [ 627] RETURN    A=3 B=2 C=0
+  21 [ 628] RETURN    A=0 B=1 C=0
+
+FUNCTION main/32 params 1 vararg 0 stack 2 lines 633 633 source None
+UPVALUES []
+LOCALS [('a', 0, 3)]
+   1 [ 633] BNOT      A=1 B=0 C=0
+   2 [ 633] RETURN    A=1 B=2 C=0
+   3 [ 633] RETURN    A=0 B=1 C=0
+
+FUNCTION main/33 params 2 vararg 0 stack 3 lines 635 635 source None
+UPVALUES []
+LOCALS [('a', 0, 3), ('b', 0, 3)]
+   1 [ 635] BAND      A=2 B=0 C=1
+   2 [ 635] RETURN    A=2 B=2 C=0
+   3 [ 635] RETURN    A=0 B=1 C=0
+
+FUNCTION main/34 params 2 vararg 0 stack 3 lines 637 637 source None
+UPVALUES []
+LOCALS [('a', 0, 3), ('b', 0, 3)]
+   1 [ 637] BOR       A=2 B=0 C=1
+   2 [ 637] RETURN    A=2 B=2 C=0
+   3 [ 637] RETURN    A=0 B=1 C=0
+
+FUNCTION main/35 params 2 vararg 0 stack 3 lines 639 639 source None
+UPVALUES []
+LOCALS [('a', 0, 3), ('b', 0, 3)]
+   1 [ 639] BXOR      A=2 B=0 C=1
+   2 [ 639] RETURN    A=2 B=2 C=0
+   3 [ 639] RETURN    A=0 B=1 C=0
+
+FUNCTION main/36 params 2 vararg 0 stack 3 lines 641 641 source None
+UPVALUES []
+LOCALS [('a', 0, 3), ('b', 0, 3)]
+   1 [ 641] SHL       A=2 B=0 C=1
+   2 [ 641] RETURN    A=2 B=2 C=0
+   3 [ 641] RETURN    A=0 B=1 C=0
+
+FUNCTION main/37 params 2 vararg 0 stack 3 lines 643 643 source None
+UPVALUES []
+LOCALS [('a', 0, 3), ('b', 0, 3)]
+   1 [ 643] SHR       A=2 B=0 C=1
+   2 [ 643] RETURN    A=2 B=2 C=0
+   3 [ 643] RETURN    A=0 B=1 C=0
+
+FUNCTION main/38 params 3 vararg 0 stack 5 lines 645 649 source None
+UPVALUES []
+LOCALS [('a', 0, 9), ('bitStart', 0, 9), ('bitLen', 0, 9), ('mask', 5, 9)]
+K0 1
+K1 2
+   1 [ 646] TEST      A=2 B=0 C=1
+   2 [ 646] JMP       A=0 ->4
+   3 [ 646] LOADK     R2 = K0 (1)
+   4 [ 647] POW       A=3 B=257 C=2
+   5 [ 647] SUB       A=3 B=3 C=256
+   6 [ 648] SHR       A=4 B=0 C=1
+   7 [ 648] BAND      A=4 B=4 C=3
+   8 [ 648] RETURN    A=4 B=2 C=0
+   9 [ 649] RETURN    A=0 B=1 C=0
+
+FUNCTION main/39 params 2 vararg 0 stack 3 lines 651 651 source None
+UPVALUES []
+LOCALS [('a', 0, 7), ('mask', 0, 7)]
+K0 0
+   1 [ 651] BAND      A=2 B=0 C=1
+   2 [ 651] EQ        A=0 R2, K0(0); skip-next if condition != A
+   3 [ 651] JMP       A=0 ->5
+   4 [ 651] LOADBOOL  A=2 B=0 C=1
+   5 [ 651] LOADBOOL  A=2 B=1 C=0
+   6 [ 651] RETURN    A=2 B=2 C=0
+   7 [ 651] RETURN    A=0 B=1 C=0
+
+FUNCTION main/40 params 2 vararg 0 stack 3 lines 653 653 source None
+UPVALUES []
+LOCALS [('a', 0, 8), ('bitNo', 0, 8)]
+K0 2
+K1 0
+   1 [ 653] POW       A=2 B=256 C=1
+   2 [ 653] BAND      A=2 B=0 C=2
+   3 [ 653] EQ        A=0 R2, K1(0); skip-next if condition != A
+   4 [ 653] JMP       A=0 ->6
+   5 [ 653] LOADBOOL  A=2 B=0 C=1
+   6 [ 653] LOADBOOL  A=2 B=1 C=0
+   7 [ 653] RETURN    A=2 B=2 C=0
+   8 [ 653] RETURN    A=0 B=1 C=0
+
+FUNCTION main/41 params 0 vararg 0 stack 14 lines 656 659 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('d', 2, 36)]
+K0 'getDateTime'
+K1 'year'
+K2 '-'
+K3 'string'
+K4 'format'
+K5 '%02d'
+K6 'mon'
+K7 'day'
+K8 ' '
+K9 'hour'
+K10 ':'
+K11 'min'
+K12 'sec'
+   1 [ 657] GETTABUP  R0 = UP0[K0('getDateTime')]
+   2 [ 657] CALL      A=0 B=1 C=2
+   3 [ 658] GETTABLE  R1 = R0[K1('year')]
+   4 [ 658] LOADK     R2 = K2 ('-')
+   5 [ 658] GETTABUP  R3 = UP0[K3('string')]
+   6 [ 658] GETTABLE  R3 = R3[K4('format')]
+   7 [ 658] LOADK     R4 = K5 ('%02d')
+   8 [ 658] GETTABLE  R5 = R0[K6('mon')]
+   9 [ 658] CALL      A=3 B=3 C=2
+  10 [ 658] LOADK     R4 = K2 ('-')
+  11 [ 658] GETTABUP  R5 = UP0[K3('string')]
+  12 [ 658] GETTABLE  R5 = R5[K4('format')]
+  13 [ 658] LOADK     R6 = K5 ('%02d')
+  14 [ 658] GETTABLE  R7 = R0[K7('day')]
+  15 [ 658] CALL      A=5 B=3 C=2
+  16 [ 658] LOADK     R6 = K8 (' ')
+  17 [ 658] GETTABUP  R7 = UP0[K3('string')]
+  18 [ 658] GETTABLE  R7 = R7[K4('format')]
+  19 [ 658] LOADK     R8 = K5 ('%02d')
+  20 [ 658] GETTABLE  R9 = R0[K9('hour')]
+  21 [ 658] CALL      A=7 B=3 C=2
+  22 [ 658] LOADK     R8 = K10 (':')
+  23 [ 658] GETTABUP  R9 = UP0[K3('string')]
+  24 [ 658] GETTABLE  R9 = R9[K4('format')]
+  25 [ 658] LOADK     R10 = K5 ('%02d')
+  26 [ 658] GETTABLE  R11 = R0[K11('min')]
+  27 [ 658] CALL      A=9 B=3 C=2
+  28 [ 658] LOADK     R10 = K10 (':')
+  29 [ 658] GETTABUP  R11 = UP0[K3('string')]
+  30 [ 658] GETTABLE  R11 = R11[K4('format')]
+  31 [ 658] LOADK     R12 = K5 ('%02d')
+  32 [ 658] GETTABLE  R13 = R0[K12('sec')]
+  33 [ 658] CALL      A=11 B=3 C=2
+  34 [ 658] CONCAT    A=1 B=1 C=11
+  35 [ 658] RETURN    A=1 B=2 C=0
+  36 [ 659] RETURN    A=0 B=1 C=0
+
+FUNCTION main/42 params 0 vararg 0 stack 7 lines 661 664 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('dt', 2, 10)]
+K0 'getDateTime'
+K1 'year'
+K2 'mon'
+K3 'day'
+K4 'hour'
+K5 'min'
+K6 'sec'
+   1 [ 662] GETTABUP  R0 = UP0[K0('getDateTime')]
+   2 [ 662] CALL      A=0 B=1 C=2
+   3 [ 663] GETTABLE  R1 = R0[K1('year')]
+   4 [ 663] GETTABLE  R2 = R0[K2('mon')]
+   5 [ 663] GETTABLE  R3 = R0[K3('day')]
+   6 [ 663] GETTABLE  R4 = R0[K4('hour')]
+   7 [ 663] GETTABLE  R5 = R0[K5('min')]
+   8 [ 663] GETTABLE  R6 = R0[K6('sec')]
+   9 [ 663] RETURN    A=1 B=7 C=0
+  10 [ 664] RETURN    A=0 B=1 C=0
+
+FUNCTION main/43 params 0 vararg 0 stack 12 lines 666 671 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('year', 2, 20), ('month', 2, 20), ('day', 2, 20), ('hour', 2, 20), ('min', 2, 20), ('sec', 2, 20), ('date', 9, 20), ('time', 16, 20)]
+K0 'getDT'
+K1 'string'
+K2 'format'
+K3 '%4d-%02d-%02d'
+K4 '%02d:%02d:%02d'
+   1 [ 667] GETTABUP  R0 = UP0[K0('getDT')]
+   2 [ 667] CALL      A=0 B=1 C=7
+   3 [ 668] GETTABUP  R6 = UP1[K1('string')]
+   4 [ 668] GETTABLE  R6 = R6[K2('format')]
+   5 [ 668] LOADK     R7 = K3 ('%4d-%02d-%02d')
+   6 [ 668] MOVE      A=8 B=0 C=0
+   7 [ 668] MOVE      A=9 B=1 C=0
+   8 [ 668] MOVE      A=10 B=2 C=0
+   9 [ 668] CALL      A=6 B=5 C=2
+  10 [ 669] GETTABUP  R7 = UP1[K1('string')]
+  11 [ 669] GETTABLE  R7 = R7[K2('format')]
+  12 [ 669] LOADK     R8 = K4 ('%02d:%02d:%02d')
+  13 [ 669] MOVE      A=9 B=3 C=0
+  14 [ 669] MOVE      A=10 B=4 C=0
+  15 [ 669] MOVE      A=11 B=5 C=0
+  16 [ 669] CALL      A=7 B=5 C=2
+  17 [ 670] MOVE      A=8 B=6 C=0
+  18 [ 670] MOVE      A=9 B=7 C=0
+  19 [ 670] RETURN    A=8 B=3 C=0
+  20 [ 671] RETURN    A=0 B=1 C=0

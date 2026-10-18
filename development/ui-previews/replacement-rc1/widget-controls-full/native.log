@@ -1,0 +1,682 @@
+(node:84294) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+EXPORT dimensions 480 272
+(node:84294) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:84294) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:84294) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+10ms: <menus> started
+10ms: <timer_queue> started
+10ms: <audio> started
+10ms: edgeTxInit
+10ms: <menus> started
+
+10ms: YAML radio settings reader
+10ms: edgeTxInit
+
+10ms: YAML radio settings reader
+
+10ms: <audio> started
+
+10ms: <timer_queue> started
+
+10ms: luaInitThemesAndWidgets
+10ms: luaInitThemesAndWidgets
+
+10ms: lsWidgets 0x216ba44
+10ms: luaLoadFiles() /WIDGETS
+10ms: lsWidgets 0x216ba44
+
+10ms: luaLoadFiles() /WIDGETS
+
+20ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+20ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+
+30ms: luaLoadWidgetCallback()
+30ms: luaLoadWidgetCallback()
+
+30ms: Loaded Lua widget GaugeRotary
+30ms: Loaded Lua widget GaugeRotary
+
+30ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+30ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+
+30ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+
+30ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget Flights
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget Flights
+
+40ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+40ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+
+40ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+
+40ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: Cels
+init_compare_source: we do not have: Cels
+
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget BattCheck
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget BattCheck
+
+40ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+40ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+
+50ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+
+50ms: Loaded Lua widget Micro Values
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget Micro Values
+
+50ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+50ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+
+50ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+
+50ms: Loaded Lua widget SerialPower
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget SerialPower
+
+50ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+50ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+
+50ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget EventDemo
+50ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+
+50ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+50ms: Loaded Lua widget EventDemo
+
+50ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+
+50ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget AERODECK
+50ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+
+60ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget AERODECK
+
+60ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+
+60ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget Ghost
+60ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget Ghost
+
+60ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+60ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+
+60ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget SoarETX
+60ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+
+60ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget SoarETX
+
+60ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+
+60ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget Timer2
+60ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+
+60ms: luaLoadWidgetCallback()
+
+60ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+60ms: Loaded Lua widget Timer2
+
+60ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+
+60ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget TxGPStest
+60ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+
+60ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget TxGPStest
+
+60ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+
+70ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+
+70ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+
+70ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: VFAS
+init_compare_source: we do not have: RxBt
+
+
+init_compare_source: we do not have: VFAS
+init_compare_source: we do not have: A1
+
+
+init_compare_source: we do not have: RxBt
+init_compare_source: we do not have: A2
+
+
+70ms: luaLoadWidgetCallback()
+init_compare_source: we do not have: A1
+70ms: Loaded Lua widget BattAnalog
+
+
+init_compare_source: we do not have: A2
+
+
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget BattAnalog
+
+70ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+70ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+
+80ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+80ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+
+80ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+80ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+80ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+80ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+80ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+80ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: RQLY
+init_compare_source: we do not have: VFR
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: cels
+init_compare_source: we do not have: RQLY
+init_compare_source: we do not have: RSSI
+
+
+init_compare_source: we do not have: RxBt
+init_compare_source: we do not have: VFR
+80ms: luaLoadWidgetCallback()
+
+
+80ms: Loaded Lua widget Value2
+init_compare_source: we do not have: cell
+
+
+init_compare_source: we do not have: cels
+
+
+init_compare_source: we do not have: RSSI
+
+
+init_compare_source: we do not have: RxBt
+80ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+
+80ms: luaLoadWidgetCallback()
+
+80ms: Loaded Lua widget Value2
+
+80ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+80ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+
+80ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+80ms: luaLoadWidgetCallback()
+80ms: Loaded Lua widget LibGUI
+80ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+
+80ms: luaLoadWidgetCallback()
+
+80ms: Loaded Lua widget LibGUI
+
+80ms: storageReadAll
+80ms: storageReadAll
+
+80ms: YAML radio settings reader
+80ms: YAML radio settings reader
+
+80ms: YAML model reader
+80ms: YAML model reader
+
+90ms: opening directory: /THEMES
+90ms: scanForThemes: open successful
+90ms: opening directory: /THEMES
+
+90ms: scanForThemes: open successful
+
+90ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+90ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+
+90ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+90ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+
+100ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+100ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+
+100ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+100ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+
+120ms: addMainView(0x0x2180940, 0)
+120ms: addMainView(0x0x2180940, 0)
+
+120ms: WidgetFactory::create() setting option 'Low battery'
+120ms: WidgetFactory::create() setting option 'Mid battery'
+120ms: WidgetFactory::create() setting option 'High battery'
+120ms: WidgetFactory::create() setting option 'Low battery'
+
+120ms: WidgetFactory::create() setting option 'Mid battery'
+
+120ms: WidgetFactory::create() setting option 'High battery'
+
+120ms: WidgetFactory::create() setting option 'Color'
+120ms: WidgetFactory::create() setting option 'Color'
+
+120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+
+130ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+QA_DEV_STAGE|controls-full|1|ENV LOAD|0
+130ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|controls-full|1|ENV LOAD|0
+
+
+130ms: luaInit
+130ms: lsScripts 0x218eaa4
+130ms: luaInit
+
+130ms: lsScripts 0x218eaa4
+
+170ms: <mixer> started
+QA_DEV_STAGE|controls-full|2|ENV CHUNK|0
+QA_DEV_STAGE|controls-full|2|ENV CHUNK|0
+
+
+QA_DEV_SYNTHETIC|controls-full|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+QA_DEV_STAGE|controls-full|3|ENV CREATE|7
+QA_DEV_SYNTHETIC|controls-full|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+
+
+QA_DEV_STAGE|controls-full|3|ENV CREATE|7
+
+
+300ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+300ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+300ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+QA_DEV_STAGE|controls-full|4|STORE LOAD|0
+300ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|controls-full|4|STORE LOAD|0
+
+
+QA_DEV_STAGE|controls-full|5|STORE CHUNK|0
+QA_DEV_STAGE|controls-full|5|STORE CHUNK|0
+
+
+QA_DEV_STAGE|controls-full|6|SETTINGS SEED|5
+QA_DEV_STAGE|controls-full|6|SETTINGS SEED|5
+
+
+QA_DEV_STAGE|controls-full|7|BATTERY SEED|3
+QA_DEV_STAGE|controls-full|7|BATTERY SEED|3
+
+
+530ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+530ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+
+530ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+QA_DEV_STAGE|controls-full|8|MSP LOAD|0
+530ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|controls-full|8|MSP LOAD|0
+
+
+QA_DEV_STAGE|controls-full|9|MSP CHUNK|0
+QA_DEV_STAGE|controls-full|9|MSP CHUNK|0
+
+
+QA_DEV_STAGE|controls-full|10|MSP CREATE|17
+QA_DEV_STAGE|controls-full|10|MSP CREATE|17
+
+
+710ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+710ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+
+730ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+QA_DEV_STAGE|controls-full|11|APP LOAD|0
+730ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|controls-full|11|APP LOAD|0
+
+
+QA_DEV_STAGE|controls-full|12|APP CHUNK|53
+QA_DEV_STAGE|controls-full|12|APP CHUNK|53
+
+
+QA_DEV_STAGE|controls-full|13|APP INIT|0
+QA_DEV_STAGE|controls-full|13|APP INIT|0
+
+
+890ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+890ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+
+890ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+890ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+
+940ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+940ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+1060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+1060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+
+1070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+1070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+
+1070ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+1070ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+
+1070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+1070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+
+1070ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+1070ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+
+1080ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+1080ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+
+1120ms: SD card write labels
+1120ms: SD card write labels
+
+1120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+1120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+
+1130ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+1130ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+
+2120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+2120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+
+2120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+2120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+
+2180ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+2180ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+
+2180ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+2180ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+
+2180ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+2180ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+
+2180ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+2180ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+
+2190ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+2190ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+
+2190ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+2190ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+
+2230ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+2230ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+
+2240ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+2240ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+
+2410ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+2410ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+
+2410ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+2410ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+
+2420ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+2420ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+
+2420ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+2420ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+
+2420ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+2420ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+
+2430ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+2430ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+
+2470ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+2470ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+
+2480ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+2480ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+
+SHOT boot 261120
+16010ms: TE_PRESSED
+16010ms: TE_PRESSED
+
+16430ms: LONG PRESS[0x219b270]
+16430ms: LONG PRESS[0x219b270]
+
+17070ms: TE_RELEASED
+17070ms: CLICKED[0x219b270]
+17070ms: TE_RELEASED
+
+17070ms: CLICKED[0x219b270]
+
+17600ms: TE_PRESSED
+17600ms: TE_PRESSED
+
+17720ms: TE_RELEASED
+17720ms: TE_RELEASED
+
+17720ms: enableWidgetSelect(0)
+17720ms: enableWidgetSelect(0)
+
+17730ms: luaOpenBitmap: 0x2332b40 (648)
+17730ms: luaOpenBitmap: 0x2332b40 (648)
+
+17730ms: luaDestroyBitmap: 0x2332b40 (648)
+17730ms: luaDestroyBitmap: 0x2332b40 (648)
+
+17730ms: luaOpenBitmap: 0x2332b40 (648)
+17730ms: luaOpenBitmap: 0x2332b40 (648)
+
+17730ms: luaDestroyBitmap: 0x2332b40 (648)
+17730ms: luaDestroyBitmap: 0x2332b40 (648)
+
+17730ms: luaOpenBitmap: 0x223cf00 (1800)
+17730ms: luaOpenBitmap: 0x223cf00 (1800)
+
+17730ms: luaDestroyBitmap: 0x223cf00 (1800)
+17730ms: luaDestroyBitmap: 0x223cf00 (1800)
+
+17730ms: luaOpenBitmap: 0x222f630 (1800)
+17730ms: luaOpenBitmap: 0x222f630 (1800)
+
+17730ms: luaDestroyBitmap: 0x222f630 (1800)
+17730ms: luaDestroyBitmap: 0x222f630 (1800)
+
+17730ms: luaOpenBitmap: 0x222f630 (1800)
+17730ms: luaOpenBitmap: 0x222f630 (1800)
+
+17730ms: luaDestroyBitmap: 0x222f630 (1800)
+17730ms: luaDestroyBitmap: 0x222f630 (1800)
+
+17730ms: luaOpenBitmap: 0x222f630 (1800)
+17730ms: luaOpenBitmap: 0x222f630 (1800)
+
+17730ms: luaDestroyBitmap: 0x222f630 (1800)
+17730ms: luaDestroyBitmap: 0x222f630 (1800)
+
+17740ms: luaOpenBitmap: 0x223cf00 (1800)
+17740ms: luaOpenBitmap: 0x223cf00 (1800)
+
+17740ms: luaDestroyBitmap: 0x223cf00 (1800)
+17740ms: luaDestroyBitmap: 0x223cf00 (1800)
+
+17740ms: luaOpenBitmap: 0x222f630 (1800)
+17740ms: luaOpenBitmap: 0x222f630 (1800)
+
+17740ms: luaDestroyBitmap: 0x222f630 (1800)
+17740ms: luaDestroyBitmap: 0x222f630 (1800)
+
+17740ms: luaOpenBitmap: 0x223cf00 (1800)
+17740ms: luaOpenBitmap: 0x223cf00 (1800)
+
+17740ms: luaDestroyBitmap: 0x223cf00 (1800)
+17740ms: luaDestroyBitmap: 0x223cf00 (1800)
+
+17740ms: luaOpenBitmap: 0x222f630 (648)
+17740ms: luaOpenBitmap: 0x222f630 (648)
+
+17740ms: luaDestroyBitmap: 0x222f630 (648)
+17740ms: luaDestroyBitmap: 0x222f630 (648)
+
+17740ms: luaOpenBitmap: 0x222f630 (648)
+17740ms: luaOpenBitmap: 0x222f630 (648)
+
+17740ms: luaDestroyBitmap: 0x222f630 (648)
+17740ms: luaDestroyBitmap: 0x222f630 (648)
+
+17740ms: luaOpenBitmap: 0x222f630 (648)
+17740ms: luaOpenBitmap: 0x222f630 (648)
+
+QA_WIDGET_FRAME flight
+19740ms: TE_PRESSED
+19740ms: EVT_TOUCH_FIRST [230,233]
+19740ms: TE_PRESSED
+
+19740ms: EVT_TOUCH_FIRST [230,233]
+
+19850ms: TE_RELEASED
+19850ms: CLICKED[0x219b270]
+19850ms: TE_RELEASED
+
+19850ms: CLICKED[0x219b270]
+
+19850ms: luaDestroyBitmap: 0x222f630 (648)
+19850ms: luaDestroyBitmap: 0x222f630 (648)
+
+19860ms: luaOpenBitmap: 0x231b0d0 (648)
+19860ms: luaOpenBitmap: 0x231b0d0 (648)
+
+19860ms: luaDestroyBitmap: 0x231b0d0 (648)
+19860ms: luaDestroyBitmap: 0x231b0d0 (648)
+
+19860ms: luaOpenBitmap: 0x231b0d0 (648)
+19860ms: luaOpenBitmap: 0x231b0d0 (648)
+
+QA_WIDGET_FRAME inputs
+QA_LCD_PUMP {"intervalMs":16,"frames":341,"elapsedMs":20098,"continuousDirtyCopyThenAck":true,"screenshotExtraAck":false}

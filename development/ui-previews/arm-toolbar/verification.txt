@@ -1,0 +1,7 @@
+PASS: exact 0a02146c0e4293d3f257d9cc0e4303c67d74c79de74553f049c2040c7339a139 native widget visual, route and cold start verification.
+
+Home selects Flight. The first toolbar icon opens Arm Info, shows active selection and turns orange for the active GPS flag. Arm Info and Radio Inputs tabs have explicit labels. Physical ENTER selects the visible Radio Inputs focus, opens it, and RTN returns to Arm Info. A stale earlier Data→Arm caller does not change the Home→Inputs→Arm→RTN destination.
+
+The removed footer Arm button leaves readable status space. Link warnings fill all 480 px, and touching their right edge opens Link details. No overlap, white mask box, CPU or script error was observed in three cold native widget starts.
+
+All telemetry is synthetic in EdgeTX 3.0 WASM. Physical EdgeTX 2.12.4 remains unverified.

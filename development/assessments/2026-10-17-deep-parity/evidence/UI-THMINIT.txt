@@ -1,0 +1,151 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/THMINIT.luac 
+SHA256 aa2eaa69f8d9c42503bbd8282f5ee8a66cf6cf9cb80d034f1231b039e0943303
+
+FUNCTION main params 0 vararg 1 stack 15 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/THMINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 116), ('F', 1, 116), ('D', 1, 116), ('X', 1, 116), ('thmPresent', 24, 116), ('(for generator)', 41, 89), ('(for state)', 41, 89), ('(for control)', 41, 89), ('i', 42, 87), ('thmID', 42, 87), ('thmData', 49, 87), ('pvl', 64, 87), ('(for generator)', 94, 114), ('(for state)', 94, 114), ('(for control)', 94, 114), ('i', 95, 112), ('thmID', 95, 112)]
+K0 'UI'
+K1 'THM'
+K2 'ids'
+K3 'names'
+K4 'selN'
+K5 1
+K6 'selID'
+K7 'CARBON_PLATE'
+K8 'loadE'
+K9 'PLIBFS'
+K10 'FSDIR'
+K11 'PTHM'
+K12 0
+K13 'error'
+K14 'No themes found in '
+K15 'table'
+K16 'sort'
+K17 'ipairs'
+K18 '/C'
+K19 'fm'
+K20 'pgg'
+K21 2
+K22 'sxx'
+K23 3
+K24 'S'
+K25 'UI_THM_ID'
+K26 'dbg'
+K27 'Theme '
+K28 ' found'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  13] GETTABLE  R4 = R2[K0('UI')]
+   3 [  13] NEWTABLE  A=5 B=0 C=0
+   4 [  13] SETTABLE  R4[K1('THM')] = R5
+   5 [  15] GETTABLE  R4 = R2[K0('UI')]
+   6 [  15] GETTABLE  R4 = R4[K1('THM')]
+   7 [  15] NEWTABLE  A=5 B=0 C=0
+   8 [  15] SETTABLE  R4[K2('ids')] = R5
+   9 [  16] GETTABLE  R4 = R2[K0('UI')]
+  10 [  16] GETTABLE  R4 = R4[K1('THM')]
+  11 [  16] NEWTABLE  A=5 B=0 C=0
+  12 [  16] SETTABLE  R4[K3('names')] = R5
+  13 [  17] GETTABLE  R4 = R2[K0('UI')]
+  14 [  17] GETTABLE  R4 = R4[K1('THM')]
+  15 [  17] SETTABLE  R4[K4('selN')] = K5(1)
+  16 [  18] GETTABLE  R4 = R2[K0('UI')]
+  17 [  18] GETTABLE  R4 = R4[K1('THM')]
+  18 [  18] SETTABLE  R4[K6('selID')] = K7('CARBON_PLATE')
+  19 [  20] GETTABLE  R4 = R0[K8('loadE')]
+  20 [  20] GETTABLE  R5 = R0[K9('PLIBFS')]
+  21 [  20] LOADK     R6 = K10 ('FSDIR')
+  22 [  20] CONCAT    A=5 B=5 C=6
+  23 [  20] GETTABLE  R6 = R0[K11('PTHM')]
+  24 [  20] CALL      A=4 B=3 C=2
+  25 [  21] LEN       A=5 B=4 C=0
+  26 [  21] EQ        A=0 R5, K12(0); skip-next if condition != A
+  27 [  21] JMP       A=0 ->35
+  28 [  22] GETTABUP  R5 = UP0[K13('error')]
+  29 [  22] LOADK     R6 = K14 ('No themes found in ')
+  30 [  22] GETTABLE  R7 = R0[K11('PTHM')]
+  31 [  22] CONCAT    A=6 B=6 C=7
+  32 [  22] CALL      A=5 B=2 C=1
+  33 [  23] RETURN    A=0 B=1 C=0
+  34 [  23] JMP       A=0 ->115
+  35 [  25] GETTABUP  R5 = UP0[K15('table')]
+  36 [  25] GETTABLE  R5 = R5[K16('sort')]
+  37 [  25] MOVE      A=6 B=4 C=0
+  38 [  25] CALL      A=5 B=2 C=1
+  39 [  28] GETTABUP  R5 = UP0[K17('ipairs')]
+  40 [  28] MOVE      A=6 B=4 C=0
+  41 [  28] CALL      A=5 B=2 C=4
+  42 [  28] JMP       A=0 ->88
+  43 [  29] GETTABLE  R10 = R0[K8('loadE')]
+  44 [  29] GETTABLE  R11 = R0[K11('PTHM')]
+  45 [  29] MOVE      A=12 B=9 C=0
+  46 [  29] LOADK     R13 = K18 ('/C')
+  47 [  29] CONCAT    A=11 B=11 C=13
+  48 [  29] LOADBOOL  A=12 B=1 C=0
+  49 [  29] CALL      A=10 B=3 C=2
+  50 [  30] GETTABLE  R11 = R0[K19('fm')]
+  51 [  30] GETTABLE  R11 = R11[K20('pgg')]
+  52 [  30] TEST      A=11 B=0 C=0
+  53 [  30] JMP       A=0 ->57
+  54 [  30] LOADK     R11 = K21 (2)
+  55 [  30] TEST      A=11 B=0 C=1
+  56 [  30] JMP       A=0 ->65
+  57 [  30] GETTABLE  R11 = R0[K19('fm')]
+  58 [  30] GETTABLE  R11 = R11[K22('sxx')]
+  59 [  30] TEST      A=11 B=0 C=0
+  60 [  30] JMP       A=0 ->64
+  61 [  30] LOADK     R11 = K5 (1)
+  62 [  30] TEST      A=11 B=0 C=1
+  63 [  30] JMP       A=0 ->65
+  64 [  30] LOADK     R11 = K12 (0)
+  65 [  31] GETTABLE  R12 = R10[K23(3)]
+  66 [  31] LE        A=0 R12, R11; skip-next if condition != A
+  67 [  31] JMP       A=0 ->88
+  68 [  32] GETTABLE  R12 = R2[K0('UI')]
+  69 [  32] GETTABLE  R12 = R12[K1('THM')]
+  70 [  32] GETTABLE  R12 = R12[K3('names')]
+  71 [  32] GETTABLE  R13 = R2[K0('UI')]
+  72 [  32] GETTABLE  R13 = R13[K1('THM')]
+  73 [  32] GETTABLE  R13 = R13[K3('names')]
+  74 [  32] LEN       A=13 B=13 C=0
+  75 [  32] ADD       A=13 B=13 C=261
+  76 [  32] GETTABLE  R14 = R10[K5(1)]
+  77 [  32] SETTABLE  R12[R13] = R14
+  78 [  33] GETTABLE  R12 = R2[K0('UI')]
+  79 [  33] GETTABLE  R12 = R12[K1('THM')]
+  80 [  33] GETTABLE  R12 = R12[K2('ids')]
+  81 [  33] GETTABLE  R13 = R2[K0('UI')]
+  82 [  33] GETTABLE  R13 = R13[K1('THM')]
+  83 [  33] GETTABLE  R13 = R13[K2('ids')]
+  84 [  33] LEN       A=13 B=13 C=0
+  85 [  33] ADD       A=13 B=13 C=261
+  86 [  33] GETTABLE  R14 = R10[K21(2)]
+  87 [  33] SETTABLE  R12[R13] = R14
+  88 [  28] TFORCALL  A=5 B=0 C=2
+  89 [  28] TFORLOOP  A=7 ->43
+  90 [  38] GETTABUP  R5 = UP0[K17('ipairs')]
+  91 [  38] GETTABLE  R6 = R2[K0('UI')]
+  92 [  38] GETTABLE  R6 = R6[K1('THM')]
+  93 [  38] GETTABLE  R6 = R6[K2('ids')]
+  94 [  38] CALL      A=5 B=2 C=4
+  95 [  38] JMP       A=0 ->113
+  96 [  39] GETTABLE  R10 = R2[K24('S')]
+  97 [  39] GETTABLE  R10 = R10[K25('UI_THM_ID')]
+  98 [  39] EQ        A=0 R9, R10; skip-next if condition != A
+  99 [  39] JMP       A=0 ->113
+ 100 [  40] GETTABLE  R10 = R0[K26('dbg')]
+ 101 [  40] LOADK     R11 = K27 ('Theme ')
+ 102 [  40] MOVE      A=12 B=9 C=0
+ 103 [  40] LOADK     R13 = K28 (' found')
+ 104 [  40] CONCAT    A=11 B=11 C=13
+ 105 [  40] CALL      A=10 B=2 C=1
+ 106 [  41] GETTABLE  R10 = R2[K0('UI')]
+ 107 [  41] GETTABLE  R10 = R10[K1('THM')]
+ 108 [  41] SETTABLE  R10[K4('selN')] = R8
+ 109 [  42] GETTABLE  R10 = R2[K0('UI')]
+ 110 [  42] GETTABLE  R10 = R10[K1('THM')]
+ 111 [  42] SETTABLE  R10[K6('selID')] = R9
+ 112 [  42] JMP       A=0 ->115
+ 113 [  38] TFORCALL  A=5 B=0 C=2
+ 114 [  38] TFORLOOP  A=7 ->96
+ 115 [  49] RETURN    A=0 B=1 C=0
+ 116 [  49] RETURN    A=0 B=1 C=0

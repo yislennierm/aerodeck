@@ -1,0 +1,5 @@
+PASS: exact non-text geometry and retained text parity over 832 actual Flight renders. Only requested text commands disappear.
+
+Stock int32/float32 Lua 5.3, 120 warm moving frames: production-source instructions 1,361,924→1,178,140 (13.49% fewer); LCD text draws 5,969→4,782; geometry draws 16,568→16,568; lcd.sizeText calls 688→453 (34.16% fewer). Globally interpreted LuaJIT confirms the same command parity and 14.1268% fewer production-source bytecode instructions.
+
+These are scoped portable draw/API/instruction counts. No physical FPS, native budget or full-app performance claim.

@@ -1,0 +1,195 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/DBAR.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/DBAR.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 6), ('F', 1, 6), ('D', 1, 6), ('X', 1, 6)]
+K0 'UI'
+K1 'DBAR'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('UI')]
+   3 [  70] CLOSURE   R5 = proto[0]
+   4 [  70] SETTABLE  R4[K1('DBAR')] = R5
+   5 [  72] RETURN    A=0 B=1 C=0
+   6 [  72] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 2 vararg 0 stack 15 lines 12 70 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2)), ('G', (1, 0)), ('X', (1, 3))]
+LOCALS [('a', 0, 154), ('bar', 0, 154), ('pctT', 1, 154), ('vbar', 61, 154), ('sp', 108, 152), ('(for index)', 120, 131), ('(for limit)', 120, 131), ('(for step)', 120, 131), ('xt', 121, 130), ('(for index)', 141, 152), ('(for limit)', 141, 152), ('(for step)', 141, 152), ('yt', 142, 151)]
+K0 0
+K1 'type'
+K2 'table'
+K3 'cbar'
+K4 'C'
+K5 'BAR_N'
+K6 'pct'
+K7 'x'
+K8 'y'
+K9 100
+K10 'w'
+K11 7
+K12 'h'
+K13 80
+K14 't'
+K15 'round'
+K16 'oh'
+K17 2
+K18 'bg'
+K19 'cbkg'
+K20 'BR_B'
+K21 'RCF'
+K22 1
+K23 10
+   1 [  13] LOADK     R2 = K0 (0)
+   2 [  15] GETTABUP  R3 = UP0[K1('type')]
+   3 [  15] MOVE      A=4 B=0 C=0
+   4 [  15] CALL      A=3 B=2 C=2
+   5 [  15] EQ        A=1 R3, K2('table'); skip-next if condition != A
+   6 [  15] JMP       A=0 ->8
+   7 [  16] RETURN    A=0 B=1 C=0
+   8 [  23] GETTABLE  R3 = R0[K3('cbar')]
+   9 [  23] TEST      A=3 B=0 C=1
+  10 [  23] JMP       A=0 ->13
+  11 [  23] GETTABUP  R3 = UP1[K4('C')]
+  12 [  23] GETTABLE  R3 = R3[K5('BAR_N')]
+  13 [  23] SETTABLE  R0[K3('cbar')] = R3
+  14 [  24] GETTABLE  R3 = R0[K6('pct')]
+  15 [  24] TEST      A=3 B=0 C=1
+  16 [  24] JMP       A=0 ->18
+  17 [  24] LOADK     R3 = K0 (0)
+  18 [  24] SETTABLE  R0[K6('pct')] = R3
+  19 [  25] TEST      A=1 B=0 C=1
+  20 [  25] JMP       A=0 ->23
+  21 [  25] NEWTABLE  A=3 B=0 C=0
+  22 [  25] MOVE      A=1 B=3 C=0
+  23 [  26] GETTABLE  R3 = R1[K7('x')]
+  24 [  26] TEST      A=3 B=0 C=1
+  25 [  26] JMP       A=0 ->27
+  26 [  26] LOADK     R3 = K0 (0)
+  27 [  26] SETTABLE  R1[K7('x')] = R3
+  28 [  27] GETTABLE  R3 = R1[K8('y')]
+  29 [  27] TEST      A=3 B=0 C=1
+  30 [  27] JMP       A=0 ->32
+  31 [  27] LOADK     R3 = K9 (100)
+  32 [  27] SETTABLE  R1[K8('y')] = R3
+  33 [  29] GETTABLE  R3 = R1[K10('w')]
+  34 [  29] TEST      A=3 B=0 C=1
+  35 [  29] JMP       A=0 ->37
+  36 [  29] LOADK     R3 = K11 (7)
+  37 [  29] SETTABLE  R1[K10('w')] = R3
+  38 [  30] GETTABLE  R3 = R1[K12('h')]
+  39 [  30] TEST      A=3 B=0 C=1
+  40 [  30] JMP       A=0 ->42
+  41 [  30] LOADK     R3 = K13 (80)
+  42 [  30] SETTABLE  R1[K12('h')] = R3
+  43 [  32] GETTABLE  R3 = R1[K14('t')]
+  44 [  32] TEST      A=3 B=0 C=1
+  45 [  32] JMP       A=0 ->47
+  46 [  32] LOADBOOL  A=3 B=1 C=0
+  47 [  32] SETTABLE  R1[K14('t')] = R3
+  48 [  34] GETTABUP  R3 = UP2[K15('round')]
+  49 [  34] GETTABLE  R4 = R1[K16('oh')]
+  50 [  34] TEST      A=4 B=0 C=0
+  51 [  34] JMP       A=0 ->55
+  52 [  34] GETTABLE  R4 = R1[K10('w')]
+  53 [  34] TEST      A=4 B=0 C=1
+  54 [  34] JMP       A=0 ->56
+  55 [  34] GETTABLE  R4 = R1[K12('h')]
+  56 [  34] SUB       A=4 B=4 C=273
+  57 [  34] GETTABLE  R5 = R0[K6('pct')]
+  58 [  34] MUL       A=4 B=4 C=5
+  59 [  34] DIV       A=4 B=4 C=265
+  60 [  34] LOADK     R5 = K0 (0)
+  61 [  34] CALL      A=3 B=3 C=2
+  62 [  41] GETTABLE  R4 = R1[K18('bg')]
+  63 [  41] TEST      A=4 B=0 C=0
+  64 [  41] JMP       A=0 ->78
+  65 [  42] GETTABLE  R4 = R1[K19('cbkg')]
+  66 [  42] TEST      A=4 B=0 C=1
+  67 [  42] JMP       A=0 ->70
+  68 [  42] GETTABUP  R4 = UP1[K4('C')]
+  69 [  42] GETTABLE  R4 = R4[K20('BR_B')]
+  70 [  42] SETTABLE  R1[K19('cbkg')] = R4
+  71 [  43] GETTABUP  R4 = UP3[K21('RCF')]
+  72 [  43] GETTABLE  R5 = R1[K7('x')]
+  73 [  43] GETTABLE  R6 = R1[K8('y')]
+  74 [  43] GETTABLE  R7 = R1[K10('w')]
+  75 [  43] GETTABLE  R8 = R1[K12('h')]
+  76 [  43] GETTABLE  R9 = R1[K19('cbkg')]
+  77 [  43] CALL      A=4 B=6 C=1
+  78 [  46] GETTABLE  R4 = R1[K16('oh')]
+  79 [  46] TEST      A=4 B=0 C=0
+  80 [  46] JMP       A=0 ->92
+  81 [  47] GETTABUP  R4 = UP3[K21('RCF')]
+  82 [  47] GETTABLE  R5 = R1[K7('x')]
+  83 [  47] ADD       A=5 B=5 C=278
+  84 [  47] GETTABLE  R6 = R1[K8('y')]
+  85 [  47] ADD       A=6 B=6 C=278
+  86 [  47] MOVE      A=7 B=3 C=0
+  87 [  47] GETTABLE  R8 = R1[K12('h')]
+  88 [  47] SUB       A=8 B=8 C=273
+  89 [  47] GETTABLE  R9 = R0[K3('cbar')]
+  90 [  47] CALL      A=4 B=6 C=1
+  91 [  47] JMP       A=0 ->105
+  92 [  50] GETTABUP  R4 = UP3[K21('RCF')]
+  93 [  50] GETTABLE  R5 = R1[K7('x')]
+  94 [  50] ADD       A=5 B=5 C=278
+  95 [  50] GETTABLE  R6 = R1[K8('y')]
+  96 [  50] GETTABLE  R7 = R1[K12('h')]
+  97 [  50] ADD       A=6 B=6 C=7
+  98 [  50] SUB       A=6 B=6 C=3
+  99 [  50] SUB       A=6 B=6 C=278
+ 100 [  50] GETTABLE  R7 = R1[K10('w')]
+ 101 [  50] SUB       A=7 B=7 C=273
+ 102 [  50] MOVE      A=8 B=3 C=0
+ 103 [  50] GETTABLE  R9 = R0[K3('cbar')]
+ 104 [  50] CALL      A=4 B=6 C=1
+ 105 [  53] GETTABLE  R4 = R1[K14('t')]
+ 106 [  53] TEST      A=4 B=0 C=0
+ 107 [  53] JMP       A=0 ->153
+ 108 [  54] LOADNIL   A=4 B=0 C=0
+ 109 [  55] GETTABLE  R5 = R1[K16('oh')]
+ 110 [  55] TEST      A=5 B=0 C=0
+ 111 [  55] JMP       A=0 ->133
+ 112 [  56] GETTABLE  R5 = R1[K10('w')]
+ 113 [  56] DIV       A=4 B=5 C=279
+ 114 [  57] GETTABLE  R5 = R1[K7('x')]
+ 115 [  57] ADD       A=5 B=5 C=4
+ 116 [  57] GETTABLE  R6 = R1[K7('x')]
+ 117 [  57] GETTABLE  R7 = R1[K10('w')]
+ 118 [  57] ADD       A=6 B=6 C=7
+ 119 [  57] SUB       A=6 B=6 C=4
+ 120 [  57] MOVE      A=7 B=4 C=0
+ 121 [  57] FORPREP   A=5 ->131
+ 122 [  58] GETTABUP  R9 = UP3[K21('RCF')]
+ 123 [  58] MOVE      A=10 B=8 C=0
+ 124 [  58] GETTABLE  R11 = R1[K8('y')]
+ 125 [  58] ADD       A=11 B=11 C=278
+ 126 [  58] LOADK     R12 = K17 (2)
+ 127 [  58] GETTABLE  R13 = R1[K12('h')]
+ 128 [  58] SUB       A=13 B=13 C=273
+ 129 [  58] GETTABLE  R14 = R1[K19('cbkg')]
+ 130 [  58] CALL      A=9 B=6 C=1
+ 131 [  57] FORLOOP   A=5 ->122
+ 132 [  59] JMP       A=0 ->153
+ 133 [  61] GETTABLE  R5 = R1[K12('h')]
+ 134 [  61] DIV       A=4 B=5 C=279
+ 135 [  62] GETTABLE  R5 = R1[K8('y')]
+ 136 [  62] GETTABLE  R6 = R1[K12('h')]
+ 137 [  62] ADD       A=5 B=5 C=6
+ 138 [  62] SUB       A=5 B=5 C=4
+ 139 [  62] SUB       A=5 B=5 C=278
+ 140 [  62] GETTABLE  R6 = R1[K8('y')]
+ 141 [  62] UNM       A=7 B=4 C=0
+ 142 [  62] FORPREP   A=5 ->152
+ 143 [  63] GETTABUP  R9 = UP3[K21('RCF')]
+ 144 [  63] GETTABLE  R10 = R1[K7('x')]
+ 145 [  63] ADD       A=10 B=10 C=278
+ 146 [  63] MOVE      A=11 B=8 C=0
+ 147 [  63] GETTABLE  R12 = R1[K10('w')]
+ 148 [  63] SUB       A=12 B=12 C=273
+ 149 [  63] LOADK     R13 = K17 (2)
+ 150 [  63] GETTABLE  R14 = R1[K19('cbkg')]
+ 151 [  63] CALL      A=9 B=6 C=1
+ 152 [  62] FORLOOP   A=5 ->143
+ 153 [  69] RETURN    A=0 B=1 C=0
+ 154 [  70] RETURN    A=0 B=1 C=0

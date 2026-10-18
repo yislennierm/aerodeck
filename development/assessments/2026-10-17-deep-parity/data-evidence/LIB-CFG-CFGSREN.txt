@@ -1,0 +1,26 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSREN.luac
+
+FUNCTION main params 0 vararg 1 stack 13 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGSREN.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 15), ('F', 1, 15), ('D', 1, 15), ('X', 1, 15), ('T', 1, 15), ('iName', 1, 15), ('value', 1, 15), ('cfgData', 1, 15), ('sV', 7, 15)]
+K0 0
+K1 '-'
+K2 'cid'
+K3 'S'
+K4 'IN_'
+K5 '_src'
+   1 [  14] VARARG    A=0 B=9 C=0
+   2 [  17] EQ        A=0 R6, K0(0); skip-next if condition != A
+   3 [  17] JMP       A=0 ->7
+   4 [  17] LOADK     R8 = K1 ('-')
+   5 [  17] TEST      A=8 B=0 C=1
+   6 [  17] JMP       A=0 ->8
+   7 [  17] GETTABLE  R8 = R7[K2('cid')]
+   8 [  18] GETTABLE  R9 = R2[K3('S')]
+   9 [  18] LOADK     R10 = K4 ('IN_')
+  10 [  18] MOVE      A=11 B=5 C=0
+  11 [  18] LOADK     R12 = K5 ('_src')
+  12 [  18] CONCAT    A=10 B=10 C=12
+  13 [  18] SETTABLE  R9[R10] = R8
+  14 [  20] RETURN    A=0 B=1 C=0
+  15 [  20] RETURN    A=0 B=1 C=0

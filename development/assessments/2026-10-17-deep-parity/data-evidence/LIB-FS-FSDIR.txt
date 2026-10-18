@@ -1,0 +1,70 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSDIR.luac
+
+FUNCTION main params 0 vararg 1 stack 16 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FS/FSDIR.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 51), ('F', 1, 51), ('D', 1, 51), ('X', 1, 51), ('dName', 1, 51), ('AM_DIR', 2, 51), ('folders', 3, 51), ('dExists', 6, 51), ('(for generator)', 28, 49), ('(for state)', 28, 49), ('(for control)', 28, 49), ('fName', 29, 47), ('info', 35, 47), ('dTest', 42, 47)]
+K0 16
+K1 'fsCheck'
+K2 'string'
+K3 'sub'
+K4 -1
+K5 '/'
+K6 1
+K7 -2
+K8 'dir'
+K9 'fstat'
+K10 None
+K11 'bit'
+K12 'btest'
+K13 'attrib'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  13] LOADK     R5 = K0 (16)
+   3 [  14] LOADNIL   A=6 B=0 C=0
+   4 [  16] GETTABLE  R7 = R0[K1('fsCheck')]
+   5 [  16] MOVE      A=8 B=4 C=0
+   6 [  16] CALL      A=7 B=2 C=2
+   7 [  17] GETTABUP  R8 = UP0[K2('string')]
+   8 [  17] GETTABLE  R8 = R8[K3('sub')]
+   9 [  17] MOVE      A=9 B=4 C=0
+  10 [  17] LOADK     R10 = K4 (-1)
+  11 [  17] CALL      A=8 B=3 C=2
+  12 [  17] EQ        A=0 R8, K5('/'); skip-next if condition != A
+  13 [  17] JMP       A=0 ->22
+  14 [  17] GETTABUP  R8 = UP0[K2('string')]
+  15 [  17] GETTABLE  R8 = R8[K3('sub')]
+  16 [  17] MOVE      A=9 B=4 C=0
+  17 [  17] LOADK     R10 = K6 (1)
+  18 [  17] LOADK     R11 = K7 (-2)
+  19 [  17] CALL      A=8 B=4 C=2
+  20 [  17] TESTSET   A=4 B=8 C=1
+  21 [  17] JMP       A=0 ->22
+  22 [  18] TEST      A=7 B=0 C=0
+  23 [  18] JMP       A=0 ->50
+  24 [  19] NEWTABLE  A=8 B=0 C=0
+  25 [  19] MOVE      A=6 B=8 C=0
+  26 [  20] GETTABUP  R8 = UP0[K8('dir')]
+  27 [  20] MOVE      A=9 B=4 C=0
+  28 [  20] CALL      A=8 B=2 C=4
+  29 [  20] JMP       A=0 ->48
+  30 [  22] GETTABUP  R12 = UP0[K9('fstat')]
+  31 [  22] MOVE      A=13 B=4 C=0
+  32 [  22] LOADK     R14 = K5 ('/')
+  33 [  22] MOVE      A=15 B=11 C=0
+  34 [  22] CONCAT    A=13 B=13 C=15
+  35 [  22] CALL      A=12 B=2 C=2
+  36 [  23] EQ        A=1 R12, K10(None); skip-next if condition != A
+  37 [  23] JMP       A=0 ->48
+  38 [  24] GETTABLE  R13 = R0[K11('bit')]
+  39 [  24] GETTABLE  R13 = R13[K12('btest')]
+  40 [  24] GETTABLE  R14 = R12[K13('attrib')]
+  41 [  24] MOVE      A=15 B=5 C=0
+  42 [  24] CALL      A=13 B=3 C=2
+  43 [  26] TEST      A=13 B=0 C=0
+  44 [  26] JMP       A=0 ->48
+  45 [  28] LEN       A=14 B=6 C=0
+  46 [  28] ADD       A=14 B=14 C=262
+  47 [  28] SETTABLE  R6[R14] = R11
+  48 [  20] TFORCALL  A=8 B=0 C=1
+  49 [  20] TFORLOOP  A=10 ->30
+  50 [  34] RETURN    A=6 B=2 C=0
+  51 [  34] RETURN    A=0 B=1 C=0

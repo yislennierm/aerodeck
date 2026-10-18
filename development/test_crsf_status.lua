@@ -135,4 +135,4 @@ h=boot();h.c:stop();assert(h.c:snapshot().status=='OFF' and not h.c:snapshot().p
 h=boot();h:tick(2);assert(h.c:snapshot().status=='STARTING');h:tick(101);assert(#h.sent==4)
 h:tick(102);assert(#h.sent==5 and h.sent[5].data[5]==2,'clock wrap/restart is bounded')
 s=factory.new({}):tick(0,true,true,true);assert(s.status=='UNAVAILABLE')
-print('PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes, all eligibility gates')
+print('PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes by default, all eligibility gates')

@@ -1,0 +1,10 @@
+--- bbad-main
++++ 67a-main
+@@ -3050,6 +3050,7 @@
+ local function openArm()
+  if page~=10 then
+   local caller=page==13 and inputRuntime.inputsReturn or page
++  if caller==8 and configReturn==13 then caller=inputRuntime.inputsReturn end
+   if caller~=10 then armReturn=caller or 1 end
+  end
+  selectPage(10)

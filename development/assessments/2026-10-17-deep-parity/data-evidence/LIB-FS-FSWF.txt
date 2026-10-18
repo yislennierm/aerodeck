@@ -1,0 +1,59 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSWF.luac
+
+FUNCTION main params 0 vararg 1 stack 12 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FS/FSWF.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 44), ('F', 1, 44), ('D', 1, 44), ('X', 1, 44), ('file', 1, 44), ('data', 1, 44), ('fmode', 1, 44), ('fh', 13, 33)]
+K0 'r'
+K1 'io'
+K2 'open'
+K3 'write'
+K4 'close'
+K5 'error'
+K6 'Error: File: '
+K7 'tostring'
+K8 ' could not be opened for writing'
+K9 ' or payload is nil'
+   1 [  16] VARARG    A=0 B=8 C=0
+   2 [  18] TEST      A=6 B=0 C=1
+   3 [  18] JMP       A=0 ->5
+   4 [  18] LOADK     R6 = K0 ('r')
+   5 [  19] TEST      A=4 B=0 C=0
+   6 [  19] JMP       A=0 ->35
+   7 [  19] TEST      A=5 B=0 C=0
+   8 [  19] JMP       A=0 ->35
+   9 [  20] GETTABUP  R7 = UP0[K1('io')]
+  10 [  20] GETTABLE  R7 = R7[K2('open')]
+  11 [  20] MOVE      A=8 B=4 C=0
+  12 [  20] MOVE      A=9 B=6 C=0
+  13 [  20] CALL      A=7 B=3 C=2
+  14 [  23] TEST      A=7 B=0 C=0
+  15 [  23] JMP       A=0 ->26
+  16 [  24] GETTABUP  R8 = UP0[K1('io')]
+  17 [  24] GETTABLE  R8 = R8[K3('write')]
+  18 [  24] MOVE      A=9 B=7 C=0
+  19 [  24] MOVE      A=10 B=5 C=0
+  20 [  24] CALL      A=8 B=3 C=1
+  21 [  25] GETTABUP  R8 = UP0[K1('io')]
+  22 [  25] GETTABLE  R8 = R8[K4('close')]
+  23 [  25] MOVE      A=9 B=7 C=0
+  24 [  25] CALL      A=8 B=2 C=1
+  25 [  25] JMP       A=0 ->43
+  26 [  27] GETTABUP  R8 = UP0[K5('error')]
+  27 [  27] LOADK     R9 = K6 ('Error: File: ')
+  28 [  27] GETTABUP  R10 = UP0[K7('tostring')]
+  29 [  27] MOVE      A=11 B=4 C=0
+  30 [  27] CALL      A=10 B=2 C=2
+  31 [  27] LOADK     R11 = K8 (' could not be opened for writing')
+  32 [  27] CONCAT    A=9 B=9 C=11
+  33 [  27] CALL      A=8 B=2 C=1
+  34 [  28] JMP       A=0 ->43
+  35 [  30] GETTABUP  R7 = UP0[K5('error')]
+  36 [  30] LOADK     R8 = K6 ('Error: File: ')
+  37 [  30] GETTABUP  R9 = UP0[K7('tostring')]
+  38 [  30] MOVE      A=10 B=4 C=0
+  39 [  30] CALL      A=9 B=2 C=2
+  40 [  30] LOADK     R10 = K9 (' or payload is nil')
+  41 [  30] CONCAT    A=8 B=8 C=10
+  42 [  30] CALL      A=7 B=2 C=1
+  43 [  33] RETURN    A=0 B=1 C=0
+  44 [  33] RETURN    A=0 B=1 C=0

@@ -1,0 +1,263 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DBD.luac
+
+FUNCTION main params 0 vararg 1 stack 23 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/480X272/DBD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 192), ('F', 1, 192), ('D', 1, 192), ('X', 1, 192), ('tasks', 140, 192)]
+K0 'f'
+K1 'DB1DBD'
+K2 'el'
+K3 1
+K4 'DB1VTX'
+K5 'w'
+K6 'xl'
+K7 0
+K8 'yt'
+K9 175
+K10 'h'
+K11 36
+K12 'DB1MDL'
+K13 130
+K14 65
+K15 'DB1RDB'
+K16 305
+K17 'DB1RCL'
+K18 74
+K19 210
+K20 'DB1TLM'
+K21 246
+K22 26
+K23 'DB1BAT'
+K24 406
+K25 'DB1CEL'
+K26 'DB1TIM'
+K27 101
+K28 58
+K29 'DB1FM'
+K30 29
+K31 'DB1TMR'
+K32 'DB1MPN'
+K33 94
+K34 224
+K35 144
+K36 'm'
+K37 'FCD'
+K38 'DB1FMI'
+K39 298
+K40 108
+K41 30
+K42 'DB1SPN'
+K43 124
+K44 114
+K45 'CP2'
+K46 None
+K47 238
+K48 48
+K49 'DB1SYS'
+K50 34
+K51 'DB1BPN'
+K52 204
+K53 202
+K54 'THR'
+K55 'loadE'
+K56 'PUI'
+K57 'UITSKSET'
+K58 'OV'
+K59 'LCD_W'
+K60 'LCD_H'
+K61 'QM'
+K62 'UITSKINIT'
+K63 'UI'
+K64 'TASKS'
+K65 'ell'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] NEWTABLE  A=4 B=17 C=0
+   3 [  12] NEWTABLE  A=5 B=0 C=2
+   4 [  13] SETTABLE  R5[K0('f')] = K1('DB1DBD')
+   5 [  13] SETTABLE  R5[K2('el')] = K3(1)
+   6 [  13] NEWTABLE  A=6 B=0 C=2
+   7 [  14] SETTABLE  R6[K0('f')] = K4('DB1VTX')
+   8 [  14] NEWTABLE  A=7 B=0 C=4
+   9 [  14] SETTABLE  R7[K6('xl')] = K7(0)
+  10 [  14] SETTABLE  R7[K8('yt')] = K7(0)
+  11 [  14] SETTABLE  R7[K5('w')] = K9(175)
+  12 [  14] SETTABLE  R7[K10('h')] = K11(36)
+  13 [  14] SETTABLE  R6[K5('w')] = R7
+  14 [  14] NEWTABLE  A=7 B=0 C=2
+  15 [  15] SETTABLE  R7[K0('f')] = K12('DB1MDL')
+  16 [  15] NEWTABLE  A=8 B=0 C=4
+  17 [  15] SETTABLE  R8[K6('xl')] = K9(175)
+  18 [  15] SETTABLE  R8[K8('yt')] = K7(0)
+  19 [  15] SETTABLE  R8[K5('w')] = K13(130)
+  20 [  15] SETTABLE  R8[K10('h')] = K14(65)
+  21 [  15] SETTABLE  R7[K5('w')] = R8
+  22 [  15] NEWTABLE  A=8 B=0 C=2
+  23 [  16] SETTABLE  R8[K0('f')] = K15('DB1RDB')
+  24 [  16] NEWTABLE  A=9 B=0 C=4
+  25 [  16] SETTABLE  R9[K6('xl')] = K16(305)
+  26 [  16] SETTABLE  R9[K8('yt')] = K7(0)
+  27 [  16] SETTABLE  R9[K5('w')] = K9(175)
+  28 [  16] SETTABLE  R9[K10('h')] = K11(36)
+  29 [  16] SETTABLE  R8[K5('w')] = R9
+  30 [  16] NEWTABLE  A=9 B=0 C=2
+  31 [  17] SETTABLE  R9[K0('f')] = K17('DB1RCL')
+  32 [  17] NEWTABLE  A=10 B=0 C=4
+  33 [  17] SETTABLE  R10[K6('xl')] = K7(0)
+  34 [  17] SETTABLE  R10[K8('yt')] = K11(36)
+  35 [  17] SETTABLE  R10[K5('w')] = K18(74)
+  36 [  17] SETTABLE  R10[K10('h')] = K19(210)
+  37 [  17] SETTABLE  R9[K5('w')] = R10
+  38 [  17] NEWTABLE  A=10 B=0 C=2
+  39 [  18] SETTABLE  R10[K0('f')] = K20('DB1TLM')
+  40 [  18] NEWTABLE  A=11 B=0 C=4
+  41 [  18] SETTABLE  R11[K6('xl')] = K7(0)
+  42 [  18] SETTABLE  R11[K8('yt')] = K21(246)
+  43 [  18] SETTABLE  R11[K5('w')] = K18(74)
+  44 [  18] SETTABLE  R11[K10('h')] = K22(26)
+  45 [  18] SETTABLE  R10[K5('w')] = R11
+  46 [  18] NEWTABLE  A=11 B=0 C=2
+  47 [  19] SETTABLE  R11[K0('f')] = K23('DB1BAT')
+  48 [  19] NEWTABLE  A=12 B=0 C=4
+  49 [  19] SETTABLE  R12[K6('xl')] = K24(406)
+  50 [  19] SETTABLE  R12[K8('yt')] = K11(36)
+  51 [  19] SETTABLE  R12[K5('w')] = K18(74)
+  52 [  19] SETTABLE  R12[K10('h')] = K19(210)
+  53 [  19] SETTABLE  R11[K5('w')] = R12
+  54 [  19] NEWTABLE  A=12 B=0 C=2
+  55 [  20] SETTABLE  R12[K0('f')] = K25('DB1CEL')
+  56 [  20] NEWTABLE  A=13 B=0 C=4
+  57 [  20] SETTABLE  R13[K6('xl')] = K24(406)
+  58 [  20] SETTABLE  R13[K8('yt')] = K21(246)
+  59 [  20] SETTABLE  R13[K5('w')] = K18(74)
+  60 [  20] SETTABLE  R13[K10('h')] = K22(26)
+  61 [  20] SETTABLE  R12[K5('w')] = R13
+  62 [  20] NEWTABLE  A=13 B=0 C=2
+  63 [  21] SETTABLE  R13[K0('f')] = K26('DB1TIM')
+  64 [  21] NEWTABLE  A=14 B=0 C=4
+  65 [  21] SETTABLE  R14[K6('xl')] = K18(74)
+  66 [  21] SETTABLE  R14[K8('yt')] = K11(36)
+  67 [  21] SETTABLE  R14[K5('w')] = K27(101)
+  68 [  21] SETTABLE  R14[K10('h')] = K28(58)
+  69 [  21] SETTABLE  R13[K5('w')] = R14
+  70 [  21] NEWTABLE  A=14 B=0 C=2
+  71 [  22] SETTABLE  R14[K0('f')] = K29('DB1FM')
+  72 [  22] NEWTABLE  A=15 B=0 C=4
+  73 [  22] SETTABLE  R15[K6('xl')] = K9(175)
+  74 [  22] SETTABLE  R15[K8('yt')] = K14(65)
+  75 [  22] SETTABLE  R15[K5('w')] = K13(130)
+  76 [  22] SETTABLE  R15[K10('h')] = K30(29)
+  77 [  22] SETTABLE  R14[K5('w')] = R15
+  78 [  22] NEWTABLE  A=15 B=0 C=2
+  79 [  23] SETTABLE  R15[K0('f')] = K31('DB1TMR')
+  80 [  23] NEWTABLE  A=16 B=0 C=4
+  81 [  23] SETTABLE  R16[K6('xl')] = K16(305)
+  82 [  23] SETTABLE  R16[K8('yt')] = K11(36)
+  83 [  23] SETTABLE  R16[K5('w')] = K27(101)
+  84 [  23] SETTABLE  R16[K10('h')] = K28(58)
+  85 [  23] SETTABLE  R15[K5('w')] = R16
+  86 [  23] NEWTABLE  A=16 B=0 C=4
+  87 [  24] SETTABLE  R16[K0('f')] = K32('DB1MPN')
+  88 [  24] NEWTABLE  A=17 B=0 C=4
+  89 [  24] SETTABLE  R17[K6('xl')] = K18(74)
+  90 [  24] SETTABLE  R17[K8('yt')] = K33(94)
+  91 [  24] SETTABLE  R17[K5('w')] = K34(224)
+  92 [  24] SETTABLE  R17[K10('h')] = K35(144)
+  93 [  24] SETTABLE  R16[K5('w')] = R17
+  94 [  24] SETTABLE  R16[K36('m')] = K37('FCD')
+  95 [  24] SETTABLE  R16[K2('el')] = K3(1)
+  96 [  24] NEWTABLE  A=17 B=0 C=2
+  97 [  25] SETTABLE  R17[K0('f')] = K38('DB1FMI')
+  98 [  25] NEWTABLE  A=18 B=0 C=4
+  99 [  25] SETTABLE  R18[K6('xl')] = K39(298)
+ 100 [  25] SETTABLE  R18[K8('yt')] = K33(94)
+ 101 [  25] SETTABLE  R18[K5('w')] = K40(108)
+ 102 [  25] SETTABLE  R18[K10('h')] = K41(30)
+ 103 [  25] SETTABLE  R17[K5('w')] = R18
+ 104 [  25] NEWTABLE  A=18 B=0 C=4
+ 105 [  26] SETTABLE  R18[K0('f')] = K42('DB1SPN')
+ 106 [  26] NEWTABLE  A=19 B=0 C=4
+ 107 [  26] SETTABLE  R19[K6('xl')] = K39(298)
+ 108 [  26] SETTABLE  R19[K8('yt')] = K43(124)
+ 109 [  26] SETTABLE  R19[K5('w')] = K40(108)
+ 110 [  26] SETTABLE  R19[K10('h')] = K44(114)
+ 111 [  26] SETTABLE  R18[K5('w')] = R19
+ 112 [  26] SETTABLE  R18[K36('m')] = K45('CP2')
+ 113 [  26] SETTABLE  R18[K2('el')] = K3(1)
+ 114 [  26] NEWTABLE  A=19 B=0 C=2
+ 115 [  27] SETTABLE  R19[K0('f')] = K46(None)
+ 116 [  27] NEWTABLE  A=20 B=0 C=4
+ 117 [  27] SETTABLE  R20[K6('xl')] = K39(298)
+ 118 [  27] SETTABLE  R20[K8('yt')] = K47(238)
+ 119 [  27] SETTABLE  R20[K5('w')] = K40(108)
+ 120 [  27] SETTABLE  R20[K10('h')] = K48(48)
+ 121 [  27] SETTABLE  R19[K5('w')] = R20
+ 122 [  27] NEWTABLE  A=20 B=0 C=2
+ 123 [  28] SETTABLE  R20[K0('f')] = K49('DB1SYS')
+ 124 [  28] NEWTABLE  A=21 B=0 C=4
+ 125 [  28] SETTABLE  R21[K6('xl')] = K18(74)
+ 126 [  28] SETTABLE  R21[K8('yt')] = K47(238)
+ 127 [  28] SETTABLE  R21[K5('w')] = K13(130)
+ 128 [  28] SETTABLE  R21[K10('h')] = K50(34)
+ 129 [  28] SETTABLE  R20[K5('w')] = R21
+ 130 [  28] NEWTABLE  A=21 B=0 C=4
+ 131 [  29] SETTABLE  R21[K0('f')] = K51('DB1BPN')
+ 132 [  29] NEWTABLE  A=22 B=0 C=4
+ 133 [  29] SETTABLE  R22[K6('xl')] = K52(204)
+ 134 [  29] SETTABLE  R22[K8('yt')] = K47(238)
+ 135 [  29] SETTABLE  R22[K5('w')] = K53(202)
+ 136 [  29] SETTABLE  R22[K10('h')] = K50(34)
+ 137 [  29] SETTABLE  R21[K5('w')] = R22
+ 138 [  29] SETTABLE  R21[K36('m')] = K54('THR')
+ 139 [  29] SETTABLE  R21[K2('el')] = K3(1)
+ 140 [  30] SETLIST   A=4 B=17 C=1
+ 141 [  31] GETTABLE  R5 = R0[K55('loadE')]
+ 142 [  31] GETTABLE  R6 = R0[K56('PUI')]
+ 143 [  31] LOADK     R7 = K57 ('UITSKSET')
+ 144 [  31] CONCAT    A=6 B=6 C=7
+ 145 [  31] MOVE      A=7 B=4 C=0
+ 146 [  31] CALL      A=5 B=3 C=1
+ 147 [  33] NEWTABLE  A=5 B=2 C=0
+ 148 [  33] NEWTABLE  A=6 B=0 C=2
+ 149 [  34] SETTABLE  R6[K0('f')] = K58('OV')
+ 150 [  34] NEWTABLE  A=7 B=0 C=4
+ 151 [  34] SETTABLE  R7[K6('xl')] = K7(0)
+ 152 [  34] SETTABLE  R7[K8('yt')] = K7(0)
+ 153 [  34] GETTABUP  R8 = UP0[K59('LCD_W')]
+ 154 [  34] SETTABLE  R7[K5('w')] = R8
+ 155 [  34] GETTABUP  R8 = UP0[K60('LCD_H')]
+ 156 [  34] SETTABLE  R7[K10('h')] = R8
+ 157 [  34] SETTABLE  R6[K5('w')] = R7
+ 158 [  34] NEWTABLE  A=7 B=0 C=3
+ 159 [  35] SETTABLE  R7[K0('f')] = K61('QM')
+ 160 [  35] NEWTABLE  A=8 B=0 C=4
+ 161 [  35] SETTABLE  R8[K6('xl')] = K7(0)
+ 162 [  35] SETTABLE  R8[K8('yt')] = K7(0)
+ 163 [  35] GETTABUP  R9 = UP0[K59('LCD_W')]
+ 164 [  35] SETTABLE  R8[K5('w')] = R9
+ 165 [  35] GETTABUP  R9 = UP0[K60('LCD_H')]
+ 166 [  35] SETTABLE  R8[K10('h')] = R9
+ 167 [  35] SETTABLE  R7[K5('w')] = R8
+ 168 [  35] SETTABLE  R7[K2('el')] = K7(0)
+ 169 [  36] SETLIST   A=5 B=2 C=1
+ 170 [  36] MOVE      A=4 B=5 C=0
+ 171 [  37] GETTABLE  R5 = R0[K55('loadE')]
+ 172 [  37] GETTABLE  R6 = R0[K56('PUI')]
+ 173 [  37] LOADK     R7 = K57 ('UITSKSET')
+ 174 [  37] CONCAT    A=6 B=6 C=7
+ 175 [  37] MOVE      A=7 B=4 C=0
+ 176 [  37] CALL      A=5 B=3 C=1
+ 177 [  39] GETTABLE  R5 = R0[K55('loadE')]
+ 178 [  39] GETTABLE  R6 = R0[K56('PUI')]
+ 179 [  39] LOADK     R7 = K62 ('UITSKINIT')
+ 180 [  39] CONCAT    A=6 B=6 C=7
+ 181 [  39] CALL      A=5 B=2 C=1
+ 182 [  41] GETTABLE  R5 = R2[K63('UI')]
+ 183 [  41] GETTABLE  R5 = R5[K64('TASKS')]
+ 184 [  41] SETTABLE  R5[K2('el')] = K3(1)
+ 185 [  42] GETTABLE  R5 = R2[K63('UI')]
+ 186 [  42] GETTABLE  R5 = R5[K64('TASKS')]
+ 187 [  42] GETTABLE  R6 = R2[K63('UI')]
+ 188 [  42] GETTABLE  R6 = R6[K64('TASKS')]
+ 189 [  42] GETTABLE  R6 = R6[K2('el')]
+ 190 [  42] SETTABLE  R5[K65('ell')] = R6
+ 191 [  44] RETURN    A=0 B=1 C=0
+ 192 [  44] RETURN    A=0 B=1 C=0

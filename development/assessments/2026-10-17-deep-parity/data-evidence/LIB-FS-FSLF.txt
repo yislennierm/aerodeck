@@ -1,0 +1,30 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSLF.luac
+
+FUNCTION main params 0 vararg 1 stack 8 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FS/FSLF.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 20), ('F', 1, 20), ('D', 1, 20), ('X', 1, 20), ('file', 1, 20), ('fh', 6, 20)]
+K0 'io'
+K1 'open'
+K2 'r'
+K3 'close'
+K4 'loadfile'
+   1 [  15] VARARG    A=0 B=6 C=0
+   2 [  17] GETTABUP  R5 = UP0[K0('io')]
+   3 [  17] GETTABLE  R5 = R5[K1('open')]
+   4 [  17] MOVE      A=6 B=4 C=0
+   5 [  17] LOADK     R7 = K2 ('r')
+   6 [  17] CALL      A=5 B=3 C=2
+   7 [  18] TEST      A=5 B=0 C=0
+   8 [  18] JMP       A=0 ->19
+   9 [  19] GETTABUP  R6 = UP0[K0('io')]
+  10 [  19] GETTABLE  R6 = R6[K3('close')]
+  11 [  19] MOVE      A=7 B=5 C=0
+  12 [  19] CALL      A=6 B=2 C=1
+  13 [  20] GETTABUP  R6 = UP0[K4('loadfile')]
+  14 [  20] MOVE      A=7 B=4 C=0
+  15 [  20] CALL      A=6 B=2 C=2
+  16 [  20] VARARG    A=7 B=0 C=0
+  17 [  20] TAILCALL  A=6 B=0 C=0
+  18 [  20] RETURN    A=6 B=0 C=0
+  19 [  23] RETURN    A=0 B=1 C=0
+  20 [  23] RETURN    A=0 B=1 C=0

@@ -1,0 +1,50 @@
+GPS-SPACE-20261018
+Main SHA256: ec3ea40cb6c051bc1d8eb688eb91feaca266eef6d0e1d1ceb1bb20818ef63e4d
+Local review build; radio remains ATTITUDE-CLEAN-20261018.
+
+Space and navigation:
+The north-up plot is280x180, up from188x151:77.5% more plotting area.
+The188px data rail prioritizes home distance/bearing, ground speed, altitude
+and the actual direction source. Exact coordinates remain in Coordinates.
+Coordinates uses the full width; repeated satellite/fix/home sidebar removed.
+Satellite pagination, quality, FC-home data, recovery codes, ETA and yaw remain.
+Supporting rows use the full180px body above a single26px context bar.
+
+The top-right current view opens a direct five-view selector, with rotary/ENTER
+and touch input. It stays accessible during a footer warning, allowing Recovery
+without a working telemetry link. The context bar contains Zoom (or return to
+Map), quad voltage and Actions. Actions contains real Refresh Sensors and Set
+Local Home operations. Invalid current GPS disables Set Home. RTN cancels a
+selector, then backs out from detail to map, then Flight. Full-width warnings
+retain priority and open their real detail page; hidden footer actions cannot fire.
+
+Aircraft direction:
+The old symmetric picture did not indicate nose direction. Sixteen new nose-
+marked RGB masks are rendered offline at22.5-degree intervals (max11.25-degree
+image quantization). Body yaw is preferred, including zero/negative/wrapped
+values accepted by the existing reader. Missing yaw falls back to GPS course;
+the rail says COURSE. No yaw/course uses the neutral picture. A white exact
+direction tick supplements the image; a cyan GPS-course tick is separate when
+yaw is available. GPS loss removes the live aircraft marker while retaining
+the known trail/home. Course indicates travel direction, not body heading.
+
+Images are original editable SVG artwork, Apache-2.0, exported directly at18px
+and30px for the supported physical display namespaces. No runtime image rotation
+or pixel loop. Sixteen native masks add about5.25KB of mask payload (excluding
+VM overhead). Retained startup primes37icon variants, at most one per callback;
+standalone tools preload direction/neutral masks at initialization. Warm yaw/
+course changes, view selection and GC cause no additional bitmap SD reads.
+
+Validation:
+All59portable suites PASS in LuaJIT and int32/float32 Lua5.3. Includes the actual
+180-point full trail, rolling history, bounded projection, zoom, home ownership,
+all sixteen yaw directions, course fallback, stale values, direct selection and
+warning priority. Native480x272 Flight/GPS captures reviewed with animated yaw;
+no script/CPU-limit errors.20000native callback budget and GC policy unchanged.
+Simulator data is synthetic; physical radio/quad performance remains unmeasured.
+
+Preview: http://127.0.0.1:8766/
+Package: AERODECK-gps-space-install.zip
+Artwork: development/icons/quad-direction.svg
+Evidence: development/runtime-evidence/gps-space-20261018/
+Installation authority: DEPLOYMENT.txt. No radio install or GitHub push this turn.

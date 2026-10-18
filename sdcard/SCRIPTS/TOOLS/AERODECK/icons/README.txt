@@ -1,3 +1,19 @@
+ARM-TOOLBAR-20261018 icon addition
+ARM INFO uses gpp_bad.png: native 30x30 RGB on 480x272 and native 50x50 RGB
+on 800x480. Both are direct rsvg-convert exports of the existing approved
+masters/gpp_bad.svg, flattened on white without raster resizing. Black/grey
+coverage is tinted by the existing Bitmap.toMask renderer. Apache-2.0 notices,
+originals, and masters remain unchanged. Existing speed.png and speed-18.png
+exports are retained; all prior PNG bytes are unchanged.
+Native 30px SHA256: 798ff1c279b654aaac9ac96a064d5cc1804333b6064dd52c5cc7d1abbf4d7c39
+Native 50px SHA256: 7c80859891103b54a8f1416df4ceb6524ac5ce083bca06557368b0aa32dbdb83
+
+REPLACEMENT-RC1-20261017 display variants
+TX16S 480x272 keeps the original native30px navigation and18px detail masks.
+The800x480 subfolder contains native50px navigation and30px detail exports
+from the same vector masters; the display adapter selects these paths directly.
+No full-panel artwork is required. Prior export details and notices follow.
+
 AERODECK Material Symbols Outlined icon masks
 Current local FLIGHT-FLAT-20261016 adds home-18.png for local-home distance; existing masks, including home.png, retain their hashes.
 Google Material Symbols Outlined; Apache-2.0. Full license: LICENSE.txt.
@@ -62,3 +78,8 @@ home-18.png: 18x18RGB; SHA256 9ac516212f71704bb8a6b9364f976e1d3a14b0ef8a16492b23
 Flight local-home distance uses this native18px export from the existing licensed
 Home master: development/icons/home-outlined-30.svg. Its Google source/modification
 notice remains above. Existing30px home.png is byte-identical. No runtime scaling.
+
+GPS-SIMPLE-20261018: aircraft position is a native white dot with a dark halo.
+The former neutral/directional quad PNGs are no longer shipped or loaded.
+Editable original artwork remains under development/icons for historical reference.
+Home uses the existing Material home mask; no runtime aircraft bitmap is needed.

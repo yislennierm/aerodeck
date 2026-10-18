@@ -1,0 +1,62 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/BARO.luac
+
+FUNCTION main params 0 vararg 1 stack 9 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TBS/BARO.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 33), ('F', 1, 33), ('D', 1, 33), ('X', 1, 33), ('add', 1, 33), ('sensors', 6, 33)]
+K0 'S'
+K1 'ALT_BARO'
+K2 None
+K3 'SPD_VERT'
+K4 'table'
+K5 'insert'
+K6 'sName'
+K7 'pName'
+K8 'Alt'
+K9 'sLabel'
+K10 'Altitude'
+K11 'dUnit'
+K12 'METER'
+K13 'sMin'
+K14 -9999
+K15 'sMax'
+K16 20000
+K17 'VSpd'
+K18 'Vertical Speed'
+K19 'METER_PER_SECOND'
+K20 'dDec'
+K21 1
+K22 -200
+K23 200
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('ALT_BARO')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('SPD_VERT')] = K2(None)
+   6 [  15] NEWTABLE  A=5 B=0 C=0
+   7 [  17] TEST      A=4 B=0 C=0
+   8 [  17] JMP       A=0 ->32
+   9 [  20] GETTABUP  R6 = UP0[K4('table')]
+  10 [  20] GETTABLE  R6 = R6[K5('insert')]
+  11 [  20] MOVE      A=7 B=5 C=0
+  12 [  20] NEWTABLE  A=8 B=0 C=6
+  13 [  20] SETTABLE  R8[K6('sName')] = K1('ALT_BARO')
+  14 [  20] SETTABLE  R8[K7('pName')] = K8('Alt')
+  15 [  20] SETTABLE  R8[K9('sLabel')] = K10('Altitude')
+  16 [  20] SETTABLE  R8[K11('dUnit')] = K12('METER')
+  17 [  20] SETTABLE  R8[K13('sMin')] = K14(-9999)
+  18 [  20] SETTABLE  R8[K15('sMax')] = K16(20000)
+  19 [  20] CALL      A=6 B=3 C=1
+  20 [  21] GETTABUP  R6 = UP0[K4('table')]
+  21 [  21] GETTABLE  R6 = R6[K5('insert')]
+  22 [  21] MOVE      A=7 B=5 C=0
+  23 [  21] NEWTABLE  A=8 B=0 C=7
+  24 [  21] SETTABLE  R8[K6('sName')] = K3('SPD_VERT')
+  25 [  21] SETTABLE  R8[K7('pName')] = K17('VSpd')
+  26 [  21] SETTABLE  R8[K9('sLabel')] = K18('Vertical Speed')
+  27 [  21] SETTABLE  R8[K11('dUnit')] = K19('METER_PER_SECOND')
+  28 [  21] SETTABLE  R8[K20('dDec')] = K21(1)
+  29 [  21] SETTABLE  R8[K13('sMin')] = K22(-200)
+  30 [  21] SETTABLE  R8[K15('sMax')] = K23(200)
+  31 [  21] CALL      A=6 B=3 C=1
+  32 [  24] RETURN    A=5 B=2 C=0
+  33 [  24] RETURN    A=0 B=1 C=0

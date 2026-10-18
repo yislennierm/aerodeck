@@ -1,0 +1,11 @@
+Final a7f71c7 native addendum — 18 October 2026
+
+Source a7f71c7a19501fcdcb5bf6fe7258fdba760263f525c97d61982f9d5f26871392 passes this scoped cold/fullscreen-widget and 35-degree moving-attitude/GPS run. The native 20,000-instruction hook is unchanged. The same private draw checkpoints are used as in the baseline comparison; telemetry is synthetic.
+
+The owned LCD monitor collected 1,650 samples over 63.274 seconds: zero blank frames, zero ordinary Updating frames, and zero native or instruction-limit errors. No forced garbage collection occurred in the interval. Cold fullscreen entry completed normally.
+
+Thirty-five sampled PFD callbacks give median 82%, observed sampled peak 87%, and range 77–87% of the Lua VM allowance. Early-ten median is 84%; late-ten is 81.5%. The PFD body median remains 56 points. Callback-counter cadence is 17.70/s; the final Runtime screen reports 18.3 fps and 18.3 value Hz. These are simulator observations, not physical performance. Sampled RAM peak is 1,191.824 KB, not a retained-heap measurement.
+
+The four native screenshots were inspected at 480 × 272. Attitude, labels, tapes, rails, navigation and status remain clear; the Runtime page reports no module/reset error. Normal roll was selected. The separate browser agent owns the original 30-degree failure reproduction and all-13-page acceptance.
+
+The prior f3ec-versus-816d paired report remains frozen. The final a7f run is a scoped addendum, not an equivalent-content Toolbox speed-superiority claim. Native firmware is EdgeTX 3.0 WASM; physical TX16S MkII on 2.12.4 remains unverified. Production files were copied privately and instrumented, not edited; synthetic fixtures and driver do not ship.

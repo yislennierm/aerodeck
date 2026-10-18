@@ -1,0 +1,45 @@
+{
+  "full-settings-after-save.txt": {
+    "sha256": "ee396e4286ead294d59df562879841be4e04fb00830e1b54dd5180868f74a58c",
+    "bytes": 1389,
+    "payloadBytes": 1327,
+    "ownerEnvelope": true,
+    "settings": {
+      "pack": "1",
+      "cells1": "6",
+      "capacity1": "6000",
+      "cells5": "4",
+      "capacity5": "1500",
+      "voltage": "Auto",
+      "current": "Auto",
+      "armBinding": "NATIVE",
+      "throttleBinding": "SRC:thr",
+      "limiterBinding": "SRC:s1",
+      "timerHost": "RADIO",
+      "timerIndex": "0"
+    }
+  },
+  "full-settings-after-pack5.txt": {
+    "sha256": "4933cf7e0cdda974e5307e4dfd8653ac92879b0cffdec998d92c975ed132e893",
+    "bytes": 1389,
+    "payloadBytes": 1327,
+    "ownerEnvelope": true,
+    "settings": {
+      "pack": "5",
+      "cells1": "6",
+      "capacity1": "6000",
+      "cells5": "4",
+      "capacity5": "1500",
+      "voltage": "Auto",
+      "current": "Auto",
+      "armBinding": "NATIVE",
+      "throttleBinding": "SRC:thr",
+      "limiterBinding": "SRC:s1",
+      "timerHost": "RADIO",
+      "timerIndex": "0"
+    }
+  },
+  "sourceSha256": "03ef8187ead264617a85f98a2c4980fb7e0c934b9175f2ac6016b5a48b16034a",
+  "actualNativeUiSaved": true,
+  "noCPUError": true
+}

@@ -1,0 +1,9 @@
+COMPARE frames=832 geometryExact=91636 removedText=6708 checks=7540
+METRIC instructions 1424183 1222991
+METRIC text 5969 4782
+METRIC geometry 16568 16568
+METRIC draw 22537 21350
+METRIC font 687 453
+METRIC color 17737 16550
+METRIC setting 600 480
+RESULT PASS measuredMovingFrames=120

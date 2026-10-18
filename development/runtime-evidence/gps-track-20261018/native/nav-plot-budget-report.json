@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-10-17T23:29:00.047633+00:00",
+  "status": "PASS",
+  "scope": "Workspace helper/unit tests only; fair caller scheduling is required and root-owned.",
+  "helperSha256": "4ebb7d33ff339b7ba3902bd05d5b79e2bbb4ca2d97c4afca8219f30f5d727d71",
+  "testSha256": "aa3dc73691286298ea5af5894d0ffed30ad6fef12575d2398b9733fda30c626f",
+  "originalDefaultHelperSha256": "097cdb6c03f25810fa08419d85f0c6f838673c60fdea1e183087fc376dfde333",
+  "originalDefaultTestSha256": "9a2d35f331d7ed013d5ea489ad1afca43142454a57a51ed68e4b910a54c8e52a",
+  "api": "step(home,pos,track,zoom,now,maxGeometry,maxPoints). Optional positive integer budgets clamp to8geometry/32points. Defaults remain8/32. Invalid/fractional/zero budgets return state.error INVALID STEP BUDGET and zero work, without advancing a pending job. Next valid call recovers.",
+  "checksPerVm": 22497,
+  "LuaJIT": "PASS",
+  "Lua53Int32Float32": "PASS",
+  "coverage": [
+    "All19428original default-path/pixel/ownership/nohome checks retained.",
+    "180cold points with2/16limits complete in exactly90processing callbacks after one start callback.",
+    "180cached points with2/16limits complete in exactly12processing callbacks with zero geometry calls.",
+    "Completed pixel frame never mutates while bounded second frame builds.",
+    "Invalid budget variants make zero geometry/transform progress and cannot fabricate an empty completion.",
+    "Large positive integer budgets clamp to original8/32maximum."
+  ],
+  "callerFailureEvidence": "Previous native b621 caller gated helper at usage<=10 while Track render entry usage was12\u201321%, so the helper was not called and TRACK0/N persisted. That native run is failure evidence, not a helper or feature acceptance pass. Parent now owns18point gate + bounded fairness scheduling and actual-main regression.",
+  "limits": [
+    "Pure-helper progress assumes step is actually called. This unit test does not prove caller fairness or physicalFPS/native callback cost.",
+    "Root/sensor agent own new exact-stage natural180point fixed-home/nohome native acceptance."
+  ]
+}

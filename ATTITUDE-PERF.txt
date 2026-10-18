@@ -1,0 +1,92 @@
+AERODECK — ATTITUDE-PERF-20261018
+Local build. Not installed on the radio.
+
+The browser preview is a separate native simulator process. Its old private SD
+snapshot was POWER-LIVE-20261017 even after RC1 was installed. The replacement
+uses the current exact-source snapshot, displays its build/hash and sample-data
+status, checks all64 production assets, and rejects frames/inputs when source
+changes. Refresh http://127.0.0.1:8766/ once to load the new page.
+
+Both Toolbox and AERODECK use lcd.drawHudRectangle for the horizon. The extra
+AERODECK cost is surrounding instruments/layout, rather than a Lua pixel-based
+horizon. Toolbox's original free ATT uses cached masks; AERODECK's current
+PFD adds a larger rectangular field, pitch rungs/collision handling, bank scale,
+large tapes, rails and adaptive value fitting. Different visual content must
+not be treated as an equivalent-content FPS comparison. Normal roll retains
+the native/Toolbox convention; the per-model Reversed control remains available.
+
+Changes
+- Standalone full telemetry/session work honors its existing200ms/revision cache
+  instead of being forced at every redraw. Attitude still polls every callback.
+- Native font metrics use a bounded128-caption FIFO.32 value cells retain only
+  their most recent fitted layout. Live colors, values and units stay current;
+  font/LCD/geometry changes invalidate the appropriate cached metrics.
+- Removed two per-frame temporary arrays and repeated horizon-origin work.
+- Retained startup loads one of20 native icon variants per callback, before the
+  first full frame. Successful and failed assets stay cached across pages and
+  same-resolution reloads. No forced GC at icon loading/page navigation.
+- Retained MIN/MAX reads move out of painting. Up to4 qualified native fields
+  are read/normalized per scheduled step, using cached compiled normalizers.
+  Only complete snapshots publish. Pending work cancels on LIVE/page exit/
+  background/revision changes, and excessively old/rolled-back work restarts.
+  Native receipt/currentness, raw Roll and negative-pitch MIN/MAX slot inversion
+  remain explicit. Standalone extrema retain the synchronous API with a200ms
+  cache. Retained history cadence is best-effort under the native callback budget;
+  the200ms target is not a guaranteed5Hz publication rate.
+- Every native widget refresh still paints its whole transient display buffer.
+  The20,000 instruction hook is unchanged. No fake attitude, smoothing that
+  conceals stale input, frame-repaint skipping or production sample provider.
+
+Evidence and limits
+The frozen matched animated PFD comparison used original baselinef3ec and
+initial optimized816d, with the same private fixtures and getUsage probes.
+Median sampled VM allowance decreased86%→81%; sampled peaks91%→85%.
+The later staged-icon a7f PFD ran63s at82% median/87% sampled peak with no blank,
+ordinary Updating or instruction-error frames. These are sampled Lua allowance
+percentages, not physical CPU, all-frame maxima or hardware speed measurements.
+Original free Toolbox whole-app measurement used25% with smaller/different UI.
+Both apps use the same cheap native horizon primitive. This evidence DOES NOT
+establish AERODECK as faster than the user's full Toolbox on the actual radio.
+
+Portable checks cover exact draw-command parity over132 attitude poses,
+missing/zero/long values, FrSky data, fonts/units/colors/geometry and LCD changes;
+stable frames eliminate repeated metrics and moving frames reduce native font
+measurements by94% in the mock measurement comparison. Scheduling checks use
+the actual app and backend, not another radio test tool. Both LuaJIT and a
+stock Lua5.3 int32/float32 interpreter are tested.
+
+Build-specific portable reports: development/test-results-ATTITUDE-PERF-20261018*.json
+Native/portable investigation: development/runtime-evidence/attitude-perf-20261018/
+Deployment record remains DEPLOYMENT.txt (last file-verified radio:RC1).
+The prior RC1/ROLL archives and their frozen evidence remain unchanged.
+
+Remaining acceptance
+Compare both complete apps on the same TX16S/EdgeTX2.12.4 with the same current
+quad telemetry and poses. Measure display cadence, data age, cold page changes
+and sustained memory separately. The browser's EdgeTX3.0 WASM with sample
+telemetry cannot establish physical RF timing, radio memory limits or superiority.
+
+Final4556 native history witness (frozen intermediate source)
+With24 bound fields and distinct synthetic native MIN/MAX slots, completed
+snapshots publish at about0.90Hz (1.1s intervals), rather than the200ms target.
+65.715s/1650 owned-LCD samples show no blank, ordinary Updating or CPU-limit
+frames. The same callback limit remains20k. Sampled VM allowance median77%,
+peak87%. Native source slots demonstrate21.6/25.2V,0.5/40A,negative-pitch
+physicalMIN/MAX−30/+20deg and unchangedRoll−45/+60deg.
+
+Profiling identified a safe optimization candidate: retain the larger margin
+for starting/final atomic publication, use spare headroom only on cheap middle
+batches. The promoted build and its evidence are recorded in the build manifest.
+
+PROMOTED LOCAL SOURCE:3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89
+The phase-aware candidate passed scoped native acceptance and was promoted.
+With24 fields, MIN/MAX median intervals improve to0.58/0.59s (about1.8Hz);
+84 correct completed snapshots,1100 owned samples over44.808s, no sampled
+blank/ordinary Updating frames or native instruction errors in the full log.
+Begin/final margins stay10; only ordinary middle batches use18. The20k hook
+and25 pre-render guard stay unchanged. Sampled callback median82%,peak87%.
+This is synthetic native VM evidence, not a physical-radio speed claim.
+
+54 portable suites PASS under each interpreter, bound to all64 runtime files.
+Local copy package:AERODECK-attitude-perf-install.zip. This is not a radio install.
+Build manifest:development/build-ATTITUDE-PERF-20261018.json.

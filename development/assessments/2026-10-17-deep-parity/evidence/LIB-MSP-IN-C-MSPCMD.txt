@@ -1,0 +1,40 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPCMD.luac
+SHA256: 2703046e61894213e79b8194d732a7c260e06573a0017cc83f907924ea5d5c22
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPCMD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 14), ('F', 1, 14), ('D', 1, 14), ('X', 1, 14)]
+K0 1
+K1 'MSP_API_VERSION|Read API version'
+K2 2
+K3 'MSP_FC_VARIANT|Read FW name'
+K4 3
+K5 'MSP_FC_VERSION|Read FW version'
+K6 4
+K7 'MSP_BOARD_INFO|Read Board info'
+K8 106
+K9 'MSP_RAW_GPS|Read GPS data'
+K10 107
+K11 'MSP_COMP_GPS|Read GPS data'
+K12 151
+K13 'MSP_SENSOR_STATUS|Read sensors'
+K14 160
+K15 'MSP_UID|Read FC UID'
+K16 164
+K17 'MSP_SV_INFO|Read GPS Sats'
+K18 8192
+K19 'MSP2_INAV_STATUS|Read INAV status'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  10] NEWTABLE  A=4 B=0 C=10
+   3 [  12] SETTABLE  R4[K0(1)] = K1('MSP_API_VERSION|Read API version')
+   4 [  14] SETTABLE  R4[K2(2)] = K3('MSP_FC_VARIANT|Read FW name')
+   5 [  16] SETTABLE  R4[K4(3)] = K5('MSP_FC_VERSION|Read FW version')
+   6 [  18] SETTABLE  R4[K6(4)] = K7('MSP_BOARD_INFO|Read Board info')
+   7 [  20] SETTABLE  R4[K8(106)] = K9('MSP_RAW_GPS|Read GPS data')
+   8 [  22] SETTABLE  R4[K10(107)] = K11('MSP_COMP_GPS|Read GPS data')
+   9 [  24] SETTABLE  R4[K12(151)] = K13('MSP_SENSOR_STATUS|Read sensors')
+  10 [  26] SETTABLE  R4[K14(160)] = K15('MSP_UID|Read FC UID')
+  11 [  28] SETTABLE  R4[K16(164)] = K17('MSP_SV_INFO|Read GPS Sats')
+  12 [  30] SETTABLE  R4[K18(8192)] = K19('MSP2_INAV_STATUS|Read INAV status')
+  13 [  31] RETURN    A=4 B=2 C=0
+  14 [  31] RETURN    A=0 B=1 C=0

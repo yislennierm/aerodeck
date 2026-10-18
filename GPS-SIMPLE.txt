@@ -1,0 +1,31 @@
+GPS-SIMPLE-20261018
+Main SHA256: 0b1dfbbbff0570713754697a7221e26c1b76df180c23d7722538f6ef9e6b26b2
+Local build; last file-verified radio remains ATTITUDE-CLEAN-20261018.
+
+The map retains its280x180viewport. Internal TRACK completed/total projection
+progress is no longer rendered; bounded background preparation, complete180-point
+publication and error/lost-position states remain. This counter described drawing
+preparation, not satellite count, track capacity or aircraft telemetry.
+
+Aircraft is a native white filled circle(radius3) with a dark radius5halo.
+No aircraft image, directional tick, bitmap cache or yaw/course rotation. Position
+remains visible without heading and disappears on GPS loss. Home image/collision
+callout and exact geographic anchoring remain. Grid spacing30px reduces visual
+noise and line calls. Distance, speed and altitude receive larger native fonts;
+the overview's Yaw/Course row is removed. Course is retained in Coordinates and
+body yaw in Recovery. Return bearing remains prominent.
+
+Removed34unused active PNGs and17aircraft masks from startup:20icon variants
+remain, one per retained startup callback. Editable SVGs, export provenance and
+historical install archives are retained as development history. The current
+package ships66runtime files and4support files. No new asset or per-frame SD I/O.
+
+59suites PASS in LuaJIT and int32/float32 Lua5.3; native GPS views inspected with
+unchanged20000callback budget. Includes mature trail, dot/halo, missing heading,
+GPS loss, home ownership, warning priority and absence of progress counters.
+Synthetic simulator checks do not measure physical radio/quad performance.
+
+Preview: http://127.0.0.1:8766/
+Package: AERODECK-gps-simple-install.zip
+Evidence: development/runtime-evidence/gps-simple-20261018/
+No radio installation or GitHub push this turn. See DEPLOYMENT.txt.

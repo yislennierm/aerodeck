@@ -1,0 +1,102 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/MDUPD.luac 
+SHA256 0257242ccb3e3e0d28a1b672b92a33460cb7b3bff391926832cd4be9de76f5f5
+
+FUNCTION main params 0 vararg 1 stack 13 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/MDUPD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 69), ('F', 1, 69), ('D', 1, 69), ('X', 1, 69), ('DM', 3, 69), ('(for generator)', 54, 67), ('(for state)', 54, 67), ('(for control)', 54, 67), ('i', 55, 65), ('v', 55, 65)]
+K0 'UI'
+K1 'MODS'
+K2 'DBD'
+K3 'v'
+K4 False
+K5 'CFG'
+K6 True
+K7 'TLM'
+K8 'VTX'
+K9 'GPS'
+K10 'AST'
+K11 'STK'
+K12 'ABT'
+K13 'fm'
+K14 'sxx'
+K15 'S'
+K16 'MDL_RCP_ON'
+K17 'MDL_VTX_ON'
+K18 'MDL_GPS_ON'
+K19 'pgg'
+K20 'MDL_FC_ON'
+K21 'visible'
+K22 'ipairs'
+K23 'all'
+K24 'id'
+K25 'table'
+K26 'insert'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('UI')]
+   3 [  12] GETTABLE  R4 = R4[K1('MODS')]
+   4 [  13] GETTABLE  R5 = R4[K2('DBD')]
+   5 [  13] SETTABLE  R5[K3('v')] = K4(False)
+   6 [  14] GETTABLE  R5 = R4[K5('CFG')]
+   7 [  14] SETTABLE  R5[K3('v')] = K6(True)
+   8 [  15] GETTABLE  R5 = R4[K7('TLM')]
+   9 [  15] SETTABLE  R5[K3('v')] = K4(False)
+  10 [  16] GETTABLE  R5 = R4[K8('VTX')]
+  11 [  16] SETTABLE  R5[K3('v')] = K4(False)
+  12 [  17] GETTABLE  R5 = R4[K9('GPS')]
+  13 [  17] SETTABLE  R5[K3('v')] = K4(False)
+  14 [  18] GETTABLE  R5 = R4[K10('AST')]
+  15 [  18] SETTABLE  R5[K3('v')] = K4(False)
+  16 [  19] GETTABLE  R5 = R4[K11('STK')]
+  17 [  19] SETTABLE  R5[K3('v')] = K4(False)
+  18 [  20] GETTABLE  R5 = R4[K12('ABT')]
+  19 [  20] SETTABLE  R5[K3('v')] = K6(True)
+  20 [  21] GETTABLE  R5 = R0[K13('fm')]
+  21 [  21] GETTABLE  R5 = R5[K14('sxx')]
+  22 [  21] TEST      A=5 B=0 C=0
+  23 [  21] JMP       A=0 ->50
+  24 [  22] GETTABLE  R5 = R2[K15('S')]
+  25 [  22] GETTABLE  R5 = R5[K16('MDL_RCP_ON')]
+  26 [  22] TEST      A=5 B=0 C=0
+  27 [  22] JMP       A=0 ->50
+  28 [  23] GETTABLE  R5 = R4[K7('TLM')]
+  29 [  23] SETTABLE  R5[K3('v')] = K6(True)
+  30 [  24] GETTABLE  R5 = R4[K8('VTX')]
+  31 [  24] GETTABLE  R6 = R2[K15('S')]
+  32 [  24] GETTABLE  R6 = R6[K17('MDL_VTX_ON')]
+  33 [  24] SETTABLE  R5[K3('v')] = R6
+  34 [  25] GETTABLE  R5 = R4[K9('GPS')]
+  35 [  25] GETTABLE  R6 = R2[K15('S')]
+  36 [  25] GETTABLE  R6 = R6[K18('MDL_GPS_ON')]
+  37 [  25] SETTABLE  R5[K3('v')] = R6
+  38 [  26] GETTABLE  R5 = R4[K10('AST')]
+  39 [  26] GETTABLE  R6 = R0[K13('fm')]
+  40 [  26] GETTABLE  R6 = R6[K19('pgg')]
+  41 [  26] TEST      A=6 B=0 C=0
+  42 [  26] JMP       A=0 ->45
+  43 [  26] GETTABLE  R6 = R2[K15('S')]
+  44 [  26] GETTABLE  R6 = R6[K20('MDL_FC_ON')]
+  45 [  26] SETTABLE  R5[K3('v')] = R6
+  46 [  27] GETTABLE  R5 = R4[K11('STK')]
+  47 [  27] GETTABLE  R6 = R2[K15('S')]
+  48 [  27] GETTABLE  R6 = R6[K20('MDL_FC_ON')]
+  49 [  27] SETTABLE  R5[K3('v')] = R6
+  50 [  31] NEWTABLE  A=5 B=0 C=0
+  51 [  31] SETTABLE  R4[K21('visible')] = R5
+  52 [  32] GETTABUP  R5 = UP0[K22('ipairs')]
+  53 [  32] GETTABLE  R6 = R4[K23('all')]
+  54 [  32] CALL      A=5 B=2 C=4
+  55 [  32] JMP       A=0 ->66
+  56 [  33] GETTABLE  R10 = R9[K24('id')]
+  57 [  33] GETTABLE  R10 = R4[R10]
+  58 [  33] GETTABLE  R10 = R10[K3('v')]
+  59 [  33] TEST      A=10 B=0 C=0
+  60 [  33] JMP       A=0 ->66
+  61 [  34] GETTABUP  R10 = UP0[K25('table')]
+  62 [  34] GETTABLE  R10 = R10[K26('insert')]
+  63 [  34] GETTABLE  R11 = R4[K21('visible')]
+  64 [  34] MOVE      A=12 B=9 C=0
+  65 [  34] CALL      A=10 B=3 C=1
+  66 [  32] TFORCALL  A=5 B=0 C=2
+  67 [  32] TFORLOOP  A=7 ->56
+  68 [  38] RETURN    A=0 B=1 C=0
+  69 [  38] RETURN    A=0 B=1 C=0

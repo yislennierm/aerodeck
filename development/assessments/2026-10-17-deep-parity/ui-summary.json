@@ -1,0 +1,23 @@
+{
+  "baselineCommit": "ebb932a7e5252785d98e2fe7a7a8add7df5cf5db",
+  "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+  "rowCount": 92,
+  "statusCounts": {
+    "equivalent": 36,
+    "addition": 8,
+    "partial": 29,
+    "unverified": 4,
+    "missing": 15
+  },
+  "areas": {
+    "Attitude": 20,
+    "Flight rails/status": 17,
+    "GPS/navigation": 16,
+    "Screens/chrome": 14,
+    "Navigation": 7,
+    "Rendering/assets": 10,
+    "Platforms/resolutions": 8
+  },
+  "onlyExcludedCapability": "Activation/licence-key mechanism. All key-gated actual functions remain required.",
+  "evidenceCaveat": "Recovered Lua may be semantically malformed. Critical AHR/ATT/CMP/GPS/lifecycle inputs are hash-matched to original bytecode and disassembled in ui-evidence. A recovered-source row proves visible symbols/capability presence, not reliable execution of malformed control flow; dependencies/hardware gates remain explicit."
+}

@@ -1,0 +1,18 @@
+BF 4.3/4.4 COMPATIBILITY AND QUICK RELOAD — 2026-10-17
+
+The original Toolbox BF floor is API 1.44 / BF 4.3+, confirmed in original
+bytecode. Official pinned 4.3.2 (API 1.44) and 4.4.3 (API 1.45) sources have
+26 disable flags and the existing STATUS_EX variable-mode-header/count/U32
+layout. Named maps now require exact API/count and preserve BADRX (bit 3) and
+RPMFILTER (bit 20). Newer maps are unchanged. Current BF VTX/cache guards already
+accepted API 1.44 through 1.48; older BF was not globally unsupported.
+
+Every one of the 52 older-version flag cases and 136 additional live/reference,
+variable-offset, mixed-bit, count, unknown and malformed cases pass in LuaJIT
+and stock Lua 5.3 int32/float32. No RF or hardware acceptance is claimed. The
+JSON supplies official source URLs/hashes and current runtime/test hashes.
+
+Original Quick Reload clears initDone and calls the retained root init closure.
+It clears/reloads application submodules, not the root M script. AERODECK
+reinitializes local session/settings; source edits require closing/reopening.
+No original root-source hot reload capability was established.

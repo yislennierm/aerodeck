@@ -1,0 +1,373 @@
+{
+  "status": "PASS",
+  "sourceSha256": "03ef8187ead264617a85f98a2c4980fb7e0c934b9175f2ac6016b5a48b16034a",
+  "simulator": "EdgeTX3.0.0 TX16S WASM",
+  "targetFirmware": "EdgeTX2.12.4",
+  "hardwareVerified": false,
+  "syntheticDataOnly": true,
+  "productionBytesUnchanged": true,
+  "nativeCallbackInstructionBudget": 20000,
+  "nativeBudgetHookModified": false,
+  "nativeProcessDurationSeconds": 220.584,
+  "fullWidgetStartedAfterApproxSeconds": 17,
+  "fullCurrentWidgetDurationApproxSeconds": 203.584,
+  "monitoredWarmSeconds": 170.365,
+  "monitorSamples": 4500,
+  "monitorIntervalMs": 37,
+  "blankFrames": 0,
+  "ordinaryUpdatingFrames": 0,
+  "cpuLimitErrors": 0,
+  "forcedGarbageCollection": false,
+  "automaticGarbageCollectionOnly": true,
+  "movingGpsNominalHz": 5,
+  "statusCycleTimeAlternates": [
+    125,
+    126
+  ],
+  "armingMaskUnchanged": true,
+  "nativeDrawWindows": [
+    {
+      "fromTick": 2071,
+      "toTick": 3074,
+      "durationSeconds": 10.03,
+      "drawCallbacks": 172,
+      "drawFPS": 17.148554336989033,
+      "distinctAttitudeUpdates": 172,
+      "distinctAttitudeHz": 17.148554336989033,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.187437686939182,
+      "minimumInstructionBudgetUsedPercent": 24,
+      "maximumInstructionBudgetUsedPercent": 96,
+      "meanInstructionBudgetUsedPercent": 61.5
+    },
+    {
+      "fromTick": 3074,
+      "toTick": 4075,
+      "durationSeconds": 10.01,
+      "drawCallbacks": 172,
+      "drawFPS": 17.182817182817182,
+      "distinctAttitudeUpdates": 172,
+      "distinctAttitudeHz": 17.182817182817182,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.195804195804196,
+      "minimumInstructionBudgetUsedPercent": 27,
+      "maximumInstructionBudgetUsedPercent": 90,
+      "meanInstructionBudgetUsedPercent": 51.2
+    },
+    {
+      "fromTick": 4075,
+      "toTick": 5079,
+      "durationSeconds": 10.04,
+      "drawCallbacks": 172,
+      "drawFPS": 17.131474103585656,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.03187250996016,
+      "publishedSnapshots": 41,
+      "publicationHz": 4.083665338645418,
+      "minimumInstructionBudgetUsedPercent": 27,
+      "maximumInstructionBudgetUsedPercent": 90,
+      "meanInstructionBudgetUsedPercent": 46.1
+    },
+    {
+      "fromTick": 5079,
+      "toTick": 6081,
+      "durationSeconds": 10.02,
+      "drawCallbacks": 171,
+      "drawFPS": 17.065868263473053,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.065868263473053,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.191616766467066,
+      "minimumInstructionBudgetUsedPercent": 81,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 86.2
+    },
+    {
+      "fromTick": 6081,
+      "toTick": 7083,
+      "durationSeconds": 10.02,
+      "drawCallbacks": 171,
+      "drawFPS": 17.065868263473053,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.065868263473053,
+      "publishedSnapshots": 41,
+      "publicationHz": 4.091816367265469,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 86.2
+    },
+    {
+      "fromTick": 7083,
+      "toTick": 8088,
+      "durationSeconds": 10.05,
+      "drawCallbacks": 171,
+      "drawFPS": 17.01492537313433,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.01492537313433,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.17910447761194,
+      "minimumInstructionBudgetUsedPercent": 32,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 73.9
+    },
+    {
+      "fromTick": 8088,
+      "toTick": 9088,
+      "durationSeconds": 10.0,
+      "drawCallbacks": 171,
+      "drawFPS": 17.1,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.1,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.2,
+      "minimumInstructionBudgetUsedPercent": 31,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 71.8
+    },
+    {
+      "fromTick": 9088,
+      "toTick": 10090,
+      "durationSeconds": 10.02,
+      "drawCallbacks": 171,
+      "drawFPS": 17.065868263473053,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.065868263473053,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.191616766467066,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 86.0
+    },
+    {
+      "fromTick": 10090,
+      "toTick": 11091,
+      "durationSeconds": 10.01,
+      "drawCallbacks": 171,
+      "drawFPS": 17.08291708291708,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.08291708291708,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.195804195804196,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 92,
+      "meanInstructionBudgetUsedPercent": 86.3
+    },
+    {
+      "fromTick": 11091,
+      "toTick": 12094,
+      "durationSeconds": 10.03,
+      "drawCallbacks": 171,
+      "drawFPS": 17.048853439680958,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.048853439680958,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.187437686939182,
+      "minimumInstructionBudgetUsedPercent": 32,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 59.5
+    },
+    {
+      "fromTick": 12094,
+      "toTick": 13097,
+      "durationSeconds": 10.03,
+      "drawCallbacks": 171,
+      "drawFPS": 17.048853439680958,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.048853439680958,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.187437686939182,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 86.3
+    },
+    {
+      "fromTick": 13097,
+      "toTick": 14101,
+      "durationSeconds": 10.04,
+      "drawCallbacks": 171,
+      "drawFPS": 17.03187250996016,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.03187250996016,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.183266932270916,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 86.1
+    },
+    {
+      "fromTick": 14101,
+      "toTick": 15101,
+      "durationSeconds": 10.0,
+      "drawCallbacks": 171,
+      "drawFPS": 17.1,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.1,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.2,
+      "minimumInstructionBudgetUsedPercent": 32,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 64.9
+    },
+    {
+      "fromTick": 15101,
+      "toTick": 16104,
+      "durationSeconds": 10.03,
+      "drawCallbacks": 171,
+      "drawFPS": 17.048853439680958,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.048853439680958,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.187437686939182,
+      "minimumInstructionBudgetUsedPercent": 32,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 80.9
+    },
+    {
+      "fromTick": 16104,
+      "toTick": 17104,
+      "durationSeconds": 10.0,
+      "drawCallbacks": 171,
+      "drawFPS": 17.1,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.1,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.2,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 92,
+      "meanInstructionBudgetUsedPercent": 86.3
+    },
+    {
+      "fromTick": 17104,
+      "toTick": 18104,
+      "durationSeconds": 10.0,
+      "drawCallbacks": 170,
+      "drawFPS": 17.0,
+      "distinctAttitudeUpdates": 170,
+      "distinctAttitudeHz": 17.0,
+      "publishedSnapshots": 41,
+      "publicationHz": 4.1,
+      "minimumInstructionBudgetUsedPercent": 36,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 83.6
+    },
+    {
+      "fromTick": 18104,
+      "toTick": 19104,
+      "durationSeconds": 10.0,
+      "drawCallbacks": 170,
+      "drawFPS": 17.0,
+      "distinctAttitudeUpdates": 170,
+      "distinctAttitudeHz": 17.0,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.2,
+      "minimumInstructionBudgetUsedPercent": 30,
+      "maximumInstructionBudgetUsedPercent": 91,
+      "meanInstructionBudgetUsedPercent": 61.3
+    },
+    {
+      "fromTick": 19104,
+      "toTick": 20109,
+      "durationSeconds": 10.05,
+      "drawCallbacks": 171,
+      "drawFPS": 17.01492537313433,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.01492537313433,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.17910447761194,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 92,
+      "meanInstructionBudgetUsedPercent": 86.4
+    },
+    {
+      "fromTick": 20109,
+      "toTick": 21111,
+      "durationSeconds": 10.02,
+      "drawCallbacks": 171,
+      "drawFPS": 17.065868263473053,
+      "distinctAttitudeUpdates": 171,
+      "distinctAttitudeHz": 17.065868263473053,
+      "publishedSnapshots": 42,
+      "publicationHz": 4.191616766467066,
+      "minimumInstructionBudgetUsedPercent": 80,
+      "maximumInstructionBudgetUsedPercent": 92,
+      "meanInstructionBudgetUsedPercent": 86.2
+    }
+  ],
+  "nativeMemorySamples": [
+    {
+      "elapsedTicks": 0,
+      "luaHeapKB": 196.5889
+    },
+    {
+      "elapsedTicks": 3003,
+      "luaHeapKB": 1121.83
+    },
+    {
+      "elapsedTicks": 6004,
+      "luaHeapKB": 1310.797
+    },
+    {
+      "elapsedTicks": 9006,
+      "luaHeapKB": 1343.493
+    },
+    {
+      "elapsedTicks": 12007,
+      "luaHeapKB": 1325.463
+    },
+    {
+      "elapsedTicks": 15007,
+      "luaHeapKB": 1370.662
+    },
+    {
+      "elapsedTicks": 18010,
+      "luaHeapKB": 1343.375
+    },
+    {
+      "elapsedTicks": 21012,
+      "luaHeapKB": 1367.222
+    }
+  ],
+  "purePfdWindowRanges": {
+    "drawFPS": [
+      17.01492537313433,
+      17.1
+    ],
+    "distinctAttitudeHz": [
+      17.01492537313433,
+      17.1
+    ],
+    "publicationHz": [
+      4.091816367265469,
+      4.2
+    ],
+    "instructionBudgetUsedPercent": [
+      80,
+      92
+    ]
+  },
+  "finalAboutScreenReadback": {
+    "currentLuaHeapKB": 1348.9,
+    "observedPeakLuaHeapKB": 1387.0,
+    "file": "warm-about-5.png"
+  },
+  "finalRuntimeScreenReadback": {
+    "drawFPS": 17.2,
+    "distinctAttitudeHz": 17.2,
+    "moduleResetError": "NONE",
+    "file": "warm-runtime-5.png"
+  },
+  "interpretation": "No frame slowdown, blank or routine progress was observed in this simulator window. Memory samples vary under automatic GC; this does not prove unlimited-duration stability or physical-radio timing. Other isolated QA hosts were running concurrently for parts of this window.",
+  "nativeHost": {
+    "file": "host-pump.cjs",
+    "sha256": "29fde6a5265c1c9f91ef420ba47092b7f9497e3a11a4386b96623f1134784e11",
+    "continuousDirtyCopyThenAck": true,
+    "pumpIntervalMs": 16,
+    "screenshotsReadOwnedCache": true,
+    "screenshotExtraAck": false
+  },
+  "files": {
+    "native.log": "ef6a32a5ae91fc0c02a384f7d121df30019cc780728141be574df7b4c7cb7a26",
+    "inputs.json": "673bdbddd06762ecb2685613796f69fb17aab66b328f113861c4dcb3ae223615",
+    "warm-refresh-observations.json": "9ae35a4552125e9ae25493f0e2ed02a27798b8eab6d43789dfa661268261b8c1"
+  }
+}

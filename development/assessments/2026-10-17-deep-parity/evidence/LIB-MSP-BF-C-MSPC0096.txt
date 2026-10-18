@@ -1,0 +1,201 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0096.luac 
+SHA256 c8502cf1f6343ce2b700f88d6a6751dbd3b6d08f027d176ad221803645c76378
+
+FUNCTION main params 0 vararg 1 stack 20 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0096.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 154), ('F', 1, 154), ('D', 1, 154), ('X', 1, 154), ('activeSensors', 6, 154), ('fmNo', 11, 154), ('asNo', 18, 154), ('asF', 21, 154), ('(for index)', 77, 106), ('(for limit)', 77, 106), ('(for step)', 77, 106), ('i', 78, 105), ('test', 83, 105), ('asNo', 86, 105), ('asID', 94, 105)]
+K0 'MSP'
+K1 'dptr'
+K2 5
+K3 'MSPP'
+K4 'U16'
+K5 16
+K6 'U8'
+K7 'P'
+K8 'U32'
+K9 'FC'
+K10 'S_ACTIVE'
+K11 'S_ACC'
+K12 'bit'
+K13 'extract'
+K14 0
+K15 'S_BARO'
+K16 1
+K17 'S_MAG'
+K18 2
+K19 'S_GPS'
+K20 3
+K21 'S_RF'
+K22 4
+K23 'S_GYRO'
+K24 'ARMSTOPS'
+K25 'bcheck'
+K26 'loadE'
+K27 'PLIBFC'
+K28 'S'
+K29 'FC_FW_ID'
+K30 '/ASCS'
+K31 'ARM_STOP_MSP'
+K32 True
+K33 'ARM_STOP_LIST'
+K34 ' '
+K35 ''
+K36 'clear'
+K37 None
+K38 'dbgMSP'
+K39 'armingDisableFlags'
+K40 'strBin'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  13] GETTABLE  R4 = R2[K0('MSP')]
+   3 [  13] SETTABLE  R4[K1('dptr')] = K2(5)
+   4 [  14] GETTABLE  R4 = R1[K3('MSPP')]
+   5 [  14] LOADK     R5 = K4 ('U16')
+   6 [  14] CALL      A=4 B=2 C=2
+   7 [  21] GETTABLE  R5 = R2[K0('MSP')]
+   8 [  21] SETTABLE  R5[K1('dptr')] = K5(16)
+   9 [  22] GETTABLE  R5 = R1[K3('MSPP')]
+  10 [  22] LOADK     R6 = K6 ('U8')
+  11 [  22] CALL      A=5 B=2 C=2
+  12 [  23] GETTABLE  R6 = R1[K3('MSPP')]
+  13 [  23] LOADK     R7 = K7 ('P')
+  14 [  23] MOVE      A=8 B=5 C=0
+  15 [  23] CALL      A=6 B=3 C=1
+  16 [  24] GETTABLE  R6 = R1[K3('MSPP')]
+  17 [  24] LOADK     R7 = K6 ('U8')
+  18 [  24] CALL      A=6 B=2 C=2
+  19 [  25] GETTABLE  R7 = R1[K3('MSPP')]
+  20 [  25] LOADK     R8 = K8 ('U32')
+  21 [  25] CALL      A=7 B=2 C=2
+  22 [  38] GETTABLE  R8 = R2[K9('FC')]
+  23 [  38] SETTABLE  R8[K10('S_ACTIVE')] = R4
+  24 [  39] GETTABLE  R8 = R2[K9('FC')]
+  25 [  39] GETTABLE  R9 = R0[K12('bit')]
+  26 [  39] GETTABLE  R9 = R9[K13('extract')]
+  27 [  39] MOVE      A=10 B=4 C=0
+  28 [  39] LOADK     R11 = K14 (0)
+  29 [  39] CALL      A=9 B=3 C=2
+  30 [  39] SETTABLE  R8[K11('S_ACC')] = R9
+  31 [  40] GETTABLE  R8 = R2[K9('FC')]
+  32 [  40] GETTABLE  R9 = R0[K12('bit')]
+  33 [  40] GETTABLE  R9 = R9[K13('extract')]
+  34 [  40] MOVE      A=10 B=4 C=0
+  35 [  40] LOADK     R11 = K16 (1)
+  36 [  40] CALL      A=9 B=3 C=2
+  37 [  40] SETTABLE  R8[K15('S_BARO')] = R9
+  38 [  41] GETTABLE  R8 = R2[K9('FC')]
+  39 [  41] GETTABLE  R9 = R0[K12('bit')]
+  40 [  41] GETTABLE  R9 = R9[K13('extract')]
+  41 [  41] MOVE      A=10 B=4 C=0
+  42 [  41] LOADK     R11 = K18 (2)
+  43 [  41] CALL      A=9 B=3 C=2
+  44 [  41] SETTABLE  R8[K17('S_MAG')] = R9
+  45 [  42] GETTABLE  R8 = R2[K9('FC')]
+  46 [  42] GETTABLE  R9 = R0[K12('bit')]
+  47 [  42] GETTABLE  R9 = R9[K13('extract')]
+  48 [  42] MOVE      A=10 B=4 C=0
+  49 [  42] LOADK     R11 = K20 (3)
+  50 [  42] CALL      A=9 B=3 C=2
+  51 [  42] SETTABLE  R8[K19('S_GPS')] = R9
+  52 [  43] GETTABLE  R8 = R2[K9('FC')]
+  53 [  43] GETTABLE  R9 = R0[K12('bit')]
+  54 [  43] GETTABLE  R9 = R9[K13('extract')]
+  55 [  43] MOVE      A=10 B=4 C=0
+  56 [  43] LOADK     R11 = K22 (4)
+  57 [  43] CALL      A=9 B=3 C=2
+  58 [  43] SETTABLE  R8[K21('S_RF')] = R9
+  59 [  44] GETTABLE  R8 = R2[K9('FC')]
+  60 [  44] GETTABLE  R9 = R0[K12('bit')]
+  61 [  44] GETTABLE  R9 = R9[K13('extract')]
+  62 [  44] MOVE      A=10 B=4 C=0
+  63 [  44] LOADK     R11 = K2 (5)
+  64 [  44] CALL      A=9 B=3 C=2
+  65 [  44] SETTABLE  R8[K23('S_GYRO')] = R9
+  66 [  46] TEST      A=6 B=0 C=0
+  67 [  46] JMP       A=0 ->136
+  68 [  46] TEST      A=7 B=0 C=0
+  69 [  46] JMP       A=0 ->136
+  70 [  46] LT        A=0 K14(0), R7; skip-next if condition != A
+  71 [  46] JMP       A=0 ->136
+  72 [  47] GETTABLE  R8 = R2[K9('FC')]
+  73 [  47] NEWTABLE  A=9 B=0 C=0
+  74 [  47] SETTABLE  R8[K24('ARMSTOPS')] = R9
+  75 [  48] LOADK     R8 = K14 (0)
+  76 [  48] SUB       A=9 B=6 C=272
+  77 [  48] LOADK     R10 = K16 (1)
+  78 [  48] FORPREP   A=8 ->106
+  79 [  49] GETTABLE  R12 = R0[K12('bit')]
+  80 [  49] GETTABLE  R12 = R12[K25('bcheck')]
+  81 [  49] MOVE      A=13 B=7 C=0
+  82 [  49] MOVE      A=14 B=11 C=0
+  83 [  49] CALL      A=12 B=3 C=2
+  84 [  51] TEST      A=12 B=0 C=0
+  85 [  51] JMP       A=0 ->106
+  86 [  52] ADD       A=13 B=11 C=272
+  87 [  53] GETTABLE  R14 = R0[K26('loadE')]
+  88 [  53] GETTABLE  R15 = R0[K27('PLIBFC')]
+  89 [  53] GETTABLE  R16 = R2[K28('S')]
+  90 [  53] GETTABLE  R16 = R16[K29('FC_FW_ID')]
+  91 [  53] LOADK     R17 = K30 ('/ASCS')
+  92 [  53] CONCAT    A=15 B=15 C=17
+  93 [  53] MOVE      A=16 B=13 C=0
+  94 [  53] CALL      A=14 B=3 C=2
+  95 [  54] GETTABLE  R15 = R2[K9('FC')]
+  96 [  54] GETTABLE  R15 = R15[K24('ARMSTOPS')]
+  97 [  54] GETTABLE  R16 = R2[K9('FC')]
+  98 [  54] GETTABLE  R16 = R16[K24('ARMSTOPS')]
+  99 [  54] LEN       A=16 B=16 C=0
+ 100 [  54] ADD       A=16 B=16 C=272
+ 101 [  54] NEWTABLE  A=17 B=2 C=0
+ 102 [  54] MOVE      A=18 B=13 C=0
+ 103 [  54] MOVE      A=19 B=14 C=0
+ 104 [  54] SETLIST   A=17 B=2 C=1
+ 105 [  54] SETTABLE  R15[R16] = R17
+ 106 [  48] FORLOOP   A=8 ->79
+ 107 [  58] GETTABLE  R8 = R2[K9('FC')]
+ 108 [  58] GETTABLE  R8 = R8[K24('ARMSTOPS')]
+ 109 [  58] LEN       A=8 B=8 C=0
+ 110 [  58] LT        A=0 K14(0), R8; skip-next if condition != A
+ 111 [  58] JMP       A=0 ->144
+ 112 [  59] GETTABLE  R8 = R2[K28('S')]
+ 113 [  59] SETTABLE  R8[K31('ARM_STOP_MSP')] = K32(True)
+ 114 [  60] GETTABLE  R8 = R2[K28('S')]
+ 115 [  60] GETTABLE  R9 = R2[K9('FC')]
+ 116 [  60] GETTABLE  R9 = R9[K24('ARMSTOPS')]
+ 117 [  60] GETTABLE  R9 = R9[K16(1)]
+ 118 [  60] GETTABLE  R9 = R9[K18(2)]
+ 119 [  60] GETTABLE  R10 = R2[K9('FC')]
+ 120 [  60] GETTABLE  R10 = R10[K24('ARMSTOPS')]
+ 121 [  60] GETTABLE  R10 = R10[K18(2)]
+ 122 [  60] TEST      A=10 B=0 C=0
+ 123 [  60] JMP       A=0 ->132
+ 124 [  60] LOADK     R10 = K34 (' ')
+ 125 [  60] GETTABLE  R11 = R2[K9('FC')]
+ 126 [  60] GETTABLE  R11 = R11[K24('ARMSTOPS')]
+ 127 [  60] GETTABLE  R11 = R11[K18(2)]
+ 128 [  60] GETTABLE  R11 = R11[K18(2)]
+ 129 [  60] CONCAT    A=10 B=10 C=11
+ 130 [  60] TEST      A=10 B=0 C=1
+ 131 [  60] JMP       A=0 ->133
+ 132 [  60] LOADK     R10 = K35 ('')
+ 133 [  60] CONCAT    A=9 B=9 C=10
+ 134 [  60] SETTABLE  R8[K33('ARM_STOP_LIST')] = R9
+ 135 [  61] JMP       A=0 ->144
+ 136 [  63] GETTABLE  R8 = R0[K36('clear')]
+ 137 [  63] GETTABLE  R9 = R2[K9('FC')]
+ 138 [  63] LOADK     R10 = K24 ('ARMSTOPS')
+ 139 [  63] CALL      A=8 B=3 C=1
+ 140 [  64] GETTABLE  R8 = R2[K28('S')]
+ 141 [  64] SETTABLE  R8[K31('ARM_STOP_MSP')] = K37(None)
+ 142 [  65] GETTABLE  R8 = R2[K28('S')]
+ 143 [  65] SETTABLE  R8[K33('ARM_STOP_LIST')] = K37(None)
+ 144 [  81] GETTABLE  R8 = R0[K38('dbgMSP')]
+ 145 [  81] LOADK     R9 = K3 ('MSPP')
+ 146 [  81] LOADK     R10 = K39 ('armingDisableFlags')
+ 147 [  81] MOVE      A=11 B=7 C=0
+ 148 [  81] GETTABLE  R12 = R0[K40('strBin')]
+ 149 [  81] MOVE      A=13 B=7 C=0
+ 150 [  81] LOADK     R14 = K22 (4)
+ 151 [  81] CALL      A=12 B=3 C=0
+ 152 [  81] CALL      A=8 B=0 C=1
+ 153 [  83] RETURN    A=0 B=1 C=0
+ 154 [  83] RETURN    A=0 B=1 C=0

@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "mainSHA256": "ec0397d8ec645b50727600fa2fbb7d5278d72f3589a3bf19a1f4bd3ef1b121d9",
+  "acceptedBundle": "work/edgetx/gps-track-20261018/accepted/verification.json",
+  "acceptedVerificationSHA256": "fe851c2e6b166e9ae9c925672ffd4b828a5b95125c4c378e365e8f67b5609855",
+  "nativeCallbackInstructionBudget": 20000,
+  "nativeBudgetHookModified": false,
+  "syntheticDataOnly": true,
+  "hardwareVerified": false,
+  "forcedGC": false,
+  "cases": [
+    {
+      "id": "accepted-home",
+      "mainSHA256": "ec0397d8ec645b50727600fa2fbb7d5278d72f3589a3bf19a1f4bd3ef1b121d9",
+      "role": "Exact-final seeded180 stress",
+      "historyPoints": 180,
+      "historySeeded": true,
+      "elapsedMonitoredMs": 47999,
+      "LCDSamples": 1268,
+      "blankSamples": 0,
+      "ordinaryProgressSamples": 0,
+      "explicitSetHomeProgressSamples": 2,
+      "instructionOrScriptErrors": 0
+    },
+    {
+      "id": "accepted-nohome",
+      "mainSHA256": "ec0397d8ec645b50727600fa2fbb7d5278d72f3589a3bf19a1f4bd3ef1b121d9",
+      "role": "Exact-final seeded180 stress",
+      "historyPoints": 180,
+      "historySeeded": true,
+      "elapsedMonitoredMs": 47984,
+      "LCDSamples": 1268,
+      "blankSamples": 0,
+      "ordinaryProgressSamples": 0,
+      "explicitSetHomeProgressSamples": 2,
+      "instructionOrScriptErrors": 0
+    },
+    {
+      "id": "final-home",
+      "mainSHA256": "146971c66e78b793e3253c67e458cbaba69a4afdd93c046a98cad05a2227af92",
+      "role": "Prior146971 natural-growth evidence; final edge fixes differ, not exact-final performance",
+      "historyPoints": 180,
+      "historySeeded": false,
+      "elapsedMonitoredMs": 220602,
+      "LCDSamples": 5834,
+      "blankSamples": 0,
+      "ordinaryProgressSamples": 1,
+      "explicitSetHomeProgressSamples": 0,
+      "instructionOrScriptErrors": 0
+    },
+    {
+      "id": "final-nohome",
+      "mainSHA256": "146971c66e78b793e3253c67e458cbaba69a4afdd93c046a98cad05a2227af92",
+      "role": "Prior146971 natural-growth evidence; final edge fixes differ, not exact-final performance",
+      "historyPoints": 180,
+      "historySeeded": false,
+      "elapsedMonitoredMs": 220650,
+      "LCDSamples": 5837,
+      "blankSamples": 0,
+      "ordinaryProgressSamples": 0,
+      "explicitSetHomeProgressSamples": 0,
+      "instructionOrScriptErrors": 0
+    }
+  ],
+  "notes": [
+    "Exactfinalec039 seeded180 cases have0 ordinary progress and2 explicit SetHome action progress samples each.",
+    "Historical146971 naturalhome case had1 transientprogress sample duringGPSdetail return; nohome0. Both grew naturally0\u2192180 with0CPU/blanks. Historical metrics are not mislabeled exactfinal.",
+    "Full path/nativeclip/live marker/manualhome reset visually inspected. No physicalradio speed claim.",
+    "Supplementary nohome slowzoom witness still collecting; it will be separate artifact, not change frozenbundle."
+  ]
+}

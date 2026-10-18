@@ -1,0 +1,434 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0058.luac
+SHA256: 45506022ec8facb666fe737844152a8f5f93aedb6d726611ff36b3bd9f388182
+
+FUNCTION main params 0 vararg 1 stack 17 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0058.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 355), ('F', 1, 355), ('D', 1, 355), ('X', 1, 355), ('pID', 9, 355), ('sBID', 26, 355), ('sCID', 29, 355), ('sPwID', 32, 355), ('sPIT', 35, 355), ('sFRQ', 38, 355), ('dRDY', 41, 355), ('sLPD', 44, 355), ('pFN', 158, 224), ('sIDX', 257, 282), ('chData', 257, 282), ('pit', 324, 355), ('ready', 341, 355)]
+K0 'VTX'
+K1 'MSPP'
+K2 'U8'
+K3 'pID'
+K4 255
+K5 'model'
+K6 'pName'
+K7 'getMSPHW'
+K8 'U16'
+K9 'P'
+K10 2
+K11 'tAvail'
+K12 1
+K13 'tBN'
+K14 'tChN'
+K15 'tPwN'
+K16 'dbgMSP'
+K17 'sBID'
+K18 'sCID'
+K19 'sPwID'
+K20 'sPIT'
+K21 'sFRQ'
+K22 'dRDY'
+K23 'sLPD'
+K24 'S'
+K25 'VTX_PROXY_ON'
+K26 'tPXR'
+K27 'FC'
+K28 'UID'
+K29 'PCFG'
+K30 'VTX/'
+K31 '.cfg'
+K32 'fsCheck'
+K33 '*** PROXY file '
+K34 ' exists'
+K35 'loadfile'
+K36 'tPwRA'
+K37 True
+K38 'tPwR'
+K39 None
+K40 'tPwLN'
+K41 'sPwMW'
+K42 'tPwL'
+K43 'tChRA'
+K44 'tChR'
+K45 'TBL'
+K46 'TBLR'
+K47 'FN_BFR'
+K48 'UI'
+K49 'MODS'
+K50 'selID'
+K51 'TASKS_ID'
+K52 'MODVTX'
+K53 'setByFrq'
+K54 ' does not exist'
+K55 'loadE'
+K56 'PLIBMSP'
+K57 'MSPTP'
+K58 'MSPTC'
+K59 'FN_FCH'
+K60 'sIDX'
+K61 'chName'
+K62 'cName'
+K63 'U'
+K64 'bid'
+K65 'cid'
+K66 'sBL'
+K67 'bl'
+K68 'ID:'
+K69 'nPwID'
+K70 'nPIT'
+K71 'pwOn'
+K72 'ready'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R2[K0('VTX')]
+   3 [  11] TEST      A=4 B=0 C=1
+   4 [  11] JMP       A=0 ->7
+   5 [  11] NEWTABLE  A=4 B=0 C=0
+   6 [  11] SETTABLE  R2[K0('VTX')] = R4
+   7 [  13] GETTABLE  R4 = R1[K1('MSPP')]
+   8 [  13] LOADK     R5 = K2 ('U8')
+   9 [  13] CALL      A=4 B=2 C=2
+  10 [  14] GETTABLE  R5 = R2[K0('VTX')]
+  11 [  14] SETTABLE  R5[K3('pID')] = R4
+  12 [  17] EQ        A=0 R4, K4(255); skip-next if condition != A
+  13 [  17] JMP       A=0 ->15
+  14 [  18] RETURN    A=0 B=1 C=0
+  15 [  20] GETTABLE  R5 = R2[K0('VTX')]
+  16 [  20] GETTABLE  R6 = R2[K0('VTX')]
+  17 [  20] GETTABLE  R7 = R2[K0('VTX')]
+  18 [  20] GETTABLE  R7 = R7[K7('getMSPHW')]
+  19 [  20] GETTABLE  R8 = R2[K0('VTX')]
+  20 [  20] GETTABLE  R8 = R8[K3('pID')]
+  21 [  20] CALL      A=7 B=2 C=3
+  22 [  20] SETTABLE  R6[K6('pName')] = R8
+  23 [  20] SETTABLE  R5[K5('model')] = R7
+  24 [  22] GETTABLE  R5 = R1[K1('MSPP')]
+  25 [  22] LOADK     R6 = K2 ('U8')
+  26 [  22] CALL      A=5 B=2 C=2
+  27 [  23] GETTABLE  R6 = R1[K1('MSPP')]
+  28 [  23] LOADK     R7 = K2 ('U8')
+  29 [  23] CALL      A=6 B=2 C=2
+  30 [  24] GETTABLE  R7 = R1[K1('MSPP')]
+  31 [  24] LOADK     R8 = K2 ('U8')
+  32 [  24] CALL      A=7 B=2 C=2
+  33 [  25] GETTABLE  R8 = R1[K1('MSPP')]
+  34 [  25] LOADK     R9 = K2 ('U8')
+  35 [  25] CALL      A=8 B=2 C=2
+  36 [  26] GETTABLE  R9 = R1[K1('MSPP')]
+  37 [  26] LOADK     R10 = K8 ('U16')
+  38 [  26] CALL      A=9 B=2 C=2
+  39 [  27] GETTABLE  R10 = R1[K1('MSPP')]
+  40 [  27] LOADK     R11 = K2 ('U8')
+  41 [  27] CALL      A=10 B=2 C=2
+  42 [  28] GETTABLE  R11 = R1[K1('MSPP')]
+  43 [  28] LOADK     R12 = K2 ('U8')
+  44 [  28] CALL      A=11 B=2 C=2
+  45 [  30] GETTABLE  R12 = R1[K1('MSPP')]
+  46 [  30] LOADK     R13 = K9 ('P')
+  47 [  30] LOADK     R14 = K10 (2)
+  48 [  30] CALL      A=12 B=3 C=1
+  49 [  31] GETTABLE  R12 = R2[K0('VTX')]
+  50 [  31] GETTABLE  R13 = R1[K1('MSPP')]
+  51 [  31] LOADK     R14 = K2 ('U8')
+  52 [  31] CALL      A=13 B=2 C=2
+  53 [  31] EQ        A=1 R13, K12(1); skip-next if condition != A
+  54 [  31] JMP       A=0 ->56
+  55 [  31] LOADBOOL  A=13 B=0 C=1
+  56 [  31] LOADBOOL  A=13 B=1 C=0
+  57 [  31] SETTABLE  R12[K11('tAvail')] = R13
+  58 [  32] GETTABLE  R12 = R2[K0('VTX')]
+  59 [  32] GETTABLE  R13 = R1[K1('MSPP')]
+  60 [  32] LOADK     R14 = K2 ('U8')
+  61 [  32] CALL      A=13 B=2 C=2
+  62 [  32] SETTABLE  R12[K13('tBN')] = R13
+  63 [  33] GETTABLE  R12 = R2[K0('VTX')]
+  64 [  33] GETTABLE  R13 = R1[K1('MSPP')]
+  65 [  33] LOADK     R14 = K2 ('U8')
+  66 [  33] CALL      A=13 B=2 C=2
+  67 [  33] SETTABLE  R12[K14('tChN')] = R13
+  68 [  34] GETTABLE  R12 = R2[K0('VTX')]
+  69 [  34] GETTABLE  R13 = R1[K1('MSPP')]
+  70 [  34] LOADK     R14 = K2 ('U8')
+  71 [  34] CALL      A=13 B=2 C=2
+  72 [  34] SETTABLE  R12[K15('tPwN')] = R13
+  73 [  40] GETTABLE  R12 = R0[K16('dbgMSP')]
+  74 [  40] LOADK     R13 = K1 ('MSPP')
+  75 [  40] LOADK     R14 = K3 ('pID')
+  76 [  40] MOVE      A=15 B=4 C=0
+  77 [  40] CALL      A=12 B=4 C=1
+  78 [  41] GETTABLE  R12 = R0[K16('dbgMSP')]
+  79 [  41] LOADK     R13 = K1 ('MSPP')
+  80 [  41] LOADK     R14 = K17 ('sBID')
+  81 [  41] MOVE      A=15 B=5 C=0
+  82 [  41] CALL      A=12 B=4 C=1
+  83 [  42] GETTABLE  R12 = R0[K16('dbgMSP')]
+  84 [  42] LOADK     R13 = K1 ('MSPP')
+  85 [  42] LOADK     R14 = K18 ('sCID')
+  86 [  42] MOVE      A=15 B=6 C=0
+  87 [  42] CALL      A=12 B=4 C=1
+  88 [  43] GETTABLE  R12 = R0[K16('dbgMSP')]
+  89 [  43] LOADK     R13 = K1 ('MSPP')
+  90 [  43] LOADK     R14 = K19 ('sPwID')
+  91 [  43] MOVE      A=15 B=7 C=0
+  92 [  43] CALL      A=12 B=4 C=1
+  93 [  44] GETTABLE  R12 = R0[K16('dbgMSP')]
+  94 [  44] LOADK     R13 = K1 ('MSPP')
+  95 [  44] LOADK     R14 = K20 ('sPIT')
+  96 [  44] MOVE      A=15 B=8 C=0
+  97 [  44] CALL      A=12 B=4 C=1
+  98 [  45] GETTABLE  R12 = R0[K16('dbgMSP')]
+  99 [  45] LOADK     R13 = K1 ('MSPP')
+ 100 [  45] LOADK     R14 = K21 ('sFRQ')
+ 101 [  45] MOVE      A=15 B=9 C=0
+ 102 [  45] CALL      A=12 B=4 C=1
+ 103 [  46] GETTABLE  R12 = R0[K16('dbgMSP')]
+ 104 [  46] LOADK     R13 = K1 ('MSPP')
+ 105 [  46] LOADK     R14 = K22 ('dRDY')
+ 106 [  46] MOVE      A=15 B=10 C=0
+ 107 [  46] CALL      A=12 B=4 C=1
+ 108 [  47] GETTABLE  R12 = R0[K16('dbgMSP')]
+ 109 [  47] LOADK     R13 = K1 ('MSPP')
+ 110 [  47] LOADK     R14 = K23 ('sLPD')
+ 111 [  47] MOVE      A=15 B=11 C=0
+ 112 [  47] CALL      A=12 B=4 C=1
+ 113 [  49] GETTABLE  R12 = R0[K16('dbgMSP')]
+ 114 [  49] LOADK     R13 = K1 ('MSPP')
+ 115 [  49] LOADK     R14 = K11 ('tAvail')
+ 116 [  49] GETTABLE  R15 = R2[K0('VTX')]
+ 117 [  49] GETTABLE  R15 = R15[K11('tAvail')]
+ 118 [  49] CALL      A=12 B=4 C=1
+ 119 [  50] GETTABLE  R12 = R0[K16('dbgMSP')]
+ 120 [  50] LOADK     R13 = K1 ('MSPP')
+ 121 [  50] LOADK     R14 = K13 ('tBN')
+ 122 [  50] GETTABLE  R15 = R2[K0('VTX')]
+ 123 [  50] GETTABLE  R15 = R15[K13('tBN')]
+ 124 [  50] CALL      A=12 B=4 C=1
+ 125 [  51] GETTABLE  R12 = R0[K16('dbgMSP')]
+ 126 [  51] LOADK     R13 = K1 ('MSPP')
+ 127 [  51] LOADK     R14 = K14 ('tChN')
+ 128 [  51] GETTABLE  R15 = R2[K0('VTX')]
+ 129 [  51] GETTABLE  R15 = R15[K14('tChN')]
+ 130 [  51] CALL      A=12 B=4 C=1
+ 131 [  52] GETTABLE  R12 = R0[K16('dbgMSP')]
+ 132 [  52] LOADK     R13 = K1 ('MSPP')
+ 133 [  52] LOADK     R14 = K15 ('tPwN')
+ 134 [  52] GETTABLE  R15 = R2[K0('VTX')]
+ 135 [  52] GETTABLE  R15 = R15[K15('tPwN')]
+ 136 [  52] CALL      A=12 B=4 C=1
+ 137 [  55] GETTABLE  R12 = R2[K0('VTX')]
+ 138 [  55] GETTABLE  R12 = R12[K11('tAvail')]
+ 139 [  55] TEST      A=12 B=0 C=0
+ 140 [  55] JMP       A=0 ->243
+ 141 [  57] GETTABLE  R12 = R2[K24('S')]
+ 142 [  57] GETTABLE  R12 = R12[K25('VTX_PROXY_ON')]
+ 143 [  57] TEST      A=12 B=0 C=0
+ 144 [  57] JMP       A=0 ->225
+ 145 [  57] GETTABLE  R12 = R2[K0('VTX')]
+ 146 [  57] GETTABLE  R12 = R12[K26('tPXR')]
+ 147 [  57] TEST      A=12 B=0 C=0
+ 148 [  57] JMP       A=0 ->225
+ 149 [  59] GETTABLE  R12 = R2[K27('FC')]
+ 150 [  59] GETTABLE  R12 = R12[K28('UID')]
+ 151 [  59] TEST      A=12 B=0 C=0
+ 152 [  59] JMP       A=0 ->225
+ 153 [  60] GETTABLE  R12 = R0[K29('PCFG')]
+ 154 [  60] LOADK     R13 = K30 ('VTX/')
+ 155 [  60] GETTABLE  R14 = R2[K27('FC')]
+ 156 [  60] GETTABLE  R14 = R14[K28('UID')]
+ 157 [  60] LOADK     R15 = K31 ('.cfg')
+ 158 [  60] CONCAT    A=12 B=12 C=15
+ 159 [  61] GETTABLE  R13 = R0[K32('fsCheck')]
+ 160 [  61] MOVE      A=14 B=12 C=0
+ 161 [  61] CALL      A=13 B=2 C=2
+ 162 [  61] TEST      A=13 B=0 C=0
+ 163 [  61] JMP       A=0 ->217
+ 164 [  62] GETTABLE  R13 = R0[K16('dbgMSP')]
+ 165 [  62] LOADK     R14 = K33 ('*** PROXY file ')
+ 166 [  62] MOVE      A=15 B=12 C=0
+ 167 [  62] LOADK     R16 = K34 (' exists')
+ 168 [  62] CONCAT    A=14 B=14 C=16
+ 169 [  62] CALL      A=13 B=2 C=1
+ 170 [  63] GETTABUP  R13 = UP0[K35('loadfile')]
+ 171 [  63] MOVE      A=14 B=12 C=0
+ 172 [  63] CALL      A=13 B=2 C=2
+ 173 [  63] MOVE      A=14 B=2 C=0
+ 174 [  63] CALL      A=13 B=2 C=1
+ 175 [  64] GETTABLE  R13 = R2[K0('VTX')]
+ 176 [  64] SETTABLE  R13[K36('tPwRA')] = K37(True)
+ 177 [  65] GETTABLE  R13 = R2[K0('VTX')]
+ 178 [  65] SETTABLE  R13[K38('tPwR')] = K39(None)
+ 179 [  66] GETTABLE  R13 = R2[K0('VTX')]
+ 180 [  66] SETTABLE  R13[K40('tPwLN')] = K39(None)
+ 181 [  67] GETTABLE  R13 = R2[K0('VTX')]
+ 182 [  67] GETTABLE  R14 = R2[K0('VTX')]
+ 183 [  67] GETTABLE  R14 = R14[K42('tPwL')]
+ 184 [  67] TEST      A=14 B=0 C=0
+ 185 [  67] JMP       A=0 ->191
+ 186 [  67] GETTABLE  R14 = R2[K0('VTX')]
+ 187 [  67] GETTABLE  R14 = R14[K42('tPwL')]
+ 188 [  67] GETTABLE  R14 = R14[R7]
+ 189 [  67] TEST      A=14 B=0 C=1
+ 190 [  67] JMP       A=0 ->192
+ 191 [  67] MOVE      A=14 B=7 C=0
+ 192 [  67] SETTABLE  R13[K41('sPwMW')] = R14
+ 193 [  68] GETTABLE  R13 = R2[K0('VTX')]
+ 194 [  68] SETTABLE  R13[K43('tChRA')] = K37(True)
+ 195 [  69] GETTABLE  R13 = R2[K0('VTX')]
+ 196 [  69] SETTABLE  R13[K44('tChR')] = K39(None)
+ 197 [  70] GETTABLE  R13 = R2[K0('VTX')]
+ 198 [  70] GETTABLE  R14 = R2[K0('VTX')]
+ 199 [  70] GETTABLE  R14 = R14[K46('TBLR')]
+ 200 [  70] SETTABLE  R13[K45('TBL')] = R14
+ 201 [  71] GETTABLE  R13 = R2[K0('VTX')]
+ 202 [  71] GETTABLE  R13 = R13[K47('FN_BFR')]
+ 203 [  71] GETTABLE  R14 = R2[K0('VTX')]
+ 204 [  71] GETTABLE  R14 = R14[K45('TBL')]
+ 205 [  71] CALL      A=13 B=2 C=1
+ 206 [  72] GETTABLE  R13 = R2[K48('UI')]
+ 207 [  72] GETTABLE  R13 = R13[K49('MODS')]
+ 208 [  72] GETTABLE  R13 = R13[K50('selID')]
+ 209 [  72] EQ        A=0 R13, K0('VTX'); skip-next if condition != A
+ 210 [  72] JMP       A=0 ->223
+ 211 [  73] GETTABLE  R13 = R2[K48('UI')]
+ 212 [  73] GETTABLE  R13 = R13[K51('TASKS_ID')]
+ 213 [  73] GETTABLE  R13 = R13[K52('MODVTX')]
+ 214 [  73] GETTABLE  R13 = R13[K53('setByFrq')]
+ 215 [  73] CALL      A=13 B=1 C=1
+ 216 [  74] JMP       A=0 ->223
+ 217 [  76] GETTABLE  R13 = R0[K16('dbgMSP')]
+ 218 [  76] LOADK     R14 = K33 ('*** PROXY file ')
+ 219 [  76] MOVE      A=15 B=12 C=0
+ 220 [  76] LOADK     R16 = K54 (' does not exist')
+ 221 [  76] CONCAT    A=14 B=14 C=16
+ 222 [  76] CALL      A=13 B=2 C=1
+ 223 [  78] GETTABLE  R13 = R2[K0('VTX')]
+ 224 [  78] SETTABLE  R13[K26('tPXR')] = K39(None)
+ 225 [  82] GETTABLE  R12 = R2[K0('VTX')]
+ 226 [  82] GETTABLE  R12 = R12[K36('tPwRA')]
+ 227 [  82] TEST      A=12 B=0 C=1
+ 228 [  82] JMP       A=0 ->234
+ 229 [  83] GETTABLE  R12 = R0[K55('loadE')]
+ 230 [  83] GETTABLE  R13 = R0[K56('PLIBMSP')]
+ 231 [  83] LOADK     R14 = K57 ('MSPTP')
+ 232 [  83] CONCAT    A=13 B=13 C=14
+ 233 [  83] CALL      A=12 B=2 C=1
+ 234 [  85] GETTABLE  R12 = R2[K0('VTX')]
+ 235 [  85] GETTABLE  R12 = R12[K43('tChRA')]
+ 236 [  85] TEST      A=12 B=0 C=1
+ 237 [  85] JMP       A=0 ->243
+ 238 [  86] GETTABLE  R12 = R0[K55('loadE')]
+ 239 [  86] GETTABLE  R13 = R0[K56('PLIBMSP')]
+ 240 [  86] LOADK     R14 = K58 ('MSPTC')
+ 241 [  86] CONCAT    A=13 B=13 C=14
+ 242 [  86] CALL      A=12 B=2 C=1
+ 243 [  90] GETTABLE  R12 = R2[K0('VTX')]
+ 244 [  90] GETTABLE  R12 = R12[K21('sFRQ')]
+ 245 [  90] EQ        A=1 R9, R12; skip-next if condition != A
+ 246 [  90] JMP       A=0 ->283
+ 247 [  92] GETTABLE  R12 = R2[K0('VTX')]
+ 248 [  92] SETTABLE  R12[K21('sFRQ')] = R9
+ 249 [  93] GETTABLE  R12 = R2[K0('VTX')]
+ 250 [  93] GETTABLE  R12 = R12[K43('tChRA')]
+ 251 [  93] TEST      A=12 B=0 C=0
+ 252 [  93] JMP       A=0 ->283
+ 253 [  94] GETTABLE  R12 = R2[K0('VTX')]
+ 254 [  94] GETTABLE  R12 = R12[K59('FN_FCH')]
+ 255 [  94] GETTABLE  R13 = R2[K0('VTX')]
+ 256 [  94] GETTABLE  R13 = R13[K21('sFRQ')]
+ 257 [  94] CALL      A=12 B=2 C=3
+ 258 [  95] GETTABLE  R14 = R2[K0('VTX')]
+ 259 [  95] SETTABLE  R14[K60('sIDX')] = R12
+ 260 [  96] GETTABLE  R14 = R2[K0('VTX')]
+ 261 [  96] TEST      A=13 B=0 C=0
+ 262 [  96] JMP       A=0 ->266
+ 263 [  96] GETTABLE  R15 = R13[K62('cName')]
+ 264 [  96] TEST      A=15 B=0 C=1
+ 265 [  96] JMP       A=0 ->267
+ 266 [  96] LOADK     R15 = K63 ('U')
+ 267 [  96] SETTABLE  R14[K61('chName')] = R15
+ 268 [  97] GETTABLE  R14 = R2[K0('VTX')]
+ 269 [  97] TESTSET   A=15 B=13 C=0
+ 270 [  97] JMP       A=0 ->272
+ 271 [  97] GETTABLE  R15 = R13[K64('bid')]
+ 272 [  97] SETTABLE  R14[K17('sBID')] = R15
+ 273 [  98] GETTABLE  R14 = R2[K0('VTX')]
+ 274 [  98] TESTSET   A=15 B=13 C=0
+ 275 [  98] JMP       A=0 ->277
+ 276 [  98] GETTABLE  R15 = R13[K65('cid')]
+ 277 [  98] SETTABLE  R14[K18('sCID')] = R15
+ 278 [  99] GETTABLE  R14 = R2[K0('VTX')]
+ 279 [  99] TESTSET   A=15 B=13 C=0
+ 280 [  99] JMP       A=0 ->282
+ 281 [  99] GETTABLE  R15 = R13[K67('bl')]
+ 282 [  99] SETTABLE  R14[K66('sBL')] = R15
+ 283 [ 105] GETTABLE  R12 = R2[K0('VTX')]
+ 284 [ 105] GETTABLE  R12 = R12[K19('sPwID')]
+ 285 [ 105] EQ        A=1 R7, R12; skip-next if condition != A
+ 286 [ 105] JMP       A=0 ->321
+ 287 [ 107] GETTABLE  R12 = R2[K0('VTX')]
+ 288 [ 107] SETTABLE  R12[K19('sPwID')] = R7
+ 289 [ 108] GETTABLE  R12 = R2[K0('VTX')]
+ 290 [ 108] GETTABLE  R13 = R2[K0('VTX')]
+ 291 [ 108] GETTABLE  R13 = R13[K42('tPwL')]
+ 292 [ 108] TEST      A=13 B=0 C=0
+ 293 [ 108] JMP       A=0 ->308
+ 294 [ 108] GETTABLE  R13 = R2[K0('VTX')]
+ 295 [ 108] GETTABLE  R13 = R13[K42('tPwL')]
+ 296 [ 108] LEN       A=13 B=13 C=0
+ 297 [ 108] GETTABLE  R14 = R2[K0('VTX')]
+ 298 [ 108] GETTABLE  R14 = R14[K19('sPwID')]
+ 299 [ 108] LE        A=0 R14, R13; skip-next if condition != A
+ 300 [ 108] JMP       A=0 ->308
+ 301 [ 108] GETTABLE  R13 = R2[K0('VTX')]
+ 302 [ 108] GETTABLE  R13 = R13[K42('tPwL')]
+ 303 [ 108] GETTABLE  R14 = R2[K0('VTX')]
+ 304 [ 108] GETTABLE  R14 = R14[K19('sPwID')]
+ 305 [ 108] GETTABLE  R13 = R13[R14]
+ 306 [ 108] TEST      A=13 B=0 C=1
+ 307 [ 108] JMP       A=0 ->312
+ 308 [ 108] LOADK     R13 = K68 ('ID:')
+ 309 [ 108] GETTABLE  R14 = R2[K0('VTX')]
+ 310 [ 108] GETTABLE  R14 = R14[K19('sPwID')]
+ 311 [ 108] CONCAT    A=13 B=13 C=14
+ 312 [ 108] SETTABLE  R12[K41('sPwMW')] = R13
+ 313 [ 109] GETTABLE  R12 = R2[K0('VTX')]
+ 314 [ 109] GETTABLE  R12 = R12[K69('nPwID')]
+ 315 [ 109] EQ        A=0 R12, K39(None); skip-next if condition != A
+ 316 [ 109] JMP       A=0 ->321
+ 317 [ 110] GETTABLE  R12 = R2[K0('VTX')]
+ 318 [ 110] GETTABLE  R13 = R2[K0('VTX')]
+ 319 [ 110] GETTABLE  R13 = R13[K19('sPwID')]
+ 320 [ 110] SETTABLE  R12[K69('nPwID')] = R13
+ 321 [ 114] EQ        A=1 R8, K12(1); skip-next if condition != A
+ 322 [ 114] JMP       A=0 ->324
+ 323 [ 114] LOADBOOL  A=12 B=0 C=1
+ 324 [ 114] LOADBOOL  A=12 B=1 C=0
+ 325 [ 115] GETTABLE  R13 = R2[K0('VTX')]
+ 326 [ 115] GETTABLE  R13 = R13[K20('sPIT')]
+ 327 [ 115] EQ        A=1 R12, R13; skip-next if condition != A
+ 328 [ 115] JMP       A=0 ->333
+ 329 [ 117] GETTABLE  R13 = R2[K0('VTX')]
+ 330 [ 117] SETTABLE  R13[K20('sPIT')] = R12
+ 331 [ 118] GETTABLE  R13 = R2[K0('VTX')]
+ 332 [ 118] SETTABLE  R13[K70('nPIT')] = K39(None)
+ 333 [ 120] GETTABLE  R13 = R2[K0('VTX')]
+ 334 [ 120] GETTABLE  R14 = R2[K0('VTX')]
+ 335 [ 120] GETTABLE  R14 = R14[K20('sPIT')]
+ 336 [ 120] NOT       A=14 B=14 C=0
+ 337 [ 120] SETTABLE  R13[K71('pwOn')] = R14
+ 338 [ 122] EQ        A=1 R10, K12(1); skip-next if condition != A
+ 339 [ 122] JMP       A=0 ->341
+ 340 [ 122] LOADBOOL  A=13 B=0 C=1
+ 341 [ 122] LOADBOOL  A=13 B=1 C=0
+ 342 [ 123] GETTABLE  R14 = R2[K0('VTX')]
+ 343 [ 123] GETTABLE  R14 = R14[K72('ready')]
+ 344 [ 123] EQ        A=1 R13, R14; skip-next if condition != A
+ 345 [ 123] JMP       A=0 ->348
+ 346 [ 125] GETTABLE  R14 = R2[K0('VTX')]
+ 347 [ 125] SETTABLE  R14[K72('ready')] = R13
+ 348 [ 128] GETTABLE  R14 = R2[K0('VTX')]
+ 349 [ 128] EQ        A=1 R11, K12(1); skip-next if condition != A
+ 350 [ 128] JMP       A=0 ->352
+ 351 [ 128] LOADBOOL  A=15 B=0 C=1
+ 352 [ 128] LOADBOOL  A=15 B=1 C=0
+ 353 [ 128] SETTABLE  R14[K23('sLPD')] = R15
+ 354 [ 130] RETURN    A=0 B=1 C=0
+ 355 [ 130] RETURN    A=0 B=1 C=0

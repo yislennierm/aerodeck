@@ -4,7 +4,7 @@ local f=assert(realio.open('sdcard/SCRIPTS/TOOLS/telem.lua'));local app=f:read('
 local prefix=app:sub(1,assert(app:find('local batteryConfig=',1,true))-1)
 local ca=assert(app:find('local configuration=(function()',1,true));local cb=assert(app:find('function fcLink.update',ca,true))
 local ta=assert(app:find('local telemetry=(function()',1,true));local tb=assert(app:find('local ROOT=',ta,true))
-local source=prefix..'\nlocal fcLink={state={}};local batteryConfig={check=function()return nil,6 end,isEditing=function()return false end,hasChanges=function()return false end}\n'..app:sub(ca,cb-1)..app:sub(ta,tb-1)..'\nreturn {t=telemetry,c=configuration}'
+local source=prefix..'\nlocal inputRuntime={};local fcLink={state={}};local batteryConfig={check=function()return nil,6 end,isEditing=function()return false end,hasChanges=function()return false end}\n'..app:sub(ca,cb-1)..app:sub(ta,tb-1)..'\nreturn {t=telemetry,c=configuration}'
 UNIT_KTS=1;UNIT_MPH=2;UNIT_METERS_PER_SECOND=3;UNIT_FEET_PER_SECOND=4;UNIT_KMH=5;UNIT_RADIANS=6;UNIT_DEGREE=7;UNIT_FEET=8;UNIT_METERS=9
 UNIT_VOLTS=10;UNIT_AMPS=11;UNIT_MAH=12;UNIT_PERCENT=13;CHAR_TELEMETRY='T:'
 EVT_VIRTUAL_ENTER=101;EVT_VIRTUAL_NEXT=102;EVT_VIRTUAL_PREV=103;EVT_TOUCH_TAP=104
@@ -30,7 +30,7 @@ local function environment(settings,initial)
   local s=e.byId[id];return s and {id=id,unit=s.unit,name=s.name}
  end
  getSourceValue=function(id)e.valueReads=e.valueReads+1;local s=e.byId[id];if s and not s.unavailable then return s.value,s.current,s.current end end
- getValue=function()error('No stale getValue fallback')end;getRSSI=function()error('No generic RSSI dependency')end
+ getValue=function(name)assert(name=='tx-voltage','No telemetry getValue fallback');return 7.8 end;getRSSI=function()error('No generic RSSI dependency')end
  io={open=function(name,mode)
   if mode=='w'or mode=='a'then e.writes=e.writes+1;e.files[name]='';return {name=name}end
   if e.files[name]then return {name=name}end
@@ -79,12 +79,12 @@ e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_VIRTUAL_NEXT);check(e.c.isEditing()an
 e.add('LateCustom',UNIT_VOLTS,23.1);local oldScans,oldLookup=e.sensorReads,e.lookups
 e.t.refresh();check(e.sensorReads==oldScans and e.lookups==oldLookup,'Incidental refresh lightweight')
 e.t.refreshBindings();check(e.sensorReads==oldScans+64,'Explicit refresh one64slotpass')
-check(e.c.isEditing()and e.c.hasAppChanges()and e.c.get('rcProtocol')=='None','Refresh preservesdraft/edit/active')
-e.c.input(EVT_VIRTUAL_ENTER);for i=1,3 do e.c.input(EVT_VIRTUAL_NEXT)end
+check(e.c.isEditing()and e.c.hasAppChanges()and e.c.get('rcProtocol')=='Auto','Refresh preservesdraft/edit/active')
+e.c.input(EVT_VIRTUAL_ENTER);e.c.openSection(1,'voltage')
 e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_VIRTUAL_PREV);e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_TOUCH_TAP,{x=200,y=230})
 check(e.c.resolve('RxBt')=='LateCustom','Late source becomes selectable');check(e.sample().v==23.1,'New selection reads actual value')
 e=environment({pack=1,capacity1=1500,cells1=6},{{'RxBt',UNIT_VOLTS,22.8},{'Capa',UNIT_MAH,300},{'Bat%',UNIT_PERCENT,91}})
-d=e.sample();check(d.capacity==1500 and d.remainingMah==1200 and d.pct==80 and d.estimated==true,'Profile overrides reported Bat%')
+d=e.sample();check(d.rawPct==91 and d.estimatedPct==80 and d.percentageOrigin=='CAPACITY ESTIMATE','Raw reported percentage survives derived estimate');check(d.capacity==1500 and d.remainingMah==1200 and d.pct==80 and d.estimated==true,'Profile overrides reported Bat%')
 e.byName.Capa.value=0;d=e.sample();check(d.remainingMah==1500 and d.pct==100 and d.estimated==true,'Valid0Capa gives full estimate')
 e.byName.Capa.current=false;d=e.sample();check(d.capacity==1500 and d.remainingMah==nil and d.pct==91 and d.estimated==nil,'StaleCapa preserves Bat%')
 e.byName.Capa.unavailable=true;d=e.sample();check(d.remainingMah==nil and d.pct==91 and d.estimated==nil,'MissingCapa no fabricated remaining')
@@ -92,5 +92,13 @@ e.byName['Bat%'].current=false;d=e.sample();check(d.pct==nil and d.remainingMah=
 e.byName.Capa.current=true;e.byName.Capa.unavailable=false;e.byName.Capa.value=1700;d=e.sample();check(d.remainingMah==0 and d.pct==0 and d.estimated==true,'Consumption clipsat0')
 e.prefs({pack=0});e.c.init();e.byName['Bat%'].current=true;d=e.sample();check(d.capacity==nil and d.remainingMah==nil and d.pct==91 and d.estimated==nil,'Leavingprofile clears derived fields')
 e.prefs({pack=1,capacity1=1500,consumed='None'});e.c.init();d=e.sample();check(d.capacity==1500 and d.remainingMah==nil and d.pct==91 and d.estimated==nil,'ConsumedNone prevents calculation')
+e=environment({rcProtocol='ELRS / CRSF',fcType='Betaflight'},{{'CustomFM',0,'ACRO*'}})
+e.add('LateFM',0,'ANGLE*');e.t.refreshBindings()
+check(e.c.openSection(1,'flightmode'),'Model Setup flight-mode row accessible')
+e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_VIRTUAL_PREV);e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_TOUCH_TAP,{x=200,y=230})
+check(e.c.resolve('FM')=='LateFM','Model Setup receives refreshed source choices')
+check(e.c.openSection(7,'flightmode'),'BF indicator shared flight-mode row accessible')
+e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_VIRTUAL_PREV);e.c.input(EVT_VIRTUAL_ENTER);e.c.input(EVT_TOUCH_TAP,{x=200,y=230})
+check(e.c.resolve('FM')=='CustomFM','Both editors share canonical choices and value')
 io=realio
 print('PASS: '..checks..' late discovery, retry bounds, units, zero/stale/manual/None, preserved refresh choices and battery-profile checks')

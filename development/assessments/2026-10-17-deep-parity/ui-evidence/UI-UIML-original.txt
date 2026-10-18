@@ -1,0 +1,168 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UIML.luac
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/UIML.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 6), ('F', 1, 6), ('D', 1, 6), ('X', 1, 6)]
+K0 'UIML'
+   1 [  11] VARARG    A=0 B=5 C=0
+   2 [  59] CLOSURE   R4 = proto[0]
+   3 [  59] SETTABLE  R1[K0('UIML')] = R4
+   4 [  61] GETTABLE  R4 = R1[K0('UIML')]
+   5 [  61] CALL      A=4 B=1 C=1
+   6 [  61] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 7 lines 14 59 source None
+UPVALUES [('D', (1, 2)), ('G', (1, 0)), ('X', (1, 3))]
+LOCALS [('modFile', 74, 111), ('ovName', 89, 111)]
+K0 'UI'
+K1 'MODS'
+K2 'nextID'
+K3 'selID'
+K4 ''
+K5 'clear'
+K6 'T_*'
+K7 '+TASKS'
+K8 'lastID'
+K9 'DBD'
+K10 'CFG'
+K11 'PUIR'
+K12 'MOD'
+K13 'loadE'
+K14 'selDBD'
+K15 'ov'
+K16 None
+K17 'ovPath'
+K18 'PTHMSR'
+K19 'OV_'
+K20 '.png'
+K21 'cg'
+K22 'MODE'
+K23 'WG'
+K24 'CLR'
+K25 'C'
+K26 'MD_B'
+K27 'frun'
+K28 'PUI'
+K29 'UITSKRUN'
+   1 [  21] GETTABUP  R0 = UP0[K0('UI')]
+   2 [  21] GETTABLE  R0 = R0[K1('MODS')]
+   3 [  21] GETTABLE  R0 = R0[K2('nextID')]
+   4 [  21] TEST      A=0 B=0 C=0
+   5 [  21] JMP       A=0 ->112
+   6 [  22] GETTABUP  R0 = UP0[K0('UI')]
+   7 [  22] GETTABLE  R0 = R0[K1('MODS')]
+   8 [  22] GETTABLE  R0 = R0[K3('selID')]
+   9 [  22] TEST      A=0 B=0 C=0
+  10 [  22] JMP       A=0 ->24
+  11 [  22] GETTABUP  R0 = UP0[K0('UI')]
+  12 [  22] GETTABLE  R0 = R0[K1('MODS')]
+  13 [  22] GETTABLE  R0 = R0[K3('selID')]
+  14 [  22] EQ        A=1 R0, K4(''); skip-next if condition != A
+  15 [  22] JMP       A=0 ->24
+  16 [  24] GETTABUP  R0 = UP1[K5('clear')]
+  17 [  24] GETTABUP  R1 = UP0[K0('UI')]
+  18 [  24] LOADK     R2 = K6 ('T_*')
+  19 [  24] CALL      A=0 B=3 C=1
+  20 [  25] GETTABUP  R0 = UP1[K5('clear')]
+  21 [  25] GETTABUP  R1 = UP0[K0('UI')]
+  22 [  25] LOADK     R2 = K7 ('+TASKS')
+  23 [  25] CALL      A=0 B=3 C=1
+  24 [  27] GETTABUP  R0 = UP0[K0('UI')]
+  25 [  27] GETTABLE  R0 = R0[K1('MODS')]
+  26 [  27] GETTABUP  R1 = UP0[K0('UI')]
+  27 [  27] GETTABLE  R1 = R1[K1('MODS')]
+  28 [  27] GETTABLE  R1 = R1[K2('nextID')]
+  29 [  27] SETTABLE  R0[K3('selID')] = R1
+  30 [  28] GETTABUP  R0 = UP0[K0('UI')]
+  31 [  28] GETTABLE  R0 = R0[K1('MODS')]
+  32 [  28] GETTABUP  R1 = UP0[K0('UI')]
+  33 [  28] GETTABLE  R1 = R1[K1('MODS')]
+  34 [  28] GETTABLE  R1 = R1[K3('selID')]
+  35 [  28] EQ        A=0 R1, K9('DBD'); skip-next if condition != A
+  36 [  28] JMP       A=0 ->42
+  37 [  28] GETTABUP  R1 = UP0[K0('UI')]
+  38 [  28] GETTABLE  R1 = R1[K1('MODS')]
+  39 [  28] GETTABLE  R1 = R1[K8('lastID')]
+  40 [  28] TEST      A=1 B=0 C=1
+  41 [  28] JMP       A=0 ->45
+  42 [  28] GETTABUP  R1 = UP0[K0('UI')]
+  43 [  28] GETTABLE  R1 = R1[K1('MODS')]
+  44 [  28] GETTABLE  R1 = R1[K3('selID')]
+  45 [  28] SETTABLE  R0[K8('lastID')] = R1
+  46 [  29] GETTABUP  R0 = UP0[K0('UI')]
+  47 [  29] GETTABLE  R0 = R0[K1('MODS')]
+  48 [  29] GETTABUP  R1 = UP0[K0('UI')]
+  49 [  29] GETTABLE  R1 = R1[K1('MODS')]
+  50 [  29] GETTABLE  R1 = R1[K8('lastID')]
+  51 [  29] EQ        A=0 R1, K9('DBD'); skip-next if condition != A
+  52 [  29] JMP       A=0 ->56
+  53 [  29] LOADK     R1 = K10 ('CFG')
+  54 [  29] TEST      A=1 B=0 C=1
+  55 [  29] JMP       A=0 ->59
+  56 [  29] GETTABUP  R1 = UP0[K0('UI')]
+  57 [  29] GETTABLE  R1 = R1[K1('MODS')]
+  58 [  29] GETTABLE  R1 = R1[K8('lastID')]
+  59 [  29] SETTABLE  R0[K8('lastID')] = R1
+  60 [  31] GETTABUP  R0 = UP0[K0('UI')]
+  61 [  31] GETTABLE  R0 = R0[K1('MODS')]
+  62 [  31] GETTABLE  R0 = R0[K3('selID')]
+  63 [  31] EQ        A=0 R0, K9('DBD'); skip-next if condition != A
+  64 [  31] JMP       A=0 ->72
+  65 [  31] GETTABUP  R0 = UP1[K11('PUIR')]
+  66 [  31] GETTABUP  R1 = UP0[K0('UI')]
+  67 [  31] GETTABLE  R1 = R1[K1('MODS')]
+  68 [  31] GETTABLE  R1 = R1[K3('selID')]
+  69 [  31] CONCAT    A=0 B=0 C=1
+  70 [  31] TEST      A=0 B=0 C=1
+  71 [  31] JMP       A=0 ->75
+  72 [  31] GETTABUP  R0 = UP1[K11('PUIR')]
+  73 [  31] LOADK     R1 = K12 ('MOD')
+  74 [  31] CONCAT    A=0 B=0 C=1
+  75 [  32] GETTABUP  R1 = UP1[K13('loadE')]
+  76 [  32] MOVE      A=2 B=0 C=0
+  77 [  32] CALL      A=1 B=2 C=1
+  78 [  33] GETTABUP  R1 = UP0[K0('UI')]
+  79 [  33] GETTABLE  R1 = R1[K1('MODS')]
+  80 [  33] GETTABLE  R1 = R1[K3('selID')]
+  81 [  33] EQ        A=0 R1, K9('DBD'); skip-next if condition != A
+  82 [  33] JMP       A=0 ->87
+  83 [  33] GETTABUP  R1 = UP0[K0('UI')]
+  84 [  33] GETTABLE  R1 = R1[K14('selDBD')]
+  85 [  33] TEST      A=1 B=0 C=1
+  86 [  33] JMP       A=0 ->90
+  87 [  33] GETTABUP  R1 = UP0[K0('UI')]
+  88 [  33] GETTABLE  R1 = R1[K1('MODS')]
+  89 [  33] GETTABLE  R1 = R1[K3('selID')]
+  90 [  35] GETTABUP  R2 = UP0[K0('UI')]
+  91 [  35] SETTABLE  R2[K15('ov')] = K16(None)
+  92 [  36] GETTABUP  R2 = UP0[K0('UI')]
+  93 [  36] GETTABUP  R3 = UP1[K18('PTHMSR')]
+  94 [  36] LOADK     R4 = K19 ('OV_')
+  95 [  36] MOVE      A=5 B=1 C=0
+  96 [  36] LOADK     R6 = K20 ('.png')
+  97 [  36] CONCAT    A=3 B=3 C=6
+  98 [  36] SETTABLE  R2[K17('ovPath')] = R3
+  99 [  37] GETTABUP  R2 = UP0[K0('UI')]
+ 100 [  37] GETTABLE  R2 = R2[K1('MODS')]
+ 101 [  37] SETTABLE  R2[K2('nextID')] = K16(None)
+ 102 [  38] GETTABUP  R2 = UP1[K21('cg')]
+ 103 [  38] CALL      A=2 B=1 C=1
+ 104 [  39] GETTABUP  R2 = UP1[K22('MODE')]
+ 105 [  39] EQ        A=0 R2, K23('WG'); skip-next if condition != A
+ 106 [  39] JMP       A=0 ->112
+ 107 [  40] GETTABUP  R2 = UP2[K24('CLR')]
+ 108 [  40] GETTABUP  R3 = UP0[K25('C')]
+ 109 [  40] GETTABLE  R3 = R3[K26('MD_B')]
+ 110 [  40] CALL      A=2 B=2 C=1
+ 111 [  41] RETURN    A=0 B=1 C=0
+ 112 [  47] GETTABUP  R0 = UP2[K24('CLR')]
+ 113 [  47] GETTABUP  R1 = UP0[K25('C')]
+ 114 [  47] GETTABLE  R1 = R1[K26('MD_B')]
+ 115 [  47] CALL      A=0 B=2 C=1
+ 116 [  50] GETTABUP  R0 = UP1[K27('frun')]
+ 117 [  50] GETTABUP  R1 = UP1[K28('PUI')]
+ 118 [  50] LOADK     R2 = K29 ('UITSKRUN')
+ 119 [  50] CONCAT    A=1 B=1 C=2
+ 120 [  50] CALL      A=0 B=2 C=1
+ 121 [  57] RETURN    A=0 B=1 C=0
+ 122 [  59] RETURN    A=0 B=1 C=0

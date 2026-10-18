@@ -1,0 +1,118 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPTP.luac
+SHA256: 3a7de23307fe82ccd1a1bc9f78e8ec2247052bc7cc720e24376781dc3f712c65
+
+FUNCTION main params 0 vararg 1 stack 13 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/MSPTP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 89), ('F', 1, 89), ('D', 1, 89), ('X', 1, 89), ('(for index)', 27, 41), ('(for limit)', 27, 41), ('(for step)', 27, 41), ('i', 28, 40), ('(for index)', 56, 68), ('(for limit)', 56, 68), ('(for step)', 56, 68), ('i', 57, 67)]
+K0 'VTX'
+K1 'tPwR'
+K2 True
+K3 'BLT'
+K4 ''
+K5 'BFT'
+K6 'byFrqID'
+K7 'byFrqXP'
+K8 'tPwLN'
+K9 'tPwV'
+K10 'tPwL'
+K11 1
+K12 'tPwN'
+K13 'MSPQAD'
+K14 138
+K15 88
+K16 150
+K17 'tPwLI'
+K18 0
+K19 'tPwRA'
+K20 None
+K21 'sPwMW'
+K22 'sPwID'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('VTX')]
+   3 [  12] GETTABLE  R4 = R4[K1('tPwR')]
+   4 [  12] TEST      A=4 B=0 C=1
+   5 [  12] JMP       A=0 ->51
+   6 [  14] GETTABLE  R4 = R2[K0('VTX')]
+   7 [  14] SETTABLE  R4[K1('tPwR')] = K2(True)
+   8 [  15] GETTABLE  R4 = R2[K0('VTX')]
+   9 [  15] SETTABLE  R4[K3('BLT')] = K4('')
+  10 [  16] GETTABLE  R4 = R2[K0('VTX')]
+  11 [  16] SETTABLE  R4[K5('BFT')] = K4('')
+  12 [  17] GETTABLE  R4 = R2[K0('VTX')]
+  13 [  17] SETTABLE  R4[K6('byFrqID')] = K4('')
+  14 [  18] GETTABLE  R4 = R2[K0('VTX')]
+  15 [  18] SETTABLE  R4[K7('byFrqXP')] = K4('')
+  16 [  19] GETTABLE  R4 = R2[K0('VTX')]
+  17 [  19] SETTABLE  R4[K8('tPwLN')] = K4('')
+  18 [  20] GETTABLE  R4 = R2[K0('VTX')]
+  19 [  20] NEWTABLE  A=5 B=0 C=0
+  20 [  20] SETTABLE  R4[K9('tPwV')] = R5
+  21 [  21] GETTABLE  R4 = R2[K0('VTX')]
+  22 [  21] NEWTABLE  A=5 B=0 C=0
+  23 [  21] SETTABLE  R4[K10('tPwL')] = R5
+  24 [  22] LOADK     R4 = K11 (1)
+  25 [  22] GETTABLE  R5 = R2[K0('VTX')]
+  26 [  22] GETTABLE  R5 = R5[K12('tPwN')]
+  27 [  22] LOADK     R6 = K11 (1)
+  28 [  22] FORPREP   A=4 ->41
+  29 [  23] GETTABLE  R8 = R2[K0('VTX')]
+  30 [  23] GETTABLE  R8 = R8[K9('tPwV')]
+  31 [  23] GETTABLE  R8 = R8[R7]
+  32 [  23] TEST      A=8 B=0 C=1
+  33 [  23] JMP       A=0 ->41
+  34 [  24] GETTABLE  R8 = R1[K13('MSPQAD')]
+  35 [  24] LOADNIL   A=9 B=0 C=0
+  36 [  24] LOADK     R10 = K14 (138)
+  37 [  24] NEWTABLE  A=11 B=1 C=0
+  38 [  24] MOVE      A=12 B=7 C=0
+  39 [  24] SETLIST   A=11 B=1 C=1
+  40 [  24] CALL      A=8 B=4 C=1
+  41 [  22] FORLOOP   A=4 ->29
+  42 [  27] GETTABLE  R4 = R1[K13('MSPQAD')]
+  43 [  27] LOADNIL   A=5 B=0 C=0
+  44 [  27] LOADK     R6 = K15 (88)
+  45 [  27] CALL      A=4 B=3 C=1
+  46 [  28] GETTABLE  R4 = R1[K13('MSPQAD')]
+  47 [  28] LOADNIL   A=5 B=0 C=0
+  48 [  28] LOADK     R6 = K16 (150)
+  49 [  28] CALL      A=4 B=3 C=1
+  50 [  28] JMP       A=0 ->88
+  51 [  33] GETTABLE  R4 = R2[K0('VTX')]
+  52 [  33] SETTABLE  R4[K17('tPwLI')] = K18(0)
+  53 [  34] LOADK     R4 = K11 (1)
+  54 [  34] GETTABLE  R5 = R2[K0('VTX')]
+  55 [  34] GETTABLE  R5 = R5[K12('tPwN')]
+  56 [  34] LOADK     R6 = K11 (1)
+  57 [  34] FORPREP   A=4 ->68
+  58 [  35] GETTABLE  R8 = R2[K0('VTX')]
+  59 [  35] GETTABLE  R8 = R8[K9('tPwV')]
+  60 [  35] GETTABLE  R8 = R8[R7]
+  61 [  35] TEST      A=8 B=0 C=0
+  62 [  35] JMP       A=0 ->68
+  63 [  36] GETTABLE  R8 = R2[K0('VTX')]
+  64 [  36] GETTABLE  R9 = R2[K0('VTX')]
+  65 [  36] GETTABLE  R9 = R9[K17('tPwLI')]
+  66 [  36] ADD       A=9 B=9 C=267
+  67 [  36] SETTABLE  R8[K17('tPwLI')] = R9
+  68 [  34] FORLOOP   A=4 ->58
+  69 [  40] GETTABLE  R4 = R2[K0('VTX')]
+  70 [  40] GETTABLE  R4 = R4[K17('tPwLI')]
+  71 [  40] GETTABLE  R5 = R2[K0('VTX')]
+  72 [  40] GETTABLE  R5 = R5[K12('tPwN')]
+  73 [  40] EQ        A=0 R4, R5; skip-next if condition != A
+  74 [  40] JMP       A=0 ->88
+  75 [  41] GETTABLE  R4 = R2[K0('VTX')]
+  76 [  41] SETTABLE  R4[K19('tPwRA')] = K2(True)
+  77 [  42] GETTABLE  R4 = R2[K0('VTX')]
+  78 [  42] SETTABLE  R4[K1('tPwR')] = K20(None)
+  79 [  43] GETTABLE  R4 = R2[K0('VTX')]
+  80 [  43] SETTABLE  R4[K8('tPwLN')] = K20(None)
+  81 [  44] GETTABLE  R4 = R2[K0('VTX')]
+  82 [  44] GETTABLE  R5 = R2[K0('VTX')]
+  83 [  44] GETTABLE  R5 = R5[K10('tPwL')]
+  84 [  44] GETTABLE  R6 = R2[K0('VTX')]
+  85 [  44] GETTABLE  R6 = R6[K22('sPwID')]
+  86 [  44] GETTABLE  R5 = R5[R6]
+  87 [  44] SETTABLE  R4[K21('sPwMW')] = R5
+  88 [  48] RETURN    A=0 B=1 C=0
+  89 [  48] RETURN    A=0 B=1 C=0

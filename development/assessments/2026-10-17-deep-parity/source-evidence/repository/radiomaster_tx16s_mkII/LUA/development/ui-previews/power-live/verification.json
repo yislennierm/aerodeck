@@ -1,0 +1,1139 @@
+{
+  "build": "POWER-LIVE-20261017",
+  "status": "PASS",
+  "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+  "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+  "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+  "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+  "syntheticDataOnly": true,
+  "fixturePrefixShips": false,
+  "simulator": {
+    "version": "3.0.0",
+    "target": "RadioMaster TX16S",
+    "renderer": "Native EdgeTX WASM",
+    "framebuffer": "RGB565 little endian, 480x272",
+    "pngConversion": "Pillow RGB/raw/BGR;16; primary colors validated",
+    "host": "work/edgetx/native-sim/host.cjs"
+  },
+  "intendedRadioFirmware": "EdgeTX2.12.4",
+  "hardwareVerified": false,
+  "hardwarePoseVerified": false,
+  "hardwareRenderingVerified": false,
+  "hardwarePerformanceMeasured": false,
+  "radioInstalledByThisQA": false,
+  "physicalViewingDistanceVerified": false,
+  "widgetNativeExecutionVerified": false,
+  "scope": "Targeted Flight/Power/source settings/battery profiles and shared Arm footer; unchanged other pages not recaptured",
+  "pageScreenCount": 4,
+  "pageScreens": {
+    "Flight": "power-normal-flight.png",
+    "Power": "power-normal.png",
+    "Setup": "power-sources.png",
+    "Arm Info": "power-arm.png"
+  },
+  "totalAcceptedScreenshotCount": 22,
+  "screenshots": [
+    {
+      "file": "power-normal-flight.png",
+      "sha256": "b47ae71b08036534114425e561ac10d396bfa78b7dadf1b1734a3f4945ebd8ea",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "normal"
+    },
+    {
+      "file": "power-normal.png",
+      "sha256": "f41822b2d1121e2c45ebd770c3a9555f6ec48b60bbd34c94e1f616d49e430515",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "normal"
+    },
+    {
+      "file": "power-sources.png",
+      "sha256": "331bf32d211da879e751199fbf540f0b7f9995d6fbc0887004b6915fbf0ec720",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "normal"
+    },
+    {
+      "file": "power-limits.png",
+      "sha256": "aeded3f9029f8134c80ddde18854224b8adcdad35147cb95dab13ff1dc144f51",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "normal"
+    },
+    {
+      "file": "power-arm.png",
+      "sha256": "77efa74a9814b6d8b56f6292688f6cc228eacb44bb2fcf44a0b95853f404032b",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "normal"
+    },
+    {
+      "file": "power-arm-return.png",
+      "sha256": "f41822b2d1121e2c45ebd770c3a9555f6ec48b60bbd34c94e1f616d49e430515",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "normal"
+    },
+    {
+      "file": "power-zero-flight.png",
+      "sha256": "ea6008ee021c480f90a361d869718d3e10f2f204804fb176909699c4bbbb7456",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "zero"
+    },
+    {
+      "file": "power-zero.png",
+      "sha256": "60d852d6de2c8b52613ff4a8ed22b84baa1aded3788045e15ca0c78714006deb",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "zero"
+    },
+    {
+      "file": "power-missing-current.png",
+      "sha256": "e552384822c0f52b252c0769ec0ec3d941e694c3cc722b946592b59668b6a57d",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "missing-current"
+    },
+    {
+      "file": "power-voltage-none.png",
+      "sha256": "e930cac8dc3d3cc5c08cf2e481e4f681db7a8edf855dcebd408c95129d1e82d8",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "voltage-none"
+    },
+    {
+      "file": "power-voltage-none-sources.png",
+      "sha256": "70bb677c814cff7a9ff8da3af086aa83f0db316b086e7024033e780a181bfd4a",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "voltage-none"
+    },
+    {
+      "file": "power-stale-flight.png",
+      "sha256": "58cff03812eb46ef83050320d99c99354fbb30c3bf0aae8d9c52af2f3ce45f82",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "stale"
+    },
+    {
+      "file": "power-stale.png",
+      "sha256": "c45d77c679c16850222e3622a3356d769abc9c9b1cb4cb6bf028d044948d5133",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "stale"
+    },
+    {
+      "file": "power-late-auto-before.png",
+      "sha256": "3580d339199b812e6e6dd8692130de48099c8cf80d70b68eb4a92817b30c4fd7",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "late-auto"
+    },
+    {
+      "file": "power-late-auto-after.png",
+      "sha256": "eadb7928299e274b6620be1621fbce81c56fd5ed2de80e3fb52b910573cfa6f0",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "late-auto"
+    },
+    {
+      "file": "power-late-refresh-before.png",
+      "sha256": "3580d339199b812e6e6dd8692130de48099c8cf80d70b68eb4a92817b30c4fd7",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "late-refresh"
+    },
+    {
+      "file": "power-late-refresh-after.png",
+      "sha256": "e9148de0b189faff711a0744bbc4421ef1c0fc64bf7e4f04d9ad0457544ae65b",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "late-refresh"
+    },
+    {
+      "file": "power-profile5.png",
+      "sha256": "03aa0927923ca3320434f824c8ac3e9eafb3734465f21278f8877a73fcb2f2db",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "profile5"
+    },
+    {
+      "file": "power-favourites-first.png",
+      "sha256": "09c082d4595f9c3c1a440f75313cee1495f5a9a929dbeea40108397849262c18",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "profile5"
+    },
+    {
+      "file": "power-favourites-second.png",
+      "sha256": "1bc4954825aee0c269bb1873155718abc639c0a0b06c40093819d458648c667e",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "profile5"
+    },
+    {
+      "file": "power-long-values-flight.png",
+      "sha256": "cfc00629c7d7fa5d941646b842e3d277b63eaa0a72a098e49dd4f1991dcc896f",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "long-values"
+    },
+    {
+      "file": "power-long-values.png",
+      "sha256": "90174f5f3d4aea81afbda7e6a65febe35673a2fce49b0ef8dfdf59488f54f289",
+      "width": 480,
+      "height": 272,
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "visuallyInspected": true,
+      "case": "long-values"
+    }
+  ],
+  "captureRecords": [
+    {
+      "case": "normal",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "normal",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {},
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-normal.log",
+      "logSha256": "2ea64e1582bbc8e39406277915b30c0dc2e2f79acce6135479ba48fdbb52d91d",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-normal-flight.png",
+        "power-normal.png",
+        "power-sources.png",
+        "power-limits.png",
+        "power-arm.png",
+        "power-arm-return.png"
+      ]
+    },
+    {
+      "case": "zero",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "zero",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {
+          "RxBt": 0,
+          "Curr": 0,
+          "Capa": 0,
+          "Bat%": 0
+        },
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-zero.log",
+      "logSha256": "27c5a42b97345cf64cb64afbd35e6b0e8cf5a463397d39c3f947cdcc6d49db28",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-zero-flight.png",
+        "power-zero.png"
+      ]
+    },
+    {
+      "case": "missing-current",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "missing-current",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {},
+        "staleBatterySensors": false,
+        "currentSourceMissing": true,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-missing-current.log",
+      "logSha256": "f60adb0f41b432a2d4d1172cb99215e3c2ec982e0fac28280582457ccd3673a7",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-missing-current.png"
+      ]
+    },
+    {
+      "case": "voltage-none",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "voltage-none",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "voltageMapping": "None",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {},
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-voltage-none.log",
+      "logSha256": "0ff9396a45b2393132da55a84f84b142632ca17e9cbbe2888b262b3b83464cd0",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-voltage-none.png",
+        "power-voltage-none-sources.png"
+      ]
+    },
+    {
+      "case": "stale",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "stale",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {},
+        "staleBatterySensors": true,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-stale.log",
+      "logSha256": "7484c2dc5665c50fea6d75507de6af8fa836e919654cafef3dcce90c609ed057",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-stale-flight.png",
+        "power-stale.png"
+      ]
+    },
+    {
+      "case": "late-auto",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "late-auto",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {},
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": 350,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-late-auto.log",
+      "logSha256": "27372775780ecbe16a55b02cb24019973d959aaa2498babfecb953dc3e30fe33",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-late-auto-before.png",
+        "power-late-auto-after.png"
+      ]
+    },
+    {
+      "case": "late-refresh",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "late-refresh",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {},
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": 300,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-late-refresh.log",
+      "logSha256": "202dfeb3669b48e59ea8e426cc6c75c70245cd8f072fea2dd3f90e0a6a60f3e0",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-late-refresh-before.png",
+        "power-late-refresh-after.png"
+      ]
+    },
+    {
+      "case": "profile5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "profile5",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "02f5ac3a3218aef3b646af7d8b08ba9d4aac345bbe60a514cc4dd23f9a3f52a9",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {
+          "Bat%": null
+        },
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 5,
+        "pack5": {
+          "cells": 6,
+          "capacityMah": 5000,
+          "expectedRemainingMah": 2238,
+          "expectedEstimatedPercent": 44.76
+        },
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-profile5.log",
+      "logSha256": "709cc0c1b79ed1c7f24397c94a48ec2d9d7e9871f489aac536242326311b9fff",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-profile5.png",
+        "power-favourites-first.png",
+        "power-favourites-second.png"
+      ]
+    },
+    {
+      "case": "long-values",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "fixture": {
+        "variant": "long-values",
+        "runtime": "runtime-all",
+        "modelName": "AOS 5",
+        "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+        "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+        "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+        "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+        "syntheticDataOnly": true,
+        "fixturePrefixShips": false,
+        "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+        "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+        "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+        "voltageMapping": "Auto",
+        "currentMapping": "Auto",
+        "manualCells": 6,
+        "values": {
+          "RxBt": 123.4,
+          "Curr": 999.9,
+          "Capa": 9999999,
+          "Bat%": 100,
+          "GSpd": 12345,
+          "GAlt": -99999,
+          "Hdg": 359,
+          "Sats": 999
+        },
+        "staleBatterySensors": false,
+        "currentSourceMissing": false,
+        "lateSourceRevealAfterTicks": null,
+        "activePack": 0,
+        "pack5": null,
+        "numericAndNameFieldInfoSupported": true,
+        "api": [
+          1,
+          48
+        ],
+        "armingBits": [
+          18
+        ]
+      },
+      "log": "capture-long-values.log",
+      "logSha256": "dba4591889fa3beb57977f001a816adad9118e0754ade41816ca020a3eda5db7",
+      "processExitCode": 0,
+      "screenshots": [
+        "power-long-values-flight.png",
+        "power-long-values.png"
+      ]
+    }
+  ],
+  "priorSourceEvidenceCount": 0,
+  "fixtures": [
+    {
+      "variant": "normal",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {},
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "zero",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {
+        "RxBt": 0,
+        "Curr": 0,
+        "Capa": 0,
+        "Bat%": 0
+      },
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "missing-current",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {},
+      "staleBatterySensors": false,
+      "currentSourceMissing": true,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "voltage-none",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "voltageMapping": "None",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {},
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "stale",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {},
+      "staleBatterySensors": true,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "late-auto",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {},
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": 350,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "late-refresh",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {},
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": 300,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "profile5",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "02f5ac3a3218aef3b646af7d8b08ba9d4aac345bbe60a514cc4dd23f9a3f52a9",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {
+        "Bat%": null
+      },
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 5,
+      "pack5": {
+        "cells": 6,
+        "capacityMah": 5000,
+        "expectedRemainingMah": 2238,
+        "expectedEstimatedPercent": 44.76
+      },
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    },
+    {
+      "variant": "long-values",
+      "runtime": "runtime-all",
+      "modelName": "AOS 5",
+      "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+      "decoderSha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+      "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+      "mspSha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+      "syntheticDataOnly": true,
+      "fixturePrefixShips": false,
+      "basePreferenceSource": "read-only copy of mounted AOS5 per-model app and battery files",
+      "baseSettingsSha256": "4f72ae3aa450da309c621fe3d0d948a0c95c82730ce5d87ba8eda9f4cd564eb5",
+      "runtimeSettingsSha256": "a340b949e72f953c808be84ac7f4755217c4b6026e84e39017fdbb5ae8b909ce",
+      "voltageMapping": "Auto",
+      "currentMapping": "Auto",
+      "manualCells": 6,
+      "values": {
+        "RxBt": 123.4,
+        "Curr": 999.9,
+        "Capa": 9999999,
+        "Bat%": 100,
+        "GSpd": 12345,
+        "GAlt": -99999,
+        "Hdg": 359,
+        "Sats": 999
+      },
+      "staleBatterySensors": false,
+      "currentSourceMissing": false,
+      "lateSourceRevealAfterTicks": null,
+      "activePack": 0,
+      "pack5": null,
+      "numericAndNameFieldInfoSupported": true,
+      "api": [
+        1,
+        48
+      ],
+      "armingBits": [
+        18
+      ]
+    }
+  ],
+  "finalSourceChecks": {
+    "powerNormalLiveData": true,
+    "realZeroIsLive": true,
+    "missingCurrentIsNotFound": true,
+    "staleSourcesAreExplicit": true,
+    "disabledVoltageExplained": true,
+    "notFoundSourcesExplicit": true,
+    "lateSourcesRecoverWithoutRefresh": true,
+    "explicitRefreshRebinds": true,
+    "powerSourcesOpensVoltageRow": true,
+    "powerLimitsOpensBattery": true,
+    "fiveFavouriteProfilesScroll": true,
+    "profile5CapacityRemaining": true,
+    "longValuesFit": true,
+    "sharedFooterArmingStillWorks": true,
+    "numericAndNameFieldMetadataSupported": true,
+    "all22ScreenshotsVisuallyInspected": true
+  },
+  "visualChecks": [
+    "All22 images were regenerated from the same exact final main, decoder, widget and transport hashes; every accepted image was visually reviewed at native480x272.",
+    "Normal AOS5 fixture values22.8V/25.0A/2762mAh and6manual cells appear on Flight and Power. The current chart reports derived570W; labels, numbers, charts and actions fit.",
+    "Real numeric0 remains LIVE and plotted as0; missing Curr is SENSOR NOT FOUND; stale sources wait for live data; disabled voltage explains SOURCE DISABLED and the Sources action.",
+    "Qualified source lookups recover after late discovery without reopening; the separate Refresh action explicitly resets bindings and updates Power while keeping its page.",
+    "Sources opens Model Setup with Battery voltage selected and no edit active. Limits opens Model Battery. RTN twice returns to Power. The shared icon-only Arm control opens Arm Info and RTN restores Power.",
+    "All five battery favourites are reachable over two setting pages. Active Pack5 uses6cells/5000mAh with Capa2762 and no Bat% reading: remaining capacity is2238mAh, displayed as2.24Ah and estimated~45%.",
+    "Extreme values remain inside their rows/rails, and current/voltage graph labels do not overlap other content."
+  ],
+  "logs": [
+    {
+      "file": "work/edgetx/power-live/capture-normal.log",
+      "sha256": "2ea64e1582bbc8e39406277915b30c0dc2e2f79acce6135479ba48fdbb52d91d",
+      "processExitCode": 0,
+      "acceptedShotCount": 6,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-zero.log",
+      "sha256": "27c5a42b97345cf64cb64afbd35e6b0e8cf5a463397d39c3f947cdcc6d49db28",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-missing-current.log",
+      "sha256": "f60adb0f41b432a2d4d1172cb99215e3c2ec982e0fac28280582457ccd3673a7",
+      "processExitCode": 0,
+      "acceptedShotCount": 1,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-voltage-none.log",
+      "sha256": "0ff9396a45b2393132da55a84f84b142632ca17e9cbbe2888b262b3b83464cd0",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-stale.log",
+      "sha256": "7484c2dc5665c50fea6d75507de6af8fa836e919654cafef3dcce90c609ed057",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-late-auto.log",
+      "sha256": "27372775780ecbe16a55b02cb24019973d959aaa2498babfecb953dc3e30fe33",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-late-refresh.log",
+      "sha256": "202dfeb3669b48e59ea8e426cc6c75c70245cd8f072fea2dd3f90e0a6a60f3e0",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-profile5.log",
+      "sha256": "709cc0c1b79ed1c7f24397c94a48ec2d9d7e9871f489aac536242326311b9fff",
+      "processExitCode": 0,
+      "acceptedShotCount": 3,
+      "luaOrFirmwareErrorsObserved": false
+    },
+    {
+      "file": "work/edgetx/power-live/capture-long-values.log",
+      "sha256": "dba4591889fa3beb57977f001a816adad9118e0754ade41816ca020a3eda5db7",
+      "processExitCode": 0,
+      "acceptedShotCount": 2,
+      "luaOrFirmwareErrorsObserved": false
+    }
+  ],
+  "errorFreeLogs": true,
+  "knownHostNotices": [
+    "Node ExperimentalWarning: WASI is an experimental feature"
+  ],
+  "limitations": [
+    "Native firmware is EdgeTX3.0.0 WASM, not the physical target EdgeTX2.12.4. Target-firmware APIs/rendering, live quad values, sensor calibration and hardware performance remain unverified.",
+    "Only AOS5 application preferences were copied read-only. Telemetry values, source registration/freshness and MSP replies are synthetic. Normal fixture changes voltage=None toAuto; this does not change the actual radio.",
+    "Fixture prefixes and per-model runtime settings exist only in the isolated workspace runtime and do not ship. No SD or canonical file was changed by this QA.",
+    "The widget hash is bound to this evidence and the clean widget is present in the runtime, but compact-widget rendering is not executed in these targeted app captures.",
+    "Other unchanged screens/footer edge states were not repeated in this focused revision. Desktop FPS and physical30-40cm readability are not radio measurements."
+  ]
+}

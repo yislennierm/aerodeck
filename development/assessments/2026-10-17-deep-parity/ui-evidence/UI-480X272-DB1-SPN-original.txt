@@ -1,0 +1,146 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/SPN.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/480X272/DB1/SPN.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 7), ('F', 1, 7), ('D', 1, 7), ('X', 1, 7), ('T', 1, 7)]
+K0 'im'
+K1 'em'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  32] CLOSURE   R5 = proto[0]
+   3 [  32] SETTABLE  R4[K0('im')] = R5
+   4 [  42] CLOSURE   R5 = proto[1]
+   5 [  42] SETTABLE  R4[K1('em')] = R5
+   6 [  44] RETURN    A=0 B=1 C=0
+   7 [  44] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 5 lines 12 32 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2)), ('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('w', 0, 64)]
+K0 'MODS'
+K1 'FM2M'
+K2 'S'
+K3 'MDL_GYRO_ON'
+K4 1
+K5 'ATT'
+K6 'fm'
+K7 'sxx'
+K8 'MDL_GPS_ON'
+K9 'CMP'
+K10 'GPS'
+K11 'pgg'
+K12 'POS'
+K13 'table'
+K14 'remove'
+K15 'UI_DBD_SPN'
+K16 'math'
+K17 'min'
+K18 'm'
+   1 [  13] NEWTABLE  A=1 B=1 C=0
+   2 [  13] LOADK     R2 = K1 ('FM2M')
+   3 [  13] SETLIST   A=1 B=1 C=1
+   4 [  13] SETTABUP  UP0[K0('MODS')] = R1
+   5 [  14] GETTABUP  R1 = UP1[K2('S')]
+   6 [  14] GETTABLE  R1 = R1[K3('MDL_GYRO_ON')]
+   7 [  14] TEST      A=1 B=0 C=0
+   8 [  14] JMP       A=0 ->14
+   9 [  15] GETTABUP  R1 = UP0[K0('MODS')]
+  10 [  15] GETTABUP  R2 = UP0[K0('MODS')]
+  11 [  15] LEN       A=2 B=2 C=0
+  12 [  15] ADD       A=2 B=2 C=260
+  13 [  15] SETTABLE  R1[R2] = K5('ATT')
+  14 [  17] GETTABUP  R1 = UP2[K6('fm')]
+  15 [  17] GETTABLE  R1 = R1[K7('sxx')]
+  16 [  17] TEST      A=1 B=0 C=0
+  17 [  17] JMP       A=0 ->41
+  18 [  18] GETTABUP  R1 = UP1[K2('S')]
+  19 [  18] GETTABLE  R1 = R1[K8('MDL_GPS_ON')]
+  20 [  18] TEST      A=1 B=0 C=0
+  21 [  18] JMP       A=0 ->41
+  22 [  19] GETTABUP  R1 = UP0[K0('MODS')]
+  23 [  19] GETTABUP  R2 = UP0[K0('MODS')]
+  24 [  19] LEN       A=2 B=2 C=0
+  25 [  19] ADD       A=2 B=2 C=260
+  26 [  19] SETTABLE  R1[R2] = K9('CMP')
+  27 [  20] GETTABUP  R1 = UP0[K0('MODS')]
+  28 [  20] GETTABUP  R2 = UP0[K0('MODS')]
+  29 [  20] LEN       A=2 B=2 C=0
+  30 [  20] ADD       A=2 B=2 C=260
+  31 [  20] SETTABLE  R1[R2] = K10('GPS')
+  32 [  21] GETTABUP  R1 = UP2[K6('fm')]
+  33 [  21] GETTABLE  R1 = R1[K11('pgg')]
+  34 [  21] TEST      A=1 B=0 C=0
+  35 [  21] JMP       A=0 ->41
+  36 [  22] GETTABUP  R1 = UP0[K0('MODS')]
+  37 [  22] GETTABUP  R2 = UP0[K0('MODS')]
+  38 [  22] LEN       A=2 B=2 C=0
+  39 [  22] ADD       A=2 B=2 C=260
+  40 [  22] SETTABLE  R1[R2] = K12('POS')
+  41 [  26] GETTABUP  R1 = UP0[K0('MODS')]
+  42 [  26] LEN       A=1 B=1 C=0
+  43 [  26] LT        A=0 K4(1), R1; skip-next if condition != A
+  44 [  26] JMP       A=0 ->50
+  45 [  27] GETTABUP  R1 = UP3[K13('table')]
+  46 [  27] GETTABLE  R1 = R1[K14('remove')]
+  47 [  27] GETTABUP  R2 = UP0[K0('MODS')]
+  48 [  27] LOADK     R3 = K4 (1)
+  49 [  27] CALL      A=1 B=3 C=1
+  50 [  30] GETTABUP  R1 = UP1[K2('S')]
+  51 [  30] GETTABUP  R2 = UP3[K16('math')]
+  52 [  30] GETTABLE  R2 = R2[K17('min')]
+  53 [  30] GETTABUP  R3 = UP1[K2('S')]
+  54 [  30] GETTABLE  R3 = R3[K15('UI_DBD_SPN')]
+  55 [  30] GETTABUP  R4 = UP0[K0('MODS')]
+  56 [  30] LEN       A=4 B=4 C=0
+  57 [  30] CALL      A=2 B=3 C=2
+  58 [  30] SETTABLE  R1[K15('UI_DBD_SPN')] = R2
+  59 [  31] GETTABUP  R1 = UP0[K0('MODS')]
+  60 [  31] GETTABUP  R2 = UP1[K2('S')]
+  61 [  31] GETTABLE  R2 = R2[K15('UI_DBD_SPN')]
+  62 [  31] GETTABLE  R1 = R1[R2]
+  63 [  31] SETTABUP  UP0[K18('m')] = R1
+  64 [  32] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 6 lines 34 42 source None
+UPVALUES [('D', (1, 2)), ('G', (1, 0)), ('T', (1, 4))]
+LOCALS []
+K0 'evt'
+K1 'K'
+K2 'PP'
+K3 'S'
+K4 'UI_DBD_SPN'
+K5 'next'
+K6 1
+K7 'MODS'
+K8 'm'
+K9 'loadE'
+K10 'PUI'
+K11 'UITSKCHG'
+   1 [  36] GETTABUP  R0 = UP0[K0('evt')]
+   2 [  36] GETTABUP  R1 = UP0[K1('K')]
+   3 [  36] GETTABLE  R1 = R1[K2('PP')]
+   4 [  36] EQ        A=0 R0, R1; skip-next if condition != A
+   5 [  36] JMP       A=0 ->29
+   6 [  37] GETTABUP  R0 = UP0[K3('S')]
+   7 [  37] GETTABUP  R1 = UP1[K5('next')]
+   8 [  37] GETTABUP  R2 = UP0[K3('S')]
+   9 [  37] GETTABLE  R2 = R2[K4('UI_DBD_SPN')]
+  10 [  37] ADD       A=2 B=2 C=262
+  11 [  37] LOADK     R3 = K6 (1)
+  12 [  37] GETTABUP  R4 = UP2[K7('MODS')]
+  13 [  37] LEN       A=4 B=4 C=0
+  14 [  37] LOADBOOL  A=5 B=1 C=0
+  15 [  37] CALL      A=1 B=5 C=2
+  16 [  37] SETTABLE  R0[K4('UI_DBD_SPN')] = R1
+  17 [  38] GETTABUP  R0 = UP2[K7('MODS')]
+  18 [  38] GETTABUP  R1 = UP0[K3('S')]
+  19 [  38] GETTABLE  R1 = R1[K4('UI_DBD_SPN')]
+  20 [  38] GETTABLE  R0 = R0[R1]
+  21 [  38] SETTABUP  UP2[K8('m')] = R0
+  22 [  39] GETTABUP  R0 = UP1[K9('loadE')]
+  23 [  39] GETTABUP  R1 = UP1[K10('PUI')]
+  24 [  39] LOADK     R2 = K11 ('UITSKCHG')
+  25 [  39] CONCAT    A=1 B=1 C=2
+  26 [  39] GETUPVAL  A=2 B=2 C=0
+  27 [  39] CALL      A=0 B=3 C=1
+  28 [  40] RETURN    A=0 B=1 C=0
+  29 [  42] RETURN    A=0 B=1 C=0

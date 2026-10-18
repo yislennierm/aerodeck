@@ -1,0 +1,142 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/MSPCFC.luac
+SHA256: d42b004009b8d76f5b3d8b6a87ce16266c68b24bd1b528f0339bab2bc0343a61
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/IN/MSPCFC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'MSPCFC'
+   1 [  15] VARARG    A=0 B=5 C=0
+   2 [  75] CLOSURE   R4 = proto[0]
+   3 [  75] SETTABLE  R1[K0('MSPCFC')] = R4
+   4 [  77] RETURN    A=0 B=1 C=0
+   5 [  77] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 4 lines 17 75 source None
+UPVALUES [('F', (1, 1)), ('D', (1, 2))]
+LOCALS [('s', 0, 98)]
+K0 1
+K1 'MSPQAD'
+K2 'nodup'
+K3 2
+K4 'S'
+K5 'mspCheck'
+K6 'FC'
+K7 'FW_NAME'
+K8 'INAV'
+K9 3
+K10 'BTFL'
+K11 'mspInfo'
+K12 'Set FC type to BF'
+K13 'mspInfoWarn'
+K14 True
+K15 None
+K16 'Unsupported FC: '
+K17 'API_VERSION'
+K18 4
+K19 'FW_VER'
+K20 'FW_VER_MAJOR'
+K21 0
+K22 8
+K23 5
+K24 'INAV 8.0+ required'
+K25 ''
+K26 'mspFcReady'
+K27 'MSPML'
+   1 [  19] EQ        A=0 R0, K0(1); skip-next if condition != A
+   2 [  19] JMP       A=0 ->10
+   3 [  20] GETTABUP  R1 = UP0[K1('MSPQAD')]
+   4 [  20] LOADK     R2 = K2 ('nodup')
+   5 [  20] LOADK     R3 = K3 (2)
+   6 [  20] CALL      A=1 B=3 C=1
+   7 [  22] GETTABUP  R1 = UP1[K4('S')]
+   8 [  22] SETTABLE  R1[K5('mspCheck')] = K3(2)
+   9 [  22] JMP       A=0 ->95
+  10 [  24] EQ        A=0 R0, K3(2); skip-next if condition != A
+  11 [  24] JMP       A=0 ->49
+  12 [  25] GETTABUP  R1 = UP1[K6('FC')]
+  13 [  25] GETTABLE  R1 = R1[K7('FW_NAME')]
+  14 [  25] TEST      A=1 B=0 C=0
+  15 [  25] JMP       A=0 ->95
+  16 [  26] GETTABUP  R1 = UP1[K6('FC')]
+  17 [  26] GETTABLE  R1 = R1[K7('FW_NAME')]
+  18 [  26] EQ        A=0 R1, K8('INAV'); skip-next if condition != A
+  19 [  26] JMP       A=0 ->27
+  20 [  27] GETTABUP  R1 = UP0[K1('MSPQAD')]
+  21 [  27] LOADK     R2 = K2 ('nodup')
+  22 [  27] LOADK     R3 = K0 (1)
+  23 [  27] CALL      A=1 B=3 C=1
+  24 [  29] GETTABUP  R1 = UP1[K4('S')]
+  25 [  29] SETTABLE  R1[K5('mspCheck')] = K9(3)
+  26 [  29] JMP       A=0 ->95
+  27 [  30] GETTABUP  R1 = UP1[K6('FC')]
+  28 [  30] GETTABLE  R1 = R1[K7('FW_NAME')]
+  29 [  30] EQ        A=0 R1, K10('BTFL'); skip-next if condition != A
+  30 [  30] JMP       A=0 ->38
+  31 [  31] GETTABUP  R1 = UP1[K4('S')]
+  32 [  31] SETTABLE  R1[K11('mspInfo')] = K12('Set FC type to BF')
+  33 [  32] GETTABUP  R1 = UP1[K4('S')]
+  34 [  32] SETTABLE  R1[K13('mspInfoWarn')] = K14(True)
+  35 [  33] GETTABUP  R1 = UP1[K4('S')]
+  36 [  33] SETTABLE  R1[K5('mspCheck')] = K15(None)
+  37 [  33] JMP       A=0 ->95
+  38 [  35] GETTABUP  R1 = UP1[K4('S')]
+  39 [  35] LOADK     R2 = K16 ('Unsupported FC: ')
+  40 [  35] GETTABUP  R3 = UP1[K6('FC')]
+  41 [  35] GETTABLE  R3 = R3[K7('FW_NAME')]
+  42 [  35] CONCAT    A=2 B=2 C=3
+  43 [  35] SETTABLE  R1[K11('mspInfo')] = R2
+  44 [  36] GETTABUP  R1 = UP1[K4('S')]
+  45 [  36] SETTABLE  R1[K13('mspInfoWarn')] = K14(True)
+  46 [  37] GETTABUP  R1 = UP1[K4('S')]
+  47 [  37] SETTABLE  R1[K5('mspCheck')] = K15(None)
+  48 [  39] JMP       A=0 ->95
+  49 [  41] EQ        A=0 R0, K9(3); skip-next if condition != A
+  50 [  41] JMP       A=0 ->62
+  51 [  42] GETTABUP  R1 = UP1[K6('FC')]
+  52 [  42] GETTABLE  R1 = R1[K17('API_VERSION')]
+  53 [  42] TEST      A=1 B=0 C=0
+  54 [  42] JMP       A=0 ->95
+  55 [  43] GETTABUP  R1 = UP0[K1('MSPQAD')]
+  56 [  43] LOADK     R2 = K2 ('nodup')
+  57 [  43] LOADK     R3 = K9 (3)
+  58 [  43] CALL      A=1 B=3 C=1
+  59 [  45] GETTABUP  R1 = UP1[K4('S')]
+  60 [  45] SETTABLE  R1[K5('mspCheck')] = K18(4)
+  61 [  46] JMP       A=0 ->95
+  62 [  48] EQ        A=0 R0, K18(4); skip-next if condition != A
+  63 [  48] JMP       A=0 ->85
+  64 [  49] GETTABUP  R1 = UP1[K6('FC')]
+  65 [  49] GETTABLE  R1 = R1[K19('FW_VER')]
+  66 [  49] TEST      A=1 B=0 C=0
+  67 [  49] JMP       A=0 ->95
+  68 [  50] GETTABUP  R1 = UP1[K6('FC')]
+  69 [  50] GETTABLE  R1 = R1[K20('FW_VER_MAJOR')]
+  70 [  50] TEST      A=1 B=0 C=1
+  71 [  50] JMP       A=0 ->73
+  72 [  50] LOADK     R1 = K21 (0)
+  73 [  50] LE        A=0 K22(8), R1; skip-next if condition != A
+  74 [  50] JMP       A=0 ->78
+  75 [  51] GETTABUP  R1 = UP1[K4('S')]
+  76 [  51] SETTABLE  R1[K5('mspCheck')] = K23(5)
+  77 [  51] JMP       A=0 ->95
+  78 [  53] GETTABUP  R1 = UP1[K4('S')]
+  79 [  53] SETTABLE  R1[K11('mspInfo')] = K24('INAV 8.0+ required')
+  80 [  54] GETTABUP  R1 = UP1[K4('S')]
+  81 [  54] SETTABLE  R1[K13('mspInfoWarn')] = K14(True)
+  82 [  55] GETTABUP  R1 = UP1[K4('S')]
+  83 [  55] SETTABLE  R1[K5('mspCheck')] = K15(None)
+  84 [  57] JMP       A=0 ->95
+  85 [  59] EQ        A=0 R0, K23(5); skip-next if condition != A
+  86 [  59] JMP       A=0 ->95
+  87 [  64] GETTABUP  R1 = UP1[K4('S')]
+  88 [  64] SETTABLE  R1[K11('mspInfo')] = K25('')
+  89 [  65] GETTABUP  R1 = UP1[K4('S')]
+  90 [  65] SETTABLE  R1[K13('mspInfoWarn')] = K15(None)
+  91 [  66] GETTABUP  R1 = UP1[K4('S')]
+  92 [  66] SETTABLE  R1[K5('mspCheck')] = K15(None)
+  93 [  67] GETTABUP  R1 = UP1[K4('S')]
+  94 [  67] SETTABLE  R1[K26('mspFcReady')] = K14(True)
+  95 [  72] GETTABUP  R1 = UP0[K27('MSPML')]
+  96 [  72] CALL      A=1 B=1 C=1
+  97 [  74] RETURN    A=0 B=1 C=0
+  98 [  75] RETURN    A=0 B=1 C=0

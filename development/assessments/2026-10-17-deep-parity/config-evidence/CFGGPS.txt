@@ -1,0 +1,64 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGGPS.luac
+Original SHA256: 819e2a77cdb1a9a94b10e6d223ac65bc62fbbc1dd78c93ca819f9d2c9af2a2d2
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGGPS.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 33), ('F', 1, 33), ('D', 1, 33), ('X', 1, 33), ('T', 1, 33)]
+K0 'pID'
+K1 'GPS'
+K2 'pN'
+K3 'dVxo'
+K4 'LCD_W'
+K5 480
+K6 350
+K7 320
+K8 200
+K9 80
+K10 'cv'
+K11 'GPS_SATS2FIX'
+K12 'o'
+K13 1
+K14 'l'
+K15 'Sats number to fix home'
+K16 't'
+K17 'N'
+K18 'm'
+K19 'x'
+K20 64
+K21 'i'
+K22 'f'
+K23 '%1d'
+K24 'readDS'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('GPS')
+   3 [  11] SETTABLE  R4[K2('pN')] = K1('GPS')
+   4 [  12] GETTABUP  R5 = UP0[K4('LCD_W')]
+   5 [  12] LT        A=0 K5(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K6 (350)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K4('LCD_W')]
+  11 [  12] LT        A=0 K7(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K8 (200)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K9 (80)
+  17 [  12] SETTABLE  R4[K3('dVxo')] = R5
+  18 [  14] NEWTABLE  A=5 B=0 C=0
+  19 [  14] SETTABLE  R4[K10('cv')] = R5
+  20 [  15] GETTABLE  R5 = R4[K10('cv')]
+  21 [  15] NEWTABLE  A=6 B=0 C=7
+  22 [  15] SETTABLE  R6[K12('o')] = K13(1)
+  23 [  15] SETTABLE  R6[K14('l')] = K15('Sats number to fix home')
+  24 [  15] SETTABLE  R6[K16('t')] = K17('N')
+  25 [  15] SETTABLE  R6[K18('m')] = K13(1)
+  26 [  15] SETTABLE  R6[K19('x')] = K20(64)
+  27 [  15] SETTABLE  R6[K21('i')] = K13(1)
+  28 [  15] SETTABLE  R6[K22('f')] = K23('%1d')
+  29 [  15] SETTABLE  R5[K11('GPS_SATS2FIX')] = R6
+  30 [  20] GETTABLE  R5 = R4[K24('readDS')]
+  31 [  20] CALL      A=5 B=1 C=1
+  32 [  26] RETURN    A=0 B=1 C=0
+  33 [  26] RETURN    A=0 B=1 C=0

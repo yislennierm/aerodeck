@@ -1,0 +1,672 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/ML.luac
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/MAIN/ML.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 9), ('F', 1, 9), ('D', 1, 9), ('X', 1, 9), ('ML', 2, 9), ('RINIT_YIELD_WG', 3, 9)]
+K0 75
+K1 'bg'
+K2 'run'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  14] NEWTABLE  A=4 B=0 C=0
+   3 [  16] LOADK     R5 = K0 (75)
+   4 [ 157] CLOSURE   R6 = proto[0]
+   5 [ 157] SETTABLE  R4[K1('bg')] = R6
+   6 [ 246] CLOSURE   R6 = proto[1]
+   7 [ 246] SETTABLE  R4[K2('run')] = R6
+   8 [ 248] RETURN    A=4 B=2 C=0
+   9 [ 248] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 7 lines 18 157 source None
+UPVALUES [('D', (1, 2)), ('G', (1, 0)), ('F', (1, 1)), ('_ENV', (0, 0)), ('RINIT_YIELD_WG', (1, 5))]
+LOCALS [('yieldRinit', 38, 135), ('rinitBefore', 49, 120), ('v', 60, 120), ('rinitAdded', 96, 110), ('debugMSP', 267, 285)]
+K0 'INIT_do'
+K1 'frun'
+K2 'PMAIN'
+K3 'INIT'
+K4 'clear'
+K5 'INIT*'
+K6 'RINIT'
+K7 0
+K8 'MODE'
+K9 'WG'
+K10 'getUsage'
+K11 'RINIT_total'
+K12 'RINIT_done'
+K13 'table'
+K14 'remove'
+K15 1
+K16 'cb'
+K17 'fn'
+K18 'args'
+K19 'loadE'
+K20 'unpack'
+K21 'RINIT_busy'
+K22 True
+K23 '+RINIT'
+K24 None
+K25 'TI'
+K26 'now'
+K27 'getTime'
+K28 'tick50'
+K29 100
+K30 50
+K31 'tick100'
+K32 200
+K33 'tick200'
+K34 400
+K35 'tick300'
+K36 600
+K37 300
+K38 'wCrit'
+K39 False
+K40 'wLow'
+K41 'mc'
+K42 'S'
+K43 'TLM_ON'
+K44 'getSwitchValue'
+K45 'TLM_ON_SRC'
+K46 'DEVON'
+K47 'LOGDEBUG'
+K48 'getValue'
+K49 'LOGDEBUGSW'
+K50 'UI_THM_OV'
+K51 'sb'
+K52 'sc'
+K53 'DEV'
+K54 'debugMSP'
+K55 'mspLogAdd'
+K56 'MSPDBG'
+K57 'enabled'
+K58 'disabled'
+K59 'RD_BT'
+K60 'MDL_RCP_ON'
+K61 'TLM_UPD'
+K62 'fm'
+K63 'sxx'
+K64 'MDL_BTV_ON'
+K65 'BT_CELL_WARN_SND'
+K66 'BT_CELL_WARN_TYPE'
+K67 'UI'
+K68 'mute'
+K69 'BT_MD_CELL_VA'
+K70 'BT_CELL_NOPWR'
+K71 'RD_SND'
+K72 'SN_IND'
+K73 'TMR_host'
+K74 'tmrUpdate'
+K75 'ARMED'
+K76 'RD_TMR'
+K77 'start'
+K78 'stop'
+   1 [  20] GETTABUP  R0 = UP0[K0('INIT_do')]
+   2 [  20] TEST      A=0 B=0 C=0
+   3 [  20] JMP       A=0 ->22
+   4 [  22] GETTABUP  R0 = UP1[K1('frun')]
+   5 [  22] GETTABUP  R1 = UP1[K2('PMAIN')]
+   6 [  22] LOADK     R2 = K3 ('INIT')
+   7 [  22] CONCAT    A=1 B=1 C=2
+   8 [  22] CALL      A=0 B=2 C=2
+   9 [  22] SETTABUP  UP0[K0('INIT_do')] = R0
+  10 [  23] GETTABUP  R0 = UP0[K0('INIT_do')]
+  11 [  23] TEST      A=0 B=0 C=1
+  12 [  23] JMP       A=0 ->358
+  13 [  25] GETTABUP  R0 = UP1[K4('clear')]
+  14 [  25] GETUPVAL  A=1 B=2 C=0
+  15 [  25] LOADK     R2 = K3 ('INIT')
+  16 [  25] CALL      A=0 B=3 C=1
+  17 [  26] GETTABUP  R0 = UP1[K4('clear')]
+  18 [  26] GETUPVAL  A=1 B=0 C=0
+  19 [  26] LOADK     R2 = K5 ('INIT*')
+  20 [  26] CALL      A=0 B=3 C=1
+  21 [  28] JMP       A=0 ->358
+  22 [  33] GETTABUP  R0 = UP0[K6('RINIT')]
+  23 [  33] TEST      A=0 B=0 C=0
+  24 [  33] JMP       A=0 ->139
+  25 [  35] GETTABUP  R0 = UP0[K6('RINIT')]
+  26 [  35] LEN       A=0 B=0 C=0
+  27 [  35] LT        A=0 K7(0), R0; skip-next if condition != A
+  28 [  35] JMP       A=0 ->136
+  29 [  36] GETTABUP  R0 = UP1[K8('MODE')]
+  30 [  36] EQ        A=0 R0, K9('WG'); skip-next if condition != A
+  31 [  36] JMP       A=0 ->37
+  32 [  36] GETTABUP  R0 = UP3[K10('getUsage')]
+  33 [  36] TEST      A=0 B=0 C=0
+  34 [  36] JMP       A=0 ->39
+  35 [  36] GETUPVAL  A=0 B=4 C=0
+  36 [  36] JMP       A=0 ->39
+  37 [  36] LOADBOOL  A=0 B=0 C=1
+  38 [  36] LOADBOOL  A=0 B=1 C=0
+  39 [  37] TEST      A=0 B=0 C=0
+  40 [  37] JMP       A=0 ->48
+  41 [  37] GETTABUP  R1 = UP0[K11('RINIT_total')]
+  42 [  37] TEST      A=1 B=0 C=1
+  43 [  37] JMP       A=0 ->48
+  44 [  38] GETTABUP  R1 = UP0[K6('RINIT')]
+  45 [  38] LEN       A=1 B=1 C=0
+  46 [  38] SETTABUP  UP0[K11('RINIT_total')] = R1
+  47 [  39] SETTABUP  UP0[K12('RINIT_done')] = K7(0)
+  48 [  42] GETTABUP  R1 = UP0[K6('RINIT')]
+  49 [  42] LEN       A=1 B=1 C=0
+  50 [  43] TEST      A=0 B=0 C=0
+  51 [  43] JMP       A=0 ->59
+  52 [  43] GETTABUP  R2 = UP3[K13('table')]
+  53 [  43] GETTABLE  R2 = R2[K14('remove')]
+  54 [  43] GETTABUP  R3 = UP0[K6('RINIT')]
+  55 [  43] LOADK     R4 = K15 (1)
+  56 [  43] CALL      A=2 B=3 C=2
+  57 [  43] TEST      A=2 B=0 C=1
+  58 [  43] JMP       A=0 ->61
+  59 [  43] GETTABUP  R2 = UP0[K6('RINIT')]
+  60 [  43] GETTABLE  R2 = R2[K15(1)]
+  61 [  44] GETTABLE  R3 = R2[K16('cb')]
+  62 [  44] TEST      A=3 B=0 C=0
+  63 [  44] JMP       A=0 ->67
+  64 [  45] GETTABLE  R3 = R2[K16('cb')]
+  65 [  45] CALL      A=3 B=1 C=1
+  66 [  45] JMP       A=0 ->84
+  67 [  46] GETTABLE  R3 = R2[K17('fn')]
+  68 [  46] TEST      A=3 B=0 C=0
+  69 [  46] JMP       A=0 ->84
+  70 [  48] GETTABLE  R3 = R2[K18('args')]
+  71 [  48] TEST      A=3 B=0 C=0
+  72 [  48] JMP       A=0 ->81
+  73 [  50] GETTABUP  R3 = UP1[K19('loadE')]
+  74 [  50] GETTABLE  R4 = R2[K17('fn')]
+  75 [  50] GETTABUP  R5 = UP3[K13('table')]
+  76 [  50] GETTABLE  R5 = R5[K20('unpack')]
+  77 [  50] GETTABLE  R6 = R2[K18('args')]
+  78 [  50] CALL      A=5 B=2 C=0
+  79 [  50] CALL      A=3 B=0 C=1
+  80 [  50] JMP       A=0 ->84
+  81 [  53] GETTABUP  R3 = UP1[K19('loadE')]
+  82 [  53] GETTABLE  R4 = R2[K17('fn')]
+  83 [  53] CALL      A=3 B=2 C=1
+  84 [  57] TEST      A=0 B=0 C=1
+  85 [  57] JMP       A=0 ->91
+  86 [  58] GETTABUP  R3 = UP3[K13('table')]
+  87 [  58] GETTABLE  R3 = R3[K14('remove')]
+  88 [  58] GETTABUP  R4 = UP0[K6('RINIT')]
+  89 [  58] LOADK     R5 = K15 (1)
+  90 [  58] CALL      A=3 B=3 C=1
+  91 [  61] TEST      A=0 B=0 C=0
+  92 [  61] JMP       A=0 ->111
+  93 [  62] GETTABUP  R3 = UP0[K6('RINIT')]
+  94 [  62] LEN       A=3 B=3 C=0
+  95 [  62] SUB       A=4 B=1 C=271
+  96 [  62] SUB       A=3 B=3 C=4
+  97 [  63] LT        A=0 K7(0), R3; skip-next if condition != A
+  98 [  63] JMP       A=0 ->105
+  99 [  64] GETTABUP  R4 = UP0[K11('RINIT_total')]
+ 100 [  64] TEST      A=4 B=0 C=1
+ 101 [  64] JMP       A=0 ->103
+ 102 [  64] MOVE      A=4 B=1 C=0
+ 103 [  64] ADD       A=4 B=4 C=3
+ 104 [  64] SETTABUP  UP0[K11('RINIT_total')] = R4
+ 105 [  66] GETTABUP  R4 = UP0[K12('RINIT_done')]
+ 106 [  66] TEST      A=4 B=0 C=1
+ 107 [  66] JMP       A=0 ->109
+ 108 [  66] LOADK     R4 = K7 (0)
+ 109 [  66] ADD       A=4 B=4 C=271
+ 110 [  66] SETTABUP  UP0[K12('RINIT_done')] = R4
+ 111 [  68] GETTABUP  R3 = UP0[K6('RINIT')]
+ 112 [  68] LEN       A=3 B=3 C=0
+ 113 [  68] EQ        A=1 R3, K7(0); skip-next if condition != A
+ 114 [  68] JMP       A=0 ->121
+ 115 [  68] TEST      A=0 B=0 C=0
+ 116 [  68] JMP       A=0 ->48
+ 117 [  68] GETTABUP  R3 = UP3[K10('getUsage')]
+ 118 [  68] CALL      A=3 B=1 C=2
+ 119 [  68] LE        A=0 R0, R3; skip-next if condition != A
+ 120 [  68] JMP       A=0 ->48
+ 121 [  70] TEST      A=0 B=0 C=0
+ 122 [  70] JMP       A=0 ->129
+ 123 [  70] GETTABUP  R1 = UP0[K6('RINIT')]
+ 124 [  70] LEN       A=1 B=1 C=0
+ 125 [  70] LT        A=0 K7(0), R1; skip-next if condition != A
+ 126 [  70] JMP       A=0 ->129
+ 127 [  71] SETTABUP  UP0[K21('RINIT_busy')] = K22(True)
+ 128 [  71] JMP       A=0 ->135
+ 129 [  73] GETTABUP  R1 = UP1[K4('clear')]
+ 130 [  73] GETUPVAL  A=2 B=0 C=0
+ 131 [  73] LOADK     R3 = K23 ('+RINIT')
+ 132 [  73] CALL      A=1 B=3 C=1
+ 133 [  74] SETTABUP  UP0[K11('RINIT_total')] = K24(None)
+ 134 [  75] SETTABUP  UP0[K12('RINIT_done')] = K24(None)
+ 135 [  77] RETURN    A=0 B=1 C=0
+ 136 [  79] SETTABUP  UP0[K11('RINIT_total')] = K24(None)
+ 137 [  80] SETTABUP  UP0[K12('RINIT_done')] = K24(None)
+ 138 [  80] JMP       A=0 ->143
+ 139 [  83] NEWTABLE  A=0 B=0 C=0
+ 140 [  83] SETTABUP  UP0[K6('RINIT')] = R0
+ 141 [  84] SETTABUP  UP0[K11('RINIT_total')] = K24(None)
+ 142 [  85] SETTABUP  UP0[K12('RINIT_done')] = K24(None)
+ 143 [  89] GETTABUP  R0 = UP0[K25('TI')]
+ 144 [  89] GETTABUP  R1 = UP3[K27('getTime')]
+ 145 [  89] CALL      A=1 B=1 C=2
+ 146 [  89] SETTABLE  R0[K26('now')] = R1
+ 147 [  90] GETTABUP  R0 = UP0[K25('TI')]
+ 148 [  90] GETTABUP  R1 = UP0[K25('TI')]
+ 149 [  90] GETTABLE  R1 = R1[K26('now')]
+ 150 [  90] MOD       A=1 B=1 C=285
+ 151 [  90] LT        A=0 K30(50), R1; skip-next if condition != A
+ 152 [  90] JMP       A=0 ->156
+ 153 [  90] LOADBOOL  A=1 B=1 C=0
+ 154 [  90] TEST      A=1 B=0 C=1
+ 155 [  90] JMP       A=0 ->157
+ 156 [  90] LOADBOOL  A=1 B=0 C=0
+ 157 [  90] SETTABLE  R0[K28('tick50')] = R1
+ 158 [  91] GETTABUP  R0 = UP0[K25('TI')]
+ 159 [  91] GETTABUP  R1 = UP0[K25('TI')]
+ 160 [  91] GETTABLE  R1 = R1[K26('now')]
+ 161 [  91] MOD       A=1 B=1 C=288
+ 162 [  91] LT        A=0 K29(100), R1; skip-next if condition != A
+ 163 [  91] JMP       A=0 ->167
+ 164 [  91] LOADBOOL  A=1 B=1 C=0
+ 165 [  91] TEST      A=1 B=0 C=1
+ 166 [  91] JMP       A=0 ->168
+ 167 [  91] LOADBOOL  A=1 B=0 C=0
+ 168 [  91] SETTABLE  R0[K31('tick100')] = R1
+ 169 [  92] GETTABUP  R0 = UP0[K25('TI')]
+ 170 [  92] GETTABUP  R1 = UP0[K25('TI')]
+ 171 [  92] GETTABLE  R1 = R1[K26('now')]
+ 172 [  92] MOD       A=1 B=1 C=290
+ 173 [  92] LT        A=0 K32(200), R1; skip-next if condition != A
+ 174 [  92] JMP       A=0 ->178
+ 175 [  92] LOADBOOL  A=1 B=1 C=0
+ 176 [  92] TEST      A=1 B=0 C=1
+ 177 [  92] JMP       A=0 ->179
+ 178 [  92] LOADBOOL  A=1 B=0 C=0
+ 179 [  92] SETTABLE  R0[K33('tick200')] = R1
+ 180 [  93] GETTABUP  R0 = UP0[K25('TI')]
+ 181 [  93] GETTABUP  R1 = UP0[K25('TI')]
+ 182 [  93] GETTABLE  R1 = R1[K26('now')]
+ 183 [  93] MOD       A=1 B=1 C=292
+ 184 [  93] LT        A=0 K37(300), R1; skip-next if condition != A
+ 185 [  93] JMP       A=0 ->189
+ 186 [  93] LOADBOOL  A=1 B=1 C=0
+ 187 [  93] TEST      A=1 B=0 C=1
+ 188 [  93] JMP       A=0 ->190
+ 189 [  93] LOADBOOL  A=1 B=0 C=0
+ 190 [  93] SETTABLE  R0[K35('tick300')] = R1
+ 191 [  95] GETTABUP  R0 = UP0[K25('TI')]
+ 192 [  95] GETTABLE  R0 = R0[K38('wCrit')]
+ 193 [  95] EQ        A=0 R0, K24(None); skip-next if condition != A
+ 194 [  95] JMP       A=0 ->202
+ 195 [  96] GETTABUP  R0 = UP0[K25('TI')]
+ 196 [  96] GETTABLE  R0 = R0[K33('tick200')]
+ 197 [  96] TEST      A=0 B=0 C=0
+ 198 [  96] JMP       A=0 ->212
+ 199 [  96] GETTABUP  R0 = UP0[K25('TI')]
+ 200 [  96] SETTABLE  R0[K38('wCrit')] = K22(True)
+ 201 [  96] JMP       A=0 ->212
+ 202 [  97] GETTABUP  R0 = UP0[K25('TI')]
+ 203 [  97] GETTABLE  R0 = R0[K38('wCrit')]
+ 204 [  97] EQ        A=0 R0, K39(False); skip-next if condition != A
+ 205 [  97] JMP       A=0 ->212
+ 206 [  98] GETTABUP  R0 = UP0[K25('TI')]
+ 207 [  98] GETTABLE  R0 = R0[K33('tick200')]
+ 208 [  98] TEST      A=0 B=0 C=1
+ 209 [  98] JMP       A=0 ->212
+ 210 [  98] GETTABUP  R0 = UP0[K25('TI')]
+ 211 [  98] SETTABLE  R0[K38('wCrit')] = K24(None)
+ 212 [ 101] GETTABUP  R0 = UP0[K25('TI')]
+ 213 [ 101] GETTABLE  R0 = R0[K40('wLow')]
+ 214 [ 101] EQ        A=0 R0, K24(None); skip-next if condition != A
+ 215 [ 101] JMP       A=0 ->223
+ 216 [ 102] GETTABUP  R0 = UP0[K25('TI')]
+ 217 [ 102] GETTABLE  R0 = R0[K35('tick300')]
+ 218 [ 102] TEST      A=0 B=0 C=0
+ 219 [ 102] JMP       A=0 ->233
+ 220 [ 102] GETTABUP  R0 = UP0[K25('TI')]
+ 221 [ 102] SETTABLE  R0[K40('wLow')] = K22(True)
+ 222 [ 102] JMP       A=0 ->233
+ 223 [ 103] GETTABUP  R0 = UP0[K25('TI')]
+ 224 [ 103] GETTABLE  R0 = R0[K40('wLow')]
+ 225 [ 103] EQ        A=0 R0, K39(False); skip-next if condition != A
+ 226 [ 103] JMP       A=0 ->233
+ 227 [ 104] GETTABUP  R0 = UP0[K25('TI')]
+ 228 [ 104] GETTABLE  R0 = R0[K35('tick300')]
+ 229 [ 104] TEST      A=0 B=0 C=1
+ 230 [ 104] JMP       A=0 ->233
+ 231 [ 104] GETTABUP  R0 = UP0[K25('TI')]
+ 232 [ 104] SETTABLE  R0[K40('wLow')] = K24(None)
+ 233 [ 108] GETTABUP  R0 = UP1[K41('mc')]
+ 234 [ 108] CALL      A=0 B=1 C=1
+ 235 [ 111] GETTABUP  R0 = UP0[K42('S')]
+ 236 [ 111] GETTABUP  R1 = UP3[K44('getSwitchValue')]
+ 237 [ 111] GETTABUP  R2 = UP0[K42('S')]
+ 238 [ 111] GETTABLE  R2 = R2[K45('TLM_ON_SRC')]
+ 239 [ 111] CALL      A=1 B=2 C=2
+ 240 [ 111] SETTABLE  R0[K43('TLM_ON')] = R1
+ 241 [ 116] GETTABUP  R0 = UP1[K46('DEVON')]
+ 242 [ 116] TEST      A=0 B=0 C=0
+ 243 [ 116] JMP       A=0 ->286
+ 244 [ 117] GETTABUP  R0 = UP3[K48('getValue')]
+ 245 [ 117] GETTABUP  R1 = UP1[K49('LOGDEBUGSW')]
+ 246 [ 117] CALL      A=0 B=2 C=2
+ 247 [ 117] LT        A=1 K30(50), R0; skip-next if condition != A
+ 248 [ 117] JMP       A=0 ->250
+ 249 [ 117] LOADBOOL  A=0 B=0 C=1
+ 250 [ 117] LOADBOOL  A=0 B=1 C=0
+ 251 [ 117] SETTABUP  UP1[K47('LOGDEBUG')] = R0
+ 252 [ 119] GETTABUP  R0 = UP0[K42('S')]
+ 253 [ 119] GETTABUP  R1 = UP3[K48('getValue')]
+ 254 [ 119] LOADK     R2 = K51 ('sb')
+ 255 [ 119] CALL      A=1 B=2 C=2
+ 256 [ 119] LT        A=1 R1, K7(0); skip-next if condition != A
+ 257 [ 119] JMP       A=0 ->259
+ 258 [ 119] LOADBOOL  A=1 B=0 C=1
+ 259 [ 119] LOADBOOL  A=1 B=1 C=0
+ 260 [ 119] SETTABLE  R0[K50('UI_THM_OV')] = R1
+ 261 [ 121] GETTABUP  R0 = UP3[K48('getValue')]
+ 262 [ 121] LOADK     R1 = K52 ('sc')
+ 263 [ 121] CALL      A=0 B=2 C=2
+ 264 [ 121] LE        A=1 K7(0), R0; skip-next if condition != A
+ 265 [ 121] JMP       A=0 ->267
+ 266 [ 121] LOADBOOL  A=0 B=0 C=1
+ 267 [ 121] LOADBOOL  A=0 B=1 C=0
+ 268 [ 122] GETTABUP  R1 = UP1[K53('DEV')]
+ 269 [ 122] GETTABLE  R1 = R1[K54('debugMSP')]
+ 270 [ 122] EQ        A=1 R1, R0; skip-next if condition != A
+ 271 [ 122] JMP       A=0 ->286
+ 272 [ 123] GETTABUP  R1 = UP1[K53('DEV')]
+ 273 [ 123] SETTABLE  R1[K54('debugMSP')] = R0
+ 274 [ 124] GETTABUP  R1 = UP1[K55('mspLogAdd')]
+ 275 [ 124] TEST      A=1 B=0 C=0
+ 276 [ 124] JMP       A=0 ->286
+ 277 [ 125] GETTABUP  R1 = UP1[K55('mspLogAdd')]
+ 278 [ 125] LOADK     R2 = K56 ('MSPDBG')
+ 279 [ 125] TEST      A=0 B=0 C=0
+ 280 [ 125] JMP       A=0 ->284
+ 281 [ 125] LOADK     R3 = K57 ('enabled')
+ 282 [ 125] TEST      A=3 B=0 C=1
+ 283 [ 125] JMP       A=0 ->285
+ 284 [ 125] LOADK     R3 = K58 ('disabled')
+ 285 [ 125] CALL      A=1 B=3 C=1
+ 286 [ 131] GETTABUP  R0 = UP2[K59('RD_BT')]
+ 287 [ 131] CALL      A=0 B=1 C=1
+ 288 [ 133] GETTABUP  R0 = UP0[K42('S')]
+ 289 [ 133] GETTABLE  R0 = R0[K60('MDL_RCP_ON')]
+ 290 [ 133] TEST      A=0 B=0 C=0
+ 291 [ 133] JMP       A=0 ->332
+ 292 [ 133] GETTABUP  R0 = UP0[K42('S')]
+ 293 [ 133] GETTABLE  R0 = R0[K43('TLM_ON')]
+ 294 [ 133] TEST      A=0 B=0 C=0
+ 295 [ 133] JMP       A=0 ->332
+ 296 [ 135] GETTABUP  R0 = UP2[K61('TLM_UPD')]
+ 297 [ 135] TEST      A=0 B=0 C=0
+ 298 [ 135] JMP       A=0 ->301
+ 299 [ 136] GETTABUP  R0 = UP2[K61('TLM_UPD')]
+ 300 [ 136] CALL      A=0 B=1 C=1
+ 301 [ 139] GETTABUP  R0 = UP1[K62('fm')]
+ 302 [ 139] GETTABLE  R0 = R0[K63('sxx')]
+ 303 [ 139] TEST      A=0 B=0 C=0
+ 304 [ 139] JMP       A=0 ->332
+ 305 [ 139] GETTABUP  R0 = UP0[K42('S')]
+ 306 [ 139] GETTABLE  R0 = R0[K64('MDL_BTV_ON')]
+ 307 [ 139] TEST      A=0 B=0 C=0
+ 308 [ 139] JMP       A=0 ->332
+ 309 [ 140] GETTABUP  R0 = UP0[K42('S')]
+ 310 [ 140] GETTABLE  R0 = R0[K65('BT_CELL_WARN_SND')]
+ 311 [ 140] LT        A=0 K7(0), R0; skip-next if condition != A
+ 312 [ 140] JMP       A=0 ->332
+ 313 [ 140] GETTABUP  R0 = UP0[K42('S')]
+ 314 [ 140] GETTABLE  R0 = R0[K66('BT_CELL_WARN_TYPE')]
+ 315 [ 140] LT        A=0 K7(0), R0; skip-next if condition != A
+ 316 [ 140] JMP       A=0 ->332
+ 317 [ 140] GETTABUP  R0 = UP0[K67('UI')]
+ 318 [ 140] GETTABLE  R0 = R0[K68('mute')]
+ 319 [ 140] TEST      A=0 B=0 C=1
+ 320 [ 140] JMP       A=0 ->332
+ 321 [ 140] GETTABUP  R0 = UP0[K42('S')]
+ 322 [ 140] GETTABLE  R0 = R0[K69('BT_MD_CELL_VA')]
+ 323 [ 140] TEST      A=0 B=0 C=1
+ 324 [ 140] JMP       A=0 ->326
+ 325 [ 140] LOADK     R0 = K7 (0)
+ 326 [ 140] GETTABUP  R1 = UP0[K42('S')]
+ 327 [ 140] GETTABLE  R1 = R1[K70('BT_CELL_NOPWR')]
+ 328 [ 140] LT        A=0 R1, R0; skip-next if condition != A
+ 329 [ 140] JMP       A=0 ->332
+ 330 [ 141] GETTABUP  R0 = UP2[K71('RD_SND')]
+ 331 [ 141] CALL      A=0 B=1 C=1
+ 332 [ 147] GETTABUP  R0 = UP2[K72('SN_IND')]
+ 333 [ 147] CALL      A=0 B=1 C=1
+ 334 [ 150] GETTABUP  R0 = UP0[K42('S')]
+ 335 [ 150] GETTABLE  R0 = R0[K73('TMR_host')]
+ 336 [ 150] EQ        A=0 R0, K15(1); skip-next if condition != A
+ 337 [ 150] JMP       A=0 ->358
+ 338 [ 150] GETTABUP  R0 = UP0[K25('TI')]
+ 339 [ 150] GETTABLE  R0 = R0[K74('tmrUpdate')]
+ 340 [ 150] GETTABUP  R1 = UP0[K42('S')]
+ 341 [ 150] GETTABLE  R1 = R1[K75('ARMED')]
+ 342 [ 150] EQ        A=1 R0, R1; skip-next if condition != A
+ 343 [ 150] JMP       A=0 ->358
+ 344 [ 151] GETTABUP  R0 = UP2[K76('RD_TMR')]
+ 345 [ 151] GETTABUP  R1 = UP0[K42('S')]
+ 346 [ 151] GETTABLE  R1 = R1[K75('ARMED')]
+ 347 [ 151] TEST      A=1 B=0 C=0
+ 348 [ 151] JMP       A=0 ->352
+ 349 [ 151] LOADK     R1 = K77 ('start')
+ 350 [ 151] TEST      A=1 B=0 C=1
+ 351 [ 151] JMP       A=0 ->353
+ 352 [ 151] LOADK     R1 = K78 ('stop')
+ 353 [ 151] CALL      A=0 B=2 C=1
+ 354 [ 152] GETTABUP  R0 = UP0[K25('TI')]
+ 355 [ 152] GETTABUP  R1 = UP0[K42('S')]
+ 356 [ 152] GETTABLE  R1 = R1[K75('ARMED')]
+ 357 [ 152] SETTABLE  R0[K74('tmrUpdate')] = R1
+ 358 [ 157] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 5 lines 160 246 source None
+UPVALUES [('D', (1, 2)), ('ML', (1, 4)), ('G', (1, 0)), ('X', (1, 3)), ('F', (1, 1))]
+LOCALS [('mspAllowed', 29, 163), ('mspDelayDone', 66, 163)]
+K0 'INIT_do'
+K1 'bg'
+K2 'MODE'
+K3 'WG'
+K4 'RINIT_busy'
+K5 None
+K6 'CLR'
+K7 'C'
+K8 'MD_B'
+K9 'S'
+K10 'FC_MSP_ON'
+K11 'TLM_ON'
+K12 'ARMED'
+K13 'MSP'
+K14 'startAt'
+K15 'TI'
+K16 'now'
+K17 'START_DELAY'
+K18 100
+K19 'mspReady'
+K20 'mspFcReady'
+K21 'mspCheck'
+K22 'MSPCFC'
+K23 'clear'
+K24 'MSPML'
+K25 'SN_ATT'
+K26 'SN_BARO'
+K27 'SN_AIR'
+K28 'SN_GPS'
+K29 'GPS_ON'
+K30 'MDL_VTX_ON'
+K31 'VTX_CONN_TYPE'
+K32 0
+K33 'VTX'
+K34 'file'
+K35 'SN_VTX'
+K36 'read'
+K37 'frun'
+K38 'PUI'
+K39 'UIML'
+K40 'APP_LOG_ERR'
+K41 'LOGDEBUG'
+K42 'LOGQ'
+K43 'LOGQP'
+K44 'PLIBFS'
+K45 'FSLOG'
+   1 [ 167] GETTABUP  R0 = UP0[K0('INIT_do')]
+   2 [ 167] TEST      A=0 B=0 C=0
+   3 [ 167] JMP       A=0 ->7
+   4 [ 168] GETTABUP  R0 = UP1[K1('bg')]
+   5 [ 168] CALL      A=0 B=1 C=1
+   6 [ 168] JMP       A=0 ->164
+   7 [ 172] GETTABUP  R0 = UP2[K2('MODE')]
+   8 [ 172] EQ        A=0 R0, K3('WG'); skip-next if condition != A
+   9 [ 172] JMP       A=0 ->19
+  10 [ 172] GETTABUP  R0 = UP0[K4('RINIT_busy')]
+  11 [ 172] TEST      A=0 B=0 C=0
+  12 [ 172] JMP       A=0 ->19
+  13 [ 173] SETTABUP  UP0[K4('RINIT_busy')] = K5(None)
+  14 [ 174] GETTABUP  R0 = UP3[K6('CLR')]
+  15 [ 174] GETTABUP  R1 = UP0[K7('C')]
+  16 [ 174] GETTABLE  R1 = R1[K8('MD_B')]
+  17 [ 174] CALL      A=0 B=2 C=1
+  18 [ 175] RETURN    A=0 B=1 C=0
+  19 [ 178] GETTABUP  R0 = UP0[K9('S')]
+  20 [ 178] GETTABLE  R0 = R0[K10('FC_MSP_ON')]
+  21 [ 178] TEST      A=0 B=0 C=0
+  22 [ 178] JMP       A=0 ->30
+  23 [ 178] GETTABUP  R0 = UP0[K9('S')]
+  24 [ 178] GETTABLE  R0 = R0[K11('TLM_ON')]
+  25 [ 178] TEST      A=0 B=0 C=0
+  26 [ 178] JMP       A=0 ->30
+  27 [ 178] GETTABUP  R0 = UP0[K9('S')]
+  28 [ 178] GETTABLE  R0 = R0[K12('ARMED')]
+  29 [ 178] NOT       A=0 B=0 C=0
+  30 [ 179] GETTABUP  R1 = UP0[K13('MSP')]
+  31 [ 179] TEST      A=1 B=0 C=0
+  32 [ 179] JMP       A=0 ->52
+  33 [ 180] GETTABUP  R1 = UP0[K13('MSP')]
+  34 [ 180] TEST      A=0 B=0 C=0
+  35 [ 180] JMP       A=0 ->50
+  36 [ 180] GETTABUP  R2 = UP0[K13('MSP')]
+  37 [ 180] GETTABLE  R2 = R2[K14('startAt')]
+  38 [ 180] TEST      A=2 B=0 C=1
+  39 [ 180] JMP       A=0 ->51
+  40 [ 180] GETTABUP  R2 = UP0[K15('TI')]
+  41 [ 180] GETTABLE  R2 = R2[K16('now')]
+  42 [ 180] GETTABUP  R3 = UP0[K13('MSP')]
+  43 [ 180] GETTABLE  R3 = R3[K17('START_DELAY')]
+  44 [ 180] TEST      A=3 B=0 C=1
+  45 [ 180] JMP       A=0 ->47
+  46 [ 180] LOADK     R3 = K18 (100)
+  47 [ 180] ADD       A=2 B=2 C=3
+  48 [ 180] TEST      A=2 B=0 C=1
+  49 [ 180] JMP       A=0 ->51
+  50 [ 180] LOADNIL   A=2 B=0 C=0
+  51 [ 180] SETTABLE  R1[K14('startAt')] = R2
+  52 [ 182] GETTABUP  R1 = UP0[K13('MSP')]
+  53 [ 182] TEST      A=1 B=0 C=0
+  54 [ 182] JMP       A=0 ->67
+  55 [ 182] GETTABUP  R1 = UP0[K13('MSP')]
+  56 [ 182] GETTABLE  R1 = R1[K14('startAt')]
+  57 [ 182] TEST      A=1 B=0 C=0
+  58 [ 182] JMP       A=0 ->67
+  59 [ 182] GETTABUP  R1 = UP0[K15('TI')]
+  60 [ 182] GETTABLE  R1 = R1[K16('now')]
+  61 [ 182] GETTABUP  R2 = UP0[K13('MSP')]
+  62 [ 182] GETTABLE  R2 = R2[K14('startAt')]
+  63 [ 182] LE        A=1 R2, R1; skip-next if condition != A
+  64 [ 182] JMP       A=0 ->66
+  65 [ 182] LOADBOOL  A=1 B=0 C=1
+  66 [ 182] LOADBOOL  A=1 B=1 C=0
+  67 [ 183] GETTABUP  R2 = UP0[K9('S')]
+  68 [ 183] GETTABUP  R3 = UP0[K9('S')]
+  69 [ 183] GETTABLE  R3 = R3[K20('mspFcReady')]
+  70 [ 183] TEST      A=3 B=0 C=0
+  71 [ 183] JMP       A=0 ->75
+  72 [ 183] TESTSET   A=3 B=0 C=0
+  73 [ 183] JMP       A=0 ->75
+  74 [ 183] MOVE      A=3 B=1 C=0
+  75 [ 183] SETTABLE  R2[K19('mspReady')] = R3
+  76 [ 187] TEST      A=0 B=0 C=0
+  77 [ 187] JMP       A=0 ->101
+  78 [ 187] TEST      A=1 B=0 C=0
+  79 [ 187] JMP       A=0 ->101
+  80 [ 188] GETTABUP  R2 = UP0[K9('S')]
+  81 [ 188] GETTABLE  R2 = R2[K21('mspCheck')]
+  82 [ 188] TEST      A=2 B=0 C=0
+  83 [ 188] JMP       A=0 ->88
+  84 [ 190] GETTABUP  R2 = UP4[K22('MSPCFC')]
+  85 [ 190] GETTABUP  R3 = UP0[K9('S')]
+  86 [ 190] GETTABLE  R3 = R3[K21('mspCheck')]
+  87 [ 190] CALL      A=2 B=2 C=1
+  88 [ 192] GETTABUP  R2 = UP0[K9('S')]
+  89 [ 192] GETTABLE  R2 = R2[K20('mspFcReady')]
+  90 [ 192] TEST      A=2 B=0 C=0
+  91 [ 192] JMP       A=0 ->101
+  92 [ 193] GETTABUP  R2 = UP4[K22('MSPCFC')]
+  93 [ 193] TEST      A=2 B=0 C=0
+  94 [ 193] JMP       A=0 ->99
+  95 [ 194] GETTABUP  R2 = UP2[K23('clear')]
+  96 [ 194] GETUPVAL  A=3 B=4 C=0
+  97 [ 194] LOADK     R4 = K22 ('MSPCFC')
+  98 [ 194] CALL      A=2 B=3 C=1
+  99 [ 196] GETTABUP  R2 = UP4[K24('MSPML')]
+ 100 [ 196] CALL      A=2 B=1 C=1
+ 101 [ 201] GETTABUP  R2 = UP1[K1('bg')]
+ 102 [ 201] CALL      A=2 B=1 C=1
+ 103 [ 204] GETTABUP  R2 = UP4[K25('SN_ATT')]
+ 104 [ 204] TEST      A=2 B=0 C=0
+ 105 [ 204] JMP       A=0 ->108
+ 106 [ 205] GETTABUP  R2 = UP4[K25('SN_ATT')]
+ 107 [ 205] CALL      A=2 B=1 C=1
+ 108 [ 208] GETTABUP  R2 = UP4[K26('SN_BARO')]
+ 109 [ 208] TEST      A=2 B=0 C=0
+ 110 [ 208] JMP       A=0 ->113
+ 111 [ 209] GETTABUP  R2 = UP4[K26('SN_BARO')]
+ 112 [ 209] CALL      A=2 B=1 C=1
+ 113 [ 212] GETTABUP  R2 = UP4[K27('SN_AIR')]
+ 114 [ 212] TEST      A=2 B=0 C=0
+ 115 [ 212] JMP       A=0 ->118
+ 116 [ 213] GETTABUP  R2 = UP4[K27('SN_AIR')]
+ 117 [ 213] CALL      A=2 B=1 C=1
+ 118 [ 216] GETTABUP  R2 = UP4[K28('SN_GPS')]
+ 119 [ 216] TEST      A=2 B=0 C=0
+ 120 [ 216] JMP       A=0 ->127
+ 121 [ 216] GETTABUP  R2 = UP0[K9('S')]
+ 122 [ 216] GETTABLE  R2 = R2[K29('GPS_ON')]
+ 123 [ 216] TEST      A=2 B=0 C=0
+ 124 [ 216] JMP       A=0 ->127
+ 125 [ 217] GETTABUP  R2 = UP4[K28('SN_GPS')]
+ 126 [ 217] CALL      A=2 B=1 C=1
+ 127 [ 221] GETTABUP  R2 = UP0[K9('S')]
+ 128 [ 221] GETTABLE  R2 = R2[K30('MDL_VTX_ON')]
+ 129 [ 221] TEST      A=2 B=0 C=0
+ 130 [ 221] JMP       A=0 ->142
+ 131 [ 221] GETTABUP  R2 = UP0[K9('S')]
+ 132 [ 221] GETTABLE  R2 = R2[K31('VTX_CONN_TYPE')]
+ 133 [ 221] LT        A=0 K32(0), R2; skip-next if condition != A
+ 134 [ 221] JMP       A=0 ->142
+ 135 [ 221] GETTABUP  R2 = UP0[K33('VTX')]
+ 136 [ 221] GETTABLE  R2 = R2[K34('file')]
+ 137 [ 221] TEST      A=2 B=0 C=0
+ 138 [ 221] JMP       A=0 ->142
+ 139 [ 223] GETTABUP  R2 = UP4[K35('SN_VTX')]
+ 140 [ 223] LOADK     R3 = K36 ('read')
+ 141 [ 223] CALL      A=2 B=2 C=1
+ 142 [ 228] GETTABUP  R2 = UP2[K37('frun')]
+ 143 [ 228] GETTABUP  R3 = UP2[K38('PUI')]
+ 144 [ 228] LOADK     R4 = K39 ('UIML')
+ 145 [ 228] CONCAT    A=3 B=3 C=4
+ 146 [ 228] CALL      A=2 B=2 C=1
+ 147 [ 238] GETTABUP  R2 = UP0[K9('S')]
+ 148 [ 238] GETTABLE  R2 = R2[K40('APP_LOG_ERR')]
+ 149 [ 238] TEST      A=2 B=0 C=1
+ 150 [ 238] JMP       A=0 ->154
+ 151 [ 238] GETTABUP  R2 = UP2[K41('LOGDEBUG')]
+ 152 [ 238] TEST      A=2 B=0 C=0
+ 153 [ 238] JMP       A=0 ->164
+ 154 [ 239] GETTABUP  R2 = UP2[K42('LOGQ')]
+ 155 [ 239] LEN       A=2 B=2 C=0
+ 156 [ 239] GETTABUP  R3 = UP2[K43('LOGQP')]
+ 157 [ 239] LT        A=0 R3, R2; skip-next if condition != A
+ 158 [ 239] JMP       A=0 ->164
+ 159 [ 240] GETTABUP  R2 = UP2[K37('frun')]
+ 160 [ 240] GETTABUP  R3 = UP2[K44('PLIBFS')]
+ 161 [ 240] LOADK     R4 = K45 ('FSLOG')
+ 162 [ 240] CONCAT    A=3 B=3 C=4
+ 163 [ 240] CALL      A=2 B=2 C=1
+ 164 [ 246] RETURN    A=0 B=1 C=0

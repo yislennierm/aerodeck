@@ -1,0 +1,5 @@
+PASS: native widget visual and cold start verification of exact source ca885e6843a5c56bf9701a07131dabf93d0a97cc12745eac96f2424719ece059.
+
+Five inspected states: estimated ~54%, estimated ~100%, real 0 V / ~0%, automatic ~6S / 54%, and missing battery values. The header, voltage, larger percentage, single 62 px capacity bar and separator fit without overlap. There were no CPU or script errors in four cold native widget starts.
+
+All values are synthetic in EdgeTX 3.0 WASM. Physical EdgeTX 2.12.4 remains unverified. No prolonged performance claim.

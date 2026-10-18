@@ -1,0 +1,192 @@
+AERODECK / Toolbox2: FC, MSP, VTX, controls and licensing boundary
+Source audit dated 2026-10-17. Baseline: fpv-1 ebb932a, POWER-LIVE-20261017.
+
+Scope and status meaning
+
+Only the activation/licence mechanism is excluded. Every demonstrated function
+remains required, including functions hidden behind Toolbox's sxx/pgg flags.
+FrSky, INAV, Crossfire/Tracer and ELRS variants remain in the completion ledger.
+TX16S + Betaflight + ELRS can be the first delivery target; it is not the definition
+of a finished replacement. This review did not modify production or the radio.
+
+control-rows.json contains 38 atomic capability rows: 2 equivalent, 7 partial,
+28 missing, 1 addition. These are this section's counts, not an overall parity
+percentage. Equivalent describes demonstrated code behavior, not hardware
+certification. Every row includes acceptance criteria, dependencies, evidence,
+priority, and hardwareVerified=false. Parent-owned configuration, data and UI
+matrices supply the rest of the replacement ledger.
+
+The current gap is functional, not just visual
+
+AERODECK's live client sends only FC_VARIANT (2), API_VERSION (1), FC_VERSION (3)
+and STATUS_EX (150). That supports useful Betaflight firmware and disabling-flag
+information. The VIDEO page is explicitly local notes; it has no VTX status
+parser, table read, channel/power/PIT apply, persistence acknowledgement or
+readback. A selected favourite is not an observed active VTX channel.
+
+Original Toolbox has an executable VTX path:
+  VTX UI long ENTER -> SN_VTX("send") -> MSP queue -> 89 SET_VTX_CONFIG
+  -> 250 EEPROM_SAVE -> 88 VTX_CONFIG readback.
+Power and PIT editing are pgg-gated, but both capabilities are required in the
+replacement. Native TBS RX control is a separate CRSF 0x32 path and must not be
+mistaken for the FC MSP path. It also belongs in full completion scope.
+
+Toolbox's actual FC features are identity, status, board information, sensor
+inventory/health and arming reasons. Its STICKS COMMANDS page is a guide to
+manual stick gestures. The original does not implement a full PID/rates/OSD
+editor or automated FC reboot. Those have no demonstrated wire/UI path in this
+package and are not invented parity requirements. OSD menu gestures do belong
+in the guide; AERODECK is missing all eight Betaflight OSD reference gestures.
+
+Command inventory and working call chains
+
+Betaflight catalog: 1, 2, 3, 4, 88, 89, 106, 107, 137, 138, 150, 160, 164, 250.
+INAV catalog: 1, 2, 3, 4, 106, 107, 151, 160, 164, 8192.
+Catalog presence alone is not proof of an end-to-end feature. In particular,
+106 has a decoder; both107 handlers are literal no-ops. No enqueue of either
+106 or107 was found. Both GPS schedulers enqueue
+164 while the GPS page is selected; they clear 106 when leaving. Do not claim
+Toolbox actively polls RAW_GPS just because a decoder exists.
+
+BF connection: MAIN/ML disarmed/current-link gate -> MSPCFC stages 2/1/3/160
+-> mspFcReady -> MSPML queue and scheduled reads. It requires BTFL and API 1.44+
+(BF 4.3+). UID enables per-FC proxy cache identity. AERODECK omits UID.
+
+INAV connection: family-specific 2/1/3 handshake -> INAV 8.0+ check -> ready.
+Sensor health uses 151; disabling flags use MSP2_INAV_STATUS 8192. AERODECK
+blocks INAV in both the app gate and BTFL-only client. INAV reads must not be
+implemented by relabeling Betaflight offsets or bit names.
+
+Board/sensor pane: gated FCD dashboard selection schedules BOARD_INFO (4) when
+target name is absent and STATUS_EX (150, BF) or SENSOR_STATUS (151, INAV) when
+sensor data is absent. BF active-sensor bits are already inside AERODECK's raw
+150 packet but not decoded/displayed as FC sensor inventory. INAV has seven
+per-sensor states, including unavailable/unhealthy, rather than BF presence bits.
+
+Toolbox uses a shared queue. Its nodup mode deduplicates commands; indexed
+137/138 requests deliberately do not use it. Retries are five attempts with a
+5-second CRSF or 8-second S.Port reply wait. AERODECK's bounded status client
+already has useful framing/error checks, but its fixed four-stage list is not
+a general transaction backend. Expand it with bounded work, not parallel pop
+loops or unbounded drain loops.
+
+The original CRSF wrapper routes native VTX reports (0x10) to the native VTX
+reader while it processes MSP. AERODECK currently consumes and ignores non-MSP
+pops. A single dispatcher must arbitrate both consumers before native VTX is
+added, or one feature can steal another's frames.
+
+VTX details that a real replacement must provide
+
+88 response supplies hardware protocol, band/channel, power ID, PIT, MHz,
+ready state, low-power-disarm status and table dimensions. The 137 band parser
+reads band ID, name, letter, FACTORY BYTE, channel count and U16 frequencies.
+The factory byte is missing from recovered source but present in original
+bytecode; copying the recovered parser shifts every following field.
+138 supplies indexed power value and a length-prefixed display label. Keep the
+value and label separate; do not assume every label is numeric milliwatts.
+
+Toolbox reads FC tables; it does not write them. Its proxy writes SD cache data,
+not FC configuration. The cache is per UID. The UI table refresh deletes the
+current cache and reinitializes/read-requests the table. A replacement must
+preserve model settings and other FC caches, bound untrusted counts/strings,
+and avoid executing cache files as code when a safe data format will suffice.
+
+The full channel grid distinguishes observed current frequency from a pending
+selection. RTN resets pending frequency, power and PIT. The eight favourites
+are real saved per-model frequencies, with OFF=0 and choices built from the
+connected table. AERODECK stores eight numeric local notes but lacks dynamic
+membership, OFF and apply. Its fixed A/B/E/F/R labels omit Toolbox's default
+L band; a live table should supersede a fixed band list.
+
+Original 89 writer emits four payload bytes: a U16 channel index or MHz,
+power index, and PIT. It does not write low-power-disarm. LPD status is a real
+read feature; an LPD edit action was not found. No FC table editor was found.
+
+Native TBS status parses CRSF 0x10 and prefers the VTX source 0xEC over receiver
+0xCE. Frequency is big endian; power is reported in dBm; PIT is bit 0 of byte 5.
+Eight selected hardware maps turn available dBm levels into displayed mW.
+Frequency writes: 0x32 {0xCE,0xEA,0x08,0x02,MHzHi,MHzLo}.
+Power/PIT writes: 0x32 {0xCE,0xEA,0x08,0x08,dBm}; zero requests PIT on.
+The original ignores push return and no explicit acknowledgement was found;
+a subsequent native report is the evidence of actual applied state.
+
+Do not copy these original defects or damaged decompilation
+
+- VTXMSP("read") returns before its send branch. The decompiler lost the return.
+  Copying its recovered form can accidentally turn a read into a write path.
+- The original MSP PIT writer treats an explicit false like absent input and
+  falls back to current sPIT (main/1 PCs 75-91). It appears unable to turn PIT
+  off when already on. Native TBS PIT-off with unchanged power similarly has
+  no independent off command path. These are bytecode findings, not hardware
+  verification. Acceptance must test both transitions, independently of power.
+- 89/250 acknowledgements clear setInP/eSave. MSPRST final cancellation does not
+  clear those UI flags, so timeout can leave a pending indicator. A replacement
+  must expose failure and clear transient state, not copy an indefinite spinner.
+- INAV's GPS scheduler tests GPS_ON where BF tests MDL_GPS_ON. The alias/execution
+  needs verification before calling INAV detailed-satellite polling proven live.
+- VTX_FRQ_RANGE appears in settings/read/save but no runtime filter consumer was
+  found. Do not promise enforcement based on a saved label alone.
+- The INAV reference catalogue has identical Save/Unload waypoint tuples. Check
+  supported official INAV behavior before independently implementing the guide.
+
+Arming and stick-guide parity
+
+AERODECK's current bytewise disabling-flag parser is a useful correctness gain:
+API 1.46/1.47/1.48 mappings, numbered unknown bits, high-bit/low-bit preservation,
+8-second freshness, and no claim that a clear mask proves READY. Preserve that.
+
+Toolbox also provides an OFFLINE full reason catalogue, shows long/short beep
+codes, and plays a selected pattern on ENTER. AERODECK currently provides only
+received active reasons and no local beep reference or playback. These are
+separate missing capabilities, even though the live BF list is useful already.
+INAV live reasons and its own catalogue are also required.
+
+The BF stick guide contains 20 reference patterns: 12 save/profile/calibration/
+trim entries plus 8 OSD gestures. AERODECK has the first 12 and mode 1-4 layout.
+The INAV guide has 28 patterns, including battery-profile and mission gestures;
+AERODECK has none. The exact t/y/p/r catalogues are in control-context.json.
+Selecting these entries must never set radio outputs or imply an MSP operation.
+
+Licensing boundary
+
+Original GF v0 resets sxx=false and pgg=false, then invokes the validation
+boundary. Legacy success sets sxx=true,pgg=false; newer success sets both true.
+The recovered newer-success branch is missing. Only the flag boundary and
+capability consumers were used for classification. No user key files were read,
+no keys extracted, no validation algorithm ported and no bypass performed.
+
+Original MAIN/INIT loads FCINIT unconditionally. sxx gates GPSINIT, MSPINIT and
+VTXINIT; FCINIT itself gates the INAV choice. sxx/pgg gate many actual functions:
+FC/VTX/GPS panes, power/PIT edit, arming catalogue, telemetry extrema, favourite
+panes, logical-switch/timer indicators, current/capacity, barometer/pitot and
+layouts. Every actual capability remains in scope without copying the licence
+mechanism. gate-boundary.json preserves the original boundary and 168 recovered
+source gate-use locations; individual flow rows supply original verification.
+
+Implementation order and acceptance boundary
+
+1. P0: shared bounded dispatcher, transaction queue, family-aware identity,
+   command response validation, current/disarmed guards, explicit failure states.
+   Retain existing status decoding, frame budgets and honest missing-data states.
+2. P1: BF board/sensor pane and complete arming/stick references; live MSP VTX
+   reads/tables/cache/current-vs-pending UI; then explicit channel/power/PIT apply,
+   acknowledgement, persistence and readback. Never label an unsent note ACTIVE.
+3. P2: INAV, FrSky S.Port and all original protocol subtype paths; native TBS VTX.
+   These are deferred delivery targets, not exclusions from full replacement.
+
+A write's acceptance requires malformed/busy/timeout/reject/late/reordered
+responses, disconnect/reconnect, cancel and successful readback cases, followed
+by disarmed hardware checks. Current code tests or synthetic screenshots cannot
+prove a real VTX apply works. No writes are implemented by this audit.
+
+Evidence and coverage
+
+Original public archive: work/edgetx/toolbox-200-reference.zip, 12,072,717 bytes.
+SHA256: 9e4b21056c25359d7fcda6a2cd8e997867c2ec400dc7d33cdc18464611a4e766.
+Extracted FM2M/APPS/TOOLBOX2 and recovered input hashes were previously matched
+by root across all 287 modules. This section generated 65 original disassemblies:
+33 MSP, 6 VTX, 7 FC, 5 configuration dependencies, 8 UI dependencies, 4 startup/
+lifecycle, 2 data dependencies. Generation is not a claim of a full instruction-
+by-instruction audit of all 287 modules. control-module-coverage.json separates
+artifacts from cited flow review. Exact original hashes, file/line locators and
+semantic caveats are attached to each row and evidence index entry.

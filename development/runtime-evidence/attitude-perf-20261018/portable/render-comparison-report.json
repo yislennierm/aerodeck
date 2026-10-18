@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T22:52:07.185703+00:00",
+  "scope": "Workspace-only render candidate and comparison; no radio writes or production source edits by this agent.",
+  "files": {
+    "render-baseline.lua": "1a14ed90fbf7e34da903cb4da065f80d3753a028ac4caf32664c42f9eb2d495e",
+    "render-candidate.lua": "de1773d85c57348fa5054f6e1315c91f19167f529582f4baac236fe4cc724f01",
+    "render-integrated.lua": "816d3e32658d15bafec95de25cd5c836213bd5d5ca14ff695b857f4267cec10a",
+    "render-candidate.patch": "785390e8a4381928a2a83a778ef1a08a4dd1de05158ce045785583eabdc0309c",
+    "test-render-candidate.lua": "b1217cecb3ff4d2414643f79d6c9a36cbd2d79f4d72e22f005a496f105404a0e",
+    "run-candidate-suite.lua": "65f2bc298e1ab0aecc8e44c39f9b5188fe1707debd09034032e7c11c69263680"
+  },
+  "baseline": {
+    "sha256": "1a14ed90fbf7e34da903cb4da065f80d3753a028ac4caf32664c42f9eb2d495e",
+    "build": "ATTITUDE-PERF-20261018",
+    "note": "Canonical changed from earlier ROLL-DISPLAY f3ec before the workspace copy; baseline is1a14 with parent changes already present."
+  },
+  "changes": [
+    "32-position FIFO cache retains each value cell\u2019s last complete fit and unit baseline; invalidates on content, requested font, units, geometry, centering, LCD object or sizeText function changes; colors remain live.",
+    "Remove two literal array allocations from every Flight draw with equivalent two-step numeric loops.",
+    "Calculate the identical zero-horizon origin once for both strokes and caption exclusion checks."
+  ],
+  "candidateOnly": {
+    "luaJit": {
+      "checks": 1972646,
+      "stable150Frames": {
+        "baselineSizeTextCalls": 14400,
+        "candidateSizeTextCalls": 5700
+      },
+      "moving150Frames": {
+        "baselineSizeTextCalls": 13962,
+        "candidateSizeTextCalls": 6037
+      }
+    },
+    "int32Float32": {
+      "checks": 1972566,
+      "stable150Frames": {
+        "baselineSizeTextCalls": 14400,
+        "candidateSizeTextCalls": 5700
+      },
+      "moving150Frames": {
+        "baselineSizeTextCalls": 13962,
+        "candidateSizeTextCalls": 6037
+      }
+    }
+  },
+  "integrated": {
+    "sourceSha256": "816d3e32658d15bafec95de25cd5c836213bd5d5ca14ff695b857f4267cec10a",
+    "containsParentBoundedTextWidthCache": true,
+    "luaJit": {
+      "checks": 1972646,
+      "stable150Frames": {
+        "baselineSizeTextCalls": 14400,
+        "candidateSizeTextCalls": 0
+      },
+      "moving150Frames": {
+        "baselineSizeTextCalls": 13962,
+        "candidateSizeTextCalls": 804
+      }
+    },
+    "int32Float32": {
+      "checks": 1972566,
+      "stable150Frames": {
+        "baselineSizeTextCalls": 14400,
+        "candidateSizeTextCalls": 0
+      },
+      "moving150Frames": {
+        "baselineSizeTextCalls": 13962,
+        "candidateSizeTextCalls": 804
+      }
+    }
+  },
+  "comparisonCoverage": [
+    "Exact ordered LCD command comparison of actual complete Flight renderers, not screenshots of a different implementation.",
+    "132 pitch/roll poses plus missing, numeric zero, long values, FrSky, units, font size, rectangle width/height, centering and live color changes.",
+    "Replacement lcd.sizeText function and LCD table; font APIs returning nil metrics; no TINSIZE fallback.",
+    "Eviction after100 unique positions and no font/fit work for the newest unchanged position; last-32 retention is explicit in candidate code.",
+    "Stable150-frame and moving150-frame sequences; changing pitch/roll/heading/speed/alt/current."
+  ],
+  "existingSuites": {
+    "bothVmsPass": true,
+    "test_flight_layout.lua": "1682 actual Flight assertions per VM",
+    "test_rendering.lua": "Qualified IDs, bounded discovery retries, numeric units and binding art I/O checks pass per VM",
+    "test_pitch_direction.lua": "54 pitch direction/unit/mapping/staleness assertions per VM"
+  },
+  "limitations": [
+    "Font API call counts are host measurements under matching LCD mocks; they are not physical radio FPS or native instruction-budget results.",
+    "The integrated result combines the candidate with the parent\u2019s128-entry textWidth cache, so its improvement cannot be attributed entirely to the32-cell fit cache.",
+    "The cache stores only the current text at32 positions, not telemetry history.",
+    "Source validation, currentness, native attitude acquisition and raw values were not changed.",
+    "Parent owns integrated native benchmark and full-suite reports."
+  ]
+}

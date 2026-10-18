@@ -1,0 +1,77 @@
+AERODECK — GPS-TRACK-20261018
+Local GPS Track repair. Radio installation has not changed.
+
+Failure
+The browser's old ATTITUDE-PERF build aborted in GPS > Track with a native
+CPU-limit error. Each refresh recalculated exact distance, bearing and pixel
+coordinates for every history point. Short visits with a young trail missed
+this failure; the cost grew with the trail. The original native baseline
+reproduces it at roughly50 points, before the configured180-point maximum.
+GPS Details/Quality/Satellites/Recovery use different bounded renderers.
+
+Repair
+- Painting uses a completed pixel path, with native clipping and one color
+  setup. It still draws all179 segments for a180-point trail on every refresh.
+- An at-most180-entry cache stores exact geodesic projections keyed to the
+  immutable session points and frozen origin. The latest fixed-home point is
+  primed during the existing session service, without scanning the trail.
+- Cold origin/zoom/history changes rebuild in bounded callbacks: at most2 new
+  projections and16 total points per step. The start-only callback captures at
+  most180 references. No history points are dropped or approximated.
+- A completed path remains visible until the next coherent path is ready.
+  The aircraft uses live current GPS against that displayed path's origin and
+  scale. No-home origin movement cannot repeatedly cancel an unfinished job.
+- Unfinished work can reserve one FC-dispatch-free callback after200ms without
+  progress. A separate attempt timestamp prevents a blocked map from starving
+  the dispatcher. RF guards are freshly read when it resumes.
+- New home, session/model reset and track replacement invalidate the old plot.
+  Manual Set Home clears it immediately even if the next rebuild must wait.
+- Rolling180-point buffers are detected through endpoints and owner identity,
+  not length alone. Zoom/range labels share the completed frame's scale.
+- The native20000 instruction allowance, pre-render25% guard and full widget
+  buffer repaint remain unchanged. No forced garbage collection or new module.
+
+Validation
+The source-bound reports run56 portable suites under LuaJIT and stock Lua5.3
+with int32/float32 numbers. The helper checks exact pixel equality with the old
+geodesic algorithm, all3 zooms,180 points, cache bounds,260 rolling appends,
+atomic publication, changing no-home positions, invalid coordinates, poles and
+antimeridian crossings. Actual-app checks grow real session history off-page,
+enter Track late, draw the complete trail repeatedly, zoom, set home, lose GPS,
+and exercise retained callbacks with restricted work margins.
+
+Native evidence and exact source hashes are recorded in
+  development/build-GPS-TRACK-20261018.json
+  development/runtime-evidence/gps-track-20261018/
+The baseline failure, rejected intermediate and final acceptance are distinct.
+Synthetic native checks use EdgeTX3.0 TX16S WASM and development-only telemetry;
+they do not prove physical radio cadence, RF timing or superiority to Toolbox.
+Rebuild latency is best-effort under other scheduled work, especially for a
+moving no-home origin and a cold full trail; current GPS values remain current.
+
+Use
+Refresh http://127.0.0.1:8766/ after its exact-source snapshot is restarted.
+The browser identifies GPS-TRACK-20261018 and refuses stale64-file snapshots.
+Local copy package: AERODECK-gps-track-install.zip.
+Last file-verified radio build is REPLACEMENT-RC1-20261017 (DEPLOYMENT.txt).
+Previous archives remain frozen. This revision does not write the radio or
+change its ExpressLRS script, model settings, telemetry mapping or attitude.
+
+Frozen native acceptance
+The exactec039 main and modules ran in a real native widget callback through a
+development fixture driver (the widget loader itself was replaced). Both home
+and no-home cases began with a seeded180-point trail and then real rolling
+updates:47.99s and1268 sampled LCD frames each, with0 instruction errors, blanks
+or ordinary progress frames. Explicit Set Home produced2 opaque action-progress
+samples per case; the old path cleared immediately and a new owned path built.
+An earlier146971 source, before the final priority-attempt/home-reset edge fixes,
+also grew real histories from0 to180 over220.60/220.65s,5834/5837 samples. It had
+0 errors/blanks; home had1 transient progress sample during GPS Details return,
+no-home0. Those historical timings are not exact-final performance claims.
+The final no-home cold/re-origin full180 reprojection takes several seconds in
+the simulator; old complete paths remain coherent while live values update.
+
+Separate exact-final no-home zoom supplement:57.419s/1517 sampled frames, all
+three full180-point scales visually verified (86m,43m,171m,86m), with0 errors,
+blank/progress samples or forcedGC. Each transition had a14s settle to allow
+a previous coherent job and the newly requested zoom job to finish.

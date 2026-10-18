@@ -1,0 +1,96 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMSDEL.luac
+
+FUNCTION main params 0 vararg 1 stack 20 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TLMSDEL.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 73), ('F', 1, 73), ('D', 1, 73), ('X', 1, 73), ('sType', 1, 73), ('pPath', 6, 73), ('sensorData', 11, 73), ('(for generator)', 17, 71), ('(for state)', 17, 71), ('(for control)', 17, 71), ('i', 18, 69), ('data', 18, 69), ('(for generator)', 22, 69), ('(for state)', 22, 69), ('(for control)', 22, 69), ('id', 23, 67), ('sID', 23, 67)]
+K0 'PLIBTLM'
+K1 'S'
+K2 'RCP_pID'
+K3 '/'
+K4 'loadE'
+K5 'ipairs'
+K6 'TLM'
+K7 'id'
+K8 'table'
+K9 'remove'
+K10 'SN'
+K11 'SU'
+K12 'SD'
+K13 'I'
+K14 None
+K15 'V'
+K16 'VM'
+K17 'VX'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] GETTABLE  R5 = R0[K0('PLIBTLM')]
+   3 [  10] GETTABLE  R6 = R2[K1('S')]
+   4 [  10] GETTABLE  R6 = R6[K2('RCP_pID')]
+   5 [  10] LOADK     R7 = K3 ('/')
+   6 [  10] CONCAT    A=5 B=5 C=7
+   7 [  11] GETTABLE  R6 = R0[K4('loadE')]
+   8 [  11] MOVE      A=7 B=5 C=0
+   9 [  11] MOVE      A=8 B=4 C=0
+  10 [  11] CONCAT    A=7 B=7 C=8
+  11 [  11] CALL      A=6 B=2 C=2
+  12 [  13] TEST      A=6 B=0 C=1
+  13 [  13] JMP       A=0 ->15
+  14 [  15] RETURN    A=0 B=1 C=0
+  15 [  18] GETTABUP  R7 = UP0[K5('ipairs')]
+  16 [  18] MOVE      A=8 B=6 C=0
+  17 [  18] CALL      A=7 B=2 C=4
+  18 [  18] JMP       A=0 ->70
+  19 [  20] GETTABUP  R12 = UP0[K5('ipairs')]
+  20 [  20] GETTABLE  R13 = R2[K6('TLM')]
+  21 [  20] GETTABLE  R13 = R13[K1('S')]
+  22 [  20] CALL      A=12 B=2 C=4
+  23 [  20] JMP       A=0 ->68
+  24 [  22] GETTABLE  R17 = R11[K7('id')]
+  25 [  22] EQ        A=0 R16, R17; skip-next if condition != A
+  26 [  22] JMP       A=0 ->68
+  27 [  24] GETTABUP  R17 = UP0[K8('table')]
+  28 [  24] GETTABLE  R17 = R17[K9('remove')]
+  29 [  24] GETTABLE  R18 = R2[K6('TLM')]
+  30 [  24] GETTABLE  R18 = R18[K1('S')]
+  31 [  24] MOVE      A=19 B=15 C=0
+  32 [  24] CALL      A=17 B=3 C=1
+  33 [  25] GETTABUP  R17 = UP0[K8('table')]
+  34 [  25] GETTABLE  R17 = R17[K9('remove')]
+  35 [  25] GETTABLE  R18 = R2[K6('TLM')]
+  36 [  25] GETTABLE  R18 = R18[K10('SN')]
+  37 [  25] MOVE      A=19 B=15 C=0
+  38 [  25] CALL      A=17 B=3 C=1
+  39 [  26] GETTABUP  R17 = UP0[K8('table')]
+  40 [  26] GETTABLE  R17 = R17[K9('remove')]
+  41 [  26] GETTABLE  R18 = R2[K6('TLM')]
+  42 [  26] GETTABLE  R18 = R18[K11('SU')]
+  43 [  26] MOVE      A=19 B=15 C=0
+  44 [  26] CALL      A=17 B=3 C=1
+  45 [  27] GETTABUP  R17 = UP0[K8('table')]
+  46 [  27] GETTABLE  R17 = R17[K9('remove')]
+  47 [  27] GETTABLE  R18 = R2[K6('TLM')]
+  48 [  27] GETTABLE  R18 = R18[K12('SD')]
+  49 [  27] MOVE      A=19 B=15 C=0
+  50 [  27] CALL      A=17 B=3 C=1
+  51 [  28] GETTABLE  R17 = R2[K6('TLM')]
+  52 [  28] GETTABLE  R17 = R17[K13('I')]
+  53 [  28] GETTABLE  R18 = R11[K7('id')]
+  54 [  28] SETTABLE  R17[R18] = K14(None)
+  55 [  29] GETTABLE  R17 = R2[K6('TLM')]
+  56 [  29] GETTABLE  R17 = R17[K15('V')]
+  57 [  29] GETTABLE  R18 = R11[K7('id')]
+  58 [  29] SETTABLE  R17[R18] = K14(None)
+  59 [  30] GETTABLE  R17 = R2[K6('TLM')]
+  60 [  30] GETTABLE  R17 = R17[K16('VM')]
+  61 [  30] GETTABLE  R18 = R11[K7('id')]
+  62 [  30] SETTABLE  R17[R18] = K14(None)
+  63 [  31] GETTABLE  R17 = R2[K6('TLM')]
+  64 [  31] GETTABLE  R17 = R17[K17('VX')]
+  65 [  31] GETTABLE  R18 = R11[K7('id')]
+  66 [  31] SETTABLE  R17[R18] = K14(None)
+  67 [  31] JMP       A=0 ->70
+  68 [  20] TFORCALL  A=12 B=0 C=2
+  69 [  20] TFORLOOP  A=14 ->24
+  70 [  18] TFORCALL  A=7 B=0 C=2
+  71 [  18] TFORLOOP  A=9 ->19
+  72 [  37] RETURN    A=0 B=1 C=0
+  73 [  37] RETURN    A=0 B=1 C=0

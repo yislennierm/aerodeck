@@ -1,0 +1,484 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGRCL.luac
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 127), ('F', 1, 127), ('D', 1, 127), ('X', 1, 127), ('T', 1, 127), ('pverNameList', 26, 127), ('pverIDList', 35, 127), ('setDefs', 36, 127)]
+K0 'pID'
+K1 'RCL'
+K2 'pN'
+K3 'RC LINK'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 300
+K8 320
+K9 150
+K10 120
+K11 'getList'
+K12 'S'
+K13 'RCP_pverNameList'
+K14 'OFF'
+K15 'RCP_pverIDList'
+K16 'cv'
+K17 'RCP_pv'
+K18 'o'
+K19 1
+K20 'l'
+K21 'Protocol version'
+K22 't'
+K23 'L'
+K24 'lv'
+K25 'RL_RSI_L'
+K26 2
+K27 'RSSI Low'
+K28 'N'
+K29 'm'
+K30 'x'
+K31 99
+K32 'i'
+K33 'f'
+K34 '%0d'
+K35 'u'
+K36 '%'
+K37 'RL_RSI_C'
+K38 3
+K39 'RSSI Critical'
+K40 0
+K41 98
+K42 'RL_RQL_L'
+K43 4
+K44 'RQLY Low'
+K45 'RL_RQL_C'
+K46 5
+K47 'RQLY Critical'
+K48 'RL_SNR_L'
+K49 6
+K50 'RSNR Low'
+K51 -5
+K52 49
+K53 'dB'
+K54 'RL_SNR_C'
+K55 7
+K56 'RSNR Critical'
+K57 -6
+K58 48
+K59 'readDS'
+K60 'updateDisp'
+K61 'cv'
+K62 'onChange'
+K63 'onSave'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('RCL')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('RC LINK')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (300)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (150)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (120)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  14] GETTABLE  R5 = R4[K11('getList')]
+  19 [  14] GETTABLE  R6 = R2[K12('S')]
+  20 [  14] GETTABLE  R6 = R6[K13('RCP_pverNameList')]
+  21 [  14] CALL      A=5 B=2 C=2
+  22 [  14] TEST      A=5 B=0 C=1
+  23 [  14] JMP       A=0 ->27
+  24 [  14] NEWTABLE  A=5 B=1 C=0
+  25 [  14] LOADK     R6 = K14 ('OFF')
+  26 [  14] SETLIST   A=5 B=1 C=1
+  27 [  15] GETTABLE  R6 = R4[K11('getList')]
+  28 [  15] GETTABLE  R7 = R2[K12('S')]
+  29 [  15] GETTABLE  R7 = R7[K15('RCP_pverIDList')]
+  30 [  15] CALL      A=6 B=2 C=2
+  31 [  15] TEST      A=6 B=0 C=1
+  32 [  15] JMP       A=0 ->36
+  33 [  15] NEWTABLE  A=6 B=1 C=0
+  34 [  15] LOADK     R7 = K14 ('OFF')
+  35 [  15] SETLIST   A=6 B=1 C=1
+  36 [  49] CLOSURE   R7 = proto[0]
+  37 [  51] NEWTABLE  A=8 B=0 C=0
+  38 [  51] SETTABLE  R4[K16('cv')] = R8
+  39 [  53] GETTABLE  R8 = R4[K16('cv')]
+  40 [  53] NEWTABLE  A=9 B=0 C=4
+  41 [  53] SETTABLE  R9[K18('o')] = K19(1)
+  42 [  53] SETTABLE  R9[K20('l')] = K21('Protocol version')
+  43 [  53] SETTABLE  R9[K22('t')] = K23('L')
+  44 [  53] SETTABLE  R9[K24('lv')] = R5
+  45 [  53] SETTABLE  R8[K17('RCP_pv')] = R9
+  46 [  54] GETTABLE  R8 = R4[K16('cv')]
+  47 [  54] NEWTABLE  A=9 B=0 C=8
+  48 [  54] SETTABLE  R9[K18('o')] = K26(2)
+  49 [  54] SETTABLE  R9[K20('l')] = K27('RSSI Low')
+  50 [  54] SETTABLE  R9[K22('t')] = K28('N')
+  51 [  54] SETTABLE  R9[K29('m')] = K19(1)
+  52 [  54] SETTABLE  R9[K30('x')] = K31(99)
+  53 [  54] SETTABLE  R9[K32('i')] = K19(1)
+  54 [  54] SETTABLE  R9[K33('f')] = K34('%0d')
+  55 [  54] SETTABLE  R9[K35('u')] = K36('%')
+  56 [  54] SETTABLE  R8[K25('RL_RSI_L')] = R9
+  57 [  55] GETTABLE  R8 = R4[K16('cv')]
+  58 [  55] NEWTABLE  A=9 B=0 C=8
+  59 [  55] SETTABLE  R9[K18('o')] = K38(3)
+  60 [  55] SETTABLE  R9[K20('l')] = K39('RSSI Critical')
+  61 [  55] SETTABLE  R9[K22('t')] = K28('N')
+  62 [  55] SETTABLE  R9[K29('m')] = K40(0)
+  63 [  55] SETTABLE  R9[K30('x')] = K41(98)
+  64 [  55] SETTABLE  R9[K32('i')] = K19(1)
+  65 [  55] SETTABLE  R9[K33('f')] = K34('%0d')
+  66 [  55] SETTABLE  R9[K35('u')] = K36('%')
+  67 [  55] SETTABLE  R8[K37('RL_RSI_C')] = R9
+  68 [  57] GETTABLE  R8 = R4[K16('cv')]
+  69 [  57] NEWTABLE  A=9 B=0 C=8
+  70 [  57] SETTABLE  R9[K18('o')] = K43(4)
+  71 [  57] SETTABLE  R9[K20('l')] = K44('RQLY Low')
+  72 [  57] SETTABLE  R9[K22('t')] = K28('N')
+  73 [  57] SETTABLE  R9[K29('m')] = K19(1)
+  74 [  57] SETTABLE  R9[K30('x')] = K31(99)
+  75 [  57] SETTABLE  R9[K32('i')] = K19(1)
+  76 [  57] SETTABLE  R9[K33('f')] = K34('%0d')
+  77 [  57] SETTABLE  R9[K35('u')] = K36('%')
+  78 [  57] SETTABLE  R8[K42('RL_RQL_L')] = R9
+  79 [  58] GETTABLE  R8 = R4[K16('cv')]
+  80 [  58] NEWTABLE  A=9 B=0 C=8
+  81 [  58] SETTABLE  R9[K18('o')] = K46(5)
+  82 [  58] SETTABLE  R9[K20('l')] = K47('RQLY Critical')
+  83 [  58] SETTABLE  R9[K22('t')] = K28('N')
+  84 [  58] SETTABLE  R9[K29('m')] = K40(0)
+  85 [  58] SETTABLE  R9[K30('x')] = K41(98)
+  86 [  58] SETTABLE  R9[K32('i')] = K19(1)
+  87 [  58] SETTABLE  R9[K33('f')] = K34('%0d')
+  88 [  58] SETTABLE  R9[K35('u')] = K36('%')
+  89 [  58] SETTABLE  R8[K45('RL_RQL_C')] = R9
+  90 [  60] GETTABLE  R8 = R4[K16('cv')]
+  91 [  60] NEWTABLE  A=9 B=0 C=8
+  92 [  60] SETTABLE  R9[K18('o')] = K49(6)
+  93 [  60] SETTABLE  R9[K20('l')] = K50('RSNR Low')
+  94 [  60] SETTABLE  R9[K22('t')] = K28('N')
+  95 [  60] SETTABLE  R9[K29('m')] = K51(-5)
+  96 [  60] SETTABLE  R9[K30('x')] = K52(49)
+  97 [  60] SETTABLE  R9[K32('i')] = K19(1)
+  98 [  60] SETTABLE  R9[K33('f')] = K34('%0d')
+  99 [  60] SETTABLE  R9[K35('u')] = K53('dB')
+ 100 [  60] SETTABLE  R8[K48('RL_SNR_L')] = R9
+ 101 [  61] GETTABLE  R8 = R4[K16('cv')]
+ 102 [  61] NEWTABLE  A=9 B=0 C=8
+ 103 [  61] SETTABLE  R9[K18('o')] = K55(7)
+ 104 [  61] SETTABLE  R9[K20('l')] = K56('RSNR Critical')
+ 105 [  61] SETTABLE  R9[K22('t')] = K28('N')
+ 106 [  61] SETTABLE  R9[K29('m')] = K57(-6)
+ 107 [  61] SETTABLE  R9[K30('x')] = K58(48)
+ 108 [  61] SETTABLE  R9[K32('i')] = K19(1)
+ 109 [  61] SETTABLE  R9[K33('f')] = K34('%0d')
+ 110 [  61] SETTABLE  R9[K35('u')] = K53('dB')
+ 111 [  61] SETTABLE  R8[K54('RL_SNR_C')] = R9
+ 112 [  64] GETTABLE  R8 = R4[K59('readDS')]
+ 113 [  64] CALL      A=8 B=1 C=1
+ 114 [  65] MOVE      A=8 B=7 C=0
+ 115 [  65] CALL      A=8 B=1 C=1
+ 116 [  94] CLOSURE   R8 = proto[1]
+ 117 [  94] SETTABLE  R4[K60('updateDisp')] = R8
+ 118 [  96] GETTABLE  R8 = R4[K61('cv')]
+ 119 [  96] GETTABLE  R8 = R8[K17('RCP_pv')]
+ 120 [  98] CLOSURE   R9 = proto[2]
+ 121 [  98] SETTABLE  R8[K62('onChange')] = R9
+ 122 [ 102] GETTABLE  R8 = R4[K61('cv')]
+ 123 [ 102] GETTABLE  R8 = R8[K17('RCP_pv')]
+ 124 [ 109] CLOSURE   R9 = proto[3]
+ 125 [ 109] SETTABLE  R8[K63('onSave')] = R9
+ 126 [ 169] RETURN    A=0 B=1 C=0
+ 127 [ 169] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 5 lines 17 49 source None
+UPVALUES [('pverIDList', (1, 6)), ('T', (1, 4)), ('G', (1, 0))]
+LOCALS [('onChange', 0, 102), ('pverID', 7, 102), ('defs', 13, 102)]
+K0 'cv'
+K1 'RCP_pv'
+K2 'v'
+K3 'OFF'
+K4 'loadE'
+K5 'PLIBTLM'
+K6 'TLMRLD'
+K7 'RL_RSI_L'
+K8 'RSI_L'
+K9 1
+K10 'm'
+K11 2
+K12 'x'
+K13 3
+K14 'u'
+K15 4
+K16 'RL_RSI_C'
+K17 'RSI_C'
+K18 'RL_RQL_L'
+K19 'RQL_L'
+K20 'RL_RQL_C'
+K21 'RQL_C'
+   1 [  19] GETTABUP  R1 = UP1[K0('cv')]
+   2 [  19] GETTABLE  R1 = R1[K1('RCP_pv')]
+   3 [  19] GETTABLE  R1 = R1[K2('v')]
+   4 [  19] GETTABUP  R1 = UP0[R1]
+   5 [  19] TEST      A=1 B=0 C=1
+   6 [  19] JMP       A=0 ->8
+   7 [  19] LOADK     R1 = K3 ('OFF')
+   8 [  20] GETTABUP  R2 = UP2[K4('loadE')]
+   9 [  20] GETTABUP  R3 = UP2[K5('PLIBTLM')]
+  10 [  20] LOADK     R4 = K6 ('TLMRLD')
+  11 [  20] CONCAT    A=3 B=3 C=4
+  12 [  20] MOVE      A=4 B=1 C=0
+  13 [  20] CALL      A=2 B=3 C=2
+  14 [  22] TEST      A=0 B=0 C=0
+  15 [  22] JMP       A=0 ->21
+  16 [  23] GETTABUP  R3 = UP1[K0('cv')]
+  17 [  23] GETTABLE  R3 = R3[K7('RL_RSI_L')]
+  18 [  23] GETTABLE  R4 = R2[K8('RSI_L')]
+  19 [  23] GETTABLE  R4 = R4[K9(1)]
+  20 [  23] SETTABLE  R3[K2('v')] = R4
+  21 [  25] GETTABUP  R3 = UP1[K0('cv')]
+  22 [  25] GETTABLE  R3 = R3[K7('RL_RSI_L')]
+  23 [  25] GETTABLE  R4 = R2[K8('RSI_L')]
+  24 [  25] GETTABLE  R4 = R4[K11(2)]
+  25 [  25] SETTABLE  R3[K10('m')] = R4
+  26 [  26] GETTABUP  R3 = UP1[K0('cv')]
+  27 [  26] GETTABLE  R3 = R3[K7('RL_RSI_L')]
+  28 [  26] GETTABLE  R4 = R2[K8('RSI_L')]
+  29 [  26] GETTABLE  R4 = R4[K13(3)]
+  30 [  26] SETTABLE  R3[K12('x')] = R4
+  31 [  27] GETTABUP  R3 = UP1[K0('cv')]
+  32 [  27] GETTABLE  R3 = R3[K7('RL_RSI_L')]
+  33 [  27] GETTABLE  R4 = R2[K8('RSI_L')]
+  34 [  27] GETTABLE  R4 = R4[K15(4)]
+  35 [  27] SETTABLE  R3[K14('u')] = R4
+  36 [  29] TEST      A=0 B=0 C=0
+  37 [  29] JMP       A=0 ->43
+  38 [  30] GETTABUP  R3 = UP1[K0('cv')]
+  39 [  30] GETTABLE  R3 = R3[K16('RL_RSI_C')]
+  40 [  30] GETTABLE  R4 = R2[K17('RSI_C')]
+  41 [  30] GETTABLE  R4 = R4[K9(1)]
+  42 [  30] SETTABLE  R3[K2('v')] = R4
+  43 [  32] GETTABUP  R3 = UP1[K0('cv')]
+  44 [  32] GETTABLE  R3 = R3[K16('RL_RSI_C')]
+  45 [  32] GETTABLE  R4 = R2[K17('RSI_C')]
+  46 [  32] GETTABLE  R4 = R4[K11(2)]
+  47 [  32] SETTABLE  R3[K10('m')] = R4
+  48 [  33] GETTABUP  R3 = UP1[K0('cv')]
+  49 [  33] GETTABLE  R3 = R3[K16('RL_RSI_C')]
+  50 [  33] GETTABLE  R4 = R2[K17('RSI_C')]
+  51 [  33] GETTABLE  R4 = R4[K13(3)]
+  52 [  33] SETTABLE  R3[K12('x')] = R4
+  53 [  34] GETTABUP  R3 = UP1[K0('cv')]
+  54 [  34] GETTABLE  R3 = R3[K16('RL_RSI_C')]
+  55 [  34] GETTABLE  R4 = R2[K17('RSI_C')]
+  56 [  34] GETTABLE  R4 = R4[K15(4)]
+  57 [  34] SETTABLE  R3[K14('u')] = R4
+  58 [  36] TEST      A=0 B=0 C=0
+  59 [  36] JMP       A=0 ->65
+  60 [  37] GETTABUP  R3 = UP1[K0('cv')]
+  61 [  37] GETTABLE  R3 = R3[K18('RL_RQL_L')]
+  62 [  37] GETTABLE  R4 = R2[K19('RQL_L')]
+  63 [  37] GETTABLE  R4 = R4[K9(1)]
+  64 [  37] SETTABLE  R3[K2('v')] = R4
+  65 [  39] GETTABUP  R3 = UP1[K0('cv')]
+  66 [  39] GETTABLE  R3 = R3[K18('RL_RQL_L')]
+  67 [  39] GETTABLE  R4 = R2[K19('RQL_L')]
+  68 [  39] GETTABLE  R4 = R4[K11(2)]
+  69 [  39] SETTABLE  R3[K10('m')] = R4
+  70 [  40] GETTABUP  R3 = UP1[K0('cv')]
+  71 [  40] GETTABLE  R3 = R3[K18('RL_RQL_L')]
+  72 [  40] GETTABLE  R4 = R2[K19('RQL_L')]
+  73 [  40] GETTABLE  R4 = R4[K13(3)]
+  74 [  40] SETTABLE  R3[K12('x')] = R4
+  75 [  41] GETTABUP  R3 = UP1[K0('cv')]
+  76 [  41] GETTABLE  R3 = R3[K18('RL_RQL_L')]
+  77 [  41] GETTABLE  R4 = R2[K19('RQL_L')]
+  78 [  41] GETTABLE  R4 = R4[K15(4)]
+  79 [  41] SETTABLE  R3[K14('u')] = R4
+  80 [  43] TEST      A=0 B=0 C=0
+  81 [  43] JMP       A=0 ->87
+  82 [  44] GETTABUP  R3 = UP1[K0('cv')]
+  83 [  44] GETTABLE  R3 = R3[K20('RL_RQL_C')]
+  84 [  44] GETTABLE  R4 = R2[K21('RQL_C')]
+  85 [  44] GETTABLE  R4 = R4[K9(1)]
+  86 [  44] SETTABLE  R3[K2('v')] = R4
+  87 [  46] GETTABUP  R3 = UP1[K0('cv')]
+  88 [  46] GETTABLE  R3 = R3[K20('RL_RQL_C')]
+  89 [  46] GETTABLE  R4 = R2[K21('RQL_C')]
+  90 [  46] GETTABLE  R4 = R4[K11(2)]
+  91 [  46] SETTABLE  R3[K10('m')] = R4
+  92 [  47] GETTABUP  R3 = UP1[K0('cv')]
+  93 [  47] GETTABLE  R3 = R3[K20('RL_RQL_C')]
+  94 [  47] GETTABLE  R4 = R2[K21('RQL_C')]
+  95 [  47] GETTABLE  R4 = R4[K13(3)]
+  96 [  47] SETTABLE  R3[K12('x')] = R4
+  97 [  48] GETTABUP  R3 = UP1[K0('cv')]
+  98 [  48] GETTABLE  R3 = R3[K20('RL_RQL_C')]
+  99 [  48] GETTABLE  R4 = R2[K21('RQL_C')]
+ 100 [  48] GETTABLE  R4 = R4[K15(4)]
+ 101 [  48] SETTABLE  R3[K14('u')] = R4
+ 102 [  49] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 2 lines 68 94 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS []
+K0 'cv'
+K1 'RL_RSI_C'
+K2 'h'
+K3 None
+K4 'RL_RSI_L'
+K5 'RL_RQL_C'
+K6 'RL_RQL_L'
+K7 'RL_SNR_C'
+K8 'RL_SNR_L'
+K9 'S'
+K10 'RCP_pID'
+K11 'FRS'
+K12 'RCP_pverID'
+K13 'ACCST'
+K14 'R9'
+K15 True
+K16 'fm'
+K17 'sxx'
+   1 [  71] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  71] GETTABLE  R0 = R0[K1('RL_RSI_C')]
+   3 [  71] SETTABLE  R0[K2('h')] = K3(None)
+   4 [  72] GETTABUP  R0 = UP0[K0('cv')]
+   5 [  72] GETTABLE  R0 = R0[K4('RL_RSI_L')]
+   6 [  72] SETTABLE  R0[K2('h')] = K3(None)
+   7 [  73] GETTABUP  R0 = UP0[K0('cv')]
+   8 [  73] GETTABLE  R0 = R0[K5('RL_RQL_C')]
+   9 [  73] SETTABLE  R0[K2('h')] = K3(None)
+  10 [  74] GETTABUP  R0 = UP0[K0('cv')]
+  11 [  74] GETTABLE  R0 = R0[K6('RL_RQL_L')]
+  12 [  74] SETTABLE  R0[K2('h')] = K3(None)
+  13 [  75] GETTABUP  R0 = UP0[K0('cv')]
+  14 [  75] GETTABLE  R0 = R0[K7('RL_SNR_C')]
+  15 [  75] SETTABLE  R0[K2('h')] = K3(None)
+  16 [  76] GETTABUP  R0 = UP0[K0('cv')]
+  17 [  76] GETTABLE  R0 = R0[K8('RL_SNR_L')]
+  18 [  76] SETTABLE  R0[K2('h')] = K3(None)
+  19 [  78] GETTABUP  R0 = UP1[K9('S')]
+  20 [  78] GETTABLE  R0 = R0[K10('RCP_pID')]
+  21 [  78] EQ        A=0 R0, K11('FRS'); skip-next if condition != A
+  22 [  78] JMP       A=0 ->43
+  23 [  78] GETTABUP  R0 = UP1[K9('S')]
+  24 [  78] GETTABLE  R0 = R0[K12('RCP_pverID')]
+  25 [  78] EQ        A=1 R0, K13('ACCST'); skip-next if condition != A
+  26 [  78] JMP       A=0 ->31
+  27 [  78] GETTABUP  R0 = UP1[K9('S')]
+  28 [  78] GETTABLE  R0 = R0[K12('RCP_pverID')]
+  29 [  78] EQ        A=0 R0, K14('R9'); skip-next if condition != A
+  30 [  78] JMP       A=0 ->43
+  31 [  79] GETTABUP  R0 = UP0[K0('cv')]
+  32 [  79] GETTABLE  R0 = R0[K5('RL_RQL_C')]
+  33 [  79] SETTABLE  R0[K2('h')] = K15(True)
+  34 [  80] GETTABUP  R0 = UP0[K0('cv')]
+  35 [  80] GETTABLE  R0 = R0[K6('RL_RQL_L')]
+  36 [  80] SETTABLE  R0[K2('h')] = K15(True)
+  37 [  81] GETTABUP  R0 = UP0[K0('cv')]
+  38 [  81] GETTABLE  R0 = R0[K7('RL_SNR_C')]
+  39 [  81] SETTABLE  R0[K2('h')] = K15(True)
+  40 [  82] GETTABUP  R0 = UP0[K0('cv')]
+  41 [  82] GETTABLE  R0 = R0[K8('RL_SNR_L')]
+  42 [  82] SETTABLE  R0[K2('h')] = K15(True)
+  43 [  85] GETTABUP  R0 = UP2[K16('fm')]
+  44 [  85] GETTABLE  R0 = R0[K17('sxx')]
+  45 [  85] TEST      A=0 B=0 C=1
+  46 [  85] JMP       A=0 ->65
+  47 [  86] GETTABUP  R0 = UP0[K0('cv')]
+  48 [  86] GETTABLE  R0 = R0[K1('RL_RSI_C')]
+  49 [  86] SETTABLE  R0[K2('h')] = K15(True)
+  50 [  87] GETTABUP  R0 = UP0[K0('cv')]
+  51 [  87] GETTABLE  R0 = R0[K4('RL_RSI_L')]
+  52 [  87] SETTABLE  R0[K2('h')] = K15(True)
+  53 [  88] GETTABUP  R0 = UP0[K0('cv')]
+  54 [  88] GETTABLE  R0 = R0[K5('RL_RQL_C')]
+  55 [  88] SETTABLE  R0[K2('h')] = K15(True)
+  56 [  89] GETTABUP  R0 = UP0[K0('cv')]
+  57 [  89] GETTABLE  R0 = R0[K6('RL_RQL_L')]
+  58 [  89] SETTABLE  R0[K2('h')] = K15(True)
+  59 [  90] GETTABUP  R0 = UP0[K0('cv')]
+  60 [  90] GETTABLE  R0 = R0[K7('RL_SNR_C')]
+  61 [  90] SETTABLE  R0[K2('h')] = K15(True)
+  62 [  91] GETTABUP  R0 = UP0[K0('cv')]
+  63 [  91] GETTABLE  R0 = R0[K8('RL_SNR_L')]
+  64 [  91] SETTABLE  R0[K2('h')] = K15(True)
+  65 [  94] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 2 lines 96 98 source None
+UPVALUES [('setDefs', (1, 7))]
+LOCALS []
+   1 [  97] GETUPVAL  A=0 B=0 C=0
+   2 [  97] LOADBOOL  A=1 B=1 C=0
+   3 [  97] CALL      A=0 B=2 C=1
+   4 [  98] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 0 vararg 0 stack 5 lines 102 109 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4)), ('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS []
+K0 'S'
+K1 'RCP_pv'
+K2 'cv'
+K3 'v'
+K4 'RCP_pverID'
+K5 'RCP_pverIDList'
+K6 'OFF'
+K7 'RCP_pverName'
+K8 'RCP_pverNameList'
+K9 ''
+K10 'table'
+K11 'insert'
+K12 'RINIT'
+K13 'fn'
+K14 'PLIBTLM'
+K15 'RCPINIT'
+K16 'TLMINIT'
+   1 [ 103] GETTABUP  R0 = UP0[K0('S')]
+   2 [ 103] GETTABUP  R1 = UP1[K2('cv')]
+   3 [ 103] GETTABLE  R1 = R1[K1('RCP_pv')]
+   4 [ 103] GETTABLE  R1 = R1[K3('v')]
+   5 [ 103] SETTABLE  R0[K1('RCP_pv')] = R1
+   6 [ 104] GETTABUP  R0 = UP0[K0('S')]
+   7 [ 104] GETTABUP  R1 = UP0[K0('S')]
+   8 [ 104] GETTABLE  R1 = R1[K5('RCP_pverIDList')]
+   9 [ 104] GETTABUP  R2 = UP0[K0('S')]
+  10 [ 104] GETTABLE  R2 = R2[K1('RCP_pv')]
+  11 [ 104] GETTABLE  R1 = R1[R2]
+  12 [ 104] TEST      A=1 B=0 C=1
+  13 [ 104] JMP       A=0 ->15
+  14 [ 104] LOADK     R1 = K6 ('OFF')
+  15 [ 104] SETTABLE  R0[K4('RCP_pverID')] = R1
+  16 [ 105] GETTABUP  R0 = UP0[K0('S')]
+  17 [ 105] GETTABUP  R1 = UP0[K0('S')]
+  18 [ 105] GETTABLE  R1 = R1[K8('RCP_pverNameList')]
+  19 [ 105] GETTABUP  R2 = UP0[K0('S')]
+  20 [ 105] GETTABLE  R2 = R2[K1('RCP_pv')]
+  21 [ 105] GETTABLE  R1 = R1[R2]
+  22 [ 105] TEST      A=1 B=0 C=1
+  23 [ 105] JMP       A=0 ->25
+  24 [ 105] LOADK     R1 = K9 ('')
+  25 [ 105] SETTABLE  R0[K7('RCP_pverName')] = R1
+  26 [ 106] GETTABUP  R0 = UP2[K10('table')]
+  27 [ 106] GETTABLE  R0 = R0[K11('insert')]
+  28 [ 106] GETTABUP  R1 = UP0[K12('RINIT')]
+  29 [ 106] NEWTABLE  A=2 B=0 C=1
+  30 [ 106] GETTABUP  R3 = UP3[K14('PLIBTLM')]
+  31 [ 106] LOADK     R4 = K15 ('RCPINIT')
+  32 [ 106] CONCAT    A=3 B=3 C=4
+  33 [ 106] SETTABLE  R2[K13('fn')] = R3
+  34 [ 106] CALL      A=0 B=3 C=1
+  35 [ 107] GETTABUP  R0 = UP2[K10('table')]
+  36 [ 107] GETTABLE  R0 = R0[K11('insert')]
+  37 [ 107] GETTABUP  R1 = UP0[K12('RINIT')]
+  38 [ 107] NEWTABLE  A=2 B=0 C=1
+  39 [ 107] GETTABUP  R3 = UP3[K14('PLIBTLM')]
+  40 [ 107] LOADK     R4 = K16 ('TLMINIT')
+  41 [ 107] CONCAT    A=3 B=3 C=4
+  42 [ 107] SETTABLE  R2[K13('fn')] = R3
+  43 [ 107] CALL      A=0 B=3 C=1
+  44 [ 109] RETURN    A=0 B=1 C=0

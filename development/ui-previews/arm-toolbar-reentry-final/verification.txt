@@ -1,0 +1,7 @@
+PASS: exact 67a241 native reentry verification.
+
+Flight→Inputs→Inputs/Timers→top Arm→Inputs→RTN Arm→RTN returns Flight. The equivalent Data→Arm origin returns Data after both RTN presses. Both routes were visually inspected in a fresh native widget run with no CPU or script errors.
+
+Prior bbad full three-case warning/rendering evidence remains separate and immutable. The only source delta is one caller-collapse conditional in openArm; all 65 other active runtime files match.
+
+Synthetic EdgeTX 3.0 WASM only; physical 2.12.4 remains unverified.

@@ -1,0 +1,19 @@
+ATTITUDE-CLEAN-20261018
+Main SHA256: ee3c98c82e67e30deda80e3d9838ca666d5a112441508fb51d370a0eb4149cd9
+Previous main SHA256: 476ae7be86d0efad2cff531ea2ece7f528cf07a4432dc8629f2dd0a0b50782e6
+
+Requested Flight simplification:
+- Keep native EdgeTX sky/ground, horizon, aircraft datum, pitch rungs and bank arc.
+- Remove all moving pitch number captions and their search/relocation logic.
+- Remove redundant primary P/R degree cells and COG/YAW caption.
+- Keep compass bearing/source preference, home caret, tapes and rails.
+- Retain raw angle values in Data and the separate Video detail readouts.
+- Preserve missing/current source checks, real zero, display direction and units.
+
+Acceptance records are bound by development/build-ATTITUDE-CLEAN-20261018.json.
+Portable command/instruction counts are synthetic comparisons, not radio FPS.
+Native preview uses a development sample-data widget with exact production main,
+helpers and PNG assets. Its firmware callback budget remains unchanged.
+
+Local only. No radio installation, firmware changes, SD card writes or Git push.
+Last file-verified radio build: REPLACEMENT-RC1-20261017 (DEPLOYMENT.txt).

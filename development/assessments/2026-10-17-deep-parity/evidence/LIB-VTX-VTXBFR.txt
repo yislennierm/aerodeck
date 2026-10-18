@@ -1,0 +1,87 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXBFR.luac 
+SHA256 17194b9ed025b7e748c73555766899ad2344e575c3bc037e230926077da68e49
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/VTX/VTXBFR.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 6), ('F', 1, 6), ('D', 1, 6), ('X', 1, 6)]
+K0 'VTX'
+K1 'FN_BFR'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('VTX')]
+   3 [  25] CLOSURE   R5 = proto[0]
+   4 [  25] SETTABLE  R4[K1('FN_BFR')] = R5
+   5 [  28] RETURN    A=0 B=1 C=0
+   6 [  28] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 16 lines 12 25 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS [('tbl', 0, 40), ('(for generator)', 6, 32), ('(for state)', 6, 32), ('(for control)', 6, 32), ('bid', 7, 30), ('v', 7, 30), ('(for generator)', 10, 30), ('(for state)', 10, 30), ('(for control)', 10, 30), ('cid', 11, 28), ('frq', 11, 28)]
+K0 'byFrq'
+K1 'ipairs'
+K2 'VTX'
+K3 'TBL'
+K4 'pairs'
+K5 'f'
+K6 0
+K7 1
+K8 'frq'
+K9 'bid'
+K10 'cid'
+K11 'cName'
+K12 'bl'
+K13 'table'
+K14 'sort'
+K15 'cg'
+   1 [  14] NEWTABLE  A=1 B=0 C=0
+   2 [  14] SETTABLE  R0[K0('byFrq')] = R1
+   3 [  15] GETTABUP  R1 = UP0[K1('ipairs')]
+   4 [  15] GETTABUP  R2 = UP1[K2('VTX')]
+   5 [  15] GETTABLE  R2 = R2[K3('TBL')]
+   6 [  15] CALL      A=1 B=2 C=4
+   7 [  15] JMP       A=0 ->31
+   8 [  16] GETTABUP  R6 = UP0[K4('pairs')]
+   9 [  16] GETTABLE  R7 = R5[K5('f')]
+  10 [  16] CALL      A=6 B=2 C=4
+  11 [  16] JMP       A=0 ->29
+  12 [  17] LT        A=0 K6(0), R10; skip-next if condition != A
+  13 [  17] JMP       A=0 ->29
+  14 [  18] GETTABLE  R11 = R0[K0('byFrq')]
+  15 [  18] GETTABLE  R12 = R0[K0('byFrq')]
+  16 [  18] LEN       A=12 B=12 C=0
+  17 [  18] ADD       A=12 B=12 C=263
+  18 [  18] NEWTABLE  A=13 B=0 C=5
+  19 [  18] SETTABLE  R13[K8('frq')] = R10
+  20 [  18] SETTABLE  R13[K9('bid')] = R4
+  21 [  18] SETTABLE  R13[K10('cid')] = R9
+  22 [  18] GETTABLE  R14 = R5[K12('bl')]
+  23 [  18] MOVE      A=15 B=9 C=0
+  24 [  18] CONCAT    A=14 B=14 C=15
+  25 [  18] SETTABLE  R13[K11('cName')] = R14
+  26 [  18] GETTABLE  R14 = R5[K12('bl')]
+  27 [  18] SETTABLE  R13[K12('bl')] = R14
+  28 [  18] SETTABLE  R11[R12] = R13
+  29 [  16] TFORCALL  A=6 B=0 C=2
+  30 [  16] TFORLOOP  A=8 ->12
+  31 [  15] TFORCALL  A=1 B=0 C=2
+  32 [  15] TFORLOOP  A=3 ->8
+  33 [  22] GETTABUP  R1 = UP0[K13('table')]
+  34 [  22] GETTABLE  R1 = R1[K14('sort')]
+  35 [  22] GETTABLE  R2 = R0[K0('byFrq')]
+  36 [  22] CLOSURE   R3 = proto[0]
+  37 [  22] CALL      A=1 B=3 C=1
+  38 [  24] GETTABUP  R1 = UP2[K15('cg')]
+  39 [  24] CALL      A=1 B=1 C=1
+  40 [  25] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0/0 params 2 vararg 0 stack 4 lines 22 22 source None
+UPVALUES []
+LOCALS [('a', 0, 8), ('b', 0, 8)]
+K0 'frq'
+   1 [  22] GETTABLE  R2 = R0[K0('frq')]
+   2 [  22] GETTABLE  R3 = R1[K0('frq')]
+   3 [  22] LT        A=1 R2, R3; skip-next if condition != A
+   4 [  22] JMP       A=0 ->6
+   5 [  22] LOADBOOL  A=2 B=0 C=1
+   6 [  22] LOADBOOL  A=2 B=1 C=0
+   7 [  22] RETURN    A=2 B=2 C=0
+   8 [  22] RETURN    A=0 B=1 C=0

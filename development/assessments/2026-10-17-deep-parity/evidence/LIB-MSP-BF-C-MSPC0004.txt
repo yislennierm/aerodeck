@@ -1,0 +1,44 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0004.luac
+SHA256: d3f4390de833d47bd6dda21a0f51013fcc3de5ee9b7ca780153d28ca1d80f682
+
+FUNCTION main params 0 vararg 1 stack 8 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0004.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 28), ('F', 1, 28), ('D', 1, 28), ('X', 1, 28)]
+K0 'MSPP'
+K1 'P'
+K2 8
+K3 'FC'
+K4 'TARGET_NAME'
+K5 'S'
+K6 'BOARD_NAME'
+K7 'MANU_ID'
+K8 'dbgMSP'
+K9 'D.FC.TARGET_NAME'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  16] GETTABLE  R4 = R1[K0('MSPP')]
+   3 [  16] LOADK     R5 = K1 ('P')
+   4 [  16] LOADK     R6 = K2 (8)
+   5 [  16] CALL      A=4 B=3 C=1
+   6 [  17] GETTABLE  R4 = R2[K3('FC')]
+   7 [  17] GETTABLE  R5 = R1[K0('MSPP')]
+   8 [  17] LOADK     R6 = K5 ('S')
+   9 [  17] CALL      A=5 B=2 C=2
+  10 [  17] SETTABLE  R4[K4('TARGET_NAME')] = R5
+  11 [  18] GETTABLE  R4 = R2[K3('FC')]
+  12 [  18] GETTABLE  R5 = R1[K0('MSPP')]
+  13 [  18] LOADK     R6 = K5 ('S')
+  14 [  18] CALL      A=5 B=2 C=2
+  15 [  18] SETTABLE  R4[K6('BOARD_NAME')] = R5
+  16 [  19] GETTABLE  R4 = R2[K3('FC')]
+  17 [  19] GETTABLE  R5 = R1[K0('MSPP')]
+  18 [  19] LOADK     R6 = K5 ('S')
+  19 [  19] CALL      A=5 B=2 C=2
+  20 [  19] SETTABLE  R4[K7('MANU_ID')] = R5
+  21 [  31] GETTABLE  R4 = R0[K8('dbgMSP')]
+  22 [  31] LOADK     R5 = K0 ('MSPP')
+  23 [  31] LOADK     R6 = K9 ('D.FC.TARGET_NAME')
+  24 [  31] GETTABLE  R7 = R2[K3('FC')]
+  25 [  31] GETTABLE  R7 = R7[K4('TARGET_NAME')]
+  26 [  31] CALL      A=4 B=4 C=1
+  27 [  40] RETURN    A=0 B=1 C=0
+  28 [  40] RETURN    A=0 B=1 C=0

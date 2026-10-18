@@ -1,0 +1,162 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPTC.luac
+SHA256: 01b39419775ed271c0f4acf31c7b4fde6056c2e8f082a9ab4cc02dff82216475
+
+FUNCTION main params 0 vararg 1 stack 13 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/MSPTC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 115), ('F', 1, 115), ('D', 1, 115), ('X', 1, 115), ('(for index)', 14, 23), ('(for limit)', 14, 23), ('(for step)', 14, 23), ('i', 15, 22), ('sIDX', 78, 103), ('chData', 78, 103)]
+K0 'VTX'
+K1 'tChR'
+K2 True
+K3 'TBLR'
+K4 1
+K5 'tBN'
+K6 'MSPQAD'
+K7 137
+K8 88
+K9 150
+K10 'tChRA'
+K11 None
+K12 'S'
+K13 'mspInfo'
+K14 ''
+K15 'VTX_PROXY_ON'
+K16 'FC'
+K17 'UID'
+K18 'loadE'
+K19 'PLIBVTX'
+K20 'VTXPXW'
+K21 'TBL'
+K22 'FN_BFR'
+K23 'sFRQ'
+K24 'FN_FCH'
+K25 'sIDX'
+K26 'chName'
+K27 'cName'
+K28 'U'
+K29 'sBID'
+K30 'bid'
+K31 'sCID'
+K32 'cid'
+K33 'sBL'
+K34 'bl'
+K35 'UI'
+K36 'MODS'
+K37 'selID'
+K38 'TASKS_ID'
+K39 'MODVTX'
+K40 'setByFrq'
+   1 [  11] VARARG    A=0 B=5 C=0
+   2 [  13] GETTABLE  R4 = R2[K0('VTX')]
+   3 [  13] GETTABLE  R4 = R4[K1('tChR')]
+   4 [  13] TEST      A=4 B=0 C=1
+   5 [  13] JMP       A=0 ->33
+   6 [  15] GETTABLE  R4 = R2[K0('VTX')]
+   7 [  15] SETTABLE  R4[K1('tChR')] = K2(True)
+   8 [  16] GETTABLE  R4 = R2[K0('VTX')]
+   9 [  16] NEWTABLE  A=5 B=0 C=0
+  10 [  16] SETTABLE  R4[K3('TBLR')] = R5
+  11 [  17] LOADK     R4 = K4 (1)
+  12 [  17] GETTABLE  R5 = R2[K0('VTX')]
+  13 [  17] GETTABLE  R5 = R5[K5('tBN')]
+  14 [  17] LOADK     R6 = K4 (1)
+  15 [  17] FORPREP   A=4 ->23
+  16 [  18] GETTABLE  R8 = R1[K6('MSPQAD')]
+  17 [  18] LOADNIL   A=9 B=0 C=0
+  18 [  18] LOADK     R10 = K7 (137)
+  19 [  18] NEWTABLE  A=11 B=1 C=0
+  20 [  18] MOVE      A=12 B=7 C=0
+  21 [  18] SETLIST   A=11 B=1 C=1
+  22 [  18] CALL      A=8 B=4 C=1
+  23 [  17] FORLOOP   A=4 ->16
+  24 [  20] GETTABLE  R4 = R1[K6('MSPQAD')]
+  25 [  20] LOADNIL   A=5 B=0 C=0
+  26 [  20] LOADK     R6 = K8 (88)
+  27 [  20] CALL      A=4 B=3 C=1
+  28 [  21] GETTABLE  R4 = R1[K6('MSPQAD')]
+  29 [  21] LOADNIL   A=5 B=0 C=0
+  30 [  21] LOADK     R6 = K9 (150)
+  31 [  21] CALL      A=4 B=3 C=1
+  32 [  21] JMP       A=0 ->114
+  33 [  24] GETTABLE  R4 = R2[K0('VTX')]
+  34 [  24] GETTABLE  R4 = R4[K3('TBLR')]
+  35 [  24] LEN       A=4 B=4 C=0
+  36 [  24] GETTABLE  R5 = R2[K0('VTX')]
+  37 [  24] GETTABLE  R5 = R5[K5('tBN')]
+  38 [  24] EQ        A=0 R4, R5; skip-next if condition != A
+  39 [  24] JMP       A=0 ->114
+  40 [  25] GETTABLE  R4 = R2[K0('VTX')]
+  41 [  25] SETTABLE  R4[K10('tChRA')] = K2(True)
+  42 [  26] GETTABLE  R4 = R2[K0('VTX')]
+  43 [  26] SETTABLE  R4[K1('tChR')] = K11(None)
+  44 [  27] GETTABLE  R4 = R2[K12('S')]
+  45 [  27] SETTABLE  R4[K13('mspInfo')] = K14('')
+  46 [  29] GETTABLE  R4 = R2[K12('S')]
+  47 [  29] GETTABLE  R4 = R4[K15('VTX_PROXY_ON')]
+  48 [  29] TEST      A=4 B=0 C=0
+  49 [  29] JMP       A=0 ->61
+  50 [  29] GETTABLE  R4 = R2[K16('FC')]
+  51 [  29] GETTABLE  R4 = R4[K17('UID')]
+  52 [  29] TEST      A=4 B=0 C=0
+  53 [  29] JMP       A=0 ->61
+  54 [  30] GETTABLE  R4 = R0[K18('loadE')]
+  55 [  30] GETTABLE  R5 = R0[K19('PLIBVTX')]
+  56 [  30] LOADK     R6 = K20 ('VTXPXW')
+  57 [  30] CONCAT    A=5 B=5 C=6
+  58 [  30] GETTABLE  R6 = R2[K16('FC')]
+  59 [  30] GETTABLE  R6 = R6[K17('UID')]
+  60 [  30] CALL      A=4 B=3 C=1
+  61 [  33] GETTABLE  R4 = R2[K0('VTX')]
+  62 [  33] GETTABLE  R5 = R2[K0('VTX')]
+  63 [  33] GETTABLE  R5 = R5[K3('TBLR')]
+  64 [  33] SETTABLE  R4[K21('TBL')] = R5
+  65 [  34] GETTABLE  R4 = R2[K0('VTX')]
+  66 [  34] GETTABLE  R4 = R4[K22('FN_BFR')]
+  67 [  34] GETTABLE  R5 = R2[K0('VTX')]
+  68 [  34] GETTABLE  R5 = R5[K21('TBL')]
+  69 [  34] CALL      A=4 B=2 C=1
+  70 [  35] GETTABLE  R4 = R2[K0('VTX')]
+  71 [  35] GETTABLE  R4 = R4[K23('sFRQ')]
+  72 [  35] TEST      A=4 B=0 C=0
+  73 [  35] JMP       A=0 ->104
+  74 [  36] GETTABLE  R4 = R2[K0('VTX')]
+  75 [  36] GETTABLE  R4 = R4[K24('FN_FCH')]
+  76 [  36] GETTABLE  R5 = R2[K0('VTX')]
+  77 [  36] GETTABLE  R5 = R5[K23('sFRQ')]
+  78 [  36] CALL      A=4 B=2 C=3
+  79 [  37] GETTABLE  R6 = R2[K0('VTX')]
+  80 [  37] SETTABLE  R6[K25('sIDX')] = R4
+  81 [  38] GETTABLE  R6 = R2[K0('VTX')]
+  82 [  38] TEST      A=5 B=0 C=0
+  83 [  38] JMP       A=0 ->87
+  84 [  38] GETTABLE  R7 = R5[K27('cName')]
+  85 [  38] TEST      A=7 B=0 C=1
+  86 [  38] JMP       A=0 ->88
+  87 [  38] LOADK     R7 = K28 ('U')
+  88 [  38] SETTABLE  R6[K26('chName')] = R7
+  89 [  39] GETTABLE  R6 = R2[K0('VTX')]
+  90 [  39] TESTSET   A=7 B=5 C=0
+  91 [  39] JMP       A=0 ->93
+  92 [  39] GETTABLE  R7 = R5[K30('bid')]
+  93 [  39] SETTABLE  R6[K29('sBID')] = R7
+  94 [  40] GETTABLE  R6 = R2[K0('VTX')]
+  95 [  40] TESTSET   A=7 B=5 C=0
+  96 [  40] JMP       A=0 ->98
+  97 [  40] GETTABLE  R7 = R5[K32('cid')]
+  98 [  40] SETTABLE  R6[K31('sCID')] = R7
+  99 [  41] GETTABLE  R6 = R2[K0('VTX')]
+ 100 [  41] TESTSET   A=7 B=5 C=0
+ 101 [  41] JMP       A=0 ->103
+ 102 [  41] GETTABLE  R7 = R5[K34('bl')]
+ 103 [  41] SETTABLE  R6[K33('sBL')] = R7
+ 104 [  43] GETTABLE  R4 = R2[K35('UI')]
+ 105 [  43] GETTABLE  R4 = R4[K36('MODS')]
+ 106 [  43] GETTABLE  R4 = R4[K37('selID')]
+ 107 [  43] EQ        A=0 R4, K0('VTX'); skip-next if condition != A
+ 108 [  43] JMP       A=0 ->114
+ 109 [  44] GETTABLE  R4 = R2[K35('UI')]
+ 110 [  44] GETTABLE  R4 = R4[K38('TASKS_ID')]
+ 111 [  44] GETTABLE  R4 = R4[K39('MODVTX')]
+ 112 [  44] GETTABLE  R4 = R4[K40('setByFrq')]
+ 113 [  44] CALL      A=4 B=1 C=1
+ 114 [  49] RETURN    A=0 B=1 C=0
+ 115 [  49] RETURN    A=0 B=1 C=0

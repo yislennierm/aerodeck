@@ -1,0 +1,163 @@
+{
+  "result": "PASS",
+  "build": "ATTITUDE-CLEAN-20261018",
+  "baselineSHA256": "476ae7be86d0efad2cff531ea2ece7f528cf07a4432dc8629f2dd0a0b50782e6",
+  "candidateSHA256": "ee3c98c82e67e30deda80e3d9838ca666d5a112441508fb51d370a0eb4149cd9",
+  "harnessSHA256": "968dcdcbf0e45bab19dafedaae6d161f4b9cd2e27e0dbbf2afb575d7a0d0b136",
+  "sourceDiffSHA256": "90092b12f8f43c41b42305f75c23688d9f0814bb78d35307a0d886ea7a858093",
+  "scope": "Actual cockpit and its helpers from each production source are executed in identical deterministic LCD environments. Every candidate command must match the baseline in order, including coordinates, flags, colors and payload. Only explicitly located baseline text commands for moving pitch captions, P/R labels/numbers/deg units and COG/YAW may disappear.",
+  "geometryAndRetainedTextExact": true,
+  "nativePixelRenderingCompared": false,
+  "fullApplicationBenchmark": false,
+  "hardwarePerformanceMeasured": false,
+  "nativeCallbackBudgetMeasured": false,
+  "productionFilesEditedByThisCheck": false,
+  "cases": {
+    "total": 832,
+    "settingsCombinations": 8,
+    "poseGrid": "Pitch -90,-40,-20,-10,0,10,20,40,90; roll -180,-120,-90,-60,-35,0,35,60,90,120,180.",
+    "settings": "Normal/Reversed roll display; COG/YAW compass source; Minimal/Graduated markings.",
+    "edgeCases": [
+      "All attitude/telemetry missing",
+      "True numeric zero",
+      "Extreme pitch/bank and very large rail values",
+      "Pitch present / roll missing",
+      "Roll present / pitch missing"
+    ],
+    "movingSample": "120 warmup then 120 measured frames; sinusoidal pitch \u00b135 and roll \u00b1120, moving heading/speed/altitude/current."
+  },
+  "runs": [
+    {
+      "runtime": "luajit",
+      "interpreter": "/usr/local/bin/luajit",
+      "interpreterSHA256": "20ed2e75996cb4f85c7c158ce323dc6f93164bc64c879ca50e81e8596984f5bc",
+      "result": "PASS",
+      "comparedFrames": 832,
+      "exactNonTextCommands": 91636,
+      "permittedRemovedTextCommands": 6708,
+      "assertions": 7540,
+      "warmupMovingFrames": 120,
+      "measuredMovingFrames": 120,
+      "metrics": {
+        "instructions": {
+          "baseline": 1424183,
+          "candidate": 1222991,
+          "reduction": 201192,
+          "reductionPercent": 14.1268
+        },
+        "text": {
+          "baseline": 5969,
+          "candidate": 4782,
+          "reduction": 1187,
+          "reductionPercent": 19.8861
+        },
+        "geometry": {
+          "baseline": 16568,
+          "candidate": 16568,
+          "reduction": 0,
+          "reductionPercent": 0.0
+        },
+        "draw": {
+          "baseline": 22537,
+          "candidate": 21350,
+          "reduction": 1187,
+          "reductionPercent": 5.2669
+        },
+        "font": {
+          "baseline": 687,
+          "candidate": 453,
+          "reduction": 234,
+          "reductionPercent": 34.0611
+        },
+        "color": {
+          "baseline": 17737,
+          "candidate": 16550,
+          "reduction": 1187,
+          "reductionPercent": 6.6922
+        },
+        "setting": {
+          "baseline": 600,
+          "candidate": 480,
+          "reduction": 120,
+          "reductionPercent": 20.0
+        }
+      },
+      "log": "luajit.log",
+      "logSHA256": "e15d0260b76353c8a2c4c6749792ff79ab1500b4743f4d3c965159326d1128c3"
+    },
+    {
+      "runtime": "float32",
+      "interpreter": "work/edgetx/navigation-utils/evidence/lua-5.3.6/src/lua",
+      "interpreterSHA256": "125a5f0f8af481fa9ffd57c4a2d6435d6480271d99ca75eeecf567d6f39cefc7",
+      "result": "PASS",
+      "comparedFrames": 832,
+      "exactNonTextCommands": 91636,
+      "permittedRemovedTextCommands": 6708,
+      "assertions": 7540,
+      "warmupMovingFrames": 120,
+      "measuredMovingFrames": 120,
+      "metrics": {
+        "instructions": {
+          "baseline": 1361924,
+          "candidate": 1178140,
+          "reduction": 183784,
+          "reductionPercent": 13.4944
+        },
+        "text": {
+          "baseline": 5969,
+          "candidate": 4782,
+          "reduction": 1187,
+          "reductionPercent": 19.8861
+        },
+        "geometry": {
+          "baseline": 16568,
+          "candidate": 16568,
+          "reduction": 0,
+          "reductionPercent": 0.0
+        },
+        "draw": {
+          "baseline": 22537,
+          "candidate": 21350,
+          "reduction": 1187,
+          "reductionPercent": 5.2669
+        },
+        "font": {
+          "baseline": 688,
+          "candidate": 453,
+          "reduction": 235,
+          "reductionPercent": 34.157
+        },
+        "color": {
+          "baseline": 17737,
+          "candidate": 16550,
+          "reduction": 1187,
+          "reductionPercent": 6.6922
+        },
+        "setting": {
+          "baseline": 600,
+          "candidate": 480,
+          "reduction": 120,
+          "reductionPercent": 20.0
+        }
+      },
+      "log": "float32.log",
+      "logSHA256": "56e291bb38c2ecdc710642b34861dff49d3453c4274a21dfcf1c6062da971dc4"
+    }
+  ],
+  "sourceProvenColdChange": {
+    "LuaTablesRemoved": 18,
+    "description": "Two static caption/cache arrays with 8 row tables each; no measured memory-byte claim."
+  },
+  "measurementNotes": [
+    "The instruction hook counts only functions whose source is the actual production main chunk; LCD mock functions, deterministic font metrics and harness bookkeeping are excluded.",
+    "LuaJIT is globally disabled with jit.off()/jit.flush() before loading either app chunk. Earlier partial-JIT hook counts are superseded and are not used.",
+    "Counts are interpreter-specific portable Lua instructions, not EdgeTX getUsage percentages, native timing or physical FPS.",
+    "Font metrics counts are actual lcd.sizeText call-site invocations under fixed deterministic metrics and source caches; native C font work is not timed.",
+    "All non-text geometry, native HUD arguments, datum lines, rung lengths and order, bank scale, roll/pitch projection, clipping arguments and retained text match exactly in all 832 cases."
+  ],
+  "reproduce": {
+    "luajit": "luajit compute/compare.lua .",
+    "float32": "/path/to/int32-float32/lua compute/compare.lua .",
+    "alternativeCandidatePath": "lua compute/compare.lua BASELINE_ROOT CANDIDATE_TELEM_PATH"
+  }
+}

@@ -1,0 +1,59 @@
+GPS-UNIFIED-20261018
+Main SHA256: e3eb82d2323194054c0dbcf0b7ab18707f2b8e10b607480e6948666cd9827e97
+Local build; radio remains ATTITUDE-CLEAN-20261018.
+
+UX assessment / density:
+Flight uses75px rails, native29px MID primary values,17px supporting text,12px
+unit/caption text, thin dividers and a continuous flat surface. GPS previously
+used72px rails with two metrics per side; each value consumed separate caption,
+value and unit rows across90px. Four main values and five separate GPS views
+left useful data hidden while the overview looked sparse next to Flight.
+
+The GPS dashboard now shares Flight's rail boundaries at75/404, typography and
+flat composition. Four compact52px readouts per side integrate units into the
+caption. Left: home distance, home bearing, ETA at ground speed, relative home
+bearing to GPS course. Right: ground speed, GPS altitude, ground course, vertical
+speed. Primary numbers fit62px fields, with native SMALL/scientific fallback
+when needed. Relative bearing is suppressed within1mof home; no invented turn.
+ETA drops a redundant leading zero on the main rail, with full time in Info.
+
+Map stays centered at(240,154), grows slightly to328x180, and is never covered by
+coordinate text. Status/coordinates use two rows of the central30px header:
+satellites, reported fix, home/current-last state, exact seven-decimal position
+and one Info control. Last-known coordinates are orange and explicitly labelled
+LAST POS. The bottom bar shows Zoom/Map, current-or-last Plus Code, quad voltage
+and Actions. White position dot, home callout, metric grid/rings and complete
+180point trail remain. No image aircraft, moving heading cue or progress counter.
+
+One inspector, no GPS view carousel:
+The former Coordinates, Quality, Recovery and Satellites views are unified into
+one live scrollable Info sheet with Position, Home/Return, Quality/FC Home and
+Satellite Records sections. All former fields remain, including current/last
+coordinates, both Plus Codes, body yaw, quality/fix, explicit unreported HDOP,
+FC-home fields and every current SV record (ID, system/channel, raw quality,
+signal, used). A satellite count never fabricates SV records. Stale SV detail
+expires using the existing8second window. The base row cache refreshes with
+published snapshots; only eight visible records are rendered. No new sensors
+are scanned/read by the inspector and no unbounded per-frame list is built.
+
+Touch Info or focus it with ENTER. Rotary scrolls one row, PAGE moves eight,
+and touch UP/DOWN pages through the same list. RTN/Map returns to the dashboard;
+Home returns directly to Flight. Full-width warnings remain visible and open
+their real detail page. Info is reachable while the warning owns the bottom bar.
+Refresh Sensors and Set Local Home remain real Actions, with GPS validity guards.
+Opening preset4now opens the unified Info sheet; preset3opens the dashboard.
+
+Validation:
+59portable suites PASS in LuaJIT and int32/float32 Lua5.3. Includes eight fixed
+readout boxes, exact coordinates/code on dashboard, every retained field and a
+24-SVfixture's last record reachable in one sheet, stale/missing data, real
+actions, warnings, source/cache lifetime, full180point trail and coherent metric
+zoom. Native dashboard/Flight comparison, all zooms, complete Info and actions
+captured and reviewed. No native script/CPU-limit errors;20000callback budget
+unchanged. No new assets or modules;20masks and66runtime files remain. Physical
+radio/quad performance is not established by these sample-data simulator checks.
+
+Preview: http://127.0.0.1:8766/
+Package: AERODECK-gps-unified-install.zip
+Evidence: development/runtime-evidence/gps-unified-density-20261018/
+No radio install or GitHub push this turn. See DEPLOYMENT.txt.

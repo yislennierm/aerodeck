@@ -1,0 +1,212 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGVFV.luac
+Original SHA256: 4687d13abcb3375bafd7547c89dee9aec0ec90e8d84d09ca34a5fc45866e42df
+
+FUNCTION main params 0 vararg 1 stack 24 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 114), ('F', 1, 114), ('D', 1, 114), ('X', 1, 114), ('T', 1, 114), ('favID', 32, 114), ('(for generator)', 36, 83), ('(for state)', 36, 83), ('(for control)', 36, 83), ('i', 37, 81), ('v', 37, 81), ('(for generator)', 40, 81), ('(for state)', 40, 81), ('(for control)', 40, 81), ('fi', 41, 79), ('frq', 41, 79), ('(for generator)', 65, 79), ('(for state)', 65, 79), ('(for control)', 65, 79), ('li', 66, 77), ('lv', 66, 77), ('(for index)', 88, 110), ('(for limit)', 88, 110), ('(for step)', 88, 110), ('i', 89, 109)]
+K0 'pID'
+K1 'VFV'
+K2 'pN'
+K3 'VTX FAVS'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 300
+K8 320
+K9 170
+K10 80
+K11 'favs'
+K12 'split'
+K13 'CFGSTR'
+K14 'VTXF'
+K15 '|'
+K16 'favsID'
+K17 'list_FRQ'
+K18 0
+K19 'list_CH'
+K20 'OFF'
+K21 'ipairs'
+K22 'VTX'
+K23 'TBLR'
+K24 'f'
+K25 1
+K26 8
+K27 'bl'
+K28 ' ('
+K29 ')'
+K30 'tostring'
+K31 'cv'
+K32 '_f'
+K33 'o'
+K34 'l'
+K35 'Fav channel '
+K36 'v'
+K37 't'
+K38 'L'
+K39 'lv'
+K40 'onSave'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('VFV')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('VTX FAVS')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (300)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (170)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (80)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  14] GETTABLE  R5 = R0[K12('split')]
+  19 [  14] GETTABLE  R6 = R2[K13('CFGSTR')]
+  20 [  14] GETTABLE  R6 = R6[K14('VTXF')]
+  21 [  14] LOADK     R7 = K15 ('|')
+  22 [  14] CALL      A=5 B=3 C=2
+  23 [  14] SETTABLE  R4[K11('favs')] = R5
+  24 [  15] NEWTABLE  A=5 B=0 C=0
+  25 [  15] SETTABLE  R4[K16('favsID')] = R5
+  26 [  17] NEWTABLE  A=5 B=0 C=1
+  27 [  17] SETTABLE  R5[K18(0)] = K18(0)
+  28 [  17] SETTABLE  R4[K17('list_FRQ')] = R5
+  29 [  18] NEWTABLE  A=5 B=0 C=1
+  30 [  18] SETTABLE  R5[K18(0)] = K20('OFF')
+  31 [  18] SETTABLE  R4[K19('list_CH')] = R5
+  32 [  19] LOADK     R5 = K18 (0)
+  33 [  20] GETTABUP  R6 = UP0[K21('ipairs')]
+  34 [  20] GETTABLE  R7 = R2[K22('VTX')]
+  35 [  20] GETTABLE  R7 = R7[K23('TBLR')]
+  36 [  20] CALL      A=6 B=2 C=4
+  37 [  20] JMP       A=0 ->82
+  38 [  21] GETTABUP  R11 = UP0[K21('ipairs')]
+  39 [  21] GETTABLE  R12 = R10[K24('f')]
+  40 [  21] CALL      A=11 B=2 C=4
+  41 [  21] JMP       A=0 ->80
+  42 [  22] SUB       A=16 B=9 C=281
+  43 [  22] MUL       A=16 B=16 C=282
+  44 [  22] ADD       A=5 B=16 C=14
+  45 [  24] LT        A=0 K18(0), R15; skip-next if condition != A
+  46 [  24] JMP       A=0 ->80
+  47 [  25] GETTABLE  R16 = R4[K17('list_FRQ')]
+  48 [  25] GETTABLE  R17 = R4[K17('list_FRQ')]
+  49 [  25] LEN       A=17 B=17 C=0
+  50 [  25] ADD       A=17 B=17 C=281
+  51 [  25] SETTABLE  R16[R17] = R15
+  52 [  26] GETTABLE  R16 = R4[K19('list_CH')]
+  53 [  26] GETTABLE  R17 = R4[K19('list_CH')]
+  54 [  26] LEN       A=17 B=17 C=0
+  55 [  26] ADD       A=17 B=17 C=281
+  56 [  26] GETTABLE  R18 = R10[K27('bl')]
+  57 [  26] MOVE      A=19 B=14 C=0
+  58 [  26] LOADK     R20 = K28 (' (')
+  59 [  26] MOVE      A=21 B=15 C=0
+  60 [  26] LOADK     R22 = K29 (')')
+  61 [  26] CONCAT    A=18 B=18 C=22
+  62 [  26] SETTABLE  R16[R17] = R18
+  63 [  28] GETTABUP  R16 = UP0[K21('ipairs')]
+  64 [  28] GETTABLE  R17 = R4[K11('favs')]
+  65 [  28] CALL      A=16 B=2 C=4
+  66 [  28] JMP       A=0 ->78
+  67 [  30] GETTABUP  R21 = UP0[K30('tostring')]
+  68 [  30] MOVE      A=22 B=20 C=0
+  69 [  30] CALL      A=21 B=2 C=2
+  70 [  30] GETTABUP  R22 = UP0[K30('tostring')]
+  71 [  30] MOVE      A=23 B=15 C=0
+  72 [  30] CALL      A=22 B=2 C=2
+  73 [  30] EQ        A=0 R21, R22; skip-next if condition != A
+  74 [  30] JMP       A=0 ->78
+  75 [  31] GETTABLE  R21 = R4[K16('favsID')]
+  76 [  31] SETTABLE  R21[R19] = R5
+  77 [  31] JMP       A=0 ->80
+  78 [  28] TFORCALL  A=16 B=0 C=2
+  79 [  28] TFORLOOP  A=18 ->67
+  80 [  21] TFORCALL  A=11 B=0 C=2
+  81 [  21] TFORLOOP  A=13 ->42
+  82 [  20] TFORCALL  A=6 B=0 C=2
+  83 [  20] TFORLOOP  A=8 ->38
+  84 [  45] NEWTABLE  A=6 B=0 C=0
+  85 [  45] SETTABLE  R4[K31('cv')] = R6
+  86 [  46] LOADK     R6 = K25 (1)
+  87 [  46] LOADK     R7 = K26 (8)
+  88 [  46] LOADK     R8 = K25 (1)
+  89 [  46] FORPREP   A=6 ->110
+  90 [  47] GETTABLE  R10 = R4[K31('cv')]
+  91 [  47] LOADK     R11 = K32 ('_f')
+  92 [  47] MOVE      A=12 B=9 C=0
+  93 [  47] CONCAT    A=11 B=11 C=12
+  94 [  47] NEWTABLE  A=12 B=0 C=5
+  95 [  47] SETTABLE  R12[K33('o')] = R9
+  96 [  47] LOADK     R13 = K35 ('Fav channel ')
+  97 [  47] MOVE      A=14 B=9 C=0
+  98 [  47] CONCAT    A=13 B=13 C=14
+  99 [  47] SETTABLE  R12[K34('l')] = R13
+ 100 [  47] GETTABLE  R13 = R4[K16('favsID')]
+ 101 [  47] GETTABLE  R13 = R13[R9]
+ 102 [  47] TEST      A=13 B=0 C=1
+ 103 [  47] JMP       A=0 ->105
+ 104 [  47] LOADK     R13 = K18 (0)
+ 105 [  47] SETTABLE  R12[K36('v')] = R13
+ 106 [  47] SETTABLE  R12[K37('t')] = K38('L')
+ 107 [  47] GETTABLE  R13 = R4[K19('list_CH')]
+ 108 [  47] SETTABLE  R12[K39('lv')] = R13
+ 109 [  47] SETTABLE  R10[R11] = R12
+ 110 [  46] FORLOOP   A=6 ->90
+ 111 [  59] CLOSURE   R6 = proto[0]
+ 112 [  59] SETTABLE  R4[K40('onSave')] = R6
+ 113 [  61] RETURN    A=0 B=1 C=0
+ 114 [  61] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 10 lines 50 59 source None
+UPVALUES [('T', (1, 4)), ('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('vV', 1, 33), ('(for index)', 4, 23), ('(for limit)', 4, 23), ('(for step)', 4, 23), ('i', 5, 22), ('frqID', 11, 22), ('frq', 18, 22)]
+K0 ''
+K1 1
+K2 8
+K3 'cv'
+K4 '_f'
+K5 'v'
+K6 0
+K7 'list_FRQ'
+K8 '|'
+K9 'string'
+K10 'sub'
+K11 -2
+K12 'CFGSTR'
+K13 'VTXF'
+   1 [  51] LOADK     R0 = K0 ('')
+   2 [  52] LOADK     R1 = K1 (1)
+   3 [  52] LOADK     R2 = K2 (8)
+   4 [  52] LOADK     R3 = K1 (1)
+   5 [  52] FORPREP   A=1 ->23
+   6 [  53] GETTABUP  R5 = UP0[K3('cv')]
+   7 [  53] LOADK     R6 = K4 ('_f')
+   8 [  53] MOVE      A=7 B=4 C=0
+   9 [  53] CONCAT    A=6 B=6 C=7
+  10 [  53] GETTABLE  R5 = R5[R6]
+  11 [  53] GETTABLE  R5 = R5[K5('v')]
+  12 [  54] LT        A=0 K6(0), R5; skip-next if condition != A
+  13 [  54] JMP       A=0 ->18
+  14 [  54] GETTABUP  R6 = UP0[K7('list_FRQ')]
+  15 [  54] GETTABLE  R6 = R6[R5]
+  16 [  54] TEST      A=6 B=0 C=1
+  17 [  54] JMP       A=0 ->19
+  18 [  54] LOADK     R6 = K6 (0)
+  19 [  55] MOVE      A=7 B=0 C=0
+  20 [  55] MOVE      A=8 B=6 C=0
+  21 [  55] LOADK     R9 = K8 ('|')
+  22 [  55] CONCAT    A=0 B=7 C=9
+  23 [  52] FORLOOP   A=1 ->6
+  24 [  57] GETTABUP  R1 = UP1[K9('string')]
+  25 [  57] GETTABLE  R1 = R1[K10('sub')]
+  26 [  57] MOVE      A=2 B=0 C=0
+  27 [  57] LOADK     R3 = K1 (1)
+  28 [  57] LOADK     R4 = K11 (-2)
+  29 [  57] CALL      A=1 B=4 C=2
+  30 [  57] MOVE      A=0 B=1 C=0
+  31 [  58] GETTABUP  R1 = UP2[K12('CFGSTR')]
+  32 [  58] SETTABLE  R1[K13('VTXF')] = R0
+  33 [  59] RETURN    A=0 B=1 C=0

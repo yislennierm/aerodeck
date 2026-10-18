@@ -1,0 +1,28 @@
+--- 67a-main
++++ 740c-main
+@@ -1310,7 +1310,7 @@
+  return true
+ end
+ local function init()
+- menuOpen=false;controlFocus=0;exitOpen=false;configReturn=1;armReturn=1;inputRuntime.inputsReturn=1
++ menuOpen=false;controlFocus=0;exitOpen=false;configReturn=1;armReturn=1;inputRuntime.inputsReturn=1;inputRuntime.armSetupReturn=nil
+  display=nil;displayError=nil;lcd=nativeLcd;failure=nil;lastFrame=-100
+  local info=model.getInfo();modelName=info.name or'MODEL';modelIdentity=inputRuntime.modelIdentity(info);started=getTime();page=1
+  renderStats.radioVersion=getVersion and tostring(getVersion())or'--';renderStats.ramKB=nil;renderStats.peakKB=nil
+@@ -3051,7 +3051,7 @@
+  if page~=10 then
+   local caller=page==13 and inputRuntime.inputsReturn or page
+   if caller==8 and configReturn==13 then caller=inputRuntime.inputsReturn end
+-  if caller~=10 then armReturn=caller or 1 end
++  if caller~=10 then armReturn=caller or 1;inputRuntime.armSetupReturn=caller==8 and configReturn or nil end
+  end
+  selectPage(10)
+ end
+@@ -3273,6 +3273,7 @@
+   elseif page==8 and configuration.back()then lastFrame=-100
+   elseif page~=1 then
+    local parents={[2]=7,[3]=5,[9]=5,[10]=armReturn,[4]=6,[12]=6,[13]=inputRuntime.inputsReturn or 1,[8]=configReturn}
++   if page==10 and armReturn==8 then configReturn=inputRuntime.armSetupReturn or 1 end
+    selectPage(parents[page]or 1)
+   elseif configuration.hasChanges()then exitOpen=true;exitChoice=1;lastFrame=-100
+   else if leaveFull()then return 1 end end

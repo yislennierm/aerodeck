@@ -1,0 +1,72 @@
+--- production-source
++++ private-measurement-copy
+@@ -1,3 +1,4 @@
++local __bench={n=0,q={}}
+ -- toolName = TNS|AERODECK|TNE
+ -- AERODECK: integrated 480x272 TX16S cockpit and telemetry console.
+ -- Live telemetry only across flight, telemetry, power, link and GPS.
+@@ -1934,6 +1935,7 @@
+  line(78,244,401,244,p.border)
+ end
+ local function cockpit(d)
++ __bench.n=__bench.n+1;local __q=__bench.q;__q[1]=getUsage()
+  local p=palette
+  local heading=d.course
+  if not d.protocol and heading==nil then heading=d.hdg end
+@@ -1980,6 +1982,7 @@
+  local cell=d.cell or(d.v and d.cells and d.cells>0 and d.v/d.cells)or nil
+  flightValue(410,225,62,18,cell and string.format('%.2f',cell)or '--','',SMLSIZE,cell and p.white or p.muted)
+  if flightBank>0 then flightSummary(d);flightStrip(d);return end
++ __q[2]=getUsage()
+  -- One rectangular PFD: the horizon, aircraft and tape indexes share (240,154).
+  local attitude=d.pitch~=nil and d.roll~=nil
+  local roll=attitude and displayRoll(d.roll)or nil
+@@ -2006,10 +2009,12 @@
+  flightValue(212,34,56,30,heading and string.format('%03d',round(heading)%360)or '--','',MIDSIZE,p.white,true)
+  line(208,63,271,63,p.cyan)
+ 
++ __q[3]=getUsage()
+  -- Wide native sky/ground is drawn once; no bitmap masks or Lua pixel loops.
+  if attitude then
+   rect(78,64,324,180,p.sky)
+   ink(p.ground);lcd.drawHudRectangle(d.pitch,roll,78,402,64,244,CUSTOM_COLOR)
++  __q[4]=getUsage()
+   if configuration.get('attitudeOverlay')==1 then
+   local angle=-roll*pi/180;local cs,sn=math.cos(angle),math.sin(angle)
+   local sr,cr=math.sin(roll*pi/180),math.cos(roll*pi/180)
+@@ -2049,7 +2054,9 @@
+   end
+   end
+  else rect(78,64,324,180,p.dim)end
++ __q[5]=getUsage()
+  if attitude and configuration.get('attitudeOverlay')==1 then bankReference(roll)end
++ __q[6]=getUsage()
+  -- Numerical angles retain the full range beyond the graduated bank reference.
+  if attitude then
+   vlabel(128,65,18,'P',p.horizon,TINSIZE or SMLSIZE)
+@@ -2065,6 +2072,7 @@
+   line(xx-5,yy+4,xx,yy,p.orange);line(xx,yy,xx+5,yy+4,p.orange);line(xx-3,yy+3,xx-3,yy+9,p.orange);line(xx+3,yy+3,xx+3,yy+9,p.orange);line(xx-3,yy+9,xx+3,yy+9,p.orange)
+  end
+  vlabel(225,65,18,configuration.get('compassSource')==1 and'YAW'or'COG',p.horizon,TINSIZE or SMLSIZE)
++ __q[7]=getUsage()
+  -- Equal-width tapes overlay the same field, with readable primary numbers.
+  rect(78,64,46,180,p.tape);rect(356,64,46,180,p.tape)
+  vlabel(81,64,17,d.airspeed and 'AS km/h'or 'GS km/h',p.muted,TINSIZE or SMLSIZE)
+@@ -2092,6 +2100,7 @@
+  for x=78,356,278 do line(x,138,x+45,138,p.green);line(x,169,x+45,169,p.green)end
+  flightValue(82,139,38,30,speed and round(speed)or '--','',MIDSIZE,nil,true)
+  flightValue(360,139,38,30,altitude and round(altitude)or '--','',MIDSIZE,nil,true)
++ __q[8]=getUsage()
+  if attitude then
+   -- A wider two-pixel reference with a dark four-pixel halo is visible at a glance.
+   ink(p.black);for dy=-1,2 do
+@@ -2108,7 +2117,9 @@
+   vlabel(240-textWidth('ATTITUDE',SMLSIZE)/2,133,17,'ATTITUDE',p.muted,SMLSIZE)
+   vlabel(240-textWidth('UNAVAILABLE',SMLSIZE)/2,152,17,'UNAVAILABLE',p.muted,SMLSIZE)
+  end
++ __q[9]=getUsage()
+  flightStrip(d)
++ __q[10]=getUsage();if __bench.n%30==0 then print('BENCH_AERO_BODY|'..__bench.n..'|'..getTime()..'|'..tostring(d.pitch)..'|'..tostring(d.roll)..'|'..table.concat(__q,','))end
+ 
+ end
+ flightSummary=function(d)

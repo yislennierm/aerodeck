@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "result": "PASS",
+  "simulator": "Actual EdgeTX3.0.0 TX16S WASM",
+  "targetFirmware": "EdgeTX2.12.4 remains separate hardware acceptance",
+  "hardwareVerified": false,
+  "isolatedUtilityOnly": true,
+  "syntheticData": true,
+  "fixturesShipOnSD": false,
+  "moduleSha256": "05f2ccdda3721ad7e4e7016042ff54997d71ba2f7d8d073bc7fd80774fc55db5",
+  "nativeToolSha256": "3fe31f6f7b66f58328e2dd000a41c058498bcb89c5786bc4657ef7a2283c72d9",
+  "wasmSha256": "99f4f0b71dd14d3bf3df45095edb61dc48b4ebcfaf090a05f13eb727dcfb1525",
+  "officialFloat32Vectors": 302,
+  "additionalCases": 8,
+  "totalChecks": 310,
+  "failures": 0,
+  "logSha256": "97595236ba219c7c72783263171282bda4131520cfb20b6b0e5baa1de49e1f60",
+  "logWorkspacePath": "work/edgetx/navigation-utils/native-probe/full-corpus.log",
+  "regression": {
+    "symptom": "Different fractional positions collapsed to the same whole-degree Plus Code.",
+    "observedVMBehavior": {
+      "floatHalfEqualsIntegerZero": true,
+      "floatHalfEqualsFloatingZero": false,
+      "floatHalfModuloOneEqualsIntegerZero": true,
+      "floatHalfModuloOneEqualsFloatingZero": false
+    },
+    "fix": "Compare fractional zero/remainder with 0.0, preserving fractional magnitude and rejecting fractional code lengths.",
+    "homeCode": "76Q4XRXV+33C",
+    "currentCode": "76Q4XRXV+75G"
+  },
+  "portableRuns": [
+    {
+      "interpreter": "LuaJIT/double",
+      "checks": 1765,
+      "result": "PASS"
+    },
+    {
+      "interpreter": "Lua5.3 int4/float4 stock VM",
+      "checks": 1765,
+      "result": "PASS"
+    }
+  ],
+  "limits": "No radio/RF/real GPS or integrated-page success asserted by this utility-only evidence. The full native application sweep is recorded separately."
+}

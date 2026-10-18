@@ -1,0 +1,254 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 15 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TLMINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 185), ('F', 1, 185), ('D', 1, 185), ('X', 1, 185), ('sTypes', 120, 185), ('(for generator)', 131, 165), ('(for state)', 131, 165), ('(for control)', 131, 165), ('i', 132, 163), ('sType', 132, 163)]
+K0 'SN_TLM'
+K1 'fnNIL'
+K2 'SN_ARM'
+K3 'SN_FM'
+K4 'SN_ATT'
+K5 'SN_RL'
+K6 'SN_BT'
+K7 'SN_BARO'
+K8 'SN_AIR'
+K9 'TLM'
+K10 'clear'
+K11 '+TLM*'
+K12 'SEN'
+K13 '+SEN*'
+K14 'loadE'
+K15 'PLIBRD'
+K16 'BAT'
+K17 'S'
+K18 'SN'
+K19 'SU'
+K20 'SD'
+K21 'I'
+K22 'V'
+K23 'VM'
+K24 'VX'
+K25 'TLM_ON_SRC'
+K26 'getSwitchIndex'
+K27 'Tele'
+K28 'TLM_ON'
+K29 False
+K30 'TLM_data'
+K31 'RCP_pID'
+K32 'OFF'
+K33 'RCP_pverID'
+K34 'dbg'
+K35 'RC Link protocol or protocol version is OFF'
+K36 'TLM_enabled'
+K37 True
+K38 'MDL_RCP_ON'
+K39 'PLIBTLM'
+K40 'TLMRST'
+K41 'TLMSADD'
+K42 'RL'
+K43 'FC'
+K44 'BTV'
+K45 'BTA'
+K46 'GYRO'
+K47 'ACC'
+K48 'BARO'
+K49 'PITOT'
+K50 'GPS'
+K51 'COMP'
+K52 'VTX'
+K53 'MODE'
+K54 'WG'
+K55 'RINIT'
+K56 'ipairs'
+K57 'MDL_'
+K58 '_ON'
+K59 'table'
+K60 'insert'
+K61 'fn'
+K62 'args'
+K63 'TLMUPDS'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  22] GETTABLE  R4 = R0[K1('fnNIL')]
+   3 [  22] SETTABLE  R1[K0('SN_TLM')] = R4
+   4 [  23] GETTABLE  R4 = R0[K1('fnNIL')]
+   5 [  23] SETTABLE  R1[K2('SN_ARM')] = R4
+   6 [  24] GETTABLE  R4 = R0[K1('fnNIL')]
+   7 [  24] SETTABLE  R1[K3('SN_FM')] = R4
+   8 [  25] GETTABLE  R4 = R0[K1('fnNIL')]
+   9 [  25] SETTABLE  R1[K4('SN_ATT')] = R4
+  10 [  26] GETTABLE  R4 = R0[K1('fnNIL')]
+  11 [  26] SETTABLE  R1[K5('SN_RL')] = R4
+  12 [  27] GETTABLE  R4 = R0[K1('fnNIL')]
+  13 [  27] SETTABLE  R1[K6('SN_BT')] = R4
+  14 [  28] GETTABLE  R4 = R0[K1('fnNIL')]
+  15 [  28] SETTABLE  R1[K7('SN_BARO')] = R4
+  16 [  29] GETTABLE  R4 = R0[K1('fnNIL')]
+  17 [  29] SETTABLE  R1[K8('SN_AIR')] = R4
+  18 [  31] GETTABLE  R4 = R2[K9('TLM')]
+  19 [  31] TEST      A=4 B=0 C=1
+  20 [  31] JMP       A=0 ->22
+  21 [  31] NEWTABLE  A=4 B=0 C=0
+  22 [  31] SETTABLE  R2[K9('TLM')] = R4
+  23 [  32] GETTABLE  R4 = R0[K10('clear')]
+  24 [  32] MOVE      A=5 B=2 C=0
+  25 [  32] LOADK     R6 = K11 ('+TLM*')
+  26 [  32] CALL      A=4 B=3 C=1
+  27 [  34] GETTABLE  R4 = R2[K12('SEN')]
+  28 [  34] TEST      A=4 B=0 C=1
+  29 [  34] JMP       A=0 ->31
+  30 [  34] NEWTABLE  A=4 B=0 C=0
+  31 [  34] SETTABLE  R2[K12('SEN')] = R4
+  32 [  35] GETTABLE  R4 = R0[K10('clear')]
+  33 [  35] MOVE      A=5 B=2 C=0
+  34 [  35] LOADK     R6 = K13 ('+SEN*')
+  35 [  35] CALL      A=4 B=3 C=1
+  36 [  36] GETTABLE  R4 = R0[K14('loadE')]
+  37 [  36] GETTABLE  R5 = R0[K15('PLIBRD')]
+  38 [  36] LOADK     R6 = K16 ('BAT')
+  39 [  36] CONCAT    A=5 B=5 C=6
+  40 [  36] CALL      A=4 B=2 C=1
+  41 [  39] GETTABLE  R4 = R2[K9('TLM')]
+  42 [  39] NEWTABLE  A=5 B=0 C=0
+  43 [  39] SETTABLE  R4[K17('S')] = R5
+  44 [  40] GETTABLE  R4 = R2[K9('TLM')]
+  45 [  40] NEWTABLE  A=5 B=0 C=0
+  46 [  40] SETTABLE  R4[K18('SN')] = R5
+  47 [  41] GETTABLE  R4 = R2[K9('TLM')]
+  48 [  41] NEWTABLE  A=5 B=0 C=0
+  49 [  41] SETTABLE  R4[K19('SU')] = R5
+  50 [  42] GETTABLE  R4 = R2[K9('TLM')]
+  51 [  42] NEWTABLE  A=5 B=0 C=0
+  52 [  42] SETTABLE  R4[K20('SD')] = R5
+  53 [  43] GETTABLE  R4 = R2[K9('TLM')]
+  54 [  43] NEWTABLE  A=5 B=0 C=0
+  55 [  43] SETTABLE  R4[K21('I')] = R5
+  56 [  44] GETTABLE  R4 = R2[K9('TLM')]
+  57 [  44] NEWTABLE  A=5 B=0 C=0
+  58 [  44] SETTABLE  R4[K22('V')] = R5
+  59 [  45] GETTABLE  R4 = R2[K9('TLM')]
+  60 [  45] NEWTABLE  A=5 B=0 C=0
+  61 [  45] SETTABLE  R4[K23('VM')] = R5
+  62 [  46] GETTABLE  R4 = R2[K9('TLM')]
+  63 [  46] NEWTABLE  A=5 B=0 C=0
+  64 [  46] SETTABLE  R4[K24('VX')] = R5
+  65 [  48] GETTABLE  R4 = R2[K17('S')]
+  66 [  48] GETTABUP  R5 = UP0[K26('getSwitchIndex')]
+  67 [  48] LOADK     R6 = K27 ('Tele')
+  68 [  48] CALL      A=5 B=2 C=2
+  69 [  48] TEST      A=5 B=0 C=1
+  70 [  48] JMP       A=0 ->72
+  71 [  48] LOADNIL   A=5 B=0 C=0
+  72 [  48] SETTABLE  R4[K25('TLM_ON_SRC')] = R5
+  73 [  49] GETTABLE  R4 = R2[K17('S')]
+  74 [  49] SETTABLE  R4[K28('TLM_ON')] = K29(False)
+  75 [  50] GETTABLE  R4 = R2[K17('S')]
+  76 [  50] SETTABLE  R4[K30('TLM_data')] = K29(False)
+  77 [  52] GETTABLE  R4 = R2[K17('S')]
+  78 [  52] GETTABLE  R4 = R4[K31('RCP_pID')]
+  79 [  52] EQ        A=1 R4, K32('OFF'); skip-next if condition != A
+  80 [  52] JMP       A=0 ->85
+  81 [  52] GETTABLE  R4 = R2[K17('S')]
+  82 [  52] GETTABLE  R4 = R4[K33('RCP_pverID')]
+  83 [  52] EQ        A=0 R4, K32('OFF'); skip-next if condition != A
+  84 [  52] JMP       A=0 ->89
+  85 [  53] GETTABLE  R4 = R0[K34('dbg')]
+  86 [  53] LOADK     R5 = K35 ('RC Link protocol or protocol version is OFF')
+  87 [  53] CALL      A=4 B=2 C=1
+  88 [  54] RETURN    A=0 B=1 C=0
+  89 [  57] GETTABLE  R4 = R2[K17('S')]
+  90 [  57] SETTABLE  R4[K36('TLM_enabled')] = K37(True)
+  91 [  60] GETTABLE  R4 = R2[K17('S')]
+  92 [  60] GETTABLE  R4 = R4[K38('MDL_RCP_ON')]
+  93 [  60] TEST      A=4 B=0 C=1
+  94 [  60] JMP       A=0 ->98
+  95 [  61] GETTABLE  R4 = R2[K17('S')]
+  96 [  61] SETTABLE  R4[K36('TLM_enabled')] = K29(False)
+  97 [  62] RETURN    A=0 B=1 C=0
+  98 [  65] GETTABLE  R4 = R0[K14('loadE')]
+  99 [  65] GETTABLE  R5 = R0[K39('PLIBTLM')]
+ 100 [  65] LOADK     R6 = K40 ('TLMRST')
+ 101 [  65] CONCAT    A=5 B=5 C=6
+ 102 [  65] CALL      A=4 B=2 C=1
+ 103 [  67] GETTABLE  R4 = R0[K14('loadE')]
+ 104 [  67] GETTABLE  R5 = R0[K39('PLIBTLM')]
+ 105 [  67] LOADK     R6 = K41 ('TLMSADD')
+ 106 [  67] CONCAT    A=5 B=5 C=6
+ 107 [  67] LOADK     R6 = K42 ('RL')
+ 108 [  67] CALL      A=4 B=3 C=1
+ 109 [  69] NEWTABLE  A=4 B=10 C=0
+ 110 [  69] LOADK     R5 = K43 ('FC')
+ 111 [  69] LOADK     R6 = K44 ('BTV')
+ 112 [  69] LOADK     R7 = K45 ('BTA')
+ 113 [  69] LOADK     R8 = K46 ('GYRO')
+ 114 [  69] LOADK     R9 = K47 ('ACC')
+ 115 [  69] LOADK     R10 = K48 ('BARO')
+ 116 [  69] LOADK     R11 = K49 ('PITOT')
+ 117 [  69] LOADK     R12 = K50 ('GPS')
+ 118 [  69] LOADK     R13 = K51 ('COMP')
+ 119 [  69] LOADK     R14 = K52 ('VTX')
+ 120 [  69] SETLIST   A=4 B=10 C=1
+ 121 [  70] GETTABLE  R5 = R0[K53('MODE')]
+ 122 [  70] EQ        A=0 R5, K54('WG'); skip-next if condition != A
+ 123 [  70] JMP       A=0 ->129
+ 124 [  71] GETTABLE  R5 = R2[K55('RINIT')]
+ 125 [  71] TEST      A=5 B=0 C=1
+ 126 [  71] JMP       A=0 ->128
+ 127 [  71] NEWTABLE  A=5 B=0 C=0
+ 128 [  71] SETTABLE  R2[K55('RINIT')] = R5
+ 129 [  73] GETTABUP  R5 = UP0[K56('ipairs')]
+ 130 [  73] MOVE      A=6 B=4 C=0
+ 131 [  73] CALL      A=5 B=2 C=4
+ 132 [  73] JMP       A=0 ->164
+ 133 [  75] GETTABLE  R10 = R2[K17('S')]
+ 134 [  75] LOADK     R11 = K57 ('MDL_')
+ 135 [  75] MOVE      A=12 B=9 C=0
+ 136 [  75] LOADK     R13 = K58 ('_ON')
+ 137 [  75] CONCAT    A=11 B=11 C=13
+ 138 [  75] GETTABLE  R10 = R10[R11]
+ 139 [  75] TEST      A=10 B=0 C=0
+ 140 [  75] JMP       A=0 ->164
+ 141 [  77] GETTABLE  R10 = R0[K53('MODE')]
+ 142 [  77] EQ        A=0 R10, K54('WG'); skip-next if condition != A
+ 143 [  77] JMP       A=0 ->158
+ 144 [  78] GETTABUP  R10 = UP0[K59('table')]
+ 145 [  78] GETTABLE  R10 = R10[K60('insert')]
+ 146 [  78] GETTABLE  R11 = R2[K55('RINIT')]
+ 147 [  78] NEWTABLE  A=12 B=0 C=2
+ 148 [  78] GETTABLE  R13 = R0[K39('PLIBTLM')]
+ 149 [  78] LOADK     R14 = K41 ('TLMSADD')
+ 150 [  78] CONCAT    A=13 B=13 C=14
+ 151 [  78] SETTABLE  R12[K61('fn')] = R13
+ 152 [  78] NEWTABLE  A=13 B=1 C=0
+ 153 [  78] MOVE      A=14 B=9 C=0
+ 154 [  78] SETLIST   A=13 B=1 C=1
+ 155 [  78] SETTABLE  R12[K62('args')] = R13
+ 156 [  78] CALL      A=10 B=3 C=1
+ 157 [  78] JMP       A=0 ->164
+ 158 [  80] GETTABLE  R10 = R0[K14('loadE')]
+ 159 [  80] GETTABLE  R11 = R0[K39('PLIBTLM')]
+ 160 [  80] LOADK     R12 = K41 ('TLMSADD')
+ 161 [  80] CONCAT    A=11 B=11 C=12
+ 162 [  80] MOVE      A=12 B=9 C=0
+ 163 [  80] CALL      A=10 B=3 C=1
+ 164 [  73] TFORCALL  A=5 B=0 C=2
+ 165 [  73] TFORLOOP  A=7 ->133
+ 166 [  87] GETTABLE  R5 = R0[K53('MODE')]
+ 167 [  87] EQ        A=0 R5, K54('WG'); skip-next if condition != A
+ 168 [  87] JMP       A=0 ->179
+ 169 [  88] GETTABUP  R5 = UP0[K59('table')]
+ 170 [  88] GETTABLE  R5 = R5[K60('insert')]
+ 171 [  88] GETTABLE  R6 = R2[K55('RINIT')]
+ 172 [  88] NEWTABLE  A=7 B=0 C=1
+ 173 [  88] GETTABLE  R8 = R0[K39('PLIBTLM')]
+ 174 [  88] LOADK     R9 = K63 ('TLMUPDS')
+ 175 [  88] CONCAT    A=8 B=8 C=9
+ 176 [  88] SETTABLE  R7[K61('fn')] = R8
+ 177 [  88] CALL      A=5 B=3 C=1
+ 178 [  88] JMP       A=0 ->184
+ 179 [  90] GETTABLE  R5 = R0[K14('loadE')]
+ 180 [  90] GETTABLE  R6 = R0[K39('PLIBTLM')]
+ 181 [  90] LOADK     R7 = K63 ('TLMUPDS')
+ 182 [  90] CONCAT    A=6 B=6 C=7
+ 183 [  90] CALL      A=5 B=2 C=1
+ 184 [  93] RETURN    A=0 B=1 C=0
+ 185 [  93] RETURN    A=0 B=1 C=0

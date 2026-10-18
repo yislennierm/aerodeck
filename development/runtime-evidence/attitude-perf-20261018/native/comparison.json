@@ -1,0 +1,831 @@
+{
+  "result": "MEASURED_WITH_LIMITATIONS",
+  "date": "2026-10-18",
+  "question": "Does AERODECK render attitude faster than Toolbox2, and what consumes its draw budget?",
+  "conclusion": "No measured AERODECK-versus-full-Toolbox speed superiority is established. Current optimized AERODECK uses less native Lua VM allowance than its own baseline; both have similar simulator callback cadence.",
+  "native": {
+    "firmware": "EdgeTX3.0.0 TX16S WASM",
+    "targetHardwareFirmware": "TX16S MkII EdgeTX2.12.4",
+    "hardwareVerified": false,
+    "syntheticDataOnly": true,
+    "callbackInstructionBudget": 20000,
+    "budgetHookModified": false,
+    "lcdContract": "continuous dirty-frame owned copy then ACK, no screenshot-only ACK",
+    "host": {
+      "file": "host-pump.cjs",
+      "sha256": "29fde6a5265c1c9f91ef420ba47092b7f9497e3a11a4386b96623f1134784e11"
+    },
+    "wasmSha256": "99f4f0b71dd14d3bf3df45095edb61dc48b4ebcfaf090a05f13eb727dcfb1525"
+  },
+  "method": {
+    "rollDisplay": 0,
+    "pitchMotionDegrees": 10,
+    "rollMotionDegrees": 35,
+    "gpsMotionHz": 5,
+    "noForcedGcInMonitor": true,
+    "instrumentation": "Same private getUsage checkpoints plus wrapper on both AERODECK sources. Native getUsage integer allowance is not CPU walltime. Logs duplicated by host forwarding are de-duplicated.",
+    "sampleIntervalFrames": 30,
+    "peakDefinition": "Highest sampled PFD callback, not all-callback guaranteed maximum.",
+    "concurrentPairedRuns": true,
+    "timingLimit": "Shared host contention/simulator cadence precludes radio speed/FPS inference; whole free Toolbox was run separately.",
+    "functionalScopeLimit": "Free Toolbox whole app has live RC/battery/gyro, not the same functional scene as full AERODECK. Large original AHR is paid-gated and was not activated or executed.",
+    "matchedComponent": "Same actual native fill+drawHudRectangle primitives at matched named viewports; no emulated rasterizer. Original ATT bytecode run separately with false paid flags."
+  },
+  "aerodeckRuns": {
+    "baseline": {
+      "mainSHA256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a",
+      "instrumentedSHA256": "40f8c90c85426186dddc3e1a1ea8496e1e762fccf2af5156133af313cf984c48",
+      "fixtureOnly": true,
+      "callbackBudget": 20000,
+      "budgetHookModified": false,
+      "forcedGC": false,
+      "variant": "baseline",
+      "samples": [
+        {
+          "frame": 120,
+          "ticks": 2471,
+          "usage": 90,
+          "memoryKB": 1111.264
+        },
+        {
+          "frame": 150,
+          "ticks": 2651,
+          "usage": 89,
+          "memoryKB": 1123.961
+        },
+        {
+          "frame": 180,
+          "ticks": 2831,
+          "usage": 84,
+          "memoryKB": 1136.07
+        },
+        {
+          "frame": 210,
+          "ticks": 3007,
+          "usage": 88,
+          "memoryKB": 1146.399
+        },
+        {
+          "frame": 240,
+          "ticks": 3183,
+          "usage": 89,
+          "memoryKB": 1115.554
+        },
+        {
+          "frame": 270,
+          "ticks": 3360,
+          "usage": 84,
+          "memoryKB": 1126.551
+        },
+        {
+          "frame": 300,
+          "ticks": 3535,
+          "usage": 91,
+          "memoryKB": 1138.352
+        },
+        {
+          "frame": 330,
+          "ticks": 3713,
+          "usage": 82,
+          "memoryKB": 1149.753
+        },
+        {
+          "frame": 360,
+          "ticks": 3892,
+          "usage": 83,
+          "memoryKB": 1119.097
+        },
+        {
+          "frame": 390,
+          "ticks": 4071,
+          "usage": 90,
+          "memoryKB": 1131.679
+        },
+        {
+          "frame": 420,
+          "ticks": 4249,
+          "usage": 85,
+          "memoryKB": 1142.425
+        },
+        {
+          "frame": 450,
+          "ticks": 4427,
+          "usage": 83,
+          "memoryKB": 1153.642
+        },
+        {
+          "frame": 480,
+          "ticks": 4607,
+          "usage": 88,
+          "memoryKB": 1122.633
+        },
+        {
+          "frame": 510,
+          "ticks": 4784,
+          "usage": 85,
+          "memoryKB": 1134.391
+        },
+        {
+          "frame": 540,
+          "ticks": 4960,
+          "usage": 82,
+          "memoryKB": 1146.445
+        },
+        {
+          "frame": 570,
+          "ticks": 5137,
+          "usage": 87,
+          "memoryKB": 1157.582
+        },
+        {
+          "frame": 600,
+          "ticks": 5314,
+          "usage": 84,
+          "memoryKB": 1126.532
+        },
+        {
+          "frame": 630,
+          "ticks": 5490,
+          "usage": 90,
+          "memoryKB": 1137.403
+        },
+        {
+          "frame": 660,
+          "ticks": 5668,
+          "usage": 89,
+          "memoryKB": 1149.298
+        },
+        {
+          "frame": 690,
+          "ticks": 5845,
+          "usage": 86,
+          "memoryKB": 1161.308
+        },
+        {
+          "frame": 720,
+          "ticks": 6023,
+          "usage": 88,
+          "memoryKB": 1129.688
+        },
+        {
+          "frame": 750,
+          "ticks": 6203,
+          "usage": 87,
+          "memoryKB": 1142.058
+        },
+        {
+          "frame": 780,
+          "ticks": 6380,
+          "usage": 85,
+          "memoryKB": 1152.429
+        },
+        {
+          "frame": 810,
+          "ticks": 6559,
+          "usage": 88,
+          "memoryKB": 1164.602
+        },
+        {
+          "frame": 840,
+          "ticks": 6735,
+          "usage": 83,
+          "memoryKB": 1134.199
+        },
+        {
+          "frame": 870,
+          "ticks": 6912,
+          "usage": 83,
+          "memoryKB": 1144.939
+        },
+        {
+          "frame": 900,
+          "ticks": 7092,
+          "usage": 88,
+          "memoryKB": 1157.121
+        },
+        {
+          "frame": 930,
+          "ticks": 7270,
+          "usage": 85,
+          "memoryKB": 1167.437
+        },
+        {
+          "frame": 960,
+          "ticks": 7449,
+          "usage": 85,
+          "memoryKB": 1136.67
+        },
+        {
+          "frame": 990,
+          "ticks": 7625,
+          "usage": 88,
+          "memoryKB": 1147.266
+        },
+        {
+          "frame": 1020,
+          "ticks": 7816,
+          "usage": 84,
+          "memoryKB": 1160.575
+        },
+        {
+          "frame": 1050,
+          "ticks": 7993,
+          "usage": 85,
+          "memoryKB": 1172.389
+        },
+        {
+          "frame": 1080,
+          "ticks": 8170,
+          "usage": 89,
+          "memoryKB": 1140.565
+        }
+      ],
+      "sampledPfdFrames": 33,
+      "usageMinimum": 82,
+      "usageMedian": 86,
+      "usageSampledPeak": 91,
+      "callbackHzFromCounters": 16.845060536936305,
+      "bodyMedian": 61,
+      "bodyPartsMedian": {
+        "rails": 16,
+        "compass": 6,
+        "nativeSkyGround": 0,
+        "pitchLadderAndCollision": 9,
+        "bankArcAndPointer": 4,
+        "anglesHomeAndCog": 5,
+        "speedAltitudeTapes": 17,
+        "aircraft": 2,
+        "bottomStrip": 3
+      },
+      "memorySampledPeakKB": 1172.389,
+      "instructionErrorsInLog": 0,
+      "nativeErrorsInLog": 0,
+      "monitor": {
+        "samples": 1650,
+        "intervalMs": 37,
+        "elapsedMs": 63480,
+        "blankFrames": 0,
+        "ordinaryProgressFrames": 0,
+        "forcedGC": false
+      },
+      "log": {
+        "file": "baseline-final.log",
+        "sha256": "e48837ec807fbd0ac43ca3989ced0920bb57eaf2d4f73fc7b4e22ce3e95db8ca"
+      }
+    },
+    "optimized": {
+      "mainSHA256": "816d3e32658d15bafec95de25cd5c836213bd5d5ca14ff695b857f4267cec10a",
+      "instrumentedSHA256": "d03bad716e3bc9ffa8430dd300d1e16cba48a672bb76927590c4f796e06d7a5f",
+      "fixtureOnly": true,
+      "callbackBudget": 20000,
+      "budgetHookModified": false,
+      "forcedGC": false,
+      "variant": "optimized",
+      "samples": [
+        {
+          "frame": 120,
+          "ticks": 2478,
+          "usage": 85,
+          "memoryKB": 1132.637
+        },
+        {
+          "frame": 150,
+          "ticks": 2654,
+          "usage": 83,
+          "memoryKB": 1141.918
+        },
+        {
+          "frame": 180,
+          "ticks": 2834,
+          "usage": 78,
+          "memoryKB": 1151.907
+        },
+        {
+          "frame": 210,
+          "ticks": 3010,
+          "usage": 82,
+          "memoryKB": 1159.183
+        },
+        {
+          "frame": 240,
+          "ticks": 3186,
+          "usage": 83,
+          "memoryKB": 1136.94
+        },
+        {
+          "frame": 270,
+          "ticks": 3363,
+          "usage": 78,
+          "memoryKB": 1144.319
+        },
+        {
+          "frame": 300,
+          "ticks": 3539,
+          "usage": 83,
+          "memoryKB": 1153.302
+        },
+        {
+          "frame": 330,
+          "ticks": 3719,
+          "usage": 82,
+          "memoryKB": 1161.423
+        },
+        {
+          "frame": 360,
+          "ticks": 3895,
+          "usage": 77,
+          "memoryKB": 1168.796
+        },
+        {
+          "frame": 390,
+          "ticks": 4075,
+          "usage": 85,
+          "memoryKB": 1148.291
+        },
+        {
+          "frame": 420,
+          "ticks": 4253,
+          "usage": 79,
+          "memoryKB": 1155.645
+        },
+        {
+          "frame": 450,
+          "ticks": 4433,
+          "usage": 77,
+          "memoryKB": 1164.574
+        },
+        {
+          "frame": 480,
+          "ticks": 4610,
+          "usage": 83,
+          "memoryKB": 1172.177
+        },
+        {
+          "frame": 510,
+          "ticks": 4786,
+          "usage": 78,
+          "memoryKB": 1149.804
+        },
+        {
+          "frame": 540,
+          "ticks": 4963,
+          "usage": 78,
+          "memoryKB": 1158.151
+        },
+        {
+          "frame": 570,
+          "ticks": 5139,
+          "usage": 82,
+          "memoryKB": 1166.169
+        },
+        {
+          "frame": 600,
+          "ticks": 5316,
+          "usage": 77,
+          "memoryKB": 1174.774
+        },
+        {
+          "frame": 630,
+          "ticks": 5494,
+          "usage": 83,
+          "memoryKB": 1151.17
+        },
+        {
+          "frame": 660,
+          "ticks": 5671,
+          "usage": 83,
+          "memoryKB": 1160.256
+        },
+        {
+          "frame": 690,
+          "ticks": 5847,
+          "usage": 78,
+          "memoryKB": 1168.382
+        },
+        {
+          "frame": 720,
+          "ticks": 6025,
+          "usage": 82,
+          "memoryKB": 1176.515
+        },
+        {
+          "frame": 750,
+          "ticks": 6206,
+          "usage": 81,
+          "memoryKB": 1154.254
+        },
+        {
+          "frame": 780,
+          "ticks": 6384,
+          "usage": 78,
+          "memoryKB": 1162.255
+        },
+        {
+          "frame": 810,
+          "ticks": 6562,
+          "usage": 84,
+          "memoryKB": 1170.372
+        },
+        {
+          "frame": 840,
+          "ticks": 6738,
+          "usage": 77,
+          "memoryKB": 1179.404
+        },
+        {
+          "frame": 870,
+          "ticks": 6918,
+          "usage": 77,
+          "memoryKB": 1155.768
+        },
+        {
+          "frame": 900,
+          "ticks": 7096,
+          "usage": 85,
+          "memoryKB": 1164.614
+        },
+        {
+          "frame": 930,
+          "ticks": 7274,
+          "usage": 78,
+          "memoryKB": 1172.944
+        },
+        {
+          "frame": 960,
+          "ticks": 7452,
+          "usage": 78,
+          "memoryKB": 1180.708
+        },
+        {
+          "frame": 990,
+          "ticks": 7641,
+          "usage": 83,
+          "memoryKB": 1159.561
+        },
+        {
+          "frame": 1020,
+          "ticks": 7819,
+          "usage": 79,
+          "memoryKB": 1167.607
+        },
+        {
+          "frame": 1050,
+          "ticks": 7996,
+          "usage": 79,
+          "memoryKB": 1176.222
+        },
+        {
+          "frame": 1080,
+          "ticks": 8174,
+          "usage": 83,
+          "memoryKB": 1184.407
+        }
+      ],
+      "sampledPfdFrames": 33,
+      "usageMinimum": 77,
+      "usageMedian": 81,
+      "usageSampledPeak": 85,
+      "callbackHzFromCounters": 16.853932584269664,
+      "bodyMedian": 56,
+      "bodyPartsMedian": {
+        "rails": 13,
+        "compass": 6,
+        "nativeSkyGround": 1,
+        "pitchLadderAndCollision": 9,
+        "bankArcAndPointer": 4,
+        "anglesHomeAndCog": 4,
+        "speedAltitudeTapes": 16,
+        "aircraft": 2,
+        "bottomStrip": 3
+      },
+      "memorySampledPeakKB": 1184.407,
+      "instructionErrorsInLog": 0,
+      "nativeErrorsInLog": 0,
+      "monitor": {
+        "samples": 1650,
+        "intervalMs": 37,
+        "elapsedMs": 63523,
+        "blankFrames": 0,
+        "ordinaryProgressFrames": 0,
+        "forcedGC": false
+      },
+      "log": {
+        "file": "optimized-final.log",
+        "sha256": "24bb2e20d9126f050ab822dd5654244e91b539f6d069a7a896072df851753a58"
+      }
+    }
+  },
+  "toolboxFreeWholeApp": {
+    "context": "actual native widget refresh, full app",
+    "samples": 24,
+    "usageMin": 25,
+    "usageMedian": 25.0,
+    "usageMax": 25,
+    "frameRateFromCounters": 18.312,
+    "rows": [
+      {
+        "frame": 120,
+        "timeTicks": 694,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 150,
+        "timeTicks": 857,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 180,
+        "timeTicks": 1026,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 210,
+        "timeTicks": 1194,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 240,
+        "timeTicks": 1358,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 270,
+        "timeTicks": 1522,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 300,
+        "timeTicks": 1685,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 330,
+        "timeTicks": 1848,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 360,
+        "timeTicks": 2016,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 390,
+        "timeTicks": 2178,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 420,
+        "timeTicks": 2341,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 450,
+        "timeTicks": 2503,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 480,
+        "timeTicks": 2666,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 510,
+        "timeTicks": 2827,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 540,
+        "timeTicks": 2991,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 570,
+        "timeTicks": 3153,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 600,
+        "timeTicks": 3317,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 630,
+        "timeTicks": 3480,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 660,
+        "timeTicks": 3642,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 690,
+        "timeTicks": 3805,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 720,
+        "timeTicks": 3969,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 750,
+        "timeTicks": 4132,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 780,
+        "timeTicks": 4298,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      },
+      {
+        "frame": 810,
+        "timeTicks": 4462,
+        "usageBefore": 0,
+        "usageAfter": 25,
+        "usageDelta": 25
+      }
+    ]
+  },
+  "matchedNativeComponents": {
+    "0": {
+      "label": "native fill104x104 + HUD105x102",
+      "samples": 12,
+      "usageMedianPerDraw": 0.1,
+      "usageMinPerDraw": 0.1,
+      "usageMaxPerDraw": 0.1
+    },
+    "1": {
+      "label": "native fill324x180 + HUD324x180",
+      "samples": 8,
+      "usageMedianPerDraw": 0.1,
+      "usageMinPerDraw": 0.1,
+      "usageMaxPerDraw": 0.1
+    },
+    "2": {
+      "label": "originalAtt108x114",
+      "samples": 8,
+      "usageMedianPerDraw": 0.7,
+      "usageMinPerDraw": 0.7,
+      "usageMaxPerDraw": 0.7
+    }
+  },
+  "originalUnchangedBytecode": {
+    "M.luac": "ee0742ca4f3ff3ca2e323982941194e75eea071ac0cf97b93dc55a931f12148c",
+    "WIDGET/loader.luac": "6dae407066af5bbb92810a30fa32030f5394a9b172e1a0c819cc5a95d4a110ed",
+    "UI/X.luac": "4b3688d5431989751b82893f9ed684931c2cac4592d79d4599e4128943a9ac94",
+    "UI/480X272/DB1/ATT.luac": "b005f1674bfa26b1d0a2fba88e532ebae75038954263bd8e028879b001d03a5d",
+    "UI/480X272/DB1/AHR.luac": "0ccd8ec1b865c3bfe12f027de2e132f9e1424333801bd03e7cbc06fb5f74145d",
+    "UI/480X272/DB1/MPN.luac": "f99d187850b436ad8f1797947a00cbb06c05680d9fd9aac070f912e05d8342f1",
+    "LIB/TLM/TBS/GYRO.luac": "23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee",
+    "LIB/TLM/TLMUPDS.luac": "5e383ccbce0732ef4ac94bc41226497c5b76d7c9b3e24ad4af7f4658d2d1c863"
+  },
+  "originalAppIntegrity": {
+    "files": 492,
+    "modifiedAppFiles": [],
+    "activationFlagsModified": false,
+    "keysAdded": false,
+    "measuredSxx": false,
+    "manifest": "original-package-loaded-manifest.json"
+  },
+  "screenshots": [
+    {
+      "file": "baseline-start.png",
+      "sha256": "d9bcdf21b792cb7a0f05cfcf983af4be642ae00658d4f1627726c33ed71db806",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "baseline-middle.png",
+      "sha256": "eae0a3591ab699b5093952d6fa3b71f8b60f789c0670bdf7dc3287be81c47e0f",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "baseline-end.png",
+      "sha256": "be9d23f99e033acc1bf5b2ee1492a5d21bda16cd8885d4eb7f31c6ea07e1ae6e",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "baseline-runtime.png",
+      "sha256": "8ccab1c266db6e22b47373e9d7e64faf0bf192706650fbbb7b95705398878177",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "optimized-start.png",
+      "sha256": "7ec8cd9b913ba6cef37abb27d24181628ab5f91b7f035e7076951d31e6341fa6",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "optimized-middle.png",
+      "sha256": "100225022af558a8f87f53fcb669f1020899242ac9e93d4b0b4f2c8247ca4880",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "optimized-end.png",
+      "sha256": "8f78f85cdced0fb162d2431cf2ca6417a0a53d171651b93d372ec7eda571977c",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "optimized-runtime.png",
+      "sha256": "fce3475063d429161f8c2c0d77cd0cc5357ced31e1473baac901176335506fb5",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "private instrumented full AERODECK widget"
+    },
+    {
+      "file": "original-live.png",
+      "sha256": "353e544377423bb9184b804d1dbe3d1a609ebc321341c50124b8dc2dd0c9fd19",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "original Toolbox free whole app"
+    },
+    {
+      "file": "component-large.png",
+      "sha256": "81e072a3171427a1b5ac0baf53db121112d042b9d0fe69f19ab577b1d51e9be5",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true,
+      "scope": "original ATT component only"
+    }
+  ],
+  "coldStartAcceptance": {
+    "accepted": false,
+    "reason": "Independent browser native run reports CPU limit at first fullscreen icon cache miss on optimized816d; successful warm run does not clear that separate blocker.",
+    "productionOptimizationReleaseApprovedByThisReport": false
+  },
+  "notProven": [
+    "Physical 2.12.4 performance or linked-quad sensor freshness",
+    "Paid/full Toolbox AHR whole-app performance",
+    "AERODECK faster than Toolbox",
+    "Standalone optimization speed (this paired run is widget context)",
+    "Matched C renderer CPU walltime from VM allowance"
+  ]
+}

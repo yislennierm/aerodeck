@@ -1,0 +1,165 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/INDUPD.luac
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TB/INDUPD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'SN_IND'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  53] CLOSURE   R4 = proto[0]
+   3 [  53] SETTABLE  R1[K0('SN_IND')] = R4
+   4 [  55] RETURN    A=0 B=1 C=0
+   5 [  55] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 9 lines 10 53 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('(for generator)', 6, 17), ('(for state)', 6, 17), ('(for control)', 6, 17), ('indName', 7, 15), ('swID', 7, 15), ('swVal', 10, 15), ('(for generator)', 23, 34), ('(for state)', 23, 34), ('(for control)', 23, 34), ('indName', 24, 32), ('srcID', 24, 32), ('fm', 48, 69)]
+K0 'pairs'
+K1 'IND_SW'
+K2 'getSwitchValue'
+K3 'S'
+K4 'IND_'
+K5 'IND_SR'
+K6 'getValue'
+K7 'IND_AR'
+K8 None
+K9 'ARMED'
+K10 'FC_FW_ID'
+K11 'IN'
+K12 'FC_FM'
+K13 'IND_AM'
+K14 'AIR'
+K15 'IND_TU'
+K16 'TURT'
+K17 'IND_RTH'
+K18 'RTH'
+K19 'WRTH'
+K20 'IND_FMAC'
+K21 'IND_FMHR'
+K22 'IND_FMAN'
+K23 'FC_FM_NAME'
+K24 'ACRO'
+K25 'HOR'
+K26 'STAB'
+K27 'FC_FM_MODES'
+   1 [  12] GETTABUP  R0 = UP0[K0('pairs')]
+   2 [  12] GETTABUP  R1 = UP1[K1('IND_SW')]
+   3 [  12] TEST      A=1 B=0 C=1
+   4 [  12] JMP       A=0 ->6
+   5 [  12] NEWTABLE  A=1 B=0 C=0
+   6 [  12] CALL      A=0 B=2 C=4
+   7 [  12] JMP       A=0 ->16
+   8 [  13] GETTABUP  R5 = UP0[K2('getSwitchValue')]
+   9 [  13] MOVE      A=6 B=4 C=0
+  10 [  13] CALL      A=5 B=2 C=2
+  11 [  14] GETTABUP  R6 = UP1[K3('S')]
+  12 [  14] LOADK     R7 = K4 ('IND_')
+  13 [  14] MOVE      A=8 B=3 C=0
+  14 [  14] CONCAT    A=7 B=7 C=8
+  15 [  14] SETTABLE  R6[R7] = R5
+  16 [  12] TFORCALL  A=0 B=0 C=2
+  17 [  12] TFORLOOP  A=2 ->8
+  18 [  17] GETTABUP  R0 = UP0[K0('pairs')]
+  19 [  17] GETTABUP  R1 = UP1[K5('IND_SR')]
+  20 [  17] TEST      A=1 B=0 C=1
+  21 [  17] JMP       A=0 ->23
+  22 [  17] NEWTABLE  A=1 B=0 C=0
+  23 [  17] CALL      A=0 B=2 C=4
+  24 [  17] JMP       A=0 ->33
+  25 [  18] GETTABUP  R5 = UP1[K3('S')]
+  26 [  18] LOADK     R6 = K4 ('IND_')
+  27 [  18] MOVE      A=7 B=3 C=0
+  28 [  18] CONCAT    A=6 B=6 C=7
+  29 [  18] GETTABUP  R7 = UP0[K6('getValue')]
+  30 [  18] MOVE      A=8 B=4 C=0
+  31 [  18] CALL      A=7 B=2 C=2
+  32 [  18] SETTABLE  R5[R6] = R7
+  33 [  17] TFORCALL  A=0 B=0 C=2
+  34 [  17] TFORLOOP  A=2 ->25
+  35 [  24] GETTABUP  R0 = UP1[K3('S')]
+  36 [  24] GETTABLE  R0 = R0[K7('IND_AR')]
+  37 [  24] EQ        A=1 R0, K8(None); skip-next if condition != A
+  38 [  24] JMP       A=0 ->43
+  39 [  25] GETTABUP  R0 = UP1[K3('S')]
+  40 [  25] GETTABUP  R1 = UP1[K3('S')]
+  41 [  25] GETTABLE  R1 = R1[K7('IND_AR')]
+  42 [  25] SETTABLE  R0[K9('ARMED')] = R1
+  43 [  28] GETTABUP  R0 = UP1[K3('S')]
+  44 [  28] GETTABLE  R0 = R0[K10('FC_FW_ID')]
+  45 [  28] EQ        A=0 R0, K11('IN'); skip-next if condition != A
+  46 [  28] JMP       A=0 ->70
+  47 [  29] GETTABUP  R0 = UP1[K3('S')]
+  48 [  29] GETTABLE  R0 = R0[K12('FC_FM')]
+  49 [  30] GETTABUP  R1 = UP1[K3('S')]
+  50 [  30] EQ        A=1 R0, K14('AIR'); skip-next if condition != A
+  51 [  30] JMP       A=0 ->53
+  52 [  30] LOADBOOL  A=2 B=0 C=1
+  53 [  30] LOADBOOL  A=2 B=1 C=0
+  54 [  30] SETTABLE  R1[K13('IND_AM')] = R2
+  55 [  31] GETTABUP  R1 = UP1[K3('S')]
+  56 [  31] EQ        A=1 R0, K16('TURT'); skip-next if condition != A
+  57 [  31] JMP       A=0 ->59
+  58 [  31] LOADBOOL  A=2 B=0 C=1
+  59 [  31] LOADBOOL  A=2 B=1 C=0
+  60 [  31] SETTABLE  R1[K15('IND_TU')] = R2
+  61 [  32] GETTABUP  R1 = UP1[K3('S')]
+  62 [  32] EQ        A=1 R0, K18('RTH'); skip-next if condition != A
+  63 [  32] JMP       A=0 ->67
+  64 [  32] EQ        A=1 R0, K19('WRTH'); skip-next if condition != A
+  65 [  32] JMP       A=0 ->67
+  66 [  32] LOADBOOL  A=2 B=0 C=1
+  67 [  32] LOADBOOL  A=2 B=1 C=0
+  68 [  32] SETTABLE  R1[K17('IND_RTH')] = R2
+  69 [  33] RETURN    A=0 B=1 C=0
+  70 [  37] GETTABUP  R0 = UP1[K3('S')]
+  71 [  37] GETTABLE  R0 = R0[K20('IND_FMAC')]
+  72 [  37] EQ        A=0 R0, K8(None); skip-next if condition != A
+  73 [  37] JMP       A=0 ->82
+  74 [  37] GETTABUP  R0 = UP1[K3('S')]
+  75 [  37] GETTABLE  R0 = R0[K21('IND_FMHR')]
+  76 [  37] EQ        A=0 R0, K8(None); skip-next if condition != A
+  77 [  37] JMP       A=0 ->82
+  78 [  37] GETTABUP  R0 = UP1[K3('S')]
+  79 [  37] GETTABLE  R0 = R0[K22('IND_FMAN')]
+  80 [  37] EQ        A=1 R0, K8(None); skip-next if condition != A
+  81 [  37] JMP       A=0 ->121
+  82 [  38] GETTABUP  R0 = UP1[K3('S')]
+  83 [  38] SETTABLE  R0[K12('FC_FM')] = K8(None)
+  84 [  39] GETTABUP  R0 = UP1[K3('S')]
+  85 [  39] SETTABLE  R0[K23('FC_FM_NAME')] = K8(None)
+  86 [  40] GETTABUP  R0 = UP1[K3('S')]
+  87 [  40] GETTABLE  R0 = R0[K20('IND_FMAC')]
+  88 [  40] TEST      A=0 B=0 C=0
+  89 [  40] JMP       A=0 ->93
+  90 [  41] GETTABUP  R0 = UP1[K3('S')]
+  91 [  41] SETTABLE  R0[K12('FC_FM')] = K24('ACRO')
+  92 [  41] JMP       A=0 ->106
+  93 [  42] GETTABUP  R0 = UP1[K3('S')]
+  94 [  42] GETTABLE  R0 = R0[K21('IND_FMHR')]
+  95 [  42] TEST      A=0 B=0 C=0
+  96 [  42] JMP       A=0 ->100
+  97 [  43] GETTABUP  R0 = UP1[K3('S')]
+  98 [  43] SETTABLE  R0[K12('FC_FM')] = K25('HOR')
+  99 [  43] JMP       A=0 ->106
+ 100 [  44] GETTABUP  R0 = UP1[K3('S')]
+ 101 [  44] GETTABLE  R0 = R0[K22('IND_FMAN')]
+ 102 [  44] TEST      A=0 B=0 C=0
+ 103 [  44] JMP       A=0 ->106
+ 104 [  45] GETTABUP  R0 = UP1[K3('S')]
+ 105 [  45] SETTABLE  R0[K12('FC_FM')] = K26('STAB')
+ 106 [  47] GETTABUP  R0 = UP1[K3('S')]
+ 107 [  47] GETTABLE  R0 = R0[K12('FC_FM')]
+ 108 [  47] TEST      A=0 B=0 C=0
+ 109 [  47] JMP       A=0 ->121
+ 110 [  48] GETTABUP  R0 = UP1[K3('S')]
+ 111 [  48] GETTABUP  R1 = UP1[K3('S')]
+ 112 [  48] GETTABLE  R1 = R1[K27('FC_FM_MODES')]
+ 113 [  48] GETTABUP  R2 = UP1[K3('S')]
+ 114 [  48] GETTABLE  R2 = R2[K12('FC_FM')]
+ 115 [  48] GETTABLE  R1 = R1[R2]
+ 116 [  48] TEST      A=1 B=0 C=1
+ 117 [  48] JMP       A=0 ->120
+ 118 [  48] GETTABUP  R1 = UP1[K3('S')]
+ 119 [  48] GETTABLE  R1 = R1[K12('FC_FM')]
+ 120 [  48] SETTABLE  R0[K23('FC_FM_NAME')] = R1
+ 121 [  52] RETURN    A=0 B=1 C=0
+ 122 [  53] RETURN    A=0 B=1 C=0

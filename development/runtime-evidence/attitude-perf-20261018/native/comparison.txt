@@ -1,0 +1,45 @@
+Actual-native attitude comparison — 18 October 2026
+
+The evidence does not establish that AERODECK is faster than Toolbox. Both use EdgeTX's native drawHudRectangle. The original free Toolbox app uses much less Lua instruction allowance for its smaller, different screen. AERODECK's additional layout work accounts for most of its extra Lua cost.
+
+AERODECK before and after
+
+Baseline source: f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a
+Optimized source: 816d3e32658d15bafec95de25cd5c836213bd5d5ca14ff695b857f4267cec10a
+
+Both run as actual fullscreen widgets with the unchanged 20,000-instruction hook and a continuous owned-frame copy followed by LCD acknowledgement. They receive the same synthetic animated pitch (±10°), roll (±35°), and moving GPS at 5 Hz, with Normal roll selected. Identical private getUsage checkpoints are applied to both copies. No production source was edited by this investigation.
+
+                                   Baseline     Optimized
+Median sampled PFD allowance           86%            81%
+Highest sampled PFD allowance           91%            85%
+Measured simulator callbacks/s       16.85         16.85
+Median PFD body allowance              61             56
+Owned-frame monitoring duration      63.480s      63.523s
+Owned-frame samples                  1650           1650
+Blank / ordinary Updating / errors   0 / 0 / 0      0 / 0 / 0
+
+The allowance values are native Lua instruction-budget percentages, not processor walltime. Each median and sampled peak uses 33 PFD callback samples, one every 30 callbacks; the post-monitor Diagnostics visit is excluded. Therefore the peaks are observed sample maxima, not guarantees about every callback. The paired processes share this Mac, so their similar callback cadence does not prove physical radio FPS. There was no forced garbage collection in either monitored interval.
+
+The optimized code recovers 5 allowance points at the median, about 5.8% of the baseline allowance. It preserves the displayed information. Sampled RAM peaks are 1172.4 and 1184.4 KB; these are not retained-heap measurements or a physical memory acceptance result.
+
+Baseline body costs, approximately: side rails 16 points; compass 6; native sky/ground below 1; pitch ladder and collision handling 9; bank arc/pointer 4; angles/home cue 5; speed/altitude tapes 17; aircraft 2; bottom strip 3. Optimized body costs are 56 points overall versus 61. Integer rounding and instrumentation mean the parts should not be treated as exact, summable CPU percentages.
+
+Original Toolbox and matched components
+
+All 492 original application files are unchanged against the public package. A private wrapper supplies synthetic telemetry, ordinary free RC/voltage/gyroscope configuration, and timing probes. The original app's paid flag remains false; no key was added or activation flag changed. Its whole free app displays live attitude at 25% sampled allowance, with approximately 18.31 simulator callbacks per second in its separate run.
+
+That free screen has a 108 × 114 attitude instrument and a lighter feature set. It is not equivalent content to the paid AHR screen or AERODECK's complete 324 × 180 PFD. Original MPN selects AHR behind G.fm.sxx, so AHR was not unlocked. Its exact bytecode and drawing shape were inspected statically. The user's responsive full Toolbox on the radio remains an important hardware reference that this simulator run does not replace.
+
+A component-only measurement repeats actual native fill plus drawHudRectangle at small and 324 × 180 bounds. Both cost approximately 0.1 Lua allowance point per draw. The original free ATT bytecode, including its two cached masks, costs approximately 0.7 point at its native 108 × 114 size. These components are repeated 40 or 10 times to resolve the integer getUsage granularity. C raster work is outside the Lua instruction counter, so equal VM allowance does not establish equal pixel cost or C walltime.
+
+Original masks are DBD_ATT_MASK.jpg (108 × 109, RGB), DBD_ATTB_MASK.jpg (108 × 110, RGB), and the large AHR aircraft DBD_AHL.png (30 × 6, RGBA). AERODECK adds dynamic graduated rungs and caption collision handling, a fixed bank scale with moving pointer, aircraft strokes, large tapes, text fitting, navigation, and status feedback. The rendering method alone is not functional superiority.
+
+Acceptance limit and next work
+
+An independent browser simulator run of the same optimized 816d source fails on its first fullscreen draw at a cold icon load. That remains a release blocker. The successful warm runs here do not clear it, and this report does not approve promotion. Bounded icon preparation and cold entry at different scheduler phases need verification.
+
+Further performance work should preserve information: bounded per-cell formatted-text metrics, hoisted finite geometry, and static bank/aircraft masks only if native measurement and pixel comparisons show a benefit. Widget refresh must always repaint its transient LCD buffer. Do not remove functional data or add synthetic smoothing to create the appearance of responsiveness.
+
+A fair speed-superiority claim needs complete, legitimately available Toolbox and AERODECK modes on the same radio, the same sensor stream, matched viewport and functional content, and separate measurements of display cadence and source age. This paired test is a widget test; it does not prove the separate standalone service-cadence change.
+
+Evidence: comparison.json; original-package-loaded-manifest.json; baseline-final.log; optimized-final.log; original-live-current.log; component.log; the private instrumentation patches; owned-frame observation records; and the visually reviewed native-comparison-contact.png. All telemetry in this investigation is synthetic. EdgeTX 3.0 WASM is not the target physical EdgeTX 2.12.4 radio.

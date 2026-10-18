@@ -1,0 +1,55 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGAPP.luac
+Original SHA256: 067ee04de483357dc41ddffb2dc37f983b628772e72f78bb31d8e56d785efde4
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGAPP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 29), ('F', 1, 29), ('D', 1, 29), ('X', 1, 29), ('T', 1, 29)]
+K0 'pID'
+K1 'APP'
+K2 'pN'
+K3 'LUA APPLICATION'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 300
+K8 320
+K9 150
+K10 80
+K11 'cv'
+K12 'APP_errLog'
+K13 'o'
+K14 1
+K15 'l'
+K16 'Log errors to file'
+K17 't'
+K18 'S'
+K19 'readDS'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  11] SETTABLE  R4[K0('pID')] = K1('APP')
+   3 [  12] SETTABLE  R4[K2('pN')] = K3('LUA APPLICATION')
+   4 [  13] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  13] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  13] JMP       A=0 ->10
+   7 [  13] LOADK     R5 = K7 (300)
+   8 [  13] TEST      A=5 B=0 C=1
+   9 [  13] JMP       A=0 ->17
+  10 [  13] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  13] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  13] JMP       A=0 ->16
+  13 [  13] LOADK     R5 = K9 (150)
+  14 [  13] TEST      A=5 B=0 C=1
+  15 [  13] JMP       A=0 ->17
+  16 [  13] LOADK     R5 = K10 (80)
+  17 [  13] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  15] NEWTABLE  A=5 B=0 C=0
+  19 [  15] SETTABLE  R4[K11('cv')] = R5
+  20 [  16] GETTABLE  R5 = R4[K11('cv')]
+  21 [  16] NEWTABLE  A=6 B=0 C=3
+  22 [  16] SETTABLE  R6[K13('o')] = K14(1)
+  23 [  16] SETTABLE  R6[K15('l')] = K16('Log errors to file')
+  24 [  16] SETTABLE  R6[K17('t')] = K18('S')
+  25 [  16] SETTABLE  R5[K12('APP_errLog')] = R6
+  26 [  19] GETTABLE  R5 = R4[K19('readDS')]
+  27 [  19] CALL      A=5 B=1 C=1
+  28 [  21] RETURN    A=0 B=1 C=0
+  29 [  21] RETURN    A=0 B=1 C=0

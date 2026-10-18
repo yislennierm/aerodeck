@@ -1,0 +1,74 @@
+{
+  "newAssets": [
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/gpp_bad.png",
+      "virtualSize": 30,
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "798ff1c279b654aaac9ac96a064d5cc1804333b6064dd52c5cc7d1abbf4d7c39",
+      "sourceMaster": "development/icons/material/masters/gpp_bad.svg",
+      "sourceMasterSha256": "20e9f7e5eb6a9b531199c24da64dce30b635cd473da8e99fa00fc0e107f66620",
+      "method": "Direct rsvg-convert rasterization from approved master, alpha flattened onto RGB white; no raster resize.",
+      "renderer": "rsvg-convert version 2.61.0",
+      "pillowVersion": "12.3.0"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/gpp_bad.png",
+      "virtualSize": 30,
+      "width": 50,
+      "height": 50,
+      "mode": "RGB",
+      "sha256": "7c80859891103b54a8f1416df4ceb6524ac5ce083bca06557368b0aa32dbdb83",
+      "sourceMaster": "development/icons/material/masters/gpp_bad.svg",
+      "sourceMasterSha256": "20e9f7e5eb6a9b531199c24da64dce30b635cd473da8e99fa00fc0e107f66620",
+      "method": "Direct rsvg-convert rasterization from approved master, alpha flattened onto RGB white; no raster resize.",
+      "renderer": "rsvg-convert version 2.61.0",
+      "pillowVersion": "12.3.0"
+    }
+  ],
+  "existingPngCount": 40,
+  "existingPngsByteIdentical": true,
+  "activeRuntimeLuaPngCount": 66,
+  "testResults": [
+    {
+      "file": "development/test_material_icons.lua",
+      "checks": 2067,
+      "LuaJIT": "PASS",
+      "Lua53int32float32": "PASS"
+    },
+    {
+      "file": "development/test_cold_icon_startup.lua",
+      "checks": 487,
+      "LuaJIT": "PASS",
+      "Lua53int32float32": "PASS",
+      "coldPrimes": 20
+    },
+    {
+      "file": "development/test_display.lua",
+      "checks": 4213,
+      "LuaJIT": "PASS",
+      "Lua53int32float32": "PASS",
+      "sourceEdited": false
+    }
+  ],
+  "testScope": "Targeted checks during staged integration; final accepted main is bound by the parent full-suite reports. No hardware acceptance claim.",
+  "editedProjectFiles": [
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/gpp_bad.png",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/gpp_bad.png",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/README.txt",
+    "development/icons/material/assets.json",
+    "development/icons/material/mapping.json",
+    "development/icons/display-800x480.json",
+    "development/test_material_icons.lua",
+    "development/test_cold_icon_startup.lua"
+  ],
+  "previewHelperChanges": {
+    "dynamicCount": true,
+    "exactCanonicalPathHashMapRequired": true,
+    "inventoryMutationTests": "PASS: additions/removals/renames/content changes/new module",
+    "publicRestartPerformed": false,
+    "publicInputsSent": 0
+  },
+  "hardwareVerified": false
+}

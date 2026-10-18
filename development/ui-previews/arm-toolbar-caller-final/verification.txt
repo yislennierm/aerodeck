@@ -1,0 +1,7 @@
+PASS: exact 740cbd native caller verification.
+
+Flight→Inputs→Inputs/Timers→top Arm→Inputs→RTN Arm→RTN returns Flight. The equivalent Data→Arm origin returns Data after both RTN presses. Setup origin restores the active Timers form, then the category list, then Home without a cycle. All three routes were visually inspected in a fresh native widget run with no CPU or script errors.
+
+Prior bbad full three-case warning/rendering evidence remains separate and immutable. Only navigation caller and saved Setup return guards changed; all 65 other active runtime files match.
+
+Synthetic EdgeTX 3.0 WASM only; physical 2.12.4 remains unverified.

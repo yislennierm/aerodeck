@@ -1,0 +1,223 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMSADD.luac
+
+FUNCTION main params 0 vararg 1 stack 20 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TLMSADD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 101), ('F', 1, 101), ('D', 1, 101), ('X', 1, 101), ('sType', 1, 101), ('checkSensorLimits', 2, 101), ('getSensorUserSettings', 3, 101), ('pPath', 8, 101), ('sensorFile', 9, 101), ('fwSpecific', 18, 26), ('fsCheck', 31, 101), ('sensorData', 39, 99), ('(for generator)', 45, 78), ('(for state)', 45, 78), ('(for control)', 45, 78), ('_', 46, 76), ('data', 46, 76), ('newSensorID', 53, 76), ('sourceID', 61, 76), ('(for generator)', 88, 99), ('(for state)', 88, 99), ('(for control)', 88, 99), ('i', 89, 97), ('data', 89, 97)]
+K0 'PLIBTLM'
+K1 'S'
+K2 'RCP_pID'
+K3 '/'
+K4 'FC_FW_ID'
+K5 '_'
+K6 'fsCheck'
+K7 'loadE'
+K8 'add'
+K9 'ipairs'
+K10 'TLM'
+K11 'SN'
+K12 1
+K13 'getSourceIndex'
+K14 'CHAR_TELEMETRY'
+K15 'pName'
+K16 'srcID'
+K17 'sActive'
+K18 True
+K19 'SN_SNAME'
+K20 'SN_PNAME'
+K21 'sName'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  23] CLOSURE   R5 = proto[0]
+   3 [  39] CLOSURE   R6 = proto[1]
+   4 [  41] GETTABLE  R7 = R0[K0('PLIBTLM')]
+   5 [  41] GETTABLE  R8 = R2[K1('S')]
+   6 [  41] GETTABLE  R8 = R8[K2('RCP_pID')]
+   7 [  41] LOADK     R9 = K3 ('/')
+   8 [  41] CONCAT    A=7 B=7 C=9
+   9 [  44] MOVE      A=8 B=4 C=0
+  10 [  45] GETTABLE  R9 = R2[K1('S')]
+  11 [  45] GETTABLE  R9 = R9[K4('FC_FW_ID')]
+  12 [  45] TEST      A=9 B=0 C=0
+  13 [  45] JMP       A=0 ->27
+  14 [  46] MOVE      A=9 B=4 C=0
+  15 [  46] LOADK     R10 = K5 ('_')
+  16 [  46] GETTABLE  R11 = R2[K1('S')]
+  17 [  46] GETTABLE  R11 = R11[K4('FC_FW_ID')]
+  18 [  46] CONCAT    A=9 B=9 C=11
+  19 [  47] GETTABLE  R10 = R0[K6('fsCheck')]
+  20 [  47] MOVE      A=11 B=7 C=0
+  21 [  47] MOVE      A=12 B=9 C=0
+  22 [  47] CONCAT    A=11 B=11 C=12
+  23 [  47] CALL      A=10 B=2 C=2
+  24 [  47] TEST      A=10 B=0 C=0
+  25 [  47] JMP       A=0 ->27
+  26 [  48] MOVE      A=8 B=9 C=0
+  27 [  52] GETTABLE  R9 = R0[K6('fsCheck')]
+  28 [  52] MOVE      A=10 B=7 C=0
+  29 [  52] MOVE      A=11 B=8 C=0
+  30 [  52] CONCAT    A=10 B=10 C=11
+  31 [  52] CALL      A=9 B=2 C=2
+  32 [  53] TEST      A=9 B=0 C=0
+  33 [  53] JMP       A=0 ->100
+  34 [  54] GETTABLE  R10 = R0[K7('loadE')]
+  35 [  54] MOVE      A=11 B=7 C=0
+  36 [  54] MOVE      A=12 B=8 C=0
+  37 [  54] CONCAT    A=11 B=11 C=12
+  38 [  54] LOADK     R12 = K8 ('add')
+  39 [  54] CALL      A=10 B=3 C=2
+  40 [  56] TEST      A=10 B=0 C=1
+  41 [  56] JMP       A=0 ->43
+  42 [  58] RETURN    A=0 B=1 C=0
+  43 [  61] GETTABUP  R11 = UP0[K9('ipairs')]
+  44 [  61] MOVE      A=12 B=10 C=0
+  45 [  61] CALL      A=11 B=2 C=4
+  46 [  61] JMP       A=0 ->77
+  47 [  63] MOVE      A=16 B=5 C=0
+  48 [  63] MOVE      A=17 B=15 C=0
+  49 [  63] CALL      A=16 B=2 C=1
+  50 [  64] GETTABLE  R16 = R2[K10('TLM')]
+  51 [  64] GETTABLE  R16 = R16[K11('SN')]
+  52 [  64] LEN       A=16 B=16 C=0
+  53 [  64] ADD       A=16 B=16 C=268
+  54 [  65] GETTABLE  R17 = R2[K10('TLM')]
+  55 [  65] GETTABLE  R17 = R17[K11('SN')]
+  56 [  65] SETTABLE  R17[R16] = R15
+  57 [  66] GETTABUP  R17 = UP0[K13('getSourceIndex')]
+  58 [  66] GETTABUP  R18 = UP0[K14('CHAR_TELEMETRY')]
+  59 [  66] GETTABLE  R19 = R15[K15('pName')]
+  60 [  66] CONCAT    A=18 B=18 C=19
+  61 [  66] CALL      A=17 B=2 C=2
+  62 [  67] GETTABLE  R18 = R2[K10('TLM')]
+  63 [  67] GETTABLE  R18 = R18[K11('SN')]
+  64 [  67] GETTABLE  R18 = R18[R16]
+  65 [  67] SETTABLE  R18[K16('srcID')] = R17
+  66 [  68] TEST      A=17 B=0 C=0
+  67 [  68] JMP       A=0 ->77
+  68 [  69] GETTABLE  R18 = R2[K10('TLM')]
+  69 [  69] GETTABLE  R18 = R18[K11('SN')]
+  70 [  69] GETTABLE  R18 = R18[R16]
+  71 [  69] SETTABLE  R18[K17('sActive')] = K18(True)
+  72 [  70] MOVE      A=18 B=6 C=0
+  73 [  70] GETTABLE  R19 = R2[K10('TLM')]
+  74 [  70] GETTABLE  R19 = R19[K11('SN')]
+  75 [  70] GETTABLE  R19 = R19[R16]
+  76 [  70] CALL      A=18 B=2 C=1
+  77 [  61] TFORCALL  A=11 B=0 C=2
+  78 [  61] TFORLOOP  A=13 ->47
+  79 [  74] GETTABLE  R11 = R2[K10('TLM')]
+  80 [  74] NEWTABLE  A=12 B=0 C=0
+  81 [  74] SETTABLE  R11[K19('SN_SNAME')] = R12
+  82 [  75] GETTABLE  R11 = R2[K10('TLM')]
+  83 [  75] NEWTABLE  A=12 B=0 C=0
+  84 [  75] SETTABLE  R11[K20('SN_PNAME')] = R12
+  85 [  76] GETTABUP  R11 = UP0[K9('ipairs')]
+  86 [  76] GETTABLE  R12 = R2[K10('TLM')]
+  87 [  76] GETTABLE  R12 = R12[K11('SN')]
+  88 [  76] CALL      A=11 B=2 C=4
+  89 [  76] JMP       A=0 ->98
+  90 [  78] GETTABLE  R16 = R2[K10('TLM')]
+  91 [  78] GETTABLE  R16 = R16[K19('SN_SNAME')]
+  92 [  78] GETTABLE  R17 = R15[K21('sName')]
+  93 [  78] SETTABLE  R16[R17] = R15
+  94 [  79] GETTABLE  R16 = R2[K10('TLM')]
+  95 [  79] GETTABLE  R16 = R16[K20('SN_PNAME')]
+  96 [  79] GETTABLE  R17 = R15[K15('pName')]
+  97 [  79] SETTABLE  R16[R17] = R15
+  98 [  76] TFORCALL  A=11 B=0 C=2
+  99 [  76] TFORLOOP  A=13 ->90
+ 100 [  83] RETURN    A=0 B=1 C=0
+ 101 [  83] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 4 lines 10 23 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('sensorData', 0, 46), ('sMin', 25, 46), ('sMax', 34, 46)]
+K0 'sMin'
+K1 None
+K2 'type'
+K3 'number'
+K4 'sMax'
+   1 [  11] GETTABLE  R1 = R0[K0('sMin')]
+   2 [  11] EQ        A=1 R1, K1(None); skip-next if condition != A
+   3 [  11] JMP       A=0 ->9
+   4 [  11] GETTABUP  R1 = UP0[K2('type')]
+   5 [  11] GETTABLE  R2 = R0[K0('sMin')]
+   6 [  11] CALL      A=1 B=2 C=2
+   7 [  11] EQ        A=0 R1, K3('number'); skip-next if condition != A
+   8 [  11] JMP       A=0 ->17
+   9 [  11] GETTABLE  R1 = R0[K4('sMax')]
+  10 [  11] EQ        A=1 R1, K1(None); skip-next if condition != A
+  11 [  11] JMP       A=0 ->17
+  12 [  11] GETTABUP  R1 = UP0[K2('type')]
+  13 [  11] GETTABLE  R2 = R0[K4('sMax')]
+  14 [  11] CALL      A=1 B=2 C=2
+  15 [  11] EQ        A=1 R1, K3('number'); skip-next if condition != A
+  16 [  11] JMP       A=0 ->17
+  17 [  14] GETTABUP  R1 = UP0[K2('type')]
+  18 [  14] GETTABLE  R2 = R0[K0('sMin')]
+  19 [  14] CALL      A=1 B=2 C=2
+  20 [  14] EQ        A=0 R1, K3('number'); skip-next if condition != A
+  21 [  14] JMP       A=0 ->25
+  22 [  14] GETTABLE  R1 = R0[K0('sMin')]
+  23 [  14] TEST      A=1 B=0 C=1
+  24 [  14] JMP       A=0 ->26
+  25 [  14] LOADNIL   A=1 B=0 C=0
+  26 [  15] GETTABUP  R2 = UP0[K2('type')]
+  27 [  15] GETTABLE  R3 = R0[K4('sMax')]
+  28 [  15] CALL      A=2 B=2 C=2
+  29 [  15] EQ        A=0 R2, K3('number'); skip-next if condition != A
+  30 [  15] JMP       A=0 ->34
+  31 [  15] GETTABLE  R2 = R0[K4('sMax')]
+  32 [  15] TEST      A=2 B=0 C=1
+  33 [  15] JMP       A=0 ->35
+  34 [  15] LOADNIL   A=2 B=0 C=0
+  35 [  17] TEST      A=1 B=0 C=0
+  36 [  17] JMP       A=0 ->44
+  37 [  17] TEST      A=2 B=0 C=0
+  38 [  17] JMP       A=0 ->44
+  39 [  17] LT        A=0 R2, R1; skip-next if condition != A
+  40 [  17] JMP       A=0 ->44
+  41 [  18] MOVE      A=3 B=2 C=0
+  42 [  18] MOVE      A=2 B=1 C=0
+  43 [  18] MOVE      A=1 B=3 C=0
+  44 [  21] SETTABLE  R0[K0('sMin')] = R1
+  45 [  22] SETTABLE  R0[K4('sMax')] = R2
+  46 [  23] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 1 vararg 0 stack 5 lines 25 39 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('sensorData', 0, 24), ('i', 1, 24), ('esData', 2, 24)]
+K0 0
+K1 'model'
+K2 'getSensor'
+K3 'name'
+K4 'pName'
+K5 'uUnit'
+K6 'unit'
+K7 'uDec'
+K8 'prec'
+K9 1
+K10 None
+K11 63
+   1 [  27] LOADK     R1 = K0 (0)
+   2 [  28] LOADNIL   A=2 B=0 C=0
+   3 [  30] GETTABUP  R3 = UP0[K1('model')]
+   4 [  30] GETTABLE  R3 = R3[K2('getSensor')]
+   5 [  30] MOVE      A=4 B=1 C=0
+   6 [  30] CALL      A=3 B=2 C=2
+   7 [  30] MOVE      A=2 B=3 C=0
+   8 [  32] TEST      A=2 B=0 C=0
+   9 [  32] JMP       A=0 ->19
+  10 [  32] GETTABLE  R3 = R2[K3('name')]
+  11 [  32] GETTABLE  R4 = R0[K4('pName')]
+  12 [  32] EQ        A=0 R3, R4; skip-next if condition != A
+  13 [  32] JMP       A=0 ->19
+  14 [  33] GETTABLE  R3 = R2[K6('unit')]
+  15 [  33] SETTABLE  R0[K5('uUnit')] = R3
+  16 [  34] GETTABLE  R3 = R2[K8('prec')]
+  17 [  34] SETTABLE  R0[K7('uDec')] = R3
+  18 [  35] RETURN    A=0 B=1 C=0
+  19 [  37] ADD       A=1 B=1 C=265
+  20 [  38] EQ        A=1 R2, K10(None); skip-next if condition != A
+  21 [  38] JMP       A=0 ->24
+  22 [  38] LT        A=0 K11(63), R1; skip-next if condition != A
+  23 [  38] JMP       A=0 ->3
+  24 [  39] RETURN    A=0 B=1 C=0

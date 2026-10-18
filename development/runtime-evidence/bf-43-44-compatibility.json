@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-17",
+  "topic": "BF4.3/4.4 compatibility and Quick Reload semantics",
+  "hardwareVerified": false,
+  "primarySources": [
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.3.2/src/main/fc/runtime_config.c",
+      "file": "4.3.2-src-main-fc-runtime_config.c",
+      "sha256": "dda7bab8e43bed4a8b282e9d68fc7a5c89c3634155bd146ac92152134dc627eb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.3.2/src/main/fc/runtime_config.h",
+      "file": "4.3.2-src-main-fc-runtime_config.h",
+      "sha256": "88d791a09b21c2650ce0e56a67530a209bbbdb7eab1e7154a3777b2e7af37fbb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.3.2/src/main/msp/msp_protocol.h",
+      "file": "4.3.2-src-main-msp-msp_protocol.h",
+      "sha256": "d436afd78658cf7d21b6487fb9331ada0aa9c676b974856167e5eed1bbfa0bc5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.3.2/src/main/msp/msp.c",
+      "file": "4.3.2-src-main-msp-msp.c",
+      "sha256": "232cc678f2d29067bc3fd0aeb8a41c6c407e188b11e0732101232724e430f1bc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.4.3/src/main/fc/runtime_config.c",
+      "file": "4.4.3-src-main-fc-runtime_config.c",
+      "sha256": "dda7bab8e43bed4a8b282e9d68fc7a5c89c3634155bd146ac92152134dc627eb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.4.3/src/main/fc/runtime_config.h",
+      "file": "4.4.3-src-main-fc-runtime_config.h",
+      "sha256": "88d791a09b21c2650ce0e56a67530a209bbbdb7eab1e7154a3777b2e7af37fbb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.4.3/src/main/msp/msp_protocol.h",
+      "file": "4.4.3-src-main-msp-msp_protocol.h",
+      "sha256": "76084c29ba8c467d234e82034a47d9010b57ad1877c944c32e2126d0802d686f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/betaflight/betaflight/4.4.3/src/main/msp/msp.c",
+      "file": "4.4.3-src-main-msp-msp.c",
+      "sha256": "0c6ee55bb60d54273fcc412a48dbf1b6a356c9a4c7d44d2106ae5bdc54dc025d"
+    }
+  ],
+  "originalBytecode": {
+    "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPCFC.luac": "4e566da81c26c2f600759cc40810ff0b511dbd92901d0df2d458e2b7214c9f7b",
+    "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/ASC.luac": "c9a88d29bbadce66038c360c7ceee1326d2d1bdef53e5d09e73b7f67d7aa4490",
+    "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/M.luac": "ee0742ca4f3ff3ca2e323982941194e75eea071ac0cf97b93dc55a931f12148c",
+    "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/QM.luac": "ae9a3ab1b69faceea4937d35386ae2fa6f9382e7bf2850aed6f3ccfb372ca5ea"
+  },
+  "bfFloor": {
+    "apiMajor": 1,
+    "minimumMinor": 44,
+    "message": "BF 4.3+ required",
+    "proof": "Original LIB/MSP/BF/MSPCFC.luac main/0 PCs55\u201370 (source43\u201350); frozen evidence/LIB-MSP-BF-MSPCFC.txt lines104\u2013120"
+  },
+  "olderApiMaps": {
+    "1.44": {
+      "pinnedRelease": "4.3.2",
+      "count": 26,
+      "distinctPublicNames": {
+        "3": "BADRX",
+        "20": "RPMFILTER"
+      }
+    },
+    "1.45": {
+      "pinnedRelease": "4.4.3",
+      "count": 26,
+      "distinctPublicNames": {
+        "3": "BADRX",
+        "20": "RPMFILTER"
+      }
+    }
+  },
+  "implementation": {
+    "file": "sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+    "sha256": "3adbb7aac5423d1daa5de98555431641159c1c5c4e9af286e71006d98926f409",
+    "guard": "Exact API major/minor plus 26 advertised flags; mismatch uses numbered flags; set bits beyond count rejected",
+    "transport": "Current crsf-msp.lua already permits 44..48 for cache/import/apply, so older BF was not globally unsupported"
+  },
+  "tests": {
+    "file": "development/test_arm_status.lua",
+    "sha256": "166973c235f68a784c7d3b7b1e11214ec13aa68edb377d5f62a3d3cca8bce269",
+    "result": "PASS LuaJIT double and stockLua5.3 int32/float32",
+    "everyFlag": 52,
+    "additionalAssertions": 136,
+    "scope": "Live+catalogue, mixed low/high bits, variable extraModeBytes 15, mismatch/unknown/truncation/beyond-count; not RF/hardware"
+  },
+  "reload": {
+    "original": "QM main/5/0 source65 sets G.initDone=nil. M main/2 source238\u2013240 calls the already-loaded G.init; main/1 clears F/D/X and loads RD/RDKEY/RDINP/AI/ML via G.loadE. Root M/G.init/G.run closures are not reloaded.",
+    "aerodeck": "Quick Reload reinitializes local session/settings; cached factory closures may persist. Close/reopen after source edits.",
+    "classification": "No root-source hot reload capability proven in original; do not promise one."
+  }
+}

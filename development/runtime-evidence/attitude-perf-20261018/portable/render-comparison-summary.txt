@@ -1,0 +1,30 @@
+PASS: exact LCD command parity for the render candidate and the integrated source.
+
+Pinned baseline:1a14ed90fbf7e34da903cb4da065f80d3753a028ac4caf32664c42f9eb2d495e
+Candidate only:de1773d85c57348fa5054f6e1315c91f19167f529582f4baac236fe4cc724f01
+Integrated:816d3e32658d15bafec95de25cd5c836213bd5d5ca14ff695b857f4267cec10a
+
+LuaJIT:1,972,646 comparisons/assertions pass.
+Stock Lua5.3 int32/float32:1,972,566 comparisons/assertions pass.
+Counts differ because native single precision changes accepted baseline commands; each VM compares baseline and candidate within its own numeric model.
+
+Candidate alone native sizeText calls over150 frames:
+  Stable14,400 ->5,700(-60.4%).
+  Moving13,962 ->6,037(-56.8%).
+Parent integration adds a128-entry textWidth cache:
+  Stable14,400 ->0.
+  Moving13,962 ->804(-94.2%).
+These are mock native API counts, not physical FPS or native callback budget measurements.
+
+Meaningful existing suites, remapped to integrated source without production edits:
+  test_flight_layout.lua:1,682 assertions PASS under both VMs.
+  test_rendering.lua:PASS under both VMs.
+  test_pitch_direction.lua:54 assertions PASS under both VMs.
+
+Reproduce comparison from any directory:
+  luajit <evidence-directory>/test-render-candidate.lua <evidence-directory> <evidence-directory>/render-integrated.lua
+The two full source snapshots and the test are self-contained. No simulator assets are required for this command.
+Omit the final argument to compare the32-cell cache candidate alone.
+Use the stock int32/float32 interpreter with the same arguments for the target numeric model.
+
+Changes preserve all pixel commands and values: bounded per-position last-fit cache; two allocation-free numeric loops; one reused identical horizon origin. The cache includes text/unit/font/geometry/center/LCD/metric-function invalidation. Current colors are drawn live. No telemetry/source/currentness checks or transport code were changed by this candidate.

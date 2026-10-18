@@ -2,7 +2,7 @@
   "sourceSetSha256": "a45c9a6786058247d00d70ced4d39bbedcba7e3342f5c1d8664a8d0176ec76e6",
   "homeUnchanged": true,
   "homeSha256": "aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6",
-  "newPngCount": 19,
+  "newPngCount": 20,
   "sourceIconCount": 14,
   "exports": [
     {
@@ -140,6 +140,19 @@
       "sourceMaster": "development/icons/home-outlined-30.svg",
       "sourceMasterSha256": "c9a764ee7a83cbd23e1385ebd098b4019cb7a282a041cb0a2e815d1d8d5ec171",
       "modification": "Native18px RGB raster export from the existing licensed Home SVG; original30px runtime Home remains unchanged."
+    },
+    {
+      "file": "gpp_bad.png",
+      "virtualSize": 30,
+      "width": 30,
+      "height": 30,
+      "mode": "RGB",
+      "sha256": "798ff1c279b654aaac9ac96a064d5cc1804333b6064dd52c5cc7d1abbf4d7c39",
+      "sourceMaster": "development/icons/material/masters/gpp_bad.svg",
+      "sourceMasterSha256": "20e9f7e5eb6a9b531199c24da64dce30b635cd473da8e99fa00fc0e107f66620",
+      "method": "Direct rsvg-convert rasterization from approved master, alpha flattened onto RGB white; no raster resize.",
+      "renderer": "rsvg-convert version 2.61.0",
+      "pillowVersion": "12.3.0"
     }
   ],
   "licenseSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
@@ -155,5 +168,6 @@
   "sourceSetHashMethod": "SHA256 of compact UTF-8 JSON list sorted by name, records {name,originalSha256,masterSha256}, sort_keys=True, separators=(comma,colon)",
   "currentBuild": "FLIGHT-FLAT-20261016",
   "assetPreparationNote": "satellite_alt-18.png added for GPS satellite count; existing battery_full-18.png reused for pack voltage. No Lua change in this preparation.",
-  "currentUpdate": "Flat Flight uses a new18px Home export for local-home distance. Existing30px Home and all prior icon masks retain their bytes."
+  "currentUpdate": "Adds a native 30px ARM INFO shield from the existing approved gpp_bad master, plus its native 50px 800x480 variant. Prior masks, including both speed variants, keep their original bytes.",
+  "currentAssetUpdateBuild": "ARM-TOOLBAR-20261018"
 }

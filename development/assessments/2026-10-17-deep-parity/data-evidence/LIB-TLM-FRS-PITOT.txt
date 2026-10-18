@@ -1,0 +1,42 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/PITOT.luac
+
+FUNCTION main params 0 vararg 1 stack 9 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/PITOT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 20), ('F', 1, 20), ('D', 1, 20), ('X', 1, 20), ('add', 1, 20), ('sensors', 4, 20)]
+K0 'S'
+K1 'SPD_AIR'
+K2 None
+K3 'table'
+K4 'insert'
+K5 'sName'
+K6 'pName'
+K7 'ASpd'
+K8 'sLabel'
+K9 'Air Speed'
+K10 'dUnit'
+K11 'KNOT'
+K12 'dDec'
+K13 0
+K14 'sMin'
+K15 'sMax'
+K16 999
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('SPD_AIR')] = K2(None)
+   4 [  14] NEWTABLE  A=5 B=0 C=0
+   5 [  16] TEST      A=4 B=0 C=0
+   6 [  16] JMP       A=0 ->19
+   7 [  18] GETTABUP  R6 = UP0[K3('table')]
+   8 [  18] GETTABLE  R6 = R6[K4('insert')]
+   9 [  18] MOVE      A=7 B=5 C=0
+  10 [  18] NEWTABLE  A=8 B=0 C=7
+  11 [  18] SETTABLE  R8[K5('sName')] = K1('SPD_AIR')
+  12 [  18] SETTABLE  R8[K6('pName')] = K7('ASpd')
+  13 [  18] SETTABLE  R8[K8('sLabel')] = K9('Air Speed')
+  14 [  18] SETTABLE  R8[K10('dUnit')] = K11('KNOT')
+  15 [  18] SETTABLE  R8[K12('dDec')] = K13(0)
+  16 [  18] SETTABLE  R8[K14('sMin')] = K13(0)
+  17 [  18] SETTABLE  R8[K15('sMax')] = K16(999)
+  18 [  18] CALL      A=6 B=3 C=1
+  19 [  22] RETURN    A=5 B=2 C=0
+  20 [  22] RETURN    A=0 B=1 C=0

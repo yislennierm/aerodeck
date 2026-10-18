@@ -1,0 +1,9 @@
+GPS native verification PASS, scoped to exact final ec0397d8.
+
+The original3f94 Track CPU limit was reproduced with naturally growing history at about50points. First bounded b621 fixed the repeated geodesic cost but delayed path publication severely; rejected. Two-geodesic/sixteen-cached-point scheduling fixes produced whole180point paths.
+
+Final ec0397d8 unmodified app/modules ran under the real20k native widget hook with maximum180point owned history seeded once in development, moving GPS, all fixed-home zoom scales, and SetHome reset. Both cases had0 CPU/script errors,0 blank samples,0 ordinary opaque progress samples;2 explicit SetHome progress samples each. Contact sheets show whole coherent history, native clipping, live marker, immediate old-path removal and a new local home.
+
+Separately146971 naturally grew0to180 in both fixed-home/nohome cases. It is prior-source geometry/growth evidence, not exact-final performance. Final differs only in grant timestamp and immediate home invalidation guards.
+
+EdgeTX3.0 WASM simulator; physical TX16S EdgeTX2.12.4 remains unverified. No fixture or private runtime ships. No forced GC. No radio FPS/superiority claim.

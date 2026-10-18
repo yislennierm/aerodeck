@@ -1,0 +1,56 @@
+AERODECK / TOOLBOX2 REPLACEMENT — IMPLEMENTATION LEDGER
+2026-10-17 | LOCAL DEVELOPMENT | NOT A HARDWARE PARITY CERTIFICATE
+
+Scope
+All substantive Toolbox capabilities remain in scope. Only activation/licence
+mechanisms are excluded. The 350-row assessment.json is a frozen baseline;
+its status values must not be read as the status of the current working tree.
+No deployment or GitHub push is included in this implementation turn.
+
+Implemented components (integration is tracked separately below)
+- Protocol profiles: CRSF/ELRS/Crossfire/Tracer and FrSky BF/INAV, explicit Off,
+  subtype routing, registered source aliases, units and source provenance.
+- One bounded queue owner for CRSF MSP/native TBS replies; S.Port MSP adapter;
+  versioned BF/INAV discovery, status, UID, board and sensor-health parsing.
+- Transactional FC VTX channel/power/PIT/LPD apply, save and verified readback;
+  native TBS hardware maps and later matching report confirmation; per-FC cache
+  with live identity/selected-record revalidation before a cached-table write.
+- Model-filename-owned checked settings and battery files, verified atomic
+  writes/backup recovery and explicit legacy import. Read-only opens do not
+  migrate or overwrite ambiguous legacy files.
+- Shared foreground/background session: current/last-known position, home,
+  timestamps, bounded track, elapsed/native timer and explicit new-flight reset.
+- Raw versus derived battery percentage, direct versus average cell voltage,
+  automatic cell detection, five chemistry/cell/capacity profiles, warning cadence,
+  mute and bounded native sound/haptic queues.
+- Actual native MIN/MAX acquisition, historical/current/missing provenance and
+  sign-reversed native pitch extrema ordering.
+- Complete BF/INAV manual stick references, offline arming catalogues, versioned
+  live flag decoding, beep-code reference/playback and measured scrolling text.
+- Explicit Radio/AERODECK timer ownership with configuration restoration; bounded
+  opt-in RAM error log with explicit verified Save Log and rate limiting.
+- Uniform 480x320/800x480 viewport/touch/font/icon adaptation with the exact
+  480x272 direct rendering path retained.
+- Physical/logical input inventory, inverted identities, candidate-only preview,
+  bounded movement learning and conservative native mode evidence.
+- Navigation utility with full Plus Code encoding, relative home bearing and ETA;
+  official vectors also validated under actual int32/float32 Lua.
+
+Integration still under active work
+Input picker/configuration/indicator presentation; GPS course separate from yaw;
+late FM qualification; independent INAV sensor-health age; navigation code/home
+cue; quick pack selection; final cross-screen layout and lifecycle acceptance.
+These must not be described as complete until their actual-app checks pass.
+
+Evidence policy
+Portable tests exercise actual modules and actual app paths with synthetic radio
+and FC APIs. They are not physical RF throughput or radio FPS measurements.
+Native visual QA uses EdgeTX3.0 TX16S WASM and synthetic data, not target2.12.4
+hardware. Native inputs are hashed separately; fixture prefixes never ship.
+Physical sustained response/memory/SD/quad/write-readback acceptance remains open.
+
+Baseline erratum
+The baseline already labels the capacity-derived percentage Est%. The underlying
+bug was replacing the raw reported Bat% value. Current data retains rawPct,
+estimatedPct and the displayed percentage origin separately. Keep this correction
+alongside the frozen audit rather than rewriting its original evidence.

@@ -1,0 +1,174 @@
+AERODECK REPLACEMENT RC1 — REPLACEMENT-RC1-20261017
+LOCAL RELEASE CANDIDATE, 2026-10-17
+Not installed or hardware-verified. DEPLOYMENT.txt remains the installation record.
+The last file-verified radio build is POWER-LIVE-20261017.
+
+This candidate implements the audited Toolbox workflows in the existing flat
+AERODECK design. Only activation/licence enforcement is omitted; capabilities
+that Toolbox gates behind a key remain part of the required replacement scope.
+The frozen 350-row assessment is preserved. IMPLEMENTATION-STATUS.txt and
+development/implementation-status.json record current evidence and open work;
+counts are not a claim of hardware parity or a completion percentage.
+
+MAIN CHANGES
+- Budgeted production-widget startup: separate load/chunk/init callbacks, 13
+  retained initialization phases and incremental native input discovery/refresh.
+  Source plans, FC client and arming decoder receive their own cold phases.
+  Startup progress is explicit; warm model changes yield before old timer/reset
+  work can reach a new model. Failed background sessions have explicit Update
+  recovery that retains timer-restoration metadata until closure succeeds.
+- Every native widget refresh paints its transient LCD buffer. Slow work uses
+  four bounded phases: first field batch, remaining fields/summary, power policy,
+  then session/publication. Acquisition starts target a 200 ms period. At
+  20 callbacks/s, fields span about 50 ms and publish about 150 ms after the first
+  batch. Displayed values stay intact across repeated cancelled/expired work.
+  Normal callbacks update current pitch/roll. Render Hz targets the tool only.
+  First-sample, heavy explicit actions and exceptional FC/cache work paint opaque
+  progress; ordinary sampling never intentionally skips painting a frame.
+- Slow phases defer to CPU headroom while a complete cached page and fresh
+  attitude continue to paint. Sampling receives transport-free callbacks after
+  400 ms without publication or 200 ms of pending work; normal transport guards
+  apply when it resumes. Modals can progress without drawing the hidden PFD.
+  These thresholds are fairness controls, not data-age or physical-FPS promises.
+  Expired/obsolete work restarts; repeated cancellation preserves the display.
+- Compiled source readers retain the unchanged unit/range normalization oracle.
+  Independent corpora compare 1,912,664 inputs per interpreter; this establishes
+  semantic agreement, not a physical performance advantage.
+- Real FC MSP2 identity/status/UID/board/sensor health over CRSF and FrSky S.Port,
+  shared bounded scheduling, live arming blockers, offline guides and beep examples.
+- Actual BF/INAV VTX reads and explicit guarded configuration transactions, with
+  pending/reported/readback outcomes. BF table cache avoids full rediscovery but
+  selected cached band/power is freshly verified before Apply. Native TBS reports
+  and writes use eight verified hardware maps and independent current/arm guards.
+- Verified BF API 1.44–1.48 named arming flags, with exact count guards and
+  separate older BADRX/RPMFILTER meanings. Original Toolbox requires BF 4.3+.
+- All five stable INAV 8+ releases verified at this snapshot: 8.0.0, 8.0.1, 9.0.0,
+  9.0.1 and 9.1.0. The original Toolbox also rejects INAV 1–7. Future/prerelease
+  layouts are not guessed or silently accepted for writes.
+- Protocol-aware qualified native source bindings, compatible-unit conversions,
+  late-source recovery, explicit None/Off, current/stale/invalid diagnostics and
+  native LIVE/MIN/MAX including raw browsing beyond the fixed telemetry columns.
+- Real battery/cell/remaining-charge policy, five enabled chemistry profiles,
+  explicit Quick Pack proposal/Use, linked threshold edits with full RTN rollback,
+  and independent voltage-range versus remaining-charge indicators.
+- Native transmitter battery range/warning, real hardware/logical input learning
+  and state views, controlled timer ownership, verified model-file-owned settings,
+  explicit legacy import, bounded opt-in logging and retained widget/session
+  state while EdgeTX schedules widget callbacks.
+  Opening a standalone tool pauses widget refresh and resumes it on close.
+  Widget Save Log uses dedicated prepare/promotion callbacks with visible progress;
+  success follows verified persistence and failed writes retain pending events.
+- Genuine GPS current/fix/quality/satellite data where supported, local/FC home
+  distinction, explicit On-arm home capture, track/last-known recovery, relative
+  bearing, ETA and Plus Code. Unsupported HDOP/constellation data is not fabricated.
+
+VISIBLE CONTROLS
+Six stable top sections remain Flight/Data/GPS/Video/Setup/Tools. Short SYS/MDL
+focuses navigation, PAGE cycles sections, rotary focuses visible controls, ENTER
+activates and RTN returns to the origin before exiting. The footer shield opens
+Arm Info even during warnings and preserves a Setup edit on return.
+
+Hold SYS opens all applicable original Quick Actions: Mute/Enable Alerts,
+confirmed Reset Flight Data, Restart MSP, Read VTX Tables and Reload AERODECK.
+Conditional actions follow the configured backend. Read Tables is discovery;
+Apply remains the separate explicit write. Reset native statistics is a visible
+policy option; timer and armed/error guards remain active. Reload reinitializes
+local session/settings; close/reopen after Lua changes to load new source.
+
+Flight's centre selector offers PFD, live Video dashboard and Navigation, with a
+saved default. Compass reference is explicitly COG or Body Yaw; missing selected
+yaw stays unavailable. Minimal/Graduated changes marks without changing native
+attitude sign/acquisition. The full date, About/System, real optional model image,
+readable radio-input states and independent voltage gauge have actual app consumers.
+The wide horizon, priority power/link rails and six-icon navigation are retained.
+
+IMPORTANT IMPLEMENTATION CORRECTIONS
+Actual EdgeTX WASM exposed mixed float/integer equality that stock int4/float4
+Lua did not reproduce. Fractional values and integer validation are now handled
+explicitly: real sub-unit current/voltage/attitude/extrema are retained, fractional
+IDs/enums/wire bytes are rejected, and Plus Codes preserve fractional positions.
+The isolated native utility corpus passed 310 cases; the actual-module numeric
+checker passed 24 cases. These checks use synthetic inputs and are not RF tests.
+Known fix=false no longer becomes current GPS/home data; zero-to-fractional
+motion updates geometry/track correctly. The final source tests also cover real
+Video view-to-wire reads, independent power indicators, date/image/compass/bank
+settings and source-missing behavior.
+
+NATIVE TIMER OWNERSHIP
+RADIO host leaves native timer configuration alone. Explicit AERODECK host uses
+a native ADxxxxxx name lease across independently loaded app/widget instances,
+so a second claim cannot reset an occupied timer. Controlled release restores
+the captured configuration, then its original name; elapsed time is not restored.
+Failures retain the lease and in-memory retry information. An abrupt abort/model
+switch can leave a stale lease whose original configuration snapshot is lost.
+Review/reconfigure the native timer and rename it before reclaiming; removing
+the marker alone cannot reconstruct old mode/start/beep/persistence settings.
+A manual native name change revokes ownership without overwriting user changes.
+
+MIGRATION AND DELIBERATE UI/DEFAULT DIFFERENCES
+Settings are keyed by the model filename, not its editable display name. Import
+Legacy App Settings and Import Legacy Battery in Setup > Application explicitly
+migrate old preferences; old files stay intact. Save Settings and Save Battery
+remain independent. Existing saved values are not silently replaced.
+
+AERODECK keeps flat native graphics and selectable Minimal/Graduated attitude
+marks rather than Toolbox carbon artwork. Its configurable Flight banks and
+dedicated detail pages provide the conditional panel tasks. Shared warning/detail
+routing replaces repeated full battery/link rails on every module. New-model
+battery defaults remain 4.2 V/visual-only; all threshold/alert options are present.
+These are documented design/default choices, not unavailable data/control features.
+
+VALIDATION AND REMAINING ACCEPTANCE
+Named portable behavior suites exercise actual application, adapters, storage,
+protocol and transaction paths with synthetic fixtures. All 48 suites pass on
+both LuaJIT and stock Lua 5.3 int32/float32. The four-phase actual-app scheduler
+has 11,191 passing checks per VM, including repeated revision/age cancellation
+with changed raw/derived data and actual-wire transport fairness. Reports match
+all 48 current test files and 64 runtime code/image hashes:
+  development/test-results-REPLACEMENT-RC1-20261017.json
+  development/test-results-REPLACEMENT-RC1-20261017-float32.json
+Exact-source native records are separate. Native previews run EdgeTX 3.0 TX16S
+WASM; target EdgeTX 2.12.4 hardware is distinct.
+No physical readability, live quad values, RF-write success or sustained hardware
+attitude performance is claimed by this candidate or file-copy verification.
+
+The exact-source clean production widget passes startup and all 13 pages under
+the actual 20,000-instruction hook, with 27 reviewed captures and no fixture
+prefix replacing its native inventory. A populated approximately 203-second
+widget run includes a 170.365-second / 4,500-sample monitor with no blank frames,
+ordinary updating screens or instruction-limit errors. Simulated diagnostics reported
+17.2 draw FPS / 17.2 distinct attitude-value Hz, slow publication 4.1–4.2 Hz,
+1,348.9 KiB current / 1,387.0 KiB peak shared-widget Lua-VM heap use. This
+includes the development fixture and other loaded factories, excludes bitmap
+pixels and does not measure free physical RAM. Automatic GC ran without forced
+collection. PFD callbacks used 80–92% of their Lua instruction allowance;
+an observed prelude peaked at 96%. This is not physical CPU utilization. Full 1,389-byte settings reopen retained
+Pack 5. The accepted native manifest binds the exact source and all cases.
+These synthetic measurements do not establish physical rates, target memory
+limits or performance against Toolbox. Hardware acceptance remains open.
+Universal recovery from arbitrary damaged/missing Lua modules is not established.
+Real radio/quad telemetry and transactions, timer restoration,
+alarms, cold load, sustained attitude/memory response and broader physical radios/
+transports/panels still need acceptance. Unsupported reference producer claims
+(acceleration, CRSF per-cell arrays, flight CSV/use history and persistent GPS
+recovery) remain separately identified; they are not licensing exclusions or
+invented capabilities. See the row-level ledger before claiming replacement complete.
+
+FULL-APP PHYSICAL ACCEPTANCE
+- Compare the latest full app with Toolbox using the same model/RF settings.
+- Verify real power/link/FC/GPS data, nose-up/down and both roll directions.
+- Record launch/2-second/1-minute/10-minute draw FPS, distinct attitude-value Hz
+  and current/observed-peak RAM; confirm no time-dependent attitude slowdown.
+- Check telemetry loss/recovery and compact/fullscreen local-home/timer retention.
+- Check source/profile changes and explicit imports preserve other preferences.
+- Assess the actual display/controls at the reported 30–40 cm viewing distance.
+- With props removed and disarmed, test VTX Apply/readback only if the user
+  chooses a known safe entry. Viewing or favourite selection remains read-only.
+Use the full AERODECK application for these checks; no new isolated attitude test.
+
+INSTALLATION
+Read AERODECK.txt. Match this build's manifest/archive, back up first and merge
+only its runtime SCRIPTS/WIDGETS. Preserve models, radio configuration, preferences,
+backups, Toolbox, logs, caches and unrelated artwork. Clear only backed-up stale
+AERODECK .luac files, safely eject and reopen the app. No deployment is recorded
+by these release notes; historical revision files and DEPLOYMENT.txt are unchanged.

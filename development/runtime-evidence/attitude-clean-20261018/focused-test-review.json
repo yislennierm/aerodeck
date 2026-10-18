@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "sourceSha256": "ee3c98c82e67e30deda80e3d9838ca666d5a112441508fb51d370a0eb4149cd9",
+  "hashes": {
+    "sdcard/SCRIPTS/TOOLS/telem.lua": "ee3c98c82e67e30deda80e3d9838ca666d5a112441508fb51d370a0eb4149cd9",
+    "development/test_flight_layout.lua": "fb3b7fae05b3426d3f0ce1c297e5c28925ff2ee7b5feb4fced6b663f9e9101cf",
+    "development/test_roll_display.lua": "cad99fcf3a385cf21cbf1e3548c7173b2eb603188222687e5321f61439ed3a67",
+    "development/test_dashboard_options.lua": "2658e03b7e26849cbc0f9b5d4d14171f579b2ca28f3e5fa903d529a436a7b533",
+    "development/test_pitch_direction.lua": "5f68ea41db77f492c48d350a18e4cfad6bace95144620965dc6cd1a8802ff438",
+    "development/test_attitude_loop.lua": "e18d3d2c27c7b5d062f4fb9bd7a4e57931876fe56aa6d35bff9a1e13dc2fb5ea",
+    "development/test_rendering.lua": "631eb9a2c21902493e51a3d368925deec7c72e255bac1011d70f6805409da62a",
+    "development/test_widget_budget.lua": "3243afb01917164b77b0e360078b2ff81036fd0062833c6dc5912521397a7cca"
+  },
+  "scope": "Only test_flight_layout.lua, test_roll_display.lua and test_dashboard_options.lua edited; production main unchanged by reviewer.",
+  "coverage": [
+    "No numeric attitude/rung text or P/R/deg/COG/YAW text inside actual primary Flight attitude field",
+    "Every bounded ten-degree rung retained with independently checked native-scale endpoints across45 bank/pitch combinations plus fractional and large poses",
+    "Native horizon datum, fixed aircraft, bank pointer and both roll display polarities retained",
+    "Current/missing/zero and unsupported source handling preserved",
+    "Compass source still changes real numeric heading without silent fallback",
+    "Video mini HUD and its separate numeric Roll readout remain functional",
+    "No warm asset reloads or forced new transport work"
+  ],
+  "limits": [
+    "Portable synthetic checks do not prove physical radio FPS or CPU improvement."
+  ],
+  "results": [
+    {
+      "vm": "LuaJIT",
+      "name": "test_flight_layout",
+      "exit_code": 0,
+      "output": "PASS: 3631 actual Flight checks; rectangular PFD, heading wrap, line-only signed native-scale ladder, no attitude angle text, shared datum, missing/zero/long telemetry, and icon-only stable cache\n"
+    },
+    {
+      "vm": "LuaJIT",
+      "name": "test_roll_display",
+      "exit_code": 0,
+      "output": "PASS: 635 actual-app roll display, sky-pointer/ladder, raw telemetry and per-model persistence checks (synthetic; physical sign acceptance remains open)\n"
+    },
+    {
+      "vm": "LuaJIT",
+      "name": "test_dashboard_options",
+      "exit_code": 0,
+      "output": "PASS: 45 actual dashboard option, bank, date, image and independent power gauge checks\n"
+    },
+    {
+      "vm": "LuaJIT",
+      "name": "test_pitch_direction",
+      "exit_code": 0,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks\n"
+    },
+    {
+      "vm": "LuaJIT",
+      "name": "test_attitude_loop",
+      "exit_code": 0,
+      "output": "PASS:12000 callbacks; positiveIDs never rebound; 199 bounded missing probes; one late0A bind; no warm enumerations/writes; attitude 100.0Hz, draw 25.0Hz (mock clock)\n"
+    },
+    {
+      "vm": "LuaJIT",
+      "name": "test_rendering",
+      "exit_code": 0,
+      "output": "PASS: stable qualified IDs; bounded negative-only retries; once-per-bind numeric units; explicit refresh; no binding artwork I/O\n"
+    },
+    {
+      "vm": "LuaJIT",
+      "name": "test_widget_budget",
+      "exit_code": 0,
+      "output": "PASS: 11318 retained always-draw, atomic snapshots, cadence, attitude, loss, revisions, actions, arming and deferred log checks (synthetic; no physical FPS/CPU claim)\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_flight_layout",
+      "exit_code": 0,
+      "output": "PASS: 3631 actual Flight checks; rectangular PFD, heading wrap, line-only signed native-scale ladder, no attitude angle text, shared datum, missing/zero/long telemetry, and icon-only stable cache\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_roll_display",
+      "exit_code": 0,
+      "output": "PASS: 635 actual-app roll display, sky-pointer/ladder, raw telemetry and per-model persistence checks (synthetic; physical sign acceptance remains open)\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_dashboard_options",
+      "exit_code": 0,
+      "output": "PASS: 45 actual dashboard option, bank, date, image and independent power gauge checks\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_pitch_direction",
+      "exit_code": 0,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_attitude_loop",
+      "exit_code": 0,
+      "output": "PASS:12000 callbacks; positiveIDs never rebound; 199 bounded missing probes; one late0A bind; no warm enumerations/writes; attitude 100.0Hz, draw 25.0Hz (mock clock)\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_rendering",
+      "exit_code": 0,
+      "output": "PASS: stable qualified IDs; bounded negative-only retries; once-per-bind numeric units; explicit refresh; no binding artwork I/O\n"
+    },
+    {
+      "vm": "int32-float32",
+      "name": "test_widget_budget",
+      "exit_code": 0,
+      "output": "PASS: 11318 retained always-draw, atomic snapshots, cadence, attitude, loss, revisions, actions, arming and deferred log checks (synthetic; no physical FPS/CPU claim)\n"
+    }
+  ]
+}

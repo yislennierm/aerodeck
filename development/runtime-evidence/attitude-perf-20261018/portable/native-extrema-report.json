@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T22:59:27.161258+00:00",
+  "sourceSha256": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+  "workspaceOnly": true,
+  "api": {
+    "begin": "begin(fields,mode) -> stable snapshot; captures descriptor values, performs no reads or normalization; sets pending/targetMode/completed/total while leaving completed published values unchanged.",
+    "step": "step(limit=4) -> snapshot,done,processed[,error]; at most min(limit,64) input descriptors/native reads/normalizations per call; invalid limit performs zero work. Final step copies completed values atomically into the same published records/order.",
+    "cancel": "cancel() -> snapshot; stops pending work without clearing published completed values.",
+    "sample": "sample(fields,mode) -> snapshot; synchronous backward-compatible begin+step64.",
+    "resetBindings": "Cancels pending and clears receipt/values in stable published record identities."
+  },
+  "tests": {
+    "originalCompatibility": {
+      "checks": 2056,
+      "LuaJIT": "PASS",
+      "int32Float32": "PASS"
+    },
+    "incremental": {
+      "checks": 315,
+      "LuaJIT": "PASS",
+      "int32Float32": "PASS"
+    }
+  },
+  "memory": "At most64published records and64private work records. Work slots, seen-key map, published records and order are reused across cycles; removed published bindings are pruned. No SD/transport/output/timer calls.",
+  "coverage": [
+    "27field7callback bounded acquisition",
+    "Atomic mode/record/value/order publication",
+    "External descriptor mutation after begin",
+    "Cancel and reset midcycle with zero future reads",
+    "Real0/historical0/unproven0 and third-flag semantics",
+    "Invert-extrema exact IDs and physical/native provenance",
+    "Invalid/fractional/NaN/large step limits",
+    "64field bound and removed-key pruning",
+    "100warm incremental cycles stable output identities",
+    "Stripped native string metatable compatibility"
+  ],
+  "limits": [
+    "Final publication copies at most64 records in one callback; caller must use normal bounded scheduling and obtain actual native budget evidence.",
+    "Published CURRENT/currentness flags describe each field at its most recent bounded acquisition; snapshot pending explicitly exposes a cycle in progress.",
+    "Do not render completed MIN values as MAX: compare snapshot.mode with requested display mode; targetMode is pending intent only.",
+    "Synchronous sample remains available for standalone callers and legacy tests; retained main must call incremental APIs."
+  ]
+}

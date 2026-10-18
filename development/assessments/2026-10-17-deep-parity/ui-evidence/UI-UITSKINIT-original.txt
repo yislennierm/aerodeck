@@ -1,0 +1,62 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UITSKINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/UITSKINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 47), ('F', 1, 47), ('D', 1, 47), ('X', 1, 47), ('(for generator)', 16, 26), ('(for state)', 16, 26), ('(for control)', 16, 26), ('i', 17, 24), ('v', 17, 24), ('(for generator)', 30, 45), ('(for state)', 30, 45), ('(for control)', 30, 45), ('i', 31, 43), ('v', 31, 43)]
+K0 'UI'
+K1 'TASKS_ID'
+K2 'clear'
+K3 '+TASKS_ID'
+K4 'ipairs'
+K5 'TASKS'
+K6 'f'
+K7 'im'
+K8 'w'
+K9 'i'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('UI')]
+   3 [  12] GETTABLE  R5 = R2[K0('UI')]
+   4 [  12] GETTABLE  R5 = R5[K1('TASKS_ID')]
+   5 [  12] TEST      A=5 B=0 C=1
+   6 [  12] JMP       A=0 ->8
+   7 [  12] NEWTABLE  A=5 B=0 C=0
+   8 [  12] SETTABLE  R4[K1('TASKS_ID')] = R5
+   9 [  13] GETTABLE  R4 = R0[K2('clear')]
+  10 [  13] GETTABLE  R5 = R2[K0('UI')]
+  11 [  13] LOADK     R6 = K3 ('+TASKS_ID')
+  12 [  13] CALL      A=4 B=3 C=1
+  13 [  15] GETTABUP  R4 = UP0[K4('ipairs')]
+  14 [  15] GETTABLE  R5 = R2[K0('UI')]
+  15 [  15] GETTABLE  R5 = R5[K5('TASKS')]
+  16 [  15] CALL      A=4 B=2 C=4
+  17 [  15] JMP       A=0 ->25
+  18 [  16] GETTABLE  R9 = R8[K6('f')]
+  19 [  16] TEST      A=9 B=0 C=0
+  20 [  16] JMP       A=0 ->25
+  21 [  17] GETTABLE  R9 = R2[K0('UI')]
+  22 [  17] GETTABLE  R9 = R9[K1('TASKS_ID')]
+  23 [  17] GETTABLE  R10 = R8[K6('f')]
+  24 [  17] SETTABLE  R9[R10] = R8
+  25 [  15] TFORCALL  A=4 B=0 C=2
+  26 [  15] TFORLOOP  A=6 ->18
+  27 [  22] GETTABUP  R4 = UP0[K4('ipairs')]
+  28 [  22] GETTABLE  R5 = R2[K0('UI')]
+  29 [  22] GETTABLE  R5 = R5[K5('TASKS')]
+  30 [  22] CALL      A=4 B=2 C=4
+  31 [  22] JMP       A=0 ->44
+  32 [  23] GETTABLE  R9 = R8[K7('im')]
+  33 [  23] TEST      A=9 B=0 C=0
+  34 [  23] JMP       A=0 ->38
+  35 [  24] GETTABLE  R9 = R8[K7('im')]
+  36 [  24] GETTABLE  R10 = R8[K8('w')]
+  37 [  24] CALL      A=9 B=2 C=1
+  38 [  26] GETTABLE  R9 = R8[K9('i')]
+  39 [  26] TEST      A=9 B=0 C=0
+  40 [  26] JMP       A=0 ->44
+  41 [  26] GETTABLE  R9 = R8[K9('i')]
+  42 [  26] GETTABLE  R10 = R8[K8('w')]
+  43 [  26] CALL      A=9 B=2 C=1
+  44 [  22] TFORCALL  A=4 B=0 C=2
+  45 [  22] TFORLOOP  A=6 ->32
+  46 [  29] RETURN    A=0 B=1 C=0
+  47 [  29] RETURN    A=0 B=1 C=0

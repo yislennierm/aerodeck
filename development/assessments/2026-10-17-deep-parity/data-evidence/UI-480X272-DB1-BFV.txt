@@ -1,0 +1,513 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/BFV.luac
+
+FUNCTION main params 0 vararg 1 stack 15 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/480X272/DB1/BFV.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 85), ('F', 1, 85), ('D', 1, 85), ('X', 1, 85), ('T', 1, 85), ('bF', 11, 85), ('(for index)', 24, 79), ('(for limit)', 24, 79), ('(for step)', 24, 79), ('i', 25, 78), ('icfg', 27, 78), ('favID', 30, 78)]
+K0 'battType'
+K1 'LiPo'
+K2 'LiIon'
+K3 'split'
+K4 'CFGSTR'
+K5 'BTF'
+K6 '|'
+K7 'favs'
+K8 0
+K9 'type'
+K10 99
+K11 's'
+K12 'capa'
+K13 'id'
+K14 'selN'
+K15 1
+K16 5
+K17 3
+K18 2
+K19 'tonumber'
+K20 'bt'
+K21 'S'
+K22 'BT_FAV_SEL'
+K23 'e'
+K24 'd'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] NEWTABLE  A=5 B=2 C=0
+   3 [  12] LOADK     R6 = K1 ('LiPo')
+   4 [  12] LOADK     R7 = K2 ('LiIon')
+   5 [  12] SETLIST   A=5 B=2 C=1
+   6 [  12] SETTABLE  R4[K0('battType')] = R5
+   7 [  14] GETTABLE  R5 = R0[K3('split')]
+   8 [  14] GETTABLE  R6 = R2[K4('CFGSTR')]
+   9 [  14] GETTABLE  R6 = R6[K5('BTF')]
+  10 [  14] LOADK     R7 = K6 ('|')
+  11 [  14] CALL      A=5 B=3 C=2
+  12 [  16] NEWTABLE  A=6 B=0 C=0
+  13 [  16] SETTABLE  R4[K7('favs')] = R6
+  14 [  17] GETTABLE  R6 = R4[K7('favs')]
+  15 [  17] NEWTABLE  A=7 B=0 C=4
+  16 [  17] SETTABLE  R7[K9('type')] = K10(99)
+  17 [  17] SETTABLE  R7[K11('s')] = K8(0)
+  18 [  17] SETTABLE  R7[K12('capa')] = K8(0)
+  19 [  17] SETTABLE  R7[K13('id')] = K8(0)
+  20 [  17] SETTABLE  R6[K8(0)] = R7
+  21 [  18] SETTABLE  R4[K14('selN')] = K8(0)
+  22 [  19] LOADK     R6 = K15 (1)
+  23 [  19] LOADK     R7 = K16 (5)
+  24 [  19] LOADK     R8 = K15 (1)
+  25 [  19] FORPREP   A=6 ->79
+  26 [  20] MUL       A=10 B=9 C=273
+  27 [  20] SUB       A=10 B=10 C=274
+  28 [  21] GETTABUP  R11 = UP0[K19('tonumber')]
+  29 [  21] GETTABLE  R12 = R5[R10]
+  30 [  21] CALL      A=11 B=2 C=2
+  31 [  22] TEST      A=11 B=0 C=0
+  32 [  22] JMP       A=0 ->79
+  33 [  22] LT        A=0 K8(0), R11; skip-next if condition != A
+  34 [  22] JMP       A=0 ->79
+  35 [  23] GETTABLE  R12 = R4[K7('favs')]
+  36 [  23] GETTABLE  R13 = R4[K7('favs')]
+  37 [  23] LEN       A=13 B=13 C=0
+  38 [  23] ADD       A=13 B=13 C=271
+  39 [  23] NEWTABLE  A=14 B=0 C=0
+  40 [  23] SETTABLE  R12[R13] = R14
+  41 [  24] GETTABLE  R12 = R4[K7('favs')]
+  42 [  24] GETTABLE  R13 = R4[K7('favs')]
+  43 [  24] LEN       A=13 B=13 C=0
+  44 [  24] GETTABLE  R12 = R12[R13]
+  45 [  24] GETTABUP  R13 = UP0[K19('tonumber')]
+  46 [  24] GETTABLE  R14 = R5[R10]
+  47 [  24] CALL      A=13 B=2 C=2
+  48 [  24] SETTABLE  R12[K20('bt')] = R13
+  49 [  25] GETTABLE  R12 = R4[K7('favs')]
+  50 [  25] GETTABLE  R13 = R4[K7('favs')]
+  51 [  25] LEN       A=13 B=13 C=0
+  52 [  25] GETTABLE  R12 = R12[R13]
+  53 [  25] GETTABUP  R13 = UP0[K19('tonumber')]
+  54 [  25] ADD       A=14 B=10 C=271
+  55 [  25] GETTABLE  R14 = R5[R14]
+  56 [  25] CALL      A=13 B=2 C=2
+  57 [  25] SETTABLE  R12[K11('s')] = R13
+  58 [  26] GETTABLE  R12 = R4[K7('favs')]
+  59 [  26] GETTABLE  R13 = R4[K7('favs')]
+  60 [  26] LEN       A=13 B=13 C=0
+  61 [  26] GETTABLE  R12 = R12[R13]
+  62 [  26] GETTABUP  R13 = UP0[K19('tonumber')]
+  63 [  26] ADD       A=14 B=10 C=274
+  64 [  26] GETTABLE  R14 = R5[R14]
+  65 [  26] CALL      A=13 B=2 C=2
+  66 [  26] SETTABLE  R12[K12('capa')] = R13
+  67 [  27] GETTABLE  R12 = R4[K7('favs')]
+  68 [  27] GETTABLE  R13 = R4[K7('favs')]
+  69 [  27] LEN       A=13 B=13 C=0
+  70 [  27] GETTABLE  R12 = R12[R13]
+  71 [  27] SETTABLE  R12[K13('id')] = R9
+  72 [  29] GETTABLE  R12 = R2[K21('S')]
+  73 [  29] GETTABLE  R12 = R12[K22('BT_FAV_SEL')]
+  74 [  29] EQ        A=0 R9, R12; skip-next if condition != A
+  75 [  29] JMP       A=0 ->79
+  76 [  31] GETTABLE  R12 = R4[K7('favs')]
+  77 [  31] LEN       A=12 B=12 C=0
+  78 [  31] SETTABLE  R4[K14('selN')] = R12
+  79 [  19] FORLOOP   A=6 ->26
+  80 [  62] CLOSURE   R6 = proto[0]
+  81 [  62] SETTABLE  R4[K23('e')] = R6
+  82 [ 127] CLOSURE   R6 = proto[1]
+  83 [ 127] SETTABLE  R4[K24('d')] = R6
+  84 [ 129] RETURN    A=0 B=1 C=0
+  85 [ 129] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 6 lines 41 62 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4)), ('G', (1, 0))]
+LOCALS []
+K0 'evt'
+K1 'K'
+K2 'EN'
+K3 'S'
+K4 'BT_FAV_SEL'
+K5 'favs'
+K6 'selN'
+K7 'id'
+K8 'BT_FAV_CELLS'
+K9 0
+K10 's'
+K11 'BT_FAV_CAPA'
+K12 'capa'
+K13 'loadE'
+K14 'PLIBCFG'
+K15 'CFGUPD'
+K16 'BTFS'
+K17 'RT'
+K18 'next'
+K19 1
+K20 'LT'
+   1 [  43] GETTABUP  R0 = UP0[K0('evt')]
+   2 [  43] GETTABUP  R1 = UP0[K1('K')]
+   3 [  43] GETTABLE  R1 = R1[K2('EN')]
+   4 [  43] EQ        A=0 R0, R1; skip-next if condition != A
+   5 [  43] JMP       A=0 ->45
+   6 [  44] GETTABUP  R0 = UP0[K3('S')]
+   7 [  44] GETTABUP  R1 = UP1[K5('favs')]
+   8 [  44] GETTABUP  R2 = UP1[K6('selN')]
+   9 [  44] GETTABLE  R1 = R1[R2]
+  10 [  44] GETTABLE  R1 = R1[K7('id')]
+  11 [  44] SETTABLE  R0[K4('BT_FAV_SEL')] = R1
+  12 [  45] GETTABUP  R0 = UP0[K3('S')]
+  13 [  45] GETTABUP  R1 = UP1[K6('selN')]
+  14 [  45] EQ        A=0 R1, K9(0); skip-next if condition != A
+  15 [  45] JMP       A=0 ->19
+  16 [  45] LOADK     R1 = K9 (0)
+  17 [  45] TEST      A=1 B=0 C=1
+  18 [  45] JMP       A=0 ->23
+  19 [  45] GETTABUP  R1 = UP1[K5('favs')]
+  20 [  45] GETTABUP  R2 = UP1[K6('selN')]
+  21 [  45] GETTABLE  R1 = R1[R2]
+  22 [  45] GETTABLE  R1 = R1[K10('s')]
+  23 [  45] SETTABLE  R0[K8('BT_FAV_CELLS')] = R1
+  24 [  46] GETTABUP  R0 = UP0[K3('S')]
+  25 [  46] GETTABUP  R1 = UP1[K6('selN')]
+  26 [  46] EQ        A=0 R1, K9(0); skip-next if condition != A
+  27 [  46] JMP       A=0 ->31
+  28 [  46] LOADK     R1 = K9 (0)
+  29 [  46] TEST      A=1 B=0 C=1
+  30 [  46] JMP       A=0 ->35
+  31 [  46] GETTABUP  R1 = UP1[K5('favs')]
+  32 [  46] GETTABUP  R2 = UP1[K6('selN')]
+  33 [  46] GETTABLE  R1 = R1[R2]
+  34 [  46] GETTABLE  R1 = R1[K12('capa')]
+  35 [  46] SETTABLE  R0[K11('BT_FAV_CAPA')] = R1
+  36 [  47] GETTABUP  R0 = UP2[K13('loadE')]
+  37 [  47] GETTABUP  R1 = UP2[K14('PLIBCFG')]
+  38 [  47] LOADK     R2 = K15 ('CFGUPD')
+  39 [  47] CONCAT    A=1 B=1 C=2
+  40 [  47] LOADK     R2 = K16 ('BTFS')
+  41 [  47] CALL      A=0 B=3 C=1
+  42 [  48] LOADBOOL  A=0 B=1 C=0
+  43 [  48] RETURN    A=0 B=2 C=0
+  44 [  48] JMP       A=0 ->80
+  45 [  50] GETTABUP  R0 = UP0[K0('evt')]
+  46 [  50] GETTABUP  R1 = UP0[K1('K')]
+  47 [  50] GETTABLE  R1 = R1[K17('RT')]
+  48 [  50] EQ        A=0 R0, R1; skip-next if condition != A
+  49 [  50] JMP       A=0 ->63
+  50 [  51] GETTABUP  R0 = UP2[K18('next')]
+  51 [  51] GETTABUP  R1 = UP1[K6('selN')]
+  52 [  51] ADD       A=1 B=1 C=275
+  53 [  51] LOADK     R2 = K9 (0)
+  54 [  51] GETTABUP  R3 = UP1[K5('favs')]
+  55 [  51] LEN       A=3 B=3 C=0
+  56 [  51] LOADBOOL  A=4 B=1 C=0
+  57 [  51] LOADBOOL  A=5 B=1 C=0
+  58 [  51] CALL      A=0 B=6 C=2
+  59 [  51] SETTABUP  UP1[K6('selN')] = R0
+  60 [  53] LOADBOOL  A=0 B=1 C=0
+  61 [  53] RETURN    A=0 B=2 C=0
+  62 [  53] JMP       A=0 ->80
+  63 [  55] GETTABUP  R0 = UP0[K0('evt')]
+  64 [  55] GETTABUP  R1 = UP0[K1('K')]
+  65 [  55] GETTABLE  R1 = R1[K20('LT')]
+  66 [  55] EQ        A=0 R0, R1; skip-next if condition != A
+  67 [  55] JMP       A=0 ->80
+  68 [  56] GETTABUP  R0 = UP2[K18('next')]
+  69 [  56] GETTABUP  R1 = UP1[K6('selN')]
+  70 [  56] SUB       A=1 B=1 C=275
+  71 [  56] LOADK     R2 = K9 (0)
+  72 [  56] GETTABUP  R3 = UP1[K5('favs')]
+  73 [  56] LEN       A=3 B=3 C=0
+  74 [  56] LOADBOOL  A=4 B=1 C=0
+  75 [  56] LOADBOOL  A=5 B=1 C=0
+  76 [  56] CALL      A=0 B=6 C=2
+  77 [  56] SETTABUP  UP1[K6('selN')] = R0
+  78 [  58] LOADBOOL  A=0 B=1 C=0
+  79 [  58] RETURN    A=0 B=2 C=0
+  80 [  62] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 1 vararg 0 stack 25 lines 64 127 source None
+UPVALUES [('X', (1, 3)), ('D', (1, 2)), ('T', (1, 4)), ('_ENV', (0, 0))]
+LOCALS [('w', 0, 237), ('xo', 1, 237), ('yo', 1, 237), ('bw', 3, 237), ('bh', 3, 237), ('(for index)', 16, 235), ('(for limit)', 16, 235), ('(for step)', 16, 235), ('i', 17, 234), ('favID', 40, 234), ('cBkg', 57, 234), ('cFrm', 74, 234), ('cTxt', 91, 234), ('cLbl', 108, 234), ('battType', 158, 217), ('battCapa', 161, 217), ('unit', 162, 217), ('capaVal', 165, 217)]
+K0 96
+K1 32
+K2 'TX'
+K3 'xc'
+K4 'yt'
+K5 5
+K6 'Battery Pack connected'
+K7 'FONT_S'
+K8 'TEXT_CENTER'
+K9 'C'
+K10 'MD_L'
+K11 0
+K12 1
+K13 'xl'
+K14 3
+K15 8
+K16 114
+K17 29
+K18 37
+K19 'favs'
+K20 'id'
+K21 'selN'
+K22 'MD_V'
+K23 'S'
+K24 'BT_FAV_SEL'
+K25 'MD_B'
+K26 'MD_L2'
+K27 'RCF'
+K28 'RC'
+K29 6
+K30 4
+K31 20
+K32 'battType'
+K33 'bt'
+K34 'capa'
+K35 'mAh'
+K36 'tonumber'
+K37 999
+K38 'string'
+K39 'format'
+K40 '%.3f'
+K41 1000
+K42 'TEXT_LEFT'
+K43 61
+K44 's'
+K45 'TEXT_RIGHT'
+K46 64
+K47 15
+K48 48
+K49 'config'
+K50 14
+K51 'auto sense'
+   1 [  67] LOADNIL   A=1 B=1 C=0
+   2 [  68] LOADK     R3 = K0 (96)
+   3 [  68] LOADK     R4 = K1 (32)
+   4 [  71] GETTABUP  R5 = UP0[K2('TX')]
+   5 [  71] GETTABLE  R6 = R0[K3('xc')]
+   6 [  71] GETTABLE  R7 = R0[K4('yt')]
+   7 [  71] ADD       A=7 B=7 C=261
+   8 [  71] LOADK     R8 = K6 ('Battery Pack connected')
+   9 [  71] GETTABUP  R9 = UP0[K7('FONT_S')]
+  10 [  71] GETTABUP  R10 = UP0[K8('TEXT_CENTER')]
+  11 [  71] GETTABUP  R11 = UP1[K9('C')]
+  12 [  71] GETTABLE  R11 = R11[K10('MD_L')]
+  13 [  71] CALL      A=5 B=7 C=1
+  14 [  74] LOADK     R5 = K11 (0)
+  15 [  74] LOADK     R6 = K5 (5)
+  16 [  74] LOADK     R7 = K12 (1)
+  17 [  74] FORPREP   A=5 ->235
+  18 [  77] GETTABLE  R9 = R0[K13('xl')]
+  19 [  77] LT        A=0 R8, K14(3); skip-next if condition != A
+  20 [  77] JMP       A=0 ->24
+  21 [  77] LOADK     R10 = K15 (8)
+  22 [  77] TEST      A=10 B=0 C=1
+  23 [  77] JMP       A=0 ->25
+  24 [  77] LOADK     R10 = K16 (114)
+  25 [  77] ADD       A=1 B=9 C=10
+  26 [  78] GETTABLE  R9 = R0[K4('yt')]
+  27 [  78] ADD       A=9 B=9 C=273
+  28 [  78] MOD       A=10 B=8 C=270
+  29 [  78] MUL       A=10 B=10 C=274
+  30 [  78] ADD       A=2 B=9 C=10
+  31 [  80] GETTABUP  R9 = UP2[K19('favs')]
+  32 [  80] GETTABLE  R9 = R9[R8]
+  33 [  80] TEST      A=9 B=0 C=0
+  34 [  80] JMP       A=0 ->40
+  35 [  80] GETTABUP  R9 = UP2[K19('favs')]
+  36 [  80] GETTABLE  R9 = R9[R8]
+  37 [  80] GETTABLE  R9 = R9[K20('id')]
+  38 [  80] TEST      A=9 B=0 C=1
+  39 [  80] JMP       A=0 ->41
+  40 [  80] LOADK     R9 = K11 (0)
+  41 [  81] GETTABUP  R10 = UP2[K21('selN')]
+  42 [  81] EQ        A=0 R10, R8; skip-next if condition != A
+  43 [  81] JMP       A=0 ->48
+  44 [  81] GETTABUP  R10 = UP1[K9('C')]
+  45 [  81] GETTABLE  R10 = R10[K22('MD_V')]
+  46 [  81] TEST      A=10 B=0 C=1
+  47 [  81] JMP       A=0 ->58
+  48 [  81] GETTABUP  R10 = UP1[K23('S')]
+  49 [  81] GETTABLE  R10 = R10[K24('BT_FAV_SEL')]
+  50 [  81] EQ        A=0 R10, R9; skip-next if condition != A
+  51 [  81] JMP       A=0 ->56
+  52 [  81] GETTABUP  R10 = UP1[K9('C')]
+  53 [  81] GETTABLE  R10 = R10[K10('MD_L')]
+  54 [  81] TEST      A=10 B=0 C=1
+  55 [  81] JMP       A=0 ->58
+  56 [  81] GETTABUP  R10 = UP1[K9('C')]
+  57 [  81] GETTABLE  R10 = R10[K25('MD_B')]
+  58 [  82] GETTABUP  R11 = UP2[K21('selN')]
+  59 [  82] EQ        A=0 R11, R8; skip-next if condition != A
+  60 [  82] JMP       A=0 ->65
+  61 [  82] GETTABUP  R11 = UP1[K9('C')]
+  62 [  82] GETTABLE  R11 = R11[K22('MD_V')]
+  63 [  82] TEST      A=11 B=0 C=1
+  64 [  82] JMP       A=0 ->75
+  65 [  82] GETTABUP  R11 = UP1[K23('S')]
+  66 [  82] GETTABLE  R11 = R11[K24('BT_FAV_SEL')]
+  67 [  82] EQ        A=0 R11, R9; skip-next if condition != A
+  68 [  82] JMP       A=0 ->73
+  69 [  82] GETTABUP  R11 = UP1[K9('C')]
+  70 [  82] GETTABLE  R11 = R11[K10('MD_L')]
+  71 [  82] TEST      A=11 B=0 C=1
+  72 [  82] JMP       A=0 ->75
+  73 [  82] GETTABUP  R11 = UP1[K9('C')]
+  74 [  82] GETTABLE  R11 = R11[K26('MD_L2')]
+  75 [  83] GETTABUP  R12 = UP2[K21('selN')]
+  76 [  83] EQ        A=0 R12, R8; skip-next if condition != A
+  77 [  83] JMP       A=0 ->82
+  78 [  83] GETTABUP  R12 = UP1[K9('C')]
+  79 [  83] GETTABLE  R12 = R12[K25('MD_B')]
+  80 [  83] TEST      A=12 B=0 C=1
+  81 [  83] JMP       A=0 ->92
+  82 [  83] GETTABUP  R12 = UP1[K23('S')]
+  83 [  83] GETTABLE  R12 = R12[K24('BT_FAV_SEL')]
+  84 [  83] EQ        A=0 R12, R9; skip-next if condition != A
+  85 [  83] JMP       A=0 ->90
+  86 [  83] GETTABUP  R12 = UP1[K9('C')]
+  87 [  83] GETTABLE  R12 = R12[K25('MD_B')]
+  88 [  83] TEST      A=12 B=0 C=1
+  89 [  83] JMP       A=0 ->92
+  90 [  83] GETTABUP  R12 = UP1[K9('C')]
+  91 [  83] GETTABLE  R12 = R12[K22('MD_V')]
+  92 [  84] GETTABUP  R13 = UP2[K21('selN')]
+  93 [  84] EQ        A=0 R13, R8; skip-next if condition != A
+  94 [  84] JMP       A=0 ->99
+  95 [  84] GETTABUP  R13 = UP1[K9('C')]
+  96 [  84] GETTABLE  R13 = R13[K25('MD_B')]
+  97 [  84] TEST      A=13 B=0 C=1
+  98 [  84] JMP       A=0 ->109
+  99 [  84] GETTABUP  R13 = UP1[K23('S')]
+ 100 [  84] GETTABLE  R13 = R13[K24('BT_FAV_SEL')]
+ 101 [  84] EQ        A=0 R13, R9; skip-next if condition != A
+ 102 [  84] JMP       A=0 ->107
+ 103 [  84] GETTABUP  R13 = UP1[K9('C')]
+ 104 [  84] GETTABLE  R13 = R13[K25('MD_B')]
+ 105 [  84] TEST      A=13 B=0 C=1
+ 106 [  84] JMP       A=0 ->109
+ 107 [  84] GETTABUP  R13 = UP1[K9('C')]
+ 108 [  84] GETTABLE  R13 = R13[K10('MD_L')]
+ 109 [  89] GETTABUP  R14 = UP2[K19('favs')]
+ 110 [  89] LEN       A=14 B=14 C=0
+ 111 [  89] LE        A=0 R8, R14; skip-next if condition != A
+ 112 [  89] JMP       A=0 ->235
+ 113 [  90] GETTABUP  R14 = UP0[K27('RCF')]
+ 114 [  90] MOVE      A=15 B=1 C=0
+ 115 [  90] MOVE      A=16 B=2 C=0
+ 116 [  90] MOVE      A=17 B=3 C=0
+ 117 [  90] MOVE      A=18 B=4 C=0
+ 118 [  90] MOVE      A=19 B=10 C=0
+ 119 [  90] CALL      A=14 B=6 C=1
+ 120 [  91] GETTABUP  R14 = UP0[K28('RC')]
+ 121 [  91] MOVE      A=15 B=1 C=0
+ 122 [  91] MOVE      A=16 B=2 C=0
+ 123 [  91] MOVE      A=17 B=3 C=0
+ 124 [  91] MOVE      A=18 B=4 C=0
+ 125 [  91] MOVE      A=19 B=11 C=0
+ 126 [  91] CALL      A=14 B=6 C=1
+ 127 [  92] GETTABUP  R14 = UP0[K27('RCF')]
+ 128 [  92] ADD       A=15 B=1 C=3
+ 129 [  92] ADD       A=16 B=2 C=285
+ 130 [  92] LOADK     R17 = K30 (4)
+ 131 [  92] LOADK     R18 = K31 (20)
+ 132 [  92] MOVE      A=19 B=11 C=0
+ 133 [  92] CALL      A=14 B=6 C=1
+ 134 [  93] GETTABUP  R14 = UP2[K21('selN')]
+ 135 [  93] EQ        A=0 R14, R8; skip-next if condition != A
+ 136 [  93] JMP       A=0 ->152
+ 137 [  94] GETTABUP  R14 = UP0[K28('RC')]
+ 138 [  94] MOVE      A=15 B=1 C=0
+ 139 [  94] MOVE      A=16 B=2 C=0
+ 140 [  94] MOVE      A=17 B=3 C=0
+ 141 [  94] MOVE      A=18 B=4 C=0
+ 142 [  94] MOVE      A=19 B=10 C=0
+ 143 [  94] CALL      A=14 B=6 C=1
+ 144 [  95] GETTABUP  R14 = UP0[K27('RCF')]
+ 145 [  95] ADD       A=15 B=1 C=3
+ 146 [  95] ADD       A=16 B=2 C=285
+ 147 [  95] LOADK     R17 = K30 (4)
+ 148 [  95] LOADK     R18 = K31 (20)
+ 149 [  95] MOVE      A=19 B=10 C=0
+ 150 [  95] CALL      A=14 B=6 C=1
+ 151 [  95] JMP       A=0 ->152
+ 152 [ 100] LT        A=0 K11(0), R8; skip-next if condition != A
+ 153 [ 100] JMP       A=0 ->219
+ 154 [ 101] GETTABUP  R14 = UP2[K32('battType')]
+ 155 [ 101] GETTABUP  R15 = UP2[K19('favs')]
+ 156 [ 101] GETTABLE  R15 = R15[R8]
+ 157 [ 101] GETTABLE  R15 = R15[K33('bt')]
+ 158 [ 101] GETTABLE  R14 = R14[R15]
+ 159 [ 102] GETTABUP  R15 = UP2[K19('favs')]
+ 160 [ 102] GETTABLE  R15 = R15[R8]
+ 161 [ 102] GETTABLE  R15 = R15[K34('capa')]
+ 162 [ 103] LOADK     R16 = K35 ('mAh')
+ 163 [ 104] GETTABUP  R17 = UP3[K36('tonumber')]
+ 164 [ 104] MOVE      A=18 B=15 C=0
+ 165 [ 104] CALL      A=17 B=2 C=2
+ 166 [ 105] LT        A=0 K11(0), R8; skip-next if condition != A
+ 167 [ 105] JMP       A=0 ->176
+ 168 [ 105] LT        A=0 K37(999), R17; skip-next if condition != A
+ 169 [ 105] JMP       A=0 ->176
+ 170 [ 108] GETTABUP  R18 = UP3[K38('string')]
+ 171 [ 108] GETTABLE  R18 = R18[K39('format')]
+ 172 [ 108] LOADK     R19 = K40 ('%.3f')
+ 173 [ 108] DIV       A=20 B=17 C=297
+ 174 [ 108] CALL      A=18 B=3 C=2
+ 175 [ 108] MOVE      A=15 B=18 C=0
+ 176 [ 112] GETTABUP  R18 = UP0[K2('TX')]
+ 177 [ 112] ADD       A=19 B=1 C=270
+ 178 [ 112] ADD       A=20 B=2 C=268
+ 179 [ 112] MOVE      A=21 B=14 C=0
+ 180 [ 112] GETTABUP  R22 = UP0[K7('FONT_S')]
+ 181 [ 112] GETTABUP  R23 = UP0[K42('TEXT_LEFT')]
+ 182 [ 112] MOVE      A=24 B=12 C=0
+ 183 [ 112] CALL      A=18 B=7 C=1
+ 184 [ 113] GETTABUP  R18 = UP0[K2('TX')]
+ 185 [ 113] ADD       A=19 B=1 C=299
+ 186 [ 113] ADD       A=20 B=2 C=268
+ 187 [ 113] GETTABUP  R21 = UP2[K19('favs')]
+ 188 [ 113] GETTABLE  R21 = R21[R8]
+ 189 [ 113] GETTABLE  R21 = R21[K44('s')]
+ 190 [ 113] GETTABUP  R22 = UP0[K7('FONT_S')]
+ 191 [ 113] GETTABUP  R23 = UP0[K45('TEXT_RIGHT')]
+ 192 [ 113] MOVE      A=24 B=12 C=0
+ 193 [ 113] CALL      A=18 B=7 C=1
+ 194 [ 114] GETTABUP  R18 = UP0[K2('TX')]
+ 195 [ 114] ADD       A=19 B=1 C=302
+ 196 [ 114] ADD       A=20 B=2 C=268
+ 197 [ 114] LOADK     R21 = K23 ('S')
+ 198 [ 114] GETTABUP  R22 = UP0[K7('FONT_S')]
+ 199 [ 114] GETTABUP  R23 = UP0[K42('TEXT_LEFT')]
+ 200 [ 114] MOVE      A=24 B=12 C=0
+ 201 [ 114] CALL      A=18 B=7 C=1
+ 202 [ 115] GETTABUP  R18 = UP0[K2('TX')]
+ 203 [ 115] ADD       A=19 B=1 C=299
+ 204 [ 115] ADD       A=20 B=2 C=303
+ 205 [ 115] MOVE      A=21 B=15 C=0
+ 206 [ 115] GETTABUP  R22 = UP0[K7('FONT_S')]
+ 207 [ 115] GETTABUP  R23 = UP0[K45('TEXT_RIGHT')]
+ 208 [ 115] MOVE      A=24 B=12 C=0
+ 209 [ 115] CALL      A=18 B=7 C=1
+ 210 [ 116] GETTABUP  R18 = UP0[K2('TX')]
+ 211 [ 116] ADD       A=19 B=1 C=302
+ 212 [ 116] ADD       A=20 B=2 C=303
+ 213 [ 116] MOVE      A=21 B=16 C=0
+ 214 [ 116] GETTABUP  R22 = UP0[K7('FONT_S')]
+ 215 [ 116] GETTABUP  R23 = UP0[K42('TEXT_LEFT')]
+ 216 [ 116] MOVE      A=24 B=12 C=0
+ 217 [ 116] CALL      A=18 B=7 C=1
+ 218 [ 116] JMP       A=0 ->235
+ 219 [ 118] GETTABUP  R14 = UP0[K2('TX')]
+ 220 [ 118] ADD       A=15 B=1 C=304
+ 221 [ 118] ADD       A=16 B=2 C=268
+ 222 [ 118] LOADK     R17 = K49 ('config')
+ 223 [ 118] GETTABUP  R18 = UP0[K7('FONT_S')]
+ 224 [ 118] GETTABUP  R19 = UP0[K8('TEXT_CENTER')]
+ 225 [ 118] MOVE      A=20 B=12 C=0
+ 226 [ 118] CALL      A=14 B=7 C=1
+ 227 [ 119] GETTABUP  R14 = UP0[K2('TX')]
+ 228 [ 119] ADD       A=15 B=1 C=304
+ 229 [ 119] ADD       A=16 B=2 C=306
+ 230 [ 119] LOADK     R17 = K51 ('auto sense')
+ 231 [ 119] GETTABUP  R18 = UP0[K7('FONT_S')]
+ 232 [ 119] GETTABUP  R19 = UP0[K8('TEXT_CENTER')]
+ 233 [ 119] MOVE      A=20 B=12 C=0
+ 234 [ 119] CALL      A=14 B=7 C=1
+ 235 [  74] FORLOOP   A=5 ->18
+ 236 [ 125] RETURN    A=0 B=1 C=0
+ 237 [ 127] RETURN    A=0 B=1 C=0

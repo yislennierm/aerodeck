@@ -1,0 +1,215 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/IN/STK.luac
+SHA256: ce68da50e4c6d0c6972633ad514b73fe214fd94d44b71a49cfe7d8166c1cad07
+
+FUNCTION main params 0 vararg 1 stack 33 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FC/IN/STK.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 173), ('F', 1, 173), ('D', 1, 173), ('X', 1, 173)]
+K0 'l'
+K1 'Save settings'
+K2 't'
+K3 -1
+K4 'y'
+K5 'p'
+K6 'r'
+K7 1
+K8 'Set Profile 1'
+K9 0
+K10 'Set Profile 2'
+K11 'Set Profile 3'
+K12 'Set Battery Profile 1'
+K13 'Set Battery Profile 2'
+K14 'Set Battery Profile 3'
+K15 'Calibrate Compass'
+K16 'Calibrate Gyroscope'
+K17 'Calibrate Accelerometer'
+K18 'Trim Accelerometer Left'
+K19 'Trim Accelerometer Right'
+K20 'Trim Accelerometer Forward'
+K21 'Trim Accelerometer Backward'
+K22 'Load waypoint mission'
+K23 'Save waypoint mission'
+K24 'Unload waypoint mission'
+K25 'Increase waypoint mission ID'
+K26 'Decrease waypoint mission ID'
+K27 'Bypass arming checks'
+K28 'INAV OSD Menu Open'
+K29 'INAV OSD Menu Exit'
+K30 'INAV OSD Menu Enter Submenu'
+K31 'INAV OSD Menu Exit Submenu'
+K32 'INAV OSD Menu Previous Option'
+K33 'INAV OSD Menu Next Option'
+K34 'INAV OSD Menu Previous Value'
+K35 'INAV OSD Menu Next Value'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] NEWTABLE  A=4 B=22 C=0
+   3 [  13] NEWTABLE  A=5 B=0 C=5
+   4 [  14] SETTABLE  R5[K0('l')] = K1('Save settings')
+   5 [  14] SETTABLE  R5[K2('t')] = K3(-1)
+   6 [  14] SETTABLE  R5[K4('y')] = K3(-1)
+   7 [  14] SETTABLE  R5[K5('p')] = K3(-1)
+   8 [  14] SETTABLE  R5[K6('r')] = K7(1)
+   9 [  14] NEWTABLE  A=6 B=0 C=5
+  10 [  16] SETTABLE  R6[K0('l')] = K8('Set Profile 1')
+  11 [  16] SETTABLE  R6[K2('t')] = K3(-1)
+  12 [  16] SETTABLE  R6[K4('y')] = K3(-1)
+  13 [  16] SETTABLE  R6[K5('p')] = K9(0)
+  14 [  16] SETTABLE  R6[K6('r')] = K3(-1)
+  15 [  16] NEWTABLE  A=7 B=0 C=5
+  16 [  17] SETTABLE  R7[K0('l')] = K10('Set Profile 2')
+  17 [  17] SETTABLE  R7[K2('t')] = K3(-1)
+  18 [  17] SETTABLE  R7[K4('y')] = K3(-1)
+  19 [  17] SETTABLE  R7[K5('p')] = K7(1)
+  20 [  17] SETTABLE  R7[K6('r')] = K9(0)
+  21 [  17] NEWTABLE  A=8 B=0 C=5
+  22 [  18] SETTABLE  R8[K0('l')] = K11('Set Profile 3')
+  23 [  18] SETTABLE  R8[K2('t')] = K3(-1)
+  24 [  18] SETTABLE  R8[K4('y')] = K3(-1)
+  25 [  18] SETTABLE  R8[K5('p')] = K9(0)
+  26 [  18] SETTABLE  R8[K6('r')] = K7(1)
+  27 [  18] NEWTABLE  A=9 B=0 C=5
+  28 [  20] SETTABLE  R9[K0('l')] = K12('Set Battery Profile 1')
+  29 [  20] SETTABLE  R9[K2('t')] = K7(1)
+  30 [  20] SETTABLE  R9[K4('y')] = K3(-1)
+  31 [  20] SETTABLE  R9[K5('p')] = K9(0)
+  32 [  20] SETTABLE  R9[K6('r')] = K3(-1)
+  33 [  20] NEWTABLE  A=10 B=0 C=5
+  34 [  21] SETTABLE  R10[K0('l')] = K13('Set Battery Profile 2')
+  35 [  21] SETTABLE  R10[K2('t')] = K7(1)
+  36 [  21] SETTABLE  R10[K4('y')] = K3(-1)
+  37 [  21] SETTABLE  R10[K5('p')] = K7(1)
+  38 [  21] SETTABLE  R10[K6('r')] = K9(0)
+  39 [  21] NEWTABLE  A=11 B=0 C=5
+  40 [  22] SETTABLE  R11[K0('l')] = K14('Set Battery Profile 3')
+  41 [  22] SETTABLE  R11[K2('t')] = K7(1)
+  42 [  22] SETTABLE  R11[K4('y')] = K3(-1)
+  43 [  22] SETTABLE  R11[K5('p')] = K9(0)
+  44 [  22] SETTABLE  R11[K6('r')] = K7(1)
+  45 [  22] NEWTABLE  A=12 B=0 C=5
+  46 [  25] SETTABLE  R12[K0('l')] = K15('Calibrate Compass')
+  47 [  25] SETTABLE  R12[K2('t')] = K7(1)
+  48 [  25] SETTABLE  R12[K4('y')] = K7(1)
+  49 [  25] SETTABLE  R12[K5('p')] = K3(-1)
+  50 [  25] SETTABLE  R12[K6('r')] = K9(0)
+  51 [  25] NEWTABLE  A=13 B=0 C=5
+  52 [  26] SETTABLE  R13[K0('l')] = K16('Calibrate Gyroscope')
+  53 [  26] SETTABLE  R13[K2('t')] = K3(-1)
+  54 [  26] SETTABLE  R13[K4('y')] = K3(-1)
+  55 [  26] SETTABLE  R13[K5('p')] = K3(-1)
+  56 [  26] SETTABLE  R13[K6('r')] = K9(0)
+  57 [  26] NEWTABLE  A=14 B=0 C=5
+  58 [  27] SETTABLE  R14[K0('l')] = K17('Calibrate Accelerometer')
+  59 [  27] SETTABLE  R14[K2('t')] = K7(1)
+  60 [  27] SETTABLE  R14[K4('y')] = K3(-1)
+  61 [  27] SETTABLE  R14[K5('p')] = K3(-1)
+  62 [  27] SETTABLE  R14[K6('r')] = K9(0)
+  63 [  27] NEWTABLE  A=15 B=0 C=5
+  64 [  29] SETTABLE  R15[K0('l')] = K18('Trim Accelerometer Left')
+  65 [  29] SETTABLE  R15[K2('t')] = K7(1)
+  66 [  29] SETTABLE  R15[K4('y')] = K9(0)
+  67 [  29] SETTABLE  R15[K5('p')] = K9(0)
+  68 [  29] SETTABLE  R15[K6('r')] = K3(-1)
+  69 [  29] NEWTABLE  A=16 B=0 C=5
+  70 [  30] SETTABLE  R16[K0('l')] = K19('Trim Accelerometer Right')
+  71 [  30] SETTABLE  R16[K2('t')] = K7(1)
+  72 [  30] SETTABLE  R16[K4('y')] = K9(0)
+  73 [  30] SETTABLE  R16[K5('p')] = K9(0)
+  74 [  30] SETTABLE  R16[K6('r')] = K7(1)
+  75 [  30] NEWTABLE  A=17 B=0 C=5
+  76 [  31] SETTABLE  R17[K0('l')] = K20('Trim Accelerometer Forward')
+  77 [  31] SETTABLE  R17[K2('t')] = K7(1)
+  78 [  31] SETTABLE  R17[K4('y')] = K9(0)
+  79 [  31] SETTABLE  R17[K5('p')] = K7(1)
+  80 [  31] SETTABLE  R17[K6('r')] = K9(0)
+  81 [  31] NEWTABLE  A=18 B=0 C=5
+  82 [  32] SETTABLE  R18[K0('l')] = K21('Trim Accelerometer Backward')
+  83 [  32] SETTABLE  R18[K2('t')] = K7(1)
+  84 [  32] SETTABLE  R18[K4('y')] = K9(0)
+  85 [  32] SETTABLE  R18[K5('p')] = K3(-1)
+  86 [  32] SETTABLE  R18[K6('r')] = K9(0)
+  87 [  32] NEWTABLE  A=19 B=0 C=5
+  88 [  34] SETTABLE  R19[K0('l')] = K22('Load waypoint mission')
+  89 [  34] SETTABLE  R19[K2('t')] = K3(-1)
+  90 [  34] SETTABLE  R19[K4('y')] = K9(0)
+  91 [  34] SETTABLE  R19[K5('p')] = K7(1)
+  92 [  34] SETTABLE  R19[K6('r')] = K7(1)
+  93 [  34] NEWTABLE  A=20 B=0 C=5
+  94 [  35] SETTABLE  R20[K0('l')] = K23('Save waypoint mission')
+  95 [  35] SETTABLE  R20[K2('t')] = K3(-1)
+  96 [  35] SETTABLE  R20[K4('y')] = K9(0)
+  97 [  35] SETTABLE  R20[K5('p')] = K3(-1)
+  98 [  35] SETTABLE  R20[K6('r')] = K7(1)
+  99 [  35] NEWTABLE  A=21 B=0 C=5
+ 100 [  36] SETTABLE  R21[K0('l')] = K24('Unload waypoint mission')
+ 101 [  36] SETTABLE  R21[K2('t')] = K3(-1)
+ 102 [  36] SETTABLE  R21[K4('y')] = K9(0)
+ 103 [  36] SETTABLE  R21[K5('p')] = K3(-1)
+ 104 [  36] SETTABLE  R21[K6('r')] = K7(1)
+ 105 [  36] NEWTABLE  A=22 B=0 C=5
+ 106 [  37] SETTABLE  R22[K0('l')] = K25('Increase waypoint mission ID')
+ 107 [  37] SETTABLE  R22[K2('t')] = K9(0)
+ 108 [  37] SETTABLE  R22[K4('y')] = K3(-1)
+ 109 [  37] SETTABLE  R22[K5('p')] = K9(0)
+ 110 [  37] SETTABLE  R22[K6('r')] = K7(1)
+ 111 [  37] NEWTABLE  A=23 B=0 C=5
+ 112 [  38] SETTABLE  R23[K0('l')] = K26('Decrease waypoint mission ID')
+ 113 [  38] SETTABLE  R23[K2('t')] = K9(0)
+ 114 [  38] SETTABLE  R23[K4('y')] = K3(-1)
+ 115 [  38] SETTABLE  R23[K5('p')] = K9(0)
+ 116 [  38] SETTABLE  R23[K6('r')] = K3(-1)
+ 117 [  38] NEWTABLE  A=24 B=0 C=5
+ 118 [  40] SETTABLE  R24[K0('l')] = K27('Bypass arming checks')
+ 119 [  40] SETTABLE  R24[K2('t')] = K3(-1)
+ 120 [  40] SETTABLE  R24[K4('y')] = K7(1)
+ 121 [  40] SETTABLE  R24[K5('p')] = K9(0)
+ 122 [  40] SETTABLE  R24[K6('r')] = K9(0)
+ 123 [  40] NEWTABLE  A=25 B=0 C=5
+ 124 [  42] SETTABLE  R25[K0('l')] = K28('INAV OSD Menu Open')
+ 125 [  42] SETTABLE  R25[K2('t')] = K9(0)
+ 126 [  42] SETTABLE  R25[K4('y')] = K3(-1)
+ 127 [  42] SETTABLE  R25[K5('p')] = K7(1)
+ 128 [  42] SETTABLE  R25[K6('r')] = K9(0)
+ 129 [  42] NEWTABLE  A=26 B=0 C=5
+ 130 [  43] SETTABLE  R26[K0('l')] = K29('INAV OSD Menu Exit')
+ 131 [  43] SETTABLE  R26[K2('t')] = K9(0)
+ 132 [  43] SETTABLE  R26[K4('y')] = K7(1)
+ 133 [  43] SETTABLE  R26[K5('p')] = K9(0)
+ 134 [  43] SETTABLE  R26[K6('r')] = K9(0)
+ 135 [  43] NEWTABLE  A=27 B=0 C=5
+ 136 [  44] SETTABLE  R27[K0('l')] = K30('INAV OSD Menu Enter Submenu')
+ 137 [  44] SETTABLE  R27[K2('t')] = K9(0)
+ 138 [  44] SETTABLE  R27[K4('y')] = K9(0)
+ 139 [  44] SETTABLE  R27[K5('p')] = K9(0)
+ 140 [  44] SETTABLE  R27[K6('r')] = K7(1)
+ 141 [  44] NEWTABLE  A=28 B=0 C=5
+ 142 [  45] SETTABLE  R28[K0('l')] = K31('INAV OSD Menu Exit Submenu')
+ 143 [  45] SETTABLE  R28[K2('t')] = K9(0)
+ 144 [  45] SETTABLE  R28[K4('y')] = K3(-1)
+ 145 [  45] SETTABLE  R28[K5('p')] = K9(0)
+ 146 [  45] SETTABLE  R28[K6('r')] = K9(0)
+ 147 [  45] NEWTABLE  A=29 B=0 C=5
+ 148 [  46] SETTABLE  R29[K0('l')] = K32('INAV OSD Menu Previous Option')
+ 149 [  46] SETTABLE  R29[K2('t')] = K9(0)
+ 150 [  46] SETTABLE  R29[K4('y')] = K9(0)
+ 151 [  46] SETTABLE  R29[K5('p')] = K7(1)
+ 152 [  46] SETTABLE  R29[K6('r')] = K9(0)
+ 153 [  46] NEWTABLE  A=30 B=0 C=5
+ 154 [  47] SETTABLE  R30[K0('l')] = K33('INAV OSD Menu Next Option')
+ 155 [  47] SETTABLE  R30[K2('t')] = K9(0)
+ 156 [  47] SETTABLE  R30[K4('y')] = K9(0)
+ 157 [  47] SETTABLE  R30[K5('p')] = K3(-1)
+ 158 [  47] SETTABLE  R30[K6('r')] = K9(0)
+ 159 [  47] NEWTABLE  A=31 B=0 C=5
+ 160 [  48] SETTABLE  R31[K0('l')] = K34('INAV OSD Menu Previous Value')
+ 161 [  48] SETTABLE  R31[K2('t')] = K9(0)
+ 162 [  48] SETTABLE  R31[K4('y')] = K9(0)
+ 163 [  48] SETTABLE  R31[K5('p')] = K9(0)
+ 164 [  48] SETTABLE  R31[K6('r')] = K3(-1)
+ 165 [  48] NEWTABLE  A=32 B=0 C=5
+ 166 [  49] SETTABLE  R32[K0('l')] = K35('INAV OSD Menu Next Value')
+ 167 [  49] SETTABLE  R32[K2('t')] = K9(0)
+ 168 [  49] SETTABLE  R32[K4('y')] = K9(0)
+ 169 [  49] SETTABLE  R32[K5('p')] = K9(0)
+ 170 [  49] SETTABLE  R32[K6('r')] = K7(1)
+ 171 [  54] SETLIST   A=4 B=28 C=1
+ 172 [  54] RETURN    A=4 B=2 C=0
+ 173 [  54] RETURN    A=0 B=1 C=0

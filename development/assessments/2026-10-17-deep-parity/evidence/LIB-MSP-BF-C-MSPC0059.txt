@@ -1,0 +1,14 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0059.luac
+SHA256: a5b6c43082fa552b1383576d72ea2fa6758a4cc93c080d8c0d19cfec269f93eb
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0059.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'VTX'
+K1 'setInP'
+K2 None
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R2[K0('VTX')]
+   3 [  11] SETTABLE  R4[K1('setInP')] = K2(None)
+   4 [  13] RETURN    A=0 B=1 C=0
+   5 [  13] RETURN    A=0 B=1 C=0

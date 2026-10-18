@@ -1,0 +1,27 @@
+{
+  "name": "quad",
+  "author": "AERODECK original vector artwork",
+  "virtualSize": 18,
+  "purpose": "Symmetric aircraft position glyph; separate exact GPS-course tick carries direction",
+  "masterSHA256": "27c4f20764af3a74951b07320ea59b891b5322a486d8d3300d9921ba6321f6ff",
+  "exports": [
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "sha256": "19e227d3fd69bf792f2609bfa576cb115a542c11d74429892e541443bd144977"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "sha256": "2914e1bfefe94d72e772ee90f898c1f085d4f3b31a9384f19f22a8e0dd7eb50d"
+    }
+  ],
+  "license": "Apache-2.0",
+  "runtimeStatus": "Retired by GPS-SIMPLE-20261018; artwork/export records retained as development history"
+}

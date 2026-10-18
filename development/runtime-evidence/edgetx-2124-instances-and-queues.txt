@@ -1,0 +1,25 @@
+EDGETX 2.12.4 COLOUR LUA INSTANCES AND RECEIVE QUEUES
+Read-only primary-source evidence; no hardware execution is asserted.
+
+Widgets share one lsWidgets Lua VM. Widget instances have separate context and
+option registry references, but an ordinary loadScript without an explicit
+environment uses that VM's globals. A Lua global registry can coordinate widgets.
+
+Colour standalone tools allocate a separate lsStandalone VM. A Lua _G registry
+therefore cannot coordinate both a standalone tool and widget instances. Native
+model timer fields are shared outside these VMs, so timer ownership needs a
+cross-environment guard rather than a module-local Lua flag alone.
+
+StandaloneLuaWindow disables widget refresh while open and re-enables it on
+close. Retained compact/hidden app sampling and alarms depend on EdgeTX actually
+scheduling the widget callbacks. This is not destruction of the retained state.
+
+On colour radios, CRSF and S.Port pop choose the current LuaScriptManager's own
+registered receive queue; a managerless call is a separate global fallback.
+Do not describe independent colour widget/tool managers as stealing frames from
+one global FIFO. Shared physical outgoing MSP traffic can still contend if
+multiple clients are deliberately active; these VM facts alone do not prove
+cross-client request safety or authorize a transport redesign.
+
+Exact official v2.12.4 sources/anchors and cached-source hashes are in the JSON.
+The frozen 350-row baseline assessment and original source evidence are unchanged.

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "method": "Node VM with minimal DOM shim; tests filtering,paging,shortcuts and generated row construction. Not browser rendering or physical visual QA.",
+  "tests": [
+    "default350rows",
+    "firstPage35",
+    "searchExactID",
+    "correctID",
+    "config100",
+    "combinedDomainStatus",
+    "priorityFilter",
+    "nextPage",
+    "previousPage",
+    "findingShortcut",
+    "domainShortcut",
+    "emptyResults",
+    "reset"
+  ]
+}

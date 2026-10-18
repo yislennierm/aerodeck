@@ -1,0 +1,11 @@
+The current 3f94 Track page fails in a private native-widget reproduction under the unchanged 20,000-instruction hook. The unmodified baseline main and copied current-preview fixture are pinned in baseline-inputs.json. Public preview state was untouched.
+
+A working Track picture at 20 seconds is followed by a CPU-limit error picture at 30 seconds; the complete baseline log records telem.lua:1253. A separate count/timing probe reaches 50 points before failing later in the shell. The exact failure point varies with the shared callback workload, not only trail size.
+
+At 30 points the navigation callback enters at 13% VM allowance, finishes the static grid at 20%, the trail/marker at 53%, and the whole page body at 59%. At 31 points it reads 17→24→58→64; at 47 points, 20→27→77→83. The trail is approximately 1.1 allowance points per retained point per redraw. Around 50 points, the shared prelude, body, and shell exhaust the callback budget.
+
+Painting repeats geodesic work: navigation at line 1471 calls pt at 1465 for every trail point. pt calls geo at 1433 (haversine distance and bearing), then converts back to Cartesian. clip at 1255 adds color selection and four rounding calls before delegating clipping to native lcd.drawLineWithClipping. It is not a Lua clipping algorithm.
+
+Session history grows independently of the selected page at most once per second, with 90 points by default and a hard maximum of 180. Short tours therefore miss the failure. Cache projected integer coordinates and prepare changes in bounded work; retain native clipping and full redraw. Verify home, zoom, model/source changes, off-page first entry with a long trail, and natural maximum growth.
+
+All data is synthetic. EdgeTX 3.0 WASM measurements do not establish physical 2.12.4 performance. The unmodified baseline and timing probe are separate evidence.

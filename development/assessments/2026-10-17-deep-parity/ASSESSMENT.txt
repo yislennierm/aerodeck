@@ -1,0 +1,469 @@
+AERODECK / FM2M TOOLBOX2 — DEEP FUNCTIONAL AND UI ASSESSMENT
+2026-10-17 | POWER-LIVE-20261017 | repository commit ebb932a
+
+AERODECK is not yet a complete Toolbox replacement. It has a real, useful
+Betaflight/ELRS telemetry application and a distinct visual direction, but
+several Toolbox workflows have no backend in AERODECK. More styling cannot
+close those gaps. The strongest next step is to complete the data, lifecycle
+and control contracts, then refine the interface around those working tasks.
+
+The only excluded mechanism is activation/licence enforcement. All actual
+functions gated by Toolbox's keys remain required. TX16S + Betaflight + ELRS
+is the first acceptance target, not a permanent exclusion of INAV, FrSky,
+Crossfire/Tracer, other protocol variants or the other packaged resolutions.
+No activation system, keys or validation algorithm need to be ported.
+
+This assessment changed no production Lua, radio files, model preferences,
+firmware or RF configuration. It is a source/evidence audit and implementation
+contract. Identified gaps are not implemented by writing this report.
+
+READING THIS BUNDLE
+
+index.html is an offline, searchable comparison with filters, evidence excerpts,
+acceptance criteria and exact source hashes. assessment.json is its machine
+readable counterpart. The four *-rows.json files preserve domain detail.
+section-ui.txt, section-data.txt, section-control.txt and section-config.txt
+provide deeper domain narratives. source-snapshot.json pins inputs;
+module-inventory.json accounts for all 287 original Toolbox Lua chunks.
+coverage.json distinguishes an inventory from actual branch/field review.
+validation.json records bundle checks and unchanged production hashes.
+
+Do not convert row counts into a parity percentage. The ledger deliberately
+has overlapping views: a VTX backend, its configuration, its data and its UI
+each have different acceptance requirements. Ninety configuration declaration
+rows are not ninety equally sized independent product features.
+
+1. WHAT IS REAL TODAY
+
+Preserve these strengths; the project does not need another visual restart.
+
+- Qualified native telemetry bindings, cached IDs/units, bounded retry of
+  missing names and explicit source refresh are implemented. Missing, stale,
+  disabled, invalid and genuine zero values have meaningful Power states.
+- Current CRSF pitch/roll conversion, native horizon, pitch ladder, GS/ALT
+  tapes, course ribbon, link and aircraft-power rails are implemented.
+- Read-only BF identity/status requests and version-aware arming-mask decoding
+  are implemented. Unknown flags retain their bit numbers; a clear flag mask
+  is not falsely presented as proof the quad is ready to arm.
+- Five actual capacity/cell profiles, selected-capacity remaining calculation,
+  source diagnostics, watts and remaining mAh are implemented. Prior audit
+  findings about three profiles or permanently missing bindings are stale.
+- The icon system uses editable source artwork and cached small masks. Flat
+  styling, explicit draft/save/revert, origin-preserving Arm Info navigation,
+  native synthetic visual QA and portable behavior checks are useful assets.
+- Compact telemetry and the bounded local metric track plot are additions
+  relative to the inspected Toolbox counterparts, subject to lifecycle and
+  hardware acceptance. Addition is not a measured superiority claim.
+
+2. WHERE THE REPLACEMENT IS INCOMPLETE
+
+Area                  What Toolbox demonstrably supplies / AERODECK gap
+--------------------  ------------------------------------------------------
+VTX                   Real status, protocol, ready/LPD/PIT, FC band/power
+                      tables, current vs pending selection, apply/save/readback,
+                      cache and native TBS path. AERO Video is local notes.
+FC diagnostics        UID, board/target/manufacturer, sensor inventory/health,
+                      INAV family/status. AERO has useful BF version/flags only.
+Arming/reference      Offline full reason catalogue, beep diagrams/playback,
+                      BF20 and INAV28 stick-reference patterns. AERO BF12 only.
+Telemetry             Native live/min/max browsing, complete registered fields,
+                      family-specific units, defaults and decoding. AERO current
+                      values and 90-sample foreground history are not extrema.
+Battery/session       Auto cell inference, enabled/type-aware favourites,
+                      quick connected-pack choice, new-flight reset, mute,
+                      native timer ownership. Five slots alone are not parity.
+Radio/link            Transmitter battery, protocol-version defaults and RF
+                      captions, supported input inventory/learning, full switch
+                      predicates/logical sources, throttle/limiter indicators.
+GPS                   True supported fix/quality and detailed satellite fields,
+                      FC vs local home, relative direction, estimated time home,
+                      timed history and page-independent acquisition.
+Lifecycle             Shared full/compact/hidden session, model/source reset
+                      ownership, transport arbitration and settings reload.
+Platforms             Packaged Toolbox layouts480x272,480x320,800x480; current
+                      AERO full app is hard-coded480x272. Contrast themes and
+                      per-radio inputs remain required adaptation work.
+
+Ledger starting points: CTL-019..032; CTL-010..018; CTL-033..035;
+DATA-008..011,045..050,051..081,082..100; ui-platform-01..08;
+CFG-001..090 and CFG-X01..10. Individual rows carry exact source locators.
+
+3. ATTITUDE — AN ELEMENT-BY-ELEMENT COMPARISON
+
+The premise "Toolbox uses an image; AERODECK uses lines" is too broad.
+The actual moving sky/ground field in BOTH is lcd.drawHudRectangle.
+Toolbox X.HR directly aliases that API. Its AHR main panel and ATT secondary
+round panel both call it. AERODECK does not reimplement that pixel algorithm
+with Lua lines. See ui-att-01..20 and section-ui.txt.
+
+Element              Toolbox2                         Current AERODECK
+-------------------  -------------------------------- -------------------------
+Attitude input       TBS qualified names; radians      Qualified/cached sensor IDs;
+                     to degrees, negate pitch only.   same CRSF conversion; source
+                                                       currentness checked.
+Moving sky/ground    Native HUD rectangle. AHR uses    Native HUD rectangle, fixed
+                     pitch-dependent colors; ATT      flat blue/brown palette.
+                     theme colors.
+Main aircraft datum  Cached30x6 RGBA marker.           88px code-drawn orange wings,
+                                                       dark halo,6px center.
+Pitch ladder         AHR has no moving ladder loop    10deg rungs,20deg captions,
+                     or ladder image.                 transformed/clipped in code.
+Round ATT bezel      Cached108x109 foreground JPEG    No graduated circular bank
+                     tick mask and108x110 aperture.   scale. Numeric bank/field is
+                                                       an alternative, not proven
+                                                       equivalent glance recognition.
+Yaw                  ATT numeric yaw + moving dot.    Raw Telemetry yaw; Flight
+                                                       ribbon is GPS COURSE.
+Speed instrument     Airspeed first where present;    GS only on Flight; sampled
+                     ground speed auxiliary.          ASpd has no adaptive tape.
+Altitude instrument  GPS plus separate baro/fallback.  GAlt/Alt collapsed into ALT;
+                                                       origin and second value lost.
+Home direction       In-horizon H/offscale cue and    Local distance in footer;
+                     separate compass cue.            direction on GPS page only.
+Missing attitude     Native call zero fallbacks plus  No fabricated level horizon;
+                     dashboard dimming.               ATTITUDE UNAVAILABLE.
+Cadence              Shared lifecycle/data/UI tasks.  Attitude poll before draw
+                                                       throttle, target25 drawfps;
+                                                       received sample rate separate.
+
+Image facts are dimensions, formats and call paths, not a speed verdict. Both
+cache assets. A fixed bezel bitmap can offer consistent antialiasing and art
+control; procedural geometry can scale, clip and respond to state. Which is
+better depends on actual frame cost, legibility and task success. Neither
+approach is inherently an improvement. Both still allocate some transient
+Lua objects; neither is allocation-free.
+
+The current horizon viewport is x78..402,y64..244, pivot(240,154). Side tapes
+cover46px each, leaving232x180px of central attitude field: about32% of the
+whole480x272 display. This explains why adding labels or another overlay is
+not free. The bank cue and home direction should be assessed in that limited
+field, not placed on top without a new information budget.
+
+Do not confuse yaw with GPS course. Course can be unreliable at rest, while
+yaw is a vehicle attitude angle with its own reference. Display origin and
+absence honestly. A north ribbon fed by Hdg is not a compass/yaw replacement.
+
+Acceptance is in the full production application on the same radio/model/quad:
+level, nose-up/down, bank +/-35deg,+/-90deg,inverted;359/0 course wrap; one
+missing attitude component; stale/reconnect; rapid and slow tilt; GPS/source
+changes; then a sustained10-minute session. Compare value-change cadence,
+draw cadence, input-to-display latency, longest stall and heap trend with
+Toolbox under the same250Hz/1:64STD settings. Measure2s,1min,10min. A displayed
+20fps counter does not prove20 new attitude samples/second or stable latency.
+The user's previous observed fix is useful feedback, not a quantified benchmark.
+No new isolated ATTITUDE TEST tool is needed for this acceptance.
+
+4. TWELVE CONFIGURATION LISTS: EXACTLY WHAT THAT MEANS
+
+Toolbox has12 list declarations. We extracted65 literal fields and verified
+every field key/label in original bytecode constants, then accounted for15
+generated battery rows,8 VTX favourites and2 UI rows:90 declaration rows.
+Constants prove declarations, not that every control works. Hidden/dead or
+defective reference fields are explicitly marked unverified.
+
+Current AERO has54 unique general-setting keys plus8 separate battery values.
+Its general UI has56 editable occurrences because flightmode and mspMode each
+appear twice. That is64 editable occurrences /62 stored values, not a feature
+score. Model Battery is a real special eight-field editor; its empty general
+rows table must never be mistaken for an unimplemented battery page.
+
+List                   Toolbox rows / Current AERO / functional consequence
+---------------------  ------------------------------------------------------
+1 Model Setup         10 /14editable+3notes. More AERO source mappings do not
+                       replace protocol-specific gyro/baro/pitot/GPS activation.
+2 RC Link             7 /9editable+1note. More AERO rows, but no subtype/version
+                       routing and fixed dBm/% defaults instead of family units.
+3 Model Battery       7 /8editable. Core thresholds/modalities real; different
+                       defaults, boundary policy, auto-cell/session/mute gaps.
+4 Battery Favourites  15 /11editable. Five slots now real; no enable/chemistry,
+                       smaller ranges and no quick connected-pack chooser.
+5 Flight Controller   4 /1editable+4notes. MSPv2 is fixed/hidden in Toolbox;
+                       intervals and broader backend lifecycle still absent.
+6 Indicators          11 /4editable+3notes. Missing telemetry source kinds,
+                       inversion predicates, most logical switches, limiter,
+                       OS/app timer host and Timer1/2/3 choice.
+7 BF Indicators       20 /1editable+3notes. Independent Acro/Horizon/Angle/Air/
+                       Turtle bindings are not one FM text source.
+8 VTX                 4 /0editable+4notes. Backend/model/cache absent. Reference
+                       range value is saved but consumer not proven.
+9 VTX Favourites      8 /8editable+1note. Numeric notes lack OFF, live table
+                       membership and actual application/readback.
+10 GPS                1 /4editable+2notes. AERO adds trail/zoom/home options,
+                       but capture is page-owned and genuine quality absent.
+11 UI                 2 /3editable. Three accents are not full contrast themes
+                       or alternate-resolution layouts. No carbon copy needed.
+12 Application        1 /1sharededitable+6notes. Reference diagnostic writer
+                       exists, but its toggle appears defective; AERO has none.
+
+Visibility is real, but not equivalent capability coverage. In Toolbox, Model,
+Indicators,UI,Application are the four base lists. Ignoring licence checks,
+protocol ON exposes RC; battery ON exposes Battery/Favourites; FC ON exposes
+FC; BF exposes BF Indicators; VTX ON exposes VTX and a supported connection
+exposes favourites; GPS settings apply to the TBS family. INAV disables the
+original BF VTX branch. Subordinate fields also hide based on source kind,
+enabled pack, protocol subtype and family. AERO currently approximates list
+visibility with rcProtocol/fcType/voltage/gps/vtxMode, but no equivalent shared
+capability model drives all readers, controls and views.
+
+Read-only extraction reproduced AERO visibility:
+  Default rcProtocol=None ->1,6,11,12.
+  ELRS+BF+VTX favourites+Auto voltage/GPS -> all12.
+  Same but voltage=None -> all except3,4.
+  Same but gps=None -> all except10.
+This is schema execution in an isolated fixture, not a radio interaction.
+
+Reproduced defect CFG-X06: sensor('flightmode') is declared twice. The second
+call replaces schema.flightmode but leaves the first row object behind.
+refreshSensorChoices updates schema objects only. After fixture refresh,
+Model Setup still has Auto/None while BF Indicators gains LateFM/Curr/RxBt.
+This is a functional editor bug, not speculative alignment criticism.
+
+Another semantic mismatch: None hides protocol lists while legacy/auto cases
+can continue telemetry/MSP reads. Define Auto,Off and unavailable distinctly.
+A setting should say what it does. Each offered control needs a traced consumer
+and an apply/reload policy. Notes are useful explanations, not implementation.
+
+5. DATA TRUST AND LIFECYCLE — THE LESS VISIBLE GAPS
+
+Reported and calculated values must have different storage and provenance.
+POWER-LIVE calculates remaining from Capa/selected capacity into d.pct. The
+Telemetry table then labels the same value Bat%, without EST/~. With native
+Bat%=91,Capa=300 and capacity=1500, the raw-looking Bat% becomes80. Power/Flight
+mark the estimate, but Telemetry loses that distinction. Preserve rawBatPct
+and derived remaining separately. See DATA-117.
+
+FrSky cannot be implemented by changing a heading label. Its pack voltage is
+VFAS while RxBt can mean receiver supply; its consumed charge is Fuel, not
+necessarily Capa. BF numeric attitude and INAV GPS/fix/home fields require
+decoders. RSSI may be percent rather than dBm. Protocol versions have different
+RF captions and threshold defaults. Manual source mapping is useful but does
+not make automatic family routing complete. DATA-002..005,043..050,074..075.
+
+The current app's native value access uses the isCurrent result. That follows
+EdgeTX's Sensor Lost semantics; it is not the same as isFresh or proof that a
+new RF packet arrived. A stable numerical attitude can be current without
+changing. Diagnostics must separate draw rate, value changes and transport
+response activity; labels must not imply a measured packet rate from changes.
+
+Home/track sampling currently occurs inside GPS page drawing. Staying on Flight
+can miss takeoff and opening GPS later can establish a different local home.
+An arm-timed app stopwatch also is not the chosen model timer. Full-app teardown
+from compact/hidden widget paths can discard state. Source/profile/model changes
+can leave unrelated old traces/home unless reset ownership is explicit. These
+are architecture issues that repeated drawing optimizations cannot solve.
+
+Native MIN/MAX sources retain extrema beyond the current chart window. AERO's
+bounded foreground trace is useful history, but cannot substitute for native
+live/min/max selection and reset semantics. Likewise derived average cell V
+must never be presented as individually measured cell voltages. Toolbox has a
+conditional array renderer; the connected CRSF per-cell producer is unverified.
+Implement actual arrays where supported; otherwise say unavailable.
+
+6. VTX AND FC — WHAT A COMPLETE WORKFLOW REQUIRES
+
+Current AERO sends MSP2,1,3,150: FC variant,API version,FC version,STATUS_EX.
+That is a real read-only status client, not a general FC/VTX application.
+
+Verified original VTX workflow:
+  FC identity/UID ->88 status ->137 band table +138 power table -> UI selection
+  -> explicit89 SET_VTX_CONFIG ->250 EEPROM_SAVE ->88 readback -> actual result.
+
+A complete replacement needs observed current versus pending frequency/power/
+PIT, available labels/levels, ready/LPD status, cancel, reject, busy, timeout,
+disconnect and readback mismatch. A successful push or cleared spinner is not
+proof hardware adopted a change. UID-bound table caches must not leak between
+quads. Native TBS0x10 reports/0x32 commands form another real backend. A shared
+bounded frame dispatcher is necessary; independent pop loops steal replies.
+
+Toolbox's actual FC scope is identity/board/status/sensors/arming. Its stick page
+is a manual gesture guide, not automatic command execution. The inspected
+package has no demonstrated PID/rates/OSD parameter editor or FC reboot write
+path. OSD navigation gestures are required guide content; a nonexistent editor
+is not an invented parity requirement. Similarly it reads VTX tables; no table
+editor or LPD write was found. See section-control.txt for command catalogues,
+payload lengths, table parsing, retries and transaction acceptance.
+
+Implementation structure matters, but module counts are not a quality score.
+Toolbox divides behavior among dynamic loaders, shared G/F/D/X state, protocol
+readers, an MSP queue, reinitialization tasks, instrument modules and repeated
+resolution layouts. Its temporary configuration/UI state and recovered branches
+can be difficult to trace. AERODECK currently has one1798-line main, a48-line
+widget wrapper, a109-line arming decoder and a106-line status transport. Its
+local closures isolate several concerns, but full-app sampling, navigation,
+session state and renderers still share the main lifetime. The widget wrapper
+creates/destroys that application rather than sharing one persistent session.
+
+Keep a small shared core with explicit adapters; do not copy287 modules or grow
+all new features inside the render loop. A measurement record needs a value,
+unit,source/family,currentness and raw/derived origin. A command transaction
+needs an owner,request/response type,budget,deadline,result and readback state.
+A capability registry should determine both whether a settings row is useful
+and whether its underlying job exists. A session manager should own home,
+pack,timer,reset,mute and model transitions. Views and layouts consume those
+contracts. This avoids a plausible-looking screen outrunning its implementation.
+
+7. UI REFINEMENT SHOULD BE DRIVEN BY TASKS
+
+Keep the flat AERODECK style and the approved icon artwork. Carbon texture is
+not the useful feature of Toolbox. Its useful qualities are persistent system
+awareness, dense relevant data and real actions attached to a coherent model.
+Do not grow another skin before those capabilities have destinations.
+
+Flight already gives about22% of pixels to its two70x209 rails; the34px global
+top band uses12.5% and the26px footer about9.6%. The center's compass consumes
+another30px of height. These are geometric budgets, not claims all reserved
+space is wasted. The residual horizon field must carry the aircraft, pitch
+and bank cues without repeatedly competing labels. Values in the rails should
+retain stable baselines and units, but compact status can replace repeated
+headings where recognition remains clear at the user's30–40cm viewing distance.
+
+Specific refinements to validate:
+- Preserve the large main values and consistent left/right rail grid. Used
+  charge should adapt mAh/Ah with an explicit unit; do not shrink a five-digit
+  reading until it becomes less legible than a compact Ah reading.
+- Reassess a light graduated bank cue and relative-home cue in the center.
+  Do not restore an overlapping decorative arc. A valid comparison measures
+  bank/direction recognition, including inverted attitudes and missing data.
+- Keep the course badge and wrap behavior, but distinguish GPS course from
+  attitude yaw and mark course unavailable/uncertain when appropriate.
+- The global Arm shortcut belongs with global health. Its icon has to express
+  stale/unknown/blocked information truthfully and remain discoverable by focus
+  caption. A clear mask must not become a green READY promise.
+- Show continuous radio/pack/link health on other task pages through compact
+  shared status or alerts. Duplicating Toolbox's sidebars is not required;
+  hiding critical current status until Flight is a task regression to avoid.
+- Retain icon-only global navigation, stable targets, selected plates and
+  temporary focus captions. Add no ambiguous icon merely to avoid all words.
+  Necessary confirmation/error text and units are functional information.
+- Reduce repeated switches between Setup and operating pages. Pack choice,
+  mute, new flight, timer and VTX favourites need direct context actions backed
+  by real operations. Full configuration remains in Setup.
+- Measure text using actual fonts on every page. Sensors' fixed-character
+  truncation and direct large RC values are fit risks, not observed failures.
+  Stress long names,wide glyphs,negative/large values and every warning/footer
+  combination before claiming no overlap.
+
+No new conceptual mockup is supplied as if it were running on the radio. The
+included AERO images are exact-source native3.0 WASM synthetic fixtures, not
+live quad captures. Toolbox asset contact sheets are real package assets,
+not an actual app screen or performance comparison. Older page screenshots
+with different hashes are not used as current-build proof.
+
+8. DO NOT REPRODUCE THESE REFERENCE DEFECTS OR ASSUMPTIONS
+
+- CRSF GPS POS_FIX is a satellite-count threshold; GPS_HDOP derives from Sats-4.
+  Neither is a measured FC3Dfix/HDOP. Show genuine supported quality or unknown;
+  an explicitly labelled estimate is better than an authoritative false label.
+- Original PIT writer appears unable to distinguish explicit false from absent
+  input. Native TBS off with unchanged power also lacks an independent branch.
+  Test PIT both directions; do not clone this bug.
+- Recovered VTX band parser misses a factory byte; recovered read handler loses
+  an early return. Copying either can corrupt parsing or turn read into write.
+- Recovered AHR drops measured values; recovered GF drops a success branch;
+  syntactically valid decompiled Lua is not a reliable executable specification.
+- Recovered QM leaves the quick-menu event handler empty, but original bytecode
+  proves menu entry, rotary selection and ENTER dispatch. Mute,new-flight reset
+  and reload are working reference paths, not dead labels to dismiss.
+- VTX_FRQ_RANGE is saved but no working filter consumer was found. APP_errLog
+  versus APP_LOG_ERR and numeric0 truthiness make the logger toggle suspect.
+  The writer capability is real; the working toggle is not proven.
+- Toolbox hidden widget callback checks APP.initDone while returned application
+  exposes G.initDone. Hidden continuity is unverified there too. Improve the
+  behavior rather than inheriting a questionable lifecycle pattern.
+- GPS Plus Code encoding exists as a helper, but a user-facing caller was not
+  found. Flight CSV logging/persistent recovery and battery-use history are
+  not proven by debug logging or serialized options alone. Keep verification
+  tasks open rather than advertising invented parity capabilities.
+
+9. IMPLEMENTATION SEQUENCE AND COMPLETION CONTRACT
+
+Phase A — establish one trustworthy application state
+One shared measurement store with typed units, raw/derived distinction, origin,
+source ID,current/freshness/age and capability state. Views render that store;
+GPS/home/session/timer updates do not belong to drawing. Bind/reset ownership
+to model,source,FC UID and pack/session. Fix the reproduced Bat% and picker bugs.
+Keep existing qualified bindings, bounded retries and honest unavailable states.
+Gate: no cross-model data; no page-owned home; no raw/estimate conflation;
+full/compact/hidden lifecycle and the existing full-app attitude path stay stable.
+
+Phase B — finish data and operating workflows on TX16S/BF/ELRS
+Native extrema, radio battery, actual timers, pack chooser/auto cells/type,
+new flight/reset,mute,full indicator sources,adaptive instruments and complete
+BF arming/stick guide. Distinguish local home from FC home. Add genuine supported
+quality/satellites and home direction/time without fake fields.
+Gate: every displayed control has a traced consumer and meaningful error path;
+all normal/missing/stale/zero/reconnect/reset workflows work on the real target.
+
+Phase C — complete control backend, then VTX UI
+Shared bounded transport dispatcher and typed transaction queue; identity/UID,
+board/sensor diagnostics; VTX status/tables/cache; observed/pending selection;
+explicit channel/power/PIT apply; ack/save/readback, cancellation and recovery.
+Gate: successful and failing wire paths plus disarmed real-hardware confirmation.
+Never call a saved frequency note active or a send request successful hardware.
+
+Phase D — complete the full supported product scope
+INAV, FrSky S.Port/family decoders, protocol subtypes and native TBS VTX; broader
+radio inputs,480x320/800x480 layouts and readable contrast themes. These are
+required phases, not optional omissions. Use the same state/actions with
+target-specific layout/input adapters, not parallel copies of business logic.
+Gate: each supported protocol/family/resolution has a declared capability
+matrix and passes its functional scenarios; unsupported states are explicit.
+
+Phase E — demonstrate improvement with outcomes
+Target fewer actions and fewer ambiguous states: connect a new pack; identify
+why arming is blocked; mute a known warning; find and confirm the actual VTX
+channel; recover the last valid location; change model without stale history.
+Measure completion time/action count and interpretation errors against Toolbox
+at30–40cm, indoors/outdoors, using the same working hardware data. Proposed
+improvements such as measured-cell delta/history must be labelled additions
+and depend on genuine sources, not fabricated demonstrations.
+
+The definition of done for a feature is:
+  supported source/transport -> validated decode -> owned/current state ->
+  readable UI -> usable input -> real action (where applicable) -> explicit
+  result/readback -> persistence/reset lifecycle -> failure/reconnect behavior.
+No placeholder notes, dummy callbacks, synthetic success flags or disabled
+controls counted as completed features. Code-level equivalence still requires
+hardware verification before release claims. Requirements may share code,
+but each end-to-end outcome must be demonstrated.
+
+10. EVIDENCE AND LIMITS
+
+Pinned AERO: commit ebb932a7e5252785d98e2fe7a7a8add7df5cf5db;
+main c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b.
+Original Toolbox2.0 reference package archive:12,072,717bytes;
+SHA2569e4b21056c25359d7fcda6a2cd8e997867c2ec400dc7d33cdc18464611a4e766.
+This is the supplied/reference2.0 package, not a claim about uninspected editions.
+
+287 original chunks and287 recovered files are inventoried and hashed. All
+original chunks parse as Lua5.3 bytecode. The recovery report has279 syntax
+passes/8 failures, but syntax does not prove semantic equivalence. Selected
+material branches/fields/call paths were checked in original disassembly;
+other helpers and repeated resolution layouts are grouped inventory review,
+not an instruction-by-instruction proof of every branch. Per-row evidence
+kind and coverage.json make this distinction inspectable.
+
+All43 UI layout families were compared across their three packaged resolutions
+(129 original chunks/86 comparisons). Differences include tape ranges,
+pagination capacities and an800x480 recomposed dashboard, not only scaling.
+Original quick-menu dispatch was checked despite missing recovered code.
+Numeric-wildcard/opcode fingerprints and symbol identity were used as review
+aids, never substituted for semantic or hardware proof. The four static theme
+palette chunks remain inventory-level review; exact decorative themes are not
+claimed to have been runtime tested.
+
+The earlier2026-10-16 audit used an older build and narrower exclusions.
+Its blanket treatment of other protocols/platforms as out of scope is withdrawn
+for this full-replacement requirement. Its superseded three-profile,unqualified
+compact-binding and negative-cache findings must not be repeated as current.
+
+Existing verification:13 portable suites and22 exact-source native synthetic
+frames/9 scenarios for the POWER-LIVE change. Native WASM is3.0 versus physical
+target2.12.4; compact native execution, actual quad current/calibration, physical
+font/layout behavior and sustained FPS/latency/heap remain unverified. This
+audit did not rerun a physical test or change that evidence into a hardware pass.
+
+The ledger is a detailed evidence-based implementation backlog. It is not a
+claim that all source was formally verified, every reference bug was found,
+or feature parity has been achieved. The outstanding/unverified entries are
+part of the contract and remain open until their stated acceptance is met.

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "sourceSha256": "0a02146c0e4293d3f257d9cc0e4303c67d74c79de74553f049c2040c7339a139",
+  "sha256": {
+    "sdcard/SCRIPTS/TOOLS/telem.lua": "0a02146c0e4293d3f257d9cc0e4303c67d74c79de74553f049c2040c7339a139",
+    "development/test_ui_navigation.lua": "698185fb28bd7992ee979f56f98d67e05732a83cca5f16971006d1d42134f27f",
+    "development/test_ui_features.lua": "d4ea66daac70115c191520b193d876881f405613b97a1fed9bc507a665da8edc",
+    "development/navigation_contract.lua": "1fd753dff34e921d554b2e0c3ebcae61a65d474b5dc0cb861503e8404fa73094"
+  },
+  "runtimes": [
+    "LuaJIT",
+    "stock Lua5.3 int32/float32"
+  ],
+  "results": {
+    "navigationContractScenarios": 17,
+    "actualUiScenarios": 30,
+    "actualUiFeaturesChecks": 15
+  },
+  "sourceModifiedByReviewer": false,
+  "covered": [
+    "Seven root destinations including Home0",
+    "Home and Arm native30px focus/selection geometry",
+    "All13pages truthful footer and toolbar reachability",
+    "Former footer Arm region inert under ordinary status",
+    "Full480px warning touch/focus",
+    "Status-aware Arm icon tint",
+    "Setup draft/current edit preservation",
+    "Radio Inputs physical context and caller ownership",
+    "Repeated Arm/Inputs transitions without back loops",
+    "Stale unrelated Arm caller cleared by intentional Inputs context activation",
+    "Quick Pack owns Home and Arm toolbar touch while modal"
+  ],
+  "negativeControl": {
+    "sourceSha256": "0857b9c39d5b37e83a058485da4ac78e8d4509716ecfedb326c63f4f7f214c6b",
+    "result": "FAIL",
+    "case": "Radio Inputs context and physical routes preserve caller ownership without sibling loops",
+    "message": "RTN must restore expected caller1",
+    "resolution": "Intentional page10 context activation routes through openArm; parent RTN selectPage remains unchanged."
+  }
+}

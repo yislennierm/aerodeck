@@ -1,0 +1,28 @@
+FLIGHT-PANELS-20261018
+Main SHA256: ad252b2772d3fcbb43723dfeab38b2200bd294c5346b06794a6f9f85431207da
+Local review build. Last file-verified radio build: ATTITUDE-CLEAN-20261018.
+
+Flight ownership and scale:
+-56px speed/altitude tapes,54px primary value cells; native horizon confined to
+ x136..344. Its documented positive-bank inclusive edge stays inside the center.
+ Native pitch/roll signs,1.85px pitch scale and(240,154)datum are unchanged.
+-Header, panel separators, footer paint and touch/focus rectangles agree.
+-Three-digit selected values, including -999, keep the large native font.
+ Four-to-six-digit and negative readings fit their cells using native font fitting.
+ Extreme numeric overflow uses scientific notation rather than a truncated prefix.
+-Battery voltage is the full-width primary row. Cell count and charge are two
+ bounded columns with independent CELLS/AUTO and LEFT/EST labels beneath.
+ EST describes a capacity-based charge estimate; it is not a confidence score.
+ The single charge gauge, warning colors and unavailable/real-zero states remain.
+
+56 portable suites PASS in each VM. Native123m/1234m screenshots were reviewed;
+1440gutter pixels per capture stay backgroundRGB(0,12,16), with no sky/ground.
+Native animated preview has no script/CPU-limit errors;20000callback instruction
+budget and production source/services/assets are unchanged except the main UI.
+All text/fit caches remain bounded; no new bitmap, pixel loop, telemetry read,
+transport traffic, forcedGC or background service was introduced. Flight uses one
+rail mask rather than two. Native horizon horizontal span shrinks324px to208px.
+
+Evidence:development/build-FLIGHT-PANELS-20261018.json.
+These are synthetic/native simulator checks, not a physical FPS measurement.
+This revision was not copied to the radio or pushed to GitHub.

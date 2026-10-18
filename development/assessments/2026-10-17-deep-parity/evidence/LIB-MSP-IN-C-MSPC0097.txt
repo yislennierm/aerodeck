@@ -1,0 +1,113 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC0097.luac
+SHA256: 963680eade05c3102b817fae9f375d0b89485533e004bfad2df02316e9cc0cc4
+
+FUNCTION main params 0 vararg 1 stack 8 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC0097.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 84), ('F', 1, 84), ('D', 1, 84), ('X', 1, 84)]
+K0 'MSP'
+K1 'dptr'
+K2 2
+K3 'FC'
+K4 'S_GYRO'
+K5 'MSPP'
+K6 'U8'
+K7 'S_ACC'
+K8 'S_MAG'
+K9 'S_BARO'
+K10 'S_GPS'
+K11 'S_RF'
+K12 'S_PITOT'
+K13 'S_ACTIVE'
+K14 True
+K15 'dbgMSP'
+K16 'D.FC.S_GYRO'
+K17 'D.FC.S_ACC'
+K18 'D.FC.S_MAG'
+K19 'D.FC.S_BARO'
+K20 'D.FC.S_GPS'
+K21 'D.FC.S_RF'
+K22 'D.FC.S_PITOT'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R2[K0('MSP')]
+   3 [  11] SETTABLE  R4[K1('dptr')] = K2(2)
+   4 [  12] GETTABLE  R4 = R2[K3('FC')]
+   5 [  12] GETTABLE  R5 = R1[K5('MSPP')]
+   6 [  12] LOADK     R6 = K6 ('U8')
+   7 [  12] CALL      A=5 B=2 C=2
+   8 [  12] SETTABLE  R4[K4('S_GYRO')] = R5
+   9 [  13] GETTABLE  R4 = R2[K3('FC')]
+  10 [  13] GETTABLE  R5 = R1[K5('MSPP')]
+  11 [  13] LOADK     R6 = K6 ('U8')
+  12 [  13] CALL      A=5 B=2 C=2
+  13 [  13] SETTABLE  R4[K7('S_ACC')] = R5
+  14 [  14] GETTABLE  R4 = R2[K3('FC')]
+  15 [  14] GETTABLE  R5 = R1[K5('MSPP')]
+  16 [  14] LOADK     R6 = K6 ('U8')
+  17 [  14] CALL      A=5 B=2 C=2
+  18 [  14] SETTABLE  R4[K8('S_MAG')] = R5
+  19 [  15] GETTABLE  R4 = R2[K3('FC')]
+  20 [  15] GETTABLE  R5 = R1[K5('MSPP')]
+  21 [  15] LOADK     R6 = K6 ('U8')
+  22 [  15] CALL      A=5 B=2 C=2
+  23 [  15] SETTABLE  R4[K9('S_BARO')] = R5
+  24 [  16] GETTABLE  R4 = R2[K3('FC')]
+  25 [  16] GETTABLE  R5 = R1[K5('MSPP')]
+  26 [  16] LOADK     R6 = K6 ('U8')
+  27 [  16] CALL      A=5 B=2 C=2
+  28 [  16] SETTABLE  R4[K10('S_GPS')] = R5
+  29 [  17] GETTABLE  R4 = R2[K3('FC')]
+  30 [  17] GETTABLE  R5 = R1[K5('MSPP')]
+  31 [  17] LOADK     R6 = K6 ('U8')
+  32 [  17] CALL      A=5 B=2 C=2
+  33 [  17] SETTABLE  R4[K11('S_RF')] = R5
+  34 [  18] GETTABLE  R4 = R2[K3('FC')]
+  35 [  18] GETTABLE  R5 = R1[K5('MSPP')]
+  36 [  18] LOADK     R6 = K6 ('U8')
+  37 [  18] CALL      A=5 B=2 C=2
+  38 [  18] SETTABLE  R4[K12('S_PITOT')] = R5
+  39 [  19] GETTABLE  R4 = R2[K3('FC')]
+  40 [  19] SETTABLE  R4[K13('S_ACTIVE')] = K14(True)
+  41 [  21] GETTABLE  R4 = R0[K15('dbgMSP')]
+  42 [  21] LOADK     R5 = K5 ('MSPP')
+  43 [  21] LOADK     R6 = K16 ('D.FC.S_GYRO')
+  44 [  21] GETTABLE  R7 = R2[K3('FC')]
+  45 [  21] GETTABLE  R7 = R7[K4('S_GYRO')]
+  46 [  21] CALL      A=4 B=4 C=1
+  47 [  22] GETTABLE  R4 = R0[K15('dbgMSP')]
+  48 [  22] LOADK     R5 = K5 ('MSPP')
+  49 [  22] LOADK     R6 = K17 ('D.FC.S_ACC')
+  50 [  22] GETTABLE  R7 = R2[K3('FC')]
+  51 [  22] GETTABLE  R7 = R7[K7('S_ACC')]
+  52 [  22] CALL      A=4 B=4 C=1
+  53 [  23] GETTABLE  R4 = R0[K15('dbgMSP')]
+  54 [  23] LOADK     R5 = K5 ('MSPP')
+  55 [  23] LOADK     R6 = K18 ('D.FC.S_MAG')
+  56 [  23] GETTABLE  R7 = R2[K3('FC')]
+  57 [  23] GETTABLE  R7 = R7[K8('S_MAG')]
+  58 [  23] CALL      A=4 B=4 C=1
+  59 [  24] GETTABLE  R4 = R0[K15('dbgMSP')]
+  60 [  24] LOADK     R5 = K5 ('MSPP')
+  61 [  24] LOADK     R6 = K19 ('D.FC.S_BARO')
+  62 [  24] GETTABLE  R7 = R2[K3('FC')]
+  63 [  24] GETTABLE  R7 = R7[K9('S_BARO')]
+  64 [  24] CALL      A=4 B=4 C=1
+  65 [  25] GETTABLE  R4 = R0[K15('dbgMSP')]
+  66 [  25] LOADK     R5 = K5 ('MSPP')
+  67 [  25] LOADK     R6 = K20 ('D.FC.S_GPS')
+  68 [  25] GETTABLE  R7 = R2[K3('FC')]
+  69 [  25] GETTABLE  R7 = R7[K10('S_GPS')]
+  70 [  25] CALL      A=4 B=4 C=1
+  71 [  26] GETTABLE  R4 = R0[K15('dbgMSP')]
+  72 [  26] LOADK     R5 = K5 ('MSPP')
+  73 [  26] LOADK     R6 = K21 ('D.FC.S_RF')
+  74 [  26] GETTABLE  R7 = R2[K3('FC')]
+  75 [  26] GETTABLE  R7 = R7[K11('S_RF')]
+  76 [  26] CALL      A=4 B=4 C=1
+  77 [  27] GETTABLE  R4 = R0[K15('dbgMSP')]
+  78 [  27] LOADK     R5 = K5 ('MSPP')
+  79 [  27] LOADK     R6 = K22 ('D.FC.S_PITOT')
+  80 [  27] GETTABLE  R7 = R2[K3('FC')]
+  81 [  27] GETTABLE  R7 = R7[K12('S_PITOT')]
+  82 [  27] CALL      A=4 B=4 C=1
+  83 [  29] RETURN    A=0 B=1 C=0
+  84 [  29] RETURN    A=0 B=1 C=0

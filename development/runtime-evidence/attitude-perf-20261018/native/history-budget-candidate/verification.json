@@ -1,0 +1,2149 @@
+{
+  "result": "PASS_SCOPED_NATIVE_HISTORY_CANDIDATE",
+  "mainSHA256": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+  "nativeExtremaSHA256": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+  "runtimeSHA256": {
+    "sdcard/SCRIPTS/TOOLS/telem.lua": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+    "sdcard/WIDGETS/AERODECK/main.lua": "bed3964a0e139e08e912ca3bedbefa7f42ccc94878850bf3793391a21c14e661",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua": "3adbb7aac5423d1daa5de98555431641159c1c5c4e9af286e71006d98926f409",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua": "eaa7fb8dfd063bb9d3c3ceff3e6fb1ca9db846d4d2c650340cc32e021f4b57a3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua": "99f9efecf51b41a2993c2bcf17dcf83179cb3ed9906664512cb8a603d2cae28c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/display.lua": "cbb561a5c6bb85d8c197a293f2dc060a635e7a75253e8607d169e21478c6685e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/input-indicators.lua": "7d04131f19479a9e241daa6ff8fe452aa6cf25fb20517e42dd49b30d5a02c3fe",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/input-picker.lua": "d2d3a5b58bcc07c267836431fb975607a5b088366b195df88c49125d8552d154",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/link.lua": "920ff8c0b2d7a5ed69fe25d9b096358f7ddffd9d4cfa8197dffea71f6cf264cc",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/model-image.lua": "b4c83330d1073a13da78262c2f177db2def43183838920285e826c48164a858e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/model-store.lua": "3b021e461275bd7569ac858817ec7310e97798e6b37bc3757cbca76682db52c3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua": "ead877f9aa5f9b0e9bc386ae708ee074a397dc256124309a7614b88ddb413b26",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/native-extrema.lua": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua": "05f2ccdda3721ad7e4e7016042ff54997d71ba2f7d8d073bc7fd80774fc55db5",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/power-policy.lua": "bd87a02967cb5c52532ecaf65c38d6728600981953419a23578a7baa06d13ab3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/protocols.lua": "a81ec5b37edf67999a4667776ea00aab9d4bf2948d570c9876872ac30f7692f8",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/quick-pack.lua": "b5cbdadb449bb52e160d8ccd2271d0dcb13a71d872c1298c6ebcfdeb9f147b29",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/radio-status.lua": "22cb3241ac704d2e08adab5e43945e3ba64341329d7782b472f30301dce92aaf",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/reference-ui.lua": "1baa5d2f1851ff4fc3656b1a41fdca410f7b6082504efc2c56f66f7ec1dcdc5e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/reference.lua": "3d6ee0b546cdb5676cfccc58a57efa75651e2dd5d98460a73dc9c709fb67275a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/session.lua": "c5c4534e83f6778ff3e5b9d6e7eae9d4d15a4dbf91de8841eb2ae8741c80d1e3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/timer-owner.lua": "9532b63ee917081221ae513b10d89a08840323694fb3f60c55d5f9040044f9ce",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/vtx-cache.lua": "389bb57e0d2e49464c1e1049b2a0a6b2c24fa3569f452d8c1efee06134a5338b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/vtx-native.lua": "518af8976249ffee1f387c2254e6daacd24ed05366f642a3071fcf8c88f93871",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/battery_full-18.png": "71621db1d070e8963debe7f082e566705fc2efb3da5623db96d7373c5162dc4b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/bug_report-18.png": "10805c295e27457425280e86d0e2a428a7d7a2548a7979e23f874c2e90c4489f",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/build.png": "d00abd2918bb715baab6f40a1af852cf56fafb0b463dd58aa9efed53b1a99b4f",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/cell_tower-18.png": "0487a8397c974ecb20b1365efdfb59512edca5d890f20f03fcbef46486b160be",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/gpp_bad-18.png": "798ff1c279b654aaac9ac96a064d5cc1804333b6064dd52c5cc7d1abbf4d7c39",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/head_mounted_device-18.png": "62eb6fd33e2ccf2ab09c742e08788c40703cc04916c925dec3cd1bc4c82667ca",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/head_mounted_device.png": "7277f04f0977aa306a6579b80bb00340783cb3741d1d3d50a2c35289c1858926",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/home-18.png": "7f98e6a42cc03bd6c52ee19c98a6a0fc82e08279aaac74e1108e50395362b1d2",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/home.png": "9430e9e75b706d428a2bce0e0c4b9feacc32ba6f95ee15d85467b2b335250fb5",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/my_location-18.png": "c63dfc2cbdbb1c1d18047e10d8d32e5af9e344e7df5d45a7c67f84b08a342868",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/my_location.png": "bf1e68c2f89ff29682ff24302ffd70acf99d1adf3a98f293325f14918ecde7c6",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/route-18.png": "1b7c098ea2544772151bdc569d657e455084287f1e5bdc6e7268b4730949c661",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/satellite_alt-18.png": "c03f56c53c61454818cc1b0b41f99499c6b2a0b23ccde483e4d7406a8905f8f8",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/sensors-18.png": "4511b2d7bb29e59de242122212ed5003b62d66ba68cc40fc1a50ed20bea0deca",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/speed-18.png": "813ad55fb3c4467aa3719b2b2322d4388e98a8d03bd4917bd31c94d7cdf7bd23",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/speed.png": "bfac1715e6c16b4413cb4d0e33a42afef1cac55b7fbfc730382e64b4207e4c44",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/sports_esports-18.png": "a25816db4840fa122ea83da0df687ea231f8c141297a9d181bed1ca68e2dbbad",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/table_chart-18.png": "0e6e2080bb345474f3375e5f541a0f886a1a60d00d1fd3b12362168581c0a417",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/table_chart.png": "1d1682c2d0768eafc37f38c3039204fe42765e2e17347307727510847e94ed4b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/tune.png": "0cba6a8dc19327925642139a2b20e6c28a9cbce3d8eb370aa92b6efda9ad7fc3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/battery_full-18.png": "45eb2683003373196581e4f5546d3e4e60aaf9ebcde6c1095ccb986f503f4cac",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/bug_report-18.png": "13f83f4bfdccca792eddf2c5bb64c215cf8c2305cbda3fbb92107c5bc4c04c0d",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/build.png": "fef1db514c1916d6f291d331acb2906120f15cf4625b47b315cc670937ffb418",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/cell_tower-18.png": "218d4ffac7721968ae2606ce114ea245c6c9fd7f02d899dba9de4ea69b6f969c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/gpp_bad-18.png": "720cb481e696303e236000cde8720ca8145b755215ee1134c7cf714b81a14c16",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/head_mounted_device-18.png": "0203282602b0c7dabb4f18bbff36e185b7a9e2bb36dc9fc26f4b628e5e6b8161",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/head_mounted_device.png": "e2547a125a635ff6a0b348f7cf6c9896a87643c44c19cd1f43f0fb9a5ce52c52",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/home-18.png": "9ac516212f71704bb8a6b9364f976e1d3a14b0ef8a16492b23b8ebf50e8d9ac0",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/home.png": "aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/my_location-18.png": "1471edbf48d82a38110b8385fb965e31d74970418b9bf8b0ac71760a8d0b1428",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/my_location.png": "8efe6881630adefaa140e1eb82e5b57d5550b2f2ce7208a085373d8a0927d509",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/route-18.png": "ac863cf7053acc6ae3222844a19dfae62c5a2b34010a0a472b277c9fbd5e1f4a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/satellite_alt-18.png": "16241dea34276792cf3445539f4cb27530a10bb5ee935742162853643a2727ed",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/sensors-18.png": "50f49afa97efcdb61f86d80ca3da4bf4139e33af0a8c1f16272042ff9ef9224c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/speed-18.png": "2d9204e15b8a4cf7a2acd7eee0f596f62f8c702031126b6e1b4208e4a7a27934",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/speed.png": "dde260c9abcbb85db55a13ba28d87fa678d8d4a6d6779b866a9029f28d16ad39",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/sports_esports-18.png": "27c24e1897c478a4887ef19a30cf77d0cf5bf83d21dfe907e85374236fda7f71",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/table_chart-18.png": "1b2e723554e138d74ef10f9f552e92056401063cba52f8a5f53e964936c27eb4",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/table_chart.png": "cb156605dabf0196f54490fdc9e47f69afcc815339d9e5562243b59058891d6a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/tune.png": "b308525580147d5818270bb343f0797a8604775ebf80e74471fa53eb4d2a856a"
+  },
+  "syntheticDataOnly": true,
+  "hardwareVerified": false,
+  "targetFirmware": "TX16S MkII EdgeTX2.12.4",
+  "nativeFirmware": "EdgeTX3.0.0 TX16S WASM",
+  "nativeCallbackInstructionBudget": 20000,
+  "nativeBudgetHookModified": false,
+  "fixturePrefixShips": false,
+  "productionMainUnmodified": false,
+  "productionModuleBytesUnchanged": true,
+  "productionWidgetUnmodified": false,
+  "method": "Development widget drives the copied full production application with identical private getUsage checkpoints; source+1/+2 return explicitly specified native extrema. A timing wrapper surrounds production begin/step, preserving arguments/results; native-extrema module bytes remain exact.",
+  "monitor": {
+    "samples": 1100,
+    "intervalMs": 37,
+    "elapsedMs": 47355,
+    "blankFrames": 0,
+    "ordinaryProgressFrames": 0,
+    "forcedGC": false,
+    "sampleSpanMs": 44808
+  },
+  "history": {
+    "MIN": {
+      "publications": 42,
+      "fieldCount": 24,
+      "durationSecondsMedian": 0.43,
+      "publicationIntervalSecondsMedian": 0.58,
+      "publicationIntervalSecondsMin": 0.48,
+      "publicationIntervalSecondsMax": 0.66,
+      "publicationHzFromFirstLast": 1.8085575650639611,
+      "baselineMedianIntervalSeconds": 1.1
+    },
+    "MAX": {
+      "publications": 42,
+      "fieldCount": 24,
+      "durationSecondsMedian": 0.44,
+      "publicationIntervalSecondsMedian": 0.59,
+      "publicationIntervalSecondsMin": 0.48,
+      "publicationIntervalSecondsMax": 0.65,
+      "publicationHzFromFirstLast": 1.7864923747276689,
+      "baselineMedianIntervalSeconds": 1.09
+    }
+  },
+  "publicationRecords": [
+    {
+      "sequence": 1,
+      "ticks": 2116,
+      "mode": "MIN",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 2,
+      "ticks": 2180,
+      "mode": "MIN",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 3,
+      "ticks": 2230,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 4,
+      "ticks": 2289,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 5,
+      "ticks": 2337,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 6,
+      "ticks": 2395,
+      "mode": "MIN",
+      "durationTicks": 42,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 7,
+      "ticks": 2444,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 8,
+      "ticks": 2508,
+      "mode": "MIN",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 9,
+      "ticks": 2557,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 10,
+      "ticks": 2617,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 11,
+      "ticks": 2666,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 12,
+      "ticks": 2725,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 13,
+      "ticks": 2774,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 14,
+      "ticks": 2839,
+      "mode": "MIN",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 15,
+      "ticks": 2887,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 16,
+      "ticks": 2947,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 17,
+      "ticks": 2995,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 18,
+      "ticks": 3055,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 19,
+      "ticks": 3109,
+      "mode": "MIN",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 20,
+      "ticks": 3169,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 21,
+      "ticks": 3217,
+      "mode": "MIN",
+      "durationTicks": 42,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 22,
+      "ticks": 3276,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 23,
+      "ticks": 3325,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 24,
+      "ticks": 3389,
+      "mode": "MIN",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 25,
+      "ticks": 3437,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 26,
+      "ticks": 3497,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 27,
+      "ticks": 3545,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 28,
+      "ticks": 3605,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 29,
+      "ticks": 3654,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 30,
+      "ticks": 3720,
+      "mode": "MIN",
+      "durationTicks": 50,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 31,
+      "ticks": 3771,
+      "mode": "MIN",
+      "durationTicks": 46,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 32,
+      "ticks": 3831,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 33,
+      "ticks": 3879,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 34,
+      "ticks": 3939,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 35,
+      "ticks": 3993,
+      "mode": "MIN",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 36,
+      "ticks": 4053,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 37,
+      "ticks": 4102,
+      "mode": "MIN",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 38,
+      "ticks": 4161,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 39,
+      "ticks": 4210,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 40,
+      "ticks": 4269,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 41,
+      "ticks": 4324,
+      "mode": "MIN",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 42,
+      "ticks": 4383,
+      "mode": "MIN",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 21.6,
+      "currentAmps": 0.5,
+      "pitchDegrees": -30.0,
+      "rollDegrees": -45.0
+    },
+    {
+      "sequence": 43,
+      "ticks": 4475,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 44,
+      "ticks": 4540,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 45,
+      "ticks": 4605,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 46,
+      "ticks": 4654,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 47,
+      "ticks": 4713,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 48,
+      "ticks": 4762,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 49,
+      "ticks": 4821,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 50,
+      "ticks": 4871,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 51,
+      "ticks": 4936,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 52,
+      "ticks": 4985,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 53,
+      "ticks": 5045,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 54,
+      "ticks": 5093,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 55,
+      "ticks": 5153,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 56,
+      "ticks": 5202,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 57,
+      "ticks": 5254,
+      "mode": "MAX",
+      "durationTicks": 36,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 58,
+      "ticks": 5319,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 59,
+      "ticks": 5379,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 60,
+      "ticks": 5428,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 61,
+      "ticks": 5491,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 62,
+      "ticks": 5545,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 63,
+      "ticks": 5607,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 64,
+      "ticks": 5656,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 65,
+      "ticks": 5715,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 66,
+      "ticks": 5763,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 67,
+      "ticks": 5828,
+      "mode": "MAX",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 68,
+      "ticks": 5877,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 69,
+      "ticks": 5936,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 70,
+      "ticks": 5985,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 71,
+      "ticks": 6044,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 72,
+      "ticks": 6093,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 73,
+      "ticks": 6158,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 74,
+      "ticks": 6207,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 75,
+      "ticks": 6272,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 76,
+      "ticks": 6325,
+      "mode": "MAX",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 77,
+      "ticks": 6385,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 78,
+      "ticks": 6439,
+      "mode": "MAX",
+      "durationTicks": 49,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 79,
+      "ticks": 6499,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 80,
+      "ticks": 6548,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 81,
+      "ticks": 6607,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 82,
+      "ticks": 6656,
+      "mode": "MAX",
+      "durationTicks": 43,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 83,
+      "ticks": 6716,
+      "mode": "MAX",
+      "durationTicks": 44,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    },
+    {
+      "sequence": 84,
+      "ticks": 6770,
+      "mode": "MAX",
+      "durationTicks": 48,
+      "fields": 24,
+      "volts": 25.2,
+      "currentAmps": 40.0,
+      "pitchDegrees": 20.0,
+      "rollDegrees": 60.0
+    }
+  ],
+  "sampledCallbackUsage": {
+    "sampleCount": 28,
+    "minimum": 73,
+    "median": 82.0,
+    "sampledPeak": 87,
+    "definition": "VM allowance, not walltime; one sample every30callbacks in published history interval",
+    "records": [
+      {
+        "frame": 90,
+        "ticks": 2246,
+        "usage": 87,
+        "memoryKB": 1207.782
+      },
+      {
+        "frame": 120,
+        "ticks": 2406,
+        "usage": 83,
+        "memoryKB": 1215.752
+      },
+      {
+        "frame": 150,
+        "ticks": 2568,
+        "usage": 77,
+        "memoryKB": 1224.094
+      },
+      {
+        "frame": 180,
+        "ticks": 2731,
+        "usage": 86,
+        "memoryKB": 1231.237
+      },
+      {
+        "frame": 210,
+        "ticks": 2893,
+        "usage": 79,
+        "memoryKB": 1240.32
+      },
+      {
+        "frame": 240,
+        "ticks": 3056,
+        "usage": 83,
+        "memoryKB": 1204.775
+      },
+      {
+        "frame": 270,
+        "ticks": 3217,
+        "usage": 83,
+        "memoryKB": 1213.808
+      },
+      {
+        "frame": 300,
+        "ticks": 3378,
+        "usage": 73,
+        "memoryKB": 1221.604
+      },
+      {
+        "frame": 330,
+        "ticks": 3540,
+        "usage": 75,
+        "memoryKB": 1229.952
+      },
+      {
+        "frame": 360,
+        "ticks": 3703,
+        "usage": 74,
+        "memoryKB": 1205.862
+      },
+      {
+        "frame": 390,
+        "ticks": 3869,
+        "usage": 83,
+        "memoryKB": 1214.949
+      },
+      {
+        "frame": 420,
+        "ticks": 4031,
+        "usage": 79,
+        "memoryKB": 1223.134
+      },
+      {
+        "frame": 450,
+        "ticks": 4194,
+        "usage": 82,
+        "memoryKB": 1231.066
+      },
+      {
+        "frame": 480,
+        "ticks": 4356,
+        "usage": 84,
+        "memoryKB": 1206.929
+      },
+      {
+        "frame": 510,
+        "ticks": 4519,
+        "usage": 78,
+        "memoryKB": 1215.546
+      },
+      {
+        "frame": 540,
+        "ticks": 4681,
+        "usage": 82,
+        "memoryKB": 1223.811
+      },
+      {
+        "frame": 570,
+        "ticks": 4843,
+        "usage": 81,
+        "memoryKB": 1232.037
+      },
+      {
+        "frame": 600,
+        "ticks": 5006,
+        "usage": 79,
+        "memoryKB": 1239.848
+      },
+      {
+        "frame": 630,
+        "ticks": 5169,
+        "usage": 84,
+        "memoryKB": 1215.656
+      },
+      {
+        "frame": 660,
+        "ticks": 5335,
+        "usage": 87,
+        "memoryKB": 1223.716
+      },
+      {
+        "frame": 690,
+        "ticks": 5502,
+        "usage": 85,
+        "memoryKB": 1232.047
+      },
+      {
+        "frame": 720,
+        "ticks": 5666,
+        "usage": 77,
+        "memoryKB": 1240.257
+      },
+      {
+        "frame": 750,
+        "ticks": 5828,
+        "usage": 83,
+        "memoryKB": 1216.002
+      },
+      {
+        "frame": 780,
+        "ticks": 5991,
+        "usage": 79,
+        "memoryKB": 1224.337
+      },
+      {
+        "frame": 810,
+        "ticks": 6153,
+        "usage": 77,
+        "memoryKB": 1232.619
+      },
+      {
+        "frame": 840,
+        "ticks": 6325,
+        "usage": 83,
+        "memoryKB": 1240.809
+      },
+      {
+        "frame": 870,
+        "ticks": 6488,
+        "usage": 82,
+        "memoryKB": 1216.208
+      },
+      {
+        "frame": 900,
+        "ticks": 6651,
+        "usage": 75,
+        "memoryKB": 1224.386
+      }
+    ]
+  },
+  "memory": {
+    "sampledPeakKB": 1240.809,
+    "scope": "Combined private fixture/full-app Lua state; not retained-heap or physical memory proof",
+    "forcedGcInMonitoredInterval": false
+  },
+  "errors": {
+    "nativeWidgetOrCpu": 0
+  },
+  "sourceChecks": {
+    "distinctNativeOffsets": true,
+    "negativePitchUsesOppositeNativeExtremum": true,
+    "minMaxPublishCorrectNormalizedValues": true,
+    "noCurrentValueSubstitution": true,
+    "noPendingWorkResumedAfterLeavingHistoryBySourceReview": true,
+    "configModelResetInvalidateBySourceReview": true,
+    "pendingAgeBoundBySourceReview": true,
+    "publicationRateNotClaimed5Hz": true,
+    "returnedToLiveAndFlight": true,
+    "coldPhase15CompletedWithoutError": true,
+    "all13PageEvidenceOwnedSeparately": true
+  },
+  "knownLimitations": [
+    "History refresh remains best-effort; no5Hz claim.",
+    "Only24bound fields were measured; native extrema has a64-field module bound but the main app owns at most32specifications.",
+    "This is native3.0WASM with synthetic data, not physical2.12.4 acceptance."
+  ],
+  "nextCandidate": "No further production change proposed. The tested candidate raises only intermediate batches to18; begin/final remain10 and post-service pre-render guard25 is unchanged.",
+  "costReport": {
+    "fieldCount": 24,
+    "usagePercent": {
+      "begin": {
+        "samples": 15,
+        "min": 9,
+        "median": 11,
+        "max": 11
+      },
+      "begin+step": {
+        "samples": 15,
+        "min": 13,
+        "median": 15,
+        "max": 15
+      },
+      "ordinary": {
+        "samples": 56,
+        "min": 4,
+        "median": 4.0,
+        "max": 5
+      },
+      "final": {
+        "samples": 13,
+        "min": 11,
+        "median": 11,
+        "max": 11
+      }
+    },
+    "loggingWrapperIncluded": true,
+    "measurements": [
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 19,
+        "afterStep": 23,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 20,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 21,
+        "done": true,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 20,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 20,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 14,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 21,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MAX",
+        "began": true,
+        "entry": 10,
+        "afterBegin": 20,
+        "afterStep": 25,
+        "done": false,
+        "processed": 4
+      },
+      {
+        "mode": "MIN",
+        "began": false,
+        "entry": 10,
+        "afterBegin": 10,
+        "afterStep": 15,
+        "done": false,
+        "processed": 4
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "file": "history-budget-pfd.png",
+      "sha256": "536ae16b02463c3688c9f848447201ee76e59a81169e5494e02421024829ac13",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-live.png",
+      "sha256": "eeb61a5d42d4b9ac1bc58f05ecbafe70d8fd380b922278f1baf89c3b0da8bb28",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-min-initial.png",
+      "sha256": "46896be5b90badbf9f2a5f389e8573d5cc92638eb915b93eb9882deb3f2b4f58",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-min-end.png",
+      "sha256": "46896be5b90badbf9f2a5f389e8573d5cc92638eb915b93eb9882deb3f2b4f58",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-max-initial.png",
+      "sha256": "55b43b7cedcd1059cc105a2a5e55c445ff35c3824d815d3603c29a8cc01c9568",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-max-end.png",
+      "sha256": "55b43b7cedcd1059cc105a2a5e55c445ff35c3824d815d3603c29a8cc01c9568",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-live-return.png",
+      "sha256": "182d026bee470f787c69c39bd4c6ed60dc85c0dad499bfeefaa4c1b32cc42bfb",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    },
+    {
+      "file": "history-budget-pfd-return.png",
+      "sha256": "afee3be27aca7ba7a390330886b9fe9ad0701111579a843b9d38728bb40127b2",
+      "width": 480,
+      "height": 272,
+      "visuallyInspected": true
+    }
+  ],
+  "evidence": {
+    "history-budget-live-return.png": "182d026bee470f787c69c39bd4c6ed60dc85c0dad499bfeefaa4c1b32cc42bfb",
+    "history-budget-instrumentation.patch": "f94d166c4445c1af6d52b3177f201f2120c4b45299cf973d7f5beb39050e6e11",
+    "history-budget-pfd-return.png": "afee3be27aca7ba7a390330886b9fe9ad0701111579a843b9d38728bb40127b2",
+    "history-budget-observations.json": "1c4683aebbc210f651b0a00d865912910479a7fde505ca4551af6930377c270d",
+    "native-extrema.lua": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+    "history-budget-min-end.png": "46896be5b90badbf9f2a5f389e8573d5cc92638eb915b93eb9882deb3f2b4f58",
+    "history-budget.log": "27040a26b7a2c4348e12c67bc0a06f584f6107fc68666c314702c5356909a3ca",
+    "history-budget-min-initial.png": "46896be5b90badbf9f2a5f389e8573d5cc92638eb915b93eb9882deb3f2b4f58",
+    "driver.lua": "9a9a7a78833cd80e955c9b6bb905044dfcaefed9fe3d559473298c1d1143f778",
+    "source-history-budget.lua": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+    "history-budget-max-end.png": "55b43b7cedcd1059cc105a2a5e55c445ff35c3824d815d3603c29a8cc01c9568",
+    "QAENV.lua": "92228c58cd94c18f5e5be9d476bf10da598b34700d43dfb8e7b8ad51ce51e70c",
+    "history-budget-live.png": "eeb61a5d42d4b9ac1bc58f05ecbafe70d8fd380b922278f1baf89c3b0da8bb28",
+    "history-budget-pfd.png": "536ae16b02463c3688c9f848447201ee76e59a81169e5494e02421024829ac13",
+    "history-budget-inputs.json": "1b186d1929b54bc6ffe6f36cbaf3a0c5fe5b187b7a3a4933ec96bd0285d23c38",
+    "history-budget-max-initial.png": "55b43b7cedcd1059cc105a2a5e55c445ff35c3824d815d3603c29a8cc01c9568",
+    "QAMSP.lua": "165efcd4fb3a15969bbfd9bf9ace11c23752a77c511ed764a1f2e71c1a2b3a71"
+  },
+  "fixtureFiles": {
+    "driver.lua": "9a9a7a78833cd80e955c9b6bb905044dfcaefed9fe3d559473298c1d1143f778",
+    "QAENV.lua": "92228c58cd94c18f5e5be9d476bf10da598b34700d43dfb8e7b8ad51ce51e70c",
+    "QAMSP.lua": "165efcd4fb3a15969bbfd9bf9ace11c23752a77c511ed764a1f2e71c1a2b3a71"
+  },
+  "privateCandidateOnly": true,
+  "baselineMainSHA256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+  "budgetSelection": {
+    "newCycleOrModeChange": 10,
+    "middleFourFieldBatch": 18,
+    "finalBatchOrExpiredCycle": 10,
+    "genericRenderPreludeLimit": 25,
+    "callbackInstructionLimit": 20000,
+    "callbackHookChanged": false
+  },
+  "visualReview": {
+    "allEightScreensInspected": true,
+    "valuesMatchExplicitNativeOffsets": true,
+    "noOverlapOrMissingLabels": true,
+    "liveAndFlightReturnCorrect": true
+  },
+  "comparisonAgainst4556": {
+    "MINMedianIntervalSeconds": {
+      "before": 1.1,
+      "after": 0.58
+    },
+    "MAXMedianIntervalSeconds": {
+      "before": 1.09,
+      "after": 0.59
+    },
+    "sampledCallbackMedianAllowancePercent": {
+      "before": 77,
+      "after": 82
+    },
+    "sampledCallbackPeakAllowancePercent": {
+      "before": 87,
+      "after": 87
+    },
+    "interpretation": "More frequent native-history publication consumes more callback allowance; this is not an FPS or physical-radio speed claim."
+  },
+  "samplingLimit": "Owned-frame samples exclude initial settling after mode entry and the2.5-second MAX-entry settle pause; native error log covers the entire process. No claim that every intermediate frame was individually classified."
+}

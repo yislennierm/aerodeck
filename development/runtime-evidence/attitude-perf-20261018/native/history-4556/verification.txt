@@ -1,0 +1,20 @@
+Native MIN/MAX acceptance — final 4556 source
+
+Main 4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5
+Native extrema module ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b
+
+The copied full application passes this scoped native-widget check with the unchanged 20,000-instruction hook. All telemetry is synthetic. Production main is privately instrumented; the native-extrema module bytes are unchanged. Fixtures and driver do not ship.
+
+The monitor records 1,650 owned-frame samples across 65.715 seconds: 0 blank, 0 ordinary Updating, 0 native or instruction-limit errors, and no forced GC. MIN and MAX each publish 24 bound fields. MIN shows 21.6 V, 0.5 A, pitch −30°, roll −45°; MAX shows 25.2 V, 40 A, pitch +20°, roll +60°. Pitch correctly uses the opposite native offset because its normalizer negates raw pitch. Source current values remain unchanged; this is not current-value substitution. Native data lacking numeric extrema remains --.
+
+Publication statistics:
+MIN: 30 snapshots, median interval 1.100s, max interval 1.240s, rate 0.901 Hz. Median acquisition duration 1.035s.
+MAX: 30 snapshots, median interval 1.090s, max interval 1.160s, rate 0.904 Hz. Median acquisition duration 1.040s.
+
+Sampled history callbacks: median 77%, sampled peak 87% of Lua VM allowance. These are sampled instruction percentages, not processor time or guaranteed all-frame maxima. Sampled Lua state memory peak 1257.4 KB includes fixture and app. Eight native screenshots were inspected, including distinct MIN/MAX values and return to LIVE/Flight.
+
+Source review confirms that model/config/binding revisions reset the reader, history deactivation/background cancel pending work, mode changes start fresh work, and jobs older than 200 ticks restart. No deadlock was found. Actual refresh is roughly 0.9 Hz in this 24-field case, not 5 Hz.
+
+A separate native cost probe measures begin 9–11 allowance points; begin plus first batch 13–15; ordinary four-field batch 4–5; final batch plus atomic publish 11. It includes a small timing/logging wrapper. A blanket 15/18 entry gate could exceed the generic 25-point pre-render allowance on begin/final and cause progress flashes. A middle-batch-only 18 gate is a possible next optimization, not applied here.
+
+Native firmware is 3.0 WASM; physical TX16S 2.12.4 remains unverified. All-page/30-degree reproduction is recorded separately by the browser agent.

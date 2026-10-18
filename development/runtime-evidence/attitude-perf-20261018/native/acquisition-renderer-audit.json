@@ -1,0 +1,206 @@
+{
+  "scope": "Read-only implementation/acquisition/rendering audit; no production edits or new attitude diagnostic tool",
+  "date": "2026-10-18",
+  "currentMainSHA256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a",
+  "currentBuild": "ROLL-DISPLAY-20261018",
+  "toolboxPackage": "Pinned original fm2m-toolbox-200-edgetx; original bytecode is authority where recovered text is damaged",
+  "originalModules": {
+    "LIB/TLM/TBS/GYRO.luac": "23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee",
+    "LIB/TLM/TLMUPDS.luac": "5e383ccbce0732ef4ac94bc41226497c5b76d7c9b3e24ad4af7f4658d2d1c863",
+    "UI/X.luac": "4b3688d5431989751b82893f9ed684931c2cac4592d79d4599e4128943a9ac94",
+    "UI/480X272/DB1/ATT.luac": "b005f1674bfa26b1d0a2fba88e532ebae75038954263bd8e028879b001d03a5d",
+    "UI/480X272/DB1/AHR.luac": "0ccd8ec1b865c3bfe12f027de2e132f9e1424333801bd03e7cbc06fb5f74145d",
+    "MAIN/ML.luac": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6"
+  },
+  "originalDisassemblyRoot": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence",
+  "findings": [
+    {
+      "id": "NATIVE-HORIZON",
+      "finding": "Both call the same EdgeTX native lcd.drawHudRectangle. No AERODECK Lua-pixel rasterizer is involved. Native work scales with rectangle height; compare matched viewports.",
+      "toolboxEvidence": "UI-X-original SETTABLE X.HR=lcd.drawHudRectangle; ATT original main/1PC26; AHR original main/1PC224.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1873,
+          "symbol": "lcd.drawHudRectangle(d.pitch,roll,78,402,64,244,CUSTOM_COLOR)",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ],
+      "primaryEvidence": "v2.12.4 radio/src/lua/api_colorlcd.cpp1307\u20131395; sinf/cosf/tanf and bounded row scanline loop."
+    },
+    {
+      "id": "SOURCE-READS",
+      "finding": "Toolbox original TLMUPDS reads current and native min/max for each active registered source, then vFN. CRSF gyro vFN negates pitch-radians and preserves roll; neither side has an attitude smoothing filter. AERO fast path reads current1time peraxis, requires currentness and uses a cached compiled reader. Static call counts do not prove actual updateFPS.",
+      "toolboxEvidence": "verified-LIB-TLM-TLMUPDS.txt main/0PC9\u201311(current),39\u201348(min/max),50\u201356(vFN); verified-LIB-TLM-TBS-GYRO.txt main/0(negativepitch),main/1(roll).",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 769,
+          "symbol": "local function plannedRead",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 855,
+          "symbol": "local function pollAttitude()",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ]
+    },
+    {
+      "id": "STANDALONE-FORCED-SERVICE",
+      "priority": 1,
+      "finding": "Standalone painted frames force all telemetry acquisition+power/session/input/timer/log derivation with serviceData(true,true), bypassing the200ms/revision cache even though attitude is separately polled eachcallback. Retained mode already stages slower work.",
+      "candidate": "Use the existing cache-aware serviceData(false,true) contract after confirming actual-app telemetry/setting-reset/current-loss behavior. Keep fast attitude everycallback. This preserves all feature consumers.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 2077,
+          "symbol": "serviceData=function(force,attitudePolled)",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 3038,
+          "symbol": "else d=serviceData(true,true)end",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 3024,
+          "symbol": "local pitch,roll=telemetry.pollAttitude()",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ]
+    },
+    {
+      "id": "STATIC-DRAW-CALLS",
+      "priority": 1,
+      "finding": "Graduated AERO draws11 bankticks with3strokes each(33native linecalls),9 movingpointer strokes,24aircraft halo/foreground strokes and2aircraftrectangles eachframe. Toolbox ATT uses2cold-cached masks+nativeHUD+fixed dottedline; AHR uses1cold aircraft bitmap, nativeHUD/tapes and no custom Lua pitch-caption collision engine.",
+      "candidate": "Cache exact static bank/aircraft artwork as bounded native mask assets; retain the moving geometry and same pixels. Measure before/after, especially fullapp standalone and widget.",
+      "toolboxEvidence": "ATT original main/0i loads/masks once; main/1PC51/59mask draws. AHR original init loads DBD_AHL once; main/1PC257 bitmapdraw.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1764,
+          "symbol": "local function bankReference(roll)",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1958,
+          "symbol": "ink(p.black);for dy=-1,2 do",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ]
+    },
+    {
+      "id": "FONT-MEASUREMENT",
+      "priority": 1,
+      "finding": "flightValue repeats textWidth for the same text/font in fit tests, fittedText and centering; unit draws requery Ag heights despite vlabel keeping a perfont height cache. Tapes and pitch labels repeat metric calls for unchanged strings.",
+      "candidate": "Bounded percell last-value metrics and precomputed finite static labels/units. Avoid an unbounded dictionary keyed by arbitrary live values. Keep measured fallback/overflow behavior.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1735,
+          "symbol": "local function flightValue(",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1319,
+          "symbol": "local function fittedText(",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1746,
+          "symbol": "local _,height=lcd.sizeText('Ag',font)",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ]
+    },
+    {
+      "id": "DUPLICATE-NUMERIC-CHECKS",
+      "priority": 2,
+      "finding": "plannedRead validates numeric/type/NaN/infinity and then compiled reader repeats those checks. normalize oracle is not called in the normal compiled-reader fast path; its fallback remains compatibility-only.",
+      "candidate": "Let the compiled reader own its proven numeric validation while plannedRead retains freshness and source-state reporting. Cover nonnumber/NaN/infinite/currentfalse/zero cases.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 776,
+          "symbol": "if current and type(raw)=='number'and raw==raw and math.abs(raw)<math.huge then",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ],
+      "readerEvidence": {
+        "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/protocols.lua",
+        "sha256": "a81ec5b37edf67999a4667776ea00aab9d4bf2948d570c9876872ac30f7692f8",
+        "symbol": "function M.reader"
+      }
+    },
+    {
+      "id": "WARM-GEOMETRY-CHURN",
+      "priority": 2,
+      "finding": "cockpit allocates two constant2-element arrays perframe, computes trigonometry for both+roll and\u2212roll, and recomputes zero-horizon origin within caption placement attempts. Pitch label/box tables and bankticks themselves are already preallocated.",
+      "candidate": "Hoist constant arrays, reuse sameframe sin/cos identities, hoist horizonorigin/slope and cache finite pitchlabel metrics; keep collision geometry and invertedroll coverage.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1823,
+          "symbol": "for _,x in ipairs({8,410})do",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1953,
+          "symbol": "for _,x in ipairs({78,356})do",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1875,
+          "symbol": "local angle=-roll*pi/180",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1899,
+          "symbol": "local hx,hy=240+sr*d.pitch",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ]
+    },
+    {
+      "id": "DEGRADATION-LIMITS",
+      "finding": "No continuously growing attitude buffer, warm SD load/conversion, routine explicitGC or unbounded transport queue was found in current warm attitude path. Repeated formatting/measurement/tinytable churn can contribute GC/callback jitter; native budget nearcapacity also leaves less burstmargin. These are risks/opportunities, not proof of a specific long-term slowdown. Toolbox also allocates perdraw closures(AHR3,ATT1); do not claim it is allocation-free.",
+      "toolboxEvidence": "AHR original main/1PC198/202/203CLOSURE; ATT original main/1PC1CLOSURE.",
+      "aerodeckEvidence": [
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1606,
+          "symbol": "local masks={}",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 1753,
+          "symbol": "local pitchLabels={};",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        },
+        {
+          "file": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+          "line": 703,
+          "symbol": "local function rememberSource(",
+          "sha256": "f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "No FPS equivalence or superiority is established by static op/API counts.",
+    "Native comparison must match radio/model/RF/MSP settings, pose sequence, viewport and whole-app execution context.",
+    "AHR/ATT component measurements with ordinary ungated state do not prove whole Toolbox application parity; do not bypass licence checks.",
+    "Required AERODECK UI/features should remain while removing redundant warm work."
+  ]
+}

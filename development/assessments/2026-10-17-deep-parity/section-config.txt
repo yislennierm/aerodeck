@@ -1,0 +1,507 @@
+AERODECK / TOOLBOX2 — CONFIGURATION FIELD AND WORKFLOW MATRIX
+Baseline ebb932a / POWER-LIVE-20261017
+Only activation enforcement excluded; all functional capabilities remain required.
+
+90 declaration rows (65 literal+25 generated), plus10 workflow contracts. Counts overlap other domains; no parity percentage.
+Unverified declarations are verification tasks, not silently discarded requirements.
+
+CFG-001 | MDL_RCP — RC protocol | PARTIAL
+  Toolbox: Protocol family activates its reader set and dependent capabilities; OFF clears model subfeatures.
+  AERODECK: rcProtocol saves a local profile; native reads and some MSP auto cases continue for None.
+  Acceptance: Protocol selection must route real readers/defaults/units and OFF must have consistent documented effects.
+
+CFG-002 | MDL_FC — Flight controller | PARTIAL
+  Toolbox: FC choice drives BF/INAV family setup and dependent screens.
+  AERODECK: fcType selects visibility and a Betaflight-only MSP gate; INAV is listed but not implemented.
+  Acceptance: Choose each supported family, then prove real decoder/transport and field visibility after save.
+
+CFG-003 | MDL_BTV — Battery sensor | PARTIAL
+  Toolbox: Battery sensor group selects native protocol readers.
+  AERODECK: voltage has Auto/None/manual sensor; no grouped pack provider or automatic cell inference.
+  Acceptance: Provider selection must distinguish flight pack from receiver supply and reset dependent state.
+
+CFG-004 | MDL_BTA — Current sensor | PARTIAL
+  Toolbox: Current group activates current, consumed charge and remaining calculations.
+  AERODECK: current/consumed/remaining are individually mapped with actual numeric consumers.
+  Acceptance: Read each protocol current/capacity source correctly, preserving zero and provenance.
+
+CFG-005 | MDL_GYRO — Gyroscope | PARTIAL
+  Toolbox: Gyro group activates family-specific attitude decoders.
+  AERODECK: Separate pitch/roll mappings; CRSF radians conversion is real, other family adapters incomplete.
+  Acceptance: Degree/radian and BF/INAV/FrSky inputs produce the correct known physical poses.
+
+CFG-006 | MDL_ACC — Accelerometer | UNVERIFIED
+  Toolbox: Accelerometer row is declared but hidden; DATAINIT/CFGUPD force its model-enable state off. Independent toggle is not a proven usable feature.
+  AERODECK: No separate acceleration source controls or X/Y/Z view.
+  Acceptance: Verify actual supported acceleration producer before exposing it; do not implement a decorative disabled toggle.
+
+CFG-007 | MDL_BARO — Barometer | MISSING
+  Toolbox: Independent barometer group provides barometric altitude and vertical speed.
+  AERODECK: A note says NOT IMPLEMENTED; Alt is sampled as fallback into undifferentiated altitude.
+  Acceptance: Enable/disable barometer data and preserve baro versus GPS origin in views.
+
+CFG-008 | MDL_PITOT — Pitot tube | MISSING
+  Toolbox: Independent pitot group supplies airspeed.
+  AERODECK: ASpd is sampled but has no configurable provider or adaptive Flight instrument.
+  Acceptance: Configure pitot source and display labelled airspeed with ground speed fallback/auxiliary.
+
+CFG-009 | MDL_GPS — GPS | PARTIAL
+  Toolbox: GPS enable drives family readers, navigation data and optional detailed MSP poll.
+  AERODECK: GPS/manual source and None are real; local capture is page-owned and FC quality decoding incomplete.
+  Acceptance: Disable/enable GPS consistently and run acquisition independently of the selected page.
+
+CFG-010 | MDL_VTX — VTX | MISSING
+  Toolbox: VTX enable activates actual connection/status/control functions; INAV model setup disables this BF VTX path.
+  AERODECK: vtxMode only exposes local-reference lists, not a backend.
+  Acceptance: Expose only supported backend capabilities and activate a genuine status/control path.
+
+CFG-011 | RCP_pv — Protocol version | MISSING
+  Toolbox: Subtype/version selection changes reader definitions, RF captions and thresholds.
+  AERODECK: Protocol version is an explanatory note saying configured in RF module.
+  Acceptance: Support actual source subtype semantics; avoid confusing app decoder version with an RF firmware updater.
+
+CFG-012 | RL_RSI_L — RSSI Low | PARTIAL
+  Toolbox: Protocol-aware defaults/ranges/units; unavailable LQ/SNR rows hidden for ACCST/R9.
+  AERODECK: rssiLow is saved and used; fixed dBm/%/dB ranges and defaults.
+  Acceptance: Select ELRS, Crossfire and FrSky subtypes: validate units/defaults, low/critical ordering and unavailable fields.
+
+CFG-013 | RL_RSI_C — RSSI Critical | PARTIAL
+  Toolbox: Protocol-aware defaults/ranges/units; unavailable LQ/SNR rows hidden for ACCST/R9.
+  AERODECK: rssiCrit is saved and used; fixed dBm/%/dB ranges and defaults.
+  Acceptance: Select ELRS, Crossfire and FrSky subtypes: validate units/defaults, low/critical ordering and unavailable fields.
+
+CFG-014 | RL_RQL_L — RQLY Low | PARTIAL
+  Toolbox: Protocol-aware defaults/ranges/units; unavailable LQ/SNR rows hidden for ACCST/R9.
+  AERODECK: lqLow is saved and used; fixed dBm/%/dB ranges and defaults.
+  Acceptance: Select ELRS, Crossfire and FrSky subtypes: validate units/defaults, low/critical ordering and unavailable fields.
+
+CFG-015 | RL_RQL_C — RQLY Critical | PARTIAL
+  Toolbox: Protocol-aware defaults/ranges/units; unavailable LQ/SNR rows hidden for ACCST/R9.
+  AERODECK: lqCrit is saved and used; fixed dBm/%/dB ranges and defaults.
+  Acceptance: Select ELRS, Crossfire and FrSky subtypes: validate units/defaults, low/critical ordering and unavailable fields.
+
+CFG-016 | RL_SNR_L — RSNR Low | PARTIAL
+  Toolbox: Protocol-aware defaults/ranges/units; unavailable LQ/SNR rows hidden for ACCST/R9.
+  AERODECK: snrLow is saved and used; fixed dBm/%/dB ranges and defaults.
+  Acceptance: Select ELRS, Crossfire and FrSky subtypes: validate units/defaults, low/critical ordering and unavailable fields.
+
+CFG-017 | RL_SNR_C — RSNR Critical | PARTIAL
+  Toolbox: Protocol-aware defaults/ranges/units; unavailable LQ/SNR rows hidden for ACCST/R9.
+  AERODECK: snrCrit is saved and used; fixed dBm/%/dB ranges and defaults.
+  Acceptance: Select ELRS, Crossfire and FrSky subtypes: validate units/defaults, low/critical ordering and unavailable fields.
+
+CFG-018 | BT_CELL_NOPWR — Cell "no pwr" voltage | PARTIAL
+  Toolbox: Seven-field battery editor has numeric ranges and neighboring boundary adjustment; defaults differ from AERODECK.
+  AERODECK: Actual no-power threshold in eight-field battery draft; 0.1V integer representation with ordered validation.
+  Acceptance: Save, reload and test exact boundaries in float32; document defaults and resolve invalid order without silent changes.
+
+CFG-019 | BT_CELL_MIN — Cell min voltage | PARTIAL
+  Toolbox: Seven-field battery editor has numeric ranges and neighboring boundary adjustment; defaults differ from AERODECK.
+  AERODECK: Actual minimum threshold in eight-field battery draft; 0.1V integer representation with ordered validation.
+  Acceptance: Save, reload and test exact boundaries in float32; document defaults and resolve invalid order without silent changes.
+
+CFG-020 | BT_CELL_CRIT — Cell critical voltage | PARTIAL
+  Toolbox: Seven-field battery editor has numeric ranges and neighboring boundary adjustment; defaults differ from AERODECK.
+  AERODECK: Actual critical threshold in eight-field battery draft; 0.1V integer representation with ordered validation.
+  Acceptance: Save, reload and test exact boundaries in float32; document defaults and resolve invalid order without silent changes.
+
+CFG-021 | BT_CELL_LOW — Cell low voltage | PARTIAL
+  Toolbox: Seven-field battery editor has numeric ranges and neighboring boundary adjustment; defaults differ from AERODECK.
+  AERODECK: Actual low threshold in eight-field battery draft; 0.1V integer representation with ordered validation.
+  Acceptance: Save, reload and test exact boundaries in float32; document defaults and resolve invalid order without silent changes.
+
+CFG-022 | BT_CELL_MAX — Cell max voltage | PARTIAL
+  Toolbox: Seven-field battery editor has numeric ranges and neighboring boundary adjustment; defaults differ from AERODECK.
+  AERODECK: Actual maximum threshold in eight-field battery draft; 0.1V integer representation with ordered validation.
+  Acceptance: Save, reload and test exact boundaries in float32; document defaults and resolve invalid order without silent changes.
+
+CFG-023 | BT_CELL_WARN_TYPE — Cell alerts type | EQUIVALENT
+  Toolbox: Selectable alert modality is consumed by warning/sound handling.
+  AERODECK: Visual, sound, haptic and both are implemented in batteryConfig.check.
+  Acceptance: Verify each modality on the target radio; no output when no pack power or muted.
+
+CFG-024 | BT_CELL_WARN_SND —  audible alerts type | EQUIVALENT
+  Toolbox: Separate low/critical audible policy.
+  AERODECK: Critical-only or critical+low policy is saved and consumed.
+  Acceptance: Verify both policies at exact low/critical boundaries and after reconnect; cadence/mute are separate requirements.
+
+CFG-025 | _f1 — Pack1 enable/chemistry | MISSING
+  Toolbox: Each favourite is OFF or a battery type; subordinate cell/capacity rows hide when OFF.
+  AERODECK: Pack1 always exists; no enabled/chemistry state.
+  Acceptance: Disable/enable a favourite, select chemistry, persist it, and ensure chooser shows only usable entries.
+
+CFG-026 | _f2 — Pack1 cell number | PARTIAL
+  Toolbox: Cell count1..99 associated with enabled favourite.
+  AERODECK: cells1,1..12; actually used in pack voltage calculations.
+  Acceptance: Preserve valid required counts and enforce supported target limits explicitly; apply selected profile consistently.
+
+CFG-027 | _f3 — Pack1 capacity | PARTIAL
+  Toolbox: Capacity100..100000mAh in50mAh steps.
+  AERODECK: capacity1,100..30000mAh in50mAh steps; real remaining calculation.
+  Acceptance: Support required capacity range without overflow; selected profile drives remaining with provenance.
+
+CFG-028 | _f4 — Pack2 enable/chemistry | MISSING
+  Toolbox: Each favourite is OFF or a battery type; subordinate cell/capacity rows hide when OFF.
+  AERODECK: Pack2 always exists; no enabled/chemistry state.
+  Acceptance: Disable/enable a favourite, select chemistry, persist it, and ensure chooser shows only usable entries.
+
+CFG-029 | _f5 — Pack2 cell number | PARTIAL
+  Toolbox: Cell count1..99 associated with enabled favourite.
+  AERODECK: cells2,1..12; actually used in pack voltage calculations.
+  Acceptance: Preserve valid required counts and enforce supported target limits explicitly; apply selected profile consistently.
+
+CFG-030 | _f6 — Pack2 capacity | PARTIAL
+  Toolbox: Capacity100..100000mAh in50mAh steps.
+  AERODECK: capacity2,100..30000mAh in50mAh steps; real remaining calculation.
+  Acceptance: Support required capacity range without overflow; selected profile drives remaining with provenance.
+
+CFG-031 | _f7 — Pack3 enable/chemistry | MISSING
+  Toolbox: Each favourite is OFF or a battery type; subordinate cell/capacity rows hide when OFF.
+  AERODECK: Pack3 always exists; no enabled/chemistry state.
+  Acceptance: Disable/enable a favourite, select chemistry, persist it, and ensure chooser shows only usable entries.
+
+CFG-032 | _f8 — Pack3 cell number | PARTIAL
+  Toolbox: Cell count1..99 associated with enabled favourite.
+  AERODECK: cells3,1..12; actually used in pack voltage calculations.
+  Acceptance: Preserve valid required counts and enforce supported target limits explicitly; apply selected profile consistently.
+
+CFG-033 | _f9 — Pack3 capacity | PARTIAL
+  Toolbox: Capacity100..100000mAh in50mAh steps.
+  AERODECK: capacity3,100..30000mAh in50mAh steps; real remaining calculation.
+  Acceptance: Support required capacity range without overflow; selected profile drives remaining with provenance.
+
+CFG-034 | _f10 — Pack4 enable/chemistry | MISSING
+  Toolbox: Each favourite is OFF or a battery type; subordinate cell/capacity rows hide when OFF.
+  AERODECK: Pack4 always exists; no enabled/chemistry state.
+  Acceptance: Disable/enable a favourite, select chemistry, persist it, and ensure chooser shows only usable entries.
+
+CFG-035 | _f11 — Pack4 cell number | PARTIAL
+  Toolbox: Cell count1..99 associated with enabled favourite.
+  AERODECK: cells4,1..12; actually used in pack voltage calculations.
+  Acceptance: Preserve valid required counts and enforce supported target limits explicitly; apply selected profile consistently.
+
+CFG-036 | _f12 — Pack4 capacity | PARTIAL
+  Toolbox: Capacity100..100000mAh in50mAh steps.
+  AERODECK: capacity4,100..30000mAh in50mAh steps; real remaining calculation.
+  Acceptance: Support required capacity range without overflow; selected profile drives remaining with provenance.
+
+CFG-037 | _f13 — Pack5 enable/chemistry | MISSING
+  Toolbox: Each favourite is OFF or a battery type; subordinate cell/capacity rows hide when OFF.
+  AERODECK: Pack5 always exists; no enabled/chemistry state.
+  Acceptance: Disable/enable a favourite, select chemistry, persist it, and ensure chooser shows only usable entries.
+
+CFG-038 | _f14 — Pack5 cell number | PARTIAL
+  Toolbox: Cell count1..99 associated with enabled favourite.
+  AERODECK: cells5,1..12; actually used in pack voltage calculations.
+  Acceptance: Preserve valid required counts and enforce supported target limits explicitly; apply selected profile consistently.
+
+CFG-039 | _f15 — Pack5 capacity | PARTIAL
+  Toolbox: Capacity100..100000mAh in50mAh steps.
+  AERODECK: capacity5,100..30000mAh in50mAh steps; real remaining calculation.
+  Acceptance: Support required capacity range without overflow; selected profile drives remaining with provenance.
+
+CFG-040 | FC_MSP_ON —  MSP | PARTIAL
+  Toolbox: MSP activation routes transport and FC-family reader lifecycle.
+  AERODECK: mspMode Off/Auto controls read-only CRSF status client.
+  Acceptance: Off stops requests; On initializes the selected family/transport without consuming other clients frames.
+
+CFG-041 | FC_MSP_VER —   version | EQUIVALENT
+  Toolbox: Declared field is fixed to2 and hidden; not a free version selector.
+  AERODECK: Actual supported wire client uses MSPv2; no misleading version editor.
+  Acceptance: Prove MSPv2 framing; do not add a dummy editable version control.
+
+CFG-042 | FC_MSP_ERR_INTVAL —   FC status read every | MISSING
+  Toolbox: Editable status polling interval0..5seconds.
+  AERODECK: Fixed three-second status interval note.
+  Acceptance: Provide bounded capability-aware status scheduling; define zero semantics and verify on wire.
+
+CFG-043 | FC_MSP_VTX_INTVAL —   VTX read every | MISSING
+  Toolbox: Editable VTX interval0..10seconds, hidden for unsupported INAV path.
+  AERODECK: No VTX scheduler or edit.
+  Acceptance: Schedule supported VTX reads with transport budgets and documented zero semantics.
+
+CFG-044 | _AR_srct — Arm indicator | PARTIAL
+  Toolbox: Arm supports physical/logical sources; Arm additionally native telemetry; gates are licensing only.
+  AERODECK: armSource: None,SA..SH,L01..L04; arm/cut are display indications only.
+  Acceptance: Support all real source kinds without implying switch indication proves FC armed state.
+
+CFG-045 | _AR_swn —  switch name | PARTIAL
+  Toolbox: Enumerates actual radio physical switches and display names.
+  AERODECK: Hard-coded SA..SH choices in armSource.
+  Acceptance: Populate from supported radio inputs, preserving saved identity and unsupported-source diagnosis.
+
+CFG-046 | _AR_swp —  switch positon | PARTIAL
+  Toolbox: up/mid/down/not-up/not-mid/not-down matching.
+  AERODECK: Low/centre/high positions only (-1/0/1).
+  Acceptance: All six predicates work on two- and three-position switches and survive reload.
+
+CFG-047 | _AR_lsn —  logical switch number | PARTIAL
+  Toolbox: Logical switch1..64.
+  AERODECK: L01..L04 only.
+  Acceptance: Bind each supported logical switch, including64, without pretending a missing source is false.
+
+CFG-048 | _TC_srct — Throttle Cut indicator | PARTIAL
+  Toolbox: Throttle cut supports physical/logical sources; Arm additionally native telemetry; gates are licensing only.
+  AERODECK: cutSource: None,SA..SH,L01..L04; arm/cut are display indications only.
+  Acceptance: Support all real source kinds without implying switch indication proves FC armed state.
+
+CFG-049 | _TC_swn —  switch name | PARTIAL
+  Toolbox: Enumerates actual radio physical switches and display names.
+  AERODECK: Hard-coded SA..SH choices in cutSource.
+  Acceptance: Populate from supported radio inputs, preserving saved identity and unsupported-source diagnosis.
+
+CFG-050 | _TC_swp —  switch positon | PARTIAL
+  Toolbox: up/mid/down/not-up/not-mid/not-down matching.
+  AERODECK: Low/centre/high positions only (-1/0/1).
+  Acceptance: All six predicates work on two- and three-position switches and survive reload.
+
+CFG-051 | _TC_lsn —  logical switch number | PARTIAL
+  Toolbox: Logical switch1..64.
+  AERODECK: L01..L04 only.
+  Acceptance: Bind each supported logical switch, including64, without pretending a missing source is false.
+
+CFG-052 | _TL_srct — Throttle Limiter | MISSING
+  Toolbox: Pot/slider/trim source learning and normalized limiter indication.
+  AERODECK: No limiter source or live limiter percentage.
+  Acceptance: Select real supported source by name/movement and show correct normalized limiter without changing outputs.
+
+CFG-053 | _TMR_host — Arm Timer host | MISSING
+  Toolbox: OS or Toolbox-hosted arm timer.
+  AERODECK: App-local elapsed seconds is a distinct partial feature; no host selector.
+  Acceptance: Respect owner: read selected OS timer or manage app timer; define start/stop/reset across surfaces.
+
+CFG-054 | _TMR_no —  Timer used | MISSING
+  Toolbox: Select one of three model timers.
+  AERODECK: No Timer1/2/3 selection or model.getTimer use.
+  Acceptance: Read/display/control the selected model timer with explicit reset actions.
+
+CFG-055 | _FMAC_srct — Acro mode | MISSING
+  Toolbox: Acro: independent Off/physical/logical/telemetry source kind; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-056 | _FMAC_swn —  switch name | MISSING
+  Toolbox: Acro: independent hardware switch; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-057 | _FMAC_swp —  switch positon | MISSING
+  Toolbox: Acro: independent six position predicates; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-058 | _FMAC_lsn —  logical switch number | MISSING
+  Toolbox: Acro: independent logical switch1..64; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-059 | _FMHR_srct — Horizon mode | MISSING
+  Toolbox: Horizon: independent Off/physical/logical/telemetry source kind; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-060 | _FMHR_swn —  switch name | MISSING
+  Toolbox: Horizon: independent hardware switch; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-061 | _FMHR_swp —  switch positon | MISSING
+  Toolbox: Horizon: independent six position predicates; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-062 | _FMHR_lsn —  logical switch number | MISSING
+  Toolbox: Horizon: independent logical switch1..64; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-063 | _FMAN_srct — Angle mode | MISSING
+  Toolbox: Angle: independent Off/physical/logical/telemetry source kind; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-064 | _FMAN_swn —  switch name | MISSING
+  Toolbox: Angle: independent hardware switch; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-065 | _FMAN_swp —  switch positon | MISSING
+  Toolbox: Angle: independent six position predicates; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-066 | _FMAN_lsn —  logical switch number | MISSING
+  Toolbox: Angle: independent logical switch1..64; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-067 | _AM_srct — Air mode | MISSING
+  Toolbox: Airmode: independent Off/physical/logical/telemetry source kind; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-068 | _AM_swn —  switch name | MISSING
+  Toolbox: Airmode: independent hardware switch; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-069 | _AM_swp —  switch positon | MISSING
+  Toolbox: Airmode: independent six position predicates; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-070 | _AM_lsn —  logical switch number | MISSING
+  Toolbox: Airmode: independent logical switch1..64; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-071 | _TU_srct — Tutrtle mode | MISSING
+  Toolbox: Turtle: independent Off/physical/logical/telemetry source kind; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-072 | _TU_swn —  switch name | MISSING
+  Toolbox: Turtle: independent hardware switch; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-073 | _TU_swp —  switch positon | MISSING
+  Toolbox: Turtle: independent six position predicates; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-074 | _TU_lsn —  logical switch number | MISSING
+  Toolbox: Turtle: independent logical switch1..64; subordinate rows depend on selected source kind.
+  AERODECK: One flightmode text source and explanatory notes; no independent per-mode binding.
+  Acceptance: Save and exercise this mode independently, then confirm telemetry/switch disagreement is presented honestly.
+
+CFG-075 | VTX_CONN_TYPE —  VTX connection | MISSING
+  Toolbox: None, FC MSP or native TBS receiver/VTX path.
+  AERODECK: Four notes, zero editable controls; no connection is activated.
+  Acceptance: Activate actual supported backend with status/reply dispatcher, disarmed guard and clear errors.
+
+CFG-076 | VTX_MODEL —   VTX model | MISSING
+  Toolbox: Eight native TBS hardware power maps, dependent on connection type.
+  AERODECK: No native TBS hardware map selection.
+  Acceptance: Selected hardware map translates reported dBm and supported output levels without assuming every label is mW.
+
+CFG-077 | VTX_PROXY_ON —   proxy | MISSING
+  Toolbox: Optional per-FC proxy/cache using UID and SD data.
+  AERODECK: No UID-bound VTX table cache.
+  Acceptance: Load/refresh bounded data cache for current FC only; never execute an untrusted cache as Lua.
+
+CFG-078 | VTX_FRQ_RANGE — Frequency range | UNVERIFIED
+  Toolbox: ALL/EU/US value is saved, but no runtime frequency filter consumer was found in inspected package.
+  AERODECK: No range filter.
+  Acceptance: Do not claim working Toolbox range enforcement. If AERODECK offers a range setting, verify its actual filtering behavior independently.
+
+CFG-079 | _f1 — Favourite channel1 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx1: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-080 | _f2 — Favourite channel2 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx2: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-081 | _f3 — Favourite channel3 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx3: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-082 | _f4 — Favourite channel4 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx4: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-083 | _f5 — Favourite channel5 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx5: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-084 | _f6 — Favourite channel6 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx6: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-085 | _f7 — Favourite channel7 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx7: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-086 | _f8 — Favourite channel8 | PARTIAL
+  Toolbox: OFF0 or channel chosen from actual frequency table; saved frequency used by dashboard apply.
+  AERODECK: vtx8: manual5000..6000MHz frequency note; noOFF/table-membership/apply.
+  Acceptance: Disable, save, reload, choose a table channel and confirm real readback after explicit apply.
+
+CFG-087 | GPS_SATS2FIX — Sats number to fix home | PARTIAL
+  Toolbox: Threshold1..64; CRSF path uses satellite count for local fix/home heuristic, not genuine FC fix.
+  AERODECK: homeSats4..64, autoHome separate; only GPS rendering calls home sampling.
+  Acceptance: Page-independent capture with explicit local/FC identity; genuine fix where available, no invented HDOP.
+
+CFG-088 | _theme — Theme | PARTIAL
+  Toolbox: Selectable full palette/theme family with resolution layouts.
+  AERODECK: Three accents; fixed dark palette.
+  Acceptance: Provide readable full contrast theme choices; exact carbon/leather textures are not required.
+
+CFG-089 | _ov — Draw GFX overlay | EQUIVALENT
+  Toolbox: Optional decorative overlay independent of functional data.
+  AERODECK: Procedural flat design intentionally omits decorative full-screen overlays.
+  Acceptance: Keep core information legible with optional imagery absent; no requirement to reproduce unwanted carbon texture.
+
+CFG-090 | APP_errLog — Log errors to file | UNVERIFIED
+  Toolbox: CFGAPP declares APP_errLog while runtime/save use APP_LOG_ERR; numeric0 is truthy. Writer exists; user toggle appears defective in original.
+  AERODECK: No optional on-radio diagnostic error logger; diagnostics are on-screen.
+  Acceptance: Implement an explicit bounded diagnostic logger with a working opt-in/off switch; do not copy case/truthiness bug.
+
+CFG-X01 | Conditional list visibility | PARTIAL
+  Toolbox: Four base lists; protocol/model/backend flags enable dependent lists. Activation gates are excluded from AERODECK.
+  AERODECK: Four base lists implemented; independent voltage/gps/vtx/family conditions expand to12. Some shown lists are notes only.
+  Acceptance: Exercise the full capability truth table; show supported controls and explain unavailable features, not dummy lists.
+
+CFG-X02 | Dependent field visibility | PARTIAL
+  Toolbox: Indicator source kind, enabled pack, family and protocol subtype hide irrelevant rows.
+  AERODECK: Some lists gated but source-kind/pack-type dependent rows and backend selectors are absent.
+  Acceptance: Change every parent setting, verify rows and focus remain valid, and preserve inactive values for later reuse.
+
+CFG-X03 | Save activates backend lifecycle | PARTIAL
+  Toolbox: Model save queues DATAINIT/FCINIT/RCPINIT/GPSINIT/TLMINIT/MSPINIT/VTXINIT/MDUPD/CFGUPDP.
+  AERODECK: Save replaces active settings; some startup properties require reopen; notes have no consumer.
+  Acceptance: Track every setting to a real consumer; apply without destructive resets and state clearly when restart is needed.
+
+CFG-X04 | Per-model data persistence | PARTIAL
+  Toolbox: ModelID+name path; serializes Lua configuration.
+  AERODECK: Plain ADCFG1/ADBAT1 data, model-name hex filename, verified writes and previous active backup.
+  Acceptance: Prove duplicate names/rename/model switch behavior, malformed/truncated main/backup recovery and no cross-model settings leak.
+
+CFG-X05 | Explicit draft/save/revert/exit recovery | ADDITION
+  Toolbox: Configuration editor commits its values and reinitializes dependent modules.
+  AERODECK: Draft isolation, per-value cancel, Save/Revert and dirty-exit modal are genuine improvements.
+  Acceptance: Every touch/rotary/PAGE/RTN route preserves or explicitly discards the correct app and battery drafts.
+
+CFG-X06 | Live sensor picker refresh | PARTIAL
+  Toolbox: Source registry/input enumeration updates available choices.
+  AERODECK: Real refresh exists, but duplicate flightmode schema declaration leaves Model Setup row stale.
+  Acceptance: Use fixture CustomFM then LateFM: both Model Setup and BF Indicators pickers must receive identical refreshed choices.
+
+CFG-X07 | Single owner for shared settings | PARTIAL
+  Toolbox: Serialized setting domains have reinit consumers.
+  AERODECK: mspMode appears inFC andApp using the same object; flightmode is recreated, leaving first object detached.
+  Acceptance: Give each setting one canonical object; all views share value, validation and choices without duplicate schema overwrite.
+
+CFG-X08 | Validation beyond type/range | PARTIAL
+  Toolbox: Protocol choices and value dependencies constrain valid configurations.
+  AERODECK: Numeric/order and source-line validation exists; enum-like strings are broadly accepted as strings.
+  Acceptance: Reject unsupported enum values; retain unresolved manual sensor names with explicit diagnosis; version and migrate settings.
+
+CFG-X09 | All twelve sections correspond to working capabilities | PARTIAL
+  Toolbox: Most fields have actual runtime consumers; several reference declarations are hidden/dead or defective and explicitly flagged.
+  AERODECK: FC has1editable+4notes; VTX0editable; BF Indicators1editable+3notes; App1sharededitable+6notes.
+  Acceptance: A section cannot be declared complete until every offered action has a working end-to-end outcome.
+
+CFG-X10 | Source changes reset only owned history | PARTIAL
+  Toolbox: New-flight reset and provider/session initialization have explicit paths.
+  AERODECK: Some trace/home state can survive changed source identity; no unified reset contract.
+  Acceptance: Change model/source/profile and verify only dependent history/home/session state resets, with user-visible ownership.
+

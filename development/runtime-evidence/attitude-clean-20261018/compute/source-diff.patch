@@ -1,0 +1,76 @@
+--- baseline
++++ candidate
+@@ -10,7 +10,7 @@
+ local nativeLcd=lcd
+ local lcd=nativeLcd
+ local display,displayError
+-local BUILD_ID='ARM-STATUS-20261018'
++local BUILD_ID='ATTITUDE-CLEAN-20261018'
+ local uiTheme
+ local alertsMuted=false
+ local alertPlayback={queue=function(event)
+@@ -2043,8 +2043,6 @@
+ end)()
+ local flightBank,flightSummary=0,nil
+ local bankTicks={}
+-local pitchLabels={};for i=1,8 do pitchLabels[i]={}end
+-local pitchBoxes={};for i=1,8 do pitchBoxes[i]={}end
+ for _,degrees in ipairs({-60,-45,-30,-20,-10,0,10,20,30,45,60})do
+  local a=degrees*pi/180;local inner=degrees%30==0 and 50 or 54
+  bankTicks[#bankTicks+1]={round(240+math.sin(a)*58),round(154-math.cos(a)*58),round(240+math.sin(a)*inner),round(154-math.cos(a)*inner)}
+@@ -2172,46 +2170,14 @@
+   horizonMark(hx,hy,cs,sn,0,150,p.horizon)
+   horizonMark(hx,hy,cs,sn,1,150,p.horizon)
+   local base=math.floor(d.pitch/10)*10
+-  local count=0
++  -- Fixed-length rungs communicate attitude without moving numeric captions.
+   for degree=base-40,base+40,10 do if degree~=0 and degree>=-90 and degree<=90 then
+    local ox=240+sr*(d.pitch-degree);local oy=154+cr*(d.pitch-degree)*1.85
+    horizonMark(ox,oy,cs,sn,0,degree%20==0 and 27 or 17,p.ladder)
+-   if degree%20==0 then local candidate=pitchLabels[count+1];count=count+1;candidate.degree=degree;candidate.x=round(ox+40*cs);candidate.y=round(oy+40*sn)-8;candidate.done=false end
+   end end
+-  local painted=0
+-  for _=1,count do
+-   local chosen,best
+-   for i=1,count do local candidate=pitchLabels[i];local distance=math.abs(candidate.degree-d.pitch);if not candidate.done and(not best or distance<best)then chosen=candidate;best=distance end end
+-   chosen.done=true;local caption=tostring(chosen.degree);local width=textWidth(caption,SMLSIZE);local yy=chosen.y
+-   for attempt=1,4 do
+-    local xx=attempt==1 and chosen.x or attempt==2 and 310 or attempt==3 and 128 or 212
+-    local clear=xx>=128 and xx+width<=352 and yy>=65 and yy+17<=221
+-    if clear and xx<288 and xx+width>193 and yy<165 and yy+17>150 then clear=false end
+-    if clear and yy<84 and yy+17>64 then clear=false end
+-    if clear and xx<309 and xx+width>171 and yy<133 and yy+17>84 then clear=false end
+-    -- Relocated captions must also clear the zero-horizon stroke at bank.
+-    if clear then
+-     if math.abs(cs)>.001 then
+-      local y1,y2=hy+(xx-2-hx)*sn/cs,hy+(xx+width+2-hx)*sn/cs
+-      if math.min(y1,y2)<=yy+19 and math.max(y1,y2)>=yy-2 then clear=false end
+-     elseif hx>=xx-2 and hx<=xx+width+2 then clear=false end
+-    end
+-    for i=1,painted do local box=pitchBoxes[i];if clear and xx<box.x+box.w+3 and xx+width>box.x-3 and yy<box.y+20 and yy+17>box.y-3 then clear=false end end
+-    if clear then
+-     vlabel(xx,yy,17,caption,p.white,SMLSIZE);painted=painted+1;local box=pitchBoxes[painted];box.x=xx;box.y=yy;box.w=width;break
+-    end
+-   end
+-  end
+   end
+  else rect(78,64,324,180,p.dim)end
+  if attitude and configuration.get('attitudeOverlay')==1 then bankReference(roll)end
+- -- Numerical angles retain the full range beyond the graduated bank reference.
+- if attitude then
+-  vlabel(128,65,18,'P',p.horizon,TINSIZE or SMLSIZE)
+-  flightValue(141,65,63,18,string.format('%+.0f',d.pitch),'deg',SMLSIZE)
+-  vlabel(286,65,18,'R',p.horizon,TINSIZE or SMLSIZE)
+-  flightValue(300,65,52,18,string.format('%+.0f',roll),'deg',SMLSIZE)
+- end
+  if d.session and d.session.current and d.session.homeBearing and heading~=nil then
+   local relative=(d.session.homeBearing-heading+540)%360-180
+   local xx=round(clamp(240+relative*1.8,132,348))
+@@ -2219,7 +2185,6 @@
+   local yy=84
+   line(xx-5,yy+4,xx,yy,p.orange);line(xx,yy,xx+5,yy+4,p.orange);line(xx-3,yy+3,xx-3,yy+9,p.orange);line(xx+3,yy+3,xx+3,yy+9,p.orange);line(xx-3,yy+9,xx+3,yy+9,p.orange)
+  end
+- vlabel(225,65,18,configuration.get('compassSource')==1 and'YAW'or'COG',p.horizon,TINSIZE or SMLSIZE)
+  -- Equal-width tapes overlay the same field, with readable primary numbers.
+  rect(78,64,46,180,p.tape);rect(356,64,46,180,p.tape)
+  vlabel(81,64,17,d.airspeed and 'AS km/h'or 'GS km/h',p.muted,TINSIZE or SMLSIZE)

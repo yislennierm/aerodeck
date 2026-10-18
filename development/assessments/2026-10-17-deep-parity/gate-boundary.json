@@ -1,0 +1,1358 @@
+{
+  "scope": "Only activation/licence mechanism excluded. All functional capabilities,including sxx/pgg gated ones,remain required. No prior target-specific protocol/platform exclusion survives this scope.",
+  "mechanismExcluded": [
+    "reading/importing key files",
+    "credential validation/encoding/decoding",
+    "radio/account binding",
+    "activation status/tier/identity UI",
+    "licence failure/support/upgrade flows"
+  ],
+  "neverExcluded": [
+    "VTXfrequency,power,PIT,cache,favourites",
+    "FCfirmware,board,sensor and arming status",
+    "INAV and FrSky paths",
+    "telemetry min/max",
+    "battery profiles/current/capacity/alarms",
+    "GPSfix/home/constellation details",
+    "radio indicators/timer/switch/logical-switch sources",
+    "themes/layouts/widget/runtime capabilities",
+    "all actual controls hidden behind either gate"
+  ],
+  "flagBoundary": [
+    {
+      "state": "initial/failed validation",
+      "flags": {
+        "sxx": false,
+        "pgg": false
+      },
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-GF.txt",
+        "line": 836,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/GF.luac",
+        "sha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+        "note": "Only PCs1–4 and15–17: reset flags and invoke validation boundary."
+      }
+    },
+    {
+      "state": "legacy credential success",
+      "flags": {
+        "sxx": true,
+        "pgg": false
+      },
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-GF.txt",
+        "line": 1167,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/GF.luac",
+        "sha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+        "note": "Original main/14 PCs211–214 only; no validation algorithm copied."
+      }
+    },
+    {
+      "state": "newer credential success",
+      "flags": {
+        "sxx": true,
+        "pgg": true
+      },
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-GF.txt",
+        "line": 1364,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/GF.luac",
+        "sha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+        "note": "Original main/15 PCs126–129 only. Recovered source loses this branch."
+      }
+    }
+  ],
+  "verifiedCapabilityGates": [
+    {
+      "flag": "sxx",
+      "capabilities": [
+        "GPSbackendinit",
+        "MSPbackendinit",
+        "VTXbackendinit"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-INIT.txt",
+        "line": 341,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/INIT.luac",
+        "sha256": "ba438661659e481f6d94b4bd56f005fefa69ad1fe2fa04df819cc1e6389f2792"
+      },
+      "note": "FCINIT itself loads unconditionally; INAV list/mapping is gated inside FCINIT. Do not report every FC capability as unconditional or the whole FCINIT as gated."
+    },
+    {
+      "flag": "sxx",
+      "capabilities": [
+        "INAVfamilyselectionandmodemapping"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-FCINIT.txt",
+        "line": 18,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/FCINIT.luac",
+        "sha256": "f85163c956957c0a81bd0f15d95bbfa63535c82a6e7a9471318a22577165797f"
+      }
+    },
+    {
+      "flag": "sxx",
+      "capabilities": [
+        "telemetry,VTX,GPS,stick-guide navigation conditional on model capabilities"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-MDUPD.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/MDUPD.luac",
+        "sha256": "0257242ccb3e3e0d28a1b672b92a33460cb7b3bff391926832cd4be9de76f5f5"
+      }
+    },
+    {
+      "flag": "pgg",
+      "capabilities": [
+        "armingreasonsUI"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-MDUPD.txt",
+        "line": 26,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/MDUPD.luac",
+        "sha256": "0257242ccb3e3e0d28a1b672b92a33460cb7b3bff391926832cd4be9de76f5f5"
+      }
+    },
+    {
+      "flag": "pgg",
+      "capabilities": [
+        "VTXpowerselection",
+        "VTXPITtoggle"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+        "line": 613,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/VTX.luac",
+        "sha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34"
+      }
+    },
+    {
+      "flag": "pgg",
+      "capabilities": [
+        "FCboard/sensorpanequeries",
+        "GPSsatellitedetailqueries"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+        "line": 54,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.luac",
+        "sha256": "582ebade13d1d87a93a7cca3896351e70f8bbb10e4c2014f7601d13e0c1bc37b"
+      }
+    },
+    {
+      "flag": "pgg",
+      "capabilities": [
+        "batteryfavouritepane",
+        "VTXfavouritepane"
+      ],
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGUPDP.txt",
+        "line": 4,
+        "kind": "original-bytecode-disassembly",
+        "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.luac",
+        "sha256": "9a9386063bfc2ceb1228441de05c40b84459c173f6d05eadbe63e27844fffbb3"
+      }
+    },
+    {
+      "flag": "sxx/pgg",
+      "capabilities": [
+        "timers/switch/logical-switchindicators",
+        "batterycurrent and capacity",
+        "barometer/pitot",
+        "theme/layout restrictions",
+        "telemetryextrema"
+      ],
+      "note": "See inventory and the dedicated configuration/data/UI agent matrices; inventory entries alone do not prove recovered control-flow correctness."
+    }
+  ],
+  "sourceInventory": [
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+      "line": 14,
+      "expression": "if G.fm.pgg then t7 = {1, 2, 3, [0] = 0} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+      "line": 20,
+      "expression": "if G.fm.sxx then table.insert(listInd, \"Telemetry\") end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+      "line": 67,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua",
+      "line": 14,
+      "expression": "if G.fm.pgg then t7 = {1, 2, 3, [0] = 0} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua",
+      "line": 20,
+      "expression": "if G.fm.sxx then table.insert(listInd, \"Telemetry\") end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua",
+      "line": 64,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua",
+      "line": 37,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua",
+      "line": 53,
+      "expression": "T.cv.MDL_BARO.h = (G.fm.pgg and T.cv.MDL_RCP.v ~= 0) and false or true",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua",
+      "line": 54,
+      "expression": "T.cv.MDL_PITOT.h = (G.fm.pgg and T.cv.MDL_RCP.v ~= 0) and false or true",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua",
+      "line": 62,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 20,
+      "expression": "if not G.fm.pgg then return stored end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 23,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 28,
+      "expression": "if not G.fm.sxx or not D.S.MDL_FC then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 32,
+      "expression": "if not G.fm.sxx or not D.S.MDL_BTA then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 37,
+      "expression": "if not G.fm.pgg or not D.S.MDL_BARO then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 40,
+      "expression": "if not G.fm.pgg or not D.S.MDL_PITOT then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 43,
+      "expression": "if not G.fm.sxx or not D.S.MDL_GPS then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 47,
+      "expression": "if not G.fm.sxx or not D.S.MDL_VTX then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 53,
+      "expression": "if not G.fm.sxx or not D.S.RL_RSI_L then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 56,
+      "expression": "if not G.fm.sxx or not D.S.RL_RSI_C then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 58,
+      "expression": "if not G.fm.sxx or not D.S.RL_RQL_L then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 60,
+      "expression": "if not G.fm.sxx or not D.S.RL_RQL_C then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 62,
+      "expression": "if not G.fm.sxx or not D.S.RL_SNR_L then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 64,
+      "expression": "if not G.fm.sxx or not D.S.RL_SNR_C then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 70,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_MIN then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 73,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_MAX then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 75,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_NOPWR then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 77,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_WARN_SND then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 79,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_CRIT then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 81,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_LOW then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 83,
+      "expression": "if not G.fm.sxx or not D.S.BT_CELL_WARN_TYPE then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 89,
+      "expression": "if not G.fm.pgg or not D.S.BT_FAV_SEL then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 92,
+      "expression": "if not G.fm.pgg or not D.S.BT_FAV_CELLS then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 94,
+      "expression": "if not G.fm.pgg or not D.S.BT_FAV_CAPA then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 104,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 109,
+      "expression": "if not G.fm.sxx or not 2 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 111,
+      "expression": "if not G.fm.sxx or not D.S.FC_MSP_ERR_INTVAL then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 113,
+      "expression": "if not G.fm.sxx or not mspVtxInterval then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 120,
+      "expression": "if not G.fm.sxx or not D.S.VTX_CONN_TYPE then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 124,
+      "expression": "if not G.fm.sxx or not D.S.VTX_MODEL then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 126,
+      "expression": "if not G.fm.sxx or not D.S.VTX_FRQ_RANGE then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 128,
+      "expression": "if not G.fm.sxx or not D.S.VTX_VIEW_MODE then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 134,
+      "expression": "if not G.fm.sxx or not D.S.GPS_SATS2FIX then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 137,
+      "expression": "if not G.fm.sxx or not D.S.GPS_LOG_MAX then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 145,
+      "expression": "if not G.fm.sxx or not D.S.IN_TL_src then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 147,
+      "expression": "if not G.fm.sxx or not D.S.TMR_host then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 149,
+      "expression": "if not G.fm.sxx or not D.S.TMR_no then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPD.lua",
+      "line": 158,
+      "expression": "D.CFGSTR.INDBF = ((G.fm.sxx and preserveGatedSource(\"INDBF\", 1, D.S.IN_FMAC_src)) or t9) .. \"|\" .. rawPart(\"INDBF\", 2, D.S.IN_FMHR_src) .. \"|\" .. rawPart(\"INDBF\", 3, D.S.IN_FMAN_src) .. \"|\" .. rawPart(\"INDBF\", 4, D.S.IN_AM_src) .. \"|\" .. ((G.fm.sxx and preserveGatedSource(\"INDBF\", 5, D.S.IN_TU_src)) or t17)",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua",
+      "line": 14,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua",
+      "line": 16,
+      "expression": "D.MODCFG.pagesByID.BFV.vis = G.fm.pgg and D.S.MDL_BTV_ON",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua",
+      "line": 19,
+      "expression": "D.MODCFG.pagesByID.VFV.vis = G.fm.pgg and D.S.MDL_VTX_ON and D.S.VTX_CONN_TYPE > 0",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/FCINIT.lua",
+      "line": 11,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/FCINIT.lua",
+      "line": 37,
+      "expression": "if G.fm.sxx and D.S.MDL_FC == 2 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.lua",
+      "line": 29,
+      "expression": "local mpnCond = G.fm.pgg and mpn and mpn.m == \"FCD\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.lua",
+      "line": 40,
+      "expression": "if G.fm.pgg and D.S.MDL_GPS_ON and D.UI.MODS.selID == \"GPS\" then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/IN/MSPRPT.lua",
+      "line": 28,
+      "expression": "local mpnCond = G.fm.pgg and mpn and mpn.m == \"FCD\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/IN/MSPRPT.lua",
+      "line": 39,
+      "expression": "if G.fm.pgg and D.S.GPS_ON and D.UI.MODS.selID == \"GPS\" then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua",
+      "line": 12,
+      "expression": "if (sourceType == \"LS\") and not G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua",
+      "line": 15,
+      "expression": "if (sourceType == \"TM\") and not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua",
+      "line": 108,
+      "expression": "D.S.IN_TC_src = G.fm.sxx and indicatorSource(data[2]) or \"-\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua",
+      "line": 118,
+      "expression": "D.S.IN_AM_src = G.fm.sxx and indicatorSource(data[4]) or \"-\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua",
+      "line": 119,
+      "expression": "D.S.IN_TU_src = G.fm.sxx and indicatorSource(data[5]) or \"-\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/INIT.lua",
+      "line": 71,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/INIT.lua",
+      "line": 88,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/INIT.lua",
+      "line": 94,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+      "line": 109,
+      "expression": "if G.fm.sxx and D.S.MDL_BTV_ON and (D.S.BT_CELL_WARN_SND > 0) and (D.S.BT_CELL_WARN_TYPE > 0) and not D.UI.mute then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/AHR.lua",
+      "line": 167,
+      "expression": "if G.fm.pgg and D.S.DIR_RBH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/AHR.lua",
+      "line": 196,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/ATT.lua",
+      "line": 30,
+      "expression": "if G.fm.sxx and D.S.ATT_PITCH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/ATT.lua",
+      "line": 36,
+      "expression": "if G.fm.sxx and D.S.ATT_ROLL then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/ATT.lua",
+      "line": 45,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BAT.lua",
+      "line": 36,
+      "expression": "if G.fm.sxx and D.S.MDL_BTA_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BPN.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/CMP.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg and D.S.DIR_GCH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua",
+      "line": 37,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg then X.MK(T.icHome, w.xl + 8, w.yt + 83, D.C.MD_V) end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua",
+      "line": 39,
+      "expression": "if G.fm.pgg and D.S.POS_LATH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua",
+      "line": 43,
+      "expression": "if G.fm.pgg and D.S.POS_LONH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua",
+      "line": 47,
+      "expression": "if G.fm.pgg and D.S.POS_FIXH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MPN.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MPN.lua",
+      "line": 12,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MPN.lua",
+      "line": 19,
+      "expression": "if G.fm.pgg and D.S.MDL_VTX_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/RCL.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/SPN.lua",
+      "line": 12,
+      "expression": "if G.fm.sxx and D.S.MDL_GPS_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/SPN.lua",
+      "line": 15,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/SYS.lua",
+      "line": 26,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/THR.lua",
+      "line": 16,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TLM.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx and D.TLM.I.TX_QLY_CH1 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VTX.lua",
+      "line": 9,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/ABT.lua",
+      "line": 67,
+      "expression": "local tier = G.fm.pgg and \"PRO\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/ABT.lua",
+      "line": 68,
+      "expression": "tier = (tier or (G.fm.sxx and \"SUP\")) or nil",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/ABT.lua",
+      "line": 77,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua",
+      "line": 48,
+      "expression": "if G.fm.pgg and D.S.MDL_GPS_ON and D.GPS and D.GPS.SATS then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua",
+      "line": 76,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua",
+      "line": 99,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/RCL.lua",
+      "line": 49,
+      "expression": "if G.fm.sxx and D.TLM.I.TX_QLY_CH1 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/TLM.lua",
+      "line": 21,
+      "expression": "if G.fm.pgg then t2 = {\"LIVE\", \"MIN\", \"MAX\"} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/TLM.lua",
+      "line": 23,
+      "expression": "if G.fm.pgg then t2 = {\"\", \"Min\", \"Max\"} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/AHR.lua",
+      "line": 167,
+      "expression": "if G.fm.pgg and D.S.DIR_RBH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/AHR.lua",
+      "line": 196,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/ATT.lua",
+      "line": 30,
+      "expression": "if G.fm.sxx and D.S.ATT_PITCH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/ATT.lua",
+      "line": 36,
+      "expression": "if G.fm.sxx and D.S.ATT_ROLL then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/ATT.lua",
+      "line": 45,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/BAT.lua",
+      "line": 36,
+      "expression": "if G.fm.sxx and D.S.MDL_BTA_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/BPN.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/CMP.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg and D.S.DIR_GCH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/FCD.lua",
+      "line": 37,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/GPS.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg then X.MK(T.icHome, w.xl + 8, w.yt + 83, D.C.MD_V) end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/GPS.lua",
+      "line": 39,
+      "expression": "if G.fm.pgg and D.S.POS_LATH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/GPS.lua",
+      "line": 43,
+      "expression": "if G.fm.pgg and D.S.POS_LONH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/GPS.lua",
+      "line": 47,
+      "expression": "if G.fm.pgg and D.S.POS_FIXH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/MPN.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/MPN.lua",
+      "line": 12,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/MPN.lua",
+      "line": 19,
+      "expression": "if G.fm.pgg and D.S.MDL_VTX_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/RCL.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/SPN.lua",
+      "line": 12,
+      "expression": "if G.fm.sxx and D.S.MDL_GPS_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/SPN.lua",
+      "line": 15,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/SYS.lua",
+      "line": 26,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/THR.lua",
+      "line": 16,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/TLM.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx and D.TLM.I.TX_QLY_CH1 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/DB1/VTX.lua",
+      "line": 9,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/ABT.lua",
+      "line": 67,
+      "expression": "local tier = G.fm.pgg and \"PRO\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/ABT.lua",
+      "line": 68,
+      "expression": "tier = (tier or (G.fm.sxx and \"SUP\")) or nil",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/ABT.lua",
+      "line": 77,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/GPS.lua",
+      "line": 49,
+      "expression": "if G.fm.pgg and D.S.MDL_GPS_ON and D.GPS and D.GPS.SATS then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/GPS.lua",
+      "line": 77,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/GPS.lua",
+      "line": 100,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/RCL.lua",
+      "line": 49,
+      "expression": "if G.fm.sxx and D.TLM.I.TX_QLY_CH1 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/TLM.lua",
+      "line": 21,
+      "expression": "if G.fm.pgg then t2 = {\"LIVE\", \"MIN\", \"MAX\"} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X320/MOD/TLM.lua",
+      "line": 23,
+      "expression": "if G.fm.pgg then t2 = {\"\", \"Min\", \"Max\"} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/AHR.lua",
+      "line": 167,
+      "expression": "if G.fm.pgg and D.S.DIR_RBH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/AHR.lua",
+      "line": 196,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/ATT.lua",
+      "line": 30,
+      "expression": "if G.fm.sxx and D.S.ATT_PITCH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/ATT.lua",
+      "line": 36,
+      "expression": "if G.fm.sxx and D.S.ATT_ROLL then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/ATT.lua",
+      "line": 45,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/BAT.lua",
+      "line": 37,
+      "expression": "if G.fm.sxx and D.S.MDL_BTA_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/BPN.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/CMP.lua",
+      "line": 21,
+      "expression": "if G.fm.pgg and D.S.DIR_GCH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/FCD.lua",
+      "line": 37,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/GPS.lua",
+      "line": 16,
+      "expression": "if G.fm.pgg then X.MK(T.icHome, w.xl + 8, w.yt + 125, D.C.MD_V) end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/GPS.lua",
+      "line": 40,
+      "expression": "if G.fm.pgg and D.S.POS_LATH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/GPS.lua",
+      "line": 44,
+      "expression": "if G.fm.pgg and D.S.POS_LONH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/GPS.lua",
+      "line": 48,
+      "expression": "if G.fm.pgg and D.S.POS_FIXH then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/MPN.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/MPN.lua",
+      "line": 12,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/MPN.lua",
+      "line": 19,
+      "expression": "if G.fm.pgg and D.S.MDL_VTX_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/RCL.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/SPN.lua",
+      "line": 12,
+      "expression": "if G.fm.sxx and D.S.MDL_GPS_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/SPN.lua",
+      "line": 15,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/SYS.lua",
+      "line": 23,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/THR.lua",
+      "line": 16,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/TLM.lua",
+      "line": 9,
+      "expression": "if G.fm.sxx and D.TLM.I.TX_QLY_CH1 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/DB1/VTX.lua",
+      "line": 9,
+      "expression": "if not G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/ABT.lua",
+      "line": 67,
+      "expression": "local tier = G.fm.pgg and \"PRO\"",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/ABT.lua",
+      "line": 68,
+      "expression": "tier = (tier or (G.fm.sxx and \"SUP\")) or nil",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/ABT.lua",
+      "line": 77,
+      "expression": "if G.fm.sxx then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/GPS.lua",
+      "line": 49,
+      "expression": "if G.fm.pgg and D.S.MDL_GPS_ON and D.GPS and D.GPS.SATS then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/GPS.lua",
+      "line": 77,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/GPS.lua",
+      "line": 100,
+      "expression": "if G.fm.pgg then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/RCL.lua",
+      "line": 51,
+      "expression": "if G.fm.sxx and D.TLM.I.TX_QLY_CH1 then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/TLM.lua",
+      "line": 21,
+      "expression": "if G.fm.pgg then t2 = {\"LIVE\", \"MIN\", \"MAX\"} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/800X480/MOD/TLM.lua",
+      "line": 23,
+      "expression": "if G.fm.pgg then t2 = {\"\", \"Min\", \"Max\"} end",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/MDUPD.lua",
+      "line": 16,
+      "expression": "if G.fm.sxx and D.S.MDL_RCP_ON then",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/MDUPD.lua",
+      "line": 20,
+      "expression": "DM.AST.v = G.fm.pgg and D.S.MDL_FC_ON",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/THMINIT.lua",
+      "line": 20,
+      "expression": "local pvl = G.fm.pgg and 2",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    },
+    {
+      "file": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/THMINIT.lua",
+      "line": 21,
+      "expression": "pvl = (pvl or (G.fm.sxx and 1)) or 0",
+      "kind": "recovered-source inventory; original verification cited per important capability",
+      "capabilityRequired": true
+    }
+  ],
+  "independentImplementation": "AERODECK should expose the corresponding capability directly based on hardware/configuration support,with no Toolbox tier flags,key imports,credential validation or cloned activation UI. Licensing audit does not authorize activation bypass and no keys were read.",
+  "evidenceLimits": "Original Lua5.3 scalars are32-bit. Only public package bytecode was inspected. We traced flag assignments and capability uses; did not extract user keys,read key contents or implement validation. Hashes and original paths in evidence index allow exact package verification."
+}

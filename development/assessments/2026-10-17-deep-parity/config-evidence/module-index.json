@@ -1,0 +1,163 @@
+[
+  {
+    "module": "CFGAPP",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGAPP.luac",
+    "originalSha256": "067ee04de483357dc41ddffb2dc37f983b628772e72f78bb31d8e56d785efde4",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGAPP.txt",
+    "disassemblySha256": "e533c5bc107f215a7b4ed19bc9482b7459bf05601917b68c52128f54b7857963"
+  },
+  {
+    "module": "CFGBAT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGBAT.luac",
+    "originalSha256": "1dbec91f6ab8dfb059494135f20b436cc5b738f5708a1f1a5e31b67c5ab08669",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGBAT.txt",
+    "disassemblySha256": "4dbde36af9544680f14ef0f2891f68139f0d9d3d168f151fa2baf081e4f2de9b"
+  },
+  {
+    "module": "CFGBFV",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGBFV.luac",
+    "originalSha256": "a305098a214b190b7a454aa507f19843cfdd1d017bc6bfdf15a9aa604dee1a29",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGBFV.txt",
+    "disassemblySha256": "c0269e99b8e34ca8a0c0a31c9346fa2ecab9eb820ca1d2766bd9a54dc1dbcf8a"
+  },
+  {
+    "module": "CFGD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGD.luac",
+    "originalSha256": "93d4405a1dcf6beaba612e0adb3a2947326a381738e14fd244247a14ac7ea39f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGD.txt",
+    "disassemblySha256": "1bf60b88b3d3cbef5664089f5276d1c65030440d9be7ec5b9d2061806f6bc6ea"
+  },
+  {
+    "module": "CFGFC",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGFC.luac",
+    "originalSha256": "12d325ca042e90a51a33649424ef8d845ef0be735acb895f554d380df55092f5",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGFC.txt",
+    "disassemblySha256": "ff10f519086aa3a86cb13b22511014c9438ad325017dbe4db52d4ad4c44ecaa9"
+  },
+  {
+    "module": "CFGFNUI",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGFNUI.luac",
+    "originalSha256": "46718889741066fa512c8e38685dbcc7a6cdd375bb67a6f1fafe7f59e771592f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGFNUI.txt",
+    "disassemblySha256": "9e7688ed7d17798cce21d8eafe72ad60b7ee3dc49ec0e723e7169f460953e653"
+  },
+  {
+    "module": "CFGGPS",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGGPS.luac",
+    "originalSha256": "819e2a77cdb1a9a94b10e6d223ac65bc62fbbc1dd78c93ca819f9d2c9af2a2d2",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGGPS.txt",
+    "disassemblySha256": "d5c5d89f5fea4544520f50d22320e8d330b878e459974046e4dc5e66565c7c8a"
+  },
+  {
+    "module": "CFGIND",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGIND.luac",
+    "originalSha256": "81143b6a9771a5b09dd6387f7f9b85b3ab8a5b05ecb575edb0d6d70a06cbb98f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGIND.txt",
+    "disassemblySha256": "0b850a414011a23b60586ca0a9681d4096d8521f342f72e783b6e8df091e97db"
+  },
+  {
+    "module": "CFGINDBF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.luac",
+    "originalSha256": "11488ed418cd6c24e1dde2f8d6d5a959e75ee2e785468c88dd6cb9e3bac3ca3b",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGINDBF.txt",
+    "disassemblySha256": "75355dc07b8a54406d3e5383d85c98a81388e7a52f3e607d323c82eaa3c23c48"
+  },
+  {
+    "module": "CFGINIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGINIT.luac",
+    "originalSha256": "03775742d8621e7797bb6c238d66def0f5a3e5a58460579b944e9614e5fe4fed",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGINIT.txt",
+    "disassemblySha256": "e4a249d9a78abdc7777a124e55e0993508ba93675b0c96316ae3cc04469b5436"
+  },
+  {
+    "module": "CFGLD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGLD.luac",
+    "originalSha256": "46c031ca6ecaba97be10592bcdbd723a5dca601d25d7d94da48578595348d1b5",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGLD.txt",
+    "disassemblySha256": "46f5b76b490e907c6d2e15d2da0224afedb01999d8eef9ed90b41a088adbba65"
+  },
+  {
+    "module": "CFGMDL",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGMDL.luac",
+    "originalSha256": "deb8e461a60ebfd2426748374905f3a195fc995430e6c3b8b76416da8335ab2d",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGMDL.txt",
+    "disassemblySha256": "bf2d5d5594ab6749a5567bd8361b0b4cc1fa249f92e6a22dde11f36a50973ae0"
+  },
+  {
+    "module": "CFGRCL",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGRCL.luac",
+    "originalSha256": "ace24be15bf5f48f34fdde96c55f9fa16900d57380b96b98b1052c6b630afa17",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGRCL.txt",
+    "disassemblySha256": "ded6ebfcc434ddfbb42151985ffb953986f7559044c9198d4f254e4e5cc2cc88"
+  },
+  {
+    "module": "CFGSRDE",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSRDE.luac",
+    "originalSha256": "7ed7a8fa96d7fb72ada3beadf5fa19ed7420cef94f486182d643651ce0f7644c",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGSRDE.txt",
+    "disassemblySha256": "62b3ec8d5ba86ffe0cac42dfad5656eb6d0e3c8c5df033193d0ef624f7d3e679"
+  },
+  {
+    "module": "CFGSREN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSREN.luac",
+    "originalSha256": "ba5dde59e879e53b9285426fc15b909c1ee85553bf9d180b01a10437f41ffdbe",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGSREN.txt",
+    "disassemblySha256": "ac74779c4fcef2428f0f53585124ac769f478a2083eb56b0baef67603881e590"
+  },
+  {
+    "module": "CFGSWDE",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSWDE.luac",
+    "originalSha256": "68485bb5f9a539af9eaed1205f0bdc2c04077d557f9d366a5beca3cce4f2d08c",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGSWDE.txt",
+    "disassemblySha256": "e5d26f1baff4093875fa0eaf5a4e2ff8df218dfb52cdef5133f58a3ba38d36c8"
+  },
+  {
+    "module": "CFGSWEN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSWEN.luac",
+    "originalSha256": "816373b189d07ecfeec075d188c5e6411de054d0b35dddfa159acb42e4c5bd4f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGSWEN.txt",
+    "disassemblySha256": "c32449f5bcc81b5188b6d573e221546f216ae5c74319216bc0933b830a1573b4"
+  },
+  {
+    "module": "CFGUI",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGUI.luac",
+    "originalSha256": "76ffb909da1b692d82fc91a270c5deb4b2028303c02ecc50054074b6a98575f9",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGUI.txt",
+    "disassemblySha256": "db14517a5a72793e0dfa27825c7affcfe862a0a83419857d842705a05551a2e1"
+  },
+  {
+    "module": "CFGUPD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGUPD.luac",
+    "originalSha256": "619185234c48d646733e89a59f9f616be22ed615553b2954894c22a1d187942a",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGUPD.txt",
+    "disassemblySha256": "19e21fbb95145088d62a1439c7865e288d83c83e5def541d1dff8f8ff444046b"
+  },
+  {
+    "module": "CFGUPDP",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.luac",
+    "originalSha256": "9a9386063bfc2ceb1228441de05c40b84459c173f6d05eadbe63e27844fffbb3",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGUPDP.txt",
+    "disassemblySha256": "ef20fda6d628a8d302eae4ccc7c9a3ec518eb891e2a91c9c68cf1ff3f5e9a394"
+  },
+  {
+    "module": "CFGVFV",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGVFV.luac",
+    "originalSha256": "4687d13abcb3375bafd7547c89dee9aec0ec90e8d84d09ca34a5fc45866e42df",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGVFV.txt",
+    "disassemblySha256": "565dafd960009c767971fd969258684d2c8831e212e318d630f4e06a11cae76b"
+  },
+  {
+    "module": "CFGVTX",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGVTX.luac",
+    "originalSha256": "edb8074d9aa662d5286b415fbae4a9e7e8948a34b70445055eec9cb1a55dbcfb",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGVTX.txt",
+    "disassemblySha256": "2f5cc5089bb4d639a4a1b726f49d7aff5b8b749cb5d61252b1c47790985251c8"
+  },
+  {
+    "module": "CFGWR",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGWR.luac",
+    "originalSha256": "be334b87a0c68399722d04d8daf0c7a59a24c4b24509d7bfd05277c433ae87f9",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGWR.txt",
+    "disassemblySha256": "446e4abae66c59f503365366adde513c93386013d1a6fdf194bdcc9fc957d55d"
+  }
+]

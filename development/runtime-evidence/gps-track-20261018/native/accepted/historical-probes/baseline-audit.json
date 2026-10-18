@@ -1,0 +1,341 @@
+{
+  "result": "BASELINE_FAILURE_REPRODUCED",
+  "mainSHA256": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+  "nativeFirmware": "EdgeTX3.0.0 TX16S WASM",
+  "targetFirmware": "physical TX16S MkII EdgeTX2.12.4 unverified",
+  "nativeCallbackInstructionBudget": 20000,
+  "nativeBudgetHookModified": false,
+  "productionMainUnmodifiedInBaseline": true,
+  "privateProbeSeparatelyInstrumented": true,
+  "publicPreviewUnmodified": true,
+  "syntheticDataOnly": true,
+  "baselineErrors": [
+    "RUN: /SCRIPTS/TOOLS/telem.lua:1253: CPU limit"
+  ],
+  "baselineFailureWindow": "Between20and30seconds on Track, around49\u201359seconds native runtime",
+  "probeFailureLastPointCount": 50,
+  "probeErrors": [
+    "RUN: /SCRIPTS/TOOLS/telem.lua:2898: CPU limit"
+  ],
+  "measuredCosts": [
+    {
+      "ticks": 2974,
+      "points": 25,
+      "zoom": 2,
+      "entry": 21,
+      "afterGrid": 29,
+      "afterTrail": 57,
+      "afterRowsActions": 62,
+      "trailAllowancePoints": 28,
+      "bodyAllowancePoints": 41
+    },
+    {
+      "ticks": 3083,
+      "points": 25,
+      "zoom": 2,
+      "entry": 19,
+      "afterGrid": 27,
+      "afterTrail": 55,
+      "afterRowsActions": 60,
+      "trailAllowancePoints": 28,
+      "bodyAllowancePoints": 41
+    },
+    {
+      "ticks": 3191,
+      "points": 26,
+      "zoom": 2,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 49,
+      "afterRowsActions": 54,
+      "trailAllowancePoints": 29,
+      "bodyAllowancePoints": 42
+    },
+    {
+      "ticks": 3300,
+      "points": 27,
+      "zoom": 2,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 50,
+      "afterRowsActions": 55,
+      "trailAllowancePoints": 30,
+      "bodyAllowancePoints": 43
+    },
+    {
+      "ticks": 3410,
+      "points": 28,
+      "zoom": 2,
+      "entry": 13,
+      "afterGrid": 20,
+      "afterTrail": 51,
+      "afterRowsActions": 57,
+      "trailAllowancePoints": 31,
+      "bodyAllowancePoints": 44
+    },
+    {
+      "ticks": 3519,
+      "points": 29,
+      "zoom": 2,
+      "entry": 13,
+      "afterGrid": 20,
+      "afterTrail": 52,
+      "afterRowsActions": 58,
+      "trailAllowancePoints": 32,
+      "bodyAllowancePoints": 45
+    },
+    {
+      "ticks": 3628,
+      "points": 30,
+      "zoom": 2,
+      "entry": 13,
+      "afterGrid": 20,
+      "afterTrail": 53,
+      "afterRowsActions": 59,
+      "trailAllowancePoints": 33,
+      "bodyAllowancePoints": 46
+    },
+    {
+      "ticks": 3737,
+      "points": 31,
+      "zoom": 2,
+      "entry": 17,
+      "afterGrid": 24,
+      "afterTrail": 58,
+      "afterRowsActions": 64,
+      "trailAllowancePoints": 34,
+      "bodyAllowancePoints": 47
+    },
+    {
+      "ticks": 3845,
+      "points": 32,
+      "zoom": 2,
+      "entry": 17,
+      "afterGrid": 24,
+      "afterTrail": 60,
+      "afterRowsActions": 65,
+      "trailAllowancePoints": 36,
+      "bodyAllowancePoints": 48
+    },
+    {
+      "ticks": 3954,
+      "points": 33,
+      "zoom": 2,
+      "entry": 17,
+      "afterGrid": 24,
+      "afterTrail": 60,
+      "afterRowsActions": 66,
+      "trailAllowancePoints": 36,
+      "bodyAllowancePoints": 49
+    },
+    {
+      "ticks": 4063,
+      "points": 34,
+      "zoom": 2,
+      "entry": 20,
+      "afterGrid": 27,
+      "afterTrail": 65,
+      "afterRowsActions": 70,
+      "trailAllowancePoints": 38,
+      "bodyAllowancePoints": 50
+    },
+    {
+      "ticks": 4171,
+      "points": 35,
+      "zoom": 2,
+      "entry": 20,
+      "afterGrid": 27,
+      "afterTrail": 66,
+      "afterRowsActions": 71,
+      "trailAllowancePoints": 39,
+      "bodyAllowancePoints": 51
+    },
+    {
+      "ticks": 4279,
+      "points": 36,
+      "zoom": 2,
+      "entry": 20,
+      "afterGrid": 27,
+      "afterTrail": 67,
+      "afterRowsActions": 72,
+      "trailAllowancePoints": 40,
+      "bodyAllowancePoints": 52
+    },
+    {
+      "ticks": 4388,
+      "points": 37,
+      "zoom": 2,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 60,
+      "afterRowsActions": 66,
+      "trailAllowancePoints": 40,
+      "bodyAllowancePoints": 54
+    },
+    {
+      "ticks": 4498,
+      "points": 38,
+      "zoom": 2,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 61,
+      "afterRowsActions": 67,
+      "trailAllowancePoints": 41,
+      "bodyAllowancePoints": 55
+    },
+    {
+      "ticks": 4607,
+      "points": 39,
+      "zoom": 2,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 62,
+      "afterRowsActions": 68,
+      "trailAllowancePoints": 42,
+      "bodyAllowancePoints": 56
+    },
+    {
+      "ticks": 4716,
+      "points": 40,
+      "zoom": 2,
+      "entry": 13,
+      "afterGrid": 20,
+      "afterTrail": 64,
+      "afterRowsActions": 69,
+      "trailAllowancePoints": 44,
+      "bodyAllowancePoints": 56
+    },
+    {
+      "ticks": 4824,
+      "points": 41,
+      "zoom": 2,
+      "entry": 13,
+      "afterGrid": 20,
+      "afterTrail": 65,
+      "afterRowsActions": 70,
+      "trailAllowancePoints": 45,
+      "bodyAllowancePoints": 57
+    },
+    {
+      "ticks": 4932,
+      "points": 42,
+      "zoom": 3,
+      "entry": 17,
+      "afterGrid": 24,
+      "afterTrail": 69,
+      "afterRowsActions": 75,
+      "trailAllowancePoints": 45,
+      "bodyAllowancePoints": 58
+    },
+    {
+      "ticks": 5041,
+      "points": 43,
+      "zoom": 3,
+      "entry": 17,
+      "afterGrid": 24,
+      "afterTrail": 70,
+      "afterRowsActions": 76,
+      "trailAllowancePoints": 46,
+      "bodyAllowancePoints": 59
+    },
+    {
+      "ticks": 5149,
+      "points": 44,
+      "zoom": 3,
+      "entry": 17,
+      "afterGrid": 24,
+      "afterTrail": 71,
+      "afterRowsActions": 77,
+      "trailAllowancePoints": 47,
+      "bodyAllowancePoints": 60
+    },
+    {
+      "ticks": 5260,
+      "points": 45,
+      "zoom": 3,
+      "entry": 20,
+      "afterGrid": 27,
+      "afterTrail": 75,
+      "afterRowsActions": 81,
+      "trailAllowancePoints": 48,
+      "bodyAllowancePoints": 61
+    },
+    {
+      "ticks": 5368,
+      "points": 46,
+      "zoom": 3,
+      "entry": 20,
+      "afterGrid": 27,
+      "afterTrail": 76,
+      "afterRowsActions": 82,
+      "trailAllowancePoints": 49,
+      "bodyAllowancePoints": 62
+    },
+    {
+      "ticks": 5477,
+      "points": 47,
+      "zoom": 3,
+      "entry": 20,
+      "afterGrid": 27,
+      "afterTrail": 77,
+      "afterRowsActions": 83,
+      "trailAllowancePoints": 50,
+      "bodyAllowancePoints": 63
+    },
+    {
+      "ticks": 5585,
+      "points": 48,
+      "zoom": 3,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 71,
+      "afterRowsActions": 76,
+      "trailAllowancePoints": 51,
+      "bodyAllowancePoints": 64
+    },
+    {
+      "ticks": 5694,
+      "points": 49,
+      "zoom": 3,
+      "entry": 12,
+      "afterGrid": 20,
+      "afterTrail": 72,
+      "afterRowsActions": 77,
+      "trailAllowancePoints": 52,
+      "bodyAllowancePoints": 65
+    }
+  ],
+  "sourceFindings": [
+    {
+      "file": "telem.lua",
+      "line": 1471,
+      "finding": "Everypaintprojects everyretainedpoint via pt\u2192geo, then uses native clippedline. No projected-point cache."
+    },
+    {
+      "file": "telem.lua",
+      "line": 1465,
+      "finding": "pt invokes haversine/bearing trig and converts distance/bearing backtoCartesian for eachpoint."
+    },
+    {
+      "file": "telem.lua",
+      "line": 1255,
+      "finding": "clip adds colorselection+fourroundcalls then delegates clippingto native drawLineWithClipping; no Lua clippingalgorithm."
+    },
+    {
+      "file": "session.lua",
+      "line": 142,
+      "finding": "Trail default90,max180; production append is atmostonepoint per100ticks and pageindependent."
+    }
+  ],
+  "interpretation": "At30points, trailplusmarker consumes33VMallowancepoints; at31itconsumes34. At47points itconsumes50. Bodycostgrows roughly1.1points pertrailpoint, leaving inadequate room for sharedprelude+shell around50points. VMallowance isnot CPUwalltime.",
+  "recommendation": "Cachegeodesicprojection and integerplotcoordinates withboundedpreparation. Preserve native clipping, redraw everywidgetcallback, handlezoom/home/model/source/trail changes without unbounded rebuild; test naturalmax180growth and offpagefirstentry.",
+  "evidence": {
+    "baseline.log": "2e683d189eaca5d9b731db869b2de67fe185b6a600ae9b9517db169e276edff6",
+    "baseline-inputs.json": "653f5b59b84d1cb3dc72ae69eeb29e1ed9fb387a88d03aab8673407146144b38",
+    "baseline-main.lua": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+    "probe.log": "64a4169d6b714a204428eee6a7147a9440e4994d20895a97e7da37f56bd5b4c6",
+    "probe-inputs.json": "bfeaad7c7280c5eb21c92dfd33084d80c4e6ed05e426fdba6ec08f70b2952ede",
+    "baseline-track-20.png": "0ac7d486e6e83e99dd169aa334166f4ffcca248c30383b8852952d754c044226",
+    "baseline-track-30.png": "b69e4a70ef17361c98578b450ffcaf52eef0eeb2de6b5ffddfe3326b3194567d"
+  }
+}

@@ -1,0 +1,30 @@
+AERODECK BATTERY-UI-20261018 — local only
+
+Flight battery block: one remaining-capacity gauge, prominent pack voltage,
+and a compact icon/cell-count header. SML17px replaces TINY12px for normal
+remaining percentages; the gauge now uses all62px rather than sharing at most
+36px with a tiny percentage. Voltage remains native29px for normal pack values.
+Inferred cell counts use ~6S; configured/profile counts use6S. Capacity-based
+percentages retain their independent ~ estimate marker. Unknown values show--,
+real zero remains0, and warning colors remain in force.
+
+The old Flight voltage-range bar is removed. The Power page retains its separate
+voltage-range indicator and labelled remaining-capacity value. Source readings,
+power calculations, session history, attitude and GPS Track code are unchanged.
+The shared cockpit applies this arrangement to all three Flight centre panels.
+
+56 suites pass under LuaJIT and stock Lua5.3 int32/float32, bound to64 runtime
+files. Existing Flight layout coverage now checks1883 cases, including percent/
+header/value bounds and full-size~100%. Native EdgeTX3.0 TX16S WASM confirms
+five states across four cold widget starts under the unchanged20000 instruction
+allowance:~54%,~100%,zero,auto~6S and missing readings. Development telemetry/
+widget driver is disclosed; production app/modules/assets execute unchanged.
+This is scoped visual/startup verification, not physical2.12.4 acceptance or a
+new sustained performance claim.
+
+Preview:http://127.0.0.1:8766/ — refresh for BATTERY-UI-20261018.
+Package:AERODECK-battery-ui-install.zip. The radio remains on its last file-
+verified REPLACEMENT-RC1-20261017 installation; see DEPLOYMENT.txt.
+Evidence:development/build-BATTERY-UI-20261018.json and
+ development/ui-previews/battery-ui/verification.json.
+Prior GPS/attitude/roll/RC1 archives and their evidence remain frozen.

@@ -1,0 +1,417 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/RDKEY.luac
+
+FUNCTION main params 0 vararg 1 stack 12 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/RD/RDKEY.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 298), ('F', 1, 298), ('D', 1, 298), ('X', 1, 298), ('KD', 2, 298), ('(for generator)', 232, 237), ('(for state)', 232, 237), ('(for control)', 232, 237), ('k', 233, 235), ('v', 233, 235), ('ks', 238, 298), ('(for generator)', 292, 297), ('(for state)', 292, 297), ('(for control)', 292, 297), ('k', 293, 295), ('v', 293, 295)]
+K0 'EX'
+K1 'EVT_EXIT_BREAK'
+K2 'EXL'
+K3 'EVT_EXIT_LONG'
+K4 -1
+K5 'EXR'
+K6 'EVT_EXIT_REPT'
+K7 'EN'
+K8 'EVT_ENTER_BREAK'
+K9 'EVT_VIRTUAL_ENTER'
+K10 'ENL'
+K11 'EVT_ENTER_LONG'
+K12 'ENR'
+K13 'EVT_ENTER_REPT'
+K14 'PN'
+K15 'EVT_PAGEDN_BREAK'
+K16 'EVT_VIRTUAL_NEXT_PAGE'
+K17 'PNL'
+K18 'EVT_PAGEDN_LONG'
+K19 'PNR'
+K20 'EVT_PAGEDN_REPT'
+K21 'PP'
+K22 'EVT_PAGEUP_BREAK'
+K23 'EVT_VIRTUAL_PREV_PAGE'
+K24 'PPL'
+K25 'EVT_PAGEUP_LONG'
+K26 'PPR'
+K27 'EVT_PAGEUP_REPT'
+K28 'RT'
+K29 'EVT_ROT_RIGHT'
+K30 'EVT_RIGHT_BREAK'
+K31 'EVT_PLUS_BREAK'
+K32 'EVT_VIRTUAL_NEXT'
+K33 'RTL'
+K34 'EVT_RIGHT_LONG'
+K35 'EVT_PLUS_LONG'
+K36 'RTR'
+K37 'EVT_RIGHT_REPT'
+K38 'EVT_PLUS_REPT'
+K39 'LT'
+K40 'EVT_ROT_LEFT'
+K41 'EVT_LEFT_BREAK'
+K42 'EVT_MINUS_BREAK'
+K43 'EVT_VIRTUAL_PREV'
+K44 'LTL'
+K45 'EVT_LEFT_LONG'
+K46 'EVT_MINUS_LONG'
+K47 'LTR'
+K48 'EVT_LEFT_REPT'
+K49 'UP'
+K50 'EVT_UP_BREAK'
+K51 'EVT_VIRTUAL_DEC'
+K52 'UPL'
+K53 'EVT_UP_LONG'
+K54 'UPR'
+K55 'EVT_UP_REPT'
+K56 'DN'
+K57 'EVT_DOWN_BREAK'
+K58 'RVT_MINUS_BREAK'
+K59 'EVT_VIRTUAL_INC'
+K60 'DNL'
+K61 'EVT_DOWN_LONG'
+K62 'DNR'
+K63 'EVT_DOWN_REPT'
+K64 'EVT_MINUS_REPT'
+K65 'MN'
+K66 'EVT_MODEL_BREAK'
+K67 'EVT_VIRTUAL_MENU'
+K68 'MNL'
+K69 'EVT_MODEL_LONG'
+K70 'MNR'
+K71 'EVT_MODEL_REPT'
+K72 'SY'
+K73 'EVT_SYS_BREAK'
+K74 'SYL'
+K75 'EVT_SYS_LONG'
+K76 'SYR'
+K77 'EVT_SYS_REPT'
+K78 'TL'
+K79 'EVT_TELEM_BREAK'
+K80 'TLL'
+K81 'EVT_TELEM_LONG'
+K82 'TLR'
+K83 'EVT_TELEM_REPT'
+K84 'K'
+K85 'pairs'
+K86 'RD'
+K87 'OSV_MAJOR'
+K88 2
+K89 'OSV_MINOR'
+K90 10
+K91 'MODEL'
+K92 'nv14'
+K93 'el18'
+K94 2050
+K95 517
+K96 2052
+K97 1028
+K98 516
+K99 2053
+K100 1029
+K101 526
+K102 2062
+K103 1038
+K104 524
+K105 2060
+K106 1036
+K107 525
+K108 2061
+K109 1037
+K110 'pa01'
+K111 'dbg'
+K112 'RDKEY: pa01 model detected'
+K113 2059
+   1 [  11] VARARG    A=0 B=5 C=0
+   2 [  13] NEWTABLE  A=4 B=0 C=0
+   3 [  14] GETTABUP  R5 = UP0[K1('EVT_EXIT_BREAK')]
+   4 [  14] SETTABLE  R4[K0('EX')] = R5
+   5 [  15] GETTABUP  R5 = UP0[K3('EVT_EXIT_LONG')]
+   6 [  15] TEST      A=5 B=0 C=1
+   7 [  15] JMP       A=0 ->9
+   8 [  15] LOADK     R5 = K4 (-1)
+   9 [  15] SETTABLE  R4[K2('EXL')] = R5
+  10 [  16] GETTABUP  R5 = UP0[K6('EVT_EXIT_REPT')]
+  11 [  16] TEST      A=5 B=0 C=1
+  12 [  16] JMP       A=0 ->14
+  13 [  16] LOADK     R5 = K4 (-1)
+  14 [  16] SETTABLE  R4[K5('EXR')] = R5
+  15 [  18] GETTABUP  R5 = UP0[K8('EVT_ENTER_BREAK')]
+  16 [  18] TEST      A=5 B=0 C=1
+  17 [  18] JMP       A=0 ->22
+  18 [  18] GETTABUP  R5 = UP0[K9('EVT_VIRTUAL_ENTER')]
+  19 [  18] TEST      A=5 B=0 C=1
+  20 [  18] JMP       A=0 ->22
+  21 [  18] LOADK     R5 = K4 (-1)
+  22 [  18] SETTABLE  R4[K7('EN')] = R5
+  23 [  19] GETTABUP  R5 = UP0[K11('EVT_ENTER_LONG')]
+  24 [  19] TEST      A=5 B=0 C=1
+  25 [  19] JMP       A=0 ->27
+  26 [  19] LOADK     R5 = K4 (-1)
+  27 [  19] SETTABLE  R4[K10('ENL')] = R5
+  28 [  20] GETTABUP  R5 = UP0[K13('EVT_ENTER_REPT')]
+  29 [  20] TEST      A=5 B=0 C=1
+  30 [  20] JMP       A=0 ->32
+  31 [  20] LOADK     R5 = K4 (-1)
+  32 [  20] SETTABLE  R4[K12('ENR')] = R5
+  33 [  22] GETTABUP  R5 = UP0[K15('EVT_PAGEDN_BREAK')]
+  34 [  22] TEST      A=5 B=0 C=1
+  35 [  22] JMP       A=0 ->40
+  36 [  22] GETTABUP  R5 = UP0[K16('EVT_VIRTUAL_NEXT_PAGE')]
+  37 [  22] TEST      A=5 B=0 C=1
+  38 [  22] JMP       A=0 ->40
+  39 [  22] LOADK     R5 = K4 (-1)
+  40 [  22] SETTABLE  R4[K14('PN')] = R5
+  41 [  23] GETTABUP  R5 = UP0[K18('EVT_PAGEDN_LONG')]
+  42 [  23] TEST      A=5 B=0 C=1
+  43 [  23] JMP       A=0 ->45
+  44 [  23] LOADK     R5 = K4 (-1)
+  45 [  23] SETTABLE  R4[K17('PNL')] = R5
+  46 [  24] GETTABUP  R5 = UP0[K20('EVT_PAGEDN_REPT')]
+  47 [  24] TEST      A=5 B=0 C=1
+  48 [  24] JMP       A=0 ->50
+  49 [  24] LOADK     R5 = K4 (-1)
+  50 [  24] SETTABLE  R4[K19('PNR')] = R5
+  51 [  26] GETTABUP  R5 = UP0[K22('EVT_PAGEUP_BREAK')]
+  52 [  26] TEST      A=5 B=0 C=1
+  53 [  26] JMP       A=0 ->58
+  54 [  26] GETTABUP  R5 = UP0[K23('EVT_VIRTUAL_PREV_PAGE')]
+  55 [  26] TEST      A=5 B=0 C=1
+  56 [  26] JMP       A=0 ->58
+  57 [  26] LOADK     R5 = K4 (-1)
+  58 [  26] SETTABLE  R4[K21('PP')] = R5
+  59 [  27] GETTABUP  R5 = UP0[K25('EVT_PAGEUP_LONG')]
+  60 [  27] TEST      A=5 B=0 C=1
+  61 [  27] JMP       A=0 ->63
+  62 [  27] LOADK     R5 = K4 (-1)
+  63 [  27] SETTABLE  R4[K24('PPL')] = R5
+  64 [  28] GETTABUP  R5 = UP0[K27('EVT_PAGEUP_REPT')]
+  65 [  28] TEST      A=5 B=0 C=1
+  66 [  28] JMP       A=0 ->68
+  67 [  28] LOADK     R5 = K4 (-1)
+  68 [  28] SETTABLE  R4[K26('PPR')] = R5
+  69 [  30] GETTABUP  R5 = UP0[K29('EVT_ROT_RIGHT')]
+  70 [  30] TEST      A=5 B=0 C=1
+  71 [  30] JMP       A=0 ->82
+  72 [  30] GETTABUP  R5 = UP0[K30('EVT_RIGHT_BREAK')]
+  73 [  30] TEST      A=5 B=0 C=1
+  74 [  30] JMP       A=0 ->82
+  75 [  30] GETTABUP  R5 = UP0[K31('EVT_PLUS_BREAK')]
+  76 [  30] TEST      A=5 B=0 C=1
+  77 [  30] JMP       A=0 ->82
+  78 [  30] GETTABUP  R5 = UP0[K32('EVT_VIRTUAL_NEXT')]
+  79 [  30] TEST      A=5 B=0 C=1
+  80 [  30] JMP       A=0 ->82
+  81 [  30] LOADK     R5 = K4 (-1)
+  82 [  30] SETTABLE  R4[K28('RT')] = R5
+  83 [  31] GETTABUP  R5 = UP0[K34('EVT_RIGHT_LONG')]
+  84 [  31] TEST      A=5 B=0 C=1
+  85 [  31] JMP       A=0 ->90
+  86 [  31] GETTABUP  R5 = UP0[K35('EVT_PLUS_LONG')]
+  87 [  31] TEST      A=5 B=0 C=1
+  88 [  31] JMP       A=0 ->90
+  89 [  31] LOADK     R5 = K4 (-1)
+  90 [  31] SETTABLE  R4[K33('RTL')] = R5
+  91 [  32] GETTABUP  R5 = UP0[K37('EVT_RIGHT_REPT')]
+  92 [  32] TEST      A=5 B=0 C=1
+  93 [  32] JMP       A=0 ->98
+  94 [  32] GETTABUP  R5 = UP0[K38('EVT_PLUS_REPT')]
+  95 [  32] TEST      A=5 B=0 C=1
+  96 [  32] JMP       A=0 ->98
+  97 [  32] LOADK     R5 = K4 (-1)
+  98 [  32] SETTABLE  R4[K36('RTR')] = R5
+  99 [  34] GETTABUP  R5 = UP0[K40('EVT_ROT_LEFT')]
+ 100 [  34] TEST      A=5 B=0 C=1
+ 101 [  34] JMP       A=0 ->112
+ 102 [  34] GETTABUP  R5 = UP0[K41('EVT_LEFT_BREAK')]
+ 103 [  34] TEST      A=5 B=0 C=1
+ 104 [  34] JMP       A=0 ->112
+ 105 [  34] GETTABUP  R5 = UP0[K42('EVT_MINUS_BREAK')]
+ 106 [  34] TEST      A=5 B=0 C=1
+ 107 [  34] JMP       A=0 ->112
+ 108 [  34] GETTABUP  R5 = UP0[K43('EVT_VIRTUAL_PREV')]
+ 109 [  34] TEST      A=5 B=0 C=1
+ 110 [  34] JMP       A=0 ->112
+ 111 [  34] LOADK     R5 = K4 (-1)
+ 112 [  34] SETTABLE  R4[K39('LT')] = R5
+ 113 [  35] GETTABUP  R5 = UP0[K45('EVT_LEFT_LONG')]
+ 114 [  35] TEST      A=5 B=0 C=1
+ 115 [  35] JMP       A=0 ->120
+ 116 [  35] GETTABUP  R5 = UP0[K46('EVT_MINUS_LONG')]
+ 117 [  35] TEST      A=5 B=0 C=1
+ 118 [  35] JMP       A=0 ->120
+ 119 [  35] LOADK     R5 = K4 (-1)
+ 120 [  35] SETTABLE  R4[K44('LTL')] = R5
+ 121 [  36] GETTABUP  R5 = UP0[K48('EVT_LEFT_REPT')]
+ 122 [  36] TEST      A=5 B=0 C=1
+ 123 [  36] JMP       A=0 ->128
+ 124 [  36] GETTABUP  R5 = UP0[K48('EVT_LEFT_REPT')]
+ 125 [  36] TEST      A=5 B=0 C=1
+ 126 [  36] JMP       A=0 ->128
+ 127 [  36] LOADK     R5 = K4 (-1)
+ 128 [  36] SETTABLE  R4[K47('LTR')] = R5
+ 129 [  38] GETTABUP  R5 = UP0[K50('EVT_UP_BREAK')]
+ 130 [  38] TEST      A=5 B=0 C=1
+ 131 [  38] JMP       A=0 ->139
+ 132 [  38] GETTABUP  R5 = UP0[K31('EVT_PLUS_BREAK')]
+ 133 [  38] TEST      A=5 B=0 C=1
+ 134 [  38] JMP       A=0 ->139
+ 135 [  38] GETTABUP  R5 = UP0[K51('EVT_VIRTUAL_DEC')]
+ 136 [  38] TEST      A=5 B=0 C=1
+ 137 [  38] JMP       A=0 ->139
+ 138 [  38] LOADK     R5 = K4 (-1)
+ 139 [  38] SETTABLE  R4[K49('UP')] = R5
+ 140 [  39] GETTABUP  R5 = UP0[K53('EVT_UP_LONG')]
+ 141 [  39] TEST      A=5 B=0 C=1
+ 142 [  39] JMP       A=0 ->147
+ 143 [  39] GETTABUP  R5 = UP0[K35('EVT_PLUS_LONG')]
+ 144 [  39] TEST      A=5 B=0 C=1
+ 145 [  39] JMP       A=0 ->147
+ 146 [  39] LOADK     R5 = K4 (-1)
+ 147 [  39] SETTABLE  R4[K52('UPL')] = R5
+ 148 [  40] GETTABUP  R5 = UP0[K55('EVT_UP_REPT')]
+ 149 [  40] TEST      A=5 B=0 C=1
+ 150 [  40] JMP       A=0 ->155
+ 151 [  40] GETTABUP  R5 = UP0[K38('EVT_PLUS_REPT')]
+ 152 [  40] TEST      A=5 B=0 C=1
+ 153 [  40] JMP       A=0 ->155
+ 154 [  40] LOADK     R5 = K4 (-1)
+ 155 [  40] SETTABLE  R4[K54('UPR')] = R5
+ 156 [  42] GETTABUP  R5 = UP0[K57('EVT_DOWN_BREAK')]
+ 157 [  42] TEST      A=5 B=0 C=1
+ 158 [  42] JMP       A=0 ->163
+ 159 [  42] GETTABUP  R5 = UP0[K58('RVT_MINUS_BREAK')]
+ 160 [  42] TEST      A=5 B=0 C=1
+ 161 [  42] JMP       A=0 ->163
+ 162 [  42] GETTABUP  R5 = UP0[K59('EVT_VIRTUAL_INC')]
+ 163 [  42] SETTABLE  R4[K56('DN')] = R5
+ 164 [  43] GETTABUP  R5 = UP0[K61('EVT_DOWN_LONG')]
+ 165 [  43] TEST      A=5 B=0 C=1
+ 166 [  43] JMP       A=0 ->171
+ 167 [  43] GETTABUP  R5 = UP0[K46('EVT_MINUS_LONG')]
+ 168 [  43] TEST      A=5 B=0 C=1
+ 169 [  43] JMP       A=0 ->171
+ 170 [  43] LOADK     R5 = K4 (-1)
+ 171 [  43] SETTABLE  R4[K60('DNL')] = R5
+ 172 [  44] GETTABUP  R5 = UP0[K63('EVT_DOWN_REPT')]
+ 173 [  44] TEST      A=5 B=0 C=1
+ 174 [  44] JMP       A=0 ->179
+ 175 [  44] GETTABUP  R5 = UP0[K64('EVT_MINUS_REPT')]
+ 176 [  44] TEST      A=5 B=0 C=1
+ 177 [  44] JMP       A=0 ->179
+ 178 [  44] LOADK     R5 = K4 (-1)
+ 179 [  44] SETTABLE  R4[K62('DNR')] = R5
+ 180 [  46] GETTABUP  R5 = UP0[K66('EVT_MODEL_BREAK')]
+ 181 [  46] TEST      A=5 B=0 C=1
+ 182 [  46] JMP       A=0 ->187
+ 183 [  46] GETTABUP  R5 = UP0[K67('EVT_VIRTUAL_MENU')]
+ 184 [  46] TEST      A=5 B=0 C=1
+ 185 [  46] JMP       A=0 ->187
+ 186 [  46] LOADK     R5 = K4 (-1)
+ 187 [  46] SETTABLE  R4[K65('MN')] = R5
+ 188 [  47] GETTABUP  R5 = UP0[K69('EVT_MODEL_LONG')]
+ 189 [  47] TEST      A=5 B=0 C=1
+ 190 [  47] JMP       A=0 ->192
+ 191 [  47] LOADK     R5 = K4 (-1)
+ 192 [  47] SETTABLE  R4[K68('MNL')] = R5
+ 193 [  48] GETTABUP  R5 = UP0[K71('EVT_MODEL_REPT')]
+ 194 [  48] TEST      A=5 B=0 C=1
+ 195 [  48] JMP       A=0 ->197
+ 196 [  48] LOADK     R5 = K4 (-1)
+ 197 [  48] SETTABLE  R4[K70('MNR')] = R5
+ 198 [  50] GETTABUP  R5 = UP0[K73('EVT_SYS_BREAK')]
+ 199 [  50] TEST      A=5 B=0 C=1
+ 200 [  50] JMP       A=0 ->202
+ 201 [  50] LOADK     R5 = K4 (-1)
+ 202 [  50] SETTABLE  R4[K72('SY')] = R5
+ 203 [  51] GETTABUP  R5 = UP0[K75('EVT_SYS_LONG')]
+ 204 [  51] TEST      A=5 B=0 C=1
+ 205 [  51] JMP       A=0 ->207
+ 206 [  51] LOADK     R5 = K4 (-1)
+ 207 [  51] SETTABLE  R4[K74('SYL')] = R5
+ 208 [  52] GETTABUP  R5 = UP0[K77('EVT_SYS_REPT')]
+ 209 [  52] TEST      A=5 B=0 C=1
+ 210 [  52] JMP       A=0 ->212
+ 211 [  52] LOADK     R5 = K4 (-1)
+ 212 [  52] SETTABLE  R4[K76('SYR')] = R5
+ 213 [  54] GETTABUP  R5 = UP0[K79('EVT_TELEM_BREAK')]
+ 214 [  54] TEST      A=5 B=0 C=1
+ 215 [  54] JMP       A=0 ->217
+ 216 [  54] LOADK     R5 = K4 (-1)
+ 217 [  54] SETTABLE  R4[K78('TL')] = R5
+ 218 [  55] GETTABUP  R5 = UP0[K81('EVT_TELEM_LONG')]
+ 219 [  55] TEST      A=5 B=0 C=1
+ 220 [  55] JMP       A=0 ->222
+ 221 [  55] LOADK     R5 = K4 (-1)
+ 222 [  55] SETTABLE  R4[K80('TLL')] = R5
+ 223 [  56] GETTABUP  R5 = UP0[K83('EVT_TELEM_REPT')]
+ 224 [  56] TEST      A=5 B=0 C=1
+ 225 [  56] JMP       A=0 ->227
+ 226 [  56] LOADK     R5 = K4 (-1)
+ 227 [  56] SETTABLE  R4[K82('TLR')] = R5
+ 228 [  58] NEWTABLE  A=5 B=0 C=0
+ 229 [  58] SETTABLE  R2[K84('K')] = R5
+ 230 [  59] GETTABUP  R5 = UP0[K85('pairs')]
+ 231 [  59] MOVE      A=6 B=4 C=0
+ 232 [  59] CALL      A=5 B=2 C=4
+ 233 [  59] JMP       A=0 ->236
+ 234 [  60] GETTABLE  R10 = R2[K84('K')]
+ 235 [  60] SETTABLE  R10[R8] = R9
+ 236 [  59] TFORCALL  A=5 B=0 C=2
+ 237 [  59] TFORLOOP  A=7 ->234
+ 238 [  69] LOADNIL   A=5 B=0 C=0
+ 239 [  70] GETTABLE  R6 = R2[K86('RD')]
+ 240 [  70] GETTABLE  R6 = R6[K87('OSV_MAJOR')]
+ 241 [  70] LE        A=0 R6, K88(2); skip-next if condition != A
+ 242 [  70] JMP       A=0 ->273
+ 243 [  70] GETTABLE  R6 = R2[K86('RD')]
+ 244 [  70] GETTABLE  R6 = R6[K89('OSV_MINOR')]
+ 245 [  70] LE        A=0 R6, K90(10); skip-next if condition != A
+ 246 [  70] JMP       A=0 ->273
+ 247 [  71] GETTABLE  R6 = R2[K86('RD')]
+ 248 [  71] GETTABLE  R6 = R6[K91('MODEL')]
+ 249 [  71] EQ        A=1 R6, K92('nv14'); skip-next if condition != A
+ 250 [  71] JMP       A=0 ->255
+ 251 [  71] GETTABLE  R6 = R2[K86('RD')]
+ 252 [  71] GETTABLE  R6 = R6[K91('MODEL')]
+ 253 [  71] EQ        A=0 R6, K93('el18'); skip-next if condition != A
+ 254 [  71] JMP       A=0 ->273
+ 255 [  72] NEWTABLE  A=6 B=0 C=16
+ 256 [  72] SETTABLE  R6[K10('ENL')] = K94(2050)
+ 257 [  74] SETTABLE  R6[K14('PN')] = K95(517)
+ 258 [  75] SETTABLE  R6[K17('PNL')] = K96(2052)
+ 259 [  76] SETTABLE  R6[K19('PNR')] = K97(1028)
+ 260 [  78] SETTABLE  R6[K21('PP')] = K98(516)
+ 261 [  79] SETTABLE  R6[K24('PPL')] = K99(2053)
+ 262 [  80] SETTABLE  R6[K26('PPR')] = K100(1029)
+ 263 [  82] SETTABLE  R6[K72('SY')] = K101(526)
+ 264 [  83] SETTABLE  R6[K74('SYL')] = K102(2062)
+ 265 [  84] SETTABLE  R6[K76('SYR')] = K103(1038)
+ 266 [  86] SETTABLE  R6[K65('MN')] = K104(524)
+ 267 [  87] SETTABLE  R6[K68('MNL')] = K105(2060)
+ 268 [  88] SETTABLE  R6[K70('MNR')] = K106(1036)
+ 269 [  90] SETTABLE  R6[K78('TL')] = K107(525)
+ 270 [  91] SETTABLE  R6[K80('TLL')] = K108(2061)
+ 271 [  92] SETTABLE  R6[K82('TLR')] = K109(1037)
+ 272 [  93] MOVE      A=5 B=6 C=0
+ 273 [  98] GETTABLE  R6 = R2[K86('RD')]
+ 274 [  98] GETTABLE  R6 = R6[K91('MODEL')]
+ 275 [  98] EQ        A=0 R6, K110('pa01'); skip-next if condition != A
+ 276 [  98] JMP       A=0 ->288
+ 277 [  99] GETTABLE  R6 = R0[K111('dbg')]
+ 278 [  99] LOADK     R7 = K112 ('RDKEY: pa01 model detected')
+ 279 [  99] CALL      A=6 B=2 C=1
+ 280 [ 100] NEWTABLE  A=6 B=0 C=6
+ 281 [ 101] SETTABLE  R6[K65('MN')] = K113(2059)
+ 282 [ 102] SETTABLE  R6[K68('MNL')] = K4(-1)
+ 283 [ 103] SETTABLE  R6[K70('MNR')] = K4(-1)
+ 284 [ 104] SETTABLE  R6[K72('SY')] = K107(525)
+ 285 [ 105] SETTABLE  R6[K74('SYL')] = K4(-1)
+ 286 [ 106] SETTABLE  R6[K76('SYR')] = K4(-1)
+ 287 [ 107] MOVE      A=5 B=6 C=0
+ 288 [ 129] TEST      A=5 B=0 C=0
+ 289 [ 129] JMP       A=0 ->298
+ 290 [ 130] GETTABUP  R6 = UP0[K85('pairs')]
+ 291 [ 130] MOVE      A=7 B=5 C=0
+ 292 [ 130] CALL      A=6 B=2 C=4
+ 293 [ 130] JMP       A=0 ->296
+ 294 [ 131] GETTABLE  R11 = R2[K84('K')]
+ 295 [ 131] SETTABLE  R11[R9] = R10
+ 296 [ 130] TFORCALL  A=6 B=0 C=2
+ 297 [ 130] TFORLOOP  A=8 ->294
+ 298 [ 133] RETURN    A=0 B=1 C=0

@@ -1,0 +1,939 @@
+{
+  "modules": [
+    {
+      "module": "LIB/FS/FSDIR.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "fe65856395001f9247db7d65a76eaa5513832e90df99a4b7d2b708d1fa71c528",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSDIR.txt",
+      "originalDisassemblySha256": "6555fb95300c2750f7efa8e0d1ae853d0362cd01e20272df3f4057846c183e78",
+      "group": "Shared filesystem utilities: folder discovery, load/write and VTX preference serializer; grouped with config/transport ledgers, not extra invented user features",
+      "ledgerRows": [
+        "DATA-107",
+        "DATA-109",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/FS/FSLF.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "b189eac93bfbbe1556b4f77c7c7dd893a458e6424bae10e6cbb1c6897a055ddb",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSLF.txt",
+      "originalDisassemblySha256": "1d279194b8e9cb12b386adf7325c249baf3f994cc67be79aca5e3bf18ff58da9",
+      "group": "Shared filesystem utilities: folder discovery, load/write and VTX preference serializer; grouped with config/transport ledgers, not extra invented user features",
+      "ledgerRows": [
+        "DATA-107",
+        "DATA-109",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/FS/FSLOG.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "e43240472411f585464ca6e60051d8e03871e2c9ad888efc22b5f6baac753022",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSLOG.txt",
+      "originalDisassemblySha256": "2b1f5dcd976f0a2d4dc2afaa83f16ca428c063f68b82c15c9d27e6e77ef00cd0",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-107",
+        "DATA-108",
+        "DATA-120"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/FS/FSWF.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "3a265aa5090e389200fa4fe47d39fc74510fe08120ee817dfb4807cf06b60784",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSWF.txt",
+      "originalDisassemblySha256": "9852da630f1dd260766f91704d7406df74d251482bde6003ce3d8cd7e8df858f",
+      "group": "Shared filesystem utilities: folder discovery, load/write and VTX preference serializer; grouped with config/transport ledgers, not extra invented user features",
+      "ledgerRows": [
+        "DATA-107",
+        "DATA-109",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/FS/FSWP.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "0d0b1fa18b83190f0aeacc84ed6af6f08d0b6b3844a6542cee8f1155d4fd135e",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSWP.txt",
+      "originalDisassemblySha256": "94d4e43253694cb11255959776a012b25613df81e1a91c6def1a8a96c592af13",
+      "group": "Shared filesystem utilities: folder discovery, load/write and VTX preference serializer; grouped with config/transport ledgers, not extra invented user features",
+      "ledgerRows": [
+        "DATA-107",
+        "DATA-109",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/GPS/GPSINIT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "014660214bc6cce4caa2d0021d7914cf70c0d562b67e6c5630d9735ff57de949",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-GPS-GPSINIT.txt",
+      "originalDisassemblySha256": "949c6c5b50193fa01fb9b21b3e2ac92b908f3f7636279426a1913441737c52a3",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-088",
+        "DATA-090",
+        "DATA-091",
+        "DATA-092",
+        "DATA-093",
+        "DATA-105",
+        "DATA-108"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/OS/UETX.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "da589ca5c5f7519da3149477a56d908d2b086ef0abd933b42d85085e735933eb",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-OS-UETX.txt",
+      "originalDisassemblySha256": "274d3d4c27da0ea82e11671f0bd5211fb911f9a7f04af0298d137070723911a3",
+      "group": "EdgeTX source-unit constants/labels used by adapters; does not itself prove every conversion",
+      "ledgerRows": [
+        "DATA-006",
+        "DATA-013",
+        "DATA-033",
+        "DATA-036",
+        "DATA-110"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/BAT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "9f3d33277f726391de24a0afa6afbe6d0bb663a5aa749095ee4c1665b4c4b16b",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-BAT.txt",
+      "originalDisassemblySha256": "33ad156fb67487f58074d4c380639ba7fadeab10c0aadbe6b1365ba6cefe05dd",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-073"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/RDINP.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "440a24d91a189628fdbf8b7e4635870095dfc02d87aee1cae82d84c17754477f",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-RDINP.txt",
+      "originalDisassemblySha256": "d3e979029ab36da328f6ebcf47770b3cdb454c88eca20e89fe2601c796b5d70f",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-118"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/RDKEY.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "002e45fa65399fe393b8dcb9b068f960e02f03531a89d2fdb46b0c74919e78c5",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-RDKEY.txt",
+      "originalDisassemblySha256": "456248bf75da38dbb600339104c671d06a541f28f37db0edafa6de6256b8d77c",
+      "group": "Radio input/key adapter helpers; input learning/ranges and full-screen physical event ownership",
+      "ledgerRows": [
+        "DATA-078",
+        "DATA-095",
+        "DATA-118",
+        "DATA-119"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/SIN.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "e2497070956bb9b8ed28cc570d1ee0228a79149bb0b900f6bf3236f4a418abc2",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SIN.txt",
+      "originalDisassemblySha256": "86a7936aee3737b06a23cda1efdfb3e9ecc019422b9bbe317b8215d1a31e6bef",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-119"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/SND.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "e1f36b0909f709cb68ae0f0000a473df8e011aa6b9c62d7cfd78f65624e53596",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SND.txt",
+      "originalDisassemblySha256": "af1fbedc57cee6ce0dcb2649ef5c0a7ab2c60d2603a9969d63d6174581f4d90f",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-068",
+        "DATA-069",
+        "DATA-071"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/SSW.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "0ea55293009bff6ea15437fe0705c01f7a1b408b192f27e2bea64766978abb55",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SSW.txt",
+      "originalDisassemblySha256": "5730d620fef360cdb82c8b874f1748cacf02c113586b3f7bdcaf4da47ba7a3d1",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-119"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/RD/TMR.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "d8f138d463fa09514edff3595ad54ded95a9dd03a6828d1688b2d77f8da6814f",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-TMR.txt",
+      "originalDisassemblySha256": "ae3c545f6f0d5c3a248871ab281d6e7d92f2d700019adb8bf5baa44d7b639920",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-080",
+        "DATA-081",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TB/BTCNO.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "9504eec4974495157aae021315097d4f1206aca64b4f7386f4950b0115d60792",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-BTCNO.txt",
+      "originalDisassemblySha256": "d223bb91c881e307106a90fba60603ead11cff2346c6cfdc26cd437bbd812d7f",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-052"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TB/DATAINIT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "b88f1e8e0901908ec71c99cb394b336f6fc629057d7bb65e0a50d1317fccec5b",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-DATAINIT.txt",
+      "originalDisassemblySha256": "cf97159d388a0fd6578a6cba0477cdf01a482d1fa8721da35996faeaebb3136f",
+      "group": "Shared data/default/indicator/reset lifecycle consumers",
+      "ledgerRows": [
+        "DATA-065",
+        "DATA-072",
+        "DATA-078",
+        "DATA-094",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TB/INDINIT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "5db1652c1e4a29e65135f0b94ae5f6efa7fa67be105c90058b5391d5f062eb91",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-INDINIT.txt",
+      "originalDisassemblySha256": "bb8f41c7dc7b23f90f1dc331e9528d932e2a7132f6e8950c1752f62f9dd74413",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-118",
+        "DATA-119"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TB/INDUPD.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "a4ade69404ddacd0404a22be62070d77985905244011652a7713df22442057b5",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-INDUPD.txt",
+      "originalDisassemblySha256": "5adb92aa1e5dab886c5ef3869598e836d5066fa1e5b888face3cc85cb0fd296e",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-078"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TB/RST.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "fbd89a76d8bde3371ad771a143ff7a39f153c8e25539b77f276be6a288e9c10d",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-RST.txt",
+      "originalDisassemblySha256": "f97dd5b30b378edf1b14f32829781c0ee984a6fb27394b3fa249fea4a1f9d647",
+      "group": "Shared data/default/indicator/reset lifecycle consumers",
+      "ledgerRows": [
+        "DATA-065",
+        "DATA-072",
+        "DATA-078",
+        "DATA-094",
+        "DATA-113"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/ACC.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "2928cf5ae4a2c24505eda31685c81efcdca036374a9c133145df45df553cf1df",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-ACC.txt",
+      "originalDisassemblySha256": "ddc25c82e83c7ae3a245bab847bc62529587d819c42733a7602d41093065113e",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/BARO.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "38a86e83c26d64883bfd017652117e40a2ddd5ea5bb3cff2922a9995481829b3",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BARO.txt",
+      "originalDisassemblySha256": "2c0e709f05b3b17e5db21449c802f2fda9c82f7cba8e48c9b632725e47cdd563",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/BTA.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "db47d5174d78cf35e1bb87e8f7ef17c08eee6f850b00a50a2342ac33c3ad474b",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BTA.txt",
+      "originalDisassemblySha256": "36222a1a5946616c98cab280560853f8143b3feeecd125278205700345540d91",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-002",
+        "DATA-046"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/BTV.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "b4e507af3f346eb7fc374a6fce4df52bef173522c68af572b536b48424c54872",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BTV.txt",
+      "originalDisassemblySha256": "858980a1f6acd94d2fe541acdc10adbcfba2e98c9d8d54d5ed46f890276527d8",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-002",
+        "DATA-045",
+        "DATA-047",
+        "DATA-048"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/FC.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "7fbb63ef46c326bfedf171d042015b944e13ee32e2b55d5947421a1d813166ce",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-FC.txt",
+      "originalDisassemblySha256": "9e223731f0a00399ee023f16073f9c2bbd4baff488521a110aa4c54e96c3eb03",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/FC_BF.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "e71d38298902e49d3c36c15384ae49fa6e8d931f5acd8ab021fd7c9612600132",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-FC_BF.txt",
+      "originalDisassemblySha256": "396c61cce3faf5bb3b942aa5ea930c6694d60ee27ad929daaceb1b45c09fdd55",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/FC_IN.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "c29ad1eae19fd03085828317d62ec96e1a63f8e6cf974bde4dca1c7e2b4648a4",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-FC_IN.txt",
+      "originalDisassemblySha256": "6373ee4cae7bfb93396d8c72f965c04c31f399db98861bd45e809cef525b2b7e",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/GPS.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "1e461fe175f3c110f77cd4d25f7034bd415b403ae79f84221124a7b96215e022",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS.txt",
+      "originalDisassemblySha256": "2440e927525acca52b7342f1ce44659d51ee33961367e31422d828f92180bf3a",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/GPS_BF.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "26902d0285e82c04fe5c01c385cf8930a070014cdc66f76ad21bd8f5b129c0ff",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS_BF.txt",
+      "originalDisassemblySha256": "10b3e0d6f60b7231176ba500ec91c34fe6f731f36199437a3a9fe621f53e6220",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-083"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/GPS_IN.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "9b6d8010744d05ad86b36330a2ee2dcf071813e847c9cb7fac39de577438d823",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS_IN.txt",
+      "originalDisassemblySha256": "a43d1c910acc52e2ad847987ad32d6c32a80c3d7e77bb04bbf0fb02eae943ad0",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-004",
+        "DATA-084",
+        "DATA-089"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/GYRO.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "3d49a1ab650115f9b850d4fc6233abee5dfda9259c4e31ddb0c1f1cf96c71e33",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO.txt",
+      "originalDisassemblySha256": "57e564a0d7cc52ed35dd09f30452922cf16c15a85c4fe26abd16619fa28521ea",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/GYRO_BF.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "aee6bc0a90c568d9c2c0a3f09cb0349042990eeb65a4a27d7b64c4870d3a4d8e",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO_BF.txt",
+      "originalDisassemblySha256": "c9c06d3c243a0fb905c782cbd7f09f503640eb426fc4f5de03eaa0d794f70b98",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-050"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/GYRO_IN.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "0f0d9088fa0689b2eda4dccaf6c1416fc06e4c93bff6f606da2382f5cc53756f",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO_IN.txt",
+      "originalDisassemblySha256": "98bec494cc8d80566b9aebff0c65d2485a88a8acf1c7c2468ffecac2526cff91",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/PITOT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "26d9b672d6381abd1fb2856f7fc6a50666c54526ecd8e12aaf01ea86184b9136",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-PITOT.txt",
+      "originalDisassemblySha256": "a69919ebe816e37eb727cc901a999ad7ffc758b7ac9e8a65c93c4a16d029aee1",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/FRS/RL.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "f182ead3b26cf2bc89c4263254f9b2258ad11167da552e9db6e33b462613273a",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-RL.txt",
+      "originalDisassemblySha256": "78954d1a1fb2cfd9182c03d84f59dd2a511570173ad41d2b015cb2d7df562069",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-045",
+        "DATA-049"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/RCPINIT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "66094d810ef6a19b61f12f89326315c22806c3a88db08c5d020fc673e82138ac",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-RCPINIT.txt",
+      "originalDisassemblySha256": "ecd277a8e7b572c3d03ad4424007df66b9cf706dfb6e5a98edd7a0593986a13c",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-003",
+        "DATA-005"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/ACC.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "9ac3e176e99f96c2a071492d62765a81b3045e96e6b8c4f5d127b3bca20d4261",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-ACC.txt",
+      "originalDisassemblySha256": "6ff1652aeec6cc9139bfb20c75874ff995989d941916e843303a8ee449accb67",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-044"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/BARO.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "8eab1a6aecca2ee6657c27a1cde8cae6a693b97f67a80e7b6017634aa384b518",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BARO.txt",
+      "originalDisassemblySha256": "c6b310a487595a21e822781bca817b6c17b603d886b1a4bda85717c1adfdb5e3",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-039",
+        "DATA-043"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/BTA.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "997ec0508dbcc8919e976e364bf2f7d5805ad2344d5442fa30f5d88f4afc35c6",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BTA.txt",
+      "originalDisassemblySha256": "c878e914892cfae56c76bb8e5072d21a95669b74889a129146c85be91cd8ceec",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-020",
+        "DATA-021",
+        "DATA-022",
+        "DATA-059",
+        "DATA-060",
+        "DATA-061",
+        "DATA-063",
+        "DATA-064",
+        "DATA-110",
+        "DATA-117"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/BTV.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "5f48aa079e394e8e9dfd20d500d548010d475eae229e2f4bed40ed869a05f61a",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BTV.txt",
+      "originalDisassemblySha256": "f5e0507a3d5d9270efc394758c445ab67dee350c498db545e2e5ad779f9631a9",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-019",
+        "DATA-051",
+        "DATA-053"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/FC.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "cbb853eedd4a77c6fbf28f8422f8a9fb14f4bc2122ebf0361ae8aea4a2e80eb3",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC.txt",
+      "originalDisassemblySha256": "93b00417675cd92fbefc427fac19b24cc7e07355b44efffe80edc4d3edb4f146",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/FC_BF.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "18d3c77c43d929e6d93bcda6e997b53760c56727cf8f68d2db97ddfb704ffbd2",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC_BF.txt",
+      "originalDisassemblySha256": "c70bcbbf9ce489828b11782752232913fcf9f80b987d1eb1bc8614ca999d2127",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-042"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/FC_IN.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "20dea8552ab5746ecc827de319f9f938a13c8b1d6fe842dcdca960c4bbe062d3",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC_IN.txt",
+      "originalDisassemblySha256": "eb2579488ee56eb63bf23a06afc6ff90356cde69c396a0923c0e80eff91175f9",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-004",
+        "DATA-042"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/GPS.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "6f9698220306991976d7d68676f05057b2ed3bf20dfe1053dc61fd025252fec6",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-GPS.txt",
+      "originalDisassemblySha256": "2393828255efa8eab4b829a9ae3455562c40a1114d243f9d42fd98ce9f20473a",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-032",
+        "DATA-033",
+        "DATA-034",
+        "DATA-035",
+        "DATA-041",
+        "DATA-043",
+        "DATA-082",
+        "DATA-086",
+        "DATA-087"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/GYRO.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-GYRO.txt",
+      "originalDisassemblySha256": "7c1b8ea68bf934acfdc614d7a55213bf6a5a3b2b5275b6b55c753720b51fc8d4",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-036",
+        "DATA-037",
+        "DATA-038"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/PITOT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "85e4f18e03e279635bcf4158cf76bd8e57e8ca69687711660aba6ad67d65cd74",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-PITOT.txt",
+      "originalDisassemblySha256": "72a39bc206a06d2af9ec97e83c80b390e84a1baf3c88a715d75320323906a329",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-040"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TBS/RL.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "f6207492f0e64cfe09096b777cdcefeca1b3561abf3790913f65a96faa464c88",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-RL.txt",
+      "originalDisassemblySha256": "f5013229d90989d68f4020bdea57e1237dc6c5fdef0aceeed2f5e2ac8d68e52b",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-023",
+        "DATA-024",
+        "DATA-025",
+        "DATA-026",
+        "DATA-027",
+        "DATA-028",
+        "DATA-029",
+        "DATA-030",
+        "DATA-031",
+        "DATA-075",
+        "DATA-076"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TLMINIT.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "67f9f11ecdb5b8ff54a2913a55d3d7afede57091f7325fd770e600dab4c2807a",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMINIT.txt",
+      "originalDisassemblySha256": "d321ee11a571026ce0a0e3bae004de15466e318c801e5fbf66a9cddc0e1b369f",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-005"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TLMRLD.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "0ad1fd8ef2a0686d49ed256da7452cf9ff0a8b311e3412fa8b22da2d3dfd9e02",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMRLD.txt",
+      "originalDisassemblySha256": "17ee736fbe2366aef33ece31bdbcea6d941ef8e993684a5bf5924d3cf3873c53",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-074"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TLMRST.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "b1dcbd16d4317e0dd9a8a908ed601a9b07004b824d6c395a51a03c710f2445b4",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMRST.txt",
+      "originalDisassemblySha256": "7e3a7f0a770ea3bf4dbc68ce04ddd6c9ed0a560e8eab92c7d6a6f57931c6d518",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-054"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TLMSADD.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "ae5df9faa9ebddb56fd2475904a95961202250090a6a0dc5f0e31281eefc45d3",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMSADD.txt",
+      "originalDisassemblySha256": "3678dba8dbc925a4661afb77e1daf8c90800f4c7b16afce45cd2c609fb76d2ac",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-006",
+        "DATA-013",
+        "DATA-015",
+        "DATA-016",
+        "DATA-099"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TLMSDEL.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "a07d11171c1f8c25e4ebe4a0e72c0d5497177eefd844261a8e00b9834e370b47",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMSDEL.txt",
+      "originalDisassemblySha256": "8210ccdccc81399a51b78f69e636373cd5782d7f7fede9dcba0eb56af1e1510c",
+      "group": "Protocol module initialization/reset/registration and alternate sensor-family definitions; empty generic variants do not prove active FC-specific capability",
+      "ledgerRows": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-004",
+        "DATA-005",
+        "DATA-014",
+        "DATA-042",
+        "DATA-044",
+        "DATA-050",
+        "DATA-083",
+        "DATA-084"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "LIB/TLM/TLMUPDS.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "5e383ccbce0732ef4ac94bc41226497c5b76d7c9b3e24ad4af7f4658d2d1c863",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMUPDS.txt",
+      "originalDisassemblySha256": "93ca5f6412a84c8c5a1207ff4365b2ce6ece4b659bfbd7fc8ae15473748b25c1",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-007",
+        "DATA-008",
+        "DATA-009",
+        "DATA-012",
+        "DATA-087",
+        "DATA-117"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "M.luac",
+      "domain": "root/lifecycle",
+      "compiledSha256": "ee0742ca4f3ff3ca2e323982941194e75eea071ac0cf97b93dc55a931f12148c",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/M.txt",
+      "originalDisassemblySha256": "20ac7453c5758a408484c84fd9743df4e01048dea1f278a5823eb0516da76f07",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-097"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "MAIN/AI.luac",
+      "domain": "root/lifecycle",
+      "compiledSha256": "5d09503d62be4632f8e250fd9cd2019c393dabc8aae66ba8d771f3c0f5f7d4f3",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-AI.txt",
+      "originalDisassemblySha256": "251152266032d548d005eb2643e88325735988fb2b3f6f6bc655b2a5ebf0f9a8",
+      "group": "Root application radio/initialization/function-loader utilities; activation mechanism excluded, functional source/session/FS/GC helpers retained",
+      "ledgerRows": [
+        "DATA-095",
+        "DATA-097",
+        "DATA-098",
+        "DATA-102",
+        "DATA-103",
+        "DATA-104",
+        "DATA-107",
+        "DATA-109",
+        "DATA-112"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "MAIN/GF.luac",
+      "domain": "root/lifecycle",
+      "compiledSha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-GF.txt",
+      "originalDisassemblySha256": "24fc4923250cfd4da17e1dbe8b1676915c25277993bd4969cbd513b3e0824437",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-104",
+        "DATA-112"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "MAIN/INIT.luac",
+      "domain": "root/lifecycle",
+      "compiledSha256": "ba438661659e481f6d94b4bd56f005fefa69ad1fe2fa04df819cc1e6389f2792",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-INIT.txt",
+      "originalDisassemblySha256": "4615c345cea1a023fb455d5a5a631cc8177a6cc506a2537e255ec209a292a9ec",
+      "group": "Root application radio/initialization/function-loader utilities; activation mechanism excluded, functional source/session/FS/GC helpers retained",
+      "ledgerRows": [
+        "DATA-095",
+        "DATA-097",
+        "DATA-098",
+        "DATA-102",
+        "DATA-103",
+        "DATA-104",
+        "DATA-107",
+        "DATA-109",
+        "DATA-112"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "MAIN/ML.luac",
+      "domain": "root/lifecycle",
+      "compiledSha256": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-ML.txt",
+      "originalDisassemblySha256": "703d8a363c359c45aac8ca439eb1c3b35d7e843d0cd5cc093c060d796fee6ad2",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-067",
+        "DATA-070",
+        "DATA-071",
+        "DATA-077",
+        "DATA-080",
+        "DATA-102",
+        "DATA-103"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "MAIN/RD.luac",
+      "domain": "root/lifecycle",
+      "compiledSha256": "e154de085f36cdfc4ff9c96d4122c75989a6b30806e4667930b9b9427395fcc6",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-RD.txt",
+      "originalDisassemblySha256": "a86e0d7fa5796986efb0b5661a37d847cce474fac4e171c7d2c8b2cbbc5fdb9e",
+      "group": "Root application radio/initialization/function-loader utilities; activation mechanism excluded, functional source/session/FS/GC helpers retained",
+      "ledgerRows": [
+        "DATA-095",
+        "DATA-097",
+        "DATA-098",
+        "DATA-102",
+        "DATA-103",
+        "DATA-104",
+        "DATA-107",
+        "DATA-109",
+        "DATA-112"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    },
+    {
+      "module": "WIDGET/loader.luac",
+      "domain": "data/lifecycle",
+      "compiledSha256": "6dae407066af5bbb92810a30fa32030f5394a9b172e1a0c819cc5a95d4a110ed",
+      "originalDisassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/WIDGET-loader.txt",
+      "originalDisassemblySha256": "0cfb32c058611f12b7a07afbb433e768be999bbb363f3116633017fa803d64d9",
+      "group": "Direct feature evidence",
+      "ledgerRows": [
+        "DATA-095",
+        "DATA-096",
+        "DATA-097",
+        "DATA-098"
+      ],
+      "reviewDepth": "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+    }
+  ],
+  "countsByDomain": {
+    "data/lifecycle": 53,
+    "root/lifecycle": 6
+  },
+  "note": "All53 data/lifecycle and6 root/lifecycle original modules are accounted for. No one-row-per-wrapper inflation; other agents own full configuration/UI/control consumers. Activation mechanism excluded only; gated actual functions remain required."
+}

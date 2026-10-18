@@ -1,0 +1,1281 @@
+(node:91587) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+EXPORT dimensions 480 272
+(node:91587) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91587) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91587) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+10ms: <audio> started
+10ms: <menus> started
+10ms: <timer_queue> started
+10ms: <audio> started
+
+10ms: edgeTxInit
+10ms: <timer_queue> started
+
+10ms: <menus> started
+
+10ms: YAML radio settings reader
+10ms: edgeTxInit
+
+10ms: YAML radio settings reader
+
+10ms: luaInitThemesAndWidgets
+10ms: luaInitThemesAndWidgets
+
+20ms: lsWidgets 0x216ba64
+20ms: luaLoadFiles() /WIDGETS
+20ms: lsWidgets 0x216ba64
+
+20ms: luaLoadFiles() /WIDGETS
+
+20ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+20ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+
+40ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+
+40ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+
+40ms: luaLoadWidgetCallback()
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget GaugeRotary
+40ms: Loaded Lua widget GaugeRotary
+
+40ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+40ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+
+40ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget Flights
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget Flights
+
+40ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+40ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+
+50ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+50ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+
+50ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+
+50ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+50ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: Cels
+init_compare_source: we do not have: Cels
+50ms: luaLoadWidgetCallback()
+
+
+50ms: Loaded Lua widget BattCheck
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget BattCheck
+
+50ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+50ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+
+50ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget Micro Values
+50ms: Loaded Lua widget Micro Values
+
+60ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+60ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+
+60ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+
+60ms: Loaded Lua widget SerialPower
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget SerialPower
+
+60ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+60ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+
+60ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget EventDemo
+60ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget EventDemo
+
+60ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+60ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+
+70ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget AERODECK
+70ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+
+70ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget AERODECK
+
+70ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+
+70ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget Ghost
+70ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+
+70ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget Ghost
+
+70ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+
+70ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget SoarETX
+70ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+80ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+70ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget SoarETX
+
+70ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+
+80ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+
+80ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+80ms: luaLoadWidgetCallback()
+80ms: Loaded Lua widget Timer2
+80ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+
+80ms: luaLoadWidgetCallback()
+
+80ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+80ms: Loaded Lua widget Timer2
+
+80ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+
+80ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+
+80ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+80ms: luaLoadWidgetCallback()
+80ms: Loaded Lua widget TxGPStest
+80ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+
+80ms: luaLoadWidgetCallback()
+
+80ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+80ms: Loaded Lua widget TxGPStest
+
+80ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+
+80ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+
+80ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+80ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+
+80ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+
+90ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+90ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: VFASinit_compare_source: we do not have: cell
+
+init_compare_source: we do not have: RxBt
+
+
+init_compare_source: we do not have: A1
+init_compare_source: we do not have: A2init_compare_source: we do not have: VFAS
+
+
+
+90ms: luaLoadWidgetCallback()
+90ms: Loaded Lua widget BattAnalog
+init_compare_source: we do not have: RxBt
+
+
+init_compare_source: we do not have: A1
+
+
+init_compare_source: we do not have: A2
+90ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+
+90ms: luaLoadWidgetCallback()
+
+90ms: Loaded Lua widget BattAnalog
+
+90ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+90ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+90ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+
+90ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+90ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+
+90ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+90ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+
+90ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+90ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+
+90ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+90ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+
+100ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+100ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+
+100ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+100ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+100ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+100ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+100ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+100ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+100ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+100ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: RQLY
+init_compare_source: we do not have: VFR
+init_compare_source: we do not have: cellinit_compare_source: we do not have: RQLY
+
+init_compare_source: we do not have: cels
+
+
+init_compare_source: we do not have: RSSI
+init_compare_source: we do not have: VFR
+
+
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: RxBt
+
+
+110ms: luaLoadWidgetCallback()
+110ms: Loaded Lua widget Value2
+init_compare_source: we do not have: cels
+
+
+init_compare_source: we do not have: RSSI
+110ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+
+init_compare_source: we do not have: RxBt
+
+
+110ms: luaLoadWidgetCallback()
+
+110ms: Loaded Lua widget Value2
+
+110ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+110ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+110ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+
+110ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+110ms: luaLoadWidgetCallback()
+110ms: Loaded Lua widget LibGUI
+110ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+
+110ms: luaLoadWidgetCallback()
+
+110ms: Loaded Lua widget LibGUI
+
+110ms: storageReadAll
+110ms: storageReadAll
+
+110ms: YAML radio settings reader
+110ms: YAML radio settings reader
+
+110ms: Labels: Updating model model1.yml
+110ms: YAML model reader
+110ms: Labels: Updating model model1.yml
+
+110ms: YAML model reader
+
+110ms: <MODEL01/0> : 0,0,0
+110ms: <MODEL01/1> : 0,0,0
+110ms: <MODEL01/0> : 0,0,0
+
+110ms: <MODEL01/1> : 0,0,0
+
+120ms: YAML model reader
+120ms: YAML model reader
+
+140ms: opening directory: /THEMES
+140ms: opening directory: /THEMES
+
+140ms: scanForThemes: open successful
+140ms: scanForThemes: open successful
+
+140ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+140ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+
+140ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+140ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+
+140ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+140ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+
+140ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+140ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+
+170ms: addMainView(0x0x217c660, 0)
+170ms: addMainView(0x0x217c660, 0)
+
+170ms: WidgetFactory::create() setting option 'Low battery'
+170ms: WidgetFactory::create() setting option 'Mid battery'
+170ms: WidgetFactory::create() setting option 'High battery'
+170ms: WidgetFactory::create() setting option 'Low battery'
+
+170ms: WidgetFactory::create() setting option 'Mid battery'
+
+170ms: WidgetFactory::create() setting option 'High battery'
+
+170ms: WidgetFactory::create() setting option 'Color'
+170ms: WidgetFactory::create() setting option 'Color'
+
+180ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+180ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+
+180ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+180ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|1|ENV LOAD|0
+QA_DEV_STAGE|animated|1|ENV LOAD|0
+
+
+180ms: luaInit
+180ms: lsScripts 0x21ac784
+180ms: luaInit
+
+180ms: lsScripts 0x21ac784
+
+QA_DEV_STAGE|animated|2|ENV CHUNK|0
+QA_DEV_STAGE|animated|2|ENV CHUNK|0
+
+
+230ms: <mixer> started
+QA_DEV_MEMORY|28|0|204.126
+QA_DEV_SYNTHETIC|animated|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALSQA_DEV_MEMORY|28|0|204.126
+
+QA_DEV_STAGE|animated|3|ENV CREATE|7
+
+QA_DEV_SYNTHETIC|animated|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+
+
+
+QA_DEV_STAGE|animated|3|ENV CREATE|7
+
+
+340ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+340ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+340ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|4|STORE LOAD|0340ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+
+
+QA_DEV_STAGE|animated|4|STORE LOAD|0
+
+
+QA_DEV_STAGE|animated|5|STORE CHUNK|0
+QA_DEV_STAGE|animated|5|STORE CHUNK|0
+
+
+QA_DEV_STAGE|animated|6|SETTINGS SEED|5
+QA_DEV_STAGE|animated|6|SETTINGS SEED|5
+
+
+QA_DEV_STAGE|animated|7|BATTERY SEED|3
+QA_DEV_STAGE|animated|7|BATTERY SEED|3
+
+
+550ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+550ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+
+550ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|8|MSP LOAD|0
+550ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|8|MSP LOAD|0
+
+
+QA_DEV_STAGE|animated|9|MSP CHUNK|0
+QA_DEV_STAGE|animated|9|MSP CHUNK|0
+
+
+QA_DEV_STAGE|animated|10|MSP CREATE|17
+QA_DEV_STAGE|animated|10|MSP CREATE|17
+
+
+710ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+710ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+
+730ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|11|APP LOAD|0
+730ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|11|APP LOAD|0
+
+
+QA_DEV_STAGE|animated|12|APP CHUNK|54
+QA_DEV_STAGE|animated|12|APP CHUNK|54
+
+
+QA_DEV_STAGE|animated|13|APP INIT|0
+QA_DEV_STAGE|animated|13|APP INIT|0
+
+
+870ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+870ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+
+880ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+880ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+
+930ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+930ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+1040ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+1040ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+
+1040ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+1040ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+
+1040ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+1040ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+
+1040ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+1040ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+
+1050ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+1050ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+
+1060ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+1060ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+
+1090ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+1090ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+
+1090ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+1090ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+
+1140ms: SD card write labels
+1140ms: SD card write labels
+
+2010ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+2010ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+
+2010ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+2010ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+
+2060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+2060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+
+2060ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+2060ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+
+2060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+2060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+
+2070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+2070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+
+2070ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+2070ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+
+2070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+2070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+
+2110ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+2110ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+
+2120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+2120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+
+2270ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+2270ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+
+2280ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+2280ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+
+2280ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+2280ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+
+2280ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+2280ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+
+2290ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+2290ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+
+2290ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+2290ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+
+2330ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+2330ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+
+2330ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+2330ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+
+2380ms: luaOpenBitmap: 0x2345f70 (1800)
+2380ms: luaOpenBitmap: 0x2345f70 (1800)
+
+2430ms: luaOpenBitmap: 0x2346260 (1800)
+2430ms: luaOpenBitmap: 0x2346260 (1800)
+
+2490ms: luaOpenBitmap: 0x2353cb0 (1800)
+2490ms: luaOpenBitmap: 0x2353cb0 (1800)
+
+2540ms: luaOpenBitmap: 0x2354e00 (1800)
+2540ms: luaOpenBitmap: 0x2354e00 (1800)
+
+2600ms: luaOpenBitmap: 0x2355f00 (1800)
+2600ms: luaOpenBitmap: 0x2355f00 (1800)
+
+2650ms: luaOpenBitmap: 0x2357020 (1800)
+2650ms: luaOpenBitmap: 0x2357020 (1800)
+
+2700ms: luaOpenBitmap: 0x23580f0 (1800)
+2700ms: luaOpenBitmap: 0x23580f0 (1800)
+
+2760ms: luaOpenBitmap: 0x23591e0 (648)
+2760ms: luaOpenBitmap: 0x23591e0 (648)
+
+2810ms: luaOpenBitmap: 0x23599e0 (648)
+2810ms: luaOpenBitmap: 0x23599e0 (648)
+
+2860ms: luaOpenBitmap: 0x235a280 (648)
+2860ms: luaOpenBitmap: 0x235a280 (648)
+
+2920ms: luaOpenBitmap: 0x235aa90 (648)
+2920ms: luaOpenBitmap: 0x235aa90 (648)
+
+SHOT boot 261120
+2970ms: luaOpenBitmap: 0x235b280 (648)
+2970ms: luaOpenBitmap: 0x235b280 (648)
+
+3030ms: luaOpenBitmap: 0x235ba90 (648)
+3030ms: luaOpenBitmap: 0x235ba90 (648)
+
+3080ms: luaOpenBitmap: 0x235c280 (648)
+3080ms: luaOpenBitmap: 0x235c280 (648)
+
+3130ms: luaOpenBitmap: 0x235ca70 (648)
+3130ms: luaOpenBitmap: 0x235ca70 (648)
+
+3190ms: luaOpenBitmap: 0x235d280 (648)
+3190ms: luaOpenBitmap: 0x235d280 (648)
+
+3240ms: luaOpenBitmap: 0x235da70 (648)
+3240ms: luaOpenBitmap: 0x235da70 (648)
+
+3300ms: luaOpenBitmap: 0x235e3e0 (648)
+3300ms: luaOpenBitmap: 0x235e3e0 (648)
+
+3350ms: luaOpenBitmap: 0x2298150 (648)
+3350ms: luaOpenBitmap: 0x2298150 (648)
+
+3350ms: luaDestroyBitmap: 0x2298150 (648)
+3350ms: luaDestroyBitmap: 0x2298150 (648)
+
+3410ms: luaOpenBitmap: 0x2302960 (648)
+3410ms: luaOpenBitmap: 0x2302960 (648)
+
+3410ms: luaDestroyBitmap: 0x235e3e0 (648)
+3410ms: luaDestroyBitmap: 0x235da70 (648)
+3410ms: luaDestroyBitmap: 0x235e3e0 (648)
+
+3410ms: luaDestroyBitmap: 0x235da70 (648)
+
+3460ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/native-extrema.lua, t): loading /SCRIPTS/TOOLS/AERODECK/native-extrema.lua
+3460ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/native-extrema.lua, t): loading /SCRIPTS/TOOLS/AERODECK/native-extrema.lua
+
+3460ms: luaDestroyBitmap: 0x235d280 (648)
+3460ms: luaDestroyBitmap: 0x235ca70 (648)
+3460ms: luaDestroyBitmap: 0x235d280 (648)
+
+3460ms: luaDestroyBitmap: 0x235c280 (648)
+3460ms: luaDestroyBitmap: 0x235ca70 (648)
+
+3460ms: luaDestroyBitmap: 0x235ba90 (648)
+3460ms: luaDestroyBitmap: 0x235c280 (648)
+
+3460ms: luaDestroyBitmap: 0x235ba90 (648)
+
+3460ms: luaDestroyBitmap: 0x235b280 (648)
+3460ms: luaDestroyBitmap: 0x235aa90 (648)
+3460ms: luaDestroyBitmap: 0x235a280 (648)
+3460ms: luaDestroyBitmap: 0x235b280 (648)
+
+3460ms: luaDestroyBitmap: 0x23599e0 (648)
+3460ms: luaDestroyBitmap: 0x235aa90 (648)
+
+3460ms: luaDestroyBitmap: 0x23591e0 (648)
+3460ms: luaDestroyBitmap: 0x235a280 (648)
+
+3460ms: luaDestroyBitmap: 0x23580f0 (1800)
+3460ms: luaDestroyBitmap: 0x2357020 (1800)
+3460ms: luaDestroyBitmap: 0x23599e0 (648)
+
+3460ms: luaDestroyBitmap: 0x2355f00 (1800)
+3460ms: luaDestroyBitmap: 0x23591e0 (648)
+
+3460ms: luaDestroyBitmap: 0x23580f0 (1800)
+
+3460ms: luaDestroyBitmap: 0x2357020 (1800)
+
+3460ms: luaDestroyBitmap: 0x2354e00 (1800)
+3460ms: luaDestroyBitmap: 0x2355f00 (1800)
+
+3460ms: luaDestroyBitmap: 0x2353cb0 (1800)
+3460ms: luaDestroyBitmap: 0x2346260 (1800)
+3460ms: luaDestroyBitmap: 0x2354e00 (1800)
+
+3460ms: luaDestroyBitmap: 0x2345f70 (1800)
+3460ms: luaDestroyBitmap: 0x2353cb0 (1800)
+
+3460ms: luaDestroyBitmap: 0x2346260 (1800)
+
+3460ms: luaDestroyBitmap: 0x2345f70 (1800)
+
+3470ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/native-extrema.luac): Saved bytecode to file.
+3470ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/native-extrema.luac): Saved bytecode to file.
+
+9590ms: luaDestroyBitmap: 0x2302960 (648)
+9590ms: luaDestroyBitmap: 0x2302960 (648)
+
+15990ms: TE_PRESSED
+15990ms: TE_PRESSED
+
+16420ms: LONG PRESS[0x2194e50]
+16420ms: LONG PRESS[0x2194e50]
+
+17070ms: TE_RELEASED
+17070ms: CLICKED[0x2194e50]
+17070ms: TE_RELEASED
+
+17070ms: CLICKED[0x2194e50]
+
+17550ms: TE_PRESSED
+17550ms: TE_PRESSED
+
+17660ms: TE_RELEASED
+17660ms: TE_RELEASED
+
+17660ms: enableWidgetSelect(0)
+17660ms: enableWidgetSelect(0)
+
+BENCH_AERO_BODY|30|1923|5.209499|-1.757046|20,33,39,40,49,53,57,73,74,77
+BENCH_AERO_BODY|30|1923|5.209499|-1.757046|20,33,39,40,49,53,57,73,74,77
+
+
+BENCH_AERO_FRAME|30|1923|0|88|1175.638
+BENCH_AERO_FRAME|30|1923|0|88|1175.638
+
+
+19710ms: TE_PRESSED
+19710ms: EVT_TOUCH_FIRST [198,15]
+19710ms: TE_PRESSED
+
+19710ms: EVT_TOUCH_FIRST [198,15]
+
+19820ms: TE_RELEASED
+19820ms: CLICKED[0x2194e50]
+19820ms: TE_RELEASED
+
+19820ms: CLICKED[0x2194e50]
+
+20460ms: TE_PRESSED
+20460ms: EVT_TOUCH_FIRST [60,44]
+20460ms: TE_PRESSED
+
+20460ms: EVT_TOUCH_FIRST [60,44]
+
+20570ms: TE_RELEASED
+20570ms: EVT_TOUCH_BREAK
+20570ms: CLICKED[0x2194e50]
+20570ms: TE_RELEASED
+
+20570ms: EVT_TOUCH_BREAK
+
+20570ms: CLICKED[0x2194e50]
+
+BENCH_AERO_FRAME|60|2084|0|82|1212.22
+BENCH_AERO_FRAME|60|2084|0|82|1212.22
+
+
+QA_HISTORY_PUBLISH|1|2116|MIN|48|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|1|2116|MIN|48|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|2|2180|MIN|48|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|2|2180|MIN|48|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|3|2230|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|3|2230|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|90|2246|0|87|1207.782
+BENCH_AERO_FRAME|90|2246|0|87|1207.782
+
+
+QA_HISTORY_PUBLISH|4|2289|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|4|2289|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|5|2337|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|5|2337|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|6|2395|MIN|42|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|6|2395|MIN|42|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|120|2406|0|83|1215.752
+BENCH_AERO_FRAME|120|2406|0|83|1215.752
+
+
+QA_HISTORY_PUBLISH|7|2444|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|7|2444|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|8|2508|MIN|48|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|8|2508|MIN|48|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|9|2557|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|9|2557|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|150|2568|0|77|1224.094
+BENCH_AERO_FRAME|150|2568|0|77|1224.094
+
+
+QA_HISTORY_PUBLISH|10|2617|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|10|2617|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|11|2666|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|11|2666|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|12|2725|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|12|2725|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|180|2731|0|86|1231.237
+BENCH_AERO_FRAME|180|2731|0|86|1231.237
+
+
+QA_HISTORY_PUBLISH|13|2774|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|13|2774|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|14|2839|MIN|49|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|14|2839|MIN|49|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|15|2887|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|15|2887|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|210|2893|0|79|1240.32
+BENCH_AERO_FRAME|210|2893|0|79|1240.32
+
+
+QA_HISTORY_PUBLISH|16|2947|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|16|2947|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|17|2995|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|17|2995|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_DEV_MEMORY|28|3000|1203.366
+QA_DEV_MEMORY|28|3000|1203.366
+
+
+QA_HISTORY_PUBLISH|18|3055|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|18|3055|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|240|3056|0|83|1204.775
+BENCH_AERO_FRAME|240|3056|0|83|1204.775
+
+
+QA_HISTORY_PUBLISH|19|3109|MIN|48|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|19|3109|MIN|48|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|20|3169|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|20|3169|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|21|3217|MIN|42|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|21|3217|MIN|42|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|270|3217|0|83|1213.808
+BENCH_AERO_FRAME|270|3217|0|83|1213.808
+
+
+QA_HISTORY_PUBLISH|22|3276|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|22|3276|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|23|3325|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|23|3325|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|300|3378|0|73|1221.604
+BENCH_AERO_FRAME|300|3378|0|73|1221.604
+
+
+QA_HISTORY_PUBLISH|24|3389|MIN|48|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|24|3389|MIN|48|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|25|3437|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|25|3437|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|26|3497|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|26|3497|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|330|3540|0|75|1229.952
+BENCH_AERO_FRAME|330|3540|0|75|1229.952
+
+
+QA_HISTORY_PUBLISH|27|3545|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|27|3545|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|28|3605|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|28|3605|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|29|3654|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|29|3654|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|360|3703|0|74|1205.862
+BENCH_AERO_FRAME|360|3703|0|74|1205.862
+
+
+QA_HISTORY_PUBLISH|30|3720|MIN|50|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|30|3720|MIN|50|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|31|3771|MIN|46|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|31|3771|MIN|46|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|32|3831|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|32|3831|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|390|3869|0|83|1214.949
+BENCH_AERO_FRAME|390|3869|0|83|1214.949
+
+
+QA_HISTORY_PUBLISH|33|3879|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|33|3879|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|34|3939|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|34|3939|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|35|3993|MIN|48|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|35|3993|MIN|48|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|420|4031|0|79|1223.134
+BENCH_AERO_FRAME|420|4031|0|79|1223.134
+
+
+QA_HISTORY_PUBLISH|36|4053|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|36|4053|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|37|4102|MIN|44|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|37|4102|MIN|44|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|38|4161|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|38|4161|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|450|4194|0|82|1231.066
+BENCH_AERO_FRAME|450|4194|0|82|1231.066
+
+
+QA_HISTORY_PUBLISH|39|4210|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|39|4210|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|40|4269|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|40|4269|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+QA_HISTORY_PUBLISH|41|4324|MIN|49|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|41|4324|MIN|49|24|21.6|0.5|-30.0|-45.0
+
+
+BENCH_AERO_FRAME|480|4356|0|84|1206.929
+BENCH_AERO_FRAME|480|4356|0|84|1206.929
+
+
+QA_HISTORY_PUBLISH|42|4383|MIN|43|24|21.6|0.5|-30.0|-45.0
+QA_HISTORY_PUBLISH|42|4383|MIN|43|24|21.6|0.5|-30.0|-45.0
+
+
+44210ms: TE_PRESSED
+44210ms: EVT_TOUCH_FIRST [60,44]
+44210ms: TE_PRESSED
+
+44210ms: EVT_TOUCH_FIRST [60,44]
+
+44260ms: TE_RELEASED
+44270ms: EVT_TOUCH_BREAK
+44270ms: CLICKED[0x2194e50]
+44260ms: TE_RELEASED
+
+44270ms: EVT_TOUCH_BREAK
+
+44270ms: CLICKED[0x2194e50]
+
+QA_HISTORY_PUBLISH|43|4475|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|43|4475|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|510|4519|0|78|1215.546
+BENCH_AERO_FRAME|510|4519|0|78|1215.546
+
+
+QA_HISTORY_PUBLISH|44|4540|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|44|4540|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|45|4605|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|45|4605|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|46|4654|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|46|4654|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|540|4681|0|82|1223.811
+BENCH_AERO_FRAME|540|4681|0|82|1223.811
+
+
+QA_HISTORY_PUBLISH|47|4713|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|47|4713|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|48|4762|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|48|4762|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|49|4821|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|49|4821|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|570|4843|0|81|1232.037
+BENCH_AERO_FRAME|570|4843|0|81|1232.037
+
+
+QA_HISTORY_PUBLISH|50|4871|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|50|4871|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|51|4936|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|51|4936|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|52|4985|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|52|4985|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|600|5006|0|79|1239.848
+BENCH_AERO_FRAME|600|5006|0|79|1239.848
+
+
+QA_HISTORY_PUBLISH|53|5045|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|53|5045|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|54|5093|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|54|5093|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|55|5153|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|55|5153|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|630|5169|0|84|1215.656
+BENCH_AERO_FRAME|630|5169|0|84|1215.656
+
+
+QA_HISTORY_PUBLISH|56|5202|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|56|5202|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|57|5254|MAX|36|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|57|5254|MAX|36|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|58|5319|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|58|5319|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|660|5335|0|87|1223.716
+BENCH_AERO_FRAME|660|5335|0|87|1223.716
+
+
+QA_HISTORY_PUBLISH|59|5379|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|59|5379|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|60|5428|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|60|5428|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|61|5491|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|61|5491|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|690|5502|0|85|1232.047
+BENCH_AERO_FRAME|690|5502|0|85|1232.047
+
+
+QA_HISTORY_PUBLISH|62|5545|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|62|5545|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|63|5607|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|63|5607|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|64|5656|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|64|5656|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|720|5666|0|77|1240.257
+BENCH_AERO_FRAME|720|5666|0|77|1240.257
+
+
+QA_HISTORY_PUBLISH|65|5715|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|65|5715|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|66|5763|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|66|5763|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|67|5828|MAX|48|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|67|5828|MAX|48|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|750|5828|0|83|1216.002
+BENCH_AERO_FRAME|750|5828|0|83|1216.002
+
+
+QA_HISTORY_PUBLISH|68|5877|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|68|5877|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|69|5936|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|69|5936|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|70|5985|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|70|5985|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|780|5991|0|79|1224.337
+BENCH_AERO_FRAME|780|5991|0|79|1224.337
+
+
+QA_DEV_MEMORY|28|6000|1225.853
+QA_DEV_MEMORY|28|6000|1225.853
+
+
+QA_HISTORY_PUBLISH|71|6044|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|71|6044|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|72|6093|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|72|6093|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|810|6153|0|77|1232.619
+BENCH_AERO_FRAME|810|6153|0|77|1232.619
+
+
+QA_HISTORY_PUBLISH|73|6158|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|73|6158|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|74|6207|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|74|6207|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|75|6272|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|75|6272|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|76|6325|MAX|48|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|76|6325|MAX|48|24|25.2|40.0|20.0|60.0
+BENCH_AERO_FRAME|840|6325|0|83|1240.809
+
+
+BENCH_AERO_FRAME|840|6325|0|83|1240.809
+
+
+QA_HISTORY_PUBLISH|77|6385|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|77|6385|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|78|6439|MAX|49|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|78|6439|MAX|49|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|870|6488|0|82|1216.208
+BENCH_AERO_FRAME|870|6488|0|82|1216.208
+
+
+QA_HISTORY_PUBLISH|79|6499|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|79|6499|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|80|6548|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|80|6548|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|81|6607|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|81|6607|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|900|6651|0|75|1224.386
+BENCH_AERO_FRAME|900|6651|0|75|1224.386
+
+
+QA_HISTORY_PUBLISH|82|6656|MAX|43|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|82|6656|MAX|43|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|83|6716|MAX|44|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|83|6716|MAX|44|24|25.2|40.0|20.0|60.0
+
+
+QA_HISTORY_PUBLISH|84|6770|MAX|48|24|25.2|40.0|20.0|60.0
+QA_HISTORY_PUBLISH|84|6770|MAX|48|24|25.2|40.0|20.0|60.0
+
+
+BENCH_AERO_FRAME|930|6814|0|78|1232.424
+BENCH_AERO_FRAME|930|6814|0|78|1232.424
+
+
+68190ms: TE_PRESSED
+68190ms: EVT_TOUCH_FIRST [60,44]
+68190ms: TE_PRESSED
+
+68190ms: EVT_TOUCH_FIRST [60,44]
+
+68300ms: TE_RELEASED
+68300ms: EVT_TOUCH_BREAK
+68300ms: CLICKED[0x2194e50]
+68300ms: TE_RELEASED
+
+68300ms: EVT_TOUCH_BREAK
+
+68300ms: CLICKED[0x2194e50]
+
+69330ms: TE_PRESSED
+69330ms: EVT_TOUCH_FIRST [20,15]
+69330ms: TE_PRESSED
+
+69330ms: EVT_TOUCH_FIRST [20,15]
+
+69430ms: TE_RELEASED
+69430ms: EVT_TOUCH_BREAK
+69430ms: CLICKED[0x2194e50]
+69430ms: TE_RELEASED
+
+69430ms: EVT_TOUCH_BREAK
+
+69430ms: CLICKED[0x2194e50]
+
+BENCH_AERO_FRAME|960|6976|0|83|1244.837
+BENCH_AERO_FRAME|960|6976|0|83|1244.837
+
+
+BENCH_AERO_BODY|60|7052|-3.491524|-18.665|13,26,32,32,41,44,48,64,66,68
+BENCH_AERO_BODY|60|7052|-3.491524|-18.665|13,26,32,32,41,44,48,64,66,68
+
+
+QA_LCD_PUMP {"intervalMs":16,"frames":1300,"elapsedMs":70722,"continuousDirtyCopyThenAck":true,"screenshotExtraAck":false}

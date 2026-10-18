@@ -1,0 +1,322 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.luac
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 108), ('F', 1, 108), ('D', 1, 108), ('X', 1, 108), ('add', 1, 108), ('sensors', 8, 108), ('BT_MD_LEFT_fn', 71, 106)]
+K0 'S'
+K1 'BT_MD_LEFT'
+K2 None
+K3 'BT_MD_CURR'
+K4 0
+K5 'BT_MD_CONS'
+K6 'SEN'
+K7 'SN22n'
+K8 'LEFT'
+K9 'SN22m'
+K10 'SN22x'
+K11 100
+K12 'SN22l'
+K13 30
+K14 'SN22c'
+K15 10
+K16 'SN22u'
+K17 '%'
+K18 'SN22v'
+K19 'SN22vs'
+K20 'SN23n'
+K21 'CURR'
+K22 'SN23m'
+K23 'SN23x'
+K24 200
+K25 'SN23l'
+K26 80
+K27 'SN23c'
+K28 140
+K29 'SN23u'
+K30 'A'
+K31 'SN23i'
+K32 True
+K33 'SN23v'
+K34 'SN23vs'
+K35 'SN24n'
+K36 'CONSUMED'
+K37 'SN24m'
+K38 'SN24x'
+K39 'math'
+K40 'huge'
+K41 'SN24l'
+K42 'SN24c'
+K43 'SN24u'
+K44 'mAh'
+K45 'SN24i'
+K46 'SN24f'
+K47 '%d'
+K48 'SN24v'
+K49 'SN24vs'
+K50 'table'
+K51 'insert'
+K52 'sName'
+K53 'BT_MD_CURR'
+K54 'pName'
+K55 'Curr'
+K56 'sLabel'
+K57 'Batt current'
+K58 'dUnit'
+K59 'AMPERE'
+K60 'dDec'
+K61 1
+K62 'sMin'
+K63 0
+K64 'sMax'
+K65 400
+K66 'BT_MD_CONS'
+K67 'Capa'
+K68 'Batt consumed'
+K69 'MILLIAMPERE_HOUR'
+K70 200000
+K71 'BT_MD_LEFT'
+K72 'Bat%'
+K73 'Batt % left'
+K74 'PERCENT'
+K75 100
+K76 'uFN'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('BT_MD_LEFT')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('BT_MD_CURR')] = K4(0)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K5('BT_MD_CONS')] = K4(0)
+   8 [  16] NEWTABLE  A=5 B=0 C=0
+   9 [  18] TEST      A=4 B=0 C=0
+  10 [  18] JMP       A=0 ->107
+  11 [  21] GETTABLE  R6 = R2[K6('SEN')]
+  12 [  21] SETTABLE  R6[K7('SN22n')] = K8('LEFT')
+  13 [  22] GETTABLE  R6 = R2[K6('SEN')]
+  14 [  22] SETTABLE  R6[K9('SN22m')] = K4(0)
+  15 [  23] GETTABLE  R6 = R2[K6('SEN')]
+  16 [  23] SETTABLE  R6[K10('SN22x')] = K11(100)
+  17 [  24] GETTABLE  R6 = R2[K6('SEN')]
+  18 [  24] SETTABLE  R6[K12('SN22l')] = K13(30)
+  19 [  25] GETTABLE  R6 = R2[K6('SEN')]
+  20 [  25] SETTABLE  R6[K14('SN22c')] = K15(10)
+  21 [  26] GETTABLE  R6 = R2[K6('SEN')]
+  22 [  26] SETTABLE  R6[K16('SN22u')] = K17('%')
+  23 [  27] GETTABLE  R6 = R2[K6('SEN')]
+  24 [  27] SETTABLE  R6[K18('SN22v')] = K2(None)
+  25 [  28] GETTABLE  R6 = R2[K6('SEN')]
+  26 [  28] SETTABLE  R6[K19('SN22vs')] = K1('BT_MD_LEFT')
+  27 [  30] GETTABLE  R6 = R2[K6('SEN')]
+  28 [  30] SETTABLE  R6[K20('SN23n')] = K21('CURR')
+  29 [  31] GETTABLE  R6 = R2[K6('SEN')]
+  30 [  31] SETTABLE  R6[K22('SN23m')] = K4(0)
+  31 [  32] GETTABLE  R6 = R2[K6('SEN')]
+  32 [  32] SETTABLE  R6[K23('SN23x')] = K24(200)
+  33 [  33] GETTABLE  R6 = R2[K6('SEN')]
+  34 [  33] SETTABLE  R6[K25('SN23l')] = K26(80)
+  35 [  34] GETTABLE  R6 = R2[K6('SEN')]
+  36 [  34] SETTABLE  R6[K27('SN23c')] = K28(140)
+  37 [  35] GETTABLE  R6 = R2[K6('SEN')]
+  38 [  35] SETTABLE  R6[K29('SN23u')] = K30('A')
+  39 [  36] GETTABLE  R6 = R2[K6('SEN')]
+  40 [  36] SETTABLE  R6[K31('SN23i')] = K32(True)
+  41 [  37] GETTABLE  R6 = R2[K6('SEN')]
+  42 [  37] SETTABLE  R6[K33('SN23v')] = K2(None)
+  43 [  38] GETTABLE  R6 = R2[K6('SEN')]
+  44 [  38] SETTABLE  R6[K34('SN23vs')] = K3('BT_MD_CURR')
+  45 [  40] GETTABLE  R6 = R2[K6('SEN')]
+  46 [  40] SETTABLE  R6[K35('SN24n')] = K36('CONSUMED')
+  47 [  41] GETTABLE  R6 = R2[K6('SEN')]
+  48 [  41] SETTABLE  R6[K37('SN24m')] = K4(0)
+  49 [  42] GETTABLE  R6 = R2[K6('SEN')]
+  50 [  42] GETTABUP  R7 = UP0[K39('math')]
+  51 [  42] GETTABLE  R7 = R7[K40('huge')]
+  52 [  42] SETTABLE  R6[K38('SN24x')] = R7
+  53 [  43] GETTABLE  R6 = R2[K6('SEN')]
+  54 [  43] GETTABUP  R7 = UP0[K39('math')]
+  55 [  43] GETTABLE  R7 = R7[K40('huge')]
+  56 [  43] SETTABLE  R6[K41('SN24l')] = R7
+  57 [  44] GETTABLE  R6 = R2[K6('SEN')]
+  58 [  44] GETTABUP  R7 = UP0[K39('math')]
+  59 [  44] GETTABLE  R7 = R7[K40('huge')]
+  60 [  44] SETTABLE  R6[K42('SN24c')] = R7
+  61 [  45] GETTABLE  R6 = R2[K6('SEN')]
+  62 [  45] SETTABLE  R6[K43('SN24u')] = K44('mAh')
+  63 [  46] GETTABLE  R6 = R2[K6('SEN')]
+  64 [  46] SETTABLE  R6[K45('SN24i')] = K32(True)
+  65 [  47] GETTABLE  R6 = R2[K6('SEN')]
+  66 [  47] SETTABLE  R6[K46('SN24f')] = K47('%d')
+  67 [  48] GETTABLE  R6 = R2[K6('SEN')]
+  68 [  48] SETTABLE  R6[K48('SN24v')] = K2(None)
+  69 [  49] GETTABLE  R6 = R2[K6('SEN')]
+  70 [  49] SETTABLE  R6[K49('SN24vs')] = K5('BT_MD_CONS')
+  71 [  64] CLOSURE   R6 = proto[0]
+  72 [  73] GETTABUP  R7 = UP0[K50('table')]
+  73 [  73] GETTABLE  R7 = R7[K51('insert')]
+  74 [  73] MOVE      A=8 B=5 C=0
+  75 [  73] NEWTABLE  A=9 B=0 C=7
+  76 [  73] SETTABLE  R9[K52('sName')] = K53('BT_MD_CURR')
+  77 [  73] SETTABLE  R9[K54('pName')] = K55('Curr')
+  78 [  73] SETTABLE  R9[K56('sLabel')] = K57('Batt current')
+  79 [  73] SETTABLE  R9[K58('dUnit')] = K59('AMPERE')
+  80 [  73] SETTABLE  R9[K60('dDec')] = K61(1)
+  81 [  73] SETTABLE  R9[K62('sMin')] = K63(0)
+  82 [  73] SETTABLE  R9[K64('sMax')] = K65(400)
+  83 [  73] CALL      A=7 B=3 C=1
+  84 [  74] GETTABUP  R7 = UP0[K50('table')]
+  85 [  74] GETTABLE  R7 = R7[K51('insert')]
+  86 [  74] MOVE      A=8 B=5 C=0
+  87 [  74] NEWTABLE  A=9 B=0 C=6
+  88 [  74] SETTABLE  R9[K52('sName')] = K66('BT_MD_CONS')
+  89 [  74] SETTABLE  R9[K54('pName')] = K67('Capa')
+  90 [  74] SETTABLE  R9[K56('sLabel')] = K68('Batt consumed')
+  91 [  74] SETTABLE  R9[K58('dUnit')] = K69('MILLIAMPERE_HOUR')
+  92 [  74] SETTABLE  R9[K62('sMin')] = K63(0)
+  93 [  74] SETTABLE  R9[K64('sMax')] = K70(200000)
+  94 [  74] CALL      A=7 B=3 C=1
+  95 [  75] GETTABUP  R7 = UP0[K50('table')]
+  96 [  75] GETTABLE  R7 = R7[K51('insert')]
+  97 [  75] MOVE      A=8 B=5 C=0
+  98 [  75] NEWTABLE  A=9 B=0 C=7
+  99 [  75] SETTABLE  R9[K52('sName')] = K71('BT_MD_LEFT')
+ 100 [  75] SETTABLE  R9[K54('pName')] = K72('Bat%')
+ 101 [  75] SETTABLE  R9[K56('sLabel')] = K73('Batt % left')
+ 102 [  75] SETTABLE  R9[K58('dUnit')] = K74('PERCENT')
+ 103 [  75] SETTABLE  R9[K62('sMin')] = K63(0)
+ 104 [  75] SETTABLE  R9[K64('sMax')] = K75(100)
+ 105 [  75] SETTABLE  R9[K76('uFN')] = R6
+ 106 [  75] CALL      A=7 B=3 C=1
+ 107 [  79] RETURN    A=5 B=2 C=0
+ 108 [  79] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 8 lines 52 64 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('curr', 5, 100), ('cons', 10, 100), ('left', 15, 100)]
+K0 'S'
+K1 'BT_MD_CURR'
+K2 0
+K3 'BT_MD_CONS'
+K4 'BT_MD_LEFT'
+K5 'BT_FAV_SEL'
+K6 'BT_FAV_CAPA'
+K7 'math'
+K8 'floor'
+K9 'max'
+K10 100
+K11 'SEN'
+K12 'SN23vd'
+K13 'SN23f'
+K14 '%.1f'
+K15 '%d'
+K16 'SN24u'
+K17 1000
+K18 'Ah'
+K19 'mAh'
+K20 'SN24vd'
+K21 'SN24f'
+K22 10000
+K23 '%.3f'
+K24 100000
+K25 '%.2f'
+K26 1000000
+K27 '%.0f'
+   1 [  53] GETTABUP  R0 = UP0[K0('S')]
+   2 [  53] GETTABLE  R0 = R0[K1('BT_MD_CURR')]
+   3 [  53] TEST      A=0 B=0 C=1
+   4 [  53] JMP       A=0 ->6
+   5 [  53] LOADK     R0 = K2 (0)
+   6 [  54] GETTABUP  R1 = UP0[K0('S')]
+   7 [  54] GETTABLE  R1 = R1[K3('BT_MD_CONS')]
+   8 [  54] TEST      A=1 B=0 C=1
+   9 [  54] JMP       A=0 ->11
+  10 [  54] LOADK     R1 = K2 (0)
+  11 [  55] GETTABUP  R2 = UP0[K0('S')]
+  12 [  55] GETTABLE  R2 = R2[K4('BT_MD_LEFT')]
+  13 [  55] TEST      A=2 B=0 C=1
+  14 [  55] JMP       A=0 ->16
+  15 [  55] LOADK     R2 = K2 (0)
+  16 [  56] GETTABUP  R3 = UP0[K0('S')]
+  17 [  56] GETTABLE  R3 = R3[K5('BT_FAV_SEL')]
+  18 [  56] LT        A=0 K2(0), R3; skip-next if condition != A
+  19 [  56] JMP       A=0 ->40
+  20 [  56] GETTABUP  R3 = UP0[K0('S')]
+  21 [  56] GETTABLE  R3 = R3[K6('BT_FAV_CAPA')]
+  22 [  56] LT        A=0 K2(0), R3; skip-next if condition != A
+  23 [  56] JMP       A=0 ->40
+  24 [  57] GETTABUP  R3 = UP0[K0('S')]
+  25 [  57] GETTABUP  R4 = UP1[K7('math')]
+  26 [  57] GETTABLE  R4 = R4[K8('floor')]
+  27 [  57] GETTABUP  R5 = UP1[K7('math')]
+  28 [  57] GETTABLE  R5 = R5[K9('max')]
+  29 [  57] LOADK     R6 = K2 (0)
+  30 [  57] GETTABUP  R7 = UP0[K0('S')]
+  31 [  57] GETTABLE  R7 = R7[K6('BT_FAV_CAPA')]
+  32 [  57] SUB       A=7 B=7 C=1
+  33 [  57] CALL      A=5 B=3 C=2
+  34 [  57] GETTABUP  R6 = UP0[K0('S')]
+  35 [  57] GETTABLE  R6 = R6[K6('BT_FAV_CAPA')]
+  36 [  57] DIV       A=5 B=5 C=6
+  37 [  57] MUL       A=5 B=5 C=266
+  38 [  57] CALL      A=4 B=2 C=2
+  39 [  57] SETTABLE  R3[K4('BT_MD_LEFT')] = R4
+  40 [  59] GETTABUP  R3 = UP0[K11('SEN')]
+  41 [  59] LT        A=0 R0, K10(100); skip-next if condition != A
+  42 [  59] JMP       A=0 ->45
+  43 [  59] TESTSET   A=4 B=0 C=1
+  44 [  59] JMP       A=0 ->49
+  45 [  59] GETTABUP  R4 = UP1[K7('math')]
+  46 [  59] GETTABLE  R4 = R4[K8('floor')]
+  47 [  59] MOVE      A=5 B=0 C=0
+  48 [  59] CALL      A=4 B=2 C=2
+  49 [  59] SETTABLE  R3[K12('SN23vd')] = R4
+  50 [  60] GETTABUP  R3 = UP0[K11('SEN')]
+  51 [  60] LT        A=0 R0, K10(100); skip-next if condition != A
+  52 [  60] JMP       A=0 ->56
+  53 [  60] LOADK     R4 = K14 ('%.1f')
+  54 [  60] TEST      A=4 B=0 C=1
+  55 [  60] JMP       A=0 ->57
+  56 [  60] LOADK     R4 = K15 ('%d')
+  57 [  60] SETTABLE  R3[K13('SN23f')] = R4
+  58 [  61] GETTABUP  R3 = UP0[K11('SEN')]
+  59 [  61] LE        A=0 K17(1000), R1; skip-next if condition != A
+  60 [  61] JMP       A=0 ->64
+  61 [  61] LOADK     R4 = K18 ('Ah')
+  62 [  61] TEST      A=4 B=0 C=1
+  63 [  61] JMP       A=0 ->65
+  64 [  61] LOADK     R4 = K19 ('mAh')
+  65 [  61] SETTABLE  R3[K16('SN24u')] = R4
+  66 [  62] GETTABUP  R3 = UP0[K11('SEN')]
+  67 [  62] LT        A=0 R1, K17(1000); skip-next if condition != A
+  68 [  62] JMP       A=0 ->75
+  69 [  62] GETTABUP  R4 = UP1[K7('math')]
+  70 [  62] GETTABLE  R4 = R4[K8('floor')]
+  71 [  62] MOVE      A=5 B=1 C=0
+  72 [  62] CALL      A=4 B=2 C=2
+  73 [  62] TEST      A=4 B=0 C=1
+  74 [  62] JMP       A=0 ->76
+  75 [  62] DIV       A=4 B=1 C=273
+  76 [  62] SETTABLE  R3[K20('SN24vd')] = R4
+  77 [  63] GETTABUP  R3 = UP0[K11('SEN')]
+  78 [  63] LT        A=0 R1, K17(1000); skip-next if condition != A
+  79 [  63] JMP       A=0 ->83
+  80 [  63] LOADK     R4 = K15 ('%d')
+  81 [  63] TEST      A=4 B=0 C=1
+  82 [  63] JMP       A=0 ->99
+  83 [  63] LT        A=0 R1, K22(10000); skip-next if condition != A
+  84 [  63] JMP       A=0 ->88
+  85 [  63] LOADK     R4 = K23 ('%.3f')
+  86 [  63] TEST      A=4 B=0 C=1
+  87 [  63] JMP       A=0 ->99
+  88 [  63] LT        A=0 R1, K24(100000); skip-next if condition != A
+  89 [  63] JMP       A=0 ->93
+  90 [  63] LOADK     R4 = K25 ('%.2f')
+  91 [  63] TEST      A=4 B=0 C=1
+  92 [  63] JMP       A=0 ->99
+  93 [  63] LT        A=0 R1, K26(1000000); skip-next if condition != A
+  94 [  63] JMP       A=0 ->98
+  95 [  63] LOADK     R4 = K14 ('%.1f')
+  96 [  63] TEST      A=4 B=0 C=1
+  97 [  63] JMP       A=0 ->99
+  98 [  63] LOADK     R4 = K27 ('%.0f')
+  99 [  63] SETTABLE  R3[K21('SN24f')] = R4
+ 100 [  64] RETURN    A=0 B=1 C=0

@@ -1,0 +1,61 @@
+{
+  "providerSha256": "7d04131f19479a9e241daa6ff8fe452aa6cf25fb20517e42dd49b30d5a02c3fe",
+  "checkerSha256": "05d48903849e9091c0fae7a9eb698c7b041e43aec3577e005c772465873f1d7b",
+  "actualNativePhysicalAPIs": true,
+  "telemetryMocked": false,
+  "readOnlyProvider": true,
+  "sourceIteratorInstrumentationCountsOnly": true,
+  "maxWork": 8,
+  "simulator": "EdgeTX3.0 TX16S WASM",
+  "hardwareVerified": false,
+  "status": "PASS",
+  "nativeExecutionVerified": true,
+  "refreshCallbacks": 64,
+  "maximumWorkPerCallback": 8,
+  "inventory": {
+    "sources": 23,
+    "switches": 8,
+    "analogs": 15,
+    "predicates": 80,
+    "logicalSwitches": 64,
+    "logicalInverse64Present": true,
+    "partial": false,
+    "sourceIteratorProbes": 52,
+    "switchIteratorProbes": 92
+  },
+  "nativeExamples": {
+    "thr": {
+      "id": 89,
+      "kind": "stick",
+      "raw": 0,
+      "current": true,
+      "normalizedPercent": 50
+    },
+    "s1": {
+      "id": 91,
+      "kind": "pot",
+      "raw": 0,
+      "current": true,
+      "normalizedPercent": 50
+    },
+    "sa": {
+      "id": 126,
+      "kind": "switch",
+      "raw": -1024,
+      "current": true,
+      "type": 3,
+      "lowPredicate": true
+    },
+    "L64": {
+      "value": false,
+      "inverse": true,
+      "status": "LIVE"
+    }
+  },
+  "log": "native-inventory.log",
+  "logSha256": "d4c315ccbf500e7bd505e1db042f565d5c3d663d3ce8cd5f38b8c931936500a3",
+  "screenshot": "native-inventory.png",
+  "screenshotSha256": "097d0ebd09bb4765a0fd47af26c37258c909d6467bbdb7bd53b30aa1c32a6d37",
+  "targetFirmware": "EdgeTX2.12.4",
+  "limitation": "Actual EdgeTX3.0 TX16S WASM physical API inventory; not physical radio or target2.12.4 execution."
+}

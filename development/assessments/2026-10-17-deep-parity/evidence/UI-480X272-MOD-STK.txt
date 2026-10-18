@@ -1,0 +1,485 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/STK.luac
+SHA256: 50e8a55f9fe3a6e0c23b7da6fab04d93768a6ead0ea0794f102c7036e2d68164
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/480X272/MOD/STK.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 17), ('F', 1, 17), ('D', 1, 17), ('X', 1, 17), ('T', 1, 17)]
+K0 'lnDispShift'
+K1 1
+K2 'lnMax'
+K3 7
+K4 'lnSpace'
+K5 25
+K6 'radioMode'
+K7 'RD'
+K8 'CHMODE'
+K9 'i'
+K10 'drawStick'
+K11 'e'
+K12 'd'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] SETTABLE  R4[K0('lnDispShift')] = K1(1)
+   3 [  13] SETTABLE  R4[K2('lnMax')] = K3(7)
+   4 [  14] SETTABLE  R4[K4('lnSpace')] = K5(25)
+   5 [  15] GETTABLE  R5 = R2[K7('RD')]
+   6 [  15] GETTABLE  R5 = R5[K8('CHMODE')]
+   7 [  15] SETTABLE  R4[K6('radioMode')] = R5
+   8 [  30] CLOSURE   R5 = proto[0]
+   9 [  30] SETTABLE  R4[K9('i')] = R5
+  10 [  66] CLOSURE   R5 = proto[1]
+  11 [  66] SETTABLE  R4[K10('drawStick')] = R5
+  12 [  88] CLOSURE   R5 = proto[2]
+  13 [  88] SETTABLE  R4[K11('e')] = R5
+  14 [ 121] CLOSURE   R5 = proto[3]
+  15 [ 121] SETTABLE  R4[K12('d')] = R5
+  16 [ 123] RETURN    A=0 B=1 C=0
+  17 [ 123] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 8 lines 17 30 source None
+UPVALUES [('G', (1, 0)), ('T', (1, 4)), ('D', (1, 2))]
+LOCALS [('w', 0, 63), ('tasks', 48, 63)]
+K0 'f'
+K1 None
+K2 'w'
+K3 'xl'
+K4 'yt'
+K5 110
+K6 'h'
+K7 40
+K8 168
+K9 278
+K10 'loadE'
+K11 'PUI'
+K12 'UITSKSET'
+K13 'stickCmds'
+K14 'PLIBFC'
+K15 'S'
+K16 'FC_FW_ID'
+K17 '/STK'
+   1 [  19] NEWTABLE  A=1 B=4 C=0
+   2 [  19] NEWTABLE  A=2 B=0 C=2
+   3 [  20] SETTABLE  R2[K0('f')] = K1(None)
+   4 [  20] NEWTABLE  A=3 B=0 C=4
+   5 [  20] GETTABLE  R4 = R0[K3('xl')]
+   6 [  20] SETTABLE  R3[K3('xl')] = R4
+   7 [  20] GETTABLE  R4 = R0[K4('yt')]
+   8 [  20] SETTABLE  R3[K4('yt')] = R4
+   9 [  20] SETTABLE  R3[K2('w')] = K5(110)
+  10 [  20] SETTABLE  R3[K6('h')] = K7(40)
+  11 [  20] SETTABLE  R2[K2('w')] = R3
+  12 [  20] NEWTABLE  A=3 B=0 C=2
+  13 [  21] SETTABLE  R3[K0('f')] = K1(None)
+  14 [  21] NEWTABLE  A=4 B=0 C=4
+  15 [  21] GETTABLE  R5 = R0[K3('xl')]
+  16 [  21] ADD       A=5 B=5 C=261
+  17 [  21] SETTABLE  R4[K3('xl')] = R5
+  18 [  21] GETTABLE  R5 = R0[K4('yt')]
+  19 [  21] SETTABLE  R4[K4('yt')] = R5
+  20 [  21] SETTABLE  R4[K2('w')] = K8(168)
+  21 [  21] SETTABLE  R4[K6('h')] = K7(40)
+  22 [  21] SETTABLE  R3[K2('w')] = R4
+  23 [  21] NEWTABLE  A=4 B=0 C=2
+  24 [  22] SETTABLE  R4[K0('f')] = K1(None)
+  25 [  22] NEWTABLE  A=5 B=0 C=4
+  26 [  22] GETTABLE  R6 = R0[K3('xl')]
+  27 [  22] ADD       A=6 B=6 C=265
+  28 [  22] SETTABLE  R5[K3('xl')] = R6
+  29 [  22] GETTABLE  R6 = R0[K4('yt')]
+  30 [  22] SETTABLE  R5[K4('yt')] = R6
+  31 [  22] SETTABLE  R5[K2('w')] = K5(110)
+  32 [  22] SETTABLE  R5[K6('h')] = K7(40)
+  33 [  22] SETTABLE  R4[K2('w')] = R5
+  34 [  22] NEWTABLE  A=5 B=0 C=2
+  35 [  23] SETTABLE  R5[K0('f')] = K1(None)
+  36 [  23] NEWTABLE  A=6 B=0 C=4
+  37 [  23] GETTABLE  R7 = R0[K3('xl')]
+  38 [  23] SETTABLE  R6[K3('xl')] = R7
+  39 [  23] GETTABLE  R7 = R0[K4('yt')]
+  40 [  23] ADD       A=7 B=7 C=263
+  41 [  23] SETTABLE  R6[K4('yt')] = R7
+  42 [  23] GETTABLE  R7 = R0[K2('w')]
+  43 [  23] SETTABLE  R6[K2('w')] = R7
+  44 [  23] GETTABLE  R7 = R0[K6('h')]
+  45 [  23] SUB       A=7 B=7 C=263
+  46 [  23] SETTABLE  R6[K6('h')] = R7
+  47 [  23] SETTABLE  R5[K2('w')] = R6
+  48 [  24] SETLIST   A=1 B=4 C=1
+  49 [  26] GETTABUP  R2 = UP0[K10('loadE')]
+  50 [  26] GETTABUP  R3 = UP0[K11('PUI')]
+  51 [  26] LOADK     R4 = K12 ('UITSKSET')
+  52 [  26] CONCAT    A=3 B=3 C=4
+  53 [  26] MOVE      A=4 B=1 C=0
+  54 [  26] CALL      A=2 B=3 C=1
+  55 [  28] GETTABUP  R2 = UP0[K10('loadE')]
+  56 [  28] GETTABUP  R3 = UP0[K14('PLIBFC')]
+  57 [  28] GETTABUP  R4 = UP2[K15('S')]
+  58 [  28] GETTABLE  R4 = R4[K16('FC_FW_ID')]
+  59 [  28] LOADK     R5 = K17 ('/STK')
+  60 [  28] CONCAT    A=3 B=3 C=5
+  61 [  28] CALL      A=2 B=2 C=2
+  62 [  28] SETTABUP  UP1[K13('stickCmds')] = R2
+  63 [  30] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 5 vararg 0 stack 32 lines 32 66 source None
+UPVALUES [('T', (1, 4)), ('_ENV', (0, 0)), ('X', (1, 3)), ('D', (1, 2))]
+LOCALS [('cmd', 0, 105), ('xPos', 0, 105), ('yPos', 0, 105), ('gSize', 0, 105), ('sSize', 0, 105), ('label', 1, 105), ('vl', 5, 105), ('hl', 5, 105), ('vr', 5, 105), ('hr', 5, 105), ('x', 26, 105), ('y', 26, 105), ('c', 26, 105), ('d', 26, 105), ('o', 26, 105), ('x1', 31, 105), ('y1', 31, 105), ('x2', 31, 105), ('y2', 31, 105), ('posX', 57, 105), ('posY', 62, 105), ('sx1', 66, 105), ('sy1', 66, 105), ('sx2', 66, 105), ('sy2', 66, 105)]
+K0 'l'
+K1 't'
+K2 'y'
+K3 'p'
+K4 'r'
+K5 'radioMode'
+K6 1
+K7 3
+K8 4
+K9 0
+K10 6
+K11 'math'
+K12 'floor'
+K13 2
+K14 'RC'
+K15 'C'
+K16 'MD_L'
+K17 13
+K18 14
+K19 'RCF'
+K20 'MD_V'
+K21 'TX'
+K22 15
+K23 'FONT_STD'
+K24 'TEXT_LEFT'
+   1 [  35] GETTABLE  R5 = R0[K0('l')]
+   2 [  36] GETTABLE  R6 = R0[K1('t')]
+   3 [  36] GETTABLE  R7 = R0[K2('y')]
+   4 [  36] GETTABLE  R8 = R0[K3('p')]
+   5 [  36] GETTABLE  R9 = R0[K4('r')]
+   6 [  38] GETTABUP  R10 = UP0[K5('radioMode')]
+   7 [  38] EQ        A=1 R10, K6(1); skip-next if condition != A
+   8 [  38] JMP       A=0 ->12
+   9 [  38] GETTABUP  R10 = UP0[K5('radioMode')]
+  10 [  38] EQ        A=0 R10, K7(3); skip-next if condition != A
+  11 [  38] JMP       A=0 ->14
+  12 [  39] GETTABLE  R6 = R0[K3('p')]
+  13 [  40] GETTABLE  R8 = R0[K1('t')]
+  14 [  42] GETTABUP  R10 = UP0[K5('radioMode')]
+  15 [  42] EQ        A=1 R10, K7(3); skip-next if condition != A
+  16 [  42] JMP       A=0 ->20
+  17 [  42] GETTABUP  R10 = UP0[K5('radioMode')]
+  18 [  42] EQ        A=0 R10, K8(4); skip-next if condition != A
+  19 [  42] JMP       A=0 ->22
+  20 [  43] GETTABLE  R7 = R0[K4('r')]
+  21 [  44] GETTABLE  R9 = R0[K2('y')]
+  22 [  48] LOADK     R10 = K9 (0)
+  23 [  48] LOADK     R11 = K9 (0)
+  24 [  48] LOADK     R12 = K9 (0)
+  25 [  48] LOADK     R13 = K9 (0)
+  26 [  48] LOADK     R14 = K9 (0)
+  27 [  49] MOVE      A=15 B=1 C=0
+  28 [  49] MOVE      A=16 B=2 C=0
+  29 [  49] ADD       A=17 B=1 C=3
+  30 [  49] ADD       A=17 B=17 C=266
+  31 [  49] MOVE      A=18 B=2 C=0
+  32 [  50] GETTABUP  R19 = UP1[K11('math')]
+  33 [  50] GETTABLE  R19 = R19[K12('floor')]
+  34 [  50] DIV       A=20 B=3 C=269
+  35 [  50] CALL      A=19 B=2 C=2
+  36 [  50] MOVE      A=13 B=19 C=0
+  37 [  51] GETTABUP  R19 = UP2[K14('RC')]
+  38 [  51] MOVE      A=20 B=15 C=0
+  39 [  51] MOVE      A=21 B=16 C=0
+  40 [  51] MOVE      A=22 B=3 C=0
+  41 [  51] MOVE      A=23 B=3 C=0
+  42 [  51] GETTABUP  R24 = UP3[K15('C')]
+  43 [  51] GETTABLE  R24 = R24[K16('MD_L')]
+  44 [  51] CALL      A=19 B=6 C=1
+  45 [  52] GETTABUP  R19 = UP2[K14('RC')]
+  46 [  52] MOVE      A=20 B=17 C=0
+  47 [  52] MOVE      A=21 B=18 C=0
+  48 [  52] MOVE      A=22 B=3 C=0
+  49 [  52] MOVE      A=23 B=3 C=0
+  50 [  52] GETTABUP  R24 = UP3[K15('C')]
+  51 [  52] GETTABLE  R24 = R24[K16('MD_L')]
+  52 [  52] CALL      A=19 B=6 C=1
+  53 [  54] NEWTABLE  A=19 B=3 C=0
+  54 [  54] LOADK     R20 = K6 (1)
+  55 [  54] SUB       A=21 B=13 C=263
+  56 [  54] LOADK     R22 = K17 (13)
+  57 [  54] SETLIST   A=19 B=3 C=1
+  58 [  55] NEWTABLE  A=20 B=3 C=0
+  59 [  55] LOADK     R21 = K18 (14)
+  60 [  55] SUB       A=22 B=13 C=263
+  61 [  55] LOADK     R23 = K6 (1)
+  62 [  55] SETLIST   A=20 B=3 C=1
+  63 [  56] LOADK     R21 = K9 (0)
+  64 [  56] LOADK     R22 = K9 (0)
+  65 [  56] LOADK     R23 = K9 (0)
+  66 [  56] LOADK     R24 = K9 (0)
+  67 [  57] ADD       A=25 B=6 C=269
+  68 [  57] GETTABLE  R25 = R20[R25]
+  69 [  57] ADD       A=22 B=16 C=25
+  70 [  58] ADD       A=25 B=7 C=269
+  71 [  58] GETTABLE  R25 = R19[R25]
+  72 [  58] ADD       A=21 B=15 C=25
+  73 [  59] ADD       A=25 B=8 C=269
+  74 [  59] GETTABLE  R25 = R20[R25]
+  75 [  59] ADD       A=24 B=18 C=25
+  76 [  60] ADD       A=25 B=9 C=269
+  77 [  60] GETTABLE  R25 = R19[R25]
+  78 [  60] ADD       A=23 B=17 C=25
+  79 [  62] GETTABUP  R25 = UP2[K19('RCF')]
+  80 [  62] MOVE      A=26 B=21 C=0
+  81 [  62] MOVE      A=27 B=22 C=0
+  82 [  62] MOVE      A=28 B=4 C=0
+  83 [  62] MOVE      A=29 B=4 C=0
+  84 [  62] GETTABUP  R30 = UP3[K15('C')]
+  85 [  62] GETTABLE  R30 = R30[K20('MD_V')]
+  86 [  62] CALL      A=25 B=6 C=1
+  87 [  63] GETTABUP  R25 = UP2[K19('RCF')]
+  88 [  63] MOVE      A=26 B=23 C=0
+  89 [  63] MOVE      A=27 B=24 C=0
+  90 [  63] MOVE      A=28 B=4 C=0
+  91 [  63] MOVE      A=29 B=4 C=0
+  92 [  63] GETTABUP  R30 = UP3[K15('C')]
+  93 [  63] GETTABLE  R30 = R30[K20('MD_V')]
+  94 [  63] CALL      A=25 B=6 C=1
+  95 [  64] GETTABUP  R25 = UP2[K21('TX')]
+  96 [  64] ADD       A=26 B=17 C=3
+  97 [  64] ADD       A=26 B=26 C=278
+  98 [  64] MOVE      A=27 B=2 C=0
+  99 [  64] MOVE      A=28 B=5 C=0
+ 100 [  64] GETTABUP  R29 = UP2[K23('FONT_STD')]
+ 101 [  64] GETTABUP  R30 = UP2[K24('TEXT_LEFT')]
+ 102 [  64] GETTABUP  R31 = UP3[K15('C')]
+ 103 [  64] GETTABLE  R31 = R31[K20('MD_V')]
+ 104 [  64] CALL      A=25 B=7 C=1
+ 105 [  66] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 5 lines 68 88 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4)), ('G', (1, 0))]
+LOCALS []
+K0 'evt'
+K1 'K'
+K2 'EX'
+K3 'UI'
+K4 'MODS'
+K5 'nextID'
+K6 'DBD'
+K7 0
+K8 'RT'
+K9 'lnDispShift'
+K10 'next'
+K11 1
+K12 'stickCmds'
+K13 'lnMax'
+K14 'LT'
+K15 'PN'
+K16 'radioMode'
+K17 4
+K18 'PP'
+   1 [  71] GETTABUP  R0 = UP0[K0('evt')]
+   2 [  71] GETTABUP  R1 = UP0[K1('K')]
+   3 [  71] GETTABLE  R1 = R1[K2('EX')]
+   4 [  71] EQ        A=0 R0, R1; skip-next if condition != A
+   5 [  71] JMP       A=0 ->11
+   6 [  72] GETTABUP  R0 = UP0[K3('UI')]
+   7 [  72] GETTABLE  R0 = R0[K4('MODS')]
+   8 [  72] SETTABLE  R0[K5('nextID')] = K6('DBD')
+   9 [  73] SETTABUP  UP0[K0('evt')] = K7(0)
+  10 [  73] JMP       A=0 ->80
+  11 [  74] GETTABUP  R0 = UP0[K0('evt')]
+  12 [  74] GETTABUP  R1 = UP0[K1('K')]
+  13 [  74] GETTABLE  R1 = R1[K8('RT')]
+  14 [  74] EQ        A=0 R0, R1; skip-next if condition != A
+  15 [  74] JMP       A=0 ->30
+  16 [  75] GETTABUP  R0 = UP2[K10('next')]
+  17 [  75] GETTABUP  R1 = UP1[K9('lnDispShift')]
+  18 [  75] ADD       A=1 B=1 C=267
+  19 [  75] LOADK     R2 = K11 (1)
+  20 [  75] GETTABUP  R3 = UP1[K12('stickCmds')]
+  21 [  75] LEN       A=3 B=3 C=0
+  22 [  75] GETTABUP  R4 = UP1[K13('lnMax')]
+  23 [  75] SUB       A=3 B=3 C=4
+  24 [  75] ADD       A=3 B=3 C=267
+  25 [  75] CALL      A=0 B=4 C=2
+  26 [  75] SETTABUP  UP1[K9('lnDispShift')] = R0
+  27 [  76] LOADBOOL  A=0 B=1 C=0
+  28 [  76] RETURN    A=0 B=2 C=0
+  29 [  76] JMP       A=0 ->80
+  30 [  77] GETTABUP  R0 = UP0[K0('evt')]
+  31 [  77] GETTABUP  R1 = UP0[K1('K')]
+  32 [  77] GETTABLE  R1 = R1[K14('LT')]
+  33 [  77] EQ        A=0 R0, R1; skip-next if condition != A
+  34 [  77] JMP       A=0 ->49
+  35 [  78] GETTABUP  R0 = UP2[K10('next')]
+  36 [  78] GETTABUP  R1 = UP1[K9('lnDispShift')]
+  37 [  78] SUB       A=1 B=1 C=267
+  38 [  78] LOADK     R2 = K11 (1)
+  39 [  78] GETTABUP  R3 = UP1[K12('stickCmds')]
+  40 [  78] LEN       A=3 B=3 C=0
+  41 [  78] GETTABUP  R4 = UP1[K13('lnMax')]
+  42 [  78] SUB       A=3 B=3 C=4
+  43 [  78] ADD       A=3 B=3 C=267
+  44 [  78] CALL      A=0 B=4 C=2
+  45 [  78] SETTABUP  UP1[K9('lnDispShift')] = R0
+  46 [  79] LOADBOOL  A=0 B=1 C=0
+  47 [  79] RETURN    A=0 B=2 C=0
+  48 [  79] JMP       A=0 ->80
+  49 [  80] GETTABUP  R0 = UP0[K0('evt')]
+  50 [  80] GETTABUP  R1 = UP0[K1('K')]
+  51 [  80] GETTABLE  R1 = R1[K15('PN')]
+  52 [  80] EQ        A=0 R0, R1; skip-next if condition != A
+  53 [  80] JMP       A=0 ->65
+  54 [  81] GETTABUP  R0 = UP2[K10('next')]
+  55 [  81] GETTABUP  R1 = UP1[K16('radioMode')]
+  56 [  81] ADD       A=1 B=1 C=267
+  57 [  81] LOADK     R2 = K11 (1)
+  58 [  81] LOADK     R3 = K17 (4)
+  59 [  81] LOADBOOL  A=4 B=1 C=0
+  60 [  81] CALL      A=0 B=5 C=2
+  61 [  81] SETTABUP  UP1[K16('radioMode')] = R0
+  62 [  82] LOADBOOL  A=0 B=1 C=0
+  63 [  82] RETURN    A=0 B=2 C=0
+  64 [  82] JMP       A=0 ->80
+  65 [  83] GETTABUP  R0 = UP0[K0('evt')]
+  66 [  83] GETTABUP  R1 = UP0[K1('K')]
+  67 [  83] GETTABLE  R1 = R1[K18('PP')]
+  68 [  83] EQ        A=0 R0, R1; skip-next if condition != A
+  69 [  83] JMP       A=0 ->80
+  70 [  84] GETTABUP  R0 = UP2[K10('next')]
+  71 [  84] GETTABUP  R1 = UP1[K16('radioMode')]
+  72 [  84] SUB       A=1 B=1 C=267
+  73 [  84] LOADK     R2 = K11 (1)
+  74 [  84] LOADK     R3 = K17 (4)
+  75 [  84] LOADBOOL  A=4 B=1 C=0
+  76 [  84] CALL      A=0 B=5 C=2
+  77 [  84] SETTABUP  UP1[K16('radioMode')] = R0
+  78 [  85] LOADBOOL  A=0 B=1 C=0
+  79 [  85] RETURN    A=0 B=2 C=0
+  80 [  88] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 1 vararg 0 stack 17 lines 90 121 source None
+UPVALUES [('X', (1, 3)), ('D', (1, 2)), ('_ENV', (0, 0)), ('T', (1, 4))]
+LOCALS [('w', 0, 88), ('fwName', 26, 88), ('gSize', 63, 88), ('sSize', 63, 88), ('x', 65, 88), ('y', 67, 88), ('(for index)', 70, 86), ('(for limit)', 70, 86), ('(for step)', 70, 86), ('i', 71, 85), ('cmd', 76, 85)]
+K0 'TX'
+K1 'xl'
+K2 10
+K3 'yt'
+K4 12
+K5 'FC'
+K6 'FONT_S'
+K7 'TEXT_LEFT'
+K8 'C'
+K9 'MD_L'
+K10 'S'
+K11 'FC_FW_ID'
+K12 'BF'
+K13 'Betaflight'
+K14 'IN'
+K15 'INAV'
+K16 ''
+K17 90
+K18 'TEXT_RIGHT'
+K19 'MD_V'
+K20 'xr'
+K21 'MODE'
+K22 'tostring'
+K23 'radioMode'
+K24 20
+K25 6
+K26 16
+K27 54
+K28 1
+K29 'lnMax'
+K30 'stickCmds'
+K31 'lnDispShift'
+K32 'drawStick'
+K33 2
+K34 'lnSpace'
+   1 [ 100] GETTABUP  R1 = UP0[K0('TX')]
+   2 [ 100] GETTABLE  R2 = R0[K1('xl')]
+   3 [ 100] ADD       A=2 B=2 C=258
+   4 [ 100] GETTABLE  R3 = R0[K3('yt')]
+   5 [ 100] ADD       A=3 B=3 C=260
+   6 [ 100] LOADK     R4 = K5 ('FC')
+   7 [ 100] GETTABUP  R5 = UP0[K6('FONT_S')]
+   8 [ 100] GETTABUP  R6 = UP0[K7('TEXT_LEFT')]
+   9 [ 100] GETTABUP  R7 = UP1[K8('C')]
+  10 [ 100] GETTABLE  R7 = R7[K9('MD_L')]
+  11 [ 100] CALL      A=1 B=7 C=1
+  12 [ 101] GETTABUP  R1 = UP1[K10('S')]
+  13 [ 101] GETTABLE  R1 = R1[K11('FC_FW_ID')]
+  14 [ 101] EQ        A=0 R1, K12('BF'); skip-next if condition != A
+  15 [ 101] JMP       A=0 ->19
+  16 [ 101] LOADK     R1 = K13 ('Betaflight')
+  17 [ 101] TEST      A=1 B=0 C=1
+  18 [ 101] JMP       A=0 ->27
+  19 [ 101] GETTABUP  R1 = UP1[K10('S')]
+  20 [ 101] GETTABLE  R1 = R1[K11('FC_FW_ID')]
+  21 [ 101] EQ        A=0 R1, K14('IN'); skip-next if condition != A
+  22 [ 101] JMP       A=0 ->26
+  23 [ 101] LOADK     R1 = K15 ('INAV')
+  24 [ 101] TEST      A=1 B=0 C=1
+  25 [ 101] JMP       A=0 ->27
+  26 [ 101] LOADK     R1 = K16 ('')
+  27 [ 102] GETTABUP  R2 = UP0[K0('TX')]
+  28 [ 102] GETTABLE  R3 = R0[K1('xl')]
+  29 [ 102] ADD       A=3 B=3 C=273
+  30 [ 102] GETTABLE  R4 = R0[K3('yt')]
+  31 [ 102] ADD       A=4 B=4 C=260
+  32 [ 102] MOVE      A=5 B=1 C=0
+  33 [ 102] GETTABUP  R6 = UP0[K6('FONT_S')]
+  34 [ 102] GETTABUP  R7 = UP0[K18('TEXT_RIGHT')]
+  35 [ 102] GETTABUP  R8 = UP1[K8('C')]
+  36 [ 102] GETTABLE  R8 = R8[K19('MD_V')]
+  37 [ 102] CALL      A=2 B=7 C=1
+  38 [ 104] GETTABUP  R2 = UP0[K0('TX')]
+  39 [ 104] GETTABLE  R3 = R0[K20('xr')]
+  40 [ 104] SUB       A=3 B=3 C=273
+  41 [ 104] GETTABLE  R4 = R0[K3('yt')]
+  42 [ 104] ADD       A=4 B=4 C=260
+  43 [ 104] LOADK     R5 = K21 ('MODE')
+  44 [ 104] GETTABUP  R6 = UP0[K6('FONT_S')]
+  45 [ 104] GETTABUP  R7 = UP0[K7('TEXT_LEFT')]
+  46 [ 104] GETTABUP  R8 = UP1[K8('C')]
+  47 [ 104] GETTABLE  R8 = R8[K9('MD_L')]
+  48 [ 104] CALL      A=2 B=7 C=1
+  49 [ 105] GETTABUP  R2 = UP0[K0('TX')]
+  50 [ 105] GETTABLE  R3 = R0[K20('xr')]
+  51 [ 105] SUB       A=3 B=3 C=258
+  52 [ 105] GETTABLE  R4 = R0[K3('yt')]
+  53 [ 105] ADD       A=4 B=4 C=260
+  54 [ 105] GETTABUP  R5 = UP2[K22('tostring')]
+  55 [ 105] GETTABUP  R6 = UP3[K23('radioMode')]
+  56 [ 105] CALL      A=5 B=2 C=2
+  57 [ 105] GETTABUP  R6 = UP0[K6('FONT_S')]
+  58 [ 105] GETTABUP  R7 = UP0[K18('TEXT_RIGHT')]
+  59 [ 105] GETTABUP  R8 = UP1[K8('C')]
+  60 [ 105] GETTABLE  R8 = R8[K19('MD_V')]
+  61 [ 105] CALL      A=2 B=7 C=1
+  62 [ 109] LOADK     R2 = K24 (20)
+  63 [ 109] LOADK     R3 = K25 (6)
+  64 [ 110] GETTABLE  R4 = R0[K1('xl')]
+  65 [ 110] ADD       A=4 B=4 C=282
+  66 [ 111] GETTABLE  R5 = R0[K3('yt')]
+  67 [ 111] ADD       A=5 B=5 C=283
+  68 [ 112] LOADK     R6 = K28 (1)
+  69 [ 112] GETTABUP  R7 = UP3[K29('lnMax')]
+  70 [ 112] LOADK     R8 = K28 (1)
+  71 [ 112] FORPREP   A=6 ->86
+  72 [ 114] GETTABUP  R10 = UP3[K30('stickCmds')]
+  73 [ 114] GETTABUP  R11 = UP3[K31('lnDispShift')]
+  74 [ 114] ADD       A=11 B=11 C=9
+  75 [ 114] SUB       A=11 B=11 C=284
+  76 [ 114] GETTABLE  R10 = R10[R11]
+  77 [ 115] GETTABUP  R11 = UP3[K32('drawStick')]
+  78 [ 115] MOVE      A=12 B=10 C=0
+  79 [ 115] MOVE      A=13 B=4 C=0
+  80 [ 115] SUB       A=14 B=5 C=289
+  81 [ 115] MOVE      A=15 B=2 C=0
+  82 [ 115] MOVE      A=16 B=3 C=0
+  83 [ 115] CALL      A=11 B=6 C=1
+  84 [ 116] GETTABUP  R11 = UP3[K34('lnSpace')]
+  85 [ 116] ADD       A=5 B=5 C=11
+  86 [ 112] FORLOOP   A=6 ->72
+  87 [ 119] RETURN    A=0 B=1 C=0
+  88 [ 121] RETURN    A=0 B=1 C=0

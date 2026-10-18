@@ -1,0 +1,530 @@
+{
+  "build": "GPS-SPACE-20261018",
+  "numericRepresentation": "4\t4",
+  "started": "2026-10-18T10:37:37.534229+00:00",
+  "runtime": "Lua 5.3.6  Copyright (C) 1994-2020 Lua.org, PUC-Rio",
+  "interpreter": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/navigation-utils/evidence/lua-5.3.6/src/lua",
+  "interpreterSHA256": "125a5f0f8af481fa9ffd57c4a2d6435d6480271d99ca75eeecf567d6f39cefc7",
+  "syntheticDataOnly": true,
+  "hardwarePerformanceMeasured": false,
+  "mainSHA256": "ec3ea40cb6c051bc1d8eb688eb91feaca266eef6d0e1d1ceb1bb20818ef63e4d",
+  "runtimeSHA256": {
+    "sdcard/SCRIPTS/TOOLS/telem.lua": "ec3ea40cb6c051bc1d8eb688eb91feaca266eef6d0e1d1ceb1bb20818ef63e4d",
+    "sdcard/WIDGETS/AERODECK/main.lua": "bed3964a0e139e08e912ca3bedbefa7f42ccc94878850bf3793391a21c14e661",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua": "3adbb7aac5423d1daa5de98555431641159c1c5c4e9af286e71006d98926f409",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua": "eaa7fb8dfd063bb9d3c3ceff3e6fb1ca9db846d4d2c650340cc32e021f4b57a3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua": "99f9efecf51b41a2993c2bcf17dcf83179cb3ed9906664512cb8a603d2cae28c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/display.lua": "cbb561a5c6bb85d8c197a293f2dc060a635e7a75253e8607d169e21478c6685e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/input-indicators.lua": "7d04131f19479a9e241daa6ff8fe452aa6cf25fb20517e42dd49b30d5a02c3fe",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/input-picker.lua": "d2d3a5b58bcc07c267836431fb975607a5b088366b195df88c49125d8552d154",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/link.lua": "920ff8c0b2d7a5ed69fe25d9b096358f7ddffd9d4cfa8197dffea71f6cf264cc",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/model-image.lua": "b4c83330d1073a13da78262c2f177db2def43183838920285e826c48164a858e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/model-store.lua": "3b021e461275bd7569ac858817ec7310e97798e6b37bc3757cbca76682db52c3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua": "ead877f9aa5f9b0e9bc386ae708ee074a397dc256124309a7614b88ddb413b26",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/native-extrema.lua": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua": "05f2ccdda3721ad7e4e7016042ff54997d71ba2f7d8d073bc7fd80774fc55db5",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/power-policy.lua": "bd87a02967cb5c52532ecaf65c38d6728600981953419a23578a7baa06d13ab3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/protocols.lua": "a81ec5b37edf67999a4667776ea00aab9d4bf2948d570c9876872ac30f7692f8",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/quick-pack.lua": "b5cbdadb449bb52e160d8ccd2271d0dcb13a71d872c1298c6ebcfdeb9f147b29",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/radio-status.lua": "22cb3241ac704d2e08adab5e43945e3ba64341329d7782b472f30301dce92aaf",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/reference-ui.lua": "1baa5d2f1851ff4fc3656b1a41fdca410f7b6082504efc2c56f66f7ec1dcdc5e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/reference.lua": "3d6ee0b546cdb5676cfccc58a57efa75651e2dd5d98460a73dc9c709fb67275a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/session.lua": "c5c4534e83f6778ff3e5b9d6e7eae9d4d15a4dbf91de8841eb2ae8741c80d1e3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/timer-owner.lua": "9532b63ee917081221ae513b10d89a08840323694fb3f60c55d5f9040044f9ce",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/vtx-cache.lua": "389bb57e0d2e49464c1e1049b2a0a6b2c24fa3569f452d8c1efee06134a5338b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/vtx-native.lua": "518af8976249ffee1f387c2254e6daacd24ed05366f642a3071fcf8c88f93871",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/battery_full-18.png": "71621db1d070e8963debe7f082e566705fc2efb3da5623db96d7373c5162dc4b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/bug_report-18.png": "10805c295e27457425280e86d0e2a428a7d7a2548a7979e23f874c2e90c4489f",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/build.png": "d00abd2918bb715baab6f40a1af852cf56fafb0b463dd58aa9efed53b1a99b4f",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/cell_tower-18.png": "0487a8397c974ecb20b1365efdfb59512edca5d890f20f03fcbef46486b160be",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/gpp_bad-18.png": "798ff1c279b654aaac9ac96a064d5cc1804333b6064dd52c5cc7d1abbf4d7c39",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/gpp_bad.png": "7c80859891103b54a8f1416df4ceb6524ac5ce083bca06557368b0aa32dbdb83",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/head_mounted_device-18.png": "62eb6fd33e2ccf2ab09c742e08788c40703cc04916c925dec3cd1bc4c82667ca",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/head_mounted_device.png": "7277f04f0977aa306a6579b80bb00340783cb3741d1d3d50a2c35289c1858926",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/home-18.png": "7f98e6a42cc03bd6c52ee19c98a6a0fc82e08279aaac74e1108e50395362b1d2",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/home.png": "9430e9e75b706d428a2bce0e0c4b9feacc32ba6f95ee15d85467b2b335250fb5",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/my_location-18.png": "c63dfc2cbdbb1c1d18047e10d8d32e5af9e344e7df5d45a7c67f84b08a342868",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/my_location.png": "bf1e68c2f89ff29682ff24302ffd70acf99d1adf3a98f293325f14918ecde7c6",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-18.png": "2914e1bfefe94d72e772ee90f898c1f085d4f3b31a9384f19f22a8e0dd7eb50d",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-00-18.png": "0c6b1dba7505c5b07aac5e8d58fa17665f775dbd6c7e134c66bdf49c2dd9f8e7",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-01-18.png": "2ce2c48b05ccd46d87b9a1ad25f564a2e2b4a423de026c829595d8469d8c903d",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-02-18.png": "6bf3d760312490284359e892c5b596b31c726d77bf4734c9edc1151252634359",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-03-18.png": "fc5e8d69f1b1b95ec45b7ec7faaf3cddd500a4149ec71b974254bed576dc1ebf",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-04-18.png": "d42721ef7069e0b9070b3e4da445f73dd6359e9e959f03dd4017744a14e0413c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-05-18.png": "36a6e3b77ce28b936f96cf0ba1533c2a58ca309eff1d36ef75f0e3ccdd6d21cb",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-06-18.png": "b1778202355f4a20f2617f3f275084a7eb91e5ce2c97996ef7305d2b71935929",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-07-18.png": "d1cc05a14b71c7bb35baba12afd0916e67c9294f9941b0067976f807c6fd4659",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-08-18.png": "155bd6cca4e9bb5243fd59241509a9fce567001e3e2a92563473739df2728e28",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-09-18.png": "d9890e7e04fff0688c7555ff6e606b07fe81c0233ca9cba303573225f13198a1",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-10-18.png": "0602bc2c7822dc52ea69835cb6e813d0beaa729a228f742e9e7be833e9252fd0",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-11-18.png": "45dcd3a14381e502880f16545b92e68174d4e998564216058129a59d48c975e1",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-12-18.png": "d298e73f98113b408de161966c38797ae31ce9b4890d49dc28bbe208d2ffaac0",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-13-18.png": "8c23314b9828c0944b5908727ed9ba2c0f560f6cf9724fc8ec10bea22328fa36",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-14-18.png": "9c07493f01d2c2a38f73336d421f486b15cb0d6398461a5210f5cfcd8fa44b4e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-15-18.png": "8349426ad882705577aeb6c0d944df3500f3391b66377ab527442de135e3200e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/route-18.png": "1b7c098ea2544772151bdc569d657e455084287f1e5bdc6e7268b4730949c661",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/satellite_alt-18.png": "c03f56c53c61454818cc1b0b41f99499c6b2a0b23ccde483e4d7406a8905f8f8",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/sensors-18.png": "4511b2d7bb29e59de242122212ed5003b62d66ba68cc40fc1a50ed20bea0deca",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/speed-18.png": "813ad55fb3c4467aa3719b2b2322d4388e98a8d03bd4917bd31c94d7cdf7bd23",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/speed.png": "bfac1715e6c16b4413cb4d0e33a42afef1cac55b7fbfc730382e64b4207e4c44",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/sports_esports-18.png": "a25816db4840fa122ea83da0df687ea231f8c141297a9d181bed1ca68e2dbbad",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/table_chart-18.png": "0e6e2080bb345474f3375e5f541a0f886a1a60d00d1fd3b12362168581c0a417",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/table_chart.png": "1d1682c2d0768eafc37f38c3039204fe42765e2e17347307727510847e94ed4b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/tune.png": "0cba6a8dc19327925642139a2b20e6c28a9cbce3d8eb370aa92b6efda9ad7fc3",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/battery_full-18.png": "45eb2683003373196581e4f5546d3e4e60aaf9ebcde6c1095ccb986f503f4cac",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/bug_report-18.png": "13f83f4bfdccca792eddf2c5bb64c215cf8c2305cbda3fbb92107c5bc4c04c0d",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/build.png": "fef1db514c1916d6f291d331acb2906120f15cf4625b47b315cc670937ffb418",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/cell_tower-18.png": "218d4ffac7721968ae2606ce114ea245c6c9fd7f02d899dba9de4ea69b6f969c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/gpp_bad-18.png": "720cb481e696303e236000cde8720ca8145b755215ee1134c7cf714b81a14c16",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/gpp_bad.png": "798ff1c279b654aaac9ac96a064d5cc1804333b6064dd52c5cc7d1abbf4d7c39",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/head_mounted_device-18.png": "0203282602b0c7dabb4f18bbff36e185b7a9e2bb36dc9fc26f4b628e5e6b8161",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/head_mounted_device.png": "e2547a125a635ff6a0b348f7cf6c9896a87643c44c19cd1f43f0fb9a5ce52c52",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/home-18.png": "9ac516212f71704bb8a6b9364f976e1d3a14b0ef8a16492b23b8ebf50e8d9ac0",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/home.png": "aef248706e08f7e57cb6d0feef964c637442c2f4d8483feaa5858401c32d2df6",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/my_location-18.png": "1471edbf48d82a38110b8385fb965e31d74970418b9bf8b0ac71760a8d0b1428",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/my_location.png": "8efe6881630adefaa140e1eb82e5b57d5550b2f2ce7208a085373d8a0927d509",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-18.png": "19e227d3fd69bf792f2609bfa576cb115a542c11d74429892e541443bd144977",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-00-18.png": "12cb0ea5def6271649a799af15f5a1396a02956f43cedd1910c0265b6a058b9c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-01-18.png": "5f2b84fe647854451cb9e064f9aec13aa50e9feae2eefb4aa79494838ed7d7f7",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-02-18.png": "49899fb022d71977307ae069c24848c19f7452bb90f96ed2ee4de757b69b3d30",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-03-18.png": "efbb10631ea2d122dd49a0daa16f2895439f04c8fd4124178b4d7443930b1149",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-04-18.png": "85ff958e2c1726fb458bf4c0f81e1c5f824cc356ba703eb41c2c5533bafc76ce",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-05-18.png": "46b79545bf54b204f7794c18d6def37c61fcf06469dcdd7e9fbc3d8f69f03fc9",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-06-18.png": "0e51b0bcaeec9cfd33ef27646f0bfbbbe4dd5fe4cfe7e5063abbdc0af4924d8c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-07-18.png": "accd86dda03b6d70c2281d6b0f00752f350c20732ed971482f8e9ff217454b80",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-08-18.png": "01a50ea5f020e8cbd26a7389eb8cca9058b1857d1b02d481bc90dfed50d2d02e",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-09-18.png": "e279b6a4031048b8f4c887434b4a02c2e634a72c04bff6c0fadc61cb7015824d",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-10-18.png": "0d4c1c31c82b43a716e41381fc8d02b6fc4695dda6cbdfc7448fd4be99f87a1a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-11-18.png": "efc3ac9ae38ccb52e0783a0300a3fe91c13d85acc0a6678e2c0620d4f52236a7",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-12-18.png": "8c4399fbd4ad4a21c131ad1bfe36e2baebae006b15f8a3c4ca7a7e2cabf47d43",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-13-18.png": "88e7b8989bf7168f75d976486fb21afa0abbf6c77a80198e25f5845b5ef51ed9",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-14-18.png": "e53778b19b559e12357422864ce14dd988da76b3c8a149c659610cfb72ba06a1",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-15-18.png": "144a388121137aa5470dbede41ab801c4de9704c22e6352fc49877ff12415641",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/route-18.png": "ac863cf7053acc6ae3222844a19dfae62c5a2b34010a0a472b277c9fbd5e1f4a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/satellite_alt-18.png": "16241dea34276792cf3445539f4cb27530a10bb5ee935742162853643a2727ed",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/sensors-18.png": "50f49afa97efcdb61f86d80ca3da4bf4139e33af0a8c1f16272042ff9ef9224c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/speed-18.png": "2d9204e15b8a4cf7a2acd7eee0f596f62f8c702031126b6e1b4208e4a7a27934",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/speed.png": "dde260c9abcbb85db55a13ba28d87fa678d8d4a6d6779b866a9029f28d16ad39",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/sports_esports-18.png": "27c24e1897c478a4887ef19a30cf77d0cf5bf83d21dfe907e85374236fda7f71",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/table_chart-18.png": "1b2e723554e138d74ef10f9f552e92056401063cba52f8a5f53e964936c27eb4",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/table_chart.png": "cb156605dabf0196f54490fdc9e47f69afcc815339d9e5562243b59058891d6a",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/icons/tune.png": "b308525580147d5818270bb343f0797a8604775ebf80e74471fa53eb4d2a856a"
+  },
+  "tests": [
+    {
+      "file": "development/test_arm_status.lua",
+      "sha256": "166973c235f68a784c7d3b7b1e11214ec13aa68edb377d5f62a3d3cca8bce269",
+      "exitCode": 0,
+      "seconds": 0.017,
+      "output": "PASS: 136 additional BF API1.44/1.45 live/catalogue/count/unknown regression checks\nPASS: STATUS_EX offsets, every API1.44/1.45/1.46/1.47/1.48 flag, GPS18, autopilot28, arm-switch29, bytewise low/high bits, strict unknown APIs/counts, malformed rejection, no input mutation"
+    },
+    {
+      "file": "development/test_attitude_loop.lua",
+      "sha256": "e18d3d2c27c7b5d062f4fb9bd7a4e57931876fe56aa6d35bff9a1e13dc2fb5ea",
+      "exitCode": 0,
+      "seconds": 0.529,
+      "output": "PASS:12000 callbacks; positiveIDs never rebound; 199 bounded missing probes; one late0A bind; no warm enumerations/writes; attitude 100.0Hz, draw 25.0Hz (mock clock)"
+    },
+    {
+      "file": "development/test_cold_icon_startup.lua",
+      "sha256": "8fecf4055e6ad09d3b0c8d83a95dc9ed739398647070ab66e386400fde5bd6c3",
+      "exitCode": 0,
+      "seconds": 0.143,
+      "output": "PASS: 623 actual retained cold-icon startup, bounded callbacks, cache lifetime, all routes, negative cache and display identity checks"
+    },
+    {
+      "file": "development/test_compiled_readers.lua",
+      "sha256": "44e4ec2b7b31fcb7980fde3ea91c537427aac194123dcecfd43f10c960ab45a6",
+      "exitCode": 0,
+      "seconds": 4.486,
+      "output": "PASS: 5818295 checks / 1912664 oracle comparisons / 35840 compiled readers; portable VM instructions normalize=23008 reader=7683 (no hardware claim)"
+    },
+    {
+      "file": "development/test_configuration.lua",
+      "sha256": "511ec8ba8c9be6546f3524fe28826b8cdd905f83bed7141b0d159e6321fe1909",
+      "exitCode": 0,
+      "seconds": 0.025,
+      "output": "PASS: 133 configuration UX and native battery-boundary assertions"
+    },
+    {
+      "file": "development/test_core_integration.lua",
+      "sha256": "f876ee5a7739acccf8b4fd40e6a73414dd2b85367273d7184a302bc6a66a5e20",
+      "exitCode": 0,
+      "seconds": 0.287,
+      "output": "PASS: 65 actual application session and Video-to-MSP-to-FC integration checks"
+    },
+    {
+      "file": "development/test_crsf_cache.lua",
+      "sha256": "469571570acb3d58f06d5c1dee57684507d5c7428ba9751cb9495c8e2bac4f3f",
+      "exitCode": 0,
+      "seconds": 0.052,
+      "output": "PASS: 4676 checks: warm-cache RF reduction, independent bounds, fresh UID/API/FW/status/selected band+power verification, mismatches, drain identity, cancellation/quarantine and RAM parity (synthetic only)"
+    },
+    {
+      "file": "development/test_crsf_status.lua",
+      "sha256": "664e9d86f55776d8c726e4a5ec3351f2742582fbbc33e3e07ca8a379ecf33b94",
+      "exitCode": 0,
+      "seconds": 0.016,
+      "output": "PASS: original read fixtures, outer CRC boundary, handshake/status, chunks/sequence wrap, bounds, retries, backpressure, no writes by default, all eligibility gates"
+    },
+    {
+      "file": "development/test_crsf_vtx.lua",
+      "sha256": "f4b8cfea1432c226bf9e01ad017027c0cd27cab2134b8d642e3e2f7a27d32238",
+      "exitCode": 0,
+      "seconds": 0.036,
+      "output": "PASS: 3744 assertions: real BF identity/sensors/VTX tables, explicit false PIT, write/save/readback outcomes, rejection/retry/mismatch/cancel/guards, UID cache and bounded work (synthetic FC only)"
+    },
+    {
+      "file": "development/test_dashboard_options.lua",
+      "sha256": "90cbb1af55b342d2c68094dec547fa95fa72e46b216930f56bcc6738369e5cf1",
+      "exitCode": 0,
+      "seconds": 0.418,
+      "output": "PASS: 45 actual dashboard option, bank, date, image and independent power gauge checks"
+    },
+    {
+      "file": "development/test_diagnostics_log.lua",
+      "sha256": "83e7922f970a4dccafe98701717f97b47ca5a54be42f47cc23cefd26a10100a8",
+      "exitCode": 0,
+      "seconds": 0.074,
+      "output": "diagnostics-log: 604 checks passed"
+    },
+    {
+      "file": "development/test_display.lua",
+      "sha256": "5d74a45135227282a0548a39d8e804fe521ab760ff3b2fba638386fd08af045e",
+      "exitCode": 0,
+      "seconds": 0.036,
+      "output": "Display adapter: 4213 checks PASS (synthetic; no target hardware claim)"
+    },
+    {
+      "file": "development/test_extrema_incremental.lua",
+      "sha256": "0933ed69b31ed975be946c43c92c0a67c636583ebd301dc54c7b5458982790be",
+      "exitCode": 0,
+      "seconds": 0.036,
+      "output": "PASS: 315 incremental native-extrema bounded work, atomic publication, receipt, inverse provenance, cancellation and stable identities"
+    },
+    {
+      "file": "development/test_fc_connection.lua",
+      "sha256": "4d907ae85e8a09625c131e2fb7c2ab5cb62399fc410148aa180b8ebb554c1c3c",
+      "exitCode": 0,
+      "seconds": 0.239,
+      "output": "PASS: 11 actual application auto/protocol/armed/failsafe/stale/off gates and retained hidden lifecycle checks"
+    },
+    {
+      "file": "development/test_flight_layout.lua",
+      "sha256": "7ed66f0a74f8eaf8acdaf7f0b5de8810671e10141aaca031cd5301719e44ae0f",
+      "exitCode": 0,
+      "seconds": 0.239,
+      "output": "PASS: 5534 actual Flight checks; rectangular PFD, heading wrap, line-only signed native-scale ladder, no attitude angle text, shared datum, missing/zero/long telemetry, and icon-only stable cache"
+    },
+    {
+      "file": "development/test_font_metrics.lua",
+      "sha256": "6521e3ff1ef08e7fab68cf89580408e753b192e3dfc68f013a8091441118cf20",
+      "exitCode": 0,
+      "seconds": 0.066,
+      "output": "PASS: 8137 native font-metric checks; bounded128-caption reuse, font/API invalidation, moving values, fallback"
+    },
+    {
+      "file": "development/test_gps_space.lua",
+      "sha256": "ac62fafb8764d457283ef04e2cbae3ede06efab2e71b7c37cf57739b255df53b",
+      "exitCode": 0,
+      "seconds": 0.089,
+      "output": "PASS: 56 actual GPS space/direction checks; viewport, all sixteen headings, zero/wrap, yaw/course/missing, cached masks, direct selectors, loss and home guards"
+    },
+    {
+      "file": "development/test_gps_track_render.lua",
+      "sha256": "796d831761d54b04d129db1f16bc2afb15359dd1ffd747f2b90df64388bc9819",
+      "exitCode": 0,
+      "seconds": 0.523,
+      "output": "PASS: 962 actual GPS Track checks; mature180, rolling history, zooms, constant warm geometry, manual home, GPS loss and moving no-home origin"
+    },
+    {
+      "file": "development/test_home_icon.lua",
+      "sha256": "7a5c6c3cf9afd81c3023010494bacb9bdb0438522b515744dd91eff8ba0427f9",
+      "exitCode": 0,
+      "seconds": 0.014,
+      "output": "PASS: 235 home icon cache, tint, GC, fallback and compatibility checks"
+    },
+    {
+      "file": "development/test_input_discovery.lua",
+      "sha256": "05c7907a83b939db9a454704206bba4e8565891b712080dd6cabf3a0175d40c9",
+      "exitCode": 0,
+      "seconds": 0.041,
+      "output": "input discovery: 11187 checks PASS"
+    },
+    {
+      "file": "development/test_input_indicators.lua",
+      "sha256": "2b0ddb825be23be7cd1a70bf0338c0db89526acc0b5b5d83289909842ea82598",
+      "exitCode": 0,
+      "seconds": 0.049,
+      "output": "input-indicators: 1494 checks PASS"
+    },
+    {
+      "file": "development/test_input_integration.lua",
+      "sha256": "2784694fa0c715d007c0bed4840fd4ccd5bb15e03418fad5a3ee71ce5f389ee9",
+      "exitCode": 0,
+      "seconds": 0.571,
+      "output": "input integration: 385 checks PASS"
+    },
+    {
+      "file": "development/test_input_picker.lua",
+      "sha256": "8d52f9318adcacac3f0813cfaebdc848276151baa93d4b6c050aeb82d9a86a27",
+      "exitCode": 0,
+      "seconds": 0.056,
+      "output": "input-picker: 11043 checks PASS"
+    },
+    {
+      "file": "development/test_link.lua",
+      "sha256": "cb957ab3502381983c311a141376c947844337eb85b26c5dbb1d2c7226044a08",
+      "exitCode": 0,
+      "seconds": 0.182,
+      "output": "PASS: 4523 actual dispatcher, native queue, cache RF reduction/native IO failures/fresh identity, guarded selected writes, remembered health and actual Video UI integration checks (synthetic only)"
+    },
+    {
+      "file": "development/test_material_icons.lua",
+      "sha256": "99472dc918d16c24487df8ec2f27632d71f340fd8d87892b79a7307e23d1bb92",
+      "exitCode": 0,
+      "seconds": 0.023,
+      "output": "PASS: 2172 Material icon native-size, cache, no forced GC, tint, lifetime and fallback checks"
+    },
+    {
+      "file": "development/test_model_image.lua",
+      "sha256": "eb8ec7151bc43308ec44f5395f2b5f181f1aa4f56b6d2a299541dc879515d14b",
+      "exitCode": 0,
+      "seconds": 0.008,
+      "output": "PASS: 117 real-model image path/cache/percent-fit/failure checks"
+    },
+    {
+      "file": "development/test_model_store.lua",
+      "sha256": "964772306165374e1673e684e27ee55d1540d2b92d555bd6810e3115755374f9",
+      "exitCode": 0,
+      "seconds": 0.153,
+      "output": "model-store: 10620 checks passed"
+    },
+    {
+      "file": "development/test_msp_adapters.lua",
+      "sha256": "0921f6fffb55a464e391b566134f0330b2937f3897af95bfdabe3b53848b8558",
+      "exitCode": 0,
+      "seconds": 0.184,
+      "output": "PASS: 17212 checks: real BF/INAV client over CRSF and six-byte S.Port, signed words, fairness/budgets, guards, identity/health and write/save/readback (synthetic only)"
+    },
+    {
+      "file": "development/test_native_extrema.lua",
+      "sha256": "425df8c691272348853406a0957134d6c59c3c3aa76da1b8875e74a807f6af8e",
+      "exitCode": 0,
+      "seconds": 0.03,
+      "output": "native-extrema: 2056 checks passed"
+    },
+    {
+      "file": "development/test_nav_plot.lua",
+      "sha256": "1c8858551e9ff6729b9aee95167419ee2c7fd053593d11000919841adf439063",
+      "exitCode": 0,
+      "seconds": 0.066,
+      "output": "PASS: 22497 exact geodesic plot pixels, bounded work/cache, full180history, rolling eviction, owner/zoom/current-origin coherence and no fabricated current GPS"
+    },
+    {
+      "file": "development/test_navigation_utils.lua",
+      "sha256": "3fd31fc8b34ee010adc74be978a084083316d7465392257439aae5771abb0ae6",
+      "exitCode": 0,
+      "seconds": 0.014,
+      "output": "PASS: 1765 navigation checks: 302 official OLC vectors, known quad coordinate, poles/dateline, validation, signed relative direction and bounded ETA (native float32)"
+    },
+    {
+      "file": "development/test_numeric_compat.lua",
+      "sha256": "78bb550fd02acb7ac9cf072cf829f6f5e4dac77d809391f035c98b7e6c89924a",
+      "exitCode": 0,
+      "seconds": 0.015,
+      "output": "Numeric compatibility: 24 actual-module checks PASS (host; native checker runs same cases)"
+    },
+    {
+      "file": "development/test_pitch_direction.lua",
+      "sha256": "5f68ea41db77f492c48d350a18e4cfad6bace95144620965dc6cd1a8802ff438",
+      "exitCode": 0,
+      "seconds": 0.019,
+      "output": "PASS: 54 pitch direction, unit, mapping and stale-data checks"
+    },
+    {
+      "file": "development/test_power.lua",
+      "sha256": "1cda79fe3e94842fad31d323d8e049210600a339f0fedaa62de245857426057d",
+      "exitCode": 0,
+      "seconds": 0.484,
+      "output": "PASS: 217 actual Power/source-health, watts, five-profile persistence, capacity prerequisite, bounds and shared-session widget assertions"
+    },
+    {
+      "file": "development/test_power_policy.lua",
+      "sha256": "a9e4836d0bc08c74deaef8dd0977090375a4fa60fdc42c587371e2e6d5644659",
+      "exitCode": 0,
+      "seconds": 0.019,
+      "output": "power-policy: 131 checks passed"
+    },
+    {
+      "file": "development/test_protocol_ui.lua",
+      "sha256": "a556ba8f1ace81fbfbfde336b64559ecf9a3692689ef567dcc8742a8469f25df",
+      "exitCode": 0,
+      "seconds": 0.22,
+      "output": "PASS: 46 assertions in 6 actual protocol UI scenarios: FrSky defaults, native guards, source qualification, declared-unit conversions and On-arm GPS home (synthetic only)"
+    },
+    {
+      "file": "development/test_protocols.lua",
+      "sha256": "8ee3c61216d49c001d78e1ad32a403ec574d499ce43b7efe9233d9c11750a265",
+      "exitCode": 0,
+      "seconds": 0.012,
+      "output": "protocols: 386 checks passed"
+    },
+    {
+      "file": "development/test_quick_actions.lua",
+      "sha256": "d9922e9d9bbd0995647f992a99fa465b8385b85dcc9ecd82c55e3d793f49b888",
+      "exitCode": 0,
+      "seconds": 0.226,
+      "output": "PASS: 101 actual global Quick Actions and native radio warning checks"
+    },
+    {
+      "file": "development/test_quick_pack.lua",
+      "sha256": "105efa499255f67a00cbcbd0041ce524c1e404d8bc79cc3f3e6aaa9ca0068b47",
+      "exitCode": 0,
+      "seconds": 0.012,
+      "output": "quick-pack: 453 checks passed"
+    },
+    {
+      "file": "development/test_radio_status.lua",
+      "sha256": "84f9ec25196228aa6d925f52843a128cea9e4395bd23146e838a41db8a0c1474",
+      "exitCode": 0,
+      "seconds": 0.01,
+      "output": "radio-status: 1171 checks passed"
+    },
+    {
+      "file": "development/test_reference_ui.lua",
+      "sha256": "25013c478aa582828b0c5de6526495e71f7d59cb418fc019b5a695218d930ce9",
+      "exitCode": 0,
+      "seconds": 0.034,
+      "output": "Reference UI: 6121 checks PASS (host synthetic; no radio writes or hardware claim)"
+    },
+    {
+      "file": "development/test_references.lua",
+      "sha256": "8fd8617486ebb4c4b422011520fd463793444ff7eca65d8ef1a4e2f05b00e9f0",
+      "exitCode": 0,
+      "seconds": 0.02,
+      "output": "Reference catalogue and stick guides: 2680 checks PASS"
+    },
+    {
+      "file": "development/test_rendering.lua",
+      "sha256": "631eb9a2c21902493e51a3d368925deec7c72e255bac1011d70f6805409da62a",
+      "exitCode": 0,
+      "seconds": 0.008,
+      "output": "PASS: stable qualified IDs; bounded negative-only retries; once-per-bind numeric units; explicit refresh; no binding artwork I/O"
+    },
+    {
+      "file": "development/test_retained_extrema.lua",
+      "sha256": "8f9490dabcf636c0ee0d9eae2c0b4bb575f067db0a143ea7d7bc56865da21418",
+      "exitCode": 0,
+      "seconds": 0.156,
+      "output": "PASS: 3101 actual retained extrema scheduling, atomic views, currentness, pitch/roll provenance, cancellation, age/revision/source changes and no background writes"
+    },
+    {
+      "file": "development/test_roll_display.lua",
+      "sha256": "8e9312819e6b8477cbb3a30cdf181e80ed9f2d95c70cf5474fcc3b908bfb7071",
+      "exitCode": 0,
+      "seconds": 0.491,
+      "output": "PASS: 635 actual-app roll display, sky-pointer/ladder, raw telemetry and per-model persistence checks (synthetic; physical sign acceptance remains open)"
+    },
+    {
+      "file": "development/test_runtime_services.lua",
+      "sha256": "913bbaac97045f8b8b166211d32dee57839f8b9f69e3e581e52c5f2b98643419",
+      "exitCode": 0,
+      "seconds": 0.25,
+      "output": "runtime-services: 34 actual application integration checks passed"
+    },
+    {
+      "file": "development/test_session.lua",
+      "sha256": "f66e80f8b1833b2a39439e13d5fb1d4e614c1e3a80db2d95a23b71d34cf7e70e",
+      "exitCode": 0,
+      "seconds": 0.041,
+      "output": "session: 104 checks passed"
+    },
+    {
+      "file": "development/test_staged_startup.lua",
+      "sha256": "2b502d65372ea441300eb755f5627d503e6e9044e872f7f489a01e51c279b380",
+      "exitCode": 0,
+      "seconds": 0.131,
+      "output": "PASS: 253 actual staged startup, ownership, fullscreen/hidden and warm inventory checks"
+    },
+    {
+      "file": "development/test_standalone_cadence.lua",
+      "sha256": "a6e0af10ac493784608090015dec2c9e225eeefd8116ab56dc6e815470950309",
+      "exitCode": 0,
+      "seconds": 0.105,
+      "output": "PASS: 353 standalone cadence checks; full real app;100 redraws/20 slow services/100 attitude reads; synthetic time only"
+    },
+    {
+      "file": "development/test_telemetry.lua",
+      "sha256": "e680081380a468ce3065c7bbf15b3d317814c5a316bf9a450e0459a75ee91845",
+      "exitCode": 0,
+      "seconds": 0.045,
+      "output": "PASS: 543 late discovery, retry bounds, units, zero/stale/manual/None, preserved refresh choices and battery-profile checks"
+    },
+    {
+      "file": "development/test_timer_owner.lua",
+      "sha256": "0fd1cd82d1b957f009a902e589da631cd733f462f56eea88b7cd20e65a353b9d",
+      "exitCode": 0,
+      "seconds": 0.081,
+      "output": "timer-owner: 102 checks passed"
+    },
+    {
+      "file": "development/test_ui_features.lua",
+      "sha256": "c23f31e2075399e42fb9a9793dab05ea4b28bbaf07beb13cec8bffafaca03958",
+      "exitCode": 0,
+      "seconds": 0.073,
+      "output": "PASS: 15 actual Quick Pack, raw native source extrema and System UI checks"
+    },
+    {
+      "file": "development/test_ui_navigation.lua",
+      "sha256": "72113c70032a9f12bcefd7e27bef642852b4f4aa2324fc150cab1f0d51119a88",
+      "exitCode": 0,
+      "seconds": 1.191,
+      "output": "PASS: 17 navigation contract scenarios using exact TX16S2.12.4 event aliases\nPASS: 33 dirty-exit, settings-return, draft-preservation, repeated-control, arming, warning-action and pitch-rendering scenarios"
+    },
+    {
+      "file": "development/test_unified_gps.lua",
+      "sha256": "7a5f186dffcd50eb353df3a2e091726d4944d2c2450ed61569a38a9c865f4c05",
+      "exitCode": 0,
+      "seconds": 0.1,
+      "output": "PASS: 49 unified real-app GPS checks; direct selectors, all views, SV paging, physical input, warnings and real actions"
+    },
+    {
+      "file": "development/test_visual_markers.lua",
+      "sha256": "79c1bdaccf9be66e32d5a7d341157b83f6858234ee9f68b255e8a41b43700a92",
+      "exitCode": 0,
+      "seconds": 0.119,
+      "output": "PASS: 14 actual native-range gauge, expanded header, semantic image marker, overlap, loss and warm-cache checks"
+    },
+    {
+      "file": "development/test_vtx_cache.lua",
+      "sha256": "58648c0a412684e5b7c9a4718498c9a82f0d1a7111246f2a99945bf62e018c87",
+      "exitCode": 0,
+      "seconds": 0.026,
+      "output": "vtx-cache: 647 checks passed"
+    },
+    {
+      "file": "development/test_vtx_native.lua",
+      "sha256": "c3a5ada24d4df7e8d52fa29113b5759b11f8df24b51a164c66d6ff20db8a4ef1",
+      "exitCode": 0,
+      "seconds": 0.017,
+      "output": "vtx-native: 517 checks passed"
+    },
+    {
+      "file": "development/test_widget_budget.lua",
+      "sha256": "3243afb01917164b77b0e360078b2ff81036fd0062833c6dc5912521397a7cca",
+      "exitCode": 0,
+      "seconds": 0.451,
+      "output": "PASS: 11329 retained always-draw, atomic snapshots, cadence, attitude, loss, revisions, actions, arming and deferred log checks (synthetic; no physical FPS/CPU claim)"
+    },
+    {
+      "file": "development/test_widget_lifecycle.lua",
+      "sha256": "336230e793f730343ff1367e5ae958c39a3a77b8caf6beb93c8cd56972e7107a",
+      "exitCode": 0,
+      "seconds": 0.035,
+      "output": "PASS: 124 widget lifecycle, shared-reader identity/currentness, zero/missing, compatibility and compact bounds checks"
+    }
+  ],
+  "result": "PASS",
+  "completed": "2026-10-18T10:37:50.636148+00:00"
+}

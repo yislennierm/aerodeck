@@ -1,0 +1,532 @@
+{
+  "result": "PASS",
+  "checks": 15,
+  "method": "Actual native PNG5x5 sky/ground samples on both sides of each of three HUDs; normal/reversed contrast. This validates display policy, not physical bank sign.",
+  "observations": [
+    {
+      "case": "roll-plus-pitch-up",
+      "screenshot": "pfd.png",
+      "displayRoll": -30,
+      "probePixels": [
+        [
+          160,
+          154
+        ],
+        [
+          320,
+          154
+        ]
+      ],
+      "expectedColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "actualColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "counts": [
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        },
+        {
+          "SKY": 19,
+          "GROUND": 0,
+          "OTHER": 6
+        }
+      ]
+    },
+    {
+      "case": "roll-plus-pitch-up",
+      "screenshot": "flight-video-hud.png",
+      "displayRoll": -30,
+      "probePixels": [
+        [
+          294,
+          147
+        ],
+        [
+          382,
+          147
+        ]
+      ],
+      "expectedColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "actualColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "counts": [
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        },
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-plus-pitch-up",
+      "screenshot": "video-hud.png",
+      "displayRoll": -30,
+      "probePixels": [
+        [
+          350,
+          127
+        ],
+        [
+          453,
+          127
+        ]
+      ],
+      "expectedColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "actualColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "counts": [
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        },
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-minus-pitch-up",
+      "screenshot": "pfd.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          160,
+          154
+        ],
+        [
+          320,
+          154
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-minus-pitch-up",
+      "screenshot": "flight-video-hud.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          294,
+          147
+        ],
+        [
+          382,
+          147
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-minus-pitch-up",
+      "screenshot": "video-hud.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          350,
+          127
+        ],
+        [
+          453,
+          127
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-plus-pitch-down",
+      "screenshot": "pfd.png",
+      "displayRoll": -30,
+      "probePixels": [
+        [
+          160,
+          154
+        ],
+        [
+          320,
+          154
+        ]
+      ],
+      "expectedColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "actualColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "counts": [
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        },
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-plus-pitch-down",
+      "screenshot": "flight-video-hud.png",
+      "displayRoll": -30,
+      "probePixels": [
+        [
+          294,
+          147
+        ],
+        [
+          382,
+          147
+        ]
+      ],
+      "expectedColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "actualColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "counts": [
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        },
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-plus-pitch-down",
+      "screenshot": "video-hud.png",
+      "displayRoll": -30,
+      "probePixels": [
+        [
+          350,
+          127
+        ],
+        [
+          453,
+          127
+        ]
+      ],
+      "expectedColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "actualColours": [
+        "GROUND",
+        "SKY"
+      ],
+      "counts": [
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        },
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-minus-pitch-down",
+      "screenshot": "pfd.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          160,
+          154
+        ],
+        [
+          320,
+          154
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 20,
+          "OTHER": 5
+        }
+      ]
+    },
+    {
+      "case": "roll-minus-pitch-down",
+      "screenshot": "flight-video-hud.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          294,
+          147
+        ],
+        [
+          382,
+          147
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "roll-minus-pitch-down",
+      "screenshot": "video-hud.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          350,
+          127
+        ],
+        [
+          453,
+          127
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "default-plus",
+      "screenshot": "pfd.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          160,
+          154
+        ],
+        [
+          320,
+          154
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "default-plus",
+      "screenshot": "flight-video-hud.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          294,
+          147
+        ],
+        [
+          382,
+          147
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    },
+    {
+      "case": "default-plus",
+      "screenshot": "video-hud.png",
+      "displayRoll": 30,
+      "probePixels": [
+        [
+          350,
+          127
+        ],
+        [
+          453,
+          127
+        ]
+      ],
+      "expectedColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "actualColours": [
+        "SKY",
+        "GROUND"
+      ],
+      "counts": [
+        {
+          "SKY": 25,
+          "GROUND": 0,
+          "OTHER": 0
+        },
+        {
+          "SKY": 0,
+          "GROUND": 25,
+          "OTHER": 0
+        }
+      ]
+    }
+  ]
+}

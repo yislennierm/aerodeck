@@ -1,0 +1,65 @@
+{
+  "scope": "Official pinned EdgeTX v2.12.4 colour TX16S architecture; read-only review, no hardware execution",
+  "sources": [
+    {
+      "file": "widgets.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/widgets.cpp#L210-L241",
+      "claim": "One lsWidgets VM initialized for all widget factories."
+    },
+    {
+      "file": "lua_widget_factory.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/lua_widget_factory.cpp#L65-L101",
+      "claim": "Every widget instance uses lsWidgets, separate zone/options registry refs."
+    },
+    {
+      "file": "lua_widget.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/lua_widget.cpp#L239-L251",
+      "claim": "create callback executes in lsWidgets; each instance gets separate context reference."
+    },
+    {
+      "file": "standalone_lua.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/gui/colorlcd/standalone_lua.cpp#L49-L75",
+      "claim": "Standalone colour tools allocate independent lsStandalone VM."
+    },
+    {
+      "file": "standalone_lua.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/gui/colorlcd/standalone_lua.cpp#L124-L158",
+      "claim": "Standalone disables widget refresh and pauses mixer/function scripts; close restores refresh."
+    },
+    {
+      "file": "api_general.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/api_general.cpp#L894-L908",
+      "claim": "Colour telemetry pop chooses current LuaScriptManager queue; managerless path falls back to global FIFO."
+    },
+    {
+      "file": "api_general.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/api_general.cpp#L929-L946",
+      "claim": "S.Port pop consumes selected queue."
+    },
+    {
+      "file": "api_general.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/api_general.cpp#L1153-L1177",
+      "claim": "CRSF pop consumes selected queue."
+    },
+    {
+      "file": "lua_widget.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/lua/lua_widget.cpp#L608-L623",
+      "claim": "Each script manager allocates/registers, then unregisters/deletes, its receive queue."
+    }
+  ],
+  "conclusions": {
+    "widgetGlobalRegistry": "Can coordinate loaded widgets within the shared widget VM, unless caller deliberately supplies a different environment. AERODECK uses ordinary loadScript without env.",
+    "crossToolWidgetRegistry": "Cannot use Lua _G alone: standalone tool and widgets have separate Lua VMs.",
+    "nativeTimerLease": "Native model timer fields remain common outside either Lua VM; native lease can arbitrate explicit timer ownership.",
+    "receiveQueue": "Do not describe ordinary colour widget/tool managers as competing consumers of one global RX FIFO. They own registered queues; managerless APIs are a distinct fallback.",
+    "remainingTransportCaution": "Independent outgoing MSP requests can still contend for the physical link or confuse uncorrelated same-command exchanges if multiple clients are intentionally active. Foreground/background ownership remains useful; no transport change is recommended from VM facts alone."
+  },
+  "hardwareVerified": false,
+  "canonicalEvidenceRole": "New runtime evidence; frozen350-row baseline assessment is unchanged.",
+  "schedulingCaveat": "Retained compact/hidden sampling and alarms depend on EdgeTX scheduling those widget callbacks. Opening a colour standalone tool disables widget refresh; close restores it. This is distinct from destroying the retained widget Lua state.",
+  "workspaceSourceHashes": {
+    "radio-src-lua-interface.cpp": "995b234d56b2cff4a4d63b55a506dbf8c2540a933cfba7de20338fd85c9db11f",
+    "radio-src-lua-api_general.cpp": "2dbb1269e1cf1f56ec85b849fff26172a1b3a3eaf1e8705ab4cc63b7e1ee4a7c",
+    "radio-src-lua-lua_widget.cpp": "8d091eab978a6200c6d7df144cdafa679e48660a99575e2cebdb6e7746eb27e4"
+  }
+}

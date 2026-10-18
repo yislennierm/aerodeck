@@ -1,0 +1,434 @@
+AERODECK IMPLEMENTATION STATUS — REPLACEMENT-RC1-20261017
+
+This document is separate from the frozen 350-row Toolbox2 assessment. It records
+current implementation and remaining acceptance; it does not replace that audit.
+Only activation/licence enforcement is excluded. Actual key-gated functions,
+FrSky, INAV and all supported display classes remain required. No hardware claim
+or installed-radio claim is made here.
+
+Status meanings: portable-implemented means a real source consumer and named
+portable behavioral coverage exist. Partial retains stated missing behavior.
+Unverified requires evidence. Unsupported-reference means the supplied reference
+did not prove the claimed producer/reachability; it is not a licensing exclusion.
+Statuses partition the 350 rows; counts are not a completion percentage.
+
+Machine ledger: development/implementation-status.json (all 350 baseline IDs,
+original acceptance/evidence pointers, current source hashes/functions and tests).
+Frozen baseline: development/assessments/2026-10-17-deep-parity/assessment.json.
+
+CURRENT LOCAL CAPABILITIES
+- BF and verified INAV MSP2 over CRSF/S.Port, shared bounded owner, native TBS
+  reports/control, live UID/board/sensor health, VTX tables/cache and explicit
+  selected-entry preflight/write/save/readback. Unknown/changed state fails closed.
+- Qualified current telemetry, protocol aliases/units/defaults, native extrema,
+  real battery policy/favourites/alerts, retained session/track and native timer
+  ownership, explicit radio-statistics reset and bounded diagnostic Save Log.
+- Actual settings persistence is filename-owner-bound, verified and recoverable.
+  Actual input-state settings/view, Quick Pack proposal/Use, native memory and
+  About/help views are integrated; the PFD has a graduated bank reference.
+
+OPEN ACCEPTANCE / DO NOT CLAIM COMPLETE
+- All actual-app Flight banks, COG/YAW missing-source behavior, Minimal/Graduated
+  marks, full date, optional model image, independent voltage/charge gauges,
+  input states and five Quick Actions now have named end-to-end portable tests.
+- Production-widget startup uses separate callbacks, 13 cold phases and bounded
+  native input discovery/refresh. Exact-source clean native startup / all 13-page
+  checks pass under the actual 20,000-instruction hook, with 27 reviewed frames.
+  The ledger binds that cold gate separately from current 48-suite reports.
+  Populated native evidence includes an approximately 203-second widget run;
+  a 170.365-second / 4,500-sample monitor saw no blank frames, ordinary updating
+  screens or instruction-limit errors under the unchanged hook. Simulator diagnostics showed
+  17.2 draw FPS / distinct attitude-value Hz and 4.1–4.2 slow publications/s.
+  This is synthetic EdgeTX 3.0 evidence, not target-radio/Toolbox comparison.
+  The accepted complete native bundle binds each case and current source.
+  DATA-103 describes the mechanism; physical performance remains unverified.
+- Every scheduled native widget refresh paints its transient LCD buffer. Slow
+  work spans four bounded callbacks: two field batches, power, session/publish.
+  Acquisition starts target a 200 ms period. At 20 callbacks/s, field acquisition
+  spans about 50 ms and publication follows about 150 ms after the first batch.
+  Repeated revision/age cancellation never mutates still-displayed values.
+  Normal callbacks update current attitude. Render Hz is a tool-only target.
+  Slow phases can wait for instruction headroom; after published 400 ms / pending 200 ms
+  thresholds, only transport is deferred to prevent sampling starvation.
+  Data age/cadence can exceed the nominal values; no physical budget claim.
+  Exceptional heavy work paints opaque progress, never an intentional blank.
+- All 48 portable suites pass on both LuaJIT and stock Lua 5.3 int32/float32.
+  Reports match all 48 test files and 64 runtime code/image hashes. Compiled
+  readers match 1,912,664 oracle comparisons per VM; the retained scheduler
+  passes 11,191 actual-app checks per VM, including actual-wire fairness.
+  Synthetic checks do not establish physical speed or final native acceptance.
+- Arbitrary damaged-module recovery is unverified. Exact-runtime native visual
+  and warm gates pass as simulator evidence; target hardware still needs cold
+  load, 10-minute attitude/memory, real telemetry, timer and RF-write acceptance.
+- Physical FrSky/CRSF/INAV/TBS/input/display combinations remain required; no
+  unavailable radio/panel success is inferred from mocks or another firmware.
+- New-model defaults, flat artwork/marks and shared warning/footer layout are
+  explicit configurable UI choices, not missing functional capabilities.
+- Eight reference producer/reachability claims remain unsupported-reference:
+  acceleration, frequency-range filtering, individual-cell arrays, flight CSV,
+  use-history and persistent GPS recovery. The JSON lists all eight exact IDs.
+  These are not licensing exclusions or an assertion of replacement completion.
+- Native timer ownership uses an ADxxxxxx name lease across independent loads.
+  Controlled release restores captured configuration/name, not elapsed time.
+  Abrupt abort can lose the RAM snapshot: inspect/reconfigure the native timer
+  and rename it before reclaiming. Removing a marker cannot restore old settings.
+- Retained widget alerts/session work depend on EdgeTX scheduling callbacks;
+  opening a standalone tool pauses widget refresh until it closes.
+
+ROW STATUS INDEX (the JSON carries evidence and individual open acceptance)
+portable-implemented: 334
+partial: 0
+unverified: 8
+unsupported-reference: 8
+excluded: 0
+
+CFG-001 | portable-implemented | MDL_RCP — RC protocol
+CFG-002 | portable-implemented | MDL_FC — Flight controller
+CFG-003 | portable-implemented | MDL_BTV — Battery sensor
+CFG-004 | portable-implemented | MDL_BTA — Current sensor
+CFG-005 | portable-implemented | MDL_GYRO — Gyroscope
+CFG-006 | unsupported-reference | MDL_ACC — Accelerometer
+CFG-007 | portable-implemented | MDL_BARO — Barometer
+CFG-008 | portable-implemented | MDL_PITOT — Pitot tube
+CFG-009 | portable-implemented | MDL_GPS — GPS
+CFG-010 | portable-implemented | MDL_VTX — VTX
+CFG-011 | portable-implemented | RCP_pv — Protocol version
+CFG-012 | portable-implemented | RL_RSI_L — RSSI Low
+CFG-013 | portable-implemented | RL_RSI_C — RSSI Critical
+CFG-014 | portable-implemented | RL_RQL_L — RQLY Low
+CFG-015 | portable-implemented | RL_RQL_C — RQLY Critical
+CFG-016 | portable-implemented | RL_SNR_L — RSNR Low
+CFG-017 | portable-implemented | RL_SNR_C — RSNR Critical
+CFG-018 | portable-implemented | BT_CELL_NOPWR — Cell "no pwr" voltage
+CFG-019 | portable-implemented | BT_CELL_MIN — Cell min voltage
+CFG-020 | portable-implemented | BT_CELL_CRIT — Cell critical voltage
+CFG-021 | portable-implemented | BT_CELL_LOW — Cell low voltage
+CFG-022 | portable-implemented | BT_CELL_MAX — Cell max voltage
+CFG-023 | portable-implemented | BT_CELL_WARN_TYPE — Cell alerts type
+CFG-024 | portable-implemented | BT_CELL_WARN_SND —  audible alerts type
+CFG-025 | portable-implemented | _f1 — Pack1 enable/chemistry
+CFG-026 | portable-implemented | _f2 — Pack1 cell number
+CFG-027 | portable-implemented | _f3 — Pack1 capacity
+CFG-028 | portable-implemented | _f4 — Pack2 enable/chemistry
+CFG-029 | portable-implemented | _f5 — Pack2 cell number
+CFG-030 | portable-implemented | _f6 — Pack2 capacity
+CFG-031 | portable-implemented | _f7 — Pack3 enable/chemistry
+CFG-032 | portable-implemented | _f8 — Pack3 cell number
+CFG-033 | portable-implemented | _f9 — Pack3 capacity
+CFG-034 | portable-implemented | _f10 — Pack4 enable/chemistry
+CFG-035 | portable-implemented | _f11 — Pack4 cell number
+CFG-036 | portable-implemented | _f12 — Pack4 capacity
+CFG-037 | portable-implemented | _f13 — Pack5 enable/chemistry
+CFG-038 | portable-implemented | _f14 — Pack5 cell number
+CFG-039 | portable-implemented | _f15 — Pack5 capacity
+CFG-040 | portable-implemented | FC_MSP_ON —  MSP
+CFG-041 | portable-implemented | FC_MSP_VER —   version
+CFG-042 | portable-implemented | FC_MSP_ERR_INTVAL —   FC status read every
+CFG-043 | portable-implemented | FC_MSP_VTX_INTVAL —   VTX read every
+CFG-044 | portable-implemented | _AR_srct — Arm indicator
+CFG-045 | portable-implemented | _AR_swn —  switch name
+CFG-046 | portable-implemented | _AR_swp —  switch positon
+CFG-047 | portable-implemented | _AR_lsn —  logical switch number
+CFG-048 | portable-implemented | _TC_srct — Throttle Cut indicator
+CFG-049 | portable-implemented | _TC_swn —  switch name
+CFG-050 | portable-implemented | _TC_swp —  switch positon
+CFG-051 | portable-implemented | _TC_lsn —  logical switch number
+CFG-052 | portable-implemented | _TL_srct — Throttle Limiter
+CFG-053 | portable-implemented | _TMR_host — Arm Timer host
+CFG-054 | portable-implemented | _TMR_no —  Timer used
+CFG-055 | portable-implemented | _FMAC_srct — Acro mode
+CFG-056 | portable-implemented | _FMAC_swn —  switch name
+CFG-057 | portable-implemented | _FMAC_swp —  switch positon
+CFG-058 | portable-implemented | _FMAC_lsn —  logical switch number
+CFG-059 | portable-implemented | _FMHR_srct — Horizon mode
+CFG-060 | portable-implemented | _FMHR_swn —  switch name
+CFG-061 | portable-implemented | _FMHR_swp —  switch positon
+CFG-062 | portable-implemented | _FMHR_lsn —  logical switch number
+CFG-063 | portable-implemented | _FMAN_srct — Angle mode
+CFG-064 | portable-implemented | _FMAN_swn —  switch name
+CFG-065 | portable-implemented | _FMAN_swp —  switch positon
+CFG-066 | portable-implemented | _FMAN_lsn —  logical switch number
+CFG-067 | portable-implemented | _AM_srct — Air mode
+CFG-068 | portable-implemented | _AM_swn —  switch name
+CFG-069 | portable-implemented | _AM_swp —  switch positon
+CFG-070 | portable-implemented | _AM_lsn —  logical switch number
+CFG-071 | portable-implemented | _TU_srct — Tutrtle mode
+CFG-072 | portable-implemented | _TU_swn —  switch name
+CFG-073 | portable-implemented | _TU_swp —  switch positon
+CFG-074 | portable-implemented | _TU_lsn —  logical switch number
+CFG-075 | portable-implemented | VTX_CONN_TYPE —  VTX connection
+CFG-076 | portable-implemented | VTX_MODEL —   VTX model
+CFG-077 | portable-implemented | VTX_PROXY_ON —   proxy
+CFG-078 | unsupported-reference | VTX_FRQ_RANGE — Frequency range
+CFG-079 | portable-implemented | _f1 — Favourite channel1
+CFG-080 | portable-implemented | _f2 — Favourite channel2
+CFG-081 | portable-implemented | _f3 — Favourite channel3
+CFG-082 | portable-implemented | _f4 — Favourite channel4
+CFG-083 | portable-implemented | _f5 — Favourite channel5
+CFG-084 | portable-implemented | _f6 — Favourite channel6
+CFG-085 | portable-implemented | _f7 — Favourite channel7
+CFG-086 | portable-implemented | _f8 — Favourite channel8
+CFG-087 | portable-implemented | GPS_SATS2FIX — Sats number to fix home
+CFG-088 | portable-implemented | _theme — Theme
+CFG-089 | portable-implemented | _ov — Draw GFX overlay
+CFG-090 | portable-implemented | APP_errLog — Log errors to file
+CFG-X01 | portable-implemented | Conditional list visibility
+CFG-X02 | portable-implemented | Dependent field visibility
+CFG-X03 | portable-implemented | Save activates backend lifecycle
+CFG-X04 | portable-implemented | Per-model data persistence
+CFG-X05 | portable-implemented | Explicit draft/save/revert/exit recovery
+CFG-X06 | portable-implemented | Live sensor picker refresh
+CFG-X07 | portable-implemented | Single owner for shared settings
+CFG-X08 | portable-implemented | Validation beyond type/range
+CFG-X09 | portable-implemented | All twelve sections correspond to working capabilities
+CFG-X10 | portable-implemented | Source changes reset only owned history
+DATA-001 | portable-implemented | Basic qualified CRSF/ELRS sensor access
+DATA-002 | portable-implemented | FrSky family auto selection
+DATA-003 | portable-implemented | Protocol version selection
+DATA-004 | portable-implemented | INAV native telemetry decoding
+DATA-005 | portable-implemented | Protocol Off semantics
+DATA-006 | portable-implemented | Qualified telemetry identity
+DATA-007 | portable-implemented | Current/stale distinction
+DATA-008 | portable-implemented | Native minimum acquisition
+DATA-009 | portable-implemented | Native maximum acquisition
+DATA-010 | portable-implemented | LIVE/MIN/MAX browsing mode
+DATA-011 | portable-implemented | Complete registered sensor table
+DATA-012 | portable-implemented | Defined numeric clipping versus raw values
+DATA-013 | portable-implemented | Missing-name recovery
+DATA-014 | portable-implemented | Explicit source/unit/choice refresh
+DATA-015 | portable-implemented | Positive binding reconfiguration
+DATA-016 | portable-implemented | Source inspector qualified identity
+DATA-017 | portable-implemented | Manual source mapping / None
+DATA-018 | portable-implemented | Source-health diagnosis
+DATA-019 | portable-implemented | Pack voltage (RxBt)
+DATA-020 | portable-implemented | Battery current (Curr)
+DATA-021 | portable-implemented | Consumed charge (Capa)
+DATA-022 | portable-implemented | Reported remaining percentage (Bat%)
+DATA-023 | portable-implemented | Uplink RSSI antenna1 (1RSS)
+DATA-024 | portable-implemented | Uplink RSSI antenna2 (2RSS)
+DATA-025 | portable-implemented | Uplink link quality (RQly)
+DATA-026 | portable-implemented | Uplink SNR (RSNR)
+DATA-027 | portable-implemented | Transmitter power (TPWR)
+DATA-028 | portable-implemented | Downlink RSSI (TRSS)
+DATA-029 | portable-implemented | Downlink link quality (TQly)
+DATA-030 | portable-implemented | Downlink SNR (TSNR)
+DATA-031 | portable-implemented | RF mode numeric ID (RFMD)
+DATA-032 | portable-implemented | Satellite count (Sats)
+DATA-033 | portable-implemented | Ground speed (GSpd)
+DATA-034 | portable-implemented | GPS altitude (GAlt)
+DATA-035 | portable-implemented | Aircraft course (Hdg)
+DATA-036 | portable-implemented | Pitch (Ptch)
+DATA-037 | portable-implemented | Roll (Roll)
+DATA-038 | portable-implemented | Yaw (Yaw)
+DATA-039 | portable-implemented | Vertical speed (VSpd)
+DATA-040 | portable-implemented | Airspeed (ASpd)
+DATA-041 | portable-implemented | GPS coordinate table
+DATA-042 | portable-implemented | Flight mode text
+DATA-043 | portable-implemented | Independent barometric altitude
+DATA-044 | unsupported-reference | Conditional accelerometer modules / disabled runtime registration
+DATA-045 | portable-implemented | Pack voltage versus receiver voltage
+DATA-046 | portable-implemented | Consumed capacity Fuel
+DATA-047 | portable-implemented | Analog receiver A1/A2/A3
+DATA-048 | portable-implemented | Direct cell voltage A4
+DATA-049 | portable-implemented | R9 transmitter-power source
+DATA-050 | portable-implemented | Betaflight numeric pitch/roll decode
+DATA-051 | portable-implemented | Manual/favourite cell count
+DATA-052 | portable-implemented | Automatic cell inference
+DATA-053 | portable-implemented | Derived average cell voltage
+DATA-054 | unsupported-reference | Individual-cell array feed
+DATA-055 | portable-implemented | Five favourite slots
+DATA-056 | portable-implemented | Favourite enable/chemistry
+DATA-057 | portable-implemented | Favourite capacity/range
+DATA-058 | portable-implemented | Quick connected-pack chooser
+DATA-059 | portable-implemented | Selected-capacity percentage
+DATA-060 | portable-implemented | Remaining mAh display
+DATA-061 | portable-implemented | Reported battery percentage fallback
+DATA-062 | portable-implemented | Voltage-normalized battery gauge
+DATA-063 | portable-implemented | Adaptive consumed mAh/Ah format
+DATA-064 | portable-implemented | Derived watts
+DATA-065 | portable-implemented | Voltage threshold/default parity
+DATA-066 | portable-implemented | Threshold validation/coupling
+DATA-067 | portable-implemented | Visual warning / no-power suppression
+DATA-068 | portable-implemented | Sound/haptic combinations
+DATA-069 | portable-implemented | Critical-only versus critical+low
+DATA-070 | portable-implemented | Temporary mute
+DATA-071 | portable-implemented | Repeat cadence and waveform
+DATA-072 | portable-implemented | New-flight telemetry reset
+DATA-073 | portable-implemented | Radio battery source
+DATA-074 | portable-implemented | Protocol-specific warning defaults
+DATA-075 | portable-implemented | RF mode decoded rate caption
+DATA-076 | portable-implemented | Antenna diversity best-RSSI indicator
+DATA-077 | portable-implemented | Link loss and partial freshness
+DATA-078 | portable-implemented | General switch/source indicators
+DATA-079 | portable-implemented | Native OS timer read
+DATA-080 | portable-implemented | Toolbox-hosted timer start/stop/reset
+DATA-081 | portable-implemented | Local elapsed time continuity
+DATA-082 | portable-implemented | CRSF reported fix/HDOP honesty
+DATA-083 | portable-implemented | FrSky BF fix/satellite status
+DATA-084 | portable-implemented | INAV status/HDOP/home fields
+DATA-085 | portable-implemented | Satellite constellation/status list
+DATA-086 | portable-implemented | Local home capture policy
+DATA-087 | portable-implemented | Page-independent home/track acquisition
+DATA-088 | portable-implemented | Distance/bearing mathematics
+DATA-089 | portable-implemented | FC home versus app-local home
+DATA-090 | portable-implemented | Relative bearing to home
+DATA-091 | portable-implemented | Travel time to home
+DATA-092 | portable-implemented | Plus-code encoding
+DATA-093 | portable-implemented | Position history timestamps/bounds
+DATA-094 | portable-implemented | Source/new-flight reset ownership
+DATA-095 | portable-implemented | Full-screen app widget
+DATA-096 | portable-implemented | Compact widget
+DATA-097 | portable-implemented | Hidden/background operation
+DATA-098 | portable-implemented | Shared session across surfaces
+DATA-099 | portable-implemented | Compact source binding cost
+DATA-100 | portable-implemented | Settings reload synchronization
+DATA-101 | portable-implemented | Transport work and ownership
+DATA-102 | portable-implemented | Attitude poll independent of drawing
+DATA-103 | portable-implemented | Initialization work budget
+DATA-104 | portable-implemented | Explicit GC locations
+DATA-105 | portable-implemented | Bounded RAM history
+DATA-106 | portable-implemented | Trace provenance after source change
+DATA-107 | portable-implemented | Diagnostic error-log file / defective reference toggle
+DATA-108 | unsupported-reference | Flight/telemetry SD logging claim
+DATA-109 | portable-implemented | Configuration backup/recovery writes
+DATA-110 | portable-implemented | Power-unit and nonfinite validation
+DATA-111 | portable-implemented | Late native FM metadata detection
+DATA-112 | unverified | Module load/error containment
+DATA-113 | portable-implemented | Passive data versus control effects
+DATA-114 | portable-implemented | Portable behavioral coverage
+DATA-115 | unverified | Exact-source native visual evidence
+DATA-116 | unverified | Physical response/memory/quad evidence
+DATA-117 | portable-implemented | Raw Bat% versus derived remaining provenance
+DATA-118 | portable-implemented | Runtime-filtered radio-input inventory
+DATA-119 | portable-implemented | Input-movement selection/learning
+DATA-120 | unsupported-reference | Battery-use history claim
+CTL-001 | portable-implemented | Betaflight identity and firmware handshake
+CTL-002 | portable-implemented | INAV identity and version support
+CTL-003 | portable-implemented | CRSF MSPv2 request/reply framing
+CTL-004 | portable-implemented | FrSky S.Port MSPv2 transport
+CTL-005 | portable-implemented | Protocol/version feature routing
+CTL-006 | portable-implemented | Shared request queue and read/write arbitration
+CTL-007 | portable-implemented | Native CRSF VTX reply multiplexing
+CTL-008 | portable-implemented | Timeout/retry and transaction failure lifecycle
+CTL-009 | portable-implemented | Disarmed/live-link guards
+CTL-010 | portable-implemented | FC UID read for device identity
+CTL-011 | portable-implemented | Board target/board/manufacturer information
+CTL-012 | portable-implemented | Betaflight active FC sensor inventory
+CTL-013 | portable-implemented | INAV FC sensor health inventory
+CTL-014 | portable-implemented | Live Betaflight disabling flags and explanations
+CTL-015 | portable-implemented | Live INAV disabling flags and explanations
+CTL-016 | portable-implemented | Offline full arming-reason catalogue
+CTL-017 | portable-implemented | Arming beep-code visualization
+CTL-018 | portable-implemented | Play selected arming beep-code example
+CTL-019 | portable-implemented | Live MSP VTX hardware and operating status
+CTL-020 | portable-implemented | Discover FC channel table
+CTL-021 | portable-implemented | Discover FC power table and labels
+CTL-022 | portable-implemented | Per-FC VTX table cache
+CTL-023 | portable-implemented | Channel grid/frequency selection with current versus pending state
+CTL-024 | portable-implemented | Apply channel/frequency through FC MSP
+CTL-025 | portable-implemented | Select and apply available output power
+CTL-026 | portable-implemented | Select and apply PIT on/off
+CTL-027 | portable-implemented | Acknowledgement, persistence and readback outcome
+CTL-028 | portable-implemented | Native TBS receiver/VTX reports
+CTL-029 | portable-implemented | Native TBS frequency control
+CTL-030 | portable-implemented | Native TBS power/PIT control and hardware maps
+CTL-031 | portable-implemented | Store eight per-model VTX favourite frequencies
+CTL-032 | portable-implemented | Apply selected saved favourite
+CTL-033 | portable-implemented | Betaflight save/profile/calibration/trim reference patterns
+CTL-034 | portable-implemented | Betaflight OSD menu reference patterns
+CTL-035 | portable-implemented | INAV save/profile/battery/calibration/mission/OSD reference patterns
+CTL-036 | portable-implemented | VTX settings activate real backend after save
+CTL-037 | portable-implemented | On-demand multi-feature polling with configured intervals
+CTL-038 | portable-implemented | Version-aware unknown flag safety beyond original mapping
+ui-att-01 | portable-implemented | Native sky/ground field
+ui-att-02 | portable-implemented | CRSF pitch sign and angle units
+ui-att-03 | portable-implemented | Horizon pitch/bank projection
+ui-att-04 | portable-implemented | Sky/ground color semantics
+ui-att-05 | portable-implemented | Aircraft datum and moving field
+ui-att-06 | portable-implemented | Pitch ladder
+ui-att-07 | portable-implemented | Numerical pitch and roll
+ui-att-08 | portable-implemented | Circular angular reference
+ui-att-09 | portable-implemented | Yaw direction display
+ui-att-10 | portable-implemented | Circular aperture and clipping
+ui-att-11 | portable-implemented | Missing/stale attitude presentation
+ui-att-12 | portable-implemented | Adaptive speed source
+ui-att-13 | portable-implemented | Adaptive altitude source
+ui-att-14 | portable-implemented | Speed tape ticks and selected value
+ui-att-15 | portable-implemented | Altitude tape ticks and selected value
+ui-att-16 | portable-implemented | Compass/cardinal heading
+ui-att-17 | portable-implemented | Home bearing in Flight instrument
+ui-att-18 | portable-implemented | No smoothing/extrapolation of sensor stream
+ui-att-19 | portable-implemented | Sampling versus draw cadence
+ui-att-20 | unverified | Sustained attitude performance
+ui-flight-01 | portable-implemented | LQ/RSSI/SNR/Tx power rails
+ui-flight-02 | portable-implemented | Transmitter radio battery
+ui-flight-03 | portable-implemented | Model battery voltage/current/used capacity
+ui-flight-04 | unsupported-reference | Individual cell-voltage panel
+ui-flight-05 | portable-implemented | Date and wall clock
+ui-flight-06 | portable-implemented | Model timer value/running state
+ui-flight-07 | portable-implemented | Flight mode string
+ui-flight-08 | portable-implemented | Airmode/RTH/Turtle state badges
+ui-flight-09 | portable-implemented | Throttle percentage/cut/limit
+ui-flight-10 | portable-implemented | Live VTX dashboard status
+ui-flight-11 | portable-implemented | Arming blocker summary and details
+ui-flight-12 | portable-implemented | MSP connection/readiness/backpressure feedback
+ui-flight-13 | portable-implemented | Mute/input-lock state
+ui-flight-14 | portable-implemented | Persistent telemetry-loss warning
+ui-flight-15 | portable-implemented | Battery/link visibility on every module
+ui-flight-16 | portable-implemented | Model identity/image
+ui-flight-17 | portable-implemented | Selectable dashboard instrument panels
+ui-gps-01 | portable-implemented | Current latitude/longitude and precision
+ui-gps-02 | portable-implemented | Ground speed/ASL altitude/course
+ui-gps-03 | portable-implemented | Satellite count
+ui-gps-04 | portable-implemented | Fix-state presentation and backend truth
+ui-gps-05 | portable-implemented | Reported quality/HDOP versus count heuristic
+ui-gps-06 | portable-implemented | Per-satellite constellation and identifier
+ui-gps-07 | portable-implemented | Per-satellite signal, quality-derived status and use
+ui-gps-08 | portable-implemented | Home coordinates and distance/bearing
+ui-gps-09 | portable-implemented | Home capture lifecycle
+ui-gps-10 | portable-implemented | Home bearing versus aircraft course cue
+ui-gps-11 | portable-implemented | Local position plot/track
+ui-gps-12 | portable-implemented | Estimated time home
+ui-gps-13 | portable-implemented | Timestamped position history
+ui-gps-14 | portable-implemented | Plus Code encoding capability
+ui-gps-15 | unsupported-reference | Persistent recovery after app close
+ui-gps-16 | portable-implemented | GPS controls/currentness
+ui-screen-01 | portable-implemented | Dense telemetry table
+ui-screen-02 | portable-implemented | Voltage/current history and source diagnostics
+ui-screen-03 | portable-implemented | RC quality history/detail
+ui-screen-04 | portable-implemented | VTX frequency favorites editing
+ui-screen-05 | portable-implemented | VTX favorites actual apply
+ui-screen-06 | portable-implemented | Arming reason explanations
+ui-screen-07 | portable-implemented | Stick command reference and modes
+ui-screen-08 | portable-implemented | Configuration entry/editor
+ui-screen-09 | portable-implemented | Discovered sensor browser
+ui-screen-10 | portable-implemented | Runtime diagnostics/memory
+ui-screen-11 | portable-implemented | About/help/version/license-free identity
+ui-nav-01 | portable-implemented | Persistent primary destinations
+ui-nav-02 | portable-implemented | PAGE and rotary consistency
+ui-nav-03 | portable-implemented | Local context tabs
+ui-nav-04 | portable-implemented | Global arming shortcut origin return
+ui-nav-05 | portable-implemented | Warnings routing/focus recovery
+ui-nav-06 | portable-implemented | Dirty editor exit
+ui-nav-07 | portable-implemented | Quick menu/in-flight actions
+ui-impl-01 | portable-implemented | Cached small masks
+ui-impl-02 | portable-implemented | Functional horizon assets
+ui-impl-03 | portable-implemented | Legacy full-panel bitmap package
+ui-impl-04 | portable-implemented | Editable art/provenance
+ui-impl-05 | portable-implemented | Theme palette/contrast selection
+ui-impl-06 | portable-implemented | Theme overlays optional
+ui-impl-07 | portable-implemented | Opacity semantics
+ui-impl-08 | unverified | Frame-time allocations and cache
+ui-impl-09 | unverified | Memory/task lifecycle
+ui-impl-10 | portable-implemented | Measured text fitting and long values
+ui-platform-01 | portable-implemented | 480×272 TX16S class
+ui-platform-02 | portable-implemented | 480×320 adaptation
+ui-platform-03 | portable-implemented | 800×480 adaptation
+ui-platform-04 | portable-implemented | Unsupported display capability handling
+ui-platform-05 | portable-implemented | One-time tool and fullscreen widget
+ui-platform-06 | portable-implemented | Compact live telemetry widget
+ui-platform-07 | unverified | Input/firmware capability matrix
+ui-platform-08 | unverified | Hardware/simulator evidence separation
+ui-screen-12 | portable-implemented | FC firmware/target/manufacturer identity
+ui-screen-13 | portable-implemented | FC hardware sensor active/unavailable/unhealthy states
+ui-screen-14 | portable-implemented | Five favourite pack selection and remaining charge

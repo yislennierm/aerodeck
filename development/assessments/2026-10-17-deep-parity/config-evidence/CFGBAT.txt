@@ -1,0 +1,481 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGBAT.luac
+Original SHA256: 1dbec91f6ab8dfb059494135f20b436cc5b738f5708a1f1a5e31b67c5ab08669
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 124), ('F', 1, 124), ('D', 1, 124), ('X', 1, 124), ('T', 1, 124)]
+K0 'pID'
+K1 'BAT'
+K2 'pN'
+K3 'MODEL BATTERY'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 300
+K8 320
+K9 170
+K10 115
+K11 'cv'
+K12 'BT_CELL_NOPWR'
+K13 'o'
+K14 1
+K15 'l'
+K16 'Cell "no pwr" voltage'
+K17 't'
+K18 'N'
+K19 'm'
+K20 2.0
+K21 'x'
+K22 2.700000047683716
+K23 'i'
+K24 0.10000000149011612
+K25 'f'
+K26 '%.1f'
+K27 'u'
+K28 'V'
+K29 'BT_CELL_MIN'
+K30 2
+K31 'Cell min voltage'
+K32 4.300000190734863
+K33 'BT_CELL_CRIT'
+K34 3
+K35 'Cell critical voltage'
+K36 3.0
+K37 4.0
+K38 'BT_CELL_LOW'
+K39 4
+K40 'Cell low voltage'
+K41 3.0999999046325684
+K42 4.099999904632568
+K43 'BT_CELL_MAX'
+K44 5
+K45 'Cell max voltage'
+K46 2.299999952316284
+K47 4.599999904632568
+K48 'BT_CELL_WARN_TYPE'
+K49 6
+K50 'Cell alerts type'
+K51 'L'
+K52 'lv'
+K53 0
+K54 'Visual only'
+K55 'Visual & Sound'
+K56 'Visual & Haptic'
+K57 'All'
+K58 'BT_CELL_WARN_SND'
+K59 7
+K60 ' audible alerts type'
+K61 'Critical only'
+K62 'Critical & Low'
+K63 'readDS'
+K64 'updateDisp'
+K65 'cv'
+K66 'onChange'
+K67 'cv'
+K68 'BT_CELL_MAX'
+K69 'cv'
+K70 'BT_CELL_WARN_TYPE'
+K71 'cv'
+K72 'BT_CELL_CRIT'
+K73 'cv'
+K74 'BT_CELL_LOW'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('BAT')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('MODEL BATTERY')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (300)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (170)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (115)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  28] NEWTABLE  A=5 B=0 C=0
+  19 [  28] SETTABLE  R4[K11('cv')] = R5
+  20 [  30] GETTABLE  R5 = R4[K11('cv')]
+  21 [  30] NEWTABLE  A=6 B=0 C=8
+  22 [  30] SETTABLE  R6[K13('o')] = K14(1)
+  23 [  30] SETTABLE  R6[K15('l')] = K16('Cell "no pwr" voltage')
+  24 [  30] SETTABLE  R6[K17('t')] = K18('N')
+  25 [  30] SETTABLE  R6[K19('m')] = K20(2.0)
+  26 [  30] SETTABLE  R6[K21('x')] = K22(2.700000047683716)
+  27 [  30] SETTABLE  R6[K23('i')] = K24(0.10000000149011612)
+  28 [  30] SETTABLE  R6[K25('f')] = K26('%.1f')
+  29 [  30] SETTABLE  R6[K27('u')] = K28('V')
+  30 [  30] SETTABLE  R5[K12('BT_CELL_NOPWR')] = R6
+  31 [  31] GETTABLE  R5 = R4[K11('cv')]
+  32 [  31] NEWTABLE  A=6 B=0 C=8
+  33 [  31] SETTABLE  R6[K13('o')] = K30(2)
+  34 [  31] SETTABLE  R6[K15('l')] = K31('Cell min voltage')
+  35 [  31] SETTABLE  R6[K17('t')] = K18('N')
+  36 [  31] SETTABLE  R6[K19('m')] = K20(2.0)
+  37 [  31] SETTABLE  R6[K21('x')] = K32(4.300000190734863)
+  38 [  31] SETTABLE  R6[K23('i')] = K24(0.10000000149011612)
+  39 [  31] SETTABLE  R6[K25('f')] = K26('%.1f')
+  40 [  31] SETTABLE  R6[K27('u')] = K28('V')
+  41 [  31] SETTABLE  R5[K29('BT_CELL_MIN')] = R6
+  42 [  32] GETTABLE  R5 = R4[K11('cv')]
+  43 [  32] NEWTABLE  A=6 B=0 C=8
+  44 [  32] SETTABLE  R6[K13('o')] = K34(3)
+  45 [  32] SETTABLE  R6[K15('l')] = K35('Cell critical voltage')
+  46 [  32] SETTABLE  R6[K17('t')] = K18('N')
+  47 [  32] SETTABLE  R6[K19('m')] = K36(3.0)
+  48 [  32] SETTABLE  R6[K21('x')] = K37(4.0)
+  49 [  32] SETTABLE  R6[K23('i')] = K24(0.10000000149011612)
+  50 [  32] SETTABLE  R6[K25('f')] = K26('%.1f')
+  51 [  32] SETTABLE  R6[K27('u')] = K28('V')
+  52 [  32] SETTABLE  R5[K33('BT_CELL_CRIT')] = R6
+  53 [  33] GETTABLE  R5 = R4[K11('cv')]
+  54 [  33] NEWTABLE  A=6 B=0 C=8
+  55 [  33] SETTABLE  R6[K13('o')] = K39(4)
+  56 [  33] SETTABLE  R6[K15('l')] = K40('Cell low voltage')
+  57 [  33] SETTABLE  R6[K17('t')] = K18('N')
+  58 [  33] SETTABLE  R6[K19('m')] = K41(3.0999999046325684)
+  59 [  33] SETTABLE  R6[K21('x')] = K42(4.099999904632568)
+  60 [  33] SETTABLE  R6[K23('i')] = K24(0.10000000149011612)
+  61 [  33] SETTABLE  R6[K25('f')] = K26('%.1f')
+  62 [  33] SETTABLE  R6[K27('u')] = K28('V')
+  63 [  33] SETTABLE  R5[K38('BT_CELL_LOW')] = R6
+  64 [  34] GETTABLE  R5 = R4[K11('cv')]
+  65 [  34] NEWTABLE  A=6 B=0 C=8
+  66 [  34] SETTABLE  R6[K13('o')] = K44(5)
+  67 [  34] SETTABLE  R6[K15('l')] = K45('Cell max voltage')
+  68 [  34] SETTABLE  R6[K17('t')] = K18('N')
+  69 [  34] SETTABLE  R6[K19('m')] = K46(2.299999952316284)
+  70 [  34] SETTABLE  R6[K21('x')] = K47(4.599999904632568)
+  71 [  34] SETTABLE  R6[K23('i')] = K24(0.10000000149011612)
+  72 [  34] SETTABLE  R6[K25('f')] = K26('%.1f')
+  73 [  34] SETTABLE  R6[K27('u')] = K28('V')
+  74 [  34] SETTABLE  R5[K43('BT_CELL_MAX')] = R6
+  75 [  35] GETTABLE  R5 = R4[K11('cv')]
+  76 [  35] NEWTABLE  A=6 B=0 C=4
+  77 [  35] SETTABLE  R6[K13('o')] = K49(6)
+  78 [  35] SETTABLE  R6[K15('l')] = K50('Cell alerts type')
+  79 [  35] SETTABLE  R6[K17('t')] = K51('L')
+  80 [  35] NEWTABLE  A=7 B=3 C=1
+  81 [  35] SETTABLE  R7[K53(0)] = K54('Visual only')
+  82 [  35] LOADK     R8 = K55 ('Visual & Sound')
+  83 [  35] LOADK     R9 = K56 ('Visual & Haptic')
+  84 [  35] LOADK     R10 = K57 ('All')
+  85 [  35] SETLIST   A=7 B=3 C=1
+  86 [  35] SETTABLE  R6[K52('lv')] = R7
+  87 [  35] SETTABLE  R5[K48('BT_CELL_WARN_TYPE')] = R6
+  88 [  36] GETTABLE  R5 = R4[K11('cv')]
+  89 [  36] NEWTABLE  A=6 B=0 C=4
+  90 [  36] SETTABLE  R6[K13('o')] = K59(7)
+  91 [  36] SETTABLE  R6[K15('l')] = K60(' audible alerts type')
+  92 [  36] SETTABLE  R6[K17('t')] = K51('L')
+  93 [  36] NEWTABLE  A=7 B=2 C=0
+  94 [  36] LOADK     R8 = K61 ('Critical only')
+  95 [  36] LOADK     R9 = K62 ('Critical & Low')
+  96 [  36] SETLIST   A=7 B=2 C=1
+  97 [  36] SETTABLE  R6[K52('lv')] = R7
+  98 [  36] SETTABLE  R5[K58('BT_CELL_WARN_SND')] = R6
+  99 [  39] GETTABLE  R5 = R4[K63('readDS')]
+ 100 [  39] CALL      A=5 B=1 C=1
+ 101 [  47] CLOSURE   R5 = proto[0]
+ 102 [  47] SETTABLE  R4[K64('updateDisp')] = R5
+ 103 [  49] GETTABLE  R5 = R4[K65('cv')]
+ 104 [  49] GETTABLE  R5 = R5[K29('BT_CELL_MIN')]
+ 105 [  71] CLOSURE   R6 = proto[1]
+ 106 [  71] SETTABLE  R5[K66('onChange')] = R6
+ 107 [  74] GETTABLE  R5 = R4[K67('cv')]
+ 108 [  74] GETTABLE  R5 = R5[K68('BT_CELL_MAX')]
+ 109 [  91] CLOSURE   R6 = proto[2]
+ 110 [  91] SETTABLE  R5[K66('onChange')] = R6
+ 111 [  94] GETTABLE  R5 = R4[K69('cv')]
+ 112 [  94] GETTABLE  R5 = R5[K70('BT_CELL_WARN_TYPE')]
+ 113 [ 101] CLOSURE   R6 = proto[3]
+ 114 [ 101] SETTABLE  R5[K66('onChange')] = R6
+ 115 [ 104] GETTABLE  R5 = R4[K71('cv')]
+ 116 [ 104] GETTABLE  R5 = R5[K72('BT_CELL_CRIT')]
+ 117 [ 111] CLOSURE   R6 = proto[4]
+ 118 [ 111] SETTABLE  R5[K66('onChange')] = R6
+ 119 [ 114] GETTABLE  R5 = R4[K73('cv')]
+ 120 [ 114] GETTABLE  R5 = R5[K74('BT_CELL_LOW')]
+ 121 [ 121] CLOSURE   R6 = proto[5]
+ 122 [ 121] SETTABLE  R5[K66('onChange')] = R6
+ 123 [ 123] RETURN    A=0 B=1 C=0
+ 124 [ 123] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 2 lines 42 47 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'BT_CELL_WARN_SND'
+K2 'h'
+K3 'BT_CELL_WARN_TYPE'
+K4 'v'
+K5 0
+   1 [  45] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  45] GETTABLE  R0 = R0[K1('BT_CELL_WARN_SND')]
+   3 [  45] GETTABUP  R1 = UP0[K0('cv')]
+   4 [  45] GETTABLE  R1 = R1[K3('BT_CELL_WARN_TYPE')]
+   5 [  45] GETTABLE  R1 = R1[K4('v')]
+   6 [  45] EQ        A=0 R1, K5(0); skip-next if condition != A
+   7 [  45] JMP       A=0 ->11
+   8 [  45] LOADBOOL  A=1 B=1 C=0
+   9 [  45] TEST      A=1 B=0 C=1
+  10 [  45] JMP       A=0 ->12
+  11 [  45] LOADNIL   A=1 B=0 C=0
+  12 [  45] SETTABLE  R0[K2('h')] = R1
+  13 [  47] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 2 lines 49 71 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'BT_CELL_MIN'
+K2 'v'
+K3 'BT_CELL_MAX'
+K4 0.30000001192092896
+K5 'BT_CELL_NOPWR'
+K6 'x'
+K7 'BT_CELL_CRIT'
+K8 0.10000000149011612
+K9 'm'
+K10 'BT_CELL_LOW'
+K11 0.20000000298023224
+   1 [  52] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  52] GETTABLE  R0 = R0[K1('BT_CELL_MIN')]
+   3 [  52] GETTABLE  R0 = R0[K2('v')]
+   4 [  52] GETTABUP  R1 = UP0[K0('cv')]
+   5 [  52] GETTABLE  R1 = R1[K3('BT_CELL_MAX')]
+   6 [  52] GETTABLE  R1 = R1[K2('v')]
+   7 [  52] SUB       A=1 B=1 C=260
+   8 [  52] LE        A=0 R1, R0; skip-next if condition != A
+   9 [  52] JMP       A=0 ->17
+  10 [  53] GETTABUP  R0 = UP0[K0('cv')]
+  11 [  53] GETTABLE  R0 = R0[K1('BT_CELL_MIN')]
+  12 [  53] GETTABUP  R1 = UP0[K0('cv')]
+  13 [  53] GETTABLE  R1 = R1[K3('BT_CELL_MAX')]
+  14 [  53] GETTABLE  R1 = R1[K2('v')]
+  15 [  53] SUB       A=1 B=1 C=260
+  16 [  53] SETTABLE  R0[K2('v')] = R1
+  17 [  56] GETTABUP  R0 = UP0[K0('cv')]
+  18 [  56] GETTABLE  R0 = R0[K5('BT_CELL_NOPWR')]
+  19 [  56] GETTABLE  R0 = R0[K2('v')]
+  20 [  56] GETTABUP  R1 = UP0[K0('cv')]
+  21 [  56] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  22 [  56] GETTABLE  R1 = R1[K2('v')]
+  23 [  56] SUB       A=1 B=1 C=260
+  24 [  56] LE        A=0 R1, R0; skip-next if condition != A
+  25 [  56] JMP       A=0 ->33
+  26 [  57] GETTABUP  R0 = UP0[K0('cv')]
+  27 [  57] GETTABLE  R0 = R0[K5('BT_CELL_NOPWR')]
+  28 [  57] GETTABUP  R1 = UP0[K0('cv')]
+  29 [  57] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  30 [  57] GETTABLE  R1 = R1[K2('v')]
+  31 [  57] SUB       A=1 B=1 C=260
+  32 [  57] SETTABLE  R0[K2('v')] = R1
+  33 [  59] GETTABUP  R0 = UP0[K0('cv')]
+  34 [  59] GETTABLE  R0 = R0[K5('BT_CELL_NOPWR')]
+  35 [  59] GETTABUP  R1 = UP0[K0('cv')]
+  36 [  59] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  37 [  59] GETTABLE  R1 = R1[K2('v')]
+  38 [  59] SUB       A=1 B=1 C=260
+  39 [  59] SETTABLE  R0[K6('x')] = R1
+  40 [  61] GETTABUP  R0 = UP0[K0('cv')]
+  41 [  61] GETTABLE  R0 = R0[K7('BT_CELL_CRIT')]
+  42 [  61] GETTABLE  R0 = R0[K2('v')]
+  43 [  61] GETTABUP  R1 = UP0[K0('cv')]
+  44 [  61] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  45 [  61] GETTABLE  R1 = R1[K2('v')]
+  46 [  61] ADD       A=1 B=1 C=264
+  47 [  61] LE        A=0 R0, R1; skip-next if condition != A
+  48 [  61] JMP       A=0 ->56
+  49 [  62] GETTABUP  R0 = UP0[K0('cv')]
+  50 [  62] GETTABLE  R0 = R0[K7('BT_CELL_CRIT')]
+  51 [  62] GETTABUP  R1 = UP0[K0('cv')]
+  52 [  62] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  53 [  62] GETTABLE  R1 = R1[K2('v')]
+  54 [  62] ADD       A=1 B=1 C=264
+  55 [  62] SETTABLE  R0[K2('v')] = R1
+  56 [  64] GETTABUP  R0 = UP0[K0('cv')]
+  57 [  64] GETTABLE  R0 = R0[K7('BT_CELL_CRIT')]
+  58 [  64] GETTABUP  R1 = UP0[K0('cv')]
+  59 [  64] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  60 [  64] GETTABLE  R1 = R1[K2('v')]
+  61 [  64] ADD       A=1 B=1 C=264
+  62 [  64] SETTABLE  R0[K9('m')] = R1
+  63 [  66] GETTABUP  R0 = UP0[K0('cv')]
+  64 [  66] GETTABLE  R0 = R0[K10('BT_CELL_LOW')]
+  65 [  66] GETTABLE  R0 = R0[K2('v')]
+  66 [  66] GETTABUP  R1 = UP0[K0('cv')]
+  67 [  66] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  68 [  66] GETTABLE  R1 = R1[K2('v')]
+  69 [  66] ADD       A=1 B=1 C=267
+  70 [  66] LE        A=0 R0, R1; skip-next if condition != A
+  71 [  66] JMP       A=0 ->79
+  72 [  67] GETTABUP  R0 = UP0[K0('cv')]
+  73 [  67] GETTABLE  R0 = R0[K10('BT_CELL_LOW')]
+  74 [  67] GETTABUP  R1 = UP0[K0('cv')]
+  75 [  67] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  76 [  67] GETTABLE  R1 = R1[K2('v')]
+  77 [  67] ADD       A=1 B=1 C=267
+  78 [  67] SETTABLE  R0[K2('v')] = R1
+  79 [  69] GETTABUP  R0 = UP0[K0('cv')]
+  80 [  69] GETTABLE  R0 = R0[K3('BT_CELL_MAX')]
+  81 [  69] GETTABUP  R1 = UP0[K0('cv')]
+  82 [  69] GETTABLE  R1 = R1[K1('BT_CELL_MIN')]
+  83 [  69] GETTABLE  R1 = R1[K2('v')]
+  84 [  69] ADD       A=1 B=1 C=267
+  85 [  69] SETTABLE  R0[K9('m')] = R1
+  86 [  71] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 2 lines 74 91 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'BT_CELL_MAX'
+K2 'v'
+K3 'BT_CELL_MIN'
+K4 0.30000001192092896
+K5 'BT_CELL_CRIT'
+K6 0.20000000298023224
+K7 'x'
+K8 'BT_CELL_LOW'
+K9 0.10000000149011612
+   1 [  77] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  77] GETTABLE  R0 = R0[K1('BT_CELL_MAX')]
+   3 [  77] GETTABLE  R0 = R0[K2('v')]
+   4 [  77] GETTABUP  R1 = UP0[K0('cv')]
+   5 [  77] GETTABLE  R1 = R1[K3('BT_CELL_MIN')]
+   6 [  77] GETTABLE  R1 = R1[K2('v')]
+   7 [  77] ADD       A=1 B=1 C=260
+   8 [  77] LE        A=0 R0, R1; skip-next if condition != A
+   9 [  77] JMP       A=0 ->17
+  10 [  78] GETTABUP  R0 = UP0[K0('cv')]
+  11 [  78] GETTABLE  R0 = R0[K1('BT_CELL_MAX')]
+  12 [  78] GETTABUP  R1 = UP0[K0('cv')]
+  13 [  78] GETTABLE  R1 = R1[K3('BT_CELL_MIN')]
+  14 [  78] GETTABLE  R1 = R1[K2('v')]
+  15 [  78] ADD       A=1 B=1 C=260
+  16 [  78] SETTABLE  R0[K2('v')] = R1
+  17 [  81] GETTABUP  R0 = UP0[K0('cv')]
+  18 [  81] GETTABLE  R0 = R0[K5('BT_CELL_CRIT')]
+  19 [  81] GETTABLE  R0 = R0[K2('v')]
+  20 [  81] GETTABUP  R1 = UP0[K0('cv')]
+  21 [  81] GETTABLE  R1 = R1[K1('BT_CELL_MAX')]
+  22 [  81] GETTABLE  R1 = R1[K2('v')]
+  23 [  81] SUB       A=1 B=1 C=262
+  24 [  81] LE        A=0 R1, R0; skip-next if condition != A
+  25 [  81] JMP       A=0 ->33
+  26 [  82] GETTABUP  R0 = UP0[K0('cv')]
+  27 [  82] GETTABLE  R0 = R0[K5('BT_CELL_CRIT')]
+  28 [  82] GETTABUP  R1 = UP0[K0('cv')]
+  29 [  82] GETTABLE  R1 = R1[K1('BT_CELL_MAX')]
+  30 [  82] GETTABLE  R1 = R1[K2('v')]
+  31 [  82] SUB       A=1 B=1 C=262
+  32 [  82] SETTABLE  R0[K2('v')] = R1
+  33 [  84] GETTABUP  R0 = UP0[K0('cv')]
+  34 [  84] GETTABLE  R0 = R0[K5('BT_CELL_CRIT')]
+  35 [  84] GETTABUP  R1 = UP0[K0('cv')]
+  36 [  84] GETTABLE  R1 = R1[K1('BT_CELL_MAX')]
+  37 [  84] GETTABLE  R1 = R1[K2('v')]
+  38 [  84] SUB       A=1 B=1 C=262
+  39 [  84] SETTABLE  R0[K7('x')] = R1
+  40 [  86] GETTABUP  R0 = UP0[K0('cv')]
+  41 [  86] GETTABLE  R0 = R0[K8('BT_CELL_LOW')]
+  42 [  86] GETTABLE  R0 = R0[K2('v')]
+  43 [  86] GETTABUP  R1 = UP0[K0('cv')]
+  44 [  86] GETTABLE  R1 = R1[K1('BT_CELL_MAX')]
+  45 [  86] GETTABLE  R1 = R1[K2('v')]
+  46 [  86] SUB       A=1 B=1 C=265
+  47 [  86] LE        A=0 R1, R0; skip-next if condition != A
+  48 [  86] JMP       A=0 ->56
+  49 [  87] GETTABUP  R0 = UP0[K0('cv')]
+  50 [  87] GETTABLE  R0 = R0[K8('BT_CELL_LOW')]
+  51 [  87] GETTABUP  R1 = UP0[K0('cv')]
+  52 [  87] GETTABLE  R1 = R1[K1('BT_CELL_MAX')]
+  53 [  87] GETTABLE  R1 = R1[K2('v')]
+  54 [  87] SUB       A=1 B=1 C=265
+  55 [  87] SETTABLE  R0[K2('v')] = R1
+  56 [  89] GETTABUP  R0 = UP0[K0('cv')]
+  57 [  89] GETTABLE  R0 = R0[K8('BT_CELL_LOW')]
+  58 [  89] GETTABUP  R1 = UP0[K0('cv')]
+  59 [  89] GETTABLE  R1 = R1[K1('BT_CELL_MAX')]
+  60 [  89] GETTABLE  R1 = R1[K2('v')]
+  61 [  89] SUB       A=1 B=1 C=265
+  62 [  89] SETTABLE  R0[K7('x')] = R1
+  63 [  91] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 0 vararg 0 stack 2 lines 94 101 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'BT_CELL_WARN_TYPE'
+K2 'v'
+K3 0
+K4 'BT_CELL_WARN_SND'
+   1 [  97] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  97] GETTABLE  R0 = R0[K1('BT_CELL_WARN_TYPE')]
+   3 [  97] GETTABLE  R0 = R0[K2('v')]
+   4 [  97] EQ        A=0 R0, K3(0); skip-next if condition != A
+   5 [  97] JMP       A=0 ->9
+   6 [  98] GETTABUP  R0 = UP0[K0('cv')]
+   7 [  98] GETTABLE  R0 = R0[K4('BT_CELL_WARN_SND')]
+   8 [  98] SETTABLE  R0[K2('v')] = K3(0)
+   9 [ 101] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4 params 0 vararg 0 stack 3 lines 104 111 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'BT_CELL_CRIT'
+K2 'v'
+K3 'BT_CELL_LOW'
+K4 'i'
+   1 [ 107] GETTABUP  R0 = UP0[K0('cv')]
+   2 [ 107] GETTABLE  R0 = R0[K1('BT_CELL_CRIT')]
+   3 [ 107] GETTABLE  R0 = R0[K2('v')]
+   4 [ 107] GETTABUP  R1 = UP0[K0('cv')]
+   5 [ 107] GETTABLE  R1 = R1[K3('BT_CELL_LOW')]
+   6 [ 107] GETTABLE  R1 = R1[K2('v')]
+   7 [ 107] LE        A=0 R1, R0; skip-next if condition != A
+   8 [ 107] JMP       A=0 ->19
+   9 [ 108] GETTABUP  R0 = UP0[K0('cv')]
+  10 [ 108] GETTABLE  R0 = R0[K3('BT_CELL_LOW')]
+  11 [ 108] GETTABUP  R1 = UP0[K0('cv')]
+  12 [ 108] GETTABLE  R1 = R1[K1('BT_CELL_CRIT')]
+  13 [ 108] GETTABLE  R1 = R1[K2('v')]
+  14 [ 108] GETTABUP  R2 = UP0[K0('cv')]
+  15 [ 108] GETTABLE  R2 = R2[K3('BT_CELL_LOW')]
+  16 [ 108] GETTABLE  R2 = R2[K4('i')]
+  17 [ 108] ADD       A=1 B=1 C=2
+  18 [ 108] SETTABLE  R0[K2('v')] = R1
+  19 [ 111] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5 params 0 vararg 0 stack 3 lines 114 121 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'BT_CELL_LOW'
+K2 'v'
+K3 'BT_CELL_CRIT'
+K4 'i'
+   1 [ 117] GETTABUP  R0 = UP0[K0('cv')]
+   2 [ 117] GETTABLE  R0 = R0[K1('BT_CELL_LOW')]
+   3 [ 117] GETTABLE  R0 = R0[K2('v')]
+   4 [ 117] GETTABUP  R1 = UP0[K0('cv')]
+   5 [ 117] GETTABLE  R1 = R1[K3('BT_CELL_CRIT')]
+   6 [ 117] GETTABLE  R1 = R1[K2('v')]
+   7 [ 117] LE        A=0 R0, R1; skip-next if condition != A
+   8 [ 117] JMP       A=0 ->19
+   9 [ 118] GETTABUP  R0 = UP0[K0('cv')]
+  10 [ 118] GETTABLE  R0 = R0[K3('BT_CELL_CRIT')]
+  11 [ 118] GETTABUP  R1 = UP0[K0('cv')]
+  12 [ 118] GETTABLE  R1 = R1[K1('BT_CELL_LOW')]
+  13 [ 118] GETTABLE  R1 = R1[K2('v')]
+  14 [ 118] GETTABUP  R2 = UP0[K0('cv')]
+  15 [ 118] GETTABLE  R2 = R2[K3('BT_CELL_CRIT')]
+  16 [ 118] GETTABLE  R2 = R2[K4('i')]
+  17 [ 118] SUB       A=1 B=1 C=2
+  18 [ 118] SETTABLE  R0[K2('v')] = R1
+  19 [ 121] RETURN    A=0 B=1 C=0

@@ -1,0 +1,36 @@
+AERODECK / original Toolbox attitude implementation audit
+Current main SHA256: f3ec289ca9655833d04285dbd46900ba64afeac058fcc2e9d1916c9d1418b60a
+Read-only; no FPS claim; no production changes.
+
+NATIVE-HORIZON
+Both call the same EdgeTX native lcd.drawHudRectangle. No AERODECK Lua-pixel rasterizer is involved. Native work scales with rectangle height; compare matched viewports.
+
+
+SOURCE-READS
+Toolbox original TLMUPDS reads current and native min/max for each active registered source, then vFN. CRSF gyro vFN negates pitch-radians and preserves roll; neither side has an attitude smoothing filter. AERO fast path reads current1time peraxis, requires currentness and uses a cached compiled reader. Static call counts do not prove actual updateFPS.
+
+
+STANDALONE-FORCED-SERVICE
+Standalone painted frames force all telemetry acquisition+power/session/input/timer/log derivation with serviceData(true,true), bypassing the200ms/revision cache even though attitude is separately polled eachcallback. Retained mode already stages slower work.
+Use the existing cache-aware serviceData(false,true) contract after confirming actual-app telemetry/setting-reset/current-loss behavior. Keep fast attitude everycallback. This preserves all feature consumers.
+
+STATIC-DRAW-CALLS
+Graduated AERO draws11 bankticks with3strokes each(33native linecalls),9 movingpointer strokes,24aircraft halo/foreground strokes and2aircraftrectangles eachframe. Toolbox ATT uses2cold-cached masks+nativeHUD+fixed dottedline; AHR uses1cold aircraft bitmap, nativeHUD/tapes and no custom Lua pitch-caption collision engine.
+Cache exact static bank/aircraft artwork as bounded native mask assets; retain the moving geometry and same pixels. Measure before/after, especially fullapp standalone and widget.
+
+FONT-MEASUREMENT
+flightValue repeats textWidth for the same text/font in fit tests, fittedText and centering; unit draws requery Ag heights despite vlabel keeping a perfont height cache. Tapes and pitch labels repeat metric calls for unchanged strings.
+Bounded percell last-value metrics and precomputed finite static labels/units. Avoid an unbounded dictionary keyed by arbitrary live values. Keep measured fallback/overflow behavior.
+
+DUPLICATE-NUMERIC-CHECKS
+plannedRead validates numeric/type/NaN/infinity and then compiled reader repeats those checks. normalize oracle is not called in the normal compiled-reader fast path; its fallback remains compatibility-only.
+Let the compiled reader own its proven numeric validation while plannedRead retains freshness and source-state reporting. Cover nonnumber/NaN/infinite/currentfalse/zero cases.
+
+WARM-GEOMETRY-CHURN
+cockpit allocates two constant2-element arrays perframe, computes trigonometry for both+roll and−roll, and recomputes zero-horizon origin within caption placement attempts. Pitch label/box tables and bankticks themselves are already preallocated.
+Hoist constant arrays, reuse sameframe sin/cos identities, hoist horizonorigin/slope and cache finite pitchlabel metrics; keep collision geometry and invertedroll coverage.
+
+DEGRADATION-LIMITS
+No continuously growing attitude buffer, warm SD load/conversion, routine explicitGC or unbounded transport queue was found in current warm attitude path. Repeated formatting/measurement/tinytable churn can contribute GC/callback jitter; native budget nearcapacity also leaves less burstmargin. These are risks/opportunities, not proof of a specific long-term slowdown. Toolbox also allocates perdraw closures(AHR3,ATT1); do not claim it is allocation-free.
+
+

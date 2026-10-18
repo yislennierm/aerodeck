@@ -1,0 +1,52 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGLD.luac
+Original SHA256: 46c031ca6ecaba97be10592bcdbd723a5dca601d25d7d94da48578595348d1b5
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGLD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 31), ('F', 1, 31), ('D', 1, 31), ('X', 1, 31), ('cF', 12, 31), ('fh', 17, 31)]
+K0 'PCFG'
+K1 'MODEL/'
+K2 'RD'
+K3 'MODEL'
+K4 '_'
+K5 'model'
+K6 'getInfo'
+K7 'name'
+K8 '.cfg'
+K9 'io'
+K10 'open'
+K11 'r'
+K12 'close'
+K13 'loadfile'
+K14 'CFGSTR'
+   1 [  14] VARARG    A=0 B=5 C=0
+   2 [  17] GETTABLE  R4 = R0[K0('PCFG')]
+   3 [  17] LOADK     R5 = K1 ('MODEL/')
+   4 [  17] GETTABLE  R6 = R2[K2('RD')]
+   5 [  17] GETTABLE  R6 = R6[K3('MODEL')]
+   6 [  17] LOADK     R7 = K4 ('_')
+   7 [  17] GETTABUP  R8 = UP0[K5('model')]
+   8 [  17] GETTABLE  R8 = R8[K6('getInfo')]
+   9 [  17] CALL      A=8 B=1 C=2
+  10 [  17] GETTABLE  R8 = R8[K7('name')]
+  11 [  17] LOADK     R9 = K8 ('.cfg')
+  12 [  17] CONCAT    A=4 B=4 C=9
+  13 [  18] GETTABUP  R5 = UP0[K9('io')]
+  14 [  18] GETTABLE  R5 = R5[K10('open')]
+  15 [  18] MOVE      A=6 B=4 C=0
+  16 [  18] LOADK     R7 = K11 ('r')
+  17 [  18] CALL      A=5 B=3 C=2
+  18 [  19] TEST      A=5 B=0 C=0
+  19 [  19] JMP       A=0 ->30
+  20 [  20] GETTABUP  R6 = UP0[K9('io')]
+  21 [  20] GETTABLE  R6 = R6[K12('close')]
+  22 [  20] MOVE      A=7 B=5 C=0
+  23 [  20] CALL      A=6 B=2 C=1
+  24 [  21] GETTABUP  R6 = UP0[K13('loadfile')]
+  25 [  21] MOVE      A=7 B=4 C=0
+  26 [  21] CALL      A=6 B=2 C=2
+  27 [  21] GETTABLE  R7 = R2[K14('CFGSTR')]
+  28 [  21] TAILCALL  A=6 B=2 C=0
+  29 [  21] RETURN    A=6 B=0 C=0
+  30 [  24] RETURN    A=0 B=1 C=0
+  31 [  24] RETURN    A=0 B=1 C=0

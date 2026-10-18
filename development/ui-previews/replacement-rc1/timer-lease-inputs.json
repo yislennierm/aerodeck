@@ -1,0 +1,11 @@
+{
+  "timerOwnerSha256": "9532b63ee917081221ae513b10d89a08840323694fb3f60c55d5f9040044f9ce",
+  "checkerSha256": "161af2b94f2c39d581a396b6561728d58bacd0b1d6d93b188602c69d936ea95f",
+  "simulator": "EdgeTX3.0.0 TX16S WASM",
+  "targetFirmware": "EdgeTX2.12.4",
+  "nativeTimerAPI": true,
+  "independentFactoryLoads": 2,
+  "privateModelOnly": true,
+  "hardwareVerified": false,
+  "productionOrRadioWrites": false
+}

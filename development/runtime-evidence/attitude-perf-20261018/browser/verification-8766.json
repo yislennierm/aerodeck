@@ -1,0 +1,15 @@
+{
+  "build": "ATTITUDE-PERF-20261018",
+  "sourceSHA256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+  "runtimeCount": 64,
+  "sourceDrift": false,
+  "frameBytes": 261120,
+  "missingGuard": 428,
+  "staleFrameGuard": 409,
+  "staleInputGuard": 409,
+  "invalidInputs": 400,
+  "validScreen": 200,
+  "htmlCurrentBuild": true,
+  "image": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/current-preview-20261018/flight-8766.png",
+  "pid": 91147
+}

@@ -1,0 +1,1175 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/DATAINIT.luac 
+SHA256 b88f1e8e0901908ec71c99cb394b336f6fc629057d7bb65e0a50d1317fccec5b
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 1012), ('F', 1, 1012), ('D', 1, 1012), ('X', 1, 1012), ('page', 1, 1012), ('data', 5, 1012), ('indicatorSource', 6, 1012)]
+K0 'ALL'
+K1 'MDL'
+K2 'split'
+K3 'CFGSTR'
+K4 '|'
+K5 'S'
+K6 'MDL_RCP'
+K7 1
+K8 'tonumber'
+K9 0
+K10 'MDL_RCP_ON'
+K11 'MDL_FC'
+K12 'fm'
+K13 'sxx'
+K14 2
+K15 'MDL_FC_ON'
+K16 'MDL_BTV'
+K17 3
+K18 'MDL_BTV_ON'
+K19 'MDL_BTA'
+K20 4
+K21 'MDL_BTA_ON'
+K22 'MDL_GYRO'
+K23 5
+K24 'MDL_GYRO_ON'
+K25 'MDL_ACC'
+K26 'MDL_ACC_ON'
+K27 'MDL_BARO'
+K28 'pgg'
+K29 7
+K30 'MDL_BARO_ON'
+K31 'MDL_PITOT'
+K32 8
+K33 'MDL_PITOT_ON'
+K34 'MDL_GPS'
+K35 9
+K36 'MDL_GPS_ON'
+K37 'MDL_COMP'
+K38 10
+K39 'MDL_COMP_ON'
+K40 'MDL_VTX'
+K41 11
+K42 'MDL_VTX_ON'
+K43 False
+K44 'RL'
+K45 'RCL'
+K46 'RCP_pv'
+K47 'RL_RSI_L'
+K48 40
+K49 'RL_RSI_C'
+K50 30
+K51 'RL_RQL_L'
+K52 80
+K53 'RL_RQL_C'
+K54 70
+K55 'RL_SNR_L'
+K56 6
+K57 'RL_SNR_C'
+K58 'BT'
+K59 'BT_CELL_MIN'
+K60 3.0
+K61 'BT_CELL_MAX'
+K62 4.199999809265137
+K63 'BT_CELL_NOPWR'
+K64 2.700000047683716
+K65 'BT_CELL_WARN_SND'
+K66 'BT_CELL_CRIT'
+K67 3.4000000953674316
+K68 'BT_CELL_LOW'
+K69 3.5999999046325684
+K70 'BT_CELL_WARN_TYPE'
+K71 'BTFS'
+K72 'BT_FAV_SEL'
+K73 'BT_FAV_CELLS'
+K74 'BT_FAV_CAPA'
+K75 'FC'
+K76 'FC_MSP_ON'
+K77 'FC_MSP_VER'
+K78 'FC_MSP_ERR_INTVAL'
+K79 'FC_MSP_VTX_INTVAL'
+K80 'FC_FW_ID'
+K81 'IN'
+K82 'VTX'
+K83 'VTX_CONN_TYPE'
+K84 'VTX_MODEL'
+K85 'VTX_PROXY_ON'
+K86 'VTX_FRQ_RANGE'
+K87 'VTX_VIEW_MODE'
+K88 'GPS'
+K89 'GPS_SATS2FIX'
+K90 'GPS_LOG_ON'
+K91 'GPS_LOG_MAX'
+K92 'IND'
+K93 'IN_AR_src'
+K94 'IN_TC_src'
+K95 '-'
+K96 'IN_TL_src'
+K97 'TMR_host'
+K98 'TMR_no'
+K99 'INDBF'
+K100 'IN_FMAC_src'
+K101 'IN_FMHR_src'
+K102 'IN_FMAN_src'
+K103 'IN_AM_src'
+K104 'IN_TU_src'
+K105 'UI'
+K106 'TH'
+K107 'UI_THM_ID'
+K108 'CARBON_PLATE'
+K109 'UI_THM_OV'
+K110 'UI_DBD_MPN'
+K111 'UI_DBD_SPN'
+K112 'UI_DBD_BPN'
+K113 'UI_CFG_PN'
+K114 'APP'
+K115 'APP_LOG_ERR'
+   1 [  13] VARARG    A=0 B=6 C=0
+   2 [  15] TEST      A=4 B=0 C=1
+   3 [  15] JMP       A=0 ->5
+   4 [  15] LOADK     R4 = K0 ('ALL')
+   5 [  17] LOADNIL   A=5 B=0 C=0
+   6 [  25] CLOSURE   R6 = proto[0]
+   7 [  28] EQ        A=1 R4, K1('MDL'); skip-next if condition != A
+   8 [  28] JMP       A=0 ->11
+   9 [  28] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+  10 [  28] JMP       A=0 ->274
+  11 [  29] GETTABLE  R7 = R0[K2('split')]
+  12 [  29] GETTABLE  R8 = R2[K3('CFGSTR')]
+  13 [  29] GETTABLE  R8 = R8[K1('MDL')]
+  14 [  29] LOADK     R9 = K4 ('|')
+  15 [  29] CALL      A=7 B=3 C=2
+  16 [  29] MOVE      A=5 B=7 C=0
+  17 [  30] GETTABLE  R7 = R2[K5('S')]
+  18 [  30] GETTABLE  R8 = R5[K7(1)]
+  19 [  30] TEST      A=8 B=0 C=0
+  20 [  30] JMP       A=0 ->26
+  21 [  30] GETTABUP  R8 = UP0[K8('tonumber')]
+  22 [  30] GETTABLE  R9 = R5[K7(1)]
+  23 [  30] CALL      A=8 B=2 C=2
+  24 [  30] TEST      A=8 B=0 C=1
+  25 [  30] JMP       A=0 ->27
+  26 [  30] LOADK     R8 = K9 (0)
+  27 [  30] SETTABLE  R7[K6('MDL_RCP')] = R8
+  28 [  31] GETTABLE  R7 = R2[K5('S')]
+  29 [  31] GETTABLE  R8 = R2[K5('S')]
+  30 [  31] GETTABLE  R8 = R8[K6('MDL_RCP')]
+  31 [  31] LT        A=1 K9(0), R8; skip-next if condition != A
+  32 [  31] JMP       A=0 ->34
+  33 [  31] LOADBOOL  A=8 B=0 C=1
+  34 [  31] LOADBOOL  A=8 B=1 C=0
+  35 [  31] SETTABLE  R7[K10('MDL_RCP_ON')] = R8
+  36 [  33] GETTABLE  R7 = R2[K5('S')]
+  37 [  33] GETTABLE  R8 = R0[K12('fm')]
+  38 [  33] GETTABLE  R8 = R8[K13('sxx')]
+  39 [  33] TEST      A=8 B=0 C=0
+  40 [  33] JMP       A=0 ->52
+  41 [  33] GETTABLE  R8 = R5[K14(2)]
+  42 [  33] TEST      A=8 B=0 C=0
+  43 [  33] JMP       A=0 ->49
+  44 [  33] GETTABUP  R8 = UP0[K8('tonumber')]
+  45 [  33] GETTABLE  R9 = R5[K14(2)]
+  46 [  33] CALL      A=8 B=2 C=2
+  47 [  33] TEST      A=8 B=0 C=1
+  48 [  33] JMP       A=0 ->53
+  49 [  33] LOADK     R8 = K9 (0)
+  50 [  33] TEST      A=8 B=0 C=1
+  51 [  33] JMP       A=0 ->53
+  52 [  33] LOADK     R8 = K9 (0)
+  53 [  33] SETTABLE  R7[K11('MDL_FC')] = R8
+  54 [  34] GETTABLE  R7 = R2[K5('S')]
+  55 [  34] GETTABLE  R8 = R2[K5('S')]
+  56 [  34] GETTABLE  R8 = R8[K11('MDL_FC')]
+  57 [  34] LT        A=1 K9(0), R8; skip-next if condition != A
+  58 [  34] JMP       A=0 ->60
+  59 [  34] LOADBOOL  A=8 B=0 C=1
+  60 [  34] LOADBOOL  A=8 B=1 C=0
+  61 [  34] SETTABLE  R7[K15('MDL_FC_ON')] = R8
+  62 [  36] GETTABLE  R7 = R2[K5('S')]
+  63 [  36] GETTABLE  R8 = R5[K17(3)]
+  64 [  36] TEST      A=8 B=0 C=0
+  65 [  36] JMP       A=0 ->71
+  66 [  36] GETTABUP  R8 = UP0[K8('tonumber')]
+  67 [  36] GETTABLE  R9 = R5[K17(3)]
+  68 [  36] CALL      A=8 B=2 C=2
+  69 [  36] TEST      A=8 B=0 C=1
+  70 [  36] JMP       A=0 ->72
+  71 [  36] LOADK     R8 = K9 (0)
+  72 [  36] SETTABLE  R7[K16('MDL_BTV')] = R8
+  73 [  37] GETTABLE  R7 = R2[K5('S')]
+  74 [  37] GETTABLE  R8 = R2[K5('S')]
+  75 [  37] GETTABLE  R8 = R8[K16('MDL_BTV')]
+  76 [  37] LT        A=1 K9(0), R8; skip-next if condition != A
+  77 [  37] JMP       A=0 ->79
+  78 [  37] LOADBOOL  A=8 B=0 C=1
+  79 [  37] LOADBOOL  A=8 B=1 C=0
+  80 [  37] SETTABLE  R7[K18('MDL_BTV_ON')] = R8
+  81 [  39] GETTABLE  R7 = R2[K5('S')]
+  82 [  39] GETTABLE  R8 = R0[K12('fm')]
+  83 [  39] GETTABLE  R8 = R8[K13('sxx')]
+  84 [  39] TEST      A=8 B=0 C=0
+  85 [  39] JMP       A=0 ->97
+  86 [  39] GETTABLE  R8 = R5[K20(4)]
+  87 [  39] TEST      A=8 B=0 C=0
+  88 [  39] JMP       A=0 ->94
+  89 [  39] GETTABUP  R8 = UP0[K8('tonumber')]
+  90 [  39] GETTABLE  R9 = R5[K20(4)]
+  91 [  39] CALL      A=8 B=2 C=2
+  92 [  39] TEST      A=8 B=0 C=1
+  93 [  39] JMP       A=0 ->98
+  94 [  39] LOADK     R8 = K9 (0)
+  95 [  39] TEST      A=8 B=0 C=1
+  96 [  39] JMP       A=0 ->98
+  97 [  39] LOADK     R8 = K9 (0)
+  98 [  39] SETTABLE  R7[K19('MDL_BTA')] = R8
+  99 [  40] GETTABLE  R7 = R2[K5('S')]
+ 100 [  40] GETTABLE  R8 = R2[K5('S')]
+ 101 [  40] GETTABLE  R8 = R8[K19('MDL_BTA')]
+ 102 [  40] LT        A=1 K9(0), R8; skip-next if condition != A
+ 103 [  40] JMP       A=0 ->105
+ 104 [  40] LOADBOOL  A=8 B=0 C=1
+ 105 [  40] LOADBOOL  A=8 B=1 C=0
+ 106 [  40] SETTABLE  R7[K21('MDL_BTA_ON')] = R8
+ 107 [  42] GETTABLE  R7 = R2[K5('S')]
+ 108 [  42] GETTABLE  R8 = R5[K23(5)]
+ 109 [  42] TEST      A=8 B=0 C=0
+ 110 [  42] JMP       A=0 ->116
+ 111 [  42] GETTABUP  R8 = UP0[K8('tonumber')]
+ 112 [  42] GETTABLE  R9 = R5[K23(5)]
+ 113 [  42] CALL      A=8 B=2 C=2
+ 114 [  42] TEST      A=8 B=0 C=1
+ 115 [  42] JMP       A=0 ->117
+ 116 [  42] LOADK     R8 = K9 (0)
+ 117 [  42] SETTABLE  R7[K22('MDL_GYRO')] = R8
+ 118 [  43] GETTABLE  R7 = R2[K5('S')]
+ 119 [  43] GETTABLE  R8 = R2[K5('S')]
+ 120 [  43] GETTABLE  R8 = R8[K22('MDL_GYRO')]
+ 121 [  43] LT        A=1 K9(0), R8; skip-next if condition != A
+ 122 [  43] JMP       A=0 ->124
+ 123 [  43] LOADBOOL  A=8 B=0 C=1
+ 124 [  43] LOADBOOL  A=8 B=1 C=0
+ 125 [  43] SETTABLE  R7[K24('MDL_GYRO_ON')] = R8
+ 126 [  45] GETTABLE  R7 = R2[K5('S')]
+ 127 [  45] SETTABLE  R7[K25('MDL_ACC')] = K9(0)
+ 128 [  46] GETTABLE  R7 = R2[K5('S')]
+ 129 [  46] GETTABLE  R8 = R2[K5('S')]
+ 130 [  46] GETTABLE  R8 = R8[K25('MDL_ACC')]
+ 131 [  46] LT        A=1 K9(0), R8; skip-next if condition != A
+ 132 [  46] JMP       A=0 ->134
+ 133 [  46] LOADBOOL  A=8 B=0 C=1
+ 134 [  46] LOADBOOL  A=8 B=1 C=0
+ 135 [  46] SETTABLE  R7[K26('MDL_ACC_ON')] = R8
+ 136 [  48] GETTABLE  R7 = R2[K5('S')]
+ 137 [  48] GETTABLE  R8 = R0[K12('fm')]
+ 138 [  48] GETTABLE  R8 = R8[K28('pgg')]
+ 139 [  48] TEST      A=8 B=0 C=0
+ 140 [  48] JMP       A=0 ->152
+ 141 [  48] GETTABLE  R8 = R5[K29(7)]
+ 142 [  48] TEST      A=8 B=0 C=0
+ 143 [  48] JMP       A=0 ->149
+ 144 [  48] GETTABUP  R8 = UP0[K8('tonumber')]
+ 145 [  48] GETTABLE  R9 = R5[K29(7)]
+ 146 [  48] CALL      A=8 B=2 C=2
+ 147 [  48] TEST      A=8 B=0 C=1
+ 148 [  48] JMP       A=0 ->153
+ 149 [  48] LOADK     R8 = K9 (0)
+ 150 [  48] TEST      A=8 B=0 C=1
+ 151 [  48] JMP       A=0 ->153
+ 152 [  48] LOADK     R8 = K9 (0)
+ 153 [  48] SETTABLE  R7[K27('MDL_BARO')] = R8
+ 154 [  49] GETTABLE  R7 = R2[K5('S')]
+ 155 [  49] GETTABLE  R8 = R2[K5('S')]
+ 156 [  49] GETTABLE  R8 = R8[K27('MDL_BARO')]
+ 157 [  49] LT        A=1 K9(0), R8; skip-next if condition != A
+ 158 [  49] JMP       A=0 ->160
+ 159 [  49] LOADBOOL  A=8 B=0 C=1
+ 160 [  49] LOADBOOL  A=8 B=1 C=0
+ 161 [  49] SETTABLE  R7[K30('MDL_BARO_ON')] = R8
+ 162 [  51] GETTABLE  R7 = R2[K5('S')]
+ 163 [  51] GETTABLE  R8 = R0[K12('fm')]
+ 164 [  51] GETTABLE  R8 = R8[K28('pgg')]
+ 165 [  51] TEST      A=8 B=0 C=0
+ 166 [  51] JMP       A=0 ->178
+ 167 [  51] GETTABLE  R8 = R5[K32(8)]
+ 168 [  51] TEST      A=8 B=0 C=0
+ 169 [  51] JMP       A=0 ->175
+ 170 [  51] GETTABUP  R8 = UP0[K8('tonumber')]
+ 171 [  51] GETTABLE  R9 = R5[K32(8)]
+ 172 [  51] CALL      A=8 B=2 C=2
+ 173 [  51] TEST      A=8 B=0 C=1
+ 174 [  51] JMP       A=0 ->179
+ 175 [  51] LOADK     R8 = K9 (0)
+ 176 [  51] TEST      A=8 B=0 C=1
+ 177 [  51] JMP       A=0 ->179
+ 178 [  51] LOADK     R8 = K9 (0)
+ 179 [  51] SETTABLE  R7[K31('MDL_PITOT')] = R8
+ 180 [  52] GETTABLE  R7 = R2[K5('S')]
+ 181 [  52] GETTABLE  R8 = R2[K5('S')]
+ 182 [  52] GETTABLE  R8 = R8[K31('MDL_PITOT')]
+ 183 [  52] LT        A=1 K9(0), R8; skip-next if condition != A
+ 184 [  52] JMP       A=0 ->186
+ 185 [  52] LOADBOOL  A=8 B=0 C=1
+ 186 [  52] LOADBOOL  A=8 B=1 C=0
+ 187 [  52] SETTABLE  R7[K33('MDL_PITOT_ON')] = R8
+ 188 [  54] GETTABLE  R7 = R2[K5('S')]
+ 189 [  54] GETTABLE  R8 = R0[K12('fm')]
+ 190 [  54] GETTABLE  R8 = R8[K13('sxx')]
+ 191 [  54] TEST      A=8 B=0 C=0
+ 192 [  54] JMP       A=0 ->204
+ 193 [  54] GETTABLE  R8 = R5[K35(9)]
+ 194 [  54] TEST      A=8 B=0 C=0
+ 195 [  54] JMP       A=0 ->201
+ 196 [  54] GETTABUP  R8 = UP0[K8('tonumber')]
+ 197 [  54] GETTABLE  R9 = R5[K35(9)]
+ 198 [  54] CALL      A=8 B=2 C=2
+ 199 [  54] TEST      A=8 B=0 C=1
+ 200 [  54] JMP       A=0 ->205
+ 201 [  54] LOADK     R8 = K9 (0)
+ 202 [  54] TEST      A=8 B=0 C=1
+ 203 [  54] JMP       A=0 ->205
+ 204 [  54] LOADK     R8 = K9 (0)
+ 205 [  54] SETTABLE  R7[K34('MDL_GPS')] = R8
+ 206 [  55] GETTABLE  R7 = R2[K5('S')]
+ 207 [  55] GETTABLE  R8 = R2[K5('S')]
+ 208 [  55] GETTABLE  R8 = R8[K34('MDL_GPS')]
+ 209 [  55] LT        A=1 K9(0), R8; skip-next if condition != A
+ 210 [  55] JMP       A=0 ->212
+ 211 [  55] LOADBOOL  A=8 B=0 C=1
+ 212 [  55] LOADBOOL  A=8 B=1 C=0
+ 213 [  55] SETTABLE  R7[K36('MDL_GPS_ON')] = R8
+ 214 [  57] GETTABLE  R7 = R2[K5('S')]
+ 215 [  57] GETTABLE  R8 = R0[K12('fm')]
+ 216 [  57] GETTABLE  R8 = R8[K13('sxx')]
+ 217 [  57] TEST      A=8 B=0 C=0
+ 218 [  57] JMP       A=0 ->230
+ 219 [  57] GETTABLE  R8 = R5[K38(10)]
+ 220 [  57] TEST      A=8 B=0 C=0
+ 221 [  57] JMP       A=0 ->227
+ 222 [  57] GETTABUP  R8 = UP0[K8('tonumber')]
+ 223 [  57] GETTABLE  R9 = R5[K38(10)]
+ 224 [  57] CALL      A=8 B=2 C=2
+ 225 [  57] TEST      A=8 B=0 C=1
+ 226 [  57] JMP       A=0 ->231
+ 227 [  57] LOADK     R8 = K9 (0)
+ 228 [  57] TEST      A=8 B=0 C=1
+ 229 [  57] JMP       A=0 ->231
+ 230 [  57] LOADK     R8 = K9 (0)
+ 231 [  57] SETTABLE  R7[K37('MDL_COMP')] = R8
+ 232 [  58] GETTABLE  R7 = R2[K5('S')]
+ 233 [  58] GETTABLE  R8 = R2[K5('S')]
+ 234 [  58] GETTABLE  R8 = R8[K37('MDL_COMP')]
+ 235 [  58] LT        A=1 K9(0), R8; skip-next if condition != A
+ 236 [  58] JMP       A=0 ->238
+ 237 [  58] LOADBOOL  A=8 B=0 C=1
+ 238 [  58] LOADBOOL  A=8 B=1 C=0
+ 239 [  58] SETTABLE  R7[K39('MDL_COMP_ON')] = R8
+ 240 [  60] GETTABLE  R7 = R2[K5('S')]
+ 241 [  60] GETTABLE  R8 = R0[K12('fm')]
+ 242 [  60] GETTABLE  R8 = R8[K13('sxx')]
+ 243 [  60] TEST      A=8 B=0 C=0
+ 244 [  60] JMP       A=0 ->256
+ 245 [  60] GETTABLE  R8 = R5[K41(11)]
+ 246 [  60] TEST      A=8 B=0 C=0
+ 247 [  60] JMP       A=0 ->253
+ 248 [  60] GETTABUP  R8 = UP0[K8('tonumber')]
+ 249 [  60] GETTABLE  R9 = R5[K41(11)]
+ 250 [  60] CALL      A=8 B=2 C=2
+ 251 [  60] TEST      A=8 B=0 C=1
+ 252 [  60] JMP       A=0 ->257
+ 253 [  60] LOADK     R8 = K9 (0)
+ 254 [  60] TEST      A=8 B=0 C=1
+ 255 [  60] JMP       A=0 ->257
+ 256 [  60] LOADK     R8 = K9 (0)
+ 257 [  60] SETTABLE  R7[K40('MDL_VTX')] = R8
+ 258 [  61] GETTABLE  R7 = R2[K5('S')]
+ 259 [  61] GETTABLE  R8 = R2[K5('S')]
+ 260 [  61] GETTABLE  R8 = R8[K40('MDL_VTX')]
+ 261 [  61] LT        A=1 K9(0), R8; skip-next if condition != A
+ 262 [  61] JMP       A=0 ->264
+ 263 [  61] LOADBOOL  A=8 B=0 C=1
+ 264 [  61] LOADBOOL  A=8 B=1 C=0
+ 265 [  61] SETTABLE  R7[K42('MDL_VTX_ON')] = R8
+ 266 [  63] GETTABLE  R7 = R2[K5('S')]
+ 267 [  63] GETTABLE  R7 = R7[K11('MDL_FC')]
+ 268 [  63] EQ        A=0 R7, K14(2); skip-next if condition != A
+ 269 [  63] JMP       A=0 ->274
+ 270 [  64] GETTABLE  R7 = R2[K5('S')]
+ 271 [  64] SETTABLE  R7[K40('MDL_VTX')] = K9(0)
+ 272 [  65] GETTABLE  R7 = R2[K5('S')]
+ 273 [  65] SETTABLE  R7[K42('MDL_VTX_ON')] = K43(False)
+ 274 [  72] EQ        A=1 R4, K44('RL'); skip-next if condition != A
+ 275 [  72] JMP       A=0 ->278
+ 276 [  72] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 277 [  72] JMP       A=0 ->403
+ 278 [  73] GETTABLE  R7 = R0[K2('split')]
+ 279 [  73] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 280 [  73] GETTABLE  R8 = R8[K45('RCL')]
+ 281 [  73] LOADK     R9 = K4 ('|')
+ 282 [  73] CALL      A=7 B=3 C=2
+ 283 [  73] MOVE      A=5 B=7 C=0
+ 284 [  74] GETTABLE  R7 = R2[K5('S')]
+ 285 [  74] GETTABLE  R8 = R5[K7(1)]
+ 286 [  74] TEST      A=8 B=0 C=0
+ 287 [  74] JMP       A=0 ->293
+ 288 [  74] GETTABUP  R8 = UP0[K8('tonumber')]
+ 289 [  74] GETTABLE  R9 = R5[K7(1)]
+ 290 [  74] CALL      A=8 B=2 C=2
+ 291 [  74] TEST      A=8 B=0 C=1
+ 292 [  74] JMP       A=0 ->294
+ 293 [  74] LOADK     R8 = K7 (1)
+ 294 [  74] SETTABLE  R7[K46('RCP_pv')] = R8
+ 295 [  75] GETTABLE  R7 = R2[K5('S')]
+ 296 [  75] GETTABLE  R8 = R0[K12('fm')]
+ 297 [  75] GETTABLE  R8 = R8[K13('sxx')]
+ 298 [  75] TEST      A=8 B=0 C=0
+ 299 [  75] JMP       A=0 ->311
+ 300 [  75] GETTABLE  R8 = R5[K14(2)]
+ 301 [  75] TEST      A=8 B=0 C=0
+ 302 [  75] JMP       A=0 ->308
+ 303 [  75] GETTABUP  R8 = UP0[K8('tonumber')]
+ 304 [  75] GETTABLE  R9 = R5[K14(2)]
+ 305 [  75] CALL      A=8 B=2 C=2
+ 306 [  75] TEST      A=8 B=0 C=1
+ 307 [  75] JMP       A=0 ->312
+ 308 [  75] LOADK     R8 = K48 (40)
+ 309 [  75] TEST      A=8 B=0 C=1
+ 310 [  75] JMP       A=0 ->312
+ 311 [  75] LOADK     R8 = K48 (40)
+ 312 [  75] SETTABLE  R7[K47('RL_RSI_L')] = R8
+ 313 [  76] GETTABLE  R7 = R2[K5('S')]
+ 314 [  76] GETTABLE  R8 = R0[K12('fm')]
+ 315 [  76] GETTABLE  R8 = R8[K13('sxx')]
+ 316 [  76] TEST      A=8 B=0 C=0
+ 317 [  76] JMP       A=0 ->329
+ 318 [  76] GETTABLE  R8 = R5[K17(3)]
+ 319 [  76] TEST      A=8 B=0 C=0
+ 320 [  76] JMP       A=0 ->326
+ 321 [  76] GETTABUP  R8 = UP0[K8('tonumber')]
+ 322 [  76] GETTABLE  R9 = R5[K17(3)]
+ 323 [  76] CALL      A=8 B=2 C=2
+ 324 [  76] TEST      A=8 B=0 C=1
+ 325 [  76] JMP       A=0 ->330
+ 326 [  76] LOADK     R8 = K50 (30)
+ 327 [  76] TEST      A=8 B=0 C=1
+ 328 [  76] JMP       A=0 ->330
+ 329 [  76] LOADK     R8 = K50 (30)
+ 330 [  76] SETTABLE  R7[K49('RL_RSI_C')] = R8
+ 331 [  77] GETTABLE  R7 = R2[K5('S')]
+ 332 [  77] GETTABLE  R8 = R0[K12('fm')]
+ 333 [  77] GETTABLE  R8 = R8[K13('sxx')]
+ 334 [  77] TEST      A=8 B=0 C=0
+ 335 [  77] JMP       A=0 ->347
+ 336 [  77] GETTABLE  R8 = R5[K20(4)]
+ 337 [  77] TEST      A=8 B=0 C=0
+ 338 [  77] JMP       A=0 ->344
+ 339 [  77] GETTABUP  R8 = UP0[K8('tonumber')]
+ 340 [  77] GETTABLE  R9 = R5[K20(4)]
+ 341 [  77] CALL      A=8 B=2 C=2
+ 342 [  77] TEST      A=8 B=0 C=1
+ 343 [  77] JMP       A=0 ->348
+ 344 [  77] LOADK     R8 = K52 (80)
+ 345 [  77] TEST      A=8 B=0 C=1
+ 346 [  77] JMP       A=0 ->348
+ 347 [  77] LOADK     R8 = K52 (80)
+ 348 [  77] SETTABLE  R7[K51('RL_RQL_L')] = R8
+ 349 [  78] GETTABLE  R7 = R2[K5('S')]
+ 350 [  78] GETTABLE  R8 = R0[K12('fm')]
+ 351 [  78] GETTABLE  R8 = R8[K13('sxx')]
+ 352 [  78] TEST      A=8 B=0 C=0
+ 353 [  78] JMP       A=0 ->365
+ 354 [  78] GETTABLE  R8 = R5[K23(5)]
+ 355 [  78] TEST      A=8 B=0 C=0
+ 356 [  78] JMP       A=0 ->362
+ 357 [  78] GETTABUP  R8 = UP0[K8('tonumber')]
+ 358 [  78] GETTABLE  R9 = R5[K23(5)]
+ 359 [  78] CALL      A=8 B=2 C=2
+ 360 [  78] TEST      A=8 B=0 C=1
+ 361 [  78] JMP       A=0 ->366
+ 362 [  78] LOADK     R8 = K54 (70)
+ 363 [  78] TEST      A=8 B=0 C=1
+ 364 [  78] JMP       A=0 ->366
+ 365 [  78] LOADK     R8 = K54 (70)
+ 366 [  78] SETTABLE  R7[K53('RL_RQL_C')] = R8
+ 367 [  79] GETTABLE  R7 = R2[K5('S')]
+ 368 [  79] GETTABLE  R8 = R0[K12('fm')]
+ 369 [  79] GETTABLE  R8 = R8[K13('sxx')]
+ 370 [  79] TEST      A=8 B=0 C=0
+ 371 [  79] JMP       A=0 ->383
+ 372 [  79] GETTABLE  R8 = R5[K56(6)]
+ 373 [  79] TEST      A=8 B=0 C=0
+ 374 [  79] JMP       A=0 ->380
+ 375 [  79] GETTABUP  R8 = UP0[K8('tonumber')]
+ 376 [  79] GETTABLE  R9 = R5[K56(6)]
+ 377 [  79] CALL      A=8 B=2 C=2
+ 378 [  79] TEST      A=8 B=0 C=1
+ 379 [  79] JMP       A=0 ->384
+ 380 [  79] LOADK     R8 = K20 (4)
+ 381 [  79] TEST      A=8 B=0 C=1
+ 382 [  79] JMP       A=0 ->384
+ 383 [  79] LOADK     R8 = K20 (4)
+ 384 [  79] SETTABLE  R7[K55('RL_SNR_L')] = R8
+ 385 [  80] GETTABLE  R7 = R2[K5('S')]
+ 386 [  80] GETTABLE  R8 = R0[K12('fm')]
+ 387 [  80] GETTABLE  R8 = R8[K13('sxx')]
+ 388 [  80] TEST      A=8 B=0 C=0
+ 389 [  80] JMP       A=0 ->401
+ 390 [  80] GETTABLE  R8 = R5[K29(7)]
+ 391 [  80] TEST      A=8 B=0 C=0
+ 392 [  80] JMP       A=0 ->398
+ 393 [  80] GETTABUP  R8 = UP0[K8('tonumber')]
+ 394 [  80] GETTABLE  R9 = R5[K29(7)]
+ 395 [  80] CALL      A=8 B=2 C=2
+ 396 [  80] TEST      A=8 B=0 C=1
+ 397 [  80] JMP       A=0 ->402
+ 398 [  80] LOADK     R8 = K9 (0)
+ 399 [  80] TEST      A=8 B=0 C=1
+ 400 [  80] JMP       A=0 ->402
+ 401 [  80] LOADK     R8 = K9 (0)
+ 402 [  80] SETTABLE  R7[K57('RL_SNR_C')] = R8
+ 403 [  84] EQ        A=1 R4, K58('BT'); skip-next if condition != A
+ 404 [  84] JMP       A=0 ->407
+ 405 [  84] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 406 [  84] JMP       A=0 ->539
+ 407 [  85] GETTABLE  R7 = R0[K2('split')]
+ 408 [  85] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 409 [  85] GETTABLE  R8 = R8[K58('BT')]
+ 410 [  85] LOADK     R9 = K4 ('|')
+ 411 [  85] CALL      A=7 B=3 C=2
+ 412 [  85] MOVE      A=5 B=7 C=0
+ 413 [  86] GETTABLE  R7 = R2[K5('S')]
+ 414 [  86] GETTABLE  R8 = R0[K12('fm')]
+ 415 [  86] GETTABLE  R8 = R8[K13('sxx')]
+ 416 [  86] TEST      A=8 B=0 C=0
+ 417 [  86] JMP       A=0 ->429
+ 418 [  86] GETTABLE  R8 = R5[K7(1)]
+ 419 [  86] TEST      A=8 B=0 C=0
+ 420 [  86] JMP       A=0 ->426
+ 421 [  86] GETTABUP  R8 = UP0[K8('tonumber')]
+ 422 [  86] GETTABLE  R9 = R5[K7(1)]
+ 423 [  86] CALL      A=8 B=2 C=2
+ 424 [  86] TEST      A=8 B=0 C=1
+ 425 [  86] JMP       A=0 ->430
+ 426 [  86] LOADK     R8 = K60 (3.0)
+ 427 [  86] TEST      A=8 B=0 C=1
+ 428 [  86] JMP       A=0 ->430
+ 429 [  86] LOADK     R8 = K60 (3.0)
+ 430 [  86] SETTABLE  R7[K59('BT_CELL_MIN')] = R8
+ 431 [  87] GETTABLE  R7 = R2[K5('S')]
+ 432 [  87] GETTABLE  R8 = R0[K12('fm')]
+ 433 [  87] GETTABLE  R8 = R8[K13('sxx')]
+ 434 [  87] TEST      A=8 B=0 C=0
+ 435 [  87] JMP       A=0 ->447
+ 436 [  87] GETTABLE  R8 = R5[K14(2)]
+ 437 [  87] TEST      A=8 B=0 C=0
+ 438 [  87] JMP       A=0 ->444
+ 439 [  87] GETTABUP  R8 = UP0[K8('tonumber')]
+ 440 [  87] GETTABLE  R9 = R5[K14(2)]
+ 441 [  87] CALL      A=8 B=2 C=2
+ 442 [  87] TEST      A=8 B=0 C=1
+ 443 [  87] JMP       A=0 ->448
+ 444 [  87] LOADK     R8 = K62 (4.199999809265137)
+ 445 [  87] TEST      A=8 B=0 C=1
+ 446 [  87] JMP       A=0 ->448
+ 447 [  87] LOADK     R8 = K62 (4.199999809265137)
+ 448 [  87] SETTABLE  R7[K61('BT_CELL_MAX')] = R8
+ 449 [  88] GETTABLE  R7 = R2[K5('S')]
+ 450 [  88] GETTABLE  R8 = R0[K12('fm')]
+ 451 [  88] GETTABLE  R8 = R8[K13('sxx')]
+ 452 [  88] TEST      A=8 B=0 C=0
+ 453 [  88] JMP       A=0 ->465
+ 454 [  88] GETTABLE  R8 = R5[K17(3)]
+ 455 [  88] TEST      A=8 B=0 C=0
+ 456 [  88] JMP       A=0 ->462
+ 457 [  88] GETTABUP  R8 = UP0[K8('tonumber')]
+ 458 [  88] GETTABLE  R9 = R5[K17(3)]
+ 459 [  88] CALL      A=8 B=2 C=2
+ 460 [  88] TEST      A=8 B=0 C=1
+ 461 [  88] JMP       A=0 ->466
+ 462 [  88] LOADK     R8 = K64 (2.700000047683716)
+ 463 [  88] TEST      A=8 B=0 C=1
+ 464 [  88] JMP       A=0 ->466
+ 465 [  88] LOADK     R8 = K64 (2.700000047683716)
+ 466 [  88] SETTABLE  R7[K63('BT_CELL_NOPWR')] = R8
+ 467 [  89] GETTABLE  R7 = R2[K5('S')]
+ 468 [  89] GETTABLE  R8 = R0[K12('fm')]
+ 469 [  89] GETTABLE  R8 = R8[K13('sxx')]
+ 470 [  89] TEST      A=8 B=0 C=0
+ 471 [  89] JMP       A=0 ->483
+ 472 [  89] GETTABLE  R8 = R5[K20(4)]
+ 473 [  89] TEST      A=8 B=0 C=0
+ 474 [  89] JMP       A=0 ->480
+ 475 [  89] GETTABUP  R8 = UP0[K8('tonumber')]
+ 476 [  89] GETTABLE  R9 = R5[K20(4)]
+ 477 [  89] CALL      A=8 B=2 C=2
+ 478 [  89] TEST      A=8 B=0 C=1
+ 479 [  89] JMP       A=0 ->484
+ 480 [  89] LOADK     R8 = K9 (0)
+ 481 [  89] TEST      A=8 B=0 C=1
+ 482 [  89] JMP       A=0 ->484
+ 483 [  89] LOADK     R8 = K9 (0)
+ 484 [  89] SETTABLE  R7[K65('BT_CELL_WARN_SND')] = R8
+ 485 [  90] GETTABLE  R7 = R2[K5('S')]
+ 486 [  90] GETTABLE  R8 = R0[K12('fm')]
+ 487 [  90] GETTABLE  R8 = R8[K13('sxx')]
+ 488 [  90] TEST      A=8 B=0 C=0
+ 489 [  90] JMP       A=0 ->501
+ 490 [  90] GETTABLE  R8 = R5[K23(5)]
+ 491 [  90] TEST      A=8 B=0 C=0
+ 492 [  90] JMP       A=0 ->498
+ 493 [  90] GETTABUP  R8 = UP0[K8('tonumber')]
+ 494 [  90] GETTABLE  R9 = R5[K23(5)]
+ 495 [  90] CALL      A=8 B=2 C=2
+ 496 [  90] TEST      A=8 B=0 C=1
+ 497 [  90] JMP       A=0 ->502
+ 498 [  90] LOADK     R8 = K67 (3.4000000953674316)
+ 499 [  90] TEST      A=8 B=0 C=1
+ 500 [  90] JMP       A=0 ->502
+ 501 [  90] LOADK     R8 = K67 (3.4000000953674316)
+ 502 [  90] SETTABLE  R7[K66('BT_CELL_CRIT')] = R8
+ 503 [  91] GETTABLE  R7 = R2[K5('S')]
+ 504 [  91] GETTABLE  R8 = R0[K12('fm')]
+ 505 [  91] GETTABLE  R8 = R8[K13('sxx')]
+ 506 [  91] TEST      A=8 B=0 C=0
+ 507 [  91] JMP       A=0 ->519
+ 508 [  91] GETTABLE  R8 = R5[K56(6)]
+ 509 [  91] TEST      A=8 B=0 C=0
+ 510 [  91] JMP       A=0 ->516
+ 511 [  91] GETTABUP  R8 = UP0[K8('tonumber')]
+ 512 [  91] GETTABLE  R9 = R5[K56(6)]
+ 513 [  91] CALL      A=8 B=2 C=2
+ 514 [  91] TEST      A=8 B=0 C=1
+ 515 [  91] JMP       A=0 ->520
+ 516 [  91] LOADK     R8 = K69 (3.5999999046325684)
+ 517 [  91] TEST      A=8 B=0 C=1
+ 518 [  91] JMP       A=0 ->520
+ 519 [  91] LOADK     R8 = K69 (3.5999999046325684)
+ 520 [  91] SETTABLE  R7[K68('BT_CELL_LOW')] = R8
+ 521 [  92] GETTABLE  R7 = R2[K5('S')]
+ 522 [  92] GETTABLE  R8 = R0[K12('fm')]
+ 523 [  92] GETTABLE  R8 = R8[K13('sxx')]
+ 524 [  92] TEST      A=8 B=0 C=0
+ 525 [  92] JMP       A=0 ->537
+ 526 [  92] GETTABLE  R8 = R5[K29(7)]
+ 527 [  92] TEST      A=8 B=0 C=0
+ 528 [  92] JMP       A=0 ->534
+ 529 [  92] GETTABUP  R8 = UP0[K8('tonumber')]
+ 530 [  92] GETTABLE  R9 = R5[K29(7)]
+ 531 [  92] CALL      A=8 B=2 C=2
+ 532 [  92] TEST      A=8 B=0 C=1
+ 533 [  92] JMP       A=0 ->538
+ 534 [  92] LOADK     R8 = K9 (0)
+ 535 [  92] TEST      A=8 B=0 C=1
+ 536 [  92] JMP       A=0 ->538
+ 537 [  92] LOADK     R8 = K9 (0)
+ 538 [  92] SETTABLE  R7[K70('BT_CELL_WARN_TYPE')] = R8
+ 539 [  96] EQ        A=1 R4, K71('BTFS'); skip-next if condition != A
+ 540 [  96] JMP       A=0 ->543
+ 541 [  96] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 542 [  96] JMP       A=0 ->603
+ 543 [  97] GETTABLE  R7 = R0[K2('split')]
+ 544 [  97] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 545 [  97] GETTABLE  R8 = R8[K71('BTFS')]
+ 546 [  97] LOADK     R9 = K4 ('|')
+ 547 [  97] CALL      A=7 B=3 C=2
+ 548 [  97] MOVE      A=5 B=7 C=0
+ 549 [  98] GETTABLE  R7 = R2[K5('S')]
+ 550 [  98] GETTABLE  R8 = R0[K12('fm')]
+ 551 [  98] GETTABLE  R8 = R8[K28('pgg')]
+ 552 [  98] TEST      A=8 B=0 C=0
+ 553 [  98] JMP       A=0 ->565
+ 554 [  98] GETTABLE  R8 = R5[K7(1)]
+ 555 [  98] TEST      A=8 B=0 C=0
+ 556 [  98] JMP       A=0 ->562
+ 557 [  98] GETTABUP  R8 = UP0[K8('tonumber')]
+ 558 [  98] GETTABLE  R9 = R5[K7(1)]
+ 559 [  98] CALL      A=8 B=2 C=2
+ 560 [  98] TEST      A=8 B=0 C=1
+ 561 [  98] JMP       A=0 ->566
+ 562 [  98] LOADK     R8 = K9 (0)
+ 563 [  98] TEST      A=8 B=0 C=1
+ 564 [  98] JMP       A=0 ->566
+ 565 [  98] LOADK     R8 = K9 (0)
+ 566 [  98] SETTABLE  R7[K72('BT_FAV_SEL')] = R8
+ 567 [  99] GETTABLE  R7 = R2[K5('S')]
+ 568 [  99] GETTABLE  R8 = R0[K12('fm')]
+ 569 [  99] GETTABLE  R8 = R8[K28('pgg')]
+ 570 [  99] TEST      A=8 B=0 C=0
+ 571 [  99] JMP       A=0 ->583
+ 572 [  99] GETTABLE  R8 = R5[K14(2)]
+ 573 [  99] TEST      A=8 B=0 C=0
+ 574 [  99] JMP       A=0 ->580
+ 575 [  99] GETTABUP  R8 = UP0[K8('tonumber')]
+ 576 [  99] GETTABLE  R9 = R5[K14(2)]
+ 577 [  99] CALL      A=8 B=2 C=2
+ 578 [  99] TEST      A=8 B=0 C=1
+ 579 [  99] JMP       A=0 ->584
+ 580 [  99] LOADK     R8 = K7 (1)
+ 581 [  99] TEST      A=8 B=0 C=1
+ 582 [  99] JMP       A=0 ->584
+ 583 [  99] LOADK     R8 = K7 (1)
+ 584 [  99] SETTABLE  R7[K73('BT_FAV_CELLS')] = R8
+ 585 [ 100] GETTABLE  R7 = R2[K5('S')]
+ 586 [ 100] GETTABLE  R8 = R0[K12('fm')]
+ 587 [ 100] GETTABLE  R8 = R8[K28('pgg')]
+ 588 [ 100] TEST      A=8 B=0 C=0
+ 589 [ 100] JMP       A=0 ->601
+ 590 [ 100] GETTABLE  R8 = R5[K17(3)]
+ 591 [ 100] TEST      A=8 B=0 C=0
+ 592 [ 100] JMP       A=0 ->598
+ 593 [ 100] GETTABUP  R8 = UP0[K8('tonumber')]
+ 594 [ 100] GETTABLE  R9 = R5[K17(3)]
+ 595 [ 100] CALL      A=8 B=2 C=2
+ 596 [ 100] TEST      A=8 B=0 C=1
+ 597 [ 100] JMP       A=0 ->602
+ 598 [ 100] LOADK     R8 = K9 (0)
+ 599 [ 100] TEST      A=8 B=0 C=1
+ 600 [ 100] JMP       A=0 ->602
+ 601 [ 100] LOADK     R8 = K9 (0)
+ 602 [ 100] SETTABLE  R7[K74('BT_FAV_CAPA')] = R8
+ 603 [ 104] EQ        A=1 R4, K75('FC'); skip-next if condition != A
+ 604 [ 104] JMP       A=0 ->607
+ 605 [ 104] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 606 [ 104] JMP       A=0 ->661
+ 607 [ 105] GETTABLE  R7 = R0[K2('split')]
+ 608 [ 105] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 609 [ 105] GETTABLE  R8 = R8[K75('FC')]
+ 610 [ 105] LOADK     R9 = K4 ('|')
+ 611 [ 105] CALL      A=7 B=3 C=2
+ 612 [ 105] MOVE      A=5 B=7 C=0
+ 613 [ 106] GETTABLE  R7 = R2[K5('S')]
+ 614 [ 106] GETTABLE  R8 = R5[K7(1)]
+ 615 [ 106] TEST      A=8 B=0 C=0
+ 616 [ 106] JMP       A=0 ->622
+ 617 [ 106] GETTABUP  R8 = UP0[K8('tonumber')]
+ 618 [ 106] GETTABLE  R9 = R5[K7(1)]
+ 619 [ 106] CALL      A=8 B=2 C=2
+ 620 [ 106] EQ        A=1 R8, K7(1); skip-next if condition != A
+ 621 [ 106] JMP       A=0 ->625
+ 622 [ 106] LOADBOOL  A=8 B=0 C=0
+ 623 [ 106] JMP       A=0 ->626
+ 624 [ 106] LOADBOOL  A=8 B=0 C=1
+ 625 [ 106] LOADBOOL  A=8 B=1 C=0
+ 626 [ 106] SETTABLE  R7[K76('FC_MSP_ON')] = R8
+ 627 [ 107] GETTABLE  R7 = R2[K5('S')]
+ 628 [ 107] SETTABLE  R7[K77('FC_MSP_VER')] = K14(2)
+ 629 [ 108] GETTABLE  R7 = R2[K5('S')]
+ 630 [ 108] GETTABLE  R8 = R5[K17(3)]
+ 631 [ 108] TEST      A=8 B=0 C=0
+ 632 [ 108] JMP       A=0 ->638
+ 633 [ 108] GETTABUP  R8 = UP0[K8('tonumber')]
+ 634 [ 108] GETTABLE  R9 = R5[K17(3)]
+ 635 [ 108] CALL      A=8 B=2 C=2
+ 636 [ 108] TEST      A=8 B=0 C=1
+ 637 [ 108] JMP       A=0 ->639
+ 638 [ 108] LOADK     R8 = K17 (3)
+ 639 [ 108] SETTABLE  R7[K78('FC_MSP_ERR_INTVAL')] = R8
+ 640 [ 109] GETTABLE  R7 = R2[K5('S')]
+ 641 [ 109] GETTABLE  R8 = R5[K20(4)]
+ 642 [ 109] TEST      A=8 B=0 C=0
+ 643 [ 109] JMP       A=0 ->649
+ 644 [ 109] GETTABUP  R8 = UP0[K8('tonumber')]
+ 645 [ 109] GETTABLE  R9 = R5[K20(4)]
+ 646 [ 109] CALL      A=8 B=2 C=2
+ 647 [ 109] TEST      A=8 B=0 C=1
+ 648 [ 109] JMP       A=0 ->650
+ 649 [ 109] LOADK     R8 = K23 (5)
+ 650 [ 109] SETTABLE  R7[K79('FC_MSP_VTX_INTVAL')] = R8
+ 651 [ 110] GETTABLE  R7 = R2[K5('S')]
+ 652 [ 110] GETTABLE  R7 = R7[K11('MDL_FC')]
+ 653 [ 110] EQ        A=1 R7, K14(2); skip-next if condition != A
+ 654 [ 110] JMP       A=0 ->659
+ 655 [ 110] GETTABLE  R7 = R2[K5('S')]
+ 656 [ 110] GETTABLE  R7 = R7[K80('FC_FW_ID')]
+ 657 [ 110] EQ        A=0 R7, K81('IN'); skip-next if condition != A
+ 658 [ 110] JMP       A=0 ->661
+ 659 [ 111] GETTABLE  R7 = R2[K5('S')]
+ 660 [ 111] SETTABLE  R7[K79('FC_MSP_VTX_INTVAL')] = K9(0)
+ 661 [ 117] EQ        A=1 R4, K82('VTX'); skip-next if condition != A
+ 662 [ 117] JMP       A=0 ->665
+ 663 [ 117] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 664 [ 117] JMP       A=0 ->735
+ 665 [ 118] GETTABLE  R7 = R0[K2('split')]
+ 666 [ 118] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 667 [ 118] GETTABLE  R8 = R8[K82('VTX')]
+ 668 [ 118] LOADK     R9 = K4 ('|')
+ 669 [ 118] CALL      A=7 B=3 C=2
+ 670 [ 118] MOVE      A=5 B=7 C=0
+ 671 [ 119] GETTABLE  R7 = R2[K5('S')]
+ 672 [ 119] GETTABLE  R8 = R5[K7(1)]
+ 673 [ 119] TEST      A=8 B=0 C=0
+ 674 [ 119] JMP       A=0 ->680
+ 675 [ 119] GETTABUP  R8 = UP0[K8('tonumber')]
+ 676 [ 119] GETTABLE  R9 = R5[K7(1)]
+ 677 [ 119] CALL      A=8 B=2 C=2
+ 678 [ 119] TEST      A=8 B=0 C=1
+ 679 [ 119] JMP       A=0 ->681
+ 680 [ 119] LOADK     R8 = K9 (0)
+ 681 [ 119] SETTABLE  R7[K83('VTX_CONN_TYPE')] = R8
+ 682 [ 120] GETTABLE  R7 = R2[K5('S')]
+ 683 [ 120] GETTABLE  R8 = R5[K14(2)]
+ 684 [ 120] TEST      A=8 B=0 C=0
+ 685 [ 120] JMP       A=0 ->691
+ 686 [ 120] GETTABUP  R8 = UP0[K8('tonumber')]
+ 687 [ 120] GETTABLE  R9 = R5[K14(2)]
+ 688 [ 120] CALL      A=8 B=2 C=2
+ 689 [ 120] TEST      A=8 B=0 C=1
+ 690 [ 120] JMP       A=0 ->692
+ 691 [ 120] LOADK     R8 = K7 (1)
+ 692 [ 120] SETTABLE  R7[K84('VTX_MODEL')] = R8
+ 693 [ 121] GETTABLE  R7 = R2[K5('S')]
+ 694 [ 121] GETTABLE  R8 = R5[K17(3)]
+ 695 [ 121] TEST      A=8 B=0 C=0
+ 696 [ 121] JMP       A=0 ->702
+ 697 [ 121] GETTABUP  R8 = UP0[K8('tonumber')]
+ 698 [ 121] GETTABLE  R9 = R5[K17(3)]
+ 699 [ 121] CALL      A=8 B=2 C=2
+ 700 [ 121] EQ        A=1 R8, K7(1); skip-next if condition != A
+ 701 [ 121] JMP       A=0 ->705
+ 702 [ 121] LOADBOOL  A=8 B=0 C=0
+ 703 [ 121] JMP       A=0 ->706
+ 704 [ 121] LOADBOOL  A=8 B=0 C=1
+ 705 [ 121] LOADBOOL  A=8 B=1 C=0
+ 706 [ 121] SETTABLE  R7[K85('VTX_PROXY_ON')] = R8
+ 707 [ 122] GETTABLE  R7 = R2[K5('S')]
+ 708 [ 122] GETTABLE  R8 = R5[K20(4)]
+ 709 [ 122] TEST      A=8 B=0 C=0
+ 710 [ 122] JMP       A=0 ->716
+ 711 [ 122] GETTABUP  R8 = UP0[K8('tonumber')]
+ 712 [ 122] GETTABLE  R9 = R5[K20(4)]
+ 713 [ 122] CALL      A=8 B=2 C=2
+ 714 [ 122] TEST      A=8 B=0 C=1
+ 715 [ 122] JMP       A=0 ->717
+ 716 [ 122] LOADK     R8 = K7 (1)
+ 717 [ 122] SETTABLE  R7[K86('VTX_FRQ_RANGE')] = R8
+ 718 [ 123] GETTABLE  R7 = R2[K5('S')]
+ 719 [ 123] GETTABLE  R8 = R5[K23(5)]
+ 720 [ 123] TEST      A=8 B=0 C=0
+ 721 [ 123] JMP       A=0 ->727
+ 722 [ 123] GETTABUP  R8 = UP0[K8('tonumber')]
+ 723 [ 123] GETTABLE  R9 = R5[K23(5)]
+ 724 [ 123] CALL      A=8 B=2 C=2
+ 725 [ 123] TEST      A=8 B=0 C=1
+ 726 [ 123] JMP       A=0 ->728
+ 727 [ 123] LOADK     R8 = K7 (1)
+ 728 [ 123] SETTABLE  R7[K87('VTX_VIEW_MODE')] = R8
+ 729 [ 124] GETTABLE  R7 = R2[K5('S')]
+ 730 [ 124] GETTABLE  R7 = R7[K11('MDL_FC')]
+ 731 [ 124] EQ        A=0 R7, K14(2); skip-next if condition != A
+ 732 [ 124] JMP       A=0 ->735
+ 733 [ 125] GETTABLE  R7 = R2[K5('S')]
+ 734 [ 125] SETTABLE  R7[K83('VTX_CONN_TYPE')] = K9(0)
+ 735 [ 131] EQ        A=1 R4, K88('GPS'); skip-next if condition != A
+ 736 [ 131] JMP       A=0 ->739
+ 737 [ 131] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 738 [ 131] JMP       A=0 ->781
+ 739 [ 132] GETTABLE  R7 = R0[K2('split')]
+ 740 [ 132] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 741 [ 132] GETTABLE  R8 = R8[K88('GPS')]
+ 742 [ 132] LOADK     R9 = K4 ('|')
+ 743 [ 132] CALL      A=7 B=3 C=2
+ 744 [ 132] MOVE      A=5 B=7 C=0
+ 745 [ 133] GETTABLE  R7 = R2[K5('S')]
+ 746 [ 133] GETTABLE  R8 = R5[K7(1)]
+ 747 [ 133] TEST      A=8 B=0 C=0
+ 748 [ 133] JMP       A=0 ->754
+ 749 [ 133] GETTABUP  R8 = UP0[K8('tonumber')]
+ 750 [ 133] GETTABLE  R9 = R5[K7(1)]
+ 751 [ 133] CALL      A=8 B=2 C=2
+ 752 [ 133] TEST      A=8 B=0 C=1
+ 753 [ 133] JMP       A=0 ->755
+ 754 [ 133] LOADK     R8 = K9 (0)
+ 755 [ 133] SETTABLE  R7[K89('GPS_SATS2FIX')] = R8
+ 756 [ 134] GETTABLE  R7 = R2[K5('S')]
+ 757 [ 134] GETTABLE  R8 = R5[K14(2)]
+ 758 [ 134] TEST      A=8 B=0 C=0
+ 759 [ 134] JMP       A=0 ->765
+ 760 [ 134] GETTABUP  R8 = UP0[K8('tonumber')]
+ 761 [ 134] GETTABLE  R9 = R5[K14(2)]
+ 762 [ 134] CALL      A=8 B=2 C=2
+ 763 [ 134] EQ        A=1 R8, K7(1); skip-next if condition != A
+ 764 [ 134] JMP       A=0 ->768
+ 765 [ 134] LOADBOOL  A=8 B=0 C=0
+ 766 [ 134] JMP       A=0 ->769
+ 767 [ 134] LOADBOOL  A=8 B=0 C=1
+ 768 [ 134] LOADBOOL  A=8 B=1 C=0
+ 769 [ 134] SETTABLE  R7[K90('GPS_LOG_ON')] = R8
+ 770 [ 135] GETTABLE  R7 = R2[K5('S')]
+ 771 [ 135] GETTABLE  R8 = R5[K17(3)]
+ 772 [ 135] TEST      A=8 B=0 C=0
+ 773 [ 135] JMP       A=0 ->779
+ 774 [ 135] GETTABUP  R8 = UP0[K8('tonumber')]
+ 775 [ 135] GETTABLE  R9 = R5[K17(3)]
+ 776 [ 135] CALL      A=8 B=2 C=2
+ 777 [ 135] TEST      A=8 B=0 C=1
+ 778 [ 135] JMP       A=0 ->780
+ 779 [ 135] LOADK     R8 = K23 (5)
+ 780 [ 135] SETTABLE  R7[K91('GPS_LOG_MAX')] = R8
+ 781 [ 140] EQ        A=1 R4, K92('IND'); skip-next if condition != A
+ 782 [ 140] JMP       A=0 ->785
+ 783 [ 140] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 784 [ 140] JMP       A=0 ->857
+ 785 [ 141] GETTABLE  R7 = R0[K2('split')]
+ 786 [ 141] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 787 [ 141] GETTABLE  R8 = R8[K92('IND')]
+ 788 [ 141] LOADK     R9 = K4 ('|')
+ 789 [ 141] CALL      A=7 B=3 C=2
+ 790 [ 141] MOVE      A=5 B=7 C=0
+ 791 [ 142] GETTABLE  R7 = R2[K5('S')]
+ 792 [ 142] MOVE      A=8 B=6 C=0
+ 793 [ 142] GETTABLE  R9 = R5[K7(1)]
+ 794 [ 142] CALL      A=8 B=2 C=2
+ 795 [ 142] SETTABLE  R7[K93('IN_AR_src')] = R8
+ 796 [ 143] GETTABLE  R7 = R2[K5('S')]
+ 797 [ 143] GETTABLE  R8 = R0[K12('fm')]
+ 798 [ 143] GETTABLE  R8 = R8[K13('sxx')]
+ 799 [ 143] TEST      A=8 B=0 C=0
+ 800 [ 143] JMP       A=0 ->806
+ 801 [ 143] MOVE      A=8 B=6 C=0
+ 802 [ 143] GETTABLE  R9 = R5[K14(2)]
+ 803 [ 143] CALL      A=8 B=2 C=2
+ 804 [ 143] TEST      A=8 B=0 C=1
+ 805 [ 143] JMP       A=0 ->807
+ 806 [ 143] LOADK     R8 = K95 ('-')
+ 807 [ 143] SETTABLE  R7[K94('IN_TC_src')] = R8
+ 808 [ 144] GETTABLE  R7 = R2[K5('S')]
+ 809 [ 144] GETTABLE  R8 = R0[K12('fm')]
+ 810 [ 144] GETTABLE  R8 = R8[K13('sxx')]
+ 811 [ 144] TEST      A=8 B=0 C=0
+ 812 [ 144] JMP       A=0 ->819
+ 813 [ 144] GETTABLE  R8 = R5[K17(3)]
+ 814 [ 144] TEST      A=8 B=0 C=1
+ 815 [ 144] JMP       A=0 ->820
+ 816 [ 144] LOADK     R8 = K95 ('-')
+ 817 [ 144] TEST      A=8 B=0 C=1
+ 818 [ 144] JMP       A=0 ->820
+ 819 [ 144] LOADK     R8 = K95 ('-')
+ 820 [ 144] SETTABLE  R7[K96('IN_TL_src')] = R8
+ 821 [ 145] GETTABLE  R7 = R2[K5('S')]
+ 822 [ 145] GETTABLE  R8 = R0[K12('fm')]
+ 823 [ 145] GETTABLE  R8 = R8[K13('sxx')]
+ 824 [ 145] TEST      A=8 B=0 C=0
+ 825 [ 145] JMP       A=0 ->837
+ 826 [ 145] GETTABLE  R8 = R5[K20(4)]
+ 827 [ 145] TEST      A=8 B=0 C=0
+ 828 [ 145] JMP       A=0 ->834
+ 829 [ 145] GETTABUP  R8 = UP0[K8('tonumber')]
+ 830 [ 145] GETTABLE  R9 = R5[K20(4)]
+ 831 [ 145] CALL      A=8 B=2 C=2
+ 832 [ 145] TEST      A=8 B=0 C=1
+ 833 [ 145] JMP       A=0 ->838
+ 834 [ 145] LOADK     R8 = K9 (0)
+ 835 [ 145] TEST      A=8 B=0 C=1
+ 836 [ 145] JMP       A=0 ->838
+ 837 [ 145] LOADK     R8 = K9 (0)
+ 838 [ 145] SETTABLE  R7[K97('TMR_host')] = R8
+ 839 [ 146] GETTABLE  R7 = R2[K5('S')]
+ 840 [ 146] GETTABLE  R8 = R0[K12('fm')]
+ 841 [ 146] GETTABLE  R8 = R8[K13('sxx')]
+ 842 [ 146] TEST      A=8 B=0 C=0
+ 843 [ 146] JMP       A=0 ->855
+ 844 [ 146] GETTABLE  R8 = R5[K23(5)]
+ 845 [ 146] TEST      A=8 B=0 C=0
+ 846 [ 146] JMP       A=0 ->852
+ 847 [ 146] GETTABUP  R8 = UP0[K8('tonumber')]
+ 848 [ 146] GETTABLE  R9 = R5[K23(5)]
+ 849 [ 146] CALL      A=8 B=2 C=2
+ 850 [ 146] TEST      A=8 B=0 C=1
+ 851 [ 146] JMP       A=0 ->856
+ 852 [ 146] LOADK     R8 = K7 (1)
+ 853 [ 146] TEST      A=8 B=0 C=1
+ 854 [ 146] JMP       A=0 ->856
+ 855 [ 146] LOADK     R8 = K7 (1)
+ 856 [ 146] SETTABLE  R7[K98('TMR_no')] = R8
+ 857 [ 151] EQ        A=1 R4, K99('INDBF'); skip-next if condition != A
+ 858 [ 151] JMP       A=0 ->865
+ 859 [ 151] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 860 [ 151] JMP       A=0 ->910
+ 861 [ 151] GETTABLE  R7 = R2[K5('S')]
+ 862 [ 151] GETTABLE  R7 = R7[K11('MDL_FC')]
+ 863 [ 151] EQ        A=0 R7, K7(1); skip-next if condition != A
+ 864 [ 151] JMP       A=0 ->910
+ 865 [ 152] GETTABLE  R7 = R0[K2('split')]
+ 866 [ 152] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 867 [ 152] GETTABLE  R8 = R8[K99('INDBF')]
+ 868 [ 152] LOADK     R9 = K4 ('|')
+ 869 [ 152] CALL      A=7 B=3 C=2
+ 870 [ 152] MOVE      A=5 B=7 C=0
+ 871 [ 153] GETTABLE  R7 = R2[K5('S')]
+ 872 [ 153] MOVE      A=8 B=6 C=0
+ 873 [ 153] GETTABLE  R9 = R5[K7(1)]
+ 874 [ 153] CALL      A=8 B=2 C=2
+ 875 [ 153] SETTABLE  R7[K100('IN_FMAC_src')] = R8
+ 876 [ 154] GETTABLE  R7 = R2[K5('S')]
+ 877 [ 154] MOVE      A=8 B=6 C=0
+ 878 [ 154] GETTABLE  R9 = R5[K14(2)]
+ 879 [ 154] CALL      A=8 B=2 C=2
+ 880 [ 154] SETTABLE  R7[K101('IN_FMHR_src')] = R8
+ 881 [ 155] GETTABLE  R7 = R2[K5('S')]
+ 882 [ 155] MOVE      A=8 B=6 C=0
+ 883 [ 155] GETTABLE  R9 = R5[K17(3)]
+ 884 [ 155] CALL      A=8 B=2 C=2
+ 885 [ 155] SETTABLE  R7[K102('IN_FMAN_src')] = R8
+ 886 [ 156] GETTABLE  R7 = R2[K5('S')]
+ 887 [ 156] GETTABLE  R8 = R0[K12('fm')]
+ 888 [ 156] GETTABLE  R8 = R8[K13('sxx')]
+ 889 [ 156] TEST      A=8 B=0 C=0
+ 890 [ 156] JMP       A=0 ->896
+ 891 [ 156] MOVE      A=8 B=6 C=0
+ 892 [ 156] GETTABLE  R9 = R5[K20(4)]
+ 893 [ 156] CALL      A=8 B=2 C=2
+ 894 [ 156] TEST      A=8 B=0 C=1
+ 895 [ 156] JMP       A=0 ->897
+ 896 [ 156] LOADK     R8 = K95 ('-')
+ 897 [ 156] SETTABLE  R7[K103('IN_AM_src')] = R8
+ 898 [ 157] GETTABLE  R7 = R2[K5('S')]
+ 899 [ 157] GETTABLE  R8 = R0[K12('fm')]
+ 900 [ 157] GETTABLE  R8 = R8[K13('sxx')]
+ 901 [ 157] TEST      A=8 B=0 C=0
+ 902 [ 157] JMP       A=0 ->908
+ 903 [ 157] MOVE      A=8 B=6 C=0
+ 904 [ 157] GETTABLE  R9 = R5[K23(5)]
+ 905 [ 157] CALL      A=8 B=2 C=2
+ 906 [ 157] TEST      A=8 B=0 C=1
+ 907 [ 157] JMP       A=0 ->909
+ 908 [ 157] LOADK     R8 = K95 ('-')
+ 909 [ 157] SETTABLE  R7[K104('IN_TU_src')] = R8
+ 910 [ 162] EQ        A=1 R4, K105('UI'); skip-next if condition != A
+ 911 [ 162] JMP       A=0 ->914
+ 912 [ 162] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 913 [ 162] JMP       A=0 ->990
+ 914 [ 163] GETTABLE  R7 = R0[K2('split')]
+ 915 [ 163] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 916 [ 163] GETTABLE  R8 = R8[K106('TH')]
+ 917 [ 163] LOADK     R9 = K4 ('|')
+ 918 [ 163] CALL      A=7 B=3 C=2
+ 919 [ 163] MOVE      A=5 B=7 C=0
+ 920 [ 164] GETTABLE  R7 = R2[K5('S')]
+ 921 [ 164] GETTABLE  R8 = R5[K7(1)]
+ 922 [ 164] TEST      A=8 B=0 C=1
+ 923 [ 164] JMP       A=0 ->925
+ 924 [ 164] LOADK     R8 = K108 ('CARBON_PLATE')
+ 925 [ 164] SETTABLE  R7[K107('UI_THM_ID')] = R8
+ 926 [ 165] GETTABLE  R7 = R2[K5('S')]
+ 927 [ 165] GETTABLE  R8 = R5[K14(2)]
+ 928 [ 165] TEST      A=8 B=0 C=0
+ 929 [ 165] JMP       A=0 ->935
+ 930 [ 165] GETTABUP  R8 = UP0[K8('tonumber')]
+ 931 [ 165] GETTABLE  R9 = R5[K14(2)]
+ 932 [ 165] CALL      A=8 B=2 C=2
+ 933 [ 165] EQ        A=1 R8, K7(1); skip-next if condition != A
+ 934 [ 165] JMP       A=0 ->938
+ 935 [ 165] LOADBOOL  A=8 B=0 C=0
+ 936 [ 165] JMP       A=0 ->939
+ 937 [ 165] LOADBOOL  A=8 B=0 C=1
+ 938 [ 165] LOADBOOL  A=8 B=1 C=0
+ 939 [ 165] SETTABLE  R7[K109('UI_THM_OV')] = R8
+ 940 [ 166] GETTABLE  R7 = R0[K2('split')]
+ 941 [ 166] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 942 [ 166] GETTABLE  R8 = R8[K105('UI')]
+ 943 [ 166] LOADK     R9 = K4 ('|')
+ 944 [ 166] CALL      A=7 B=3 C=2
+ 945 [ 166] MOVE      A=5 B=7 C=0
+ 946 [ 167] GETTABLE  R7 = R2[K5('S')]
+ 947 [ 167] GETTABLE  R8 = R5[K7(1)]
+ 948 [ 167] TEST      A=8 B=0 C=0
+ 949 [ 167] JMP       A=0 ->955
+ 950 [ 167] GETTABUP  R8 = UP0[K8('tonumber')]
+ 951 [ 167] GETTABLE  R9 = R5[K7(1)]
+ 952 [ 167] CALL      A=8 B=2 C=2
+ 953 [ 167] TEST      A=8 B=0 C=1
+ 954 [ 167] JMP       A=0 ->956
+ 955 [ 167] LOADK     R8 = K7 (1)
+ 956 [ 167] SETTABLE  R7[K110('UI_DBD_MPN')] = R8
+ 957 [ 168] GETTABLE  R7 = R2[K5('S')]
+ 958 [ 168] GETTABLE  R8 = R5[K14(2)]
+ 959 [ 168] TEST      A=8 B=0 C=0
+ 960 [ 168] JMP       A=0 ->966
+ 961 [ 168] GETTABUP  R8 = UP0[K8('tonumber')]
+ 962 [ 168] GETTABLE  R9 = R5[K14(2)]
+ 963 [ 168] CALL      A=8 B=2 C=2
+ 964 [ 168] TEST      A=8 B=0 C=1
+ 965 [ 168] JMP       A=0 ->967
+ 966 [ 168] LOADK     R8 = K7 (1)
+ 967 [ 168] SETTABLE  R7[K111('UI_DBD_SPN')] = R8
+ 968 [ 169] GETTABLE  R7 = R2[K5('S')]
+ 969 [ 169] GETTABLE  R8 = R5[K17(3)]
+ 970 [ 169] TEST      A=8 B=0 C=0
+ 971 [ 169] JMP       A=0 ->977
+ 972 [ 169] GETTABUP  R8 = UP0[K8('tonumber')]
+ 973 [ 169] GETTABLE  R9 = R5[K17(3)]
+ 974 [ 169] CALL      A=8 B=2 C=2
+ 975 [ 169] TEST      A=8 B=0 C=1
+ 976 [ 169] JMP       A=0 ->978
+ 977 [ 169] LOADK     R8 = K7 (1)
+ 978 [ 169] SETTABLE  R7[K112('UI_DBD_BPN')] = R8
+ 979 [ 170] GETTABLE  R7 = R2[K5('S')]
+ 980 [ 170] GETTABLE  R8 = R5[K20(4)]
+ 981 [ 170] TEST      A=8 B=0 C=0
+ 982 [ 170] JMP       A=0 ->988
+ 983 [ 170] GETTABUP  R8 = UP0[K8('tonumber')]
+ 984 [ 170] GETTABLE  R9 = R5[K20(4)]
+ 985 [ 170] CALL      A=8 B=2 C=2
+ 986 [ 170] TEST      A=8 B=0 C=1
+ 987 [ 170] JMP       A=0 ->989
+ 988 [ 170] LOADK     R8 = K7 (1)
+ 989 [ 170] SETTABLE  R7[K113('UI_CFG_PN')] = R8
+ 990 [ 174] EQ        A=1 R4, K114('APP'); skip-next if condition != A
+ 991 [ 174] JMP       A=0 ->994
+ 992 [ 174] EQ        A=0 R4, K0('ALL'); skip-next if condition != A
+ 993 [ 174] JMP       A=0 ->1011
+ 994 [ 175] GETTABLE  R7 = R0[K2('split')]
+ 995 [ 175] GETTABLE  R8 = R2[K3('CFGSTR')]
+ 996 [ 175] GETTABLE  R8 = R8[K114('APP')]
+ 997 [ 175] LOADK     R9 = K4 ('|')
+ 998 [ 175] CALL      A=7 B=3 C=2
+ 999 [ 175] MOVE      A=5 B=7 C=0
+1000 [ 176] GETTABLE  R7 = R2[K5('S')]
+1001 [ 176] GETTABLE  R8 = R5[K7(1)]
+1002 [ 176] TEST      A=8 B=0 C=0
+1003 [ 176] JMP       A=0 ->1009
+1004 [ 176] GETTABUP  R8 = UP0[K8('tonumber')]
+1005 [ 176] GETTABLE  R9 = R5[K7(1)]
+1006 [ 176] CALL      A=8 B=2 C=2
+1007 [ 176] TEST      A=8 B=0 C=1
+1008 [ 176] JMP       A=0 ->1010
+1009 [ 176] LOADK     R8 = K9 (0)
+1010 [ 176] SETTABLE  R7[K115('APP_LOG_ERR')] = R8
+1011 [ 179] RETURN    A=0 B=1 C=0
+1012 [ 179] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 5 lines 19 25 source None
+UPVALUES [('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('value', 0, 27), ('sourceType', 9, 27)]
+K0 '-'
+K1 'string'
+K2 'sub'
+K3 1
+K4 2
+K5 'LS'
+K6 'fm'
+K7 'pgg'
+K8 'TM'
+K9 'sxx'
+   1 [  20] TEST      A=0 B=0 C=1
+   2 [  20] JMP       A=0 ->4
+   3 [  20] LOADK     R0 = K0 ('-')
+   4 [  21] GETTABUP  R1 = UP0[K1('string')]
+   5 [  21] GETTABLE  R1 = R1[K2('sub')]
+   6 [  21] MOVE      A=2 B=0 C=0
+   7 [  21] LOADK     R3 = K3 (1)
+   8 [  21] LOADK     R4 = K4 (2)
+   9 [  21] CALL      A=1 B=4 C=2
+  10 [  22] EQ        A=0 R1, K5('LS'); skip-next if condition != A
+  11 [  22] JMP       A=0 ->18
+  12 [  22] GETTABUP  R2 = UP1[K6('fm')]
+  13 [  22] GETTABLE  R2 = R2[K7('pgg')]
+  14 [  22] TEST      A=2 B=0 C=1
+  15 [  22] JMP       A=0 ->18
+  16 [  22] LOADK     R2 = K0 ('-')
+  17 [  22] RETURN    A=2 B=2 C=0
+  18 [  23] EQ        A=0 R1, K8('TM'); skip-next if condition != A
+  19 [  23] JMP       A=0 ->26
+  20 [  23] GETTABUP  R2 = UP1[K6('fm')]
+  21 [  23] GETTABLE  R2 = R2[K9('sxx')]
+  22 [  23] TEST      A=2 B=0 C=1
+  23 [  23] JMP       A=0 ->26
+  24 [  23] LOADK     R2 = K0 ('-')
+  25 [  23] RETURN    A=2 B=2 C=0
+  26 [  24] RETURN    A=0 B=2 C=0
+  27 [  25] RETURN    A=0 B=1 C=0

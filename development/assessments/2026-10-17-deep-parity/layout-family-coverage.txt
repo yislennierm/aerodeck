@@ -1,0 +1,13 @@
+Supplemental layout/common-helper review
+
+All43 layout families are mapped explicitly in layout-family-coverage.json, covering129 original chunks and86 alternative-to480×272 comparisons. Every original hash matches recovery-report.json. Each family lists purpose, precise observed differences and remaining unknowns. Eleven common helpers have recovered-source skims plus original constants/disassemblies; selected QM dispatch is checked end-to-end.
+
+Fingerprint matches are structural facts only. Debug-stripped records preserve instruction words/constants/captures but omit debug fields. Numeric wildcards can hide real range/loop changes. Opcode sequences ignore operands. None is a full runtime equivalence proof or native rendering test.
+
+Material differences are adaptation: AHR tape range/calibration/index sizes; CFG raw lnMax8/11/10; AST7/9/9; GPS10/13/13; STK7/9/9; TLM7/10/10; FCD lineN8/12/13; VTX lnMax8/8/9 and spacing17/22/33. Larger VTX layouts use fuller connection/table guidance. Main800×480 dashboard is recomposed rather than a uniform stretch. No additional backend/data capability was identified solely in the alternative symbol inventories.
+
+Common helper findings map to existing requirements. QM original main/8 opens onMN,setsQM_ON/eventlevel0,rotary selects,ENTER calls selected callback,EX/MN dismisses. The recovered QM.e is empty: this is decompilation loss,not absence of a working feature. Mute/reset/reload/custom-command outcomes remain existing DATA/nav rows,not duplicate IDs. Reset queues timer reset,telemetry and model sensor0..63 reset,VTX/GPS reinitialization.
+
+AST also renders a visual long/short beep code for selected reason. This is recorded for the existing ArmStops requirement; no new ID added. DIT is a tuple renderer,DBAR a percent bar; SNV provides generic threshold/inversion/format/blink/bar normalization. These helper mechanics do not create independent extra capabilities beyond callers.
+
+No source/row/narrative/production/radio changes in this supplement. Existing92 UI rows remain stable. Actual alternative-display inputs,assets/fonts and hardware performance are still unverified.

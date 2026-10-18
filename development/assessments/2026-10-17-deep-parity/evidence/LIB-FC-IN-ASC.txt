@@ -1,0 +1,338 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/IN/ASC.luac 
+SHA256 61d513ea048c1af1f7b055f0eebb7740e156a249f432a220324672dd64ac3154
+
+FUNCTION main params 0 vararg 1 stack 14 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FC/IN/ASC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 240), ('F', 1, 240), ('D', 1, 240), ('X', 1, 240), ('all', 219, 240), ('asList', 220, 240), ('(for generator)', 228, 236), ('(for state)', 228, 236), ('(for control)', 228, 236), ('i', 229, 234), ('v', 229, 234), ('asNo', 230, 234)]
+K0 1
+K1 '-'
+K2 ''
+K3 2
+K4 3
+K5 4
+K6 5
+K7 6
+K8 7
+K9 'GEOZONE'
+K10 'Geozone is blocking armed'
+K11 8
+K12 'FS'
+K13 'RX is not recognised as providing a valid signal'
+K14 9
+K15 'ANGLE'
+K16 'Model is not leveled as defined by the CLI small_angle setting'
+K17 10
+K18 'CAL'
+K19 'Pre-arm sensor calibration has not completed.'
+K20 11
+K21 'OVRLD'
+K22 'CPU load is excessive. May be caused by too an aggressive loop time setting.'
+K23 12
+K24 'NAV'
+K25 'When "nav_extra_arming_safety = ON" is used, this may be caused by variuos reasons'
+K26 13
+K27 'COMPASS'
+K28 'Compass is not calibrated.'
+K29 'Perform the calibration procedure.'
+K30 14
+K31 'ACC'
+K32 'Accelerometer is not calibrated.'
+K33 'Perform the calibration procedure'
+K34 15
+K35 'ARMSW'
+K36 'Arm switch was engaged as the FC booted'
+K37 16
+K38 'HWFAIL'
+K39 'Required hardware device (Gyro, Accelerometer, Baro, Compass, RangeFinder, Pitot, GPS or OpticalFlow) has failed / is not recognized'
+K40 17
+K41 'BOXFS'
+K42 'Failsafe switch is engaged'
+K43 18
+K44 'KILLSW'
+K45 'Kill switch is engaged'
+K46 19
+K47 'RX'
+K48 'RC link is not detected (RX not detected).'
+K49 20
+K50 'THR'
+K51 'The throttle setting is not at minimum'
+K52 21
+K53 'CLI'
+K54 'BST device (ex TBS Core Pro) disarmed and is preventing arming'
+K55 'Exit the CLI.'
+K56 22
+K57 'CMS'
+K58 'CMS (config menu) is Active - over OSD or other display'
+K59 'Exit the CMS.'
+K60 23
+K61 'OSD'
+K62 'The OSD menu is active'
+K63 'Exit OSD menu)'
+K64 24
+K65 'ROLL/PITCH'
+K66 'Roll and/or pitch is not centred'
+K67 25
+K68 'AUTOTRIM'
+K69 'Servo autotrim is engaged'
+K70 26
+K71 'OOM'
+K72 'FC is out of memory.'
+K73 27
+K74 'SETTINGFAIL'
+K75 'A CLI setting is out of range.'
+K76 'Reboot the flight controller for settings changes to take effect.'
+K77 28
+K78 'PWMOUT'
+K79 'PWM output error. Motor or servo output initialisation failed.'
+K80 29
+K81 'NOPREARM'
+K82 'PREARM is enabled and timed out.'
+K83 30
+K84 'DSHOTBEEPER'
+K85 'DSHOTBEEPER is enabled and is active.'
+K86 31
+K87 'LANDED'
+K88 'Landing detected.'
+K89 'FC'
+K90 'ARMSTOPS'
+K91 'ipairs'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  10] NEWTABLE  A=4 B=0 C=24
+   3 [  11] NEWTABLE  A=5 B=4 C=0
+   4 [  11] LOADK     R6 = K1 ('-')
+   5 [  11] LOADK     R7 = K2 ('')
+   6 [  11] LOADK     R8 = K2 ('')
+   7 [  11] LOADK     R9 = K0 (1)
+   8 [  11] SETLIST   A=5 B=4 C=1
+   9 [  11] SETTABLE  R4[K0(1)] = R5
+  10 [  12] NEWTABLE  A=5 B=4 C=0
+  11 [  12] LOADK     R6 = K1 ('-')
+  12 [  12] LOADK     R7 = K2 ('')
+  13 [  12] LOADK     R8 = K2 ('')
+  14 [  12] LOADK     R9 = K3 (2)
+  15 [  12] SETLIST   A=5 B=4 C=1
+  16 [  12] SETTABLE  R4[K3(2)] = R5
+  17 [  13] NEWTABLE  A=5 B=4 C=0
+  18 [  13] LOADK     R6 = K1 ('-')
+  19 [  13] LOADK     R7 = K2 ('')
+  20 [  13] LOADK     R8 = K2 ('')
+  21 [  13] LOADK     R9 = K4 (3)
+  22 [  13] SETLIST   A=5 B=4 C=1
+  23 [  13] SETTABLE  R4[K4(3)] = R5
+  24 [  14] NEWTABLE  A=5 B=4 C=0
+  25 [  14] LOADK     R6 = K1 ('-')
+  26 [  14] LOADK     R7 = K2 ('')
+  27 [  14] LOADK     R8 = K2 ('')
+  28 [  14] LOADK     R9 = K5 (4)
+  29 [  14] SETLIST   A=5 B=4 C=1
+  30 [  14] SETTABLE  R4[K5(4)] = R5
+  31 [  15] NEWTABLE  A=5 B=4 C=0
+  32 [  15] LOADK     R6 = K1 ('-')
+  33 [  15] LOADK     R7 = K2 ('')
+  34 [  15] LOADK     R8 = K2 ('')
+  35 [  15] LOADK     R9 = K6 (5)
+  36 [  15] SETLIST   A=5 B=4 C=1
+  37 [  15] SETTABLE  R4[K6(5)] = R5
+  38 [  16] NEWTABLE  A=5 B=4 C=0
+  39 [  16] LOADK     R6 = K1 ('-')
+  40 [  16] LOADK     R7 = K2 ('')
+  41 [  16] LOADK     R8 = K2 ('')
+  42 [  16] LOADK     R9 = K7 (6)
+  43 [  16] SETLIST   A=5 B=4 C=1
+  44 [  16] SETTABLE  R4[K7(6)] = R5
+  45 [  17] NEWTABLE  A=5 B=4 C=0
+  46 [  17] LOADK     R6 = K9 ('GEOZONE')
+  47 [  17] LOADK     R7 = K10 ('Geozone is blocking armed')
+  48 [  17] LOADK     R8 = K2 ('')
+  49 [  17] LOADK     R9 = K8 (7)
+  50 [  17] SETLIST   A=5 B=4 C=1
+  51 [  17] SETTABLE  R4[K8(7)] = R5
+  52 [  18] NEWTABLE  A=5 B=4 C=0
+  53 [  18] LOADK     R6 = K12 ('FS')
+  54 [  18] LOADK     R7 = K13 ('RX is not recognised as providing a valid signal')
+  55 [  18] LOADK     R8 = K2 ('')
+  56 [  18] LOADK     R9 = K11 (8)
+  57 [  18] SETLIST   A=5 B=4 C=1
+  58 [  18] SETTABLE  R4[K11(8)] = R5
+  59 [  19] NEWTABLE  A=5 B=4 C=0
+  60 [  19] LOADK     R6 = K15 ('ANGLE')
+  61 [  19] LOADK     R7 = K16 ('Model is not leveled as defined by the CLI small_angle setting')
+  62 [  19] LOADK     R8 = K2 ('')
+  63 [  19] LOADK     R9 = K14 (9)
+  64 [  19] SETLIST   A=5 B=4 C=1
+  65 [  19] SETTABLE  R4[K14(9)] = R5
+  66 [  20] NEWTABLE  A=5 B=4 C=0
+  67 [  20] LOADK     R6 = K18 ('CAL')
+  68 [  20] LOADK     R7 = K19 ('Pre-arm sensor calibration has not completed.')
+  69 [  20] LOADK     R8 = K2 ('')
+  70 [  20] LOADK     R9 = K17 (10)
+  71 [  20] SETLIST   A=5 B=4 C=1
+  72 [  20] SETTABLE  R4[K17(10)] = R5
+  73 [  21] NEWTABLE  A=5 B=4 C=0
+  74 [  21] LOADK     R6 = K21 ('OVRLD')
+  75 [  21] LOADK     R7 = K22 ('CPU load is excessive. May be caused by too an aggressive loop time setting.')
+  76 [  21] LOADK     R8 = K2 ('')
+  77 [  21] LOADK     R9 = K20 (11)
+  78 [  21] SETLIST   A=5 B=4 C=1
+  79 [  21] SETTABLE  R4[K20(11)] = R5
+  80 [  22] NEWTABLE  A=5 B=4 C=0
+  81 [  22] LOADK     R6 = K24 ('NAV')
+  82 [  22] LOADK     R7 = K25 ('When "nav_extra_arming_safety = ON" is used, this may be caused by variuos reasons')
+  83 [  22] LOADK     R8 = K2 ('')
+  84 [  22] LOADK     R9 = K23 (12)
+  85 [  22] SETLIST   A=5 B=4 C=1
+  86 [  22] SETTABLE  R4[K23(12)] = R5
+  87 [  23] NEWTABLE  A=5 B=4 C=0
+  88 [  23] LOADK     R6 = K27 ('COMPASS')
+  89 [  23] LOADK     R7 = K28 ('Compass is not calibrated.')
+  90 [  23] LOADK     R8 = K29 ('Perform the calibration procedure.')
+  91 [  23] LOADK     R9 = K26 (13)
+  92 [  23] SETLIST   A=5 B=4 C=1
+  93 [  23] SETTABLE  R4[K26(13)] = R5
+  94 [  24] NEWTABLE  A=5 B=4 C=0
+  95 [  24] LOADK     R6 = K31 ('ACC')
+  96 [  24] LOADK     R7 = K32 ('Accelerometer is not calibrated.')
+  97 [  24] LOADK     R8 = K33 ('Perform the calibration procedure')
+  98 [  24] LOADK     R9 = K30 (14)
+  99 [  24] SETLIST   A=5 B=4 C=1
+ 100 [  24] SETTABLE  R4[K30(14)] = R5
+ 101 [  25] NEWTABLE  A=5 B=4 C=0
+ 102 [  25] LOADK     R6 = K35 ('ARMSW')
+ 103 [  25] LOADK     R7 = K36 ('Arm switch was engaged as the FC booted')
+ 104 [  25] LOADK     R8 = K2 ('')
+ 105 [  25] LOADK     R9 = K34 (15)
+ 106 [  25] SETLIST   A=5 B=4 C=1
+ 107 [  25] SETTABLE  R4[K34(15)] = R5
+ 108 [  26] NEWTABLE  A=5 B=4 C=0
+ 109 [  26] LOADK     R6 = K38 ('HWFAIL')
+ 110 [  26] LOADK     R7 = K39 ('Required hardware device (Gyro, Accelerometer, Baro, Compass, RangeFinder, Pitot, GPS or OpticalFlow) has failed / is not recognized')
+ 111 [  26] LOADK     R8 = K2 ('')
+ 112 [  26] LOADK     R9 = K37 (16)
+ 113 [  26] SETLIST   A=5 B=4 C=1
+ 114 [  26] SETTABLE  R4[K37(16)] = R5
+ 115 [  27] NEWTABLE  A=5 B=4 C=0
+ 116 [  27] LOADK     R6 = K41 ('BOXFS')
+ 117 [  27] LOADK     R7 = K42 ('Failsafe switch is engaged')
+ 118 [  27] LOADK     R8 = K2 ('')
+ 119 [  27] LOADK     R9 = K40 (17)
+ 120 [  27] SETLIST   A=5 B=4 C=1
+ 121 [  27] SETTABLE  R4[K40(17)] = R5
+ 122 [  28] NEWTABLE  A=5 B=4 C=0
+ 123 [  28] LOADK     R6 = K44 ('KILLSW')
+ 124 [  28] LOADK     R7 = K45 ('Kill switch is engaged')
+ 125 [  28] LOADK     R8 = K2 ('')
+ 126 [  28] LOADK     R9 = K43 (18)
+ 127 [  28] SETLIST   A=5 B=4 C=1
+ 128 [  28] SETTABLE  R4[K43(18)] = R5
+ 129 [  29] NEWTABLE  A=5 B=4 C=0
+ 130 [  29] LOADK     R6 = K47 ('RX')
+ 131 [  29] LOADK     R7 = K48 ('RC link is not detected (RX not detected).')
+ 132 [  29] LOADK     R8 = K2 ('')
+ 133 [  29] LOADK     R9 = K46 (19)
+ 134 [  29] SETLIST   A=5 B=4 C=1
+ 135 [  29] SETTABLE  R4[K46(19)] = R5
+ 136 [  30] NEWTABLE  A=5 B=4 C=0
+ 137 [  30] LOADK     R6 = K50 ('THR')
+ 138 [  30] LOADK     R7 = K51 ('The throttle setting is not at minimum')
+ 139 [  30] LOADK     R8 = K2 ('')
+ 140 [  30] LOADK     R9 = K49 (20)
+ 141 [  30] SETLIST   A=5 B=4 C=1
+ 142 [  30] SETTABLE  R4[K49(20)] = R5
+ 143 [  31] NEWTABLE  A=5 B=4 C=0
+ 144 [  31] LOADK     R6 = K53 ('CLI')
+ 145 [  31] LOADK     R7 = K54 ('BST device (ex TBS Core Pro) disarmed and is preventing arming')
+ 146 [  31] LOADK     R8 = K55 ('Exit the CLI.')
+ 147 [  31] LOADK     R9 = K52 (21)
+ 148 [  31] SETLIST   A=5 B=4 C=1
+ 149 [  31] SETTABLE  R4[K52(21)] = R5
+ 150 [  32] NEWTABLE  A=5 B=4 C=0
+ 151 [  32] LOADK     R6 = K57 ('CMS')
+ 152 [  32] LOADK     R7 = K58 ('CMS (config menu) is Active - over OSD or other display')
+ 153 [  32] LOADK     R8 = K59 ('Exit the CMS.')
+ 154 [  32] LOADK     R9 = K56 (22)
+ 155 [  32] SETLIST   A=5 B=4 C=1
+ 156 [  32] SETTABLE  R4[K56(22)] = R5
+ 157 [  33] NEWTABLE  A=5 B=4 C=0
+ 158 [  33] LOADK     R6 = K61 ('OSD')
+ 159 [  33] LOADK     R7 = K62 ('The OSD menu is active')
+ 160 [  33] LOADK     R8 = K63 ('Exit OSD menu)')
+ 161 [  33] LOADK     R9 = K60 (23)
+ 162 [  33] SETLIST   A=5 B=4 C=1
+ 163 [  33] SETTABLE  R4[K60(23)] = R5
+ 164 [  34] NEWTABLE  A=5 B=4 C=0
+ 165 [  34] LOADK     R6 = K65 ('ROLL/PITCH')
+ 166 [  34] LOADK     R7 = K66 ('Roll and/or pitch is not centred')
+ 167 [  34] LOADK     R8 = K2 ('')
+ 168 [  34] LOADK     R9 = K64 (24)
+ 169 [  34] SETLIST   A=5 B=4 C=1
+ 170 [  34] SETTABLE  R4[K64(24)] = R5
+ 171 [  35] NEWTABLE  A=5 B=4 C=0
+ 172 [  35] LOADK     R6 = K68 ('AUTOTRIM')
+ 173 [  35] LOADK     R7 = K69 ('Servo autotrim is engaged')
+ 174 [  35] LOADK     R8 = K2 ('')
+ 175 [  35] LOADK     R9 = K67 (25)
+ 176 [  35] SETLIST   A=5 B=4 C=1
+ 177 [  35] SETTABLE  R4[K67(25)] = R5
+ 178 [  36] NEWTABLE  A=5 B=4 C=0
+ 179 [  36] LOADK     R6 = K71 ('OOM')
+ 180 [  36] LOADK     R7 = K72 ('FC is out of memory.')
+ 181 [  36] LOADK     R8 = K2 ('')
+ 182 [  36] LOADK     R9 = K70 (26)
+ 183 [  36] SETLIST   A=5 B=4 C=1
+ 184 [  36] SETTABLE  R4[K70(26)] = R5
+ 185 [  37] NEWTABLE  A=5 B=4 C=0
+ 186 [  37] LOADK     R6 = K74 ('SETTINGFAIL')
+ 187 [  37] LOADK     R7 = K75 ('A CLI setting is out of range.')
+ 188 [  37] LOADK     R8 = K76 ('Reboot the flight controller for settings changes to take effect.')
+ 189 [  37] LOADK     R9 = K73 (27)
+ 190 [  37] SETLIST   A=5 B=4 C=1
+ 191 [  37] SETTABLE  R4[K73(27)] = R5
+ 192 [  38] NEWTABLE  A=5 B=4 C=0
+ 193 [  38] LOADK     R6 = K78 ('PWMOUT')
+ 194 [  38] LOADK     R7 = K79 ('PWM output error. Motor or servo output initialisation failed.')
+ 195 [  38] LOADK     R8 = K2 ('')
+ 196 [  38] LOADK     R9 = K77 (28)
+ 197 [  38] SETLIST   A=5 B=4 C=1
+ 198 [  38] SETTABLE  R4[K77(28)] = R5
+ 199 [  39] NEWTABLE  A=5 B=4 C=0
+ 200 [  39] LOADK     R6 = K81 ('NOPREARM')
+ 201 [  39] LOADK     R7 = K82 ('PREARM is enabled and timed out.')
+ 202 [  39] LOADK     R8 = K2 ('')
+ 203 [  39] LOADK     R9 = K80 (29)
+ 204 [  39] SETLIST   A=5 B=4 C=1
+ 205 [  39] SETTABLE  R4[K80(29)] = R5
+ 206 [  40] NEWTABLE  A=5 B=4 C=0
+ 207 [  40] LOADK     R6 = K84 ('DSHOTBEEPER')
+ 208 [  40] LOADK     R7 = K85 ('DSHOTBEEPER is enabled and is active.')
+ 209 [  40] LOADK     R8 = K2 ('')
+ 210 [  40] LOADK     R9 = K83 (30)
+ 211 [  40] SETLIST   A=5 B=4 C=1
+ 212 [  40] SETTABLE  R4[K83(30)] = R5
+ 213 [  41] NEWTABLE  A=5 B=4 C=0
+ 214 [  41] LOADK     R6 = K87 ('LANDED')
+ 215 [  41] LOADK     R7 = K88 ('Landing detected.')
+ 216 [  41] LOADK     R8 = K2 ('')
+ 217 [  41] LOADK     R9 = K86 (31)
+ 218 [  41] SETLIST   A=5 B=4 C=1
+ 219 [  41] SETTABLE  R4[K86(31)] = R5
+ 220 [  45] NEWTABLE  A=5 B=0 C=0
+ 221 [  47] GETTABLE  R6 = R2[K89('FC')]
+ 222 [  47] GETTABLE  R6 = R6[K90('ARMSTOPS')]
+ 223 [  47] TEST      A=6 B=0 C=0
+ 224 [  47] JMP       A=0 ->238
+ 225 [  48] GETTABUP  R6 = UP0[K91('ipairs')]
+ 226 [  48] GETTABLE  R7 = R2[K89('FC')]
+ 227 [  48] GETTABLE  R7 = R7[K90('ARMSTOPS')]
+ 228 [  48] CALL      A=6 B=2 C=4
+ 229 [  48] JMP       A=0 ->235
+ 230 [  49] GETTABLE  R11 = R10[K0(1)]
+ 231 [  50] LEN       A=12 B=5 C=0
+ 232 [  50] ADD       A=12 B=12 C=256
+ 233 [  50] GETTABLE  R13 = R4[R11]
+ 234 [  50] SETTABLE  R5[R12] = R13
+ 235 [  48] TFORCALL  A=6 B=0 C=2
+ 236 [  48] TFORLOOP  A=8 ->230
+ 237 [  51] JMP       A=0 ->239
+ 238 [  53] MOVE      A=5 B=4 C=0
+ 239 [  56] RETURN    A=5 B=2 C=0
+ 240 [  56] RETURN    A=0 B=1 C=0

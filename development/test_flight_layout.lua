@@ -2,7 +2,7 @@
 -- This verifies LCD commands and cache behavior; physical frame rate needs the radio.
 -- At the user's30–40cm distance, enforce font hierarchy and clear geometry, not a physical-legibility claim.
 local f=assert(io.open('sdcard/SCRIPTS/TOOLS/telem.lua'));local original=f:read('*a');f:close()
-local tail=assert(string.find(original,'return {init=init,run=run,stop=fcLink.stop}',1,true))
+local tail=assert(string.find(original,'return {init=init,run=run,stop=fcLink.stop,',1,true))
 local source=string.sub(original,1,tail-1)..[[return {
  draw=function(data,colors)palette=colors;cockpit(data)end,
  enter=function()changePage(1)end,
@@ -104,59 +104,45 @@ local function visibleText(predicate)
  end end
 end
 local function near(actual,expected,tolerance,why)check(math.abs(actual-expected)<=(tolerance or .5),why)end
-local function pitchCaption(c)
- if c.kind~='text'or c.color~=colors.white or c.font~=SMLSIZE or not tonumber(c.text)then return false end
- local hudSeen=false
- for _,command in ipairs(commands)do
-  if command.kind=='hud'then hudSeen=true end
-  if command.kind=='text'and command.text=='P'and command.x==128 then return false end
-  if command==c then return hudSeen end
- end
- return false
-end
-local function clearAngleFields(c)
- check(c.y+c.h<=64 or c.y>=84 or (c.right<=127 or c.left>=205)and(c.right<=285 or c.left>=353),'Pitch captions must remain clear of both live-angle readouts')
+local function cleanAttitudeText()
+ for _,c in ipairs(commands)do if c.kind=='text'and c.left>=136 and c.right<=344 and c.y>=64 and c.y+c.h<=222 then
+  check(c.text~='P'and c.text~='R'and c.text~='deg'and c.text~='COG'and c.text~='YAW','Primary attitude contains no P/R/source captions or degree units')
+  check(tonumber(c.text)==nil,'Primary attitude must not retain moving signed pitch/roll or rung numbers: '..c.text)
+ end end
 end
 local data={lq=99,v=22.8,pct=73,rssi=-67,power=250,cells=6,mah=2762,snr=8,pitch=-12,roll=8,speed=31,alt=33,hdg=150,a=12.5}
-local cells={{8,61,95,70,'lq'},{410,61,95,472,'v'},{8,126,155,70,'rssi'},{410,126,155,472,'mah'},
+local cells={{8,35,65,70,'lq'},{410,35,65,472,'v'},{8,126,155,70,'rssi'},{410,126,155,472,'mah'},
  {8,177,206,70,'snr'},{410,177,206,472,'a'},{8,225,243,70,'power'},{410,225,243,472,'cell'},
- {78,138,170,124,'speed'},{356,138,170,402,'alt'}}
+ {78,138,170,134,'speed'},{346,138,170,402,'alt'}}
 app.enter();draw(data)
 check(app.stats.background=='FLAT / NATIVE','Diagnostics must identify the actual flat renderer')
-check(fill(4,35,70,209,colors.tape)and fill(406,35,70,209,colors.tape),'Matching narrow rails must preserve the reclaimed instrument area')
-check(fill(78,34,324,30,colors.black),'Removing the top arming button must give the compass its full324px band')
+check(fill(0,34,480,212,colors.tape),'Flight uses one continuous panel surface without dark gutters or margins')
+check(fill(76,34,328,30,colors.tape),'Compass shares the instrument surface and meets the structural dividers')
 for _,y in ipairs({108,159,208})do check(fill(8,y,62,1,colors.border)and fill(410,y,62,1,colors.border),'Rail separators must align')end
-local lq=field(8,61,95,'99',70,'Link quality');check(lq.font==MIDSIZE,'Primary LQ retains the readable mid-size native font')
-field(410,61,95,'22.8',472,'Pack voltage')
+local lq=field(8,35,65,'99',70,'Link quality');check(lq.font==MIDSIZE,'Primary LQ retains the readable mid-size native font')
+field(410,35,65,'22.8',472,'Pack voltage')
 local rssi=field(8,126,155,'-67',70,'RSSI');local used=field(410,126,155,'2762',472,'Consumed capacity')
 local snr=field(8,177,206,'8',70,'SNR');field(410,177,206,'12.5',472,'Current')
 local power=field(8,225,243,'250',70,'TX power');local cell=field(410,225,243,'3.80',472,'Average cell voltage')
 check(rssi.font==MIDSIZE and snr.font==MIDSIZE,'Actual RSSI and SNR receive the primary native29px value font')
 check(used.font==MIDSIZE and used.h==29 and used.w==56,'A normal four-digit used counter retains its measured56px by29px native font box')
 check(power.font==SMLSIZE and cell.font==SMLSIZE and power.h==17 and cell.h==17,'TX power and derived average cell voltage remain compact supporting context')
-local speed=field(78,138,170,'31',124,'Ground speed');local altitude=field(356,138,170,'33',402,'GPS altitude')
-near((speed.left+speed.right)/2,101,.5,'Ground speed centers its measured font box')
-near((altitude.left+altitude.right)/2,379,.5,'Altitude centers its measured font box')
+local speed=field(78,138,170,'31',134,'Ground speed');local altitude=field(346,138,170,'33',402,'GPS altitude')
+near((speed.left+speed.right)/2,106,.5,'Ground speed centers its measured font box')
+near((altitude.left+altitude.right)/2,374,.5,'Altitude centers its measured font box')
 check(speed.font==MIDSIZE and altitude.font==MIDSIZE,'Normal tape values retain the mid-size native font')
 local hud=assert(first('hud'));check(hud.pitch==-12 and hud.roll==8,'Renderer preserves the verified signed attitude')
-check(hud.xmin==78 and hud.xmax==402 and hud.ymin==64 and hud.ymax==244,'Native HUD uses the enlarged 324 by180 viewport')
-field(141,65,83,'-12',204,'Pitch angle');field(300,65,83,'+8',352,'Roll angle')
-check(first('text',function(c)return c.text=='P'and c.x==128 end)and first('text',function(c)return c.text=='R'and c.x==286 end),'Compact live-angle prefixes retain distinct pitch and roll meanings')
-for _,x in ipairs({141,300})do
- local number=textAt(x,65,83,x==141 and 204 or 352)
- local unit=first('text',function(c)return c.text=='deg'and c.x>number.x and c.x<(x==141 and 204 or 352)and c.y>=65 and c.y+c.h<=83 end)
- check(unit and unit.y+unit.h==number.y+number.h,'Angle degree units share their measured numeric baseline')
-end
-check(not first('triangle'),'The overlapping decorative bank pointer must be replaced by live angle values')
-check((hud.xmax-hud.xmin-2*46)*(hud.ymax-hud.ymin)==232*180,'Clear attitude area must use the reclaimed232 by180 pixels')
-check((232*180)>1.86*(184*122),'Clear attitude area must exceed the previous layout by at least86 percent')
+check(hud.xmin==136 and hud.xmax==344 and hud.ymin==64 and hud.ymax==244,'Native HUD is bounded inside the attitude panel')
+cleanAttitudeText()
+check(not first('triangle'),'Bank reference remains native line strokes without a decorative filled triangle')
+check((hud.xmin+hud.xmax)/2==240 and(hud.ymin+hud.ymax)/2==154,'Panel allocation preserves the native attitude datum')
 check(not first('bitmap'),'Flight instruments must use native drawing without instrument bitmaps')
-check(fill(78,64,46,180,colors.tape)and fill(356,64,46,180,colors.tape),'Equal opaque tapes define the clear attitude area')
+check(fill(76,222,328,22,colors.tape),'Footer spans both tapes and attitude with one level bottom edge')
 check(first('text',function(c)return c.text=='GS km/h'and c.y>=64 and c.y+c.h<=81 end),'Speed caption identifies ground speed and its unit')
-check(first('text',function(c)return c.text=='ALT m'and c.y>=64 and c.y+c.h<=81 end),'Altitude caption identifies metres')
-check(fill(8,100,61,4,colors.green)and fill(410,100,26,4,colors.green),'Meters reflect actual LQ and battery percentage')
+check(first('text',function(c)return c.text=='GPS m'and c.y>=64 and c.y+c.h<=81 end),'Altitude caption identifies GPS metres')
+check(fill(8,103,61,4,colors.green)and fill(410,103,45,4,colors.green),'Meters reflect actual LQ and battery percentage')
 panelTextBounds()
-for _,v in ipairs({{8,61,95,70,'%'},{410,61,95,472,'V'}})do
+for _,v in ipairs({{8,35,65,70,'%'},{410,35,65,472,'V'}})do
  local number=textAt(v[1],v[2],v[3],v[4]);local unit=first('text',function(c)return c.text==v[5]and c.y>=v[2]and c.y+c.h<=v[3]and c.x>number.x and c.x<v[4]end)
  check(unit and unit.y+unit.h==number.y+number.h,'Primary tiny units share their actual numeric baseline')
 end
@@ -164,7 +150,43 @@ for _,caption in ipairs({'RSSI dBm','AVG CELL V','TX mW','CURRENT A','SNR dB','U
  check(first('text',function(c)return c.text==caption end),'Rail captions retain their actual telemetry meaning and units')
 end
 
+
+-- Voltage leads; two aligned columns disclose cells and charge provenance.
+local function batteryBlock()
+ local voltage=textAt(410,35,65,472);inside(voltage,410,35,472,65,'Primary battery voltage')
+ local cells=textAt(410,66,86,439);inside(cells,410,66,439,86,'Cell count column')
+ local percent=textAt(443,66,86,472);inside(percent,443,66,472,86,'Remaining charge column')
+ local cellSource=textAt(410,86,101,439);inside(cellSource,410,86,439,101,'Cell provenance')
+ local chargeSource=textAt(443,86,101,472);inside(chargeSource,443,86,472,101,'Charge provenance')
+ check(voltage.y+voltage.h<=65 and cells.y>=66 and percent.y>=66,'Pack voltage has a distinct full-width primary row')
+ check(cells.right<=439 and percent.left>=443,'Cell count and charge retain a four-pixel gutter')
+ check(percent.text:sub(1,1)~='~','Estimate provenance is not disguised as a confidence percentage')
+ check(fill(410,103,62,4,colors.dim),'Capacity retains exactly one full-width track')
+ return cells,voltage,percent,cellSource,chargeSource
+end
+local cc,v,pc,cs,ps=batteryBlock()
+check(cc.text=='6S'and v.text=='22.8'and pc.text=='73%'and cs.text=='CELLS'and ps.text=='LEFT','Reported pack data has clear values and captions')
+for _,estimatedCells in ipairs({false,true})do for _,estimatedCharge in ipairs({false,true})do
+ for _,pct in ipairs({0,9,50,99,100})do
+  draw({v=22.8,cells=12,cellsEstimated=estimatedCells,pct=pct,estimated=estimatedCharge})
+  local cc,v,pc,cs,ps=batteryBlock()
+  check(cc.text=='12S'and pc.text==pct..'%'and pc.font==SMLSIZE,'Real0..100percent and12S retain exact readable values')
+  check(cs.text==(estimatedCells and'AUTO'or'CELLS')and ps.text==(estimatedCharge and'EST'or'LEFT'),'Independent provenance is explicit under its own column')
+ end
+end end
 draw({})
+local cc,v,pc,cs,ps=batteryBlock()
+check(cc.text=='--'and v.text=='--'and pc.text=='--'and pc.color==colors.muted,'Missing battery fields remain unavailable')
+check(not first('fill',function(c)return c.x==410 and c.y==103 and c.color~=colors.dim end),'Missing charge never fills the gauge')
+draw({v=0,pct=0,cells=6})
+local cc,v,pc=batteryBlock()
+check(v.text=='0.0'and pc.text=='0%'and pc.color==colors.white,'Genuine zero remains distinct from missing')
+
+draw({airspeed=45,baro=110})
+check(first('text',function(c)return c.text=='AS km/h'end),'Reported airspeed has an explicit caption')
+check(first('text',function(c)return c.text=='BARO m'end),'Barometric fallback has an explicit caption')
+draw({})
+check(first('text',function(c)return c.text=='ALT m'end),'Missing altitude does not imply a barometric reading')
 check(not first('hud'),'Missing pitch/roll must not draw a synthetic horizon')
 check(first('text',function(c)return c.text=='ATTITUDE'end)and first('text',function(c)return c.text=='UNAVAILABLE'end),'Missing attitude must be explicit')
 check(not first('text',function(c)return (c.x==141 or c.x==300)and c.y>=65 and c.y+c.h<=83 end),'Missing attitude must not leave angle values on screen')
@@ -172,31 +194,31 @@ for _,v in ipairs(cells)do
  local missing=field(v[1],v[2],v[3],'--',v[4],'Unavailable '..v[5])
  if v[1]==8 or v[1]==410 then check(missing.color==colors.muted,'Unavailable rail values must be visibly muted')end
 end
-check(not first('fill',function(c)return c.y==100 and c.h==4 and c.color~=colors.dim end),'Missing meter data leaves the tracks empty')
+check(not first('fill',function(c)return (c.y==103)and c.h==4 and c.color~=colors.dim end),'Missing meter data leaves the tracks empty')
 
 local zero={lq=0,v=0,pct=0,rssi=0,power=0,cells=6,mah=0,snr=0,pitch=0,roll=0,speed=0,alt=0,hdg=0,a=0}
 draw(zero)
 local zeroText={lq='0',v='0.0',rssi='0',cell='0.00',power='0',a='0.0',snr='0',mah='0',speed='0',alt='0'}
 for _,v in ipairs(cells)do field(v[1],v[2],v[3],zeroText[v[5]],v[4],'Real zero '..v[5])end
 check(first('hud'),'A real level attitude of zero remains available')
-field(141,65,83,'+0',204,'Zero pitch angle');field(300,65,83,'+0',352,'Zero roll angle')
+cleanAttitudeText()
 
 local bounded={lq=150,pct=150,v=22.8,cells=6}
-draw(bounded);field(8,61,95,'150',70,'Out-of-range LQ')
-check(fill(8,100,62,4,colors.green)and fill(410,100,36,4,colors.green),'Only the visual meters clamp over-range values')
-bounded.lq=-15;bounded.pct=-10;draw(bounded);field(8,61,95,'-15',70,'Negative LQ')
-check(not first('fill',function(c)return c.y==100 and c.h==4 and c.color~=colors.dim end),'Negative meter values cannot extend outside the track')
-draw({lq=60,pct=73,estimated=true});check(textAt(8,61,95,70).color==colors.red,'Critical LQ uses the configured boundary')
-check(first('text',function(c)return c.text=='~73%'end),'Estimated percentage retains its estimate marker')
-draw({lq=80});check(textAt(8,61,95,70).color==colors.orange,'Low LQ uses the configured boundary')
+draw(bounded);field(8,35,65,'150',70,'Out-of-range LQ')
+check(fill(8,103,62,4,colors.green)and fill(410,103,62,4,colors.green),'Only the visual meters clamp over-range values')
+bounded.lq=-15;bounded.pct=-10;draw(bounded);field(8,35,65,'-15',70,'Negative LQ')
+check(not first('fill',function(c)return (c.y==103)and c.h==4 and c.color~=colors.dim end),'Negative meter values cannot extend outside the track')
+draw({lq=60,pct=73,estimated=true});check(textAt(8,35,65,70).color==colors.red,'Critical LQ uses the configured boundary')
+check(first('text',function(c)return c.text=='73%'end)and first('text',function(c)return c.text=='EST'end),'Estimated charge uses a separate explicit provenance label')
+draw({lq=80});check(textAt(8,35,65,70).color==colors.orange,'Low LQ uses the configured boundary')
 draw({v=22.8,battery='BATTERY LOW',pct=73})
-check(textAt(410,61,95,472).color==colors.orange and fill(410,100,26,4,colors.orange),'Battery warning retains its voltage and meter emphasis')
+check(textAt(410,35,65,472).color==colors.orange and fill(410,103,45,4,colors.orange),'Battery warning retains its voltage and meter emphasis')
 local function iconColor(name)
  local image=first('pattern',function(c)return string.find(c.mask,'/'..name..'-18.png',1,true)~=nil end)
  check(image~=nil,'Rail health icon must remain present');return image.color
 end
-check(iconColor('battery_full')==colors.orange,'Battery icon must emphasize an actual battery warning')
-draw({});check(iconColor('cell_tower')==colors.muted and iconColor('battery_full')==colors.muted,'Missing link and battery telemetry must mute their health icons')
+check(not first('pattern',function(c)return c.x>=406 end),'Voltage-first pack block does not spend space or SD work on a redundant icon')
+draw({});check(iconColor('cell_tower')==colors.muted and textAt(410,35,65,472).color==colors.muted,'Missing link and voltage retain unavailable styling')
 for _,v in ipairs({{99,colors.green},{80,colors.orange},{60,colors.red},{0,colors.red}})do
  draw({lq=v[1]});check(iconColor('cell_tower')==v[2],'Link icon must follow actual LQ threshold health, including real zero')
 end
@@ -208,25 +230,36 @@ for _,count in ipairs({0,-1})do
  draw({v=22.8,cells=count});local value=field(410,225,243,'--',472,'Invalid configured cell count')
  check(value.color==colors.muted,'Undefined average cell voltage must remain unavailable')
 end
-for _,case in ipairs({{0,false},{73,false},{100,false},{73,true},{100,true},{999999999999,true}})do
+for _,case in ipairs({{100,false},{100,true},{0,false},{0,true},{99999,true}})do
  draw({v=22.8,pct=case[1],estimated=case[2]})
- local percent=first('text',function(c)return c.x==472 and c.y>=95 and c.y+c.h<=107 end)
- inside(percent,410,95,472,107,'Battery percentage')
- for _,c in ipairs(commands)do if c.kind=='fill'and c.x==410 and c.y==100 and c.h==4 then
-  check(c.x+c.w<=percent.left-3,'Battery meter must remain separate from its fitted percentage text, including estimated100 percent')
- end end
- if case[1]==100 and case[2]then check(percent.text=='~100%','Normal estimated full capacity keeps its explicit estimate marker')end
+ local percent=textAt(443,66,86,472)
+ inside(percent,443,66,472,86,'Battery percentage')
+ near((percent.left+percent.right)/2,457.5,1,'Charge centers within its own column')
 end
 draw({lq=999999999999,v=999999999999,pct=99,rssi=-999999999999,power=999999999999,cells=6,mah=999999999999,snr=-999999999999,
  speed=100000000,alt=-100000000,hdg=-999999,a=999999999999})
 for _,v in ipairs(cells)do inside(textAt(v[1],v[2],v[3],v[4]),v[1],v[2],v[4],v[3],'Long '..v[5])end
 panelTextBounds()
 for _,c in ipairs(commands)do
- if c.kind=='text'and c.y>=64 and c.y+c.h<=244 and(c.x>=78 and c.x<=124 or c.x>=356 and c.x<=402)then
-  local left=c.x<=124 and 78 or 356;inside(c,left,64,left+46,244,'Long tape tick or selected value')
+ if c.kind=='text'and c.y>=64 and c.y+c.h<=244 and(c.x>=78 and c.x<=134 or c.x>=346 and c.x<=402)then
+  local left=c.x<=134 and 78 or 346;inside(c,left,64,left+56,244,'Long tape tick or selected value')
  end
 end
-draw({alt=-33});field(356,138,170,'-33',402,'Negative altitude')
+draw({alt=-33});field(346,138,170,'-33',402,'Negative altitude')
+
+-- Selected values retain their true scale through100m and beyond.
+for _,value in ipairs({99,100,123,999,-99,-100,-123,-999,1000,1234,9999,-1000,-9999,10000,99999,-99999,1000000,-1000000})do
+ draw({speed=math.abs(value),alt=value,pitch=10,roll=30})
+ local alt=field(346,138,170,tostring(value),402,'Altitude range '..value)
+ local speed=field(78,138,170,tostring(math.abs(value)),134,'Speed range '..value)
+ if math.abs(value)<=999 then check(alt.font==MIDSIZE and speed.font==MIDSIZE,'Signed three-digit values keep native29px type')end
+ check(alt.font==MIDSIZE or alt.font==SMLSIZE or alt.font==TINSIZE,'Large telemetry uses supported native fonts')
+ local h=assert(first('hud'));check(h.xmin>=136 and h.xmax<=344,'Native horizon including its inclusive edge never reaches altitude/battery gutters')
+end
+draw({alt=1e12,speed=1e12})
+for _,c in ipairs(commands)do if c.kind=='text'and c.y>=139 and c.y+c.h<=169 then
+ check(not c.text:find('%.%.%.'),'Numeric overflow must retain scale rather than truncating digits')
+end end
 
 -- Bearing wrap must retain real values and move the ribbon smoothly through north.
 local function ribbon(value,expected)
@@ -282,60 +315,56 @@ for _,side in ipairs({{196,226},{254,284}})do
  for y=154,155 do check(first('line',function(c)return c.x==side[1]and c.x2==side[2]and c.y==y and c.y2==y and c.color==colors.orange end),'Aircraft wing retains two gold pixels at its shared datum')end
 end
 check(fill(236,150,8,8,colors.black)and fill(237,151,6,6,colors.orange),'The wider aircraft retains a six-pixel center marker and dark outline')
-local positive=assert(visibleText(function(c)return c.text=='20'and pitchCaption(c)and c.y<154 end),'Positive twenty-degree ladder label must be above datum')
-local negative=assert(visibleText(function(c)return c.text=='-20'and pitchCaption(c)and c.y>154 end),'Negative twenty-degree ladder label must be below datum')
-check(positive.font==SMLSIZE and negative.font==SMLSIZE and positive.h==17 and negative.h==17,'Signed major pitch labels use the native17px font')
-check(not visibleText(function(c)return pitchCaption(c)and math.abs(tonumber(c.text))%20~=0 end),'Minor ten-degree rungs remain unlabelled')
-near(positive.y+positive.h/2,154-37,.5,'Positive twenty degrees uses native 1.85 pixels per degree')
-near(negative.y+negative.h/2,154+37,.5,'Negative twenty degrees uses native 1.85 pixels per degree')
+-- The twenty-degree marks retain their native spacing using lines alone.
+local positive=assert(first('clip',function(c)return c.color==colors.ladder and math.abs((c.y+c.y2)/2-(154-37))<=.5 end),'Positive twenty-degree rung remains above datum')
+local negative=assert(first('clip',function(c)return c.color==colors.ladder and math.abs((c.y+c.y2)/2-(154+37))<=.5 end),'Negative twenty-degree rung remains below datum')
+near(math.abs(positive.x2-positive.x),54,.5,'Positive major rung retains its full54px span')
+near(math.abs(negative.x2-negative.x),54,.5,'Negative major rung retains its full54px span')
+cleanAttitudeText()
 for _,c in ipairs(commands)do
- if c.kind=='clip'then check(c.xmin==126 and c.xmax==354 and c.ymin==65 and c.ymax==243,'Horizon and ladder strokes stay inside the clear center viewport')end
- if c.kind=='text'and c.x==114 and c.y>=64 and c.y+c.h<=244 then check(not tonumber(c.text)or tonumber(c.text)>=0,'Ground-speed scale must not display negative tick values')end
+ if c.kind=='clip'then check(c.xmin==136 and c.xmax==344 and c.ymin==65 and c.ymax==243,'Horizon and ladder strokes stay inside the clear center viewport')end
+ if c.kind=='text'and c.x==124 and c.y>=64 and c.y+c.h<=244 then check(not tonumber(c.text)or tonumber(c.text)>=0,'Ground-speed scale must not display negative tick values')end
 end
 for _,v in ipairs({{10,0},{-10,0},{10,30},{-10,30},{10,-30}})do
  draw({pitch=v[1],roll=v[2]})
  local selected=first('clip',function(c)return c.color==colors.ladder and math.abs((c.x+c.x2)/2-240)<=.5 and math.abs((c.y+c.y2)/2-154)<=.5 end)
  check(selected,'The actual signed pitch rung must meet the aircraft datum, including banked attitudes')
 end
-for _,pitch in ipairs({10,20,-10,-20,9.8,19.6})do
- draw({pitch=pitch,roll=0});local labelCount=0
- for _,c in ipairs(commands)do if pitchCaption(c)then
-  labelCount=labelCount+1
-  clearAngleFields(c)
-  check(c.right<=193 or c.left>=288 or c.y+c.h<=150 or c.y>=165,'Pitch captions must remain clear of the fixed aircraft envelope')
+local function verifyRungs(pitch,roll)
+ draw({pitch=pitch,roll=roll})
+ local native=assert(first('hud'),'Complete signed attitude must still reach native renderer')
+ near(native.pitch,pitch,.001,'Removing captions never changes native pitch')
+ near(native.roll,roll,.001,'Removing captions never changes native roll')
+ cleanAttitudeText()
+ local strokes={};for _,c in ipairs(commands)do if c.kind=='clip'and c.color==colors.ladder then strokes[#strokes+1]=c end end
+ local r=roll*math.pi/180;local sr,cr=math.sin(r),math.cos(r);local cs,sn=math.cos(-r),math.sin(-r)
+ local count=0;local base=math.floor(pitch/10)*10
+ for degree=base-40,base+40,10 do if degree~=0 and degree>=-90 and degree<=90 then
+  count=count+1;local line=assert(strokes[count],'Every original ten-degree rung remains present')
+  local ox,oy=240+sr*(pitch-degree),154+cr*(pitch-degree)*1.85
+  local half=degree%20==0 and 27 or 17
+  near(line.x,math.floor(ox-half*cs+.5),1,'Signed rung left endpoint keeps native horizontal projection')
+  near(line.y,math.floor(oy-half*sn+.5),1,'Signed rung left endpoint keeps native vertical projection')
+  near(line.x2,math.floor(ox+half*cs+.5),1,'Signed rung right endpoint keeps native horizontal projection')
+  near(line.y2,math.floor(oy+half*sn+.5),1,'Signed rung right endpoint keeps native vertical projection')
+  check(line.xmin==136 and line.xmax==344 and line.ymin==65 and line.ymax==243,'All rungs retain the same native clipping viewport')
  end end
- check(labelCount>=2,'Aircraft clearance must retain useful signed pitch labels')
- if pitch==20 then
-  local caption=visibleText(function(c)return c.text==tostring(pitch)and c.color==colors.white and c.y>=65 and c.y<243 end)
-  check(caption and caption.left>=288,'Selected level-bank pitch caption remains visible beyond the right aircraft wing')
- end
+ check(#strokes==count and count>0,'Line-only ladder retains every bounded ten-degree mark without extra strokes')
 end
+for _,pitch in ipairs({10,20,-10,-20,9.8,19.6})do verifyRungs(pitch,0)end
 for _,roll in ipairs({35,-35,60,-60,90,-90,120,-120,180})do
- for _,pitch in ipairs({0,10,-10,25,-25})do
-  draw({pitch=pitch,roll=roll});local captions={}
-  for _,c in ipairs(commands)do if pitchCaption(c)then
-   captions[#captions+1]=c
-   clearAngleFields(c)
-   check(c.right<=193 or c.left>=288 or c.y+c.h<=150 or c.y>=165,'Banked pitch captions must remain clear of the fixed aircraft envelope')
-  end end
-  check(#captions>=2,'Bank '..roll..' / pitch '..pitch..' must retain readable pitch captions')
-  for i=1,#captions do for j=i+1,#captions do local a,b=captions[i],captions[j]
-   check(a.right+3<=b.left or b.right+3<=a.left or a.y+a.h+3<=b.y or b.y+b.h+3<=a.y,
-    'Pitch captions '..a.text..' and '..b.text..' need a three-pixel gap at bank '..roll..' / pitch '..pitch)
-  end end
- end
+ for _,pitch in ipairs({0,10,-10,25,-25})do verifyRungs(pitch,roll)end
 end
-for _,v in ipairs({{12,-35,'+12','-35'},{-25,120,'-25','+120'},{90,-180,'+90','-180'}})do
- draw({pitch=v[1],roll=v[2]})
- field(141,65,83,v[3],204,'Signed pitch angle');field(300,65,83,v[4],352,'Signed roll angle')
-end
+for _,v in ipairs({{12,-35},{-25,120},{90,-180}})do verifyRungs(v[1],v[2])end
 for _,data in ipairs({{pitch=10},{roll=20},{}})do
  draw(data)
- check(not first('hud')and not first('text',function(c)return (c.x==141 or c.x==300)and c.y>=65 and c.y+c.h<=83 end),'Incomplete attitude must suppress both the horizon and angle readouts')
+ check(not first('hud')and not first('clip'),'Incomplete attitude must suppress native horizon and all attitude line strokes')
+ check(first('text',function(c)return c.text=='UNAVAILABLE'end),'Incomplete attitude remains explicitly unavailable')
+ cleanAttitudeText()
 end
 for _,value in ipairs({0,3,7,9.9,10,13,17,23,27,30,33,36.6,-3,-33})do
  draw({speed=value,alt=value});local tickCount=0
- for _,c in ipairs(commands)do if c.kind=='text'and c.color==colors.muted and(c.x==114 or c.x==397)and c.y>=64 and c.y+c.h<=244 then
+ for _,c in ipairs(commands)do if c.kind=='text'and c.color==colors.muted and(c.x==124 or c.x==397)and c.y>=64 and c.y+c.h<=244 then
   tickCount=tickCount+1
   check(c.y%1==0,'Tape tick captions must land on native pixel rows')
   check(c.y>=82,'Tape tick captions must remain below the unit header')
@@ -350,9 +379,33 @@ near((banked.x+banked.x2)/2,246,.5,'Banked pitch follows the native horizontal o
 near((banked.y+banked.y2)/2,154+math.cos(math.pi/6)*12*1.85,.5,'Banked pitch follows the native vertical origin shift')
 check(banked.y2<banked.y,'Positive bank retains the verified native horizon slope')
 
+-- Home-bearing cue shares compass geometry and never paints the attitude.
+local function homeCue(course,bearing,current)
+ draw({pitch=0,roll=0,course=course,session={current=current and{},homeBearing=bearing}})
+ local cue={}
+ for _,c in ipairs(commands)do
+  if c.kind=='line'and c.color==colors.orange and c.y>=34 and c.y<=63 then cue[#cue+1]=c end
+  check(not(c.kind=='pattern'and c.mask:find('/home%-18.png')),'Home bearing must not draw the floating home mask')
+ end
+ return cue
+end
+for _,c in ipairs({{359,1,244},{1,359,236},{0,0,240},{150,180,294},{180,150,186}})do
+ local cue=homeCue(c[1],c[2],true)
+ check(#cue==2,'On-scale home cue uses exactly two native line strokes')
+ check(cue[1].x2==c[3]and cue[1].y2==63,'Compass home cue uses the shortest signed bearing at1.8px/degree')
+ for _,line in ipairs(cue)do check(line.y<=63 and line.y2<=63,'Home cue stays above the attitude panel')end
+end
+for _,c in ipairs({{0,120,399},{0,240,81},{0,180,81}})do
+ local cue=homeCue(c[1],c[2],true)
+ check(#cue==2 and cue[1].x2==c[3],'Off-scale home uses a directional chevron instead of a false clamped bearing')
+end
+check(#homeCue(nil,90,true)==0,'Missing compass reference suppresses home bearing')
+check(#homeCue(90,nil,true)==0,'Missing home bearing suppresses cue')
+check(#homeCue(90,90,false)==0,'Last-known position cannot paint a current home cue')
+
 local warmOpens,warmConverts=#opens,converts
-for i=1,150 do data.pitch=i%30;data.roll=i%60;data.mah=i;data.v=22+i/100;draw(data);if i%25==0 then collectgarbage('collect')end end
+for i=1,150 do data.pitch=i%30;data.roll=i%60;data.mah=i;data.v=22+i/100;draw(data);cleanAttitudeText();if i%25==0 then collectgarbage('collect')end end
 app.enter();draw(data)
 check(#opens==warmOpens and converts==warmConverts,'Steady-state frames, collection and selecting Flight again must not reload or reconvert assets')
-check(warmOpens==2 and warmConverts==2,'Cockpit loads only its two small rail icon masks')
-print('PASS: '..checks..' actual Flight checks; rectangular PFD, heading wrap, signed native-scale ladder, shared datum, missing/zero/long telemetry, and icon-only stable cache')
+check(warmOpens==1 and warmConverts==1,'Cockpit loads only the link mask; pack values need no decorative image')
+print('PASS: '..checks..' actual Flight checks; rectangular PFD, heading wrap, line-only signed native-scale ladder, no attitude angle text, shared datum, missing/zero/long telemetry, and icon-only stable cache')

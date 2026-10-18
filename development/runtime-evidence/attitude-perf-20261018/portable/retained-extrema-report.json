@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T23:03:47.148624+00:00",
+  "mainSha256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+  "moduleSha256": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+  "testSha256": "1f1d935c3ae3cccfef1c8fc57dbe8b678122aebe7bb0abb9065419c9689e72ab",
+  "checksPerVm": 2558,
+  "vmResults": {
+    "LuaJIT": "PASS",
+    "Lua53Int32Float32": "PASS"
+  },
+  "coverage": [
+    "Actual main retained startup/shared-service scheduling and real MIN/MAX/LIVE UI touches",
+    "Factory tracer wraps actual native-extrema, protocol normalization, and sensor provider; no reimplemented sampling state machine",
+    "At most4nativeextremareads per complete app callback and each incremental step",
+    "Atomic mode/record/value/order publication and retained container identities",
+    "Changing minima and maxima publish repeatedly rather than remaining frozen",
+    "Raw pitch and Roll remain unflipped, normalized physical pitch extrema use the opposite native slot for verified negative scale",
+    "LIVE/leave cancellation; reentry reacquires complete job",
+    "Pending cycle older than200ticks and clock rollback restart before continuing",
+    "Real Refresh rebinding from removed Curr primaryID1006to new1045",
+    "Real configuration save disables current; revision cancels/rebuilds and removes old native binding/receipt",
+    "No synchronous all-field history sampling from retained draw",
+    "Zero persistence writes from histories/mode/page/refresh/acquisition; only the separate explicit user settings save writes"
+  ],
+  "limitations": [
+    "Host callback timing is synthetic25Hz; real20kinstruction budget/nativeFPS evidence is separate.",
+    "The explicit configuration-save phase necessarily performs user-authorized mock SD writes; background acquisition before and afterward performs none."
+  ]
+}

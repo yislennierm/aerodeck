@@ -1,0 +1,125 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO_BF.luac
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO_BF.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 51), ('F', 1, 51), ('D', 1, 51), ('X', 1, 51), ('add', 1, 51), ('sensors', 8, 51), ('ATT_vFN', 11, 49)]
+K0 'S'
+K1 'ATT_PITCH'
+K2 None
+K3 'ATT_ROLL'
+K4 'ATT_YAW'
+K5 'table'
+K6 'insert'
+K7 'sName'
+K8 'pName'
+K9 '5230'
+K10 'sLabel'
+K11 'Pitch'
+K12 'dUnit'
+K13 'DEGREE'
+K14 'dDec'
+K15 1
+K16 'sMin'
+K17 -1800
+K18 'sMax'
+K19 1800
+K20 'vFN'
+K21 '5240'
+K22 'Roll'
+K23 'Hdg'
+K24 'Yaw'
+K25 2
+K26 0
+K27 360
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('ATT_PITCH')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('ATT_ROLL')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('ATT_YAW')] = K2(None)
+   8 [  16] NEWTABLE  A=5 B=0 C=0
+   9 [  18] TEST      A=4 B=0 C=0
+  10 [  18] JMP       A=0 ->50
+  11 [  25] CLOSURE   R6 = proto[0]
+  12 [  27] GETTABUP  R7 = UP0[K5('table')]
+  13 [  27] GETTABLE  R7 = R7[K6('insert')]
+  14 [  27] MOVE      A=8 B=5 C=0
+  15 [  27] NEWTABLE  A=9 B=0 C=8
+  16 [  27] SETTABLE  R9[K7('sName')] = K1('ATT_PITCH')
+  17 [  27] SETTABLE  R9[K8('pName')] = K9('5230')
+  18 [  27] SETTABLE  R9[K10('sLabel')] = K11('Pitch')
+  19 [  27] SETTABLE  R9[K12('dUnit')] = K13('DEGREE')
+  20 [  27] SETTABLE  R9[K14('dDec')] = K15(1)
+  21 [  27] SETTABLE  R9[K16('sMin')] = K17(-1800)
+  22 [  27] SETTABLE  R9[K18('sMax')] = K19(1800)
+  23 [  27] SETTABLE  R9[K20('vFN')] = R6
+  24 [  27] CALL      A=7 B=3 C=1
+  25 [  28] GETTABUP  R7 = UP0[K5('table')]
+  26 [  28] GETTABLE  R7 = R7[K6('insert')]
+  27 [  28] MOVE      A=8 B=5 C=0
+  28 [  28] NEWTABLE  A=9 B=0 C=8
+  29 [  28] SETTABLE  R9[K7('sName')] = K3('ATT_ROLL')
+  30 [  28] SETTABLE  R9[K8('pName')] = K21('5240')
+  31 [  28] SETTABLE  R9[K10('sLabel')] = K22('Roll')
+  32 [  28] SETTABLE  R9[K12('dUnit')] = K13('DEGREE')
+  33 [  28] SETTABLE  R9[K14('dDec')] = K15(1)
+  34 [  28] SETTABLE  R9[K16('sMin')] = K17(-1800)
+  35 [  28] SETTABLE  R9[K18('sMax')] = K19(1800)
+  36 [  28] SETTABLE  R9[K20('vFN')] = R6
+  37 [  28] CALL      A=7 B=3 C=1
+  38 [  29] GETTABUP  R7 = UP0[K5('table')]
+  39 [  29] GETTABLE  R7 = R7[K6('insert')]
+  40 [  29] MOVE      A=8 B=5 C=0
+  41 [  29] NEWTABLE  A=9 B=0 C=7
+  42 [  29] SETTABLE  R9[K7('sName')] = K4('ATT_YAW')
+  43 [  29] SETTABLE  R9[K8('pName')] = K23('Hdg')
+  44 [  29] SETTABLE  R9[K10('sLabel')] = K24('Yaw')
+  45 [  29] SETTABLE  R9[K12('dUnit')] = K13('DEGREE')
+  46 [  29] SETTABLE  R9[K14('dDec')] = K25(2)
+  47 [  29] SETTABLE  R9[K16('sMin')] = K26(0)
+  48 [  29] SETTABLE  R9[K18('sMax')] = K27(360)
+  49 [  29] CALL      A=7 B=3 C=1
+  50 [  32] RETURN    A=5 B=2 C=0
+  51 [  32] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 5 lines 20 25 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('snData', 0, 27), ('invert', 7, 27), ('divisor', 14, 27)]
+K0 'sName'
+K1 'ATT_PITCH'
+K2 -1
+K3 1
+K4 'uUnit'
+K5 'DEGREE'
+K6 10
+K7 'type'
+K8 'rVal'
+K9 'number'
+   1 [  22] GETTABLE  R1 = R0[K0('sName')]
+   2 [  22] EQ        A=0 R1, K1('ATT_PITCH'); skip-next if condition != A
+   3 [  22] JMP       A=0 ->7
+   4 [  22] LOADK     R1 = K2 (-1)
+   5 [  22] TEST      A=1 B=0 C=1
+   6 [  22] JMP       A=0 ->8
+   7 [  22] LOADK     R1 = K3 (1)
+   8 [  23] GETTABLE  R2 = R0[K4('uUnit')]
+   9 [  23] EQ        A=0 R2, K5('DEGREE'); skip-next if condition != A
+  10 [  23] JMP       A=0 ->14
+  11 [  23] LOADK     R2 = K3 (1)
+  12 [  23] TEST      A=2 B=0 C=1
+  13 [  23] JMP       A=0 ->15
+  14 [  23] LOADK     R2 = K6 (10)
+  15 [  24] GETTABUP  R3 = UP0[K7('type')]
+  16 [  24] GETTABLE  R4 = R0[K8('rVal')]
+  17 [  24] CALL      A=3 B=2 C=2
+  18 [  24] EQ        A=0 R3, K9('number'); skip-next if condition != A
+  19 [  24] JMP       A=0 ->25
+  20 [  24] GETTABLE  R3 = R0[K8('rVal')]
+  21 [  24] DIV       A=3 B=3 C=2
+  22 [  24] MUL       A=3 B=3 C=1
+  23 [  24] TEST      A=3 B=0 C=1
+  24 [  24] JMP       A=0 ->26
+  25 [  24] GETTABLE  R3 = R0[K8('rVal')]
+  26 [  24] RETURN    A=3 B=2 C=0
+  27 [  25] RETURN    A=0 B=1 C=0

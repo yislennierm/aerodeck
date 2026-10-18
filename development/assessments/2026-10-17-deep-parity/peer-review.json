@@ -1,0 +1,25 @@
+{
+  "review": "Independent cross-domain peer review; production unchanged.",
+  "corrections": [
+    {
+      "id": "DATA-001",
+      "change": "Narrow equivalent claim to basic qualified access, not full protocol family."
+    },
+    {
+      "id": "DATA-044",
+      "change": "Accelerometer registration is gated off; do not invent an accessible Toolbox feature from module presence."
+    },
+    {
+      "id": "DATA-107",
+      "change": "Separate real logger from defective/unproven user toggle."
+    },
+    {
+      "id": "DATA-113",
+      "change": "Read commands still consume shared transport and link bandwidth."
+    },
+    {
+      "id": "DATA-118",
+      "change": "Known radio-input candidates are probed; no arbitrary source discovery."
+    }
+  ]
+}

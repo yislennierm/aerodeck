@@ -1,0 +1,42 @@
+AERODECK ARM-TOOLBAR-20261018 — local only
+
+Home is the sole Flight shortcut. Its plate now identifies Flight as selected.
+The former duplicate Flight/speedometer toolbar slot opens Arm Info, using the
+approved Material shield mask at native30px (50px on800x480). Its existing
+arming-status tint remains visible on other pages. White/no flags is not proof
+of armed state or readiness; no new arm-state or FC command behavior is added.
+
+Arm Info and Radio Inputs share context tabs. Touch, SYS/MDL focus, rotary and
+PAGE use the same seven destinations in visual order: Home, Arm Info, Data,
+GPS, Video, Setup, Tools. RTN preserves the entry caller, including Input settings
+and sibling-tab navigation. Home preserves the selected Flight centre panel.
+The footer Arm icon/hit/focus target is removed. Normal arming text has160px
+rather than112px; warnings and notices use the full footer, and warning touches
+use all480px. Home distance/satellite context and other current status remain.
+
+The approved master is retained; both native masks are exported directly from
+SVG with existing provenance and license. All40 previous PNGs, including speed
+artwork, remain byte-identical. There are66 packaged runtime files. Cold startup
+still primes20 masks in separate callbacks: Arm30 replaces Speed30. No per-page
+bitmap decode or forced GC is introduced. The widget20k limit is unchanged.
+
+56 suites pass under LuaJIT and stock Lua5.3 int32/float32, bound to final source.
+Navigation covers seven-target wrap, exact hit/focus plates, stale callers,
+keyboard context tabs, settings drafts and full-width warnings. Existing Input
+integration/retained-widget checks also exercise the actual new destinations.
+The earlier bbad rendering candidate has19 reviewed native screenshots across
+3 cold widget starts, with0 CPU/script errors. The final740c caller correction
+has its own exact-source28.883s/529-frame native run with0 CPU/script errors
+covering Flight, Data and Setup origins. These source-specific records stay
+separate; final return checks include preserving an active Setup edit. It covers clear/GPS flags,
+link warnings, Home/Arm selection, physical Inputs focus, stale callers and
+Inputs/Timers→back→original caller. Development fixture/widget loader is
+explicit; production app/modules/icons execute unchanged. No physical2.12.4
+acceptance or new sustained performance claim is implied.
+
+Current preview:http://127.0.0.1:8766/ (refresh for ARM-TOOLBAR-20261018).
+Package:AERODECK-arm-toolbar-install.zip. Last file-verified radio installation
+remains REPLACEMENT-RC1-20261017; DEPLOYMENT.txt is unchanged.
+Evidence:development/build-ARM-TOOLBAR-20261018.json and
+ development/ui-previews/arm-toolbar-caller-final/verification.json.
+Prior installation archives and their source-bound evidence remain frozen.

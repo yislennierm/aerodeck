@@ -1,0 +1,278 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/BTV.luac
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/BTV.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 149), ('F', 1, 149), ('D', 1, 149), ('X', 1, 149), ('add', 1, 149), ('sensors', 14, 149), ('BT_MD_V_fn', 86, 147)]
+K0 'S'
+K1 'BT_MD_V'
+K2 None
+K3 'BT_MD_CELL_NO'
+K4 0
+K5 'BT_MD_CELL_VA'
+K6 'BT_RX_V_AUX1'
+K7 'BT_RX_V_AUX2'
+K8 'BT_RX_V_AUX3'
+K9 'SEN'
+K10 'SN20n'
+K11 'VFAS'
+K12 'SN20m'
+K13 'SN20x'
+K14 100
+K15 'SN20l'
+K16 'BT_CELL_MIN'
+K17 6
+K18 18
+K19 'SN20c'
+K20 'BT_CELL_CRIT'
+K21 16.5
+K22 'SN20u'
+K23 'V'
+K24 'SN20f'
+K25 '%.2f'
+K26 'SN20v'
+K27 'SN20vs'
+K28 'SN21n'
+K29 'CELL'
+K30 'SN21m'
+K31 'SN21x'
+K32 'BT_CELL_MAX'
+K33 'SN21l'
+K34 'BT_CELL_LOW'
+K35 'SN21c'
+K36 'SN21u'
+K37 'SN21f'
+K38 '%.1f'
+K39 'SN21v'
+K40 'SN21vs'
+K41 'loadE'
+K42 'PLIBTB'
+K43 'BTCNO'
+K44 'table'
+K45 'insert'
+K46 'sName'
+K47 'pName'
+K48 'sLabel'
+K49 'Batt voltage'
+K50 'dUnit'
+K51 'VOLT'
+K52 'dDec'
+K53 2
+K54 'sMin'
+K55 0
+K56 'sMax'
+K57 120
+K58 'uFN'
+K59 'A1'
+K60 'Analog RX voltage 1'
+K61 30
+K62 'A2'
+K63 'Analog RX voltage 2'
+K64 'A3'
+K65 'Analog RX voltage 3'
+K66 'BT_MD_CELL_VA'
+K67 'A4'
+K68 'Cell voltage'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('BT_MD_V')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('BT_MD_CELL_NO')] = K4(0)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K5('BT_MD_CELL_VA')] = K4(0)
+   8 [  15] GETTABLE  R5 = R2[K0('S')]
+   9 [  15] SETTABLE  R5[K6('BT_RX_V_AUX1')] = K2(None)
+  10 [  16] GETTABLE  R5 = R2[K0('S')]
+  11 [  16] SETTABLE  R5[K7('BT_RX_V_AUX2')] = K2(None)
+  12 [  17] GETTABLE  R5 = R2[K0('S')]
+  13 [  17] SETTABLE  R5[K8('BT_RX_V_AUX3')] = K2(None)
+  14 [  19] NEWTABLE  A=5 B=0 C=0
+  15 [  21] TEST      A=4 B=0 C=0
+  16 [  21] JMP       A=0 ->148
+  17 [  23] GETTABLE  R6 = R2[K9('SEN')]
+  18 [  23] SETTABLE  R6[K10('SN20n')] = K11('VFAS')
+  19 [  24] GETTABLE  R6 = R2[K9('SEN')]
+  20 [  24] SETTABLE  R6[K12('SN20m')] = K4(0)
+  21 [  25] GETTABLE  R6 = R2[K9('SEN')]
+  22 [  25] SETTABLE  R6[K13('SN20x')] = K14(100)
+  23 [  26] GETTABLE  R6 = R2[K9('SEN')]
+  24 [  26] GETTABLE  R7 = R2[K0('S')]
+  25 [  26] GETTABLE  R7 = R7[K16('BT_CELL_MIN')]
+  26 [  26] TEST      A=7 B=0 C=0
+  27 [  26] JMP       A=0 ->33
+  28 [  26] GETTABLE  R7 = R2[K0('S')]
+  29 [  26] GETTABLE  R7 = R7[K16('BT_CELL_MIN')]
+  30 [  26] MUL       A=7 B=7 C=273
+  31 [  26] TEST      A=7 B=0 C=1
+  32 [  26] JMP       A=0 ->34
+  33 [  26] LOADK     R7 = K18 (18)
+  34 [  26] SETTABLE  R6[K15('SN20l')] = R7
+  35 [  27] GETTABLE  R6 = R2[K9('SEN')]
+  36 [  27] GETTABLE  R7 = R2[K0('S')]
+  37 [  27] GETTABLE  R7 = R7[K20('BT_CELL_CRIT')]
+  38 [  27] TEST      A=7 B=0 C=0
+  39 [  27] JMP       A=0 ->45
+  40 [  27] GETTABLE  R7 = R2[K0('S')]
+  41 [  27] GETTABLE  R7 = R7[K20('BT_CELL_CRIT')]
+  42 [  27] MUL       A=7 B=7 C=273
+  43 [  27] TEST      A=7 B=0 C=1
+  44 [  27] JMP       A=0 ->46
+  45 [  27] LOADK     R7 = K21 (16.5)
+  46 [  27] SETTABLE  R6[K19('SN20c')] = R7
+  47 [  28] GETTABLE  R6 = R2[K9('SEN')]
+  48 [  28] SETTABLE  R6[K22('SN20u')] = K23('V')
+  49 [  29] GETTABLE  R6 = R2[K9('SEN')]
+  50 [  29] SETTABLE  R6[K24('SN20f')] = K25('%.2f')
+  51 [  30] GETTABLE  R6 = R2[K9('SEN')]
+  52 [  30] SETTABLE  R6[K26('SN20v')] = K2(None)
+  53 [  31] GETTABLE  R6 = R2[K9('SEN')]
+  54 [  31] SETTABLE  R6[K27('SN20vs')] = K1('BT_MD_V')
+  55 [  33] GETTABLE  R6 = R2[K9('SEN')]
+  56 [  33] SETTABLE  R6[K28('SN21n')] = K29('CELL')
+  57 [  34] GETTABLE  R6 = R2[K9('SEN')]
+  58 [  34] GETTABLE  R7 = R2[K0('S')]
+  59 [  34] GETTABLE  R7 = R7[K16('BT_CELL_MIN')]
+  60 [  34] SETTABLE  R6[K30('SN21m')] = R7
+  61 [  35] GETTABLE  R6 = R2[K9('SEN')]
+  62 [  35] GETTABLE  R7 = R2[K0('S')]
+  63 [  35] GETTABLE  R7 = R7[K32('BT_CELL_MAX')]
+  64 [  35] SETTABLE  R6[K31('SN21x')] = R7
+  65 [  36] GETTABLE  R6 = R2[K9('SEN')]
+  66 [  36] GETTABLE  R7 = R2[K0('S')]
+  67 [  36] GETTABLE  R7 = R7[K34('BT_CELL_LOW')]
+  68 [  36] SETTABLE  R6[K33('SN21l')] = R7
+  69 [  37] GETTABLE  R6 = R2[K9('SEN')]
+  70 [  37] GETTABLE  R7 = R2[K0('S')]
+  71 [  37] GETTABLE  R7 = R7[K20('BT_CELL_CRIT')]
+  72 [  37] SETTABLE  R6[K35('SN21c')] = R7
+  73 [  38] GETTABLE  R6 = R2[K9('SEN')]
+  74 [  38] SETTABLE  R6[K36('SN21u')] = K23('V')
+  75 [  39] GETTABLE  R6 = R2[K9('SEN')]
+  76 [  39] SETTABLE  R6[K37('SN21f')] = K38('%.1f')
+  77 [  40] GETTABLE  R6 = R2[K9('SEN')]
+  78 [  40] SETTABLE  R6[K39('SN21v')] = K2(None)
+  79 [  41] GETTABLE  R6 = R2[K9('SEN')]
+  80 [  41] SETTABLE  R6[K40('SN21vs')] = K5('BT_MD_CELL_VA')
+  81 [  43] GETTABLE  R6 = R0[K41('loadE')]
+  82 [  43] GETTABLE  R7 = R0[K42('PLIBTB')]
+  83 [  43] LOADK     R8 = K43 ('BTCNO')
+  84 [  43] CONCAT    A=7 B=7 C=8
+  85 [  43] CALL      A=6 B=2 C=1
+  86 [  56] CLOSURE   R6 = proto[0]
+  87 [  58] GETTABUP  R7 = UP0[K44('table')]
+  88 [  58] GETTABLE  R7 = R7[K45('insert')]
+  89 [  58] MOVE      A=8 B=5 C=0
+  90 [  58] NEWTABLE  A=9 B=0 C=8
+  91 [  58] SETTABLE  R9[K46('sName')] = K1('BT_MD_V')
+  92 [  58] SETTABLE  R9[K47('pName')] = K11('VFAS')
+  93 [  58] SETTABLE  R9[K48('sLabel')] = K49('Batt voltage')
+  94 [  58] SETTABLE  R9[K50('dUnit')] = K51('VOLT')
+  95 [  58] SETTABLE  R9[K52('dDec')] = K53(2)
+  96 [  58] SETTABLE  R9[K54('sMin')] = K55(0)
+  97 [  58] SETTABLE  R9[K56('sMax')] = K57(120)
+  98 [  58] SETTABLE  R9[K58('uFN')] = R6
+  99 [  58] CALL      A=7 B=3 C=1
+ 100 [  59] GETTABUP  R7 = UP0[K44('table')]
+ 101 [  59] GETTABLE  R7 = R7[K45('insert')]
+ 102 [  59] MOVE      A=8 B=5 C=0
+ 103 [  59] NEWTABLE  A=9 B=0 C=7
+ 104 [  59] SETTABLE  R9[K46('sName')] = K6('BT_RX_V_AUX1')
+ 105 [  59] SETTABLE  R9[K47('pName')] = K59('A1')
+ 106 [  59] SETTABLE  R9[K48('sLabel')] = K60('Analog RX voltage 1')
+ 107 [  59] SETTABLE  R9[K50('dUnit')] = K51('VOLT')
+ 108 [  59] SETTABLE  R9[K52('dDec')] = K53(2)
+ 109 [  59] SETTABLE  R9[K54('sMin')] = K55(0)
+ 110 [  59] SETTABLE  R9[K56('sMax')] = K61(30)
+ 111 [  59] CALL      A=7 B=3 C=1
+ 112 [  60] GETTABUP  R7 = UP0[K44('table')]
+ 113 [  60] GETTABLE  R7 = R7[K45('insert')]
+ 114 [  60] MOVE      A=8 B=5 C=0
+ 115 [  60] NEWTABLE  A=9 B=0 C=7
+ 116 [  60] SETTABLE  R9[K46('sName')] = K7('BT_RX_V_AUX2')
+ 117 [  60] SETTABLE  R9[K47('pName')] = K62('A2')
+ 118 [  60] SETTABLE  R9[K48('sLabel')] = K63('Analog RX voltage 2')
+ 119 [  60] SETTABLE  R9[K50('dUnit')] = K51('VOLT')
+ 120 [  60] SETTABLE  R9[K52('dDec')] = K53(2)
+ 121 [  60] SETTABLE  R9[K54('sMin')] = K55(0)
+ 122 [  60] SETTABLE  R9[K56('sMax')] = K61(30)
+ 123 [  60] CALL      A=7 B=3 C=1
+ 124 [  61] GETTABUP  R7 = UP0[K44('table')]
+ 125 [  61] GETTABLE  R7 = R7[K45('insert')]
+ 126 [  61] MOVE      A=8 B=5 C=0
+ 127 [  61] NEWTABLE  A=9 B=0 C=7
+ 128 [  61] SETTABLE  R9[K46('sName')] = K8('BT_RX_V_AUX3')
+ 129 [  61] SETTABLE  R9[K47('pName')] = K64('A3')
+ 130 [  61] SETTABLE  R9[K48('sLabel')] = K65('Analog RX voltage 3')
+ 131 [  61] SETTABLE  R9[K50('dUnit')] = K51('VOLT')
+ 132 [  61] SETTABLE  R9[K52('dDec')] = K53(2)
+ 133 [  61] SETTABLE  R9[K54('sMin')] = K55(0)
+ 134 [  61] SETTABLE  R9[K56('sMax')] = K61(30)
+ 135 [  61] CALL      A=7 B=3 C=1
+ 136 [  62] GETTABUP  R7 = UP0[K44('table')]
+ 137 [  62] GETTABLE  R7 = R7[K45('insert')]
+ 138 [  62] MOVE      A=8 B=5 C=0
+ 139 [  62] NEWTABLE  A=9 B=0 C=7
+ 140 [  62] SETTABLE  R9[K46('sName')] = K66('BT_MD_CELL_VA')
+ 141 [  62] SETTABLE  R9[K47('pName')] = K67('A4')
+ 142 [  62] SETTABLE  R9[K48('sLabel')] = K68('Cell voltage')
+ 143 [  62] SETTABLE  R9[K50('dUnit')] = K51('VOLT')
+ 144 [  62] SETTABLE  R9[K52('dDec')] = K53(2)
+ 145 [  62] SETTABLE  R9[K54('sMin')] = K55(0)
+ 146 [  62] SETTABLE  R9[K56('sMax')] = K17(6)
+ 147 [  62] CALL      A=7 B=3 C=1
+ 148 [  67] RETURN    A=5 B=2 C=0
+ 149 [  67] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 4 lines 45 56 source None
+UPVALUES [('D', (1, 2)), ('F', (1, 1))]
+LOCALS [('btv', 5, 42), ('cellno', 18, 28), ('cellno', 38, 41)]
+K0 'S'
+K1 'BT_MD_V'
+K2 0
+K3 'BT_FAV_SEL'
+K4 'BT_MD_CELL_NO'
+K5 'BT_CNO'
+K6 1
+K7 'BT_MD_CELL_VA'
+K8 'BT_FAV_CELLS'
+   1 [  46] GETTABUP  R0 = UP0[K0('S')]
+   2 [  46] GETTABLE  R0 = R0[K1('BT_MD_V')]
+   3 [  46] TEST      A=0 B=0 C=1
+   4 [  46] JMP       A=0 ->6
+   5 [  46] LOADK     R0 = K2 (0)
+   6 [  47] GETTABUP  R1 = UP0[K0('S')]
+   7 [  47] GETTABLE  R1 = R1[K3('BT_FAV_SEL')]
+   8 [  47] EQ        A=0 R1, K2(0); skip-next if condition != A
+   9 [  47] JMP       A=0 ->30
+  10 [  48] GETTABUP  R1 = UP0[K0('S')]
+  11 [  48] GETTABUP  R2 = UP1[K5('BT_CNO')]
+  12 [  48] CALL      A=2 B=1 C=2
+  13 [  48] SETTABLE  R1[K4('BT_MD_CELL_NO')] = R2
+  14 [  49] GETTABUP  R1 = UP0[K0('S')]
+  15 [  49] GETTABLE  R1 = R1[K4('BT_MD_CELL_NO')]
+  16 [  49] TEST      A=1 B=0 C=1
+  17 [  49] JMP       A=0 ->19
+  18 [  49] LOADK     R1 = K6 (1)
+  19 [  50] GETTABUP  R2 = UP0[K0('S')]
+  20 [  50] GETTABUP  R3 = UP0[K0('S')]
+  21 [  50] GETTABLE  R3 = R3[K4('BT_MD_CELL_NO')]
+  22 [  50] LT        A=0 K2(0), R3; skip-next if condition != A
+  23 [  50] JMP       A=0 ->26
+  24 [  50] DIV       A=3 B=0 C=1
+  25 [  50] JMP       A=0 ->28
+  26 [  50] LOADBOOL  A=3 B=0 C=1
+  27 [  50] LOADBOOL  A=3 B=1 C=0
+  28 [  50] SETTABLE  R2[K7('BT_MD_CELL_VA')] = R3
+  29 [  50] JMP       A=0 ->42
+  30 [  52] GETTABUP  R1 = UP0[K0('S')]
+  31 [  52] GETTABUP  R2 = UP0[K0('S')]
+  32 [  52] GETTABLE  R2 = R2[K8('BT_FAV_CELLS')]
+  33 [  52] SETTABLE  R1[K4('BT_MD_CELL_NO')] = R2
+  34 [  53] GETTABUP  R1 = UP0[K0('S')]
+  35 [  53] GETTABLE  R1 = R1[K4('BT_MD_CELL_NO')]
+  36 [  53] TEST      A=1 B=0 C=1
+  37 [  53] JMP       A=0 ->39
+  38 [  53] LOADK     R1 = K6 (1)
+  39 [  54] GETTABUP  R2 = UP0[K0('S')]
+  40 [  54] DIV       A=3 B=0 C=1
+  41 [  54] SETTABLE  R2[K7('BT_MD_CELL_VA')] = R3
+  42 [  56] RETURN    A=0 B=1 C=0

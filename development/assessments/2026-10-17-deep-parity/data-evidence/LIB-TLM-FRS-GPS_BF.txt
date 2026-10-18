@@ -1,0 +1,476 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GPS_BF.luac
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/GPS_BF.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 108), ('F', 1, 108), ('D', 1, 108), ('X', 1, 108), ('add', 1, 108), ('sensors', 40, 108), ('GPS_DATA_fn', 43, 106)]
+K0 'S'
+K1 'GPS_DATA'
+K2 None
+K3 'GPS_SATS'
+K4 'GPS_HDOP'
+K5 'GPS_STAT'
+K6 'ALT_GPS'
+K7 'SPD_GND'
+K8 'POS_FIX'
+K9 'POS_LAT'
+K10 'POS_LON'
+K11 'POS_FIXH'
+K12 'POS_LATH'
+K13 'POS_LONH'
+K14 'POS_DISTH'
+K15 'POS_TIMEH'
+K16 'DIR_GC'
+K17 'DIR_GCH'
+K18 'DIR_RBH'
+K19 'DIR_HDG'
+K20 'table'
+K21 'insert'
+K22 'sName'
+K23 'GPS_DATA'
+K24 'pName'
+K25 'GPS'
+K26 'sLabel'
+K27 'GPS data'
+K28 'uFN'
+K29 'GPS_STAT'
+K30 'Tmp2'
+K31 'GPS Sats'
+K32 'sMin'
+K33 0
+K34 'sMax'
+K35 9999
+K36 'SPD_GND'
+K37 'GSpd'
+K38 'GPS speed'
+K39 'dUnit'
+K40 'KILOMETER_PER_HOUR'
+K41 999
+K42 'GAlt'
+K43 'GPS alttitude'
+K44 'METER'
+K45 -9999
+K46 20000
+K47 'POS_DISTH'
+K48 '0420'
+K49 'Home distance'
+K50 100000
+K51 'DIR_HDG'
+K52 'Hdg'
+K53 'Heading'
+K54 'DEGREE'
+K55 360
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('GPS_DATA')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('GPS_SATS')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('GPS_HDOP')] = K2(None)
+   8 [  15] GETTABLE  R5 = R2[K0('S')]
+   9 [  15] SETTABLE  R5[K5('GPS_STAT')] = K2(None)
+  10 [  17] GETTABLE  R5 = R2[K0('S')]
+  11 [  17] SETTABLE  R5[K6('ALT_GPS')] = K2(None)
+  12 [  18] GETTABLE  R5 = R2[K0('S')]
+  13 [  18] SETTABLE  R5[K7('SPD_GND')] = K2(None)
+  14 [  20] GETTABLE  R5 = R2[K0('S')]
+  15 [  20] SETTABLE  R5[K8('POS_FIX')] = K2(None)
+  16 [  21] GETTABLE  R5 = R2[K0('S')]
+  17 [  21] SETTABLE  R5[K9('POS_LAT')] = K2(None)
+  18 [  22] GETTABLE  R5 = R2[K0('S')]
+  19 [  22] SETTABLE  R5[K10('POS_LON')] = K2(None)
+  20 [  23] GETTABLE  R5 = R2[K0('S')]
+  21 [  23] SETTABLE  R5[K11('POS_FIXH')] = K2(None)
+  22 [  24] GETTABLE  R5 = R2[K0('S')]
+  23 [  24] SETTABLE  R5[K12('POS_LATH')] = K2(None)
+  24 [  25] GETTABLE  R5 = R2[K0('S')]
+  25 [  25] SETTABLE  R5[K13('POS_LONH')] = K2(None)
+  26 [  26] GETTABLE  R5 = R2[K0('S')]
+  27 [  26] SETTABLE  R5[K14('POS_DISTH')] = K2(None)
+  28 [  27] GETTABLE  R5 = R2[K0('S')]
+  29 [  27] SETTABLE  R5[K15('POS_TIMEH')] = K2(None)
+  30 [  29] GETTABLE  R5 = R2[K0('S')]
+  31 [  29] SETTABLE  R5[K16('DIR_GC')] = K2(None)
+  32 [  30] GETTABLE  R5 = R2[K0('S')]
+  33 [  30] SETTABLE  R5[K17('DIR_GCH')] = K2(None)
+  34 [  31] GETTABLE  R5 = R2[K0('S')]
+  35 [  31] SETTABLE  R5[K18('DIR_RBH')] = K2(None)
+  36 [  32] GETTABLE  R5 = R2[K0('S')]
+  37 [  32] SETTABLE  R5[K19('DIR_HDG')] = K2(None)
+  38 [  34] GETTABLE  R5 = R2[K0('S')]
+  39 [  34] SETTABLE  R5[K1('GPS_DATA')] = K2(None)
+  40 [  36] NEWTABLE  A=5 B=0 C=0
+  41 [  38] TEST      A=4 B=0 C=0
+  42 [  38] JMP       A=0 ->107
+  43 [  76] CLOSURE   R6 = proto[0]
+  44 [  78] GETTABUP  R7 = UP0[K20('table')]
+  45 [  78] GETTABLE  R7 = R7[K21('insert')]
+  46 [  78] MOVE      A=8 B=5 C=0
+  47 [  78] NEWTABLE  A=9 B=0 C=4
+  48 [  78] SETTABLE  R9[K22('sName')] = K23('GPS_DATA')
+  49 [  78] SETTABLE  R9[K24('pName')] = K25('GPS')
+  50 [  78] SETTABLE  R9[K26('sLabel')] = K27('GPS data')
+  51 [  78] SETTABLE  R9[K28('uFN')] = R6
+  52 [  78] CALL      A=7 B=3 C=1
+  53 [  79] GETTABUP  R7 = UP0[K20('table')]
+  54 [  79] GETTABLE  R7 = R7[K21('insert')]
+  55 [  79] MOVE      A=8 B=5 C=0
+  56 [  79] NEWTABLE  A=9 B=0 C=5
+  57 [  79] SETTABLE  R9[K22('sName')] = K29('GPS_STAT')
+  58 [  79] SETTABLE  R9[K24('pName')] = K30('Tmp2')
+  59 [  79] SETTABLE  R9[K26('sLabel')] = K31('GPS Sats')
+  60 [  79] SETTABLE  R9[K32('sMin')] = K33(0)
+  61 [  79] SETTABLE  R9[K34('sMax')] = K35(9999)
+  62 [  79] CALL      A=7 B=3 C=1
+  63 [  80] GETTABUP  R7 = UP0[K20('table')]
+  64 [  80] GETTABLE  R7 = R7[K21('insert')]
+  65 [  80] MOVE      A=8 B=5 C=0
+  66 [  80] NEWTABLE  A=9 B=0 C=6
+  67 [  80] SETTABLE  R9[K22('sName')] = K36('SPD_GND')
+  68 [  80] SETTABLE  R9[K24('pName')] = K37('GSpd')
+  69 [  80] SETTABLE  R9[K26('sLabel')] = K38('GPS speed')
+  70 [  80] SETTABLE  R9[K39('dUnit')] = K40('KILOMETER_PER_HOUR')
+  71 [  80] SETTABLE  R9[K32('sMin')] = K33(0)
+  72 [  80] SETTABLE  R9[K34('sMax')] = K41(999)
+  73 [  80] CALL      A=7 B=3 C=1
+  74 [  81] GETTABUP  R7 = UP0[K20('table')]
+  75 [  81] GETTABLE  R7 = R7[K21('insert')]
+  76 [  81] MOVE      A=8 B=5 C=0
+  77 [  81] NEWTABLE  A=9 B=0 C=6
+  78 [  81] SETTABLE  R9[K22('sName')] = K6('ALT_GPS')
+  79 [  81] SETTABLE  R9[K24('pName')] = K42('GAlt')
+  80 [  81] SETTABLE  R9[K26('sLabel')] = K43('GPS alttitude')
+  81 [  81] SETTABLE  R9[K39('dUnit')] = K44('METER')
+  82 [  81] SETTABLE  R9[K32('sMin')] = K45(-9999)
+  83 [  81] SETTABLE  R9[K34('sMax')] = K46(20000)
+  84 [  81] CALL      A=7 B=3 C=1
+  85 [  82] GETTABUP  R7 = UP0[K20('table')]
+  86 [  82] GETTABLE  R7 = R7[K21('insert')]
+  87 [  82] MOVE      A=8 B=5 C=0
+  88 [  82] NEWTABLE  A=9 B=0 C=6
+  89 [  82] SETTABLE  R9[K22('sName')] = K47('POS_DISTH')
+  90 [  82] SETTABLE  R9[K24('pName')] = K48('0420')
+  91 [  82] SETTABLE  R9[K26('sLabel')] = K49('Home distance')
+  92 [  82] SETTABLE  R9[K39('dUnit')] = K44('METER')
+  93 [  82] SETTABLE  R9[K32('sMin')] = K33(0)
+  94 [  82] SETTABLE  R9[K34('sMax')] = K50(100000)
+  95 [  82] CALL      A=7 B=3 C=1
+  96 [  83] GETTABUP  R7 = UP0[K20('table')]
+  97 [  83] GETTABLE  R7 = R7[K21('insert')]
+  98 [  83] MOVE      A=8 B=5 C=0
+  99 [  83] NEWTABLE  A=9 B=0 C=6
+ 100 [  83] SETTABLE  R9[K22('sName')] = K51('DIR_HDG')
+ 101 [  83] SETTABLE  R9[K24('pName')] = K52('Hdg')
+ 102 [  83] SETTABLE  R9[K26('sLabel')] = K53('Heading')
+ 103 [  83] SETTABLE  R9[K39('dUnit')] = K54('DEGREE')
+ 104 [  83] SETTABLE  R9[K32('sMin')] = K33(0)
+ 105 [  83] SETTABLE  R9[K34('sMax')] = K55(360)
+ 106 [  83] CALL      A=7 B=3 C=1
+ 107 [  86] RETURN    A=5 B=2 C=0
+ 108 [  86] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 10 lines 39 76 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('stat', 58, 252), ('statA', 69, 252), ('statB', 80, 252), ('statCD', 91, 252)]
+K0 'S'
+K1 'GPS_data'
+K2 'type'
+K3 'GPS_DATA'
+K4 'table'
+K5 'POS_LAT'
+K6 'lat'
+K7 'POS_LON'
+K8 'lon'
+K9 'DIR_GC'
+K10 'DIR_HDG'
+K11 360
+K12 'string'
+K13 'format'
+K14 '%04d'
+K15 'GPS_STAT'
+K16 0
+K17 'tonumber'
+K18 'sub'
+K19 1
+K20 2
+K21 3
+K22 4
+K23 'POS_FIX'
+K24 'bit'
+K25 'bcheck'
+K26 'GPS_HDOP'
+K27 'math'
+K28 'max'
+K29 'min'
+K30 9
+K31 'GPS_SATS'
+K32 'GPS'
+K33 'addPosition'
+K34 'POS_FIXH'
+K35 'DIR_GCH'
+K36 'calcGC'
+K37 'posLog'
+K38 'POS_DISTH'
+K39 'calcDistance'
+K40 'DIR_RBH'
+K41 'calcBearing'
+K42 'POS_TIMEH'
+K43 'calcTravelTime'
+K44 'm'
+K45 'SPD_GND'
+K46 'km/h'
+K47 'POS_LONH'
+K48 'POS_LATH'
+K49 'ARMED'
+K50 True
+   1 [  40] GETTABUP  R0 = UP0[K0('S')]
+   2 [  40] GETTABUP  R1 = UP1[K2('type')]
+   3 [  40] GETTABUP  R2 = UP0[K0('S')]
+   4 [  40] GETTABLE  R2 = R2[K3('GPS_DATA')]
+   5 [  40] CALL      A=1 B=2 C=2
+   6 [  40] EQ        A=1 R1, K4('table'); skip-next if condition != A
+   7 [  40] JMP       A=0 ->11
+   8 [  40] LOADNIL   A=1 B=0 C=0
+   9 [  40] JMP       A=0 ->12
+  10 [  40] LOADBOOL  A=1 B=0 C=1
+  11 [  40] LOADBOOL  A=1 B=1 C=0
+  12 [  40] SETTABLE  R0[K1('GPS_data')] = R1
+  13 [  41] GETTABUP  R0 = UP0[K0('S')]
+  14 [  41] GETTABUP  R1 = UP0[K0('S')]
+  15 [  41] GETTABLE  R1 = R1[K3('GPS_DATA')]
+  16 [  41] TEST      A=1 B=0 C=0
+  17 [  41] JMP       A=0 ->23
+  18 [  41] GETTABUP  R1 = UP0[K0('S')]
+  19 [  41] GETTABLE  R1 = R1[K3('GPS_DATA')]
+  20 [  41] GETTABLE  R1 = R1[K6('lat')]
+  21 [  41] TEST      A=1 B=0 C=1
+  22 [  41] JMP       A=0 ->24
+  23 [  41] LOADNIL   A=1 B=0 C=0
+  24 [  41] SETTABLE  R0[K5('POS_LAT')] = R1
+  25 [  42] GETTABUP  R0 = UP0[K0('S')]
+  26 [  42] GETTABUP  R1 = UP0[K0('S')]
+  27 [  42] GETTABLE  R1 = R1[K3('GPS_DATA')]
+  28 [  42] TEST      A=1 B=0 C=0
+  29 [  42] JMP       A=0 ->35
+  30 [  42] GETTABUP  R1 = UP0[K0('S')]
+  31 [  42] GETTABLE  R1 = R1[K3('GPS_DATA')]
+  32 [  42] GETTABLE  R1 = R1[K8('lon')]
+  33 [  42] TEST      A=1 B=0 C=1
+  34 [  42] JMP       A=0 ->36
+  35 [  42] LOADNIL   A=1 B=0 C=0
+  36 [  42] SETTABLE  R0[K7('POS_LON')] = R1
+  37 [  44] GETTABUP  R0 = UP0[K0('S')]
+  38 [  44] GETTABUP  R1 = UP0[K0('S')]
+  39 [  44] GETTABLE  R1 = R1[K10('DIR_HDG')]
+  40 [  44] TEST      A=1 B=0 C=0
+  41 [  44] JMP       A=0 ->48
+  42 [  44] GETTABUP  R1 = UP0[K0('S')]
+  43 [  44] GETTABLE  R1 = R1[K10('DIR_HDG')]
+  44 [  44] ADD       A=1 B=1 C=267
+  45 [  44] MOD       A=1 B=1 C=267
+  46 [  44] TEST      A=1 B=0 C=1
+  47 [  44] JMP       A=0 ->49
+  48 [  44] LOADNIL   A=1 B=0 C=0
+  49 [  44] SETTABLE  R0[K9('DIR_GC')] = R1
+  50 [  45] GETTABUP  R0 = UP1[K12('string')]
+  51 [  45] GETTABLE  R0 = R0[K13('format')]
+  52 [  45] LOADK     R1 = K14 ('%04d')
+  53 [  45] GETTABUP  R2 = UP0[K0('S')]
+  54 [  45] GETTABLE  R2 = R2[K15('GPS_STAT')]
+  55 [  45] TEST      A=2 B=0 C=1
+  56 [  45] JMP       A=0 ->58
+  57 [  45] LOADK     R2 = K16 (0)
+  58 [  45] CALL      A=0 B=3 C=2
+  59 [  46] GETTABUP  R1 = UP1[K17('tonumber')]
+  60 [  46] GETTABUP  R2 = UP1[K12('string')]
+  61 [  46] GETTABLE  R2 = R2[K18('sub')]
+  62 [  46] MOVE      A=3 B=0 C=0
+  63 [  46] LOADK     R4 = K19 (1)
+  64 [  46] LOADK     R5 = K19 (1)
+  65 [  46] CALL      A=2 B=4 C=0
+  66 [  46] CALL      A=1 B=0 C=2
+  67 [  46] TEST      A=1 B=0 C=1
+  68 [  46] JMP       A=0 ->70
+  69 [  46] LOADK     R1 = K16 (0)
+  70 [  47] GETTABUP  R2 = UP1[K17('tonumber')]
+  71 [  47] GETTABUP  R3 = UP1[K12('string')]
+  72 [  47] GETTABLE  R3 = R3[K18('sub')]
+  73 [  47] MOVE      A=4 B=0 C=0
+  74 [  47] LOADK     R5 = K20 (2)
+  75 [  47] LOADK     R6 = K20 (2)
+  76 [  47] CALL      A=3 B=4 C=0
+  77 [  47] CALL      A=2 B=0 C=2
+  78 [  47] TEST      A=2 B=0 C=1
+  79 [  47] JMP       A=0 ->81
+  80 [  47] LOADK     R2 = K16 (0)
+  81 [  48] GETTABUP  R3 = UP1[K17('tonumber')]
+  82 [  48] GETTABUP  R4 = UP1[K12('string')]
+  83 [  48] GETTABLE  R4 = R4[K18('sub')]
+  84 [  48] MOVE      A=5 B=0 C=0
+  85 [  48] LOADK     R6 = K21 (3)
+  86 [  48] LOADK     R7 = K22 (4)
+  87 [  48] CALL      A=4 B=4 C=0
+  88 [  48] CALL      A=3 B=0 C=2
+  89 [  48] TEST      A=3 B=0 C=1
+  90 [  48] JMP       A=0 ->92
+  91 [  48] LOADK     R3 = K16 (0)
+  92 [  49] GETTABUP  R4 = UP0[K0('S')]
+  93 [  49] GETTABUP  R5 = UP2[K24('bit')]
+  94 [  49] GETTABLE  R5 = R5[K25('bcheck')]
+  95 [  49] MOVE      A=6 B=1 C=0
+  96 [  49] LOADK     R7 = K16 (0)
+  97 [  49] CALL      A=5 B=3 C=2
+  98 [  49] TEST      A=5 B=0 C=0
+  99 [  49] JMP       A=0 ->103
+ 100 [  49] LOADBOOL  A=5 B=1 C=0
+ 101 [  49] TEST      A=5 B=0 C=1
+ 102 [  49] JMP       A=0 ->104
+ 103 [  49] LOADBOOL  A=5 B=0 C=0
+ 104 [  49] SETTABLE  R4[K23('POS_FIX')] = R5
+ 105 [  50] GETTABUP  R4 = UP0[K0('S')]
+ 106 [  50] GETTABUP  R5 = UP1[K27('math')]
+ 107 [  50] GETTABLE  R5 = R5[K28('max')]
+ 108 [  50] LOADK     R6 = K16 (0)
+ 109 [  50] GETTABUP  R7 = UP1[K27('math')]
+ 110 [  50] GETTABLE  R7 = R7[K29('min')]
+ 111 [  50] LOADK     R8 = K30 (9)
+ 112 [  50] MOVE      A=9 B=2 C=0
+ 113 [  50] CALL      A=7 B=3 C=0
+ 114 [  50] CALL      A=5 B=0 C=2
+ 115 [  50] SETTABLE  R4[K26('GPS_HDOP')] = R5
+ 116 [  51] GETTABUP  R4 = UP0[K0('S')]
+ 117 [  51] SETTABLE  R4[K31('GPS_SATS')] = R3
+ 118 [  53] GETTABUP  R4 = UP0[K0('S')]
+ 119 [  53] GETTABLE  R4 = R4[K5('POS_LAT')]
+ 120 [  53] TEST      A=4 B=0 C=0
+ 121 [  53] JMP       A=0 ->252
+ 122 [  53] GETTABUP  R4 = UP0[K0('S')]
+ 123 [  53] GETTABLE  R4 = R4[K7('POS_LON')]
+ 124 [  53] TEST      A=4 B=0 C=0
+ 125 [  53] JMP       A=0 ->252
+ 126 [  53] GETTABUP  R4 = UP0[K32('GPS')]
+ 127 [  53] TEST      A=4 B=0 C=0
+ 128 [  53] JMP       A=0 ->252
+ 129 [  53] GETTABUP  R4 = UP0[K32('GPS')]
+ 130 [  53] GETTABLE  R4 = R4[K33('addPosition')]
+ 131 [  53] TEST      A=4 B=0 C=0
+ 132 [  53] JMP       A=0 ->252
+ 133 [  54] GETTABUP  R4 = UP0[K0('S')]
+ 134 [  54] GETTABLE  R4 = R4[K1('GPS_data')]
+ 135 [  54] TEST      A=4 B=0 C=0
+ 136 [  54] JMP       A=0 ->226
+ 137 [  55] GETTABUP  R4 = UP0[K0('S')]
+ 138 [  55] GETTABLE  R4 = R4[K34('POS_FIXH')]
+ 139 [  55] TEST      A=4 B=0 C=0
+ 140 [  55] JMP       A=0 ->193
+ 141 [  56] GETTABUP  R4 = UP0[K0('S')]
+ 142 [  56] GETTABUP  R5 = UP0[K32('GPS')]
+ 143 [  56] GETTABLE  R5 = R5[K36('calcGC')]
+ 144 [  56] GETTABUP  R6 = UP0[K32('GPS')]
+ 145 [  56] GETTABLE  R6 = R6[K37('posLog')]
+ 146 [  56] GETTABLE  R6 = R6[K19(1)]
+ 147 [  56] GETTABUP  R7 = UP0[K32('GPS')]
+ 148 [  56] GETTABLE  R7 = R7[K37('posLog')]
+ 149 [  56] GETTABLE  R7 = R7[K16(0)]
+ 150 [  56] GETTABUP  R8 = UP0[K0('S')]
+ 151 [  56] GETTABLE  R8 = R8[K35('DIR_GCH')]
+ 152 [  56] CALL      A=5 B=4 C=2
+ 153 [  56] SETTABLE  R4[K35('DIR_GCH')] = R5
+ 154 [  57] GETTABUP  R4 = UP0[K0('S')]
+ 155 [  57] GETTABUP  R5 = UP0[K32('GPS')]
+ 156 [  57] GETTABLE  R5 = R5[K39('calcDistance')]
+ 157 [  57] GETTABUP  R6 = UP0[K32('GPS')]
+ 158 [  57] GETTABLE  R6 = R6[K37('posLog')]
+ 159 [  57] GETTABLE  R6 = R6[K19(1)]
+ 160 [  57] GETTABUP  R7 = UP0[K32('GPS')]
+ 161 [  57] GETTABLE  R7 = R7[K37('posLog')]
+ 162 [  57] GETTABLE  R7 = R7[K16(0)]
+ 163 [  57] CALL      A=5 B=3 C=2
+ 164 [  57] SETTABLE  R4[K38('POS_DISTH')] = R5
+ 165 [  58] GETTABUP  R4 = UP0[K0('S')]
+ 166 [  58] GETTABUP  R5 = UP0[K32('GPS')]
+ 167 [  58] GETTABLE  R5 = R5[K41('calcBearing')]
+ 168 [  58] GETTABUP  R6 = UP0[K0('S')]
+ 169 [  58] GETTABLE  R6 = R6[K9('DIR_GC')]
+ 170 [  58] GETTABUP  R7 = UP0[K0('S')]
+ 171 [  58] GETTABLE  R7 = R7[K35('DIR_GCH')]
+ 172 [  58] CALL      A=5 B=3 C=2
+ 173 [  58] SETTABLE  R4[K40('DIR_RBH')] = R5
+ 174 [  59] GETTABUP  R4 = UP0[K0('S')]
+ 175 [  59] GETTABUP  R5 = UP0[K32('GPS')]
+ 176 [  59] GETTABLE  R5 = R5[K43('calcTravelTime')]
+ 177 [  59] GETTABUP  R6 = UP0[K0('S')]
+ 178 [  59] GETTABLE  R6 = R6[K38('POS_DISTH')]
+ 179 [  59] LOADK     R7 = K44 ('m')
+ 180 [  59] GETTABUP  R8 = UP0[K0('S')]
+ 181 [  59] GETTABLE  R8 = R8[K45('SPD_GND')]
+ 182 [  59] LOADK     R9 = K46 ('km/h')
+ 183 [  59] CALL      A=5 B=5 C=2
+ 184 [  59] SETTABLE  R4[K42('POS_TIMEH')] = R5
+ 185 [  60] GETTABUP  R4 = UP0[K32('GPS')]
+ 186 [  60] GETTABLE  R4 = R4[K33('addPosition')]
+ 187 [  60] GETTABUP  R5 = UP0[K0('S')]
+ 188 [  60] GETTABLE  R5 = R5[K5('POS_LAT')]
+ 189 [  60] GETTABUP  R6 = UP0[K0('S')]
+ 190 [  60] GETTABLE  R6 = R6[K7('POS_LON')]
+ 191 [  60] CALL      A=4 B=3 C=1
+ 192 [  60] JMP       A=0 ->252
+ 193 [  62] GETTABUP  R4 = UP0[K0('S')]
+ 194 [  62] GETTABUP  R5 = UP0[K0('S')]
+ 195 [  62] GETTABLE  R5 = R5[K7('POS_LON')]
+ 196 [  62] SETTABLE  R4[K47('POS_LONH')] = R5
+ 197 [  63] GETTABUP  R4 = UP0[K0('S')]
+ 198 [  63] GETTABUP  R5 = UP0[K0('S')]
+ 199 [  63] GETTABLE  R5 = R5[K5('POS_LAT')]
+ 200 [  63] SETTABLE  R4[K48('POS_LATH')] = R5
+ 201 [  64] GETTABUP  R4 = UP0[K32('GPS')]
+ 202 [  64] GETTABLE  R4 = R4[K33('addPosition')]
+ 203 [  64] GETTABUP  R5 = UP0[K0('S')]
+ 204 [  64] GETTABLE  R5 = R5[K48('POS_LATH')]
+ 205 [  64] GETTABUP  R6 = UP0[K0('S')]
+ 206 [  64] GETTABLE  R6 = R6[K47('POS_LONH')]
+ 207 [  64] LOADK     R7 = K16 (0)
+ 208 [  64] CALL      A=4 B=4 C=1
+ 209 [  65] GETTABUP  R4 = UP0[K32('GPS')]
+ 210 [  65] GETTABLE  R4 = R4[K33('addPosition')]
+ 211 [  65] GETTABUP  R5 = UP0[K0('S')]
+ 212 [  65] GETTABLE  R5 = R5[K5('POS_LAT')]
+ 213 [  65] GETTABUP  R6 = UP0[K0('S')]
+ 214 [  65] GETTABLE  R6 = R6[K7('POS_LON')]
+ 215 [  65] LOADK     R7 = K19 (1)
+ 216 [  65] CALL      A=4 B=4 C=1
+ 217 [  66] GETTABUP  R4 = UP0[K0('S')]
+ 218 [  66] GETTABUP  R5 = UP0[K0('S')]
+ 219 [  66] GETTABLE  R5 = R5[K23('POS_FIX')]
+ 220 [  66] TEST      A=5 B=0 C=0
+ 221 [  66] JMP       A=0 ->224
+ 222 [  66] GETTABUP  R5 = UP0[K0('S')]
+ 223 [  66] GETTABLE  R5 = R5[K49('ARMED')]
+ 224 [  66] SETTABLE  R4[K34('POS_FIXH')] = R5
+ 225 [  67] JMP       A=0 ->252
+ 226 [  69] GETTABUP  R4 = UP0[K0('S')]
+ 227 [  69] GETTABUP  R5 = UP0[K0('S')]
+ 228 [  69] GETTABLE  R5 = R5[K7('POS_LON')]
+ 229 [  69] SETTABLE  R4[K47('POS_LONH')] = R5
+ 230 [  70] GETTABUP  R4 = UP0[K0('S')]
+ 231 [  70] GETTABUP  R5 = UP0[K0('S')]
+ 232 [  70] GETTABLE  R5 = R5[K5('POS_LAT')]
+ 233 [  70] SETTABLE  R4[K48('POS_LATH')] = R5
+ 234 [  71] GETTABUP  R4 = UP0[K32('GPS')]
+ 235 [  71] GETTABLE  R4 = R4[K33('addPosition')]
+ 236 [  71] GETTABUP  R5 = UP0[K0('S')]
+ 237 [  71] GETTABLE  R5 = R5[K5('POS_LAT')]
+ 238 [  71] GETTABUP  R6 = UP0[K0('S')]
+ 239 [  71] GETTABLE  R6 = R6[K7('POS_LON')]
+ 240 [  71] LOADK     R7 = K16 (0)
+ 241 [  71] CALL      A=4 B=4 C=1
+ 242 [  72] GETTABUP  R4 = UP0[K32('GPS')]
+ 243 [  72] GETTABLE  R4 = R4[K33('addPosition')]
+ 244 [  72] GETTABUP  R5 = UP0[K0('S')]
+ 245 [  72] GETTABLE  R5 = R5[K5('POS_LAT')]
+ 246 [  72] GETTABUP  R6 = UP0[K0('S')]
+ 247 [  72] GETTABLE  R6 = R6[K7('POS_LON')]
+ 248 [  72] LOADK     R7 = K19 (1)
+ 249 [  72] CALL      A=4 B=4 C=1
+ 250 [  73] GETTABUP  R4 = UP0[K0('S')]
+ 251 [  73] SETTABLE  R4[K1('GPS_data')] = K50(True)
+ 252 [  76] RETURN    A=0 B=1 C=0

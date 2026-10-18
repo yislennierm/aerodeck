@@ -1,0 +1,169 @@
+{
+  "failedSourceSHA256": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+  "error": "RUN: /SCRIPTS/TOOLS/telem.lua:1471: CPU limit",
+  "failedPublicTouches": [
+    {
+      "nativeElapsedMs": 105020,
+      "x": 381,
+      "y": 24
+    },
+    {
+      "nativeElapsedMs": 105940,
+      "x": 328,
+      "y": 24
+    },
+    {
+      "nativeElapsedMs": 106860,
+      "x": 254,
+      "y": 19
+    },
+    {
+      "nativeElapsedMs": 107820,
+      "x": 289,
+      "y": 41
+    },
+    {
+      "nativeElapsedMs": 136070,
+      "x": 302,
+      "y": 27
+    }
+  ],
+  "minimalKnownSequence": {
+    "accumulate": "Run the moving GPS fixture for at least 108 seconds from native simulator start; session history records on all pages.",
+    "actions": [
+      {
+        "nativeElapsedMs": 106860,
+        "x": 254,
+        "y": 19,
+        "meaning": "GPS section / GPS DETAILS"
+      },
+      {
+        "nativeElapsedMs": 107820,
+        "x": 289,
+        "y": 41,
+        "meaning": "TRACK / HOME context tab"
+      }
+    ],
+    "touchReleaseMs": 107930,
+    "errorFollowing": "CPU limit immediately following Track entry",
+    "otherObservedPriorActions": [
+      {
+        "nativeElapsedMs": 105020,
+        "x": 381,
+        "y": 24,
+        "meaning": "SETUP section"
+      },
+      {
+        "nativeElapsedMs": 105940,
+        "x": 328,
+        "y": 24,
+        "meaning": "VIDEO section"
+      }
+    ]
+  },
+  "earlierTourNativeTiming": {
+    "sourcePrefix": "ed83906d2c09",
+    "gpsSectionMs": 26450,
+    "gpsDetailTabMs": 26770,
+    "gpsSectionBeforeTrackMs": 27520,
+    "trackTabMs": 27870,
+    "leaveForVideoMs": 28630,
+    "maximumTrackResidenceMs": 760,
+    "evidence": "work/edgetx/current-preview-20261018/evidence/tour-ed83906d2c09-8767-extrema/native.log"
+  },
+  "earlierTourCaptureWallTimes": [
+    {
+      "sourcePrefix": "ed83906d2c09",
+      "screen": "flight",
+      "captureUTC": "2026-10-17T23:00:56.518399+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-ed83906d2c09-8767-extrema/flight.png"
+    },
+    {
+      "sourcePrefix": "ed83906d2c09",
+      "screen": "gps",
+      "captureUTC": "2026-10-17T23:01:02.677888+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-ed83906d2c09-8767-extrema/gps.png"
+    },
+    {
+      "sourcePrefix": "ed83906d2c09",
+      "screen": "track",
+      "captureUTC": "2026-10-17T23:01:03.766595+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-ed83906d2c09-8767-extrema/track.png"
+    },
+    {
+      "sourcePrefix": "ed83906d2c09",
+      "screen": "video",
+      "captureUTC": "2026-10-17T23:01:04.497102+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-ed83906d2c09-8767-extrema/video.png"
+    },
+    {
+      "sourcePrefix": "4556da247bde",
+      "screen": "flight",
+      "captureUTC": "2026-10-17T23:02:47.339532+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-4556da247bde-8767-extrema/flight.png"
+    },
+    {
+      "sourcePrefix": "4556da247bde",
+      "screen": "gps",
+      "captureUTC": "2026-10-17T23:02:53.880849+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-4556da247bde-8767-extrema/gps.png"
+    },
+    {
+      "sourcePrefix": "4556da247bde",
+      "screen": "track",
+      "captureUTC": "2026-10-17T23:02:55.093240+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-4556da247bde-8767-extrema/track.png"
+    },
+    {
+      "sourcePrefix": "4556da247bde",
+      "screen": "video",
+      "captureUTC": "2026-10-17T23:02:55.835763+00:00",
+      "file": "work/edgetx/current-preview-20261018/evidence/tour-4556da247bde-8767-extrema/video.png"
+    }
+  ],
+  "whyMissed": [
+    "The latest passing 4556 tour visited Track at 35.270 seconds and left at 36.110 seconds, after only 840ms. The preceding ed839 tour did so at 27.870\u201328.630 seconds. Both exercised short trails.",
+    "The separate sustained warm and attitude tests stayed on Flight/Telemetry rather than returning to Track after the trail grew.",
+    "The final3f94 public refresh was intentionally passive with no additional navigation, so it did not repeat Track after108seconds."
+  ],
+  "sourceFacts": [
+    {
+      "file": "failed-telem.lua",
+      "line": 1471,
+      "fact": "Every Track paint iterates all navTrack points, runs spherical geo projection for each, and clips every segment."
+    },
+    {
+      "file": "failed-session.lua",
+      "line": 44,
+      "fact": "History interval defaults to 100 ticks (one second), independent of the selected page."
+    },
+    {
+      "file": "failed-session.lua",
+      "line": 142,
+      "fact": "Track grows during page-independent session updates until configured limit."
+    },
+    {
+      "file": "failed-telem.lua",
+      "line": 279,
+      "fact": "Default retained trail is 90 points, configurable from 10 to 180."
+    }
+  ],
+  "exactFailedTrailLength": "Not logged; measure in the private reproduction. Do not infer 90 samples from elapsed time alone.",
+  "requiredRegression": [
+    "Enter Track after the configured trail is full, including 180 points, under the unchanged 20k native widget limit.",
+    "Repeat entry and all three zoom scales with on/off-plot segments, then return after GPS loss/recovery and a new home.",
+    "Keep drawing and fresh aircraft/home data. Every frame must fit the 20k instruction limit with a full 180-point trail."
+  ],
+  "preservationOnlyGetRequests": true,
+  "publicRestartOrInputsPerformed": false,
+  "lastPassingTourNativeTiming": {
+    "sourceSHA256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+    "gpsSectionMs": 33850,
+    "gpsDetailTabMs": 34180,
+    "gpsSectionBeforeTrackMs": 34940,
+    "trackTabMs": 35270,
+    "leaveForVideoMs": 36110,
+    "maximumTrackResidenceMs": 840,
+    "evidence": "work/edgetx/gps-fix-20261018/browser/last-passing-tour-4556-native.log"
+  }
+}

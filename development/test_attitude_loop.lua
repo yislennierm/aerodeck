@@ -1,13 +1,13 @@
 -- Whole real app: positive attitude IDs stay fixed while failed-only discovery is bounded.
-jit.off()
+if jit then jit.off()end
 local realio=io;local file=assert(realio.open('sdcard/SCRIPTS/TOOLS/telem.lua'));local code=file:read('*a');file:close()
-code=code:gsub('return {init=init,run=run,stop=fcLink.stop}\n$','return {init=init,run=run,stop=fcLink.stop,metrics=renderStats,telemetry=telemetry}\n')
+code=code:gsub('return {init=init,run=run,stop=fcLink.stop,[^\n]+}\n+$','return {init=init,run=run,stop=fcLink.stop,metrics=renderStats,telemetry=telemetry}\n')
 UNIT_KTS=1;UNIT_MPH=2;UNIT_METERS_PER_SECOND=3;UNIT_FEET_PER_SECOND=4;UNIT_KMH=5;UNIT_RADIANS=6;UNIT_DEGREE=7;UNIT_FEET=8;UNIT_METERS=9
 local fields={{name='RxBt',unit=0,value=16.1},{name='GSpd',unit=UNIT_KTS,value=10},{name='GAlt',unit=UNIT_FEET,value=100},{name='Ptch',unit=UNIT_RADIANS,value=0},{name='Roll',unit=UNIT_DEGREE,value=0},{name='FM',unit=0,value='ANGLE'}}
 local tick,lookups,reads,writes,metadata,sensorReads=0,0,0,0,0,0
 local positiveByName={}
 getTime=function()return tick end
-getValue=function()error('Live telemetry must not fall back to getValue')end
+getValue=function(name)assert(name=='tx-voltage','Live telemetry must not fall back to getValue');return 7.8 end
 getVersion=function()return 'test'end
 model={getInfo=function()return {name='benchmark'}end,getSensor=function(i)sensorReads=sensorReads+1;return fields[i+1]end}
 CHAR_TELEMETRY='T:'

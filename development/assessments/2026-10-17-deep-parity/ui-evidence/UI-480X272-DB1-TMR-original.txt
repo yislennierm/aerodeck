@@ -1,0 +1,159 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/TMR.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/480X272/DB1/TMR.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5), ('T', 1, 5)]
+K0 'd'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  32] CLOSURE   R5 = proto[0]
+   3 [  32] SETTABLE  R4[K0('d')] = R5
+   4 [  34] RETURN    A=0 B=1 C=0
+   5 [  34] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 17 lines 12 32 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0)), ('X', (1, 3))]
+LOCALS [('w', 0, 109), ('tmrID', 3, 109), ('timer', 10, 109), ('running', 15, 109), ('colon', 28, 109), ('label', 42, 109), ('color', 52, 109), ('v', 66, 109), ('min', 72, 109), ('sec', 77, 109)]
+K0 'S'
+K1 'TMR_no'
+K2 1
+K3 'model'
+K4 'getTimer'
+K5 'mode'
+K6 'TI'
+K7 'tick100'
+K8 ':'
+K9 ''
+K10 'TMR_host'
+K11 'Arm Timer '
+K12 'Timer '
+K13 'TLM_ON'
+K14 'C'
+K15 'MD_V'
+K16 'MD_L'
+K17 'TX'
+K18 'xr'
+K19 8
+K20 'yt'
+K21 'FONT_S'
+K22 'TEXT_RIGHT'
+K23 'value'
+K24 0
+K25 'string'
+K26 'format'
+K27 '%.2d'
+K28 60
+K29 50
+K30 18
+K31 'FONT_XL'
+K32 40
+K33 17
+K34 4
+   1 [  14] GETTABUP  R1 = UP0[K0('S')]
+   2 [  14] GETTABLE  R1 = R1[K1('TMR_no')]
+   3 [  14] SUB       A=1 B=1 C=258
+   4 [  15] GETTABUP  R2 = UP1[K3('model')]
+   5 [  15] GETTABLE  R2 = R2[K4('getTimer')]
+   6 [  15] MOVE      A=3 B=1 C=0
+   7 [  15] CALL      A=2 B=2 C=2
+   8 [  15] TEST      A=2 B=0 C=1
+   9 [  15] JMP       A=0 ->11
+  10 [  15] NEWTABLE  A=2 B=0 C=0
+  11 [  16] GETTABLE  R3 = R2[K5('mode')]
+  12 [  16] EQ        A=1 R3, K2(1); skip-next if condition != A
+  13 [  16] JMP       A=0 ->15
+  14 [  16] LOADBOOL  A=3 B=0 C=1
+  15 [  16] LOADBOOL  A=3 B=1 C=0
+  16 [  17] TEST      A=3 B=0 C=0
+  17 [  17] JMP       A=0 ->28
+  18 [  17] GETTABUP  R4 = UP0[K6('TI')]
+  19 [  17] GETTABLE  R4 = R4[K7('tick100')]
+  20 [  17] TEST      A=4 B=0 C=0
+  21 [  17] JMP       A=0 ->25
+  22 [  17] LOADK     R4 = K8 (':')
+  23 [  17] TEST      A=4 B=0 C=1
+  24 [  17] JMP       A=0 ->29
+  25 [  17] LOADK     R4 = K9 ('')
+  26 [  17] TEST      A=4 B=0 C=1
+  27 [  17] JMP       A=0 ->29
+  28 [  17] LOADK     R4 = K8 (':')
+  29 [  18] GETTABUP  R5 = UP0[K0('S')]
+  30 [  18] GETTABLE  R5 = R5[K10('TMR_host')]
+  31 [  18] EQ        A=0 R5, K2(1); skip-next if condition != A
+  32 [  18] JMP       A=0 ->39
+  33 [  18] LOADK     R5 = K11 ('Arm Timer ')
+  34 [  18] GETTABUP  R6 = UP0[K0('S')]
+  35 [  18] GETTABLE  R6 = R6[K1('TMR_no')]
+  36 [  18] CONCAT    A=5 B=5 C=6
+  37 [  18] TEST      A=5 B=0 C=1
+  38 [  18] JMP       A=0 ->43
+  39 [  18] LOADK     R5 = K12 ('Timer ')
+  40 [  18] GETTABUP  R6 = UP0[K0('S')]
+  41 [  18] GETTABLE  R6 = R6[K1('TMR_no')]
+  42 [  18] CONCAT    A=5 B=5 C=6
+  43 [  19] GETTABUP  R6 = UP0[K0('S')]
+  44 [  19] GETTABLE  R6 = R6[K13('TLM_ON')]
+  45 [  19] TEST      A=6 B=0 C=0
+  46 [  19] JMP       A=0 ->51
+  47 [  19] GETTABUP  R6 = UP0[K14('C')]
+  48 [  19] GETTABLE  R6 = R6[K15('MD_V')]
+  49 [  19] TEST      A=6 B=0 C=1
+  50 [  19] JMP       A=0 ->53
+  51 [  19] GETTABUP  R6 = UP0[K14('C')]
+  52 [  19] GETTABLE  R6 = R6[K16('MD_L')]
+  53 [  20] GETTABUP  R7 = UP2[K17('TX')]
+  54 [  20] GETTABLE  R8 = R0[K18('xr')]
+  55 [  20] SUB       A=8 B=8 C=275
+  56 [  20] GETTABLE  R9 = R0[K20('yt')]
+  57 [  20] ADD       A=9 B=9 C=275
+  58 [  20] MOVE      A=10 B=5 C=0
+  59 [  20] GETTABUP  R11 = UP2[K21('FONT_S')]
+  60 [  20] GETTABUP  R12 = UP2[K22('TEXT_RIGHT')]
+  61 [  20] MOVE      A=13 B=6 C=0
+  62 [  20] CALL      A=7 B=7 C=1
+  63 [  21] GETTABLE  R7 = R2[K23('value')]
+  64 [  21] TEST      A=7 B=0 C=1
+  65 [  21] JMP       A=0 ->67
+  66 [  21] LOADK     R7 = K24 (0)
+  67 [  22] GETTABUP  R8 = UP1[K25('string')]
+  68 [  22] GETTABLE  R8 = R8[K26('format')]
+  69 [  22] LOADK     R9 = K27 ('%.2d')
+  70 [  22] DIV       A=10 B=7 C=284
+  71 [  22] MOD       A=10 B=10 C=284
+  72 [  22] CALL      A=8 B=3 C=2
+  73 [  23] GETTABUP  R9 = UP1[K25('string')]
+  74 [  23] GETTABLE  R9 = R9[K26('format')]
+  75 [  23] LOADK     R10 = K27 ('%.2d')
+  76 [  23] MOD       A=11 B=7 C=284
+  77 [  23] CALL      A=9 B=3 C=2
+  78 [  25] GETTABUP  R10 = UP2[K17('TX')]
+  79 [  25] GETTABLE  R11 = R0[K18('xr')]
+  80 [  25] SUB       A=11 B=11 C=285
+  81 [  25] GETTABLE  R12 = R0[K20('yt')]
+  82 [  25] ADD       A=12 B=12 C=286
+  83 [  25] MOVE      A=13 B=8 C=0
+  84 [  25] GETTABUP  R14 = UP2[K31('FONT_XL')]
+  85 [  25] GETTABUP  R15 = UP2[K22('TEXT_RIGHT')]
+  86 [  25] MOVE      A=16 B=6 C=0
+  87 [  25] CALL      A=10 B=7 C=1
+  88 [  26] GETTABUP  R10 = UP2[K17('TX')]
+  89 [  26] GETTABLE  R11 = R0[K18('xr')]
+  90 [  26] SUB       A=11 B=11 C=288
+  91 [  26] GETTABLE  R12 = R0[K20('yt')]
+  92 [  26] ADD       A=12 B=12 C=289
+  93 [  26] MOVE      A=13 B=4 C=0
+  94 [  26] GETTABUP  R14 = UP2[K31('FONT_XL')]
+  95 [  26] GETTABUP  R15 = UP2[K22('TEXT_RIGHT')]
+  96 [  26] MOVE      A=16 B=6 C=0
+  97 [  26] CALL      A=10 B=7 C=1
+  98 [  28] GETTABUP  R10 = UP2[K17('TX')]
+  99 [  28] GETTABLE  R11 = R0[K18('xr')]
+ 100 [  28] SUB       A=11 B=11 C=290
+ 101 [  28] GETTABLE  R12 = R0[K20('yt')]
+ 102 [  28] ADD       A=12 B=12 C=286
+ 103 [  28] MOVE      A=13 B=9 C=0
+ 104 [  28] GETTABUP  R14 = UP2[K31('FONT_XL')]
+ 105 [  28] GETTABUP  R15 = UP2[K22('TEXT_RIGHT')]
+ 106 [  28] MOVE      A=16 B=6 C=0
+ 107 [  28] CALL      A=10 B=7 C=1
+ 108 [  30] RETURN    A=0 B=1 C=0
+ 109 [  32] RETURN    A=0 B=1 C=0

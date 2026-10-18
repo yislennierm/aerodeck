@@ -1,0 +1,159 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/STK.luac
+SHA256: 784493d306fd5cf66b67637dbabaa28295a9473ccc37ba6bd469a97ad416ccf7
+
+FUNCTION main params 0 vararg 1 stack 25 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FC/BF/STK.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 125), ('F', 1, 125), ('D', 1, 125), ('X', 1, 125)]
+K0 'l'
+K1 'Save settings'
+K2 't'
+K3 -1
+K4 'y'
+K5 'p'
+K6 'r'
+K7 1
+K8 'Set PID profile 1'
+K9 0
+K10 'Set PID profile 2'
+K11 'Set PID profile 3'
+K12 'In-flight Calibration'
+K13 'Calibrate Compass'
+K14 'Calibrate Gyroscope'
+K15 'Calibrate Accelerometer'
+K16 'Trim Accelerometer Left'
+K17 'Trim Accelerometer Right'
+K18 'Trim Accelerometer Forward'
+K19 'Trim Accelerometer Backward'
+K20 'BF OSD Menu Open'
+K21 'BF OSD Menu Exit'
+K22 'BF OSD Menu Enter Submenu'
+K23 'BF OSD Menu Exit Submenu'
+K24 'BF OSD Menu Previous Option'
+K25 'BF OSD Menu Next Option'
+K26 'BF OSD Menu Previous Value'
+K27 'BF OSD Menu Next Value'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] NEWTABLE  A=4 B=18 C=0
+   3 [  13] NEWTABLE  A=5 B=0 C=5
+   4 [  14] SETTABLE  R5[K0('l')] = K1('Save settings')
+   5 [  14] SETTABLE  R5[K2('t')] = K3(-1)
+   6 [  14] SETTABLE  R5[K4('y')] = K3(-1)
+   7 [  14] SETTABLE  R5[K5('p')] = K3(-1)
+   8 [  14] SETTABLE  R5[K6('r')] = K7(1)
+   9 [  14] NEWTABLE  A=6 B=0 C=5
+  10 [  15] SETTABLE  R6[K0('l')] = K8('Set PID profile 1')
+  11 [  15] SETTABLE  R6[K2('t')] = K3(-1)
+  12 [  15] SETTABLE  R6[K4('y')] = K3(-1)
+  13 [  15] SETTABLE  R6[K5('p')] = K9(0)
+  14 [  15] SETTABLE  R6[K6('r')] = K3(-1)
+  15 [  15] NEWTABLE  A=7 B=0 C=5
+  16 [  16] SETTABLE  R7[K0('l')] = K10('Set PID profile 2')
+  17 [  16] SETTABLE  R7[K2('t')] = K3(-1)
+  18 [  16] SETTABLE  R7[K4('y')] = K3(-1)
+  19 [  16] SETTABLE  R7[K5('p')] = K7(1)
+  20 [  16] SETTABLE  R7[K6('r')] = K9(0)
+  21 [  16] NEWTABLE  A=8 B=0 C=5
+  22 [  17] SETTABLE  R8[K0('l')] = K11('Set PID profile 3')
+  23 [  17] SETTABLE  R8[K2('t')] = K3(-1)
+  24 [  17] SETTABLE  R8[K4('y')] = K3(-1)
+  25 [  17] SETTABLE  R8[K5('p')] = K9(0)
+  26 [  17] SETTABLE  R8[K6('r')] = K7(1)
+  27 [  17] NEWTABLE  A=9 B=0 C=5
+  28 [  18] SETTABLE  R9[K0('l')] = K12('In-flight Calibration')
+  29 [  18] SETTABLE  R9[K2('t')] = K3(-1)
+  30 [  18] SETTABLE  R9[K4('y')] = K3(-1)
+  31 [  18] SETTABLE  R9[K5('p')] = K7(1)
+  32 [  18] SETTABLE  R9[K6('r')] = K7(1)
+  33 [  18] NEWTABLE  A=10 B=0 C=5
+  34 [  19] SETTABLE  R10[K0('l')] = K13('Calibrate Compass')
+  35 [  19] SETTABLE  R10[K2('t')] = K7(1)
+  36 [  19] SETTABLE  R10[K4('y')] = K7(1)
+  37 [  19] SETTABLE  R10[K5('p')] = K3(-1)
+  38 [  19] SETTABLE  R10[K6('r')] = K9(0)
+  39 [  19] NEWTABLE  A=11 B=0 C=5
+  40 [  20] SETTABLE  R11[K0('l')] = K14('Calibrate Gyroscope')
+  41 [  20] SETTABLE  R11[K2('t')] = K3(-1)
+  42 [  20] SETTABLE  R11[K4('y')] = K3(-1)
+  43 [  20] SETTABLE  R11[K5('p')] = K3(-1)
+  44 [  20] SETTABLE  R11[K6('r')] = K9(0)
+  45 [  20] NEWTABLE  A=12 B=0 C=5
+  46 [  21] SETTABLE  R12[K0('l')] = K15('Calibrate Accelerometer')
+  47 [  21] SETTABLE  R12[K2('t')] = K7(1)
+  48 [  21] SETTABLE  R12[K4('y')] = K3(-1)
+  49 [  21] SETTABLE  R12[K5('p')] = K3(-1)
+  50 [  21] SETTABLE  R12[K6('r')] = K9(0)
+  51 [  21] NEWTABLE  A=13 B=0 C=5
+  52 [  22] SETTABLE  R13[K0('l')] = K16('Trim Accelerometer Left')
+  53 [  22] SETTABLE  R13[K2('t')] = K7(1)
+  54 [  22] SETTABLE  R13[K4('y')] = K9(0)
+  55 [  22] SETTABLE  R13[K5('p')] = K9(0)
+  56 [  22] SETTABLE  R13[K6('r')] = K3(-1)
+  57 [  22] NEWTABLE  A=14 B=0 C=5
+  58 [  23] SETTABLE  R14[K0('l')] = K17('Trim Accelerometer Right')
+  59 [  23] SETTABLE  R14[K2('t')] = K7(1)
+  60 [  23] SETTABLE  R14[K4('y')] = K9(0)
+  61 [  23] SETTABLE  R14[K5('p')] = K9(0)
+  62 [  23] SETTABLE  R14[K6('r')] = K7(1)
+  63 [  23] NEWTABLE  A=15 B=0 C=5
+  64 [  24] SETTABLE  R15[K0('l')] = K18('Trim Accelerometer Forward')
+  65 [  24] SETTABLE  R15[K2('t')] = K7(1)
+  66 [  24] SETTABLE  R15[K4('y')] = K9(0)
+  67 [  24] SETTABLE  R15[K5('p')] = K7(1)
+  68 [  24] SETTABLE  R15[K6('r')] = K9(0)
+  69 [  24] NEWTABLE  A=16 B=0 C=5
+  70 [  25] SETTABLE  R16[K0('l')] = K19('Trim Accelerometer Backward')
+  71 [  25] SETTABLE  R16[K2('t')] = K7(1)
+  72 [  25] SETTABLE  R16[K4('y')] = K9(0)
+  73 [  25] SETTABLE  R16[K5('p')] = K3(-1)
+  74 [  25] SETTABLE  R16[K6('r')] = K9(0)
+  75 [  25] NEWTABLE  A=17 B=0 C=5
+  76 [  26] SETTABLE  R17[K0('l')] = K20('BF OSD Menu Open')
+  77 [  26] SETTABLE  R17[K2('t')] = K9(0)
+  78 [  26] SETTABLE  R17[K4('y')] = K3(-1)
+  79 [  26] SETTABLE  R17[K5('p')] = K7(1)
+  80 [  26] SETTABLE  R17[K6('r')] = K9(0)
+  81 [  26] NEWTABLE  A=18 B=0 C=5
+  82 [  27] SETTABLE  R18[K0('l')] = K21('BF OSD Menu Exit')
+  83 [  27] SETTABLE  R18[K2('t')] = K9(0)
+  84 [  27] SETTABLE  R18[K4('y')] = K7(1)
+  85 [  27] SETTABLE  R18[K5('p')] = K9(0)
+  86 [  27] SETTABLE  R18[K6('r')] = K9(0)
+  87 [  27] NEWTABLE  A=19 B=0 C=5
+  88 [  28] SETTABLE  R19[K0('l')] = K22('BF OSD Menu Enter Submenu')
+  89 [  28] SETTABLE  R19[K2('t')] = K9(0)
+  90 [  28] SETTABLE  R19[K4('y')] = K9(0)
+  91 [  28] SETTABLE  R19[K5('p')] = K9(0)
+  92 [  28] SETTABLE  R19[K6('r')] = K7(1)
+  93 [  28] NEWTABLE  A=20 B=0 C=5
+  94 [  29] SETTABLE  R20[K0('l')] = K23('BF OSD Menu Exit Submenu')
+  95 [  29] SETTABLE  R20[K2('t')] = K9(0)
+  96 [  29] SETTABLE  R20[K4('y')] = K3(-1)
+  97 [  29] SETTABLE  R20[K5('p')] = K9(0)
+  98 [  29] SETTABLE  R20[K6('r')] = K9(0)
+  99 [  29] NEWTABLE  A=21 B=0 C=5
+ 100 [  30] SETTABLE  R21[K0('l')] = K24('BF OSD Menu Previous Option')
+ 101 [  30] SETTABLE  R21[K2('t')] = K9(0)
+ 102 [  30] SETTABLE  R21[K4('y')] = K9(0)
+ 103 [  30] SETTABLE  R21[K5('p')] = K7(1)
+ 104 [  30] SETTABLE  R21[K6('r')] = K9(0)
+ 105 [  30] NEWTABLE  A=22 B=0 C=5
+ 106 [  31] SETTABLE  R22[K0('l')] = K25('BF OSD Menu Next Option')
+ 107 [  31] SETTABLE  R22[K2('t')] = K9(0)
+ 108 [  31] SETTABLE  R22[K4('y')] = K9(0)
+ 109 [  31] SETTABLE  R22[K5('p')] = K3(-1)
+ 110 [  31] SETTABLE  R22[K6('r')] = K9(0)
+ 111 [  31] NEWTABLE  A=23 B=0 C=5
+ 112 [  32] SETTABLE  R23[K0('l')] = K26('BF OSD Menu Previous Value')
+ 113 [  32] SETTABLE  R23[K2('t')] = K9(0)
+ 114 [  32] SETTABLE  R23[K4('y')] = K9(0)
+ 115 [  32] SETTABLE  R23[K5('p')] = K9(0)
+ 116 [  32] SETTABLE  R23[K6('r')] = K3(-1)
+ 117 [  32] NEWTABLE  A=24 B=0 C=5
+ 118 [  33] SETTABLE  R24[K0('l')] = K27('BF OSD Menu Next Value')
+ 119 [  33] SETTABLE  R24[K2('t')] = K9(0)
+ 120 [  33] SETTABLE  R24[K4('y')] = K9(0)
+ 121 [  33] SETTABLE  R24[K5('p')] = K9(0)
+ 122 [  33] SETTABLE  R24[K6('r')] = K7(1)
+ 123 [  38] SETLIST   A=4 B=20 C=1
+ 124 [  38] RETURN    A=4 B=2 C=0
+ 125 [  38] RETURN    A=0 B=1 C=0

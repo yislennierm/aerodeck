@@ -1,0 +1,16 @@
+Phase-aware native history candidate — measured acceptance
+
+Source: 3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89
+Backend: ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b
+
+The private candidate passes the scoped actual-widget test under the unchanged 20,000-instruction hook. It changes only the entry allowance for intermediate four-field history batches from 10 to 18; new cycles and final atomic publication remain at 10. The generic pre-render guard remains 25. Canonical source and the running preview were left untouched during this test.
+
+The owned-LCD monitor collected 1,100 samples across 44.808 seconds: zero sampled blank frames, zero sampled ordinary Updating frames, and no native widget or instruction-limit errors in the complete process log. No forced garbage collection occurred. Sampling excludes the initial mode-settling periods; it is not a claim that every intermediate frame was classified.
+
+There are 84 correct completed snapshots, 42 in each mode, with 24 bound fields. MIN median publication interval falls from 1.10 to 0.58 seconds; MAX falls from 1.09 to 0.59 seconds. Measured rates are 1.81 and 1.79 Hz, with longest observed intervals 0.66 and 0.65 seconds. This nearly doubles native-history publication in this case; it does not establish 5 Hz or a physical-radio speed advantage.
+
+MIN shows 21.6 V, 0.5 A, pitch −30°, and roll −45°. MAX shows 25.2 V, 40.0 A, pitch +20°, and roll +60°. These come from distinct native source+1/+2 values, with the correct negative-pitch offset inversion. Current source values are preserved. All eight screenshots were inspected, including return to LIVE and Flight.
+
+Twenty-eight sampled history callbacks show median 82% and sampled peak 87% of the Lua VM allowance, compared with 77% / 87% before this scheduling change. The extra work is performed more often, while the observed peak stays unchanged. These are sampled instruction percentages, not processor time or guaranteed all-frame maxima. Sampled private fixture-plus-app RAM peak is 1240.8 KB.
+
+The runtime map binds all 64 active production Lua/icon files, with the private candidate replacing only the main source hash. Production main is privately instrumented; native-extrema module bytes remain unchanged. The development driver, telemetry fixture, and timing wrapper do not ship. Native firmware is EdgeTX 3.0 WASM; physical TX16S MkII / EdgeTX 2.12.4 performance remains unverified. No further candidate is proposed.

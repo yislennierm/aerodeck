@@ -1,0 +1,39 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UITSKCHG.luac
+
+FUNCTION main params 0 vararg 1 stack 12 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/UITSKCHG.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 23), ('F', 1, 23), ('D', 1, 23), ('X', 1, 23), ('T', 1, 23), ('w', 1, 23), ('dir', 7, 23)]
+K0 'string'
+K1 'sub'
+K2 'f'
+K3 1
+K4 3
+K5 'loadE'
+K6 'PUIR'
+K7 '/'
+K8 'm'
+K9 'i'
+K10 'w'
+   1 [  10] VARARG    A=0 B=7 C=0
+   2 [  12] GETTABUP  R6 = UP0[K0('string')]
+   3 [  12] GETTABLE  R6 = R6[K1('sub')]
+   4 [  12] GETTABLE  R7 = R4[K2('f')]
+   5 [  12] LOADK     R8 = K3 (1)
+   6 [  12] LOADK     R9 = K4 (3)
+   7 [  12] CALL      A=6 B=4 C=2
+   8 [  13] GETTABLE  R7 = R0[K5('loadE')]
+   9 [  13] GETTABLE  R8 = R0[K6('PUIR')]
+  10 [  13] MOVE      A=9 B=6 C=0
+  11 [  13] LOADK     R10 = K7 ('/')
+  12 [  13] GETTABLE  R11 = R4[K8('m')]
+  13 [  13] CONCAT    A=8 B=8 C=11
+  14 [  13] MOVE      A=9 B=4 C=0
+  15 [  13] CALL      A=7 B=3 C=1
+  16 [  14] GETTABLE  R7 = R4[K9('i')]
+  17 [  14] TEST      A=7 B=0 C=0
+  18 [  14] JMP       A=0 ->22
+  19 [  14] GETTABLE  R7 = R4[K9('i')]
+  20 [  14] GETTABLE  R8 = R4[K10('w')]
+  21 [  14] CALL      A=7 B=2 C=1
+  22 [  16] RETURN    A=0 B=1 C=0
+  23 [  16] RETURN    A=0 B=1 C=0

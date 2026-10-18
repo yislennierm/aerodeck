@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T23:08:49.780353+00:00",
+  "candidateOnly": true,
+  "sourceSha256": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+  "moduleSha256": "ef9678b582342fe7c2231eac8e257002e2865e4c191d82f9b8b648774a1b354b",
+  "testSha256": "8f9490dabcf636c0ee0d9eae2c0b4bb575f067db0a143ea7d7bc56865da21418",
+  "checksPerVm": 3099,
+  "LuaJIT": "PASS",
+  "int32Float32": "PASS",
+  "stageNoArgInvocationPass": true,
+  "testFileCopiedTo": "final-project/development/test_retained_extrema.lua",
+  "budgetBoundaries": {
+    "begin": {
+      "blocked": [
+        15,
+        18
+      ],
+      "allowed": 10
+    },
+    "middle": {
+      "blocked": [
+        19
+      ],
+      "allowed": [
+        15,
+        18
+      ]
+    },
+    "final": {
+      "blocked": [
+        11,
+        15,
+        18
+      ],
+      "allowed": 10
+    },
+    "ageRestart": {
+      "blocked": [
+        15
+      ],
+      "allowed": 10
+    },
+    "clockRollbackRestart": {
+      "blocked": [
+        18
+      ],
+      "allowed": 10
+    }
+  },
+  "coverageRetained": "Atomic published MIN/MAX, stable records, repeated changing native values, qualified primary sourceID replacement, raw and normalized attitude provenance, LIVE/leave cancellation, age,clock,binding/settings revisions, no synchronous history sampling or background persistence writes.",
+  "limits": "getUsage is a synthetic entry-value hook, so this verifies actual main boundary decisions; native20k runtime/cost validation is separate. Canonical source/test files were not changed.",
+  "negativeControl": {
+    "sourceSha256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+    "vm": "LuaJIT",
+    "expectedExitCode": 1,
+    "actualExitCode": 1,
+    "assertion": "middle batch advances at15points with at most four native reads",
+    "result": "EXPECTED FAILURE: old fixed10point allowance starves a middle batch; test distinguishes candidate behavior."
+  }
+}

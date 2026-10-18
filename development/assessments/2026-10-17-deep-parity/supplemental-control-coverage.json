@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-17",
+  "purpose": "Close inventory-only coverage for eight identity/107 handlers and two INAV MSPv2 codecs without inventing absent functions.",
+  "baseline": "fpv-1 ebb932a / POWER-LIVE-20261017",
+  "newMaterialMissingCapability": false,
+  "controlRowsChanged": false,
+  "hardwareProof": false,
+  "summary": "All six identity handlers implement only the existing identity/version rows. Both107handlers are literal no-ops. INAV MSPv2 input/output codecs are recursively instruction/constant-identical to BF counterparts, excluding debug metadata; no additional INAV-only wire feature found.",
+  "moduleCount": 10,
+  "modules": [
+    {
+      "module": "LIB/MSP/BF/C/MSPC0001.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0001.luac",
+      "sha256": "bc9f68d8de39a711f70740b2f779e8b43e657db079738659dc0687f6fb7ff099",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0001.txt",
+        "line": 4,
+        "sha256": "82cbbf898a4b8cac60b0237e9beda51e46b4b2c62e7898247634e4647a7a26a1"
+      },
+      "linkedRowIds": [
+        "CTL-001",
+        "CTL-003"
+      ],
+      "reviewDepth": "All original instructions and constants read; assignments and helper calls traced.",
+      "instructionScope": "main PCs1\u201332",
+      "findings": [
+        "Reads three U8 values through MSPP: protocol version, API major, API minor. Stores protocol version and tonumber(major..\".\"..minor).",
+        "No transport sends, settings writes, extra sensor fields or hidden controls.",
+        "AERODECK already retains major/minor separately; do not copy decimal API representation."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 32,
+      "nestedInstructions": 0
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0002.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0002.luac",
+      "sha256": "88f69707b6da331541d6fc4d34e75d88e942058605108903c9435af772da349a",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0002.txt",
+        "line": 4,
+        "sha256": "75dd0f08943787adf0fea0eb0c7a8407b2bb4ff9d06a16db58cee8905c5cb8f9"
+      },
+      "linkedRowIds": [
+        "CTL-001"
+      ],
+      "reviewDepth": "All original instructions and constants read; side effects enumerated.",
+      "instructionScope": "main PCs1\u201315",
+      "findings": [
+        "Reads fixed four-byte string via MSPP(\"S\",4) and stores FC.FW_NAME; remaining calls are debug logging.",
+        "Actual family acceptance/rejection remains in MSPCFC, already covered. No additional capability."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 15,
+      "nestedInstructions": 0
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC0003.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC0003.luac",
+      "sha256": "53da89fab0d4be527dd3255c5392eb7269991b4e331684976940a5082c1a6bc0",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0003.txt",
+        "line": 4,
+        "sha256": "10d79aced9a37bc5595010f430dd08f10df6eb91869061621ccd7927df564a6c"
+      },
+      "linkedRowIds": [
+        "CTL-001"
+      ],
+      "reviewDepth": "All original instructions and constants read; family-specific stored fields traced.",
+      "instructionScope": "main PCs1\u201323",
+      "findings": [
+        "Reads three U8 values and formats dotted firmware version.",
+        "No extra request or control operation."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 23,
+      "nestedInstructions": 0
+    },
+    {
+      "module": "LIB/MSP/BF/C/MSPC006B.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC006B.luac",
+      "sha256": "0f3f30401a48f51470510b74fe3abd2bec4c94fe1e2b86702c846ccfaac2e64d",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC006B.txt",
+        "line": 4,
+        "sha256": "d39cbd1266c36abe594413ea7c4354e127bfedb452aa96d8f63ba86c1908555a"
+      },
+      "linkedRowIds": [
+        "CTL-003",
+        "CTL-037"
+      ],
+      "reviewDepth": "Entire three-instruction original handler read; zero constants/prototypes or helper calls.",
+      "instructionScope": "main PCs1\u20133",
+      "findings": [
+        "MSP107 handler is a literal no-op: VARARG followed by RETURN and terminal RETURN. It does not decode home distance/bearing or any field.",
+        "Catalog presence is not implementation. No 107 enqueue found in earlier scheduler/caller review.",
+        "Correction to broad earlier context wording: 107 is catalog-plus-no-op, not a functioning decoder. This strengthens the existing negative finding; it does not create another missing AERODECK capability."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 3,
+      "nestedInstructions": 0,
+      "classification": "No-op placeholder in original; not an executable parity requirement"
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC0001.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC0001.luac",
+      "sha256": "df164c5b32c16a9ed361ae92acf9501d714960d614b79dfa4d0cb0f64bbb1092",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0001.txt",
+        "line": 4,
+        "sha256": "cea9cc27fdbdb6c8fd1cb715cfd13053c66a7e0293d209a700e774f41b45d852"
+      },
+      "linkedRowIds": [
+        "CTL-002",
+        "CTL-003"
+      ],
+      "reviewDepth": "All original instructions and constants read; assignments and helper calls traced.",
+      "instructionScope": "main PCs1\u201332",
+      "findings": [
+        "Reads three U8 values through MSPP: protocol version, API major, API minor. Stores protocol version and tonumber(major..\".\"..minor).",
+        "No transport sends, settings writes, extra sensor fields or hidden controls.",
+        "AERODECK already retains major/minor separately; do not copy decimal API representation."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 32,
+      "nestedInstructions": 0
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC0002.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC0002.luac",
+      "sha256": "e291f5a3dff61f39df05dd0b56c39472f8aeeed5f688b7d84332881684d3253c",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0002.txt",
+        "line": 4,
+        "sha256": "a7ed246ba48db1107c5409adef33fe0417931f45e6f148548e7cf1d860629984"
+      },
+      "linkedRowIds": [
+        "CTL-002"
+      ],
+      "reviewDepth": "All original instructions and constants read; side effects enumerated.",
+      "instructionScope": "main PCs1\u201315",
+      "findings": [
+        "Reads fixed four-byte string via MSPP(\"S\",4) and stores FC.FW_NAME; remaining calls are debug logging.",
+        "Actual family acceptance/rejection remains in MSPCFC, already covered. No additional capability."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 15,
+      "nestedInstructions": 0
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC0003.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC0003.luac",
+      "sha256": "31aa75851a30d412509d308ed4f970dc8dad24e25d44544345b77091b736f623",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0003.txt",
+        "line": 4,
+        "sha256": "d12b68c04cf03982a875103d070495c89d5f272b55e92ae0ed1655b012da7dc1"
+      },
+      "linkedRowIds": [
+        "CTL-002"
+      ],
+      "reviewDepth": "All original instructions and constants read; family-specific stored fields traced.",
+      "instructionScope": "main PCs1\u201332",
+      "findings": [
+        "Reads three U8 values and formats dotted firmware version.",
+        "No extra request or control operation.",
+        "INAV additionally stores FW_VER_MAJOR, FW_VER_MINOR and FW_VER_PATCH separately for its existing version guard; covered by CTL-002."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 32,
+      "nestedInstructions": 0
+    },
+    {
+      "module": "LIB/MSP/IN/C/MSPC006B.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC006B.luac",
+      "sha256": "b14ea4a14394828fed7ae9841e90f4aef83472217966f421516b77f52302d0ea",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC006B.txt",
+        "line": 4,
+        "sha256": "dcb8fad0853ca1339dcb2912f960e5b14b03794cad9ecbcb5c6c6f244b973d03"
+      },
+      "linkedRowIds": [
+        "CTL-003",
+        "CTL-037"
+      ],
+      "reviewDepth": "Entire three-instruction original handler read; zero constants/prototypes or helper calls.",
+      "instructionScope": "main PCs1\u20133",
+      "findings": [
+        "MSP107 handler is a literal no-op: VARARG followed by RETURN and terminal RETURN. It does not decode home distance/bearing or any field.",
+        "Catalog presence is not implementation. No 107 enqueue found in earlier scheduler/caller review.",
+        "Correction to broad earlier context wording: 107 is catalog-plus-no-op, not a functioning decoder. This strengthens the existing negative finding; it does not create another missing AERODECK capability."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 3,
+      "nestedInstructions": 0,
+      "classification": "No-op placeholder in original; not an executable parity requirement"
+    },
+    {
+      "module": "LIB/MSP/IN/V2/MSPIN.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/V2/MSPIN.luac",
+      "sha256": "9f4bb4cbd71af130d853ab69cddf18b775a301d0957c206e0c3d871516cee1cf",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-V2-MSPIN.txt",
+        "line": 4,
+        "sha256": "4a5b24125442c2ad6114aac0e7891b8242318e53d59d638f68d82e679704e9b3"
+      },
+      "linkedRowIds": [
+        "CTL-002",
+        "CTL-003",
+        "CTL-004",
+        "CTL-008"
+      ],
+      "reviewDepth": "Instruction/constant/control-flow inspection of codec plus recursive semantic-structure equality to already reviewed BF counterpart; no emulation or hardware execution.",
+      "instructionScope": "main and all nested prototypes",
+      "findings": [
+        "INAV receiver is structurally identical to BF receiver: parameters, vararg/stack, instruction words, constants, upvalue descriptors and all nested prototypes match after excluding source/debug metadata.",
+        "Traced error flag, version bits, START/sequence, little-endian command/length, command matching, continuation/reassembly, timeout/error accounting and dispatch to family C/MSPCxxxx handler.",
+        "No INAV-specific hidden command or additional data feature resides in codec. Family-specific capabilities remain in selected handlers.",
+        "Original buffers by configured chunk size and reported length; current AERODECK bounds/strict validation remain desirable and are not made equivalent by this comparison."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 4,
+      "nestedInstructions": 341,
+      "bfCounterpart": "LIB/MSP/BF/V2/MSPIN.luac",
+      "semanticStructureIdenticalToBF": true,
+      "comparisonIncludes": [
+        "parameters",
+        "vararg",
+        "stack",
+        "instruction words",
+        "constant values",
+        "upvalue descriptors",
+        "recursive prototypes"
+      ],
+      "comparisonExcludes": [
+        "source path",
+        "source line table",
+        "local variable names/lifetimes",
+        "upvalue names"
+      ]
+    },
+    {
+      "module": "LIB/MSP/IN/V2/MSPOUT.luac",
+      "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/V2/MSPOUT.luac",
+      "sha256": "8be6d92936c79f3fe10e23937ba2f55f25453b12c81e7e03b2beb3d38d474f8c",
+      "evidence": {
+        "file": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-V2-MSPOUT.txt",
+        "line": 4,
+        "sha256": "ddead22bfb2f45ce2991d7e7f4bc2b1420cdba37b6d534b84ce027eb646901db"
+      },
+      "linkedRowIds": [
+        "CTL-002",
+        "CTL-003",
+        "CTL-004",
+        "CTL-008"
+      ],
+      "reviewDepth": "Instruction/constant/control-flow inspection of codec plus recursive semantic-structure equality to already reviewed BF counterpart; no emulation or hardware execution.",
+      "instructionScope": "main and all nested prototypes",
+      "findings": [
+        "INAV transmitter is structurally identical to BF transmitter under the same metadata-excluded comparison.",
+        "Traced START/version/sequence header, little-endian command/length, payload chunk packing through OUT.SIZE, pointer/sequence advancement and pushM wrapper call.",
+        "Read/write outer frame type selection remains in shared MSPWXF wrapper based on OUT.save (0x7A/0x7C), already covered. No INAV-specific control capability hidden in the codec.",
+        "This is code-structure proof, not packet execution, transport validation or hardware performance proof."
+      ],
+      "newMaterialCapability": false,
+      "hardwareVerified": false,
+      "testedAgainstFC": false,
+      "topLevelInstructions": 5,
+      "nestedInstructions": 169,
+      "bfCounterpart": "LIB/MSP/BF/V2/MSPOUT.luac",
+      "semanticStructureIdenticalToBF": true,
+      "comparisonIncludes": [
+        "parameters",
+        "vararg",
+        "stack",
+        "instruction words",
+        "constant values",
+        "upvalue descriptors",
+        "recursive prototypes"
+      ],
+      "comparisonExcludes": [
+        "source path",
+        "source line table",
+        "local variable names/lifetimes",
+        "upvalue names"
+      ]
+    }
+  ],
+  "limitations": "Static original bytecode review only. No keys read, activation mechanism implementation, runtime modifications, FC writes, packet execution or radio testing. Shared codec equality does not prove end-to-end INAV/FrSky support in AERODECK. Existing required missing INAV/FrSky/queue/write capabilities remain unchanged."
+}

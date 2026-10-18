@@ -123,33 +123,46 @@ a=make({values={Capa=999}});draw(a);check(has(a,'999 mAh'),'small consumed total
 -- Exercise numeric fitting with the actual renderer, not copied layout logic.
 a=make({values={RxBt=999999999999,Curr=999999999999,Capa=999999999999}});draw(a);inspectLayout(a)
 local long='Pack Voltage With A Very Long Telemetry Sensor Name'
-a=make({settings=base..'voltage='..long..'\n'});a.addSensor(long,24,0,true)
+a=make({settings=base..'voltage='..long..'\n'});a.addSensor(long,24,'V',true)
 check(a.send(E.EVT_TOUCH_TAP,{x=210,y=231})==0,'real refresh discovers the newly present manual source')
 check(a.send(0)==0);d=draw(a);check(d.v==24,'long manual source names resolve to actual telemetry');inspectLayout(a)
 
--- Compact widget must bind the qualified telemetry source, not an input alias.
-local function widgetCase(settings,currentValue,currentIsCurrent)
- local commands,lookups={},0
- io={open=function()return {}end,read=function()return settings end,close=function()end}
- model={getInfo=function()return {name='WIDGET TEST'}end}
- CHAR_TELEMETRY='T:'
- getFieldInfo=function(name)lookups=lookups+1;return {id=1}end -- Input named Curr, value999.
- local fields={[1]={value=999,current=true},[2]={value=currentValue,current=currentIsCurrent},[3]={value=25.2,current=true},[4]={value=99,current=true}}
- getSourceIndex=function(name)return ({['T:Curr']=2,['T:RxBt']=3,['T:RQly']=4})[name]end
- getSourceValue=function(id)local f=fields[id];return f and f.value,f and f.current,f and f.current end
- lcd={RGB=function(r,g,b)return r*65536+g*256+b end,setColor=function()end,drawFilledRectangle=function()end,
-  drawText=function(x,y,s)commands[#commands+1]={x=x,y=y,text=tostring(s)}end}
+-- Compact widget uses the main app's shared data, including source decisions.
+-- Qualified source/input-collision coverage lives in test_widget_lifecycle.lua.
+local function widgetCase(options)
+ local a=adapter.make(options or{})
+ local commands,loads,backgrounds={},0,0
+ local mainLoader=loadScript
+ loadScript=function(path)
+  if path=='/SCRIPTS/TOOLS/telem.lua'then
+   loads=loads+1
+   return function()return{
+    init=function()end,
+    background=function()backgrounds=backgrounds+1;a.background()end,
+    snapshot=a.snapshot,
+    run=function(event,touch)return a.send(event,touch)end
+   }end
+  end
+  return mainLoader(path)
+ end
+ local drawText=lcd.drawText
+ lcd.drawText=function(x,y,s,flags)commands[#commands+1]={x=x,y=y,text=tostring(s)}end
  local widget=widgetFactory();local instance=widget.create({x=0,y=0,w=480,h=140},{})
- widget.refresh(instance,nil)
- local function at(x,y)for _,c in ipairs(commands)do if c.x==x and c.y==y then return c.text end end end
- check(lookups==0,'compact widget must not resolve a same-named input while qualified telemetry API is present')
- return at
+ for i=1,4 do widget.refresh(instance,nil)end
+ check(loads==1 and backgrounds==1 and instance.app,'cold widget load/chunk/init complete before the first shared live service')
+ local function contains(s)for _,c in ipairs(commands)do if c.text==s then return true end end;return false end
+ local retained=instance.app;local data=a.snapshot();local scans=a.sourceScans()
+ widget.background(instance);widget.refresh(instance,nil)
+ check(loads==1 and backgrounds==3 and instance.app==retained and a.snapshot()==data,'compact/hidden callbacks retain the same shared application and snapshot')
+ check(a.sourceScans()==scans,'compact/hidden warm sampling must not enumerate model sensors again')
+ lcd.drawText=drawText
+ return contains
 end
-local at=widgetCase('ADCFG1\n',0,true)
-check(at(8,57)=='0.0 A','input-named Curr collision cannot mask a true zero telemetry current')
-at=widgetCase('ADCFG1\nvoltage=None\n',12,true)
-check(at(8,31)=='--'and at(8,57)=='12.0 A','compact widget honors voltage None without disabling actual current')
-at=widgetCase('ADCFG1\n',123,false)
-check(at(8,57)=='--','compact widget does not display a stale numeric current')
+local contains=widgetCase({values={Curr=0}})
+check(contains('0.0 A'),'compact widget displays the actual shared zero current')
+contains=widgetCase({settings=base..'voltage=None\n',values={Curr=12}})
+check(contains('--')and contains('12.0 A'),'compact widget honors shared voltage None without suppressing current')
+contains=widgetCase({values={Curr=123},current={Curr=false}})
+check(contains('--')and not contains('123.0 A'),'compact widget cannot display a stale numeric current from the shared app')
 io=hostio
-print('PASS: '..checks..' actual Power/source-health, watts, five-profile persistence, capacity prerequisite, bounds and qualified-widget assertions')
+print('PASS: '..checks..' actual Power/source-health, watts, five-profile persistence, capacity prerequisite, bounds and shared-session widget assertions')

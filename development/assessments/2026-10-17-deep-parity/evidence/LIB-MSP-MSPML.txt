@@ -1,0 +1,399 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPML.luac
+SHA256: dc8f927e5b62766df9d88abc4fd2efbfd6c7d97da6b50399f1ec9f8f9e27eb55
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/MSPML.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'MSPML'
+   1 [  15] VARARG    A=0 B=5 C=0
+   2 [ 125] CLOSURE   R4 = proto[0]
+   3 [ 125] SETTABLE  R1[K0('MSPML')] = R4
+   4 [ 127] RETURN    A=0 B=1 C=0
+   5 [ 127] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 10 lines 17 125 source None
+UPVALUES [('D', (1, 2)), ('F', (1, 1)), ('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('(for generator)', 14, 33), ('(for state)', 14, 33), ('(for control)', 14, 33), ('mCmd', 15, 31), ('data', 15, 31), ('mspCmdData', 74, 132), ('data', 80, 112), ('paramID', 92, 112), ('lastChunk', 169, 171), ('chunk', 201, 278), ('chunkStat', 201, 278)]
+K0 'S'
+K1 'mspReady'
+K2 'MSPRPT'
+K3 'MSP'
+K4 'idle'
+K5 'pairs'
+K6 'RPT'
+K7 1
+K8 'TI'
+K9 'now'
+K10 'MSPQAD'
+K11 3
+K12 4
+K13 5
+K14 2
+K15 'Q'
+K16 'OUT'
+K17 'cmd'
+K18 'data'
+K19 'save'
+K20 'mspInfo'
+K21 'Read '
+K22 'strHex'
+K23 'CMDS'
+K24 'split'
+K25 '|'
+K26 'tonumber'
+K27 ' '
+K28 ''
+K29 'attNo'
+K30 ' #'
+K31 'sendRequest'
+K32 True
+K33 False
+K34 None
+K35 'dbgMSP'
+K36 'MSPML'
+K37 '<--- START REQUEST'
+K38 ' ('
+K39 ')'
+K40 'tblCon'
+K41 'hex'
+K42 'MSPOUT'
+K43 'respWait'
+K44 'respTimeout'
+K45 'RESP_WAIT'
+K46 'Request sent at'
+K47 '<--- END REQUEST'
+K48 'MSPWRAP'
+K49 'pop'
+K50 'badResp'
+K51 'drop bad response chunk'
+K52 'MSPIN'
+K53 'WRAP'
+K54 'WR/MSPWSP'
+K55 'IN'
+K56 'errNo'
+K57 'errMax'
+K58 '!!! ERROR'
+K59 'Too many errors'
+K60 'type'
+K61 'string'
+K62 'MSP packet processed'
+K63 'MSPRST'
+K64 'cancel'
+K65 '!!! TIMEOUT'
+K66 'to'
+K67 'clearBuffer'
+K68 'attMax'
+   1 [  20] GETTABUP  R0 = UP0[K0('S')]
+   2 [  20] GETTABLE  R0 = R0[K1('mspReady')]
+   3 [  20] TEST      A=0 B=0 C=0
+   4 [  20] JMP       A=0 ->7
+   5 [  21] GETTABUP  R0 = UP1[K2('MSPRPT')]
+   6 [  21] CALL      A=0 B=1 C=1
+   7 [  24] GETTABUP  R0 = UP0[K3('MSP')]
+   8 [  24] GETTABLE  R0 = R0[K4('idle')]
+   9 [  24] TEST      A=0 B=0 C=0
+  10 [  24] JMP       A=0 ->133
+  11 [  26] GETTABUP  R0 = UP2[K5('pairs')]
+  12 [  26] GETTABUP  R1 = UP0[K3('MSP')]
+  13 [  26] GETTABLE  R1 = R1[K6('RPT')]
+  14 [  26] CALL      A=0 B=2 C=4
+  15 [  26] JMP       A=0 ->32
+  16 [  27] GETTABLE  R5 = R4[K7(1)]
+  17 [  27] GETTABUP  R6 = UP0[K8('TI')]
+  18 [  27] GETTABLE  R6 = R6[K9('now')]
+  19 [  27] LT        A=0 R5, R6; skip-next if condition != A
+  20 [  27] JMP       A=0 ->32
+  21 [  29] GETTABUP  R5 = UP1[K10('MSPQAD')]
+  22 [  29] GETTABLE  R6 = R4[K11(3)]
+  23 [  29] MOVE      A=7 B=3 C=0
+  24 [  29] GETTABLE  R8 = R4[K12(4)]
+  25 [  29] GETTABLE  R9 = R4[K13(5)]
+  26 [  29] CALL      A=5 B=5 C=1
+  27 [  30] GETTABUP  R5 = UP0[K8('TI')]
+  28 [  30] GETTABLE  R5 = R5[K9('now')]
+  29 [  30] GETTABLE  R6 = R4[K14(2)]
+  30 [  30] ADD       A=5 B=5 C=6
+  31 [  30] SETTABLE  R4[K7(1)] = R5
+  32 [  26] TFORCALL  A=0 B=0 C=2
+  33 [  26] TFORLOOP  A=2 ->16
+  34 [  35] GETTABUP  R0 = UP0[K3('MSP')]
+  35 [  35] GETTABLE  R0 = R0[K15('Q')]
+  36 [  35] GETTABLE  R0 = R0[K7(1)]
+  37 [  35] TEST      A=0 B=0 C=0
+  38 [  35] JMP       A=0 ->133
+  39 [  36] GETTABUP  R0 = UP0[K3('MSP')]
+  40 [  36] GETTABLE  R0 = R0[K16('OUT')]
+  41 [  36] GETTABUP  R1 = UP0[K3('MSP')]
+  42 [  36] GETTABLE  R1 = R1[K16('OUT')]
+  43 [  36] GETTABUP  R2 = UP0[K3('MSP')]
+  44 [  36] GETTABLE  R2 = R2[K16('OUT')]
+  45 [  36] GETTABUP  R3 = UP0[K3('MSP')]
+  46 [  36] GETTABLE  R3 = R3[K15('Q')]
+  47 [  36] GETTABLE  R3 = R3[K7(1)]
+  48 [  36] GETTABLE  R3 = R3[K7(1)]
+  49 [  36] GETTABUP  R4 = UP0[K3('MSP')]
+  50 [  36] GETTABLE  R4 = R4[K15('Q')]
+  51 [  36] GETTABLE  R4 = R4[K7(1)]
+  52 [  36] GETTABLE  R4 = R4[K14(2)]
+  53 [  36] GETTABUP  R5 = UP0[K3('MSP')]
+  54 [  36] GETTABLE  R5 = R5[K15('Q')]
+  55 [  36] GETTABLE  R5 = R5[K7(1)]
+  56 [  36] GETTABLE  R5 = R5[K11(3)]
+  57 [  36] SETTABLE  R2[K19('save')] = R5
+  58 [  36] SETTABLE  R1[K18('data')] = R4
+  59 [  36] SETTABLE  R0[K17('cmd')] = R3
+  60 [  39] GETTABUP  R0 = UP0[K0('S')]
+  61 [  39] LOADK     R1 = K21 ('Read ')
+  62 [  39] GETTABUP  R2 = UP3[K22('strHex')]
+  63 [  39] GETTABUP  R3 = UP0[K3('MSP')]
+  64 [  39] GETTABLE  R3 = R3[K16('OUT')]
+  65 [  39] GETTABLE  R3 = R3[K17('cmd')]
+  66 [  39] CALL      A=2 B=2 C=2
+  67 [  39] CONCAT    A=1 B=1 C=2
+  68 [  39] SETTABLE  R0[K20('mspInfo')] = R1
+  69 [  40] GETTABUP  R0 = UP0[K3('MSP')]
+  70 [  40] GETTABLE  R0 = R0[K23('CMDS')]
+  71 [  40] GETTABUP  R1 = UP0[K3('MSP')]
+  72 [  40] GETTABLE  R1 = R1[K16('OUT')]
+  73 [  40] GETTABLE  R1 = R1[K17('cmd')]
+  74 [  40] GETTABLE  R0 = R0[R1]
+  75 [  41] TEST      A=0 B=0 C=0
+  76 [  41] JMP       A=0 ->113
+  77 [  42] GETTABUP  R1 = UP3[K24('split')]
+  78 [  42] MOVE      A=2 B=0 C=0
+  79 [  42] LOADK     R3 = K25 ('|')
+  80 [  42] CALL      A=1 B=3 C=2
+  81 [  43] GETTABLE  R2 = R1[K14(2)]
+  82 [  43] TEST      A=2 B=0 C=0
+  83 [  43] JMP       A=0 ->87
+  84 [  44] GETTABUP  R2 = UP0[K0('S')]
+  85 [  44] GETTABLE  R3 = R1[K14(2)]
+  86 [  44] SETTABLE  R2[K20('mspInfo')] = R3
+  87 [  46] GETTABLE  R2 = R1[K11(3)]
+  88 [  46] TEST      A=2 B=0 C=0
+  89 [  46] JMP       A=0 ->113
+  90 [  47] GETTABUP  R2 = UP2[K26('tonumber')]
+  91 [  47] GETTABLE  R3 = R1[K11(3)]
+  92 [  47] CALL      A=2 B=2 C=2
+  93 [  48] GETTABUP  R3 = UP0[K0('S')]
+  94 [  48] GETTABUP  R4 = UP0[K0('S')]
+  95 [  48] GETTABLE  R4 = R4[K20('mspInfo')]
+  96 [  48] GETTABUP  R5 = UP0[K3('MSP')]
+  97 [  48] GETTABLE  R5 = R5[K16('OUT')]
+  98 [  48] GETTABLE  R5 = R5[K18('data')]
+  99 [  48] GETTABLE  R5 = R5[R2]
+ 100 [  48] TEST      A=5 B=0 C=0
+ 101 [  48] JMP       A=0 ->110
+ 102 [  48] LOADK     R5 = K27 (' ')
+ 103 [  48] GETTABUP  R6 = UP0[K3('MSP')]
+ 104 [  48] GETTABLE  R6 = R6[K16('OUT')]
+ 105 [  48] GETTABLE  R6 = R6[K18('data')]
+ 106 [  48] GETTABLE  R6 = R6[R2]
+ 107 [  48] CONCAT    A=5 B=5 C=6
+ 108 [  48] TEST      A=5 B=0 C=1
+ 109 [  48] JMP       A=0 ->111
+ 110 [  48] LOADK     R5 = K28 ('')
+ 111 [  48] CONCAT    A=4 B=4 C=5
+ 112 [  48] SETTABLE  R3[K20('mspInfo')] = R4
+ 113 [  51] GETTABUP  R1 = UP0[K0('S')]
+ 114 [  51] GETTABUP  R2 = UP0[K0('S')]
+ 115 [  51] GETTABLE  R2 = R2[K20('mspInfo')]
+ 116 [  51] GETTABUP  R3 = UP0[K3('MSP')]
+ 117 [  51] GETTABLE  R3 = R3[K16('OUT')]
+ 118 [  51] GETTABLE  R3 = R3[K29('attNo')]
+ 119 [  51] LT        A=0 K7(1), R3; skip-next if condition != A
+ 120 [  51] JMP       A=0 ->128
+ 121 [  51] LOADK     R3 = K30 (' #')
+ 122 [  51] GETTABUP  R4 = UP0[K3('MSP')]
+ 123 [  51] GETTABLE  R4 = R4[K16('OUT')]
+ 124 [  51] GETTABLE  R4 = R4[K29('attNo')]
+ 125 [  51] CONCAT    A=3 B=3 C=4
+ 126 [  51] TEST      A=3 B=0 C=1
+ 127 [  51] JMP       A=0 ->129
+ 128 [  51] LOADK     R3 = K28 ('')
+ 129 [  51] CONCAT    A=2 B=2 C=3
+ 130 [  51] SETTABLE  R1[K20('mspInfo')] = R2
+ 131 [  52] GETTABUP  R1 = UP0[K3('MSP')]
+ 132 [  52] SETTABLE  R1[K31('sendRequest')] = K32(True)
+ 133 [  60] GETTABUP  R0 = UP0[K3('MSP')]
+ 134 [  60] GETTABLE  R0 = R0[K31('sendRequest')]
+ 135 [  60] TEST      A=0 B=0 C=0
+ 136 [  60] JMP       A=0 ->191
+ 137 [  61] GETTABUP  R0 = UP0[K3('MSP')]
+ 138 [  61] SETTABLE  R0[K4('idle')] = K33(False)
+ 139 [  62] GETTABUP  R0 = UP0[K3('MSP')]
+ 140 [  62] SETTABLE  R0[K31('sendRequest')] = K34(None)
+ 141 [  64] GETTABUP  R0 = UP3[K35('dbgMSP')]
+ 142 [  64] LOADK     R1 = K36 ('MSPML')
+ 143 [  64] LOADK     R2 = K37 ('<--- START REQUEST')
+ 144 [  64] CALL      A=0 B=3 C=1
+ 145 [  65] GETTABUP  R0 = UP3[K35('dbgMSP')]
+ 146 [  65] LOADK     R1 = K36 ('MSPML')
+ 147 [  65] LOADK     R2 = K17 ('cmd')
+ 148 [  65] GETTABUP  R3 = UP3[K22('strHex')]
+ 149 [  65] GETTABUP  R4 = UP0[K3('MSP')]
+ 150 [  65] GETTABLE  R4 = R4[K16('OUT')]
+ 151 [  65] GETTABLE  R4 = R4[K17('cmd')]
+ 152 [  65] LOADK     R5 = K14 (2)
+ 153 [  65] CALL      A=3 B=3 C=2
+ 154 [  65] LOADK     R4 = K38 (' (')
+ 155 [  65] GETTABUP  R5 = UP0[K3('MSP')]
+ 156 [  65] GETTABLE  R5 = R5[K16('OUT')]
+ 157 [  65] GETTABLE  R5 = R5[K17('cmd')]
+ 158 [  65] LOADK     R6 = K39 (')')
+ 159 [  65] CONCAT    A=3 B=3 C=6
+ 160 [  65] LOADK     R4 = K18 ('data')
+ 161 [  65] GETTABUP  R5 = UP3[K40('tblCon')]
+ 162 [  65] GETTABUP  R6 = UP0[K3('MSP')]
+ 163 [  65] GETTABLE  R6 = R6[K16('OUT')]
+ 164 [  65] GETTABLE  R6 = R6[K18('data')]
+ 165 [  65] LOADK     R7 = K41 ('hex')
+ 166 [  65] CALL      A=5 B=3 C=0
+ 167 [  65] CALL      A=0 B=0 C=1
+ 168 [  67] GETTABUP  R0 = UP1[K42('MSPOUT')]
+ 169 [  67] CALL      A=0 B=1 C=2
+ 170 [  68] TEST      A=0 B=0 C=0
+ 171 [  68] JMP       A=0 ->168
+ 172 [  70] GETTABUP  R0 = UP0[K3('MSP')]
+ 173 [  70] SETTABLE  R0[K43('respWait')] = K32(True)
+ 174 [  71] GETTABUP  R0 = UP0[K3('MSP')]
+ 175 [  71] GETTABUP  R1 = UP0[K8('TI')]
+ 176 [  71] GETTABLE  R1 = R1[K9('now')]
+ 177 [  71] GETTABUP  R2 = UP0[K3('MSP')]
+ 178 [  71] GETTABLE  R2 = R2[K45('RESP_WAIT')]
+ 179 [  71] ADD       A=1 B=1 C=2
+ 180 [  71] SETTABLE  R0[K44('respTimeout')] = R1
+ 181 [  72] GETTABUP  R0 = UP3[K35('dbgMSP')]
+ 182 [  72] LOADK     R1 = K36 ('MSPML')
+ 183 [  72] LOADK     R2 = K46 ('Request sent at')
+ 184 [  72] GETTABUP  R3 = UP0[K8('TI')]
+ 185 [  72] GETTABLE  R3 = R3[K9('now')]
+ 186 [  72] CALL      A=0 B=4 C=1
+ 187 [  73] GETTABUP  R0 = UP3[K35('dbgMSP')]
+ 188 [  73] LOADK     R1 = K36 ('MSPML')
+ 189 [  73] LOADK     R2 = K47 ('<--- END REQUEST')
+ 190 [  73] CALL      A=0 B=3 C=1
+ 191 [  77] GETTABUP  R0 = UP0[K3('MSP')]
+ 192 [  77] GETTABLE  R0 = R0[K43('respWait')]
+ 193 [  77] TEST      A=0 B=0 C=0
+ 194 [  77] JMP       A=0 ->314
+ 195 [  78] GETTABUP  R0 = UP0[K8('TI')]
+ 196 [  78] GETTABLE  R0 = R0[K9('now')]
+ 197 [  78] GETTABUP  R1 = UP0[K3('MSP')]
+ 198 [  78] GETTABLE  R1 = R1[K44('respTimeout')]
+ 199 [  78] LT        A=0 R0, R1; skip-next if condition != A
+ 200 [  78] JMP       A=0 ->280
+ 201 [  81] LOADNIL   A=0 B=1 C=0
+ 202 [  83] GETTABUP  R2 = UP1[K48('MSPWRAP')]
+ 203 [  83] LOADK     R3 = K49 ('pop')
+ 204 [  83] CALL      A=2 B=2 C=2
+ 205 [  83] MOVE      A=0 B=2 C=0
+ 206 [  84] TEST      A=0 B=0 C=0
+ 207 [  84] JMP       A=0 ->221
+ 208 [  89] GETTABUP  R2 = UP0[K3('MSP')]
+ 209 [  89] GETTABLE  R2 = R2[K50('badResp')]
+ 210 [  89] TEST      A=2 B=0 C=0
+ 211 [  89] JMP       A=0 ->217
+ 212 [  90] GETTABUP  R2 = UP3[K35('dbgMSP')]
+ 213 [  90] LOADK     R3 = K36 ('MSPML')
+ 214 [  90] LOADK     R4 = K51 ('drop bad response chunk')
+ 215 [  90] CALL      A=2 B=3 C=1
+ 216 [  90] JMP       A=0 ->221
+ 217 [  92] GETTABUP  R2 = UP1[K52('MSPIN')]
+ 218 [  92] MOVE      A=3 B=0 C=0
+ 219 [  92] CALL      A=2 B=2 C=2
+ 220 [  92] MOVE      A=1 B=2 C=0
+ 221 [  95] GETTABUP  R2 = UP0[K3('MSP')]
+ 222 [  95] GETTABLE  R2 = R2[K53('WRAP')]
+ 223 [  95] EQ        A=0 R2, K54('WR/MSPWSP'); skip-next if condition != A
+ 224 [  95] JMP       A=0 ->229
+ 225 [  95] EQ        A=1 R0, K34(None); skip-next if condition != A
+ 226 [  95] JMP       A=0 ->229
+ 227 [  95] EQ        A=1 R1, K34(None); skip-next if condition != A
+ 228 [  95] JMP       A=0 ->202
+ 229 [  96] GETTABUP  R2 = UP0[K3('MSP')]
+ 230 [  96] GETTABLE  R2 = R2[K55('IN')]
+ 231 [  96] GETTABLE  R2 = R2[K56('errNo')]
+ 232 [  96] GETTABUP  R3 = UP0[K3('MSP')]
+ 233 [  96] GETTABLE  R3 = R3[K55('IN')]
+ 234 [  96] GETTABLE  R3 = R3[K57('errMax')]
+ 235 [  96] LE        A=0 R3, R2; skip-next if condition != A
+ 236 [  96] JMP       A=0 ->245
+ 237 [  97] GETTABUP  R2 = UP3[K35('dbgMSP')]
+ 238 [  97] LOADK     R3 = K36 ('MSPML')
+ 239 [  97] LOADK     R4 = K58 ('!!! ERROR')
+ 240 [  97] LOADK     R5 = K59 ('Too many errors')
+ 241 [  97] CALL      A=2 B=4 C=1
+ 242 [  98] GETTABUP  R2 = UP0[K3('MSP')]
+ 243 [  98] SETTABLE  R2[K50('badResp')] = K32(True)
+ 244 [  98] JMP       A=0 ->303
+ 245 [ 100] GETTABUP  R2 = UP2[K60('type')]
+ 246 [ 100] MOVE      A=3 B=1 C=0
+ 247 [ 100] CALL      A=2 B=2 C=2
+ 248 [ 100] EQ        A=0 R2, K61('string'); skip-next if condition != A
+ 249 [ 100] JMP       A=0 ->270
+ 250 [ 101] GETTABUP  R2 = UP3[K35('dbgMSP')]
+ 251 [ 101] LOADK     R3 = K36 ('MSPML')
+ 252 [ 101] LOADK     R4 = K58 ('!!! ERROR')
+ 253 [ 101] GETTABUP  R5 = UP0[K3('MSP')]
+ 254 [ 101] GETTABLE  R5 = R5[K55('IN')]
+ 255 [ 101] GETTABLE  R5 = R5[K56('errNo')]
+ 256 [ 101] MOVE      A=6 B=1 C=0
+ 257 [ 101] CALL      A=2 B=5 C=1
+ 258 [ 102] GETTABUP  R2 = UP0[K3('MSP')]
+ 259 [ 102] SETTABLE  R2[K50('badResp')] = K32(True)
+ 260 [ 103] GETTABUP  R2 = UP0[K3('MSP')]
+ 261 [ 103] GETTABLE  R2 = R2[K53('WRAP')]
+ 262 [ 103] EQ        A=0 R2, K54('WR/MSPWSP'); skip-next if condition != A
+ 263 [ 103] JMP       A=1 ->201
+ 264 [ 104] GETTABUP  R2 = UP0[K3('MSP')]
+ 265 [ 104] GETTABUP  R3 = UP0[K8('TI')]
+ 266 [ 104] GETTABLE  R3 = R3[K9('now')]
+ 267 [ 104] SETTABLE  R2[K44('respTimeout')] = R3
+ 268 [ 105] JMP       A=1 ->201
+ 269 [ 106] JMP       A=0 ->303
+ 270 [ 107] EQ        A=0 R1, K32(True); skip-next if condition != A
+ 271 [ 107] JMP       A=0 ->303
+ 272 [ 108] GETTABUP  R2 = UP3[K35('dbgMSP')]
+ 273 [ 108] LOADK     R3 = K36 ('MSPML')
+ 274 [ 108] LOADK     R4 = K62 ('MSP packet processed')
+ 275 [ 108] CALL      A=2 B=3 C=1
+ 276 [ 109] GETTABUP  R2 = UP1[K63('MSPRST')]
+ 277 [ 109] LOADK     R3 = K64 ('cancel')
+ 278 [ 109] CALL      A=2 B=2 C=1
+ 279 [ 111] JMP       A=0 ->303
+ 280 [ 114] GETTABUP  R0 = UP3[K35('dbgMSP')]
+ 281 [ 114] LOADK     R1 = K36 ('MSPML')
+ 282 [ 114] LOADK     R2 = K65 ('!!! TIMEOUT')
+ 283 [ 114] LOADK     R3 = K9 ('now')
+ 284 [ 114] GETTABUP  R4 = UP0[K8('TI')]
+ 285 [ 114] GETTABLE  R4 = R4[K9('now')]
+ 286 [ 114] LOADK     R5 = K66 ('to')
+ 287 [ 114] GETTABUP  R6 = UP0[K3('MSP')]
+ 288 [ 114] GETTABLE  R6 = R6[K44('respTimeout')]
+ 289 [ 114] CALL      A=0 B=7 C=1
+ 290 [ 115] GETTABUP  R0 = UP1[K63('MSPRST')]
+ 291 [ 115] LOADK     R1 = K67 ('clearBuffer')
+ 292 [ 115] GETTABUP  R2 = UP0[K3('MSP')]
+ 293 [ 115] GETTABLE  R2 = R2[K16('OUT')]
+ 294 [ 115] GETTABLE  R2 = R2[K17('cmd')]
+ 295 [ 115] CALL      A=0 B=3 C=1
+ 296 [ 116] GETTABUP  R0 = UP0[K3('MSP')]
+ 297 [ 116] GETTABLE  R0 = R0[K16('OUT')]
+ 298 [ 116] GETTABUP  R1 = UP0[K3('MSP')]
+ 299 [ 116] GETTABLE  R1 = R1[K16('OUT')]
+ 300 [ 116] GETTABLE  R1 = R1[K29('attNo')]
+ 301 [ 116] ADD       A=1 B=1 C=263
+ 302 [ 116] SETTABLE  R0[K29('attNo')] = R1
+ 303 [ 119] GETTABUP  R0 = UP0[K3('MSP')]
+ 304 [ 119] GETTABLE  R0 = R0[K16('OUT')]
+ 305 [ 119] GETTABLE  R0 = R0[K29('attNo')]
+ 306 [ 119] GETTABUP  R1 = UP0[K3('MSP')]
+ 307 [ 119] GETTABLE  R1 = R1[K16('OUT')]
+ 308 [ 119] GETTABLE  R1 = R1[K68('attMax')]
+ 309 [ 119] LT        A=0 R1, R0; skip-next if condition != A
+ 310 [ 119] JMP       A=0 ->314
+ 311 [ 120] GETTABUP  R0 = UP1[K63('MSPRST')]
+ 312 [ 120] LOADK     R1 = K64 ('cancel')
+ 313 [ 120] CALL      A=0 B=2 C=1
+ 314 [ 125] RETURN    A=0 B=1 C=0

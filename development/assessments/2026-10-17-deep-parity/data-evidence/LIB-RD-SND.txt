@@ -1,0 +1,151 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/SND.luac
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/RD/SND.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'RD_SND'
+   1 [  14] VARARG    A=0 B=5 C=0
+   2 [  46] CLOSURE   R4 = proto[0]
+   3 [  46] SETTABLE  R1[K0('RD_SND')] = R4
+   4 [  48] RETURN    A=0 B=1 C=0
+   5 [  48] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 6 lines 16 46 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('fn', 0, 111)]
+K0 'S'
+K1 'BT_MD_CELL_VA'
+K2 'BT_CELL_CRIT'
+K3 'TI'
+K4 'wCrit'
+K5 'BT_CELL_WARN_TYPE'
+K6 1
+K7 3
+K8 'playTone'
+K9 4000
+K10 24
+K11 100
+K12 0
+K13 5000
+K14 2
+K15 'playHaptic'
+K16 10
+K17 150
+K18 False
+K19 'BT_CELL_LOW'
+K20 'BT_CELL_WARN_SND'
+K21 'wLow'
+K22 True
+K23 200
+K24 'PLAY_NOW'
+   1 [  18] GETTABUP  R1 = UP0[K0('S')]
+   2 [  18] GETTABLE  R1 = R1[K1('BT_MD_CELL_VA')]
+   3 [  18] GETTABUP  R2 = UP0[K0('S')]
+   4 [  18] GETTABLE  R2 = R2[K2('BT_CELL_CRIT')]
+   5 [  18] LE        A=0 R1, R2; skip-next if condition != A
+   6 [  18] JMP       A=0 ->62
+   7 [  19] GETTABUP  R1 = UP0[K3('TI')]
+   8 [  19] GETTABLE  R1 = R1[K4('wCrit')]
+   9 [  19] TEST      A=1 B=0 C=0
+  10 [  19] JMP       A=0 ->111
+  11 [  20] GETTABUP  R1 = UP0[K0('S')]
+  12 [  20] GETTABLE  R1 = R1[K5('BT_CELL_WARN_TYPE')]
+  13 [  20] EQ        A=1 R1, K6(1); skip-next if condition != A
+  14 [  20] JMP       A=0 ->19
+  15 [  20] GETTABUP  R1 = UP0[K0('S')]
+  16 [  20] GETTABLE  R1 = R1[K5('BT_CELL_WARN_TYPE')]
+  17 [  20] EQ        A=0 R1, K7(3); skip-next if condition != A
+  18 [  20] JMP       A=0 ->43
+  19 [  21] GETTABUP  R1 = UP1[K8('playTone')]
+  20 [  21] LOADK     R2 = K9 (4000)
+  21 [  21] LOADK     R3 = K10 (24)
+  22 [  21] LOADK     R4 = K11 (100)
+  23 [  21] LOADK     R5 = K12 (0)
+  24 [  21] CALL      A=1 B=5 C=1
+  25 [  22] GETTABUP  R1 = UP1[K8('playTone')]
+  26 [  22] LOADK     R2 = K13 (5000)
+  27 [  22] LOADK     R3 = K10 (24)
+  28 [  22] LOADK     R4 = K11 (100)
+  29 [  22] LOADK     R5 = K12 (0)
+  30 [  22] CALL      A=1 B=5 C=1
+  31 [  23] GETTABUP  R1 = UP1[K8('playTone')]
+  32 [  23] LOADK     R2 = K9 (4000)
+  33 [  23] LOADK     R3 = K10 (24)
+  34 [  23] LOADK     R4 = K11 (100)
+  35 [  23] LOADK     R5 = K12 (0)
+  36 [  23] CALL      A=1 B=5 C=1
+  37 [  24] GETTABUP  R1 = UP1[K8('playTone')]
+  38 [  24] LOADK     R2 = K13 (5000)
+  39 [  24] LOADK     R3 = K10 (24)
+  40 [  24] LOADK     R4 = K11 (100)
+  41 [  24] LOADK     R5 = K12 (0)
+  42 [  24] CALL      A=1 B=5 C=1
+  43 [  26] GETTABUP  R1 = UP0[K0('S')]
+  44 [  26] GETTABLE  R1 = R1[K5('BT_CELL_WARN_TYPE')]
+  45 [  26] LE        A=0 K14(2), R1; skip-next if condition != A
+  46 [  26] JMP       A=0 ->59
+  47 [  26] GETTABUP  R1 = UP0[K3('TI')]
+  48 [  26] GETTABLE  R1 = R1[K4('wCrit')]
+  49 [  26] TEST      A=1 B=0 C=0
+  50 [  26] JMP       A=0 ->59
+  51 [  27] GETTABUP  R1 = UP1[K15('playHaptic')]
+  52 [  27] LOADK     R2 = K16 (10)
+  53 [  27] LOADK     R3 = K17 (150)
+  54 [  27] CALL      A=1 B=3 C=1
+  55 [  28] GETTABUP  R1 = UP1[K15('playHaptic')]
+  56 [  28] LOADK     R2 = K16 (10)
+  57 [  28] LOADK     R3 = K17 (150)
+  58 [  28] CALL      A=1 B=3 C=1
+  59 [  30] GETTABUP  R1 = UP0[K3('TI')]
+  60 [  30] SETTABLE  R1[K4('wCrit')] = K18(False)
+  61 [  31] JMP       A=0 ->111
+  62 [  33] GETTABUP  R1 = UP0[K0('S')]
+  63 [  33] GETTABLE  R1 = R1[K1('BT_MD_CELL_VA')]
+  64 [  33] GETTABUP  R2 = UP0[K0('S')]
+  65 [  33] GETTABLE  R2 = R2[K19('BT_CELL_LOW')]
+  66 [  33] LE        A=0 R1, R2; skip-next if condition != A
+  67 [  33] JMP       A=0 ->111
+  68 [  33] GETTABUP  R1 = UP0[K0('S')]
+  69 [  33] GETTABLE  R1 = R1[K20('BT_CELL_WARN_SND')]
+  70 [  33] LT        A=0 K6(1), R1; skip-next if condition != A
+  71 [  33] JMP       A=0 ->111
+  72 [  34] GETTABUP  R1 = UP0[K3('TI')]
+  73 [  34] GETTABLE  R1 = R1[K21('wLow')]
+  74 [  34] EQ        A=0 R1, K22(True); skip-next if condition != A
+  75 [  34] JMP       A=0 ->111
+  76 [  35] GETTABUP  R1 = UP0[K0('S')]
+  77 [  35] GETTABLE  R1 = R1[K5('BT_CELL_WARN_TYPE')]
+  78 [  35] EQ        A=1 R1, K6(1); skip-next if condition != A
+  79 [  35] JMP       A=0 ->84
+  80 [  35] GETTABUP  R1 = UP0[K0('S')]
+  81 [  35] GETTABLE  R1 = R1[K5('BT_CELL_WARN_TYPE')]
+  82 [  35] EQ        A=0 R1, K7(3); skip-next if condition != A
+  83 [  35] JMP       A=0 ->96
+  84 [  36] GETTABUP  R1 = UP1[K8('playTone')]
+  85 [  36] LOADK     R2 = K9 (4000)
+  86 [  36] LOADK     R3 = K10 (24)
+  87 [  36] LOADK     R4 = K23 (200)
+  88 [  36] LOADK     R5 = K12 (0)
+  89 [  36] CALL      A=1 B=5 C=1
+  90 [  37] GETTABUP  R1 = UP1[K8('playTone')]
+  91 [  37] LOADK     R2 = K9 (4000)
+  92 [  37] LOADK     R3 = K10 (24)
+  93 [  37] LOADK     R4 = K23 (200)
+  94 [  37] LOADK     R5 = K12 (0)
+  95 [  37] CALL      A=1 B=5 C=1
+  96 [  39] GETTABUP  R1 = UP0[K0('S')]
+  97 [  39] GETTABLE  R1 = R1[K5('BT_CELL_WARN_TYPE')]
+  98 [  39] LE        A=0 K14(2), R1; skip-next if condition != A
+  99 [  39] JMP       A=0 ->109
+ 100 [  39] GETTABUP  R1 = UP0[K3('TI')]
+ 101 [  39] GETTABLE  R1 = R1[K21('wLow')]
+ 102 [  39] EQ        A=0 R1, K22(True); skip-next if condition != A
+ 103 [  39] JMP       A=0 ->109
+ 104 [  40] GETTABUP  R1 = UP1[K15('playHaptic')]
+ 105 [  40] LOADK     R2 = K16 (10)
+ 106 [  40] LOADK     R3 = K17 (150)
+ 107 [  40] GETTABUP  R4 = UP1[K24('PLAY_NOW')]
+ 108 [  40] CALL      A=1 B=4 C=1
+ 109 [  42] GETTABUP  R1 = UP0[K3('TI')]
+ 110 [  42] SETTABLE  R1[K21('wLow')] = K18(False)
+ 111 [  46] RETURN    A=0 B=1 C=0

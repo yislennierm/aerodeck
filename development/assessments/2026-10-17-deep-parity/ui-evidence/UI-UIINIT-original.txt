@@ -1,0 +1,253 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UIINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/UIINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 183), ('F', 1, 183), ('D', 1, 183), ('X', 1, 183), ('lcdFallback', 91, 183), ('radioUIP', 95, 183), ('radioGFXP', 99, 183), ('lcdSupp', 115, 183)]
+K0 'loadE'
+K1 'PUI'
+K2 'X'
+K3 'UI'
+K4 'clear'
+K5 '+UI'
+K6 'GFX'
+K7 'CD'
+K8 '+CD'
+K9 'C'
+K10 '+C'
+K11 'TASKS'
+K12 '+TASKS'
+K13 'mute'
+K14 False
+K15 'CHDEG'
+K16 '°'
+K17 'dimTLM'
+K18 11
+K19 'dimMENU'
+K20 7
+K21 'dimOFF'
+K22 'MDL'
+K23 'modelName'
+K24 'model'
+K25 'getInfo'
+K26 'name'
+K27 'modelGfx'
+K28 'LBM'
+K29 '/IMAGES/'
+K30 'bitmap'
+K31 'LCD_W'
+K32 800
+K33 '800X480'
+K34 480
+K35 '480X272'
+K36 '320X240'
+K37 'RD'
+K38 'LCDRES'
+K39 'PGFX'
+K40 'dbg'
+K41 'radioUIP'
+K42 'fsCheck'
+K43 '/'
+K44 'PUIDIR'
+K45 'PUIR'
+K46 'G.PUIR'
+K47 'PGFXR'
+K48 'PAPP'
+K49 'ASSETS/GFX/'
+K50 'G.PGFXR'
+K51 'THMINIT'
+K52 'THMLD'
+K53 'frun'
+K54 'SNV'
+K55 'DBAR'
+K56 'DIT'
+K57 'MDINIT'
+K58 'selDBD'
+K59 'DB1'
+K60 'MODS'
+K61 'lastID'
+K62 'CFG'
+K63 'nextID'
+K64 'DBD'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  13] GETTABLE  R4 = R0[K0('loadE')]
+   3 [  13] GETTABLE  R5 = R0[K1('PUI')]
+   4 [  13] LOADK     R6 = K2 ('X')
+   5 [  13] CONCAT    A=5 B=5 C=6
+   6 [  13] CALL      A=4 B=2 C=1
+   7 [  17] GETTABLE  R4 = R2[K3('UI')]
+   8 [  17] TEST      A=4 B=0 C=1
+   9 [  17] JMP       A=0 ->11
+  10 [  17] NEWTABLE  A=4 B=0 C=0
+  11 [  17] SETTABLE  R2[K3('UI')] = R4
+  12 [  18] GETTABLE  R4 = R0[K4('clear')]
+  13 [  18] MOVE      A=5 B=2 C=0
+  14 [  18] LOADK     R6 = K5 ('+UI')
+  15 [  18] CALL      A=4 B=3 C=1
+  16 [  19] GETTABLE  R4 = R2[K3('UI')]
+  17 [  19] NEWTABLE  A=5 B=0 C=0
+  18 [  19] SETTABLE  R4[K6('GFX')] = R5
+  19 [  21] GETTABLE  R4 = R2[K7('CD')]
+  20 [  21] TEST      A=4 B=0 C=1
+  21 [  21] JMP       A=0 ->23
+  22 [  21] NEWTABLE  A=4 B=0 C=0
+  23 [  21] SETTABLE  R2[K7('CD')] = R4
+  24 [  22] GETTABLE  R4 = R0[K4('clear')]
+  25 [  22] MOVE      A=5 B=2 C=0
+  26 [  22] LOADK     R6 = K8 ('+CD')
+  27 [  22] CALL      A=4 B=3 C=1
+  28 [  23] GETTABLE  R4 = R2[K9('C')]
+  29 [  23] TEST      A=4 B=0 C=1
+  30 [  23] JMP       A=0 ->32
+  31 [  23] NEWTABLE  A=4 B=0 C=0
+  32 [  23] SETTABLE  R2[K9('C')] = R4
+  33 [  24] GETTABLE  R4 = R0[K4('clear')]
+  34 [  24] MOVE      A=5 B=2 C=0
+  35 [  24] LOADK     R6 = K10 ('+C')
+  36 [  24] CALL      A=4 B=3 C=1
+  37 [  26] GETTABLE  R4 = R2[K3('UI')]
+  38 [  26] GETTABLE  R5 = R2[K3('UI')]
+  39 [  26] GETTABLE  R5 = R5[K11('TASKS')]
+  40 [  26] TEST      A=5 B=0 C=1
+  41 [  26] JMP       A=0 ->43
+  42 [  26] NEWTABLE  A=5 B=0 C=0
+  43 [  26] SETTABLE  R4[K11('TASKS')] = R5
+  44 [  27] GETTABLE  R4 = R0[K4('clear')]
+  45 [  27] GETTABLE  R5 = R2[K3('UI')]
+  46 [  27] LOADK     R6 = K12 ('+TASKS')
+  47 [  27] CALL      A=4 B=3 C=1
+  48 [  29] GETTABLE  R4 = R2[K3('UI')]
+  49 [  29] SETTABLE  R4[K13('mute')] = K14(False)
+  50 [  30] GETTABLE  R4 = R2[K3('UI')]
+  51 [  30] SETTABLE  R4[K15('CHDEG')] = K16('°')
+  52 [  31] GETTABLE  R4 = R2[K3('UI')]
+  53 [  31] SETTABLE  R4[K17('dimTLM')] = K18(11)
+  54 [  32] GETTABLE  R4 = R2[K3('UI')]
+  55 [  32] SETTABLE  R4[K19('dimMENU')] = K20(7)
+  56 [  33] GETTABLE  R4 = R2[K3('UI')]
+  57 [  33] SETTABLE  R4[K21('dimOFF')] = K20(7)
+  58 [  35] GETTABLE  R4 = R2[K3('UI')]
+  59 [  35] NEWTABLE  A=5 B=0 C=0
+  60 [  35] SETTABLE  R4[K22('MDL')] = R5
+  61 [  36] GETTABLE  R4 = R2[K3('UI')]
+  62 [  36] GETTABLE  R4 = R4[K22('MDL')]
+  63 [  36] GETTABUP  R5 = UP0[K24('model')]
+  64 [  36] GETTABLE  R5 = R5[K25('getInfo')]
+  65 [  36] CALL      A=5 B=1 C=2
+  66 [  36] GETTABLE  R5 = R5[K26('name')]
+  67 [  36] SETTABLE  R4[K23('modelName')] = R5
+  68 [  37] GETTABLE  R4 = R2[K3('UI')]
+  69 [  37] GETTABLE  R4 = R4[K22('MDL')]
+  70 [  37] GETTABLE  R5 = R3[K28('LBM')]
+  71 [  37] LOADK     R6 = K29 ('/IMAGES/')
+  72 [  37] GETTABUP  R7 = UP0[K24('model')]
+  73 [  37] GETTABLE  R7 = R7[K25('getInfo')]
+  74 [  37] CALL      A=7 B=1 C=2
+  75 [  37] GETTABLE  R7 = R7[K30('bitmap')]
+  76 [  37] CONCAT    A=6 B=6 C=7
+  77 [  37] CALL      A=5 B=2 C=2
+  78 [  37] SETTABLE  R4[K27('modelGfx')] = R5
+  79 [  40] GETTABUP  R4 = UP0[K31('LCD_W')]
+  80 [  40] LE        A=0 K32(800), R4; skip-next if condition != A
+  81 [  40] JMP       A=0 ->85
+  82 [  40] LOADK     R4 = K33 ('800X480')
+  83 [  40] TEST      A=4 B=0 C=1
+  84 [  40] JMP       A=0 ->92
+  85 [  40] GETTABUP  R4 = UP0[K31('LCD_W')]
+  86 [  40] LE        A=0 K34(480), R4; skip-next if condition != A
+  87 [  40] JMP       A=0 ->91
+  88 [  40] LOADK     R4 = K35 ('480X272')
+  89 [  40] TEST      A=4 B=0 C=1
+  90 [  40] JMP       A=0 ->92
+  91 [  40] LOADK     R4 = K36 ('320X240')
+  92 [  41] GETTABLE  R5 = R0[K1('PUI')]
+  93 [  41] GETTABLE  R6 = R2[K37('RD')]
+  94 [  41] GETTABLE  R6 = R6[K38('LCDRES')]
+  95 [  41] CONCAT    A=5 B=5 C=6
+  96 [  42] GETTABLE  R6 = R0[K39('PGFX')]
+  97 [  42] GETTABLE  R7 = R2[K37('RD')]
+  98 [  42] GETTABLE  R7 = R7[K38('LCDRES')]
+  99 [  42] CONCAT    A=6 B=6 C=7
+ 100 [  43] GETTABLE  R7 = R0[K40('dbg')]
+ 101 [  43] LOADK     R8 = K41 ('radioUIP')
+ 102 [  43] MOVE      A=9 B=5 C=0
+ 103 [  43] CALL      A=7 B=3 C=1
+ 104 [  44] GETTABLE  R7 = R0[K42('fsCheck')]
+ 105 [  44] MOVE      A=8 B=5 C=0
+ 106 [  44] LOADK     R9 = K43 ('/')
+ 107 [  44] CONCAT    A=8 B=8 C=9
+ 108 [  44] CALL      A=7 B=2 C=2
+ 109 [  44] TEST      A=7 B=0 C=0
+ 110 [  44] JMP       A=0 ->116
+ 111 [  44] GETTABLE  R7 = R0[K42('fsCheck')]
+ 112 [  44] MOVE      A=8 B=6 C=0
+ 113 [  44] LOADK     R9 = K43 ('/')
+ 114 [  44] CONCAT    A=8 B=8 C=9
+ 115 [  44] CALL      A=7 B=2 C=2
+ 116 [  46] TEST      A=7 B=0 C=0
+ 117 [  46] JMP       A=0 ->122
+ 118 [  46] GETTABLE  R8 = R2[K37('RD')]
+ 119 [  46] GETTABLE  R8 = R8[K38('LCDRES')]
+ 120 [  46] TEST      A=8 B=0 C=1
+ 121 [  46] JMP       A=0 ->123
+ 122 [  46] MOVE      A=8 B=4 C=0
+ 123 [  46] LOADK     R9 = K43 ('/')
+ 124 [  46] CONCAT    A=8 B=8 C=9
+ 125 [  46] SETTABLE  R0[K44('PUIDIR')] = R8
+ 126 [  47] GETTABLE  R8 = R0[K1('PUI')]
+ 127 [  47] GETTABLE  R9 = R0[K44('PUIDIR')]
+ 128 [  47] CONCAT    A=8 B=8 C=9
+ 129 [  47] SETTABLE  R0[K45('PUIR')] = R8
+ 130 [  48] GETTABLE  R8 = R0[K40('dbg')]
+ 131 [  48] LOADK     R9 = K46 ('G.PUIR')
+ 132 [  48] GETTABLE  R10 = R0[K45('PUIR')]
+ 133 [  48] CALL      A=8 B=3 C=1
+ 134 [  49] GETTABLE  R8 = R0[K48('PAPP')]
+ 135 [  49] LOADK     R9 = K49 ('ASSETS/GFX/')
+ 136 [  49] GETTABLE  R10 = R0[K44('PUIDIR')]
+ 137 [  49] CONCAT    A=8 B=8 C=10
+ 138 [  49] SETTABLE  R0[K47('PGFXR')] = R8
+ 139 [  50] GETTABLE  R8 = R0[K40('dbg')]
+ 140 [  50] LOADK     R9 = K50 ('G.PGFXR')
+ 141 [  50] GETTABLE  R10 = R0[K47('PGFXR')]
+ 142 [  50] CALL      A=8 B=3 C=1
+ 143 [  53] GETTABLE  R8 = R0[K0('loadE')]
+ 144 [  53] GETTABLE  R9 = R0[K1('PUI')]
+ 145 [  53] LOADK     R10 = K51 ('THMINIT')
+ 146 [  53] CONCAT    A=9 B=9 C=10
+ 147 [  53] CALL      A=8 B=2 C=1
+ 148 [  55] GETTABLE  R8 = R0[K0('loadE')]
+ 149 [  55] GETTABLE  R9 = R0[K1('PUI')]
+ 150 [  55] LOADK     R10 = K52 ('THMLD')
+ 151 [  55] CONCAT    A=9 B=9 C=10
+ 152 [  55] CALL      A=8 B=2 C=1
+ 153 [  57] GETTABLE  R8 = R0[K53('frun')]
+ 154 [  57] GETTABLE  R9 = R0[K1('PUI')]
+ 155 [  57] LOADK     R10 = K54 ('SNV')
+ 156 [  57] CONCAT    A=9 B=9 C=10
+ 157 [  57] CALL      A=8 B=2 C=1
+ 158 [  58] GETTABLE  R8 = R0[K53('frun')]
+ 159 [  58] GETTABLE  R9 = R0[K1('PUI')]
+ 160 [  58] LOADK     R10 = K55 ('DBAR')
+ 161 [  58] CONCAT    A=9 B=9 C=10
+ 162 [  58] CALL      A=8 B=2 C=1
+ 163 [  59] GETTABLE  R8 = R0[K53('frun')]
+ 164 [  59] GETTABLE  R9 = R0[K1('PUI')]
+ 165 [  59] LOADK     R10 = K56 ('DIT')
+ 166 [  59] CONCAT    A=9 B=9 C=10
+ 167 [  59] CALL      A=8 B=2 C=1
+ 168 [  61] GETTABLE  R8 = R0[K0('loadE')]
+ 169 [  61] GETTABLE  R9 = R0[K1('PUI')]
+ 170 [  61] LOADK     R10 = K57 ('MDINIT')
+ 171 [  61] CONCAT    A=9 B=9 C=10
+ 172 [  61] CALL      A=8 B=2 C=1
+ 173 [  63] GETTABLE  R8 = R2[K3('UI')]
+ 174 [  63] SETTABLE  R8[K58('selDBD')] = K59('DB1')
+ 175 [  64] GETTABLE  R8 = R2[K3('UI')]
+ 176 [  64] GETTABLE  R8 = R8[K60('MODS')]
+ 177 [  64] SETTABLE  R8[K61('lastID')] = K62('CFG')
+ 178 [  65] GETTABLE  R8 = R2[K3('UI')]
+ 179 [  65] GETTABLE  R8 = R8[K60('MODS')]
+ 180 [  65] SETTABLE  R8[K63('nextID')] = K64('DBD')
+ 181 [  72] LOADBOOL  A=8 B=1 C=0
+ 182 [  72] RETURN    A=8 B=2 C=0
+ 183 [  72] RETURN    A=0 B=1 C=0

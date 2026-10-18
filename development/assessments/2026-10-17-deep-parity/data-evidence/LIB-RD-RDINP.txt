@@ -1,0 +1,221 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/RDINP.luac
+
+FUNCTION main params 0 vararg 1 stack 17 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/RD/RDINP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 101), ('F', 1, 101), ('D', 1, 101), ('X', 1, 101), ('setInput', 2, 101), ('fid', 20, 101), ('cid', 32, 101)]
+K0 'RD'
+K1 'SWK'
+K2 'SRK'
+K3 'sa'
+K4 'sb'
+K5 'sc'
+K6 'sd'
+K7 'se'
+K8 'sf'
+K9 'sg'
+K10 'sh'
+K11 'si'
+K12 'sj'
+K13 'SWSA'
+K14 'SWSB'
+K15 'SWSC'
+K16 'SWSD'
+K17 'SWSE'
+K18 'SWSF'
+K19 'SWSG'
+K20 'SWSH'
+K21 'SWSI'
+K22 'SWSJ'
+K23 'SW'
+K24 's1'
+K25 's2'
+K26 's3'
+K27 's4'
+K28 '6pos'
+K29 'PTS1'
+K30 'PTS2'
+K31 'PTS3'
+K32 'PTS4'
+K33 'PT6P'
+K34 'PT'
+K35 'ls'
+K36 'rs'
+K37 'SLLS'
+K38 'SLRS'
+K39 'SL'
+K40 'trim-ail'
+K41 'trim-ele'
+K42 'trim-thr'
+K43 'trim-rud'
+K44 'trim-t5'
+K45 'trim-t6'
+K46 'TRT1'
+K47 'TRT2'
+K48 'TRT3'
+K49 'TRT4'
+K50 'TRT5'
+K51 'TRT6'
+K52 'TR'
+   1 [  11] VARARG    A=0 B=5 C=0
+   2 [  41] CLOSURE   R4 = proto[0]
+   3 [  43] GETTABLE  R5 = R2[K0('RD')]
+   4 [  43] NEWTABLE  A=6 B=0 C=0
+   5 [  43] SETTABLE  R5[K1('SWK')] = R6
+   6 [  44] GETTABLE  R5 = R2[K0('RD')]
+   7 [  44] NEWTABLE  A=6 B=0 C=0
+   8 [  44] SETTABLE  R5[K2('SRK')] = R6
+   9 [  49] NEWTABLE  A=5 B=10 C=0
+  10 [  49] LOADK     R6 = K3 ('sa')
+  11 [  49] LOADK     R7 = K4 ('sb')
+  12 [  49] LOADK     R8 = K5 ('sc')
+  13 [  49] LOADK     R9 = K6 ('sd')
+  14 [  49] LOADK     R10 = K7 ('se')
+  15 [  49] LOADK     R11 = K8 ('sf')
+  16 [  49] LOADK     R12 = K9 ('sg')
+  17 [  49] LOADK     R13 = K10 ('sh')
+  18 [  49] LOADK     R14 = K11 ('si')
+  19 [  49] LOADK     R15 = K12 ('sj')
+  20 [  49] SETLIST   A=5 B=10 C=1
+  21 [  50] NEWTABLE  A=6 B=10 C=0
+  22 [  50] LOADK     R7 = K13 ('SWSA')
+  23 [  50] LOADK     R8 = K14 ('SWSB')
+  24 [  50] LOADK     R9 = K15 ('SWSC')
+  25 [  50] LOADK     R10 = K16 ('SWSD')
+  26 [  50] LOADK     R11 = K17 ('SWSE')
+  27 [  50] LOADK     R12 = K18 ('SWSF')
+  28 [  50] LOADK     R13 = K19 ('SWSG')
+  29 [  50] LOADK     R14 = K20 ('SWSH')
+  30 [  50] LOADK     R15 = K21 ('SWSI')
+  31 [  50] LOADK     R16 = K22 ('SWSJ')
+  32 [  50] SETLIST   A=6 B=10 C=1
+  33 [  53] MOVE      A=7 B=4 C=0
+  34 [  53] LOADK     R8 = K23 ('SW')
+  35 [  53] MOVE      A=9 B=5 C=0
+  36 [  53] MOVE      A=10 B=6 C=0
+  37 [  53] LOADK     R11 = K1 ('SWK')
+  38 [  53] CALL      A=7 B=5 C=1
+  39 [  55] NEWTABLE  A=7 B=5 C=0
+  40 [  55] LOADK     R8 = K24 ('s1')
+  41 [  55] LOADK     R9 = K25 ('s2')
+  42 [  55] LOADK     R10 = K26 ('s3')
+  43 [  55] LOADK     R11 = K27 ('s4')
+  44 [  55] LOADK     R12 = K28 ('6pos')
+  45 [  55] SETLIST   A=7 B=5 C=1
+  46 [  55] MOVE      A=5 B=7 C=0
+  47 [  56] NEWTABLE  A=7 B=5 C=0
+  48 [  56] LOADK     R8 = K29 ('PTS1')
+  49 [  56] LOADK     R9 = K30 ('PTS2')
+  50 [  56] LOADK     R10 = K31 ('PTS3')
+  51 [  56] LOADK     R11 = K32 ('PTS4')
+  52 [  56] LOADK     R12 = K33 ('PT6P')
+  53 [  56] SETLIST   A=7 B=5 C=1
+  54 [  56] MOVE      A=6 B=7 C=0
+  55 [  59] MOVE      A=7 B=4 C=0
+  56 [  59] LOADK     R8 = K34 ('PT')
+  57 [  59] MOVE      A=9 B=5 C=0
+  58 [  59] MOVE      A=10 B=6 C=0
+  59 [  59] LOADK     R11 = K2 ('SRK')
+  60 [  59] CALL      A=7 B=5 C=1
+  61 [  61] NEWTABLE  A=7 B=2 C=0
+  62 [  61] LOADK     R8 = K35 ('ls')
+  63 [  61] LOADK     R9 = K36 ('rs')
+  64 [  61] SETLIST   A=7 B=2 C=1
+  65 [  61] MOVE      A=5 B=7 C=0
+  66 [  62] NEWTABLE  A=7 B=2 C=0
+  67 [  62] LOADK     R8 = K37 ('SLLS')
+  68 [  62] LOADK     R9 = K38 ('SLRS')
+  69 [  62] SETLIST   A=7 B=2 C=1
+  70 [  62] MOVE      A=6 B=7 C=0
+  71 [  65] MOVE      A=7 B=4 C=0
+  72 [  65] LOADK     R8 = K39 ('SL')
+  73 [  65] MOVE      A=9 B=5 C=0
+  74 [  65] MOVE      A=10 B=6 C=0
+  75 [  65] LOADK     R11 = K2 ('SRK')
+  76 [  65] CALL      A=7 B=5 C=1
+  77 [  67] NEWTABLE  A=7 B=6 C=0
+  78 [  67] LOADK     R8 = K40 ('trim-ail')
+  79 [  67] LOADK     R9 = K41 ('trim-ele')
+  80 [  67] LOADK     R10 = K42 ('trim-thr')
+  81 [  67] LOADK     R11 = K43 ('trim-rud')
+  82 [  67] LOADK     R12 = K44 ('trim-t5')
+  83 [  67] LOADK     R13 = K45 ('trim-t6')
+  84 [  67] SETLIST   A=7 B=6 C=1
+  85 [  67] MOVE      A=5 B=7 C=0
+  86 [  68] NEWTABLE  A=7 B=6 C=0
+  87 [  68] LOADK     R8 = K46 ('TRT1')
+  88 [  68] LOADK     R9 = K47 ('TRT2')
+  89 [  68] LOADK     R10 = K48 ('TRT3')
+  90 [  68] LOADK     R11 = K49 ('TRT4')
+  91 [  68] LOADK     R12 = K50 ('TRT5')
+  92 [  68] LOADK     R13 = K51 ('TRT6')
+  93 [  68] SETLIST   A=7 B=6 C=1
+  94 [  68] MOVE      A=6 B=7 C=0
+  95 [  71] MOVE      A=7 B=4 C=0
+  96 [  71] LOADK     R8 = K52 ('TR')
+  97 [  71] MOVE      A=9 B=5 C=0
+  98 [  71] MOVE      A=10 B=6 C=0
+  99 [  71] LOADK     R11 = K2 ('SRK')
+ 100 [  71] CALL      A=7 B=5 C=1
+ 101 [  71] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 4 vararg 0 stack 15 lines 13 41 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('tName', 0, 48), ('fids', 0, 48), ('cids', 0, 48), ('typeSource', 0, 48), ('(for generator)', 6, 36), ('(for state)', 6, 36), ('(for control)', 6, 36), ('i', 7, 34), ('fName', 7, 34), ('fData', 10, 34), ('srcName', 18, 34), ('(for generator)', 40, 47), ('(for state)', 40, 47), ('(for control)', 40, 47), ('i', 41, 45), ('tData', 41, 45)]
+K0 'RD'
+K1 'ipairs'
+K2 'getFieldInfo'
+K3 'id'
+K4 'getSourceName'
+K5 1
+K6 'fid'
+K7 'srcid'
+K8 'cid'
+K9 'cdv'
+   1 [  15] GETTABUP  R4 = UP0[K0('RD')]
+   2 [  15] NEWTABLE  A=5 B=0 C=0
+   3 [  15] SETTABLE  R4[R0] = R5
+   4 [  16] GETTABUP  R4 = UP1[K1('ipairs')]
+   5 [  16] MOVE      A=5 B=1 C=0
+   6 [  16] CALL      A=4 B=2 C=4
+   7 [  16] JMP       A=0 ->35
+   8 [  17] GETTABUP  R9 = UP1[K2('getFieldInfo')]
+   9 [  17] MOVE      A=10 B=8 C=0
+  10 [  17] CALL      A=9 B=2 C=2
+  11 [  19] TEST      A=9 B=0 C=0
+  12 [  19] JMP       A=0 ->35
+  13 [  19] GETTABLE  R10 = R9[K3('id')]
+  14 [  19] TEST      A=10 B=0 C=0
+  15 [  19] JMP       A=0 ->35
+  16 [  20] GETTABUP  R10 = UP1[K4('getSourceName')]
+  17 [  20] GETTABLE  R11 = R9[K3('id')]
+  18 [  20] CALL      A=10 B=2 C=2
+  19 [  21] TEST      A=10 B=0 C=0
+  20 [  21] JMP       A=0 ->35
+  21 [  22] GETTABUP  R11 = UP0[K0('RD')]
+  22 [  22] GETTABLE  R11 = R11[R0]
+  23 [  22] GETTABUP  R12 = UP0[K0('RD')]
+  24 [  22] GETTABLE  R12 = R12[R0]
+  25 [  22] LEN       A=12 B=12 C=0
+  26 [  22] ADD       A=12 B=12 C=261
+  27 [  22] NEWTABLE  A=13 B=0 C=4
+  28 [  22] SETTABLE  R13[K6('fid')] = R8
+  29 [  22] GETTABLE  R14 = R9[K3('id')]
+  30 [  22] SETTABLE  R13[K7('srcid')] = R14
+  31 [  22] GETTABLE  R14 = R2[R7]
+  32 [  22] SETTABLE  R13[K8('cid')] = R14
+  33 [  22] SETTABLE  R13[K9('cdv')] = R10
+  34 [  22] SETTABLE  R11[R12] = R13
+  35 [  16] TFORCALL  A=4 B=0 C=2
+  36 [  16] TFORLOOP  A=6 ->8
+  37 [  28] GETTABUP  R4 = UP1[K1('ipairs')]
+  38 [  28] GETTABUP  R5 = UP0[K0('RD')]
+  39 [  28] GETTABLE  R5 = R5[R0]
+  40 [  28] CALL      A=4 B=2 C=4
+  41 [  28] JMP       A=0 ->46
+  42 [  29] GETTABUP  R9 = UP0[K0('RD')]
+  43 [  29] GETTABLE  R9 = R9[R3]
+  44 [  29] GETTABLE  R10 = R8[K8('cid')]
+  45 [  29] SETTABLE  R9[R10] = R7
+  46 [  28] TFORCALL  A=4 B=0 C=2
+  47 [  28] TFORLOOP  A=6 ->42
+  48 [  41] RETURN    A=0 B=1 C=0

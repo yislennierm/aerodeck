@@ -1,0 +1,106 @@
+{
+  "timerOwnerSha256": "9532b63ee917081221ae513b10d89a08840323694fb3f60c55d5f9040044f9ce",
+  "checkerSha256": "161af2b94f2c39d581a396b6561728d58bacd0b1d6d93b188602c69d936ea95f",
+  "simulator": "EdgeTX3.0.0 TX16S WASM",
+  "targetFirmware": "EdgeTX2.12.4",
+  "nativeTimerAPI": true,
+  "independentFactoryLoads": 2,
+  "privateModelOnly": true,
+  "hardwareVerified": false,
+  "productionOrRadioWrites": false,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "native timer API",
+      "result": "PASS"
+    },
+    {
+      "name": "native stage name and elapsed",
+      "result": "PASS"
+    },
+    {
+      "name": "first independent factory claims",
+      "result": "PASS"
+    },
+    {
+      "name": "native lease name eight characters",
+      "result": "PASS"
+    },
+    {
+      "name": "claim resets once and pauses",
+      "result": "PASS"
+    },
+    {
+      "name": "second factory rejects occupied native lease",
+      "result": "PASS"
+    },
+    {
+      "name": "second cannot reset elapsed",
+      "result": "PASS"
+    },
+    {
+      "name": "second cannot replace lease",
+      "result": "PASS"
+    },
+    {
+      "name": "second is not owner",
+      "result": "PASS"
+    },
+    {
+      "name": "first releases own native lease",
+      "result": "PASS"
+    },
+    {
+      "name": "original name restored",
+      "result": "PASS"
+    },
+    {
+      "name": "elapsed preserved across restore",
+      "result": "PASS"
+    },
+    {
+      "name": "original settings restored",
+      "result": "PASS"
+    },
+    {
+      "name": "owner can explicitly reclaim",
+      "result": "PASS"
+    },
+    {
+      "name": "manual marker loss blocks restore",
+      "result": "PASS"
+    },
+    {
+      "name": "manual name preserved",
+      "result": "PASS"
+    },
+    {
+      "name": "manual elapsed preserved",
+      "result": "PASS"
+    },
+    {
+      "name": "fractional positive timer index rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "fractional negative timer index rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "invalid requests do not write native timer",
+      "result": "PASS"
+    }
+  ],
+  "checkCount": 20,
+  "failed": 0,
+  "nativeLogSha256": "1222b89ed9cf9fd030da0bc1049776d4ca4572d5ee4ef0c06d53a210b4da264d",
+  "nativeScreenshot": {
+    "file": "timer-lease-native.png",
+    "sha256": "38046c1b4e006b7ed11183a43107b52b9217398693a09cb0649660432ac4c419",
+    "width": 480,
+    "height": 272,
+    "visuallyInspected": true
+  },
+  "fixtureCleanupVerified": true,
+  "nativeModelTimerWritesDevelopmentOnly": true
+}

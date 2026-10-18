@@ -1,0 +1,11 @@
+{
+  "providerSha256": "7d04131f19479a9e241daa6ff8fe452aa6cf25fb20517e42dd49b30d5a02c3fe",
+  "checkerSha256": "05d48903849e9091c0fae7a9eb698c7b041e43aec3577e005c772465873f1d7b",
+  "actualNativePhysicalAPIs": true,
+  "telemetryMocked": false,
+  "readOnlyProvider": true,
+  "sourceIteratorInstrumentationCountsOnly": true,
+  "maxWork": 8,
+  "simulator": "EdgeTX3.0 TX16S WASM",
+  "hardwareVerified": false
+}

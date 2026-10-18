@@ -1,0 +1,71 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/BTCNO.luac
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TB/BTCNO.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 7), ('F', 1, 7), ('D', 1, 7), ('X', 1, 7)]
+K0 'BT_CNO'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  25] CLOSURE   R4 = proto[0]
+   3 [  25] SETTABLE  R1[K0('BT_CNO')] = R4
+   4 [  26] GETTABLE  R4 = R1[K0('BT_CNO')]
+   5 [  26] CALL      A=4 B=1 C=1
+   6 [  28] RETURN    A=0 B=1 C=0
+   7 [  28] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 8 lines 12 25 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('cells', 1, 45), ('(for index)', 14, 33), ('(for limit)', 14, 33), ('(for step)', 14, 33), ('c', 15, 32)]
+K0 1
+K1 'S'
+K2 'BT_MD_V'
+K3 'BT_CELL_NOPWR'
+K4 6
+K5 'BT_CELL_MAX'
+K6 'math'
+K7 'max'
+K8 'min'
+   1 [  13] LOADK     R0 = K0 (1)
+   2 [  14] GETTABUP  R1 = UP0[K1('S')]
+   3 [  14] GETTABLE  R1 = R1[K2('BT_MD_V')]
+   4 [  14] TEST      A=1 B=0 C=0
+   5 [  14] JMP       A=0 ->44
+   6 [  14] GETTABUP  R1 = UP0[K1('S')]
+   7 [  14] GETTABLE  R1 = R1[K2('BT_MD_V')]
+   8 [  14] GETTABUP  R2 = UP0[K1('S')]
+   9 [  14] GETTABLE  R2 = R2[K3('BT_CELL_NOPWR')]
+  10 [  14] LE        A=0 R2, R1; skip-next if condition != A
+  11 [  14] JMP       A=0 ->44
+  12 [  15] LOADK     R1 = K0 (1)
+  13 [  15] LOADK     R2 = K4 (6)
+  14 [  15] LOADK     R3 = K0 (1)
+  15 [  15] FORPREP   A=1 ->33
+  16 [  16] GETTABUP  R5 = UP0[K1('S')]
+  17 [  16] GETTABLE  R5 = R5[K2('BT_MD_V')]
+  18 [  16] GETTABUP  R6 = UP0[K1('S')]
+  19 [  16] GETTABLE  R6 = R6[K5('BT_CELL_MAX')]
+  20 [  16] SUB       A=7 B=4 C=256
+  21 [  16] MUL       A=6 B=6 C=7
+  22 [  16] LE        A=0 R6, R5; skip-next if condition != A
+  23 [  16] JMP       A=0 ->33
+  24 [  16] GETTABUP  R5 = UP0[K1('S')]
+  25 [  16] GETTABLE  R5 = R5[K2('BT_MD_V')]
+  26 [  16] GETTABUP  R6 = UP0[K1('S')]
+  27 [  16] GETTABLE  R6 = R6[K5('BT_CELL_MAX')]
+  28 [  16] MUL       A=6 B=6 C=4
+  29 [  16] LE        A=0 R5, R6; skip-next if condition != A
+  30 [  16] JMP       A=0 ->33
+  31 [  17] MOVE      A=0 B=4 C=0
+  32 [  17] JMP       A=0 ->34
+  33 [  15] FORLOOP   A=1 ->16
+  34 [  21] GETTABUP  R1 = UP1[K6('math')]
+  35 [  21] GETTABLE  R1 = R1[K7('max')]
+  36 [  21] GETTABUP  R2 = UP1[K6('math')]
+  37 [  21] GETTABLE  R2 = R2[K8('min')]
+  38 [  21] MOVE      A=3 B=0 C=0
+  39 [  21] LOADK     R4 = K4 (6)
+  40 [  21] CALL      A=2 B=3 C=2
+  41 [  21] LOADK     R3 = K0 (1)
+  42 [  21] CALL      A=1 B=3 C=2
+  43 [  21] MOVE      A=0 B=1 C=0
+  44 [  24] RETURN    A=0 B=2 C=0
+  45 [  25] RETURN    A=0 B=1 C=0

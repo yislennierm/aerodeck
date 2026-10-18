@@ -1,91 +1,246 @@
-CURRENT SOFTWARE: POWER-LIVE-20261017. See POWER-LIVE.txt and DEPLOYMENT.txt.
-The Flight-Status footer and GPS decoder are included. Power source recovery,
-source health/actions and five battery profiles are included. Live quad values
-require verification after reopening the installed app.
+CURRENT LOCAL BUILD: GPS-UNIFIED-20261018
+Source:e3eb82d23231;59suites PASS in both numeric VMs.
+GPS shares Flight's75px rails/font hierarchy, with four compact readouts per
+side, exact coordinates and recovery code on the dashboard. Centered328x180
+map retained. Five GPS views replaced by one live scrollable Info sheet.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-unified-install.zip. Installed on the radio;66runtime
+files read back and verified, SD safely ejected (see DEPLOYMENT.txt).
+Hardware/live telemetry acceptance pending. See GPS-UNIFIED.txt for build notes.
 
-HISTORICAL FLIGHT-STATUS NOTES FOLLOW
-CURRENT LOCAL BUILD: FLIGHT-STATUS-20261017 — LOCAL ONLY; not installed on the radio.
-Previous local and last verified radio build: FLIGHT-PRIORITY-20261017.
-The unchanged DEPLOYMENT.txt records that earlier installation.
+PREVIOUS BUILD NOTES FOLLOW
 
-AERODECK / EdgeTX Lua development — RadioMaster TX16S MkII
+CURRENT LOCAL BUILD: GPS-CENTER-20261018
+Source:8f4ed60e998b;59suites PASS in both numeric VMs.
+Central320x180GPS map, narrow supporting side rails, labelled real-metre
+rings/grid synchronized with the published trail zoom. Native position dot.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-center-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-CENTER.txt.
 
-Open this LUA folder in VS Code, or open AERODECK.code-workspace. Install the
-recommended Lua extension. Editor settings are in .vscode.
+PREVIOUS BUILD NOTES FOLLOW
 
-MAIN SOURCE
-Material SVG masters: development/icons/material/masters/
-Editable home icon: development/icons/home-outlined-30.svg
-Radio PNG mask: sdcard/SCRIPTS/TOOLS/AERODECK/icons/home.png
-sdcard/SCRIPTS/TOOLS/telem.lua
-Assets: sdcard/SCRIPTS/TOOLS/AERODECK/
-Also included: hello.lua and the experimental aerolab.lua with AEROLAB assets.
-Widget source: sdcard/WIDGETS/AERODECK/main.lua
-Current controls and installation: AERODECK.txt.
-Toolbox2 source-to-UI assessment: TOOLBOX-FEATURE-AUDIT.txt.
-Older previews and MKII instructions are retained for history.
+CURRENT LOCAL BUILD: GPS-SIMPLE-20261018
+Source:0b1dfbbbff05;59suites PASS in both numeric VMs.
+GPS uses a native position dot, no projection counter or aircraft images.
+Larger return/speed/altitude values; sparse grid; direct views and actions retained.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-simple-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-SIMPLE.txt.
 
-ON EACH COMPUTER
-1. Make this entire LUA folder available locally through your chosen sync or Git workflow.
-2. Install EdgeTX Companion for that computer and select the TX16S radio type.
-3. Set Companion's SD-card folder to the sdcard folder inside this local project.
-   That absolute path is specific to each computer; it is not an editor setting.
-4. Start the radio simulator and open SYS > Tools > AERODECK.
-5. Edit telem.lua, save, then exit and reopen AERODECK to reload.
+PREVIOUS BUILD NOTES FOLLOW
 
-The .code-workspace uses relative paths. Lua bitmap paths beginning /SCRIPTS are
-SD-card-root paths and must stay that way for the radio.
+CURRENT LOCAL BUILD: GPS-SPACE-20261018
+Source:ec3ea40cb6c0;59suites PASS in both numeric VMs.
+280x180GPS plot, compact return-data rail, direct view selector, contextual
+actions and source-qualified nose direction from cached image frames.
+Preview:http://127.0.0.1:8766/ (native simulator, sample telemetry).
+Package:AERODECK-gps-space-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-SPACE.txt.
 
-This move does not configure cloud sync or a Git remote. Use the folder's
-existing sync service if available. Avoid editing the same file concurrently on
-two computers. Install archives are snapshots; edit the source under sdcard.
+PREVIOUS BUILD NOTES FOLLOW
 
-THIS MAC
-Project: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA
-Companion SD folder: /Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard
-A compatibility symlink at the previous Codex project location keeps existing
-local references working. Other computers should use their own local SD path.
+CURRENT LOCAL BUILD: UNIFIED-GPS-20261018
+Source: ae0f441dc9cb;58 suites PASS in both numeric VMs.
+Home-bearing cue moved to the heading ribbon; no floating home over attitude.
+One GPS destination with map/return overview and preserved supporting views.
+Preview: http://127.0.0.1:8766/ (native simulator, sample telemetry).
+Package: AERODECK-unified-gps-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt).
+See UNIFIED-GPS.txt for controls, compatibility and verification scope.
 
-CURRENT LOCAL UI: FLIGHT-STATUS-20261017 — NOT INSTALLED
-See FLIGHT-STATUS.txt. All twelve pages share mode, app-local home distance,
-satellites and current arming-block status, with a persistent icon-only Arm Info
-control at the right. It remains reachable during warnings. RTN returns to the
-originating page and preserves a Setup draft/active value edit. Flight's compass
-reclaims its full 324 px header; the ARM INFO text button is removed.
-The decoder now supports stable Betaflight 2026.6.2 API 1.48/count 30, including
-GPS bit 18, AUTOPILOT_SW bit 28 and ARM_SWITCH bit 29. Unknown API/count pairs
-stay numbered. NO FLAGS never means ready or armed; unavailable/stale/malformed
-status is explicit. The existing read-only transport, widget and sampling are
-unchanged; decoding is cached per reply, with no additional MSP requests.
+PREVIOUS BUILD NOTES FOLLOW
 
-FLIGHT-PRIORITY.txt records the preceding rail hierarchy: pack voltage, consumed
-mAh and current are primary battery readings; derived cell average is secondary.
-LQ, RSSI and SNR are primary link readings; TX power is supporting context.
-Per-cell battery comparisons now round to 0.1 mV so native float32 roundoff
-does not flag an exact full pack as ABOVE MAXIMUM; saved thresholds and alarm
-policy are unchanged in this revision.
-Measured native fonts target the reported 30–40 cm viewing distance; physical
-readability has not been measured. The HUD, tapes, rails and attitude datum keep
-their geometry; the compass header and global footer change as described above.
-Six stable icon sections share the same touch/PAGE order. SYS focuses that bar;
-rotary selects controls; ENTER activates; short RTN backs out before exiting.
-Setup is a category list with physical Save/Revert, scoped drafts and per-value
-cancellation. Normal footer readings remain status; full warning details and
-the separate Arm Info icon remain available.
+CURRENT LOCAL BUILD: COHESIVE-FLIGHT-20261018
+Source:235cbd2b9f07;57suites PASS in both numeric VMs.
+Continuous Flight panels, aligned rails, full central footer; image quad/home
+markers and live30px TX gauge with voltage/model stack. Native Flight/GPS
+captures reviewed; no script/CPU-limit errors.
+Preview:http://127.0.0.1:8766/ (local sample telemetry).
+Local package:AERODECK-cohesive-flight-install.zip.
+Radio remains ATTITUDE-CLEAN-20261018; see DEPLOYMENT.txt.
+See COHESIVE-FLIGHT.txt for asset/rendering choices and verification scope.
 
-The last verified radio build is FLIGHT-PRIORITY-20261017, installed on
-2026-10-17T09:39:56.756759+02:00. See DEPLOYMENT.txt for the report and backup.
-The radio was safely ejected after that installation. FLIGHT-STATUS is local
-only; this work has not changed the connected radio. Physical rendering, live
-responsiveness and hardware performance remain unverified.
+PREVIOUS BUILD NOTES FOLLOW
 
-VERIFICATION
-Release requires twelve fresh portable suites and native QA matching both the
-final main and decoder hashes. All twelve pages and the shared footer's normal,
-warning, GPS, zero-flags, unknown, stale and malformed states must be reviewed.
-Exact accepted test/capture counts belong to development/build-FLIGHT-STATUS-20261017.json
-after packaging. Native TX16S EdgeTX 3.0 WASM previews use isolated synthetic
-inputs; physical-radio latency, rendering and viewing distance are not measured.
-Current previews: development/ui-previews/flight-status/.
-Full Toolbox assessment: development/assessments/2026-10-16-toolbox-parity/.
-Later work includes feature parity and shared continuous GPS/home state.
+CURRENT LOCAL BUILD: FLIGHT-PANELS-20261018
+Main:ad252b2772d3;56suites PASS in both numeric VMs.
+Native123m/1234m samples visually verified; no script/CPU-limit errors.
+Flight horizon confined to its panel; wider tapes fit signed three-digit values.
+Battery: voltage first, cells/charge columns with explicit AUTO/EST labels.
+Local package:AERODECK-flight-panels-install.zip.
+Preview:http://127.0.0.1:8766/ (sample123m telemetry).
+Radio remains on ATTITUDE-CLEAN-20261018; see DEPLOYMENT.txt.
+See FLIGHT-PANELS.txt for dimensions, range checks and evidence scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT BUILD ON RADIO: ATTITUDE-CLEAN-20261018
+Installed, readback verified and safely ejected on 2026-10-18T11:16:29.552431+02:00.
+Main source: ee3c98c82e67; all 66 runtime files verified.
+Models/settings/ELRS/Toolbox preserved. Reopen AERODECK after unplugging USB.
+DEPLOYMENT.txt is the installation record; the notes below retain their original
+creation-time local-candidate status. Hardware/live-data acceptance is separate.
+
+BUILD DEVELOPMENT NOTES FOLLOW
+
+CURRENT LOCAL BUILD: ATTITUDE-CLEAN-20261018
+Status: local Flight attitude cleanup; not installed on the radio.
+Browser: http://127.0.0.1:8766/ (native simulator; sample telemetry).
+Current source: ee3c98c82e67; see development/build-ATTITUDE-CLEAN-20261018.json.
+Local package: AERODECK-attitude-clean-install.zip.
+
+Flight uses the native horizon, fixed aircraft datum, pitch rungs and bank marks.
+Moving ladder numbers, duplicate P/R degree cells and the COG/YAW caption have
+been removed. Their sorting, relocation, collision checks and scratch arrays are
+also gone. Compass bearing, speed/altitude tapes and telemetry values remain.
+Raw angles are still available in Data; the Video detail view retains its angles.
+No telemetry cadence, sign conventions, smoothing, budget or radio files changed.
+See ATTITUDE-CLEAN.txt for source-bound checks and measurement scope.
+
+PREVIOUS ARM-STATUS NOTES BELOW
+
+CURRENT LOCAL BUILD: ARM-STATUS-20261018
+Status: final Arm shield position and red/green status; local only. Last file-
+verified radio build is REPLACEMENT-RC1-20261017; see DEPLOYMENT.txt.
+Browser: http://127.0.0.1:8766/ (native simulator; sample telemetry).
+Current source:476ae7be86d0 (56 suites PASS under each numeric interpreter).
+Local package:AERODECK-arm-status-install.zip; previous archives stay frozen.
+
+Order: Home, Data, GPS, Video, Setup, Tools, Arm Info. The last shield is green
+for a fresh known clear flag report, red for flags/unavailable/stale/error status.
+Its status color is independent of the highlight accent. Green does not prove
+armed state or readiness. Caller handling and the reclaimed footer are unchanged.
+See ARM-STATUS.txt for scope and source-bound checks. ARM-TOOLBAR.txt preserves
+the previous navigation evidence; battery and GPS fixes remain included.
+
+PREVIOUS ATTITUDE-PERF NOTES BELOW
+
+PREVIOUS LOCAL BUILD: ATTITUDE-PERF-20261018
+Status: local performance revision; not installed. Last file-verified radio build
+is REPLACEMENT-RC1-20261017; DEPLOYMENT.txt is the installation record.
+Browser: http://127.0.0.1:8766/ (local native simulator; sample telemetry).
+The page identifies its exact source hash and refuses stale snapshots.
+Current source:3f94e062c5bc (54 suites PASS in each VM).
+Current local package:AERODECK-attitude-perf-install.zip; older archives are frozen.
+
+The native EdgeTX horizon API and existing roll-direction setting are retained.
+Slow standalone telemetry now honors its 200ms/revision cache; attitude remains
+callback-fresh. Bounded text/fit caches avoid repeated font/layout work. Widget
+startup prepares one icon per callback before normal rendering; no full forced
+GC runs at icon loads or page navigation. Full widget buffers still repaint.
+See ATTITUDE-PERF.txt for measured scope and acceptance limitations.
+
+PREVIOUS ROLL DISPLAY NOTES BELOW
+
+CURRENT LOCAL PATCH: ROLL-DISPLAY-20261018
+Roll presentation can be Normal or Reversed per model in Setup > User Interface.
+The saved direction applies to all three attitude views and their angle readouts.
+Raw Roll on the Data page remains unchanged. The fixed-arc bank pointer follows
+the horizon. See ROLL-DISPLAY.txt; DEPLOYMENT.txt records actual installation.
+
+BASE RC1 GUIDE BELOW
+
+AERODECK — REPLACEMENT-RC1-20261017
+LOCAL RELEASE CANDIDATE; NOT INSTALLED OR VERIFIED ON THE RADIO.
+Last file-verified radio install: POWER-LIVE-20261017. See DEPLOYMENT.txt.
+
+START
+Open this LUA folder in VS Code or use AERODECK.code-workspace.
+In Companion choose the TX16S and set its SD-card folder to this project's
+sdcard directory. That absolute path is different on each computer.
+Start the simulator and open SYS > Tools > AERODECK. Edit the source, then exit
+and reopen the app to reload it. Install archives are snapshots, not the editor.
+
+Main app: sdcard/SCRIPTS/TOOLS/telem.lua
+Helpers/icons: sdcard/SCRIPTS/TOOLS/AERODECK/
+Widget: sdcard/WIDGETS/AERODECK/main.lua
+Controls, telemetry setup and migration: AERODECK.txt
+Release changes and remaining acceptance: REPLACEMENT-RC1.txt
+Current 350-requirement ledger: IMPLEMENTATION-STATUS.txt and
+  development/implementation-status.json
+Frozen Toolbox source/bytecode audit:
+  development/assessments/2026-10-17-deep-parity/assessment.json
+
+CONTROLS
+Six top icons: Flight, Data, GPS, Video, Setup, Tools. PAGE cycles sections.
+Short SYS/MDL focuses the bar; rotary chooses and ENTER opens. On a page, rotary
+focuses visible tabs/actions, ENTER activates and RTN backs out. Touch uses the
+same controls. The home icon returns to Flight.
+Hold SYS for global Quick Actions: mute/unmute, confirmed Flight Data reset,
+conditional Restart MSP, conditional Read VTX Tables, and Reload AERODECK.
+Reload reinitializes local state/settings; close/reopen after changing source.
+Flight's PFD/VIDEO/GPS control changes its centre panel; Setup > User Interface
+chooses the saved default, COG versus YAW compass, and Minimal/Graduated marks.
+The shield at the footer's right opens Arm Info and returns to its origin.
+
+WIDGET STARTUP AND RECOVERY
+First widget startup shows loading/progress through 13 bounded initialization
+phases, including native inputs, compiled source plans, FC client and arming
+decoder. Wait for the normal screen before using page controls. Source refresh also advances incrementally while retaining the
+flight session/home. A background SESSION ERROR suspends that instance; use the
+EdgeTX widget Update action to retry controlled closure/restart. A failed timer
+restoration keeps its original session metadata rather than replacing it.
+
+CONNECT REAL DATA
+Select the actual protocol/FC in Setup > Model Setup. Auto uses profile defaults;
+it is not a hardware discovery claim. Discover telemetry sensors in EdgeTX,
+then use Sensors or Power > Refresh. Auto selects the profile's native aliases;
+None explicitly disables a quantity. Power shows LIVE, STALE, INVALID, NOT FOUND
+or OFF and offers Sources/Refresh/Limits actions. Missing values remain --.
+FC diagnostics shows the actual variant/API/version/board/UID/sensor health.
+Video reads real reported settings; choosing a channel/favourite is a proposal.
+Apply is the explicit configuration write and waits for acknowledgement/readback.
+
+UPGRADE WITHOUT LOSING PREFERENCES
+Back up the SD card and exit AERODECK before installation. Merge only the matching
+release's SCRIPTS and WIDGETS into the SD root; preserve MODELS, RADIO, Toolbox,
+app settings/battery files and their backups, caches and unrelated artwork.
+After backup remove only stale AERODECK .luac files as described in AERODECK.txt.
+Use AERODECK-install.zip with the matching RC1 build manifest:
+  development/build-REPLACEMENT-RC1-20261017.json
+Verify the build ID and archive SHA-256 before merging its runtime files.
+
+This revision binds preferences to the model FILE rather than its display name.
+For a model with old name-based preferences, Setup > Application offers explicit
+Import Legacy App Settings and Import Legacy Battery. Review and import them;
+old files stay intact. Save Settings and Save Battery are separate stores.
+
+NATIVE TIMER OWNERSHIP
+RADIO host preserves the timer. Explicit AERODECK host uses an ADxxxxxx native
+timer-name lease, blocks another owner and restores captured settings on a
+controlled exit. An abrupt abort can leave a stale marker; review/reconfigure the
+native timer and rename it before reclaiming. Clearing the marker cannot recover
+the lost in-memory configuration snapshot. See AERODECK.txt for recovery details.
+
+WIDGET REFRESH
+Every scheduled native widget refresh paints a frame; the native LCD buffer is
+transient. Slow data uses four bounded phases: two field-acquisition batches,
+power derivation, then session/publication. Acquisition starts target a 200 ms
+period. At 20 callbacks/s, fields span about 50 ms and publication follows about
+150 ms after the first batch. Only completed work becomes visible; cancellation
+never edits the displayed sample. Normal callbacks read current pitch/roll.
+The render-rate setting targets the standalone tool, whose buffer persists;
+it is not a widget callback limit. First-sample or exceptional
+heavy-action work paints an opaque progress screen, never a blank frame.
+Under load, slow phases wait for headroom while the cached screen and fresh
+attitude still paint. Sampling temporarily takes priority over transport after
+400 ms without publication or 200 ms of pending work. These are fairness
+thresholds, not a guarantee of data age or physical refresh rate.
+
+VALIDATION
+Portable behavior tests and isolated EdgeTX 3.0 TX16S WASM previews use synthetic
+inputs. They do not establish real quad data, RF writes, target EdgeTX 2.12.4
+rendering or sustained physical attitude performance. All 48 suites pass on both
+LuaJIT and stock Lua 5.3 int32/float32. Reports match all 48 current test files
+and 64 runtime code/image hashes:
+  development/test-results-REPLACEMENT-RC1-20261017.json
+  development/test-results-REPLACEMENT-RC1-20261017-float32.json
+Exact-source native widget evidence includes all 13 pages and a populated
+approximately 203-second run. Its 170.365-second monitor recorded 4,500 samples
+with no blank frames, ordinary updating screens or instruction-limit errors. These synthetic
+EdgeTX 3.0 measurements do not compare Toolbox on physical hardware. See the
+native bundle for exact conditions; radio/quad acceptance remains open.
+The remaining radio/quad and damaged-module acceptance checks are listed in
+IMPLEMENTATION-STATUS.txt. Historical revision notes and DEPLOYMENT.txt remain
+historical records; this document does not record a radio deployment.

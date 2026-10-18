@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T23:34:17.035088+00:00",
+  "scope": "Independent code review + focused actual-main host regression; no production source edits.",
+  "mainSha256": "ec0397d8ec645b50727600fa2fbb7d5278d72f3589a3bf19a1f4bd3ef1b121d9",
+  "testSha256": "576d53a73a7b891b43d20a8ae4e3bd1843bdad0b5a1be13d9c9b61f248999e39",
+  "testResults": {
+    "LuaJIT": {
+      "checks": 962,
+      "status": "PASS"
+    },
+    "Lua53Int32Float32": {
+      "checks": 962,
+      "status": "PASS"
+    }
+  },
+  "resolvedFindings": [
+    {
+      "issue": "When helper remains above18point entry budget, priority was granted every callback after deadline and could permanently suppress FC transport.",
+      "fix": "Separate navPlotYieldAt is updated only when granting a priority callback, with200ms interval and clock rollback handling.",
+      "test": "200001true,200002false,200021true,200022false; rollback1000true,1001false, without marking fake geometry progress."
+    },
+    {
+      "issue": "Manual Set Home could leave the previous published path/origin visible if budget blocked helper ownership synchronization.",
+      "fix": "Successfulhome resets plot and both progress/yield timestamps synchronously.",
+      "test": "Actual SetHome at fixed19point usage clears frame/job; subsequent blocked draw emits zero old segments; fresh session home/track survive; next published origin/home/track align exactly."
+    }
+  ],
+  "reviewConclusions": [
+    "Each helper call is capped at2geometry misses and16total points; start callback captures source refs and performs zero projection.",
+    "Ordinary fixed-home frame.origin is an owned copy of the same immutable navHome, and frame.scale controls both path and range label.",
+    "No-home frame.origin is a frozen current-position snapshot, not a fake home; live aircraft is projected against that origin once per paint, while numeric current readouts remain current.",
+    "Source/model reset paths clear owned frame/cache through navReset or statusUpdate prime after session owner replacement.",
+    "Float coordinates are normalized+0.0 before origin identity comparisons; discrete budgets/zoom validated with modulo0.0 guards.",
+    "Published full path draws direct integer points via native clipping with one color selection. All configured points remain present.",
+    "No additional concrete blocker found after ec039fixes."
+  ],
+  "limits": [
+    "Static and host tests do not prove native20kinstruction budget, frame rate or physicalradio performance.",
+    "Actual180point fixed-home/nohome native runs and final exact-source smoke remain owned by root/sensor agent.",
+    "Under smaller work budgets no-home origins update at completed-job cadence; live aircraft/readout freshness is separate. Native tests should record publication latency, not only absence ofCPUerrors."
+  ]
+}

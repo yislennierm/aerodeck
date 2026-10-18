@@ -1,0 +1,32 @@
+DEEP DATA / LIFECYCLE PARITY — POWER-LIVE, commit ebb932a
+
+Baseline main SHA256 c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b
+Widget SHA256 1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3
+
+Only the activation/licence mechanism is excluded. Actual key-gated functions remain required. TX16S/BF/ELRS is the first acceptance target, not a permanent scope exclusion for FrSky, INAV or other supported platforms.
+
+data-rows.json contains 120 atomic rows. Status counts {"equivalent": 37, "partial": 43, "missing": 26, "addition": 8, "unverified": 6} describe this ledger only; they are not a completion percentage, effort estimate or licence-tier exclusion. Equivalent is source-level functionality, not hardware proof. Root owns the complete settings/UX and transport-control ledgers; overlap rows here identify data dependencies.
+
+MOST MATERIAL FINDINGS
+- POWER-LIVE genuinely closes failed-only binding recovery, source-health UI, five profile count, capacity override and qualified compact source identity. Old three-profile/unqualified-widget/negative-cache-forever findings are stale.
+- Native Min/Max acquisition+selection and full registered telemetry browsing are still missing. Foreground90sample traces are not native extrema.
+- Full protocol support remains incomplete: FrSky pack VFAS must not be confused with receiverRxBt; Fuel, A1/A2/A3/A4, R9PW,5230/5240 and INAV0480/0420/0450/0460 need their actual adapters. Version-aware defaults/rate captions are not cosmetic.
+- Battery automatic cell inference, enabled/chemistry favourites, quick selection, session reset, mute and4s/6s severity repeat behavior remain separate gaps after five slots landed. Radio battery and OS timer ownership/read/control/reset remain absent.
+- GPS home/track sampling remains tied to GPS page rendering; staying on Flight can miss the actual home/flight path. FC home, relative bearing, ETA, timestamps and plus-code capability are not complete.
+- Toolbox CRSF fix/HDOP is a satellite-count heuristic in original bytecode. AERO correctly says NOT REPORTED. Real sourced fix/HDOP/constellation support should replace that heuristic, not reproduce false3D claims.
+- Source Inspector still uses generic getFieldInfo(name), and compact widget still repeats qualified name resolution each refresh. Main/widget source identity is fixed; inspection/performance behavior is not unified.
+- Full app is explicitly destroyed on compact/hidden widget callbacks. Background continuity is not proven for Toolbox either: original loader tests APP.initDone while M returns{G,F,D,X} and sets G.initDone.
+- Current data defaults differ: source groups/profile Off semantics; ELRS versus Crossfire/R9 link units/defaults; saved battery defaults and audible policy. Twelve configuration list labels do not imply equivalent runtime consumers.
+- Charts/home can retain history from a prior source/session. Positive IDs deliberately remain stable until explicit refresh; capability metadata such as nativeFM detection is not refreshed by the same binding path.
+- The ACC modules are gated off by the supplied model configuration; no accessible three-axis producer was proven. Module presence is not a working feature gap.
+- No evidence supports claiming a Toolbox flight CSV logger or native CRSF individual-cell feed simply from its debug log and cell renderer. Those remain explicit verification tasks.
+- 13 portable suites and exact-source22frame native Power QA are real evidence. Native version3.0 differs from target2.12.4, compact native execution is explicitly unverified, and file deployment does not prove live quad readings or sustained attitude/memory performance.
+
+READ / WRITE AND ARCHITECTURE
+AERODECK reads qualified native telemetry and cached numeric metadata; source values remain current-only. One failed name is retried per500ms from sample; no recurring full sensor enumeration in attitude polling. Explicit refresh scans64 slots, while startup separately scans configuration/units/nativeFM. Status client is bounded4pops/callback/256payload/one pending request; transport ownership across concurrent consumers still needs a contract. Positive telemetry IDs and icon masks are cached. Runtime charts are bounded90 foreground samples and GPS track10–180 page-local points. App preferences/backups are written only on explicit save; current data/metrics have no automatic SD logging. Native sensor reset, OS timer writes and broader control functions are absent, not implicitly implemented by read-only UI.
+
+REFERENCE EVIDENCE CAUTIONS
+Original disassembly includes source-line annotations/function path/PCs and compiled SHA256 per module in data-evidence/module-index.json. All53 data/lifecycle and6 root/lifecycle modules from the287-module inventory are grouped in module-coverage-data.json;71 original dumps include related configuration/UI evidence. Recovery loses tables and branches (RCPINIT/TLMRLD defaults, TLMUPDS vFN, BTA/BTV arithmetic, MAIN ML DEVON scope). Do not execute recovered Lua to infer runtime behavior. Some rows intentionally remain partial/unverified where the reference itself is ambiguous. Sound loop sits outside DEVON in original MAIN ML; CRSF raw updater ignores isCurrent. Widget hidden guard inconsistency is verified in original code but not on hardware. AERODECK uses the second getSourceValue isCurrent result (EdgeTX Sensor Lost window), not the third isFresh result or proof of a new packet.
+
+ACCEPTANCE ORDER
+P0 first: real full-app target-radio response/orientation and source freshness; correct FrSky pack-vs-receiver/link units; page-independent home/session state; explicit source/current/lost semantics. P1 next: native extrema, protocol decoders, timer/reset/pack/mute lifecycle, bounded compact/background/shared ownership and recovery. P2: richer history/navigation utilities, optional diagnostics/logging and format consistency. Each row has its own verifiable acceptance; no hardware work was performed in this audit.

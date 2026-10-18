@@ -1,0 +1,699 @@
+(node:82036) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+EXPORT dimensions 480 272
+(node:82036) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:82036) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+10ms: <menus> started
+10ms: <audio> started
+10ms: <menus> started
+
+10ms: edgeTxInit
+10ms: <audio> started
+
+10ms: YAML radio settings reader
+10ms: edgeTxInit
+
+10ms: YAML radio settings reader
+
+(node:82036) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+10ms: <timer_queue> started
+10ms: <timer_queue> started
+
+10ms: luaInitThemesAndWidgets
+10ms: luaInitThemesAndWidgets
+
+10ms: lsWidgets 0x216ba64
+10ms: luaLoadFiles() /WIDGETS
+10ms: lsWidgets 0x216ba64
+
+10ms: luaLoadFiles() /WIDGETS
+
+10ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+10ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+
+10ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+10ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+
+30ms: luaLoadWidgetCallback()
+30ms: luaLoadWidgetCallback()
+
+30ms: Loaded Lua widget GaugeRotary
+30ms: Loaded Lua widget GaugeRotary
+
+30ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+30ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+
+30ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+
+30ms: luaLoadWidgetCallback()
+30ms: Loaded Lua widget Flights
+30ms: luaLoadWidgetCallback()
+
+30ms: Loaded Lua widget Flights
+
+30ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+30ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+
+30ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+
+30ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+
+30ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: Cels
+init_compare_source: we do not have: Cels
+
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget BattCheck
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget BattCheck
+
+40ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+40ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget Micro Values
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget Micro Values
+
+40ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+40ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget SerialPower
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget SerialPower
+
+40ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+40ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget EventDemo
+40ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget EventDemo
+
+40ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+
+40ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget AERODECK
+40ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+40ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget AERODECK
+
+40ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+
+40ms: luaLoadWidgetCallback()
+40ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget Ghost
+50ms: Loaded Lua widget Ghost
+
+50ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+50ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget SoarETX
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget SoarETX
+
+50ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+50ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget Timer2
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget Timer2
+
+50ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+50ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget TxGPStest
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget TxGPStest
+
+50ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+50ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+
+50ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+
+50ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+50ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: VFAS
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: RxBt
+
+
+init_compare_source: we do not have: VFAS
+init_compare_source: we do not have: A1
+
+
+init_compare_source: we do not have: A2
+init_compare_source: we do not have: RxBt
+50ms: luaLoadWidgetCallback()
+
+
+50ms: Loaded Lua widget BattAnalog
+init_compare_source: we do not have: A1
+
+
+init_compare_source: we do not have: A2
+
+
+50ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget BattAnalog
+
+50ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+
+60ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+
+60ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+60ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: RQLY
+init_compare_source: we do not have: VFRinit_compare_source: we do not have: RQLY
+
+
+
+init_compare_source: we do not have: VFR
+init_compare_source: we do not have: cell
+
+
+init_compare_source: we do not have: celsinit_compare_source: we do not have: cell
+
+init_compare_source: we do not have: RSSI
+
+
+init_compare_source: we do not have: cels
+init_compare_source: we do not have: RxBt
+
+init_compare_source: we do not have: RSSI
+
+
+init_compare_source: we do not have: RxBt
+
+70ms: luaLoadWidgetCallback()
+
+
+70ms: Loaded Lua widget Value2
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget Value2
+
+70ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+70ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget LibGUI
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget LibGUI
+
+70ms: storageReadAll
+70ms: storageReadAll
+
+70ms: YAML radio settings reader
+70ms: YAML radio settings reader
+
+70ms: YAML model reader
+70ms: YAML model reader
+
+80ms: opening directory: /THEMES
+80ms: opening directory: /THEMES
+
+80ms: scanForThemes: open successful
+80ms: scanForThemes: open successful
+
+80ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+80ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+
+80ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+80ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+
+80ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+80ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+
+80ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+80ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+
+100ms: addMainView(0x0x2176730, 0)
+100ms: addMainView(0x0x2176730, 0)
+
+110ms: WidgetFactory::create() setting option 'Low battery'
+110ms: WidgetFactory::create() setting option 'Mid battery'
+110ms: WidgetFactory::create() setting option 'High battery'
+110ms: WidgetFactory::create() setting option 'Low battery'
+
+110ms: WidgetFactory::create() setting option 'Mid battery'
+
+110ms: WidgetFactory::create() setting option 'High battery'
+
+110ms: WidgetFactory::create() setting option 'Color'
+110ms: WidgetFactory::create() setting option 'Color'
+
+120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, bt): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, bt): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+
+120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+
+ASYNCIO|LOAD LOG MODULE|PASS
+ASYNCIO|LOAD LOG MODULE|PASS
+ASYNCUSAGE|STAGE 1|entry=0|after=0
+
+
+ASYNCUSAGE|STAGE 1|entry=0|after=0
+
+
+120ms: luaInit
+120ms: luaInit
+
+120ms: lsScripts 0x218ce84
+120ms: lsScripts 0x218ce84
+
+170ms: <mixer> started
+ASYNCIO|EXECUTE LOG MODULE|PASS
+ASYNCUSAGE|STAGE 2|entry=0|after=0
+ASYNCIO|EXECUTE LOG MODULE|PASS
+
+
+ASYNCUSAGE|STAGE 2|entry=0|after=0
+
+
+ASYNCIO|CONFIGURE LOG|PASS
+ASYNCUSAGE|STAGE 3|entry=0|after=1
+ASYNCIO|CONFIGURE LOG|PASS
+
+
+ASYNCUSAGE|STAGE 3|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 1|PASS
+ASYNCUSAGE|STAGE 4|entry=0|after=1
+ASYNCIO|RECORD MAX EVENT 1|PASS
+
+
+ASYNCUSAGE|STAGE 4|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 2|PASS
+ASYNCUSAGE|STAGE 5|entry=0|after=1
+ASYNCIO|RECORD MAX EVENT 2|PASS
+
+
+ASYNCUSAGE|STAGE 5|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 3|PASS
+ASYNCUSAGE|STAGE 6|entry=0|after=1
+ASYNCIO|RECORD MAX EVENT 3|PASS
+
+
+ASYNCUSAGE|STAGE 6|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 4|PASS
+ASYNCUSAGE|STAGE 7|entry=0|after=1ASYNCIO|RECORD MAX EVENT 4|PASS
+
+
+
+ASYNCUSAGE|STAGE 7|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 5|PASS
+ASYNCUSAGE|STAGE 8|entry=0|after=1
+ASYNCIO|RECORD MAX EVENT 5|PASS
+
+
+ASYNCUSAGE|STAGE 8|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 6|PASS
+ASYNCUSAGE|STAGE 9|entry=0|after=1ASYNCIO|RECORD MAX EVENT 6|PASS
+
+
+
+ASYNCUSAGE|STAGE 9|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 7|PASS
+ASYNCUSAGE|STAGE 10|entry=0|after=1
+ASYNCIO|RECORD MAX EVENT 7|PASS
+
+
+ASYNCUSAGE|STAGE 10|entry=0|after=1
+
+
+ASYNCIO|RECORD MAX EVENT 8|PASS
+ASYNCUSAGE|STAGE 11|entry=0|after=1
+ASYNCIO|RECORD MAX EVENT 8|PASS
+
+
+ASYNCUSAGE|STAGE 11|entry=0|after=1
+
+
+ASYNCIO|BEGIN COLD MAX REPLACEMENT|PASS
+ASYNCUSAGE|LOG BEGIN|entry=0|after=0
+ASYNCIO|BEGIN COLD MAX REPLACEMENT|PASS
+
+
+ASYNCUSAGE|LOG BEGIN|entry=0|after=0
+
+
+ASYNCIO|ENCODE READ STEP|PASS
+ASYNCUSAGE|LOG ENCODE READ|entry=0|after=47
+ASYNCIO|ENCODE READ STEP|PASS
+
+
+ASYNCUSAGE|LOG ENCODE READ|entry=0|after=47
+
+
+870ms: luaFstat cannot open /SCRIPTS/TOOLS/AERODECK/errors.log.bak
+870ms: luaFstat cannot open /SCRIPTS/TOOLS/AERODECK/errors.log.bak
+
+ASYNCIO|VERIFY COMMIT STEP|PASS
+ASYNCUSAGE|LOG VERIFY COMMIT|entry=0|after=47
+ASYNCIO|VERIFY COMMIT STEP|PASS
+
+
+ASYNCUSAGE|LOG VERIFY COMMIT|entry=0|after=47
+
+
+ASYNCIO|MAX LOG READBACK3404|PASS
+ASYNCIO|VALID OLD LOG BACKUP3404|PASS
+ASYNCUSAGE|STAGE 15|entry=0|after=0
+ASYNCIO|MAX LOG READBACK3404|PASS
+
+
+ASYNCIO|VALID OLD LOG BACKUP3404|PASS
+
+
+ASYNCUSAGE|STAGE 15|entry=0|after=0
+
+
+990ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-cache.lua, bt): loading /SCRIPTS/TOOLS/AERODECK/vtx-cache.lua
+990ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-cache.lua, bt): loading /SCRIPTS/TOOLS/AERODECK/vtx-cache.lua
+
+990ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-cache.luac): Saved bytecode to file.
+ASYNCIO|LOAD CACHE MODULE|PASS
+ASYNCUSAGE|STAGE 16|entry=0|after=0990ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-cache.luac): Saved bytecode to file.
+
+
+ASYNCIO|LOAD CACHE MODULE|PASS
+
+
+ASYNCUSAGE|STAGE 16|entry=0|after=0
+
+
+ASYNCIO|EXECUTE CACHE MODULE|PASS
+ASYNCUSAGE|STAGE 17|entry=0|after=15
+ASYNCIO|EXECUTE CACHE MODULE|PASS
+
+
+ASYNCUSAGE|STAGE 17|entry=0|after=15
+
+
+1100ms: SD card write labels
+1100ms: SD card write labels
+
+ASYNCIO|CREATE CACHE|PASS
+ASYNCUSAGE|STAGE 18|entry=0|after=0
+ASYNCIO|CREATE CACHE|PASS
+
+
+ASYNCUSAGE|STAGE 18|entry=0|after=0
+
+
+ASYNCIO|ACTUAL LOAD FIRST CACHE PRODUCER|PASS
+ASYNCUSAGE|CACHE MAX LOAD FRESH|entry=0|after=72
+ASYNCIO|ACTUAL LOAD FIRST CACHE PRODUCER|PASS
+
+
+ASYNCUSAGE|CACHE MAX LOAD FRESH|entry=0|after=72
+
+
+1230ms: luaFstat cannot open /SCRIPTS/TOOLS/AERODECK/vtx-112233445566778899AABBCC.cache.bak
+1230ms: luaFstat cannot open /SCRIPTS/TOOLS/AERODECK/vtx-112233445566778899AABBCC.cache.bak
+
+ASYNCIO|MAX CACHE CHANGED AFTER LOAD|PASS
+ASYNCUSAGE|CACHE MAX SAVE|entry=0|after=62
+ASYNCIO|MAX CACHE CHANGED AFTER LOAD|PASS
+
+
+ASYNCUSAGE|CACHE MAX SAVE|entry=0|after=62
+
+
+ASYNCIO|MAX CACHE READBACK2562|PASS
+ASYNCIO|CACHE ORIGINAL PRESERVED|PASS
+ASYNCUSAGE|STAGE 21|entry=0|after=0
+ASYNCIO|MAX CACHE READBACK2562|PASS
+
+
+ASYNCIO|CACHE ORIGINAL PRESERVED|PASS
+
+
+ASYNCUSAGE|STAGE 21|entry=0|after=0
+
+
+ASYNCUSAGE|STAGE 22|entry=0|after=0
+ASYNCUSAGE|STAGE 22|entry=0|after=0
+
+
+ASYNCIO|MISMATCH CACHE NEVER USABLE|PASS
+ASYNCUSAGE|CACHE MISMATCH LOAD|entry=0|after=72
+ASYNCIO|MISMATCH CACHE NEVER USABLE|PASS
+
+
+ASYNCUSAGE|CACHE MISMATCH LOAD|entry=0|after=72
+
+
+ASYNCIO|FRESH MAX TABLES REPLACE MISMATCH|PASS
+ASYNCUSAGE|CACHE FRESH SAVE AFTER MISMATCH|entry=0|after=62
+ASYNCIO|FRESH MAX TABLES REPLACE MISMATCH|PASS
+
+
+ASYNCUSAGE|CACHE FRESH SAVE AFTER MISMATCH|entry=0|after=62
+
+
+ASYNCIO|FRESH MAX MISMATCH READBACK|PASS
+ASYNCUSAGE|STAGE 25|entry=0|after=0
+ASYNCIO|FRESH MAX MISMATCH READBACK|PASS
+
+
+ASYNCUSAGE|STAGE 25|entry=0|after=0
+
+
+1570ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, bt): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+1570ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, bt): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+
+1580ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+ASYNCUSAGE|STAGE 26|entry=0|after=0
+1580ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+
+ASYNCUSAGE|STAGE 26|entry=0|after=0
+
+
+ASYNCUSAGE|STAGE 27|entry=0|after=0
+ASYNCUSAGE|STAGE 27|entry=0|after=0
+
+
+ASYNCUSAGE|STAGE 28|entry=0|after=12
+ASYNCUSAGE|STAGE 28|entry=0|after=12
+
+
+ASYNCIO|CURRENT HALF AMP|PASS
+ASYNCUSAGE|STAGE 29|entry=0|after=1
+ASYNCIO|CURRENT HALF AMP|PASS
+
+
+ASYNCUSAGE|STAGE 29|entry=0|after=1
+
+
+ASYNCIO|CURRENT500 MILLIAMP|PASS
+ASYNCUSAGE|STAGE 30|entry=0|after=1
+ASYNCIO|CURRENT500 MILLIAMP|PASS
+
+
+ASYNCUSAGE|STAGE 30|entry=0|after=1
+
+
+ASYNCIO|ROLL FRACTIONAL RAD|PASS
+ASYNCUSAGE|STAGE 31|entry=0|after=1
+ASYNCIO|ROLL FRACTIONAL RAD|PASS
+
+
+ASYNCUSAGE|STAGE 31|entry=0|after=1
+
+
+ASYNCIO|PITCH RAD NEGATION|PASS
+ASYNCUSAGE|STAGE 32|entry=0|after=1
+ASYNCIO|PITCH RAD NEGATION|PASS
+
+
+ASYNCUSAGE|STAGE 32|entry=0|after=1
+
+
+ASYNCIO|PITCH NEGATIVE RAD|PASS
+ASYNCUSAGE|STAGE 33|entry=0|after=1
+ASYNCIO|PITCH NEGATIVE RAD|PASS
+
+
+ASYNCUSAGE|STAGE 33|entry=0|after=1
+
+
+ASYNCIO|PITCH DEG POSITIVE|PASS
+ASYNCUSAGE|STAGE 34|entry=0|after=1
+ASYNCIO|PITCH DEG POSITIVE|PASS
+
+
+ASYNCUSAGE|STAGE 34|entry=0|after=1
+
+
+ASYNCIO|RAW UNIT FAILS CLOSED|PASS
+ASYNCUSAGE|STAGE 35|entry=0|after=1
+ASYNCIO|RAW UNIT FAILS CLOSED|PASS
+
+
+ASYNCUSAGE|STAGE 35|entry=0|after=1
+
+
+ASYNCIO|MISSING UNIT FAILS CLOSED|PASS
+ASYNCUSAGE|STAGE 36|entry=0|after=1
+ASYNCIO|MISSING UNIT FAILS CLOSED|PASS
+
+
+ASYNCUSAGE|STAGE 36|entry=0|after=1
+
+
+ASYNCIO|FRACTIONAL RF BYTE REJECTED|PASS
+ASYNCUSAGE|STAGE 37|entry=0|after=1
+ASYNCIO|FRACTIONAL RF BYTE REJECTED|PASS
+
+
+ASYNCUSAGE|STAGE 37|entry=0|after=1
+
+
+ASYNCIO|FRACTIONAL SAT BYTE REJECTED|PASS
+ASYNCUSAGE|STAGE 38|entry=0|after=1
+ASYNCIO|FRACTIONAL SAT BYTE REJECTED|PASS
+
+
+ASYNCUSAGE|STAGE 38|entry=0|after=1
+
+
+ASYNCIO|FRSKY FRACTIONAL ENCODED REJECTED|PASS
+ASYNCUSAGE|STAGE 39|entry=0|after=1
+ASYNCIO|FRSKY FRACTIONAL ENCODED REJECTED|PASS
+
+
+ASYNCUSAGE|STAGE 39|entry=0|after=1
+
+
+ASYNCIO|FRSKY DECIDEG PITCH|PASS
+ASYNCDONE|38|0
+ASYNCUSAGE|STAGE 40|entry=0|after=1ASYNCIO|FRSKY DECIDEG PITCH|PASS
+
+
+
+ASYNCDONE|38|0
+
+
+ASYNCUSAGE|STAGE 40|entry=0|after=1
+
+
+SHOT boot 261120

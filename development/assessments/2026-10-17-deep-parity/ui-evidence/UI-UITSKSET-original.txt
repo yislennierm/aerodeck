@@ -1,0 +1,154 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UITSKSET.luac
+
+FUNCTION main params 0 vararg 1 stack 18 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/UITSKSET.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 121), ('F', 1, 121), ('D', 1, 121), ('X', 1, 121), ('tasks', 1, 121), ('(for generator)', 7, 119), ('(for state)', 7, 119), ('(for control)', 7, 119), ('i', 8, 117), ('v', 8, 117), ('tt', 63, 110), ('dir', 69, 110), ('file', 74, 110)]
+K0 'pairs'
+K1 'w'
+K2 'xr'
+K3 'xl'
+K4 1
+K5 'yb'
+K6 'yt'
+K7 'h'
+K8 'xc'
+K9 'math'
+K10 'floor'
+K11 2
+K12 'yc'
+K13 'o'
+K14 'f'
+K15 'UI'
+K16 'T_'
+K17 'string'
+K18 'sub'
+K19 3
+K20 4
+K21 'loadE'
+K22 'PUI'
+K23 'PUIR'
+K24 '/'
+K25 'im'
+K26 'm'
+K27 'TASKS'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] TEST      A=4 B=0 C=1
+   3 [  12] JMP       A=0 ->5
+   4 [  12] RETURN    A=0 B=1 C=0
+   5 [  14] GETTABUP  R5 = UP0[K0('pairs')]
+   6 [  14] MOVE      A=6 B=4 C=0
+   7 [  14] CALL      A=5 B=2 C=4
+   8 [  14] JMP       A=0 ->118
+   9 [  16] GETTABLE  R10 = R9[K1('w')]
+  10 [  16] TEST      A=10 B=0 C=0
+  11 [  16] JMP       A=0 ->51
+  12 [  17] GETTABLE  R10 = R9[K1('w')]
+  13 [  17] GETTABLE  R11 = R9[K1('w')]
+  14 [  17] GETTABLE  R11 = R11[K3('xl')]
+  15 [  17] GETTABLE  R12 = R9[K1('w')]
+  16 [  17] GETTABLE  R12 = R12[K1('w')]
+  17 [  17] ADD       A=11 B=11 C=12
+  18 [  17] SUB       A=11 B=11 C=260
+  19 [  17] SETTABLE  R10[K2('xr')] = R11
+  20 [  18] GETTABLE  R10 = R9[K1('w')]
+  21 [  18] GETTABLE  R11 = R9[K1('w')]
+  22 [  18] GETTABLE  R11 = R11[K6('yt')]
+  23 [  18] GETTABLE  R12 = R9[K1('w')]
+  24 [  18] GETTABLE  R12 = R12[K7('h')]
+  25 [  18] ADD       A=11 B=11 C=12
+  26 [  18] SUB       A=11 B=11 C=260
+  27 [  18] SETTABLE  R10[K5('yb')] = R11
+  28 [  19] GETTABLE  R10 = R9[K1('w')]
+  29 [  19] GETTABLE  R11 = R9[K1('w')]
+  30 [  19] GETTABLE  R11 = R11[K3('xl')]
+  31 [  19] GETTABUP  R12 = UP0[K9('math')]
+  32 [  19] GETTABLE  R12 = R12[K10('floor')]
+  33 [  19] GETTABLE  R13 = R9[K1('w')]
+  34 [  19] GETTABLE  R13 = R13[K1('w')]
+  35 [  19] DIV       A=13 B=13 C=267
+  36 [  19] CALL      A=12 B=2 C=2
+  37 [  19] ADD       A=11 B=11 C=12
+  38 [  19] SETTABLE  R10[K8('xc')] = R11
+  39 [  20] GETTABLE  R10 = R9[K1('w')]
+  40 [  20] GETTABLE  R11 = R9[K1('w')]
+  41 [  20] GETTABLE  R11 = R11[K6('yt')]
+  42 [  20] GETTABUP  R12 = UP0[K9('math')]
+  43 [  20] GETTABLE  R12 = R12[K10('floor')]
+  44 [  20] GETTABLE  R13 = R9[K1('w')]
+  45 [  20] GETTABLE  R13 = R13[K7('h')]
+  46 [  20] DIV       A=13 B=13 C=267
+  47 [  20] CALL      A=12 B=2 C=2
+  48 [  20] ADD       A=11 B=11 C=12
+  49 [  20] SETTABLE  R10[K12('yc')] = R11
+  50 [  21] SETTABLE  R9[K13('o')] = R8
+  51 [  23] GETTABLE  R10 = R9[K14('f')]
+  52 [  23] TEST      A=10 B=0 C=0
+  53 [  23] JMP       A=0 ->111
+  54 [  24] GETTABLE  R10 = R2[K15('UI')]
+  55 [  24] LOADK     R11 = K16 ('T_')
+  56 [  24] GETTABLE  R12 = R9[K14('f')]
+  57 [  24] CONCAT    A=11 B=11 C=12
+  58 [  24] SETTABLE  R10[R11] = R9
+  59 [  25] GETTABLE  R10 = R2[K15('UI')]
+  60 [  25] LOADK     R11 = K16 ('T_')
+  61 [  25] GETTABLE  R12 = R9[K14('f')]
+  62 [  25] CONCAT    A=11 B=11 C=12
+  63 [  25] GETTABLE  R10 = R10[R11]
+  64 [  26] GETTABUP  R11 = UP0[K17('string')]
+  65 [  26] GETTABLE  R11 = R11[K18('sub')]
+  66 [  26] GETTABLE  R12 = R9[K14('f')]
+  67 [  26] LOADK     R13 = K4 (1)
+  68 [  26] LOADK     R14 = K19 (3)
+  69 [  26] CALL      A=11 B=4 C=2
+  70 [  27] GETTABUP  R12 = UP0[K17('string')]
+  71 [  27] GETTABLE  R12 = R12[K18('sub')]
+  72 [  27] GETTABLE  R13 = R9[K14('f')]
+  73 [  27] LOADK     R14 = K20 (4)
+  74 [  27] CALL      A=12 B=3 C=2
+  75 [  29] GETTABLE  R13 = R9[K14('f')]
+  76 [  29] LEN       A=13 B=13 C=0
+  77 [  29] LE        A=0 R13, K19(3); skip-next if condition != A
+  78 [  29] JMP       A=0 ->86
+  79 [  31] GETTABLE  R13 = R0[K21('loadE')]
+  80 [  31] GETTABLE  R14 = R0[K22('PUI')]
+  81 [  31] MOVE      A=15 B=11 C=0
+  82 [  31] CONCAT    A=14 B=14 C=15
+  83 [  31] MOVE      A=15 B=10 C=0
+  84 [  31] CALL      A=13 B=3 C=1
+  85 [  31] JMP       A=0 ->94
+  86 [  34] GETTABLE  R13 = R0[K21('loadE')]
+  87 [  34] GETTABLE  R14 = R0[K23('PUIR')]
+  88 [  34] MOVE      A=15 B=11 C=0
+  89 [  34] LOADK     R16 = K24 ('/')
+  90 [  34] MOVE      A=17 B=12 C=0
+  91 [  34] CONCAT    A=14 B=14 C=17
+  92 [  34] MOVE      A=15 B=10 C=0
+  93 [  34] CALL      A=13 B=3 C=1
+  94 [  36] GETTABLE  R13 = R10[K25('im')]
+  95 [  36] TEST      A=13 B=0 C=0
+  96 [  36] JMP       A=0 ->100
+  97 [  37] GETTABLE  R13 = R10[K25('im')]
+  98 [  37] GETTABLE  R14 = R9[K1('w')]
+  99 [  37] CALL      A=13 B=2 C=1
+ 100 [  39] GETTABLE  R13 = R10[K26('m')]
+ 101 [  39] TEST      A=13 B=0 C=0
+ 102 [  39] JMP       A=0 ->111
+ 103 [  40] GETTABLE  R13 = R0[K21('loadE')]
+ 104 [  40] GETTABLE  R14 = R0[K23('PUIR')]
+ 105 [  40] MOVE      A=15 B=11 C=0
+ 106 [  40] LOADK     R16 = K24 ('/')
+ 107 [  40] GETTABLE  R17 = R9[K26('m')]
+ 108 [  40] CONCAT    A=14 B=14 C=17
+ 109 [  40] MOVE      A=15 B=10 C=0
+ 110 [  40] CALL      A=13 B=3 C=1
+ 111 [  43] GETTABLE  R10 = R2[K15('UI')]
+ 112 [  43] GETTABLE  R10 = R10[K27('TASKS')]
+ 113 [  43] GETTABLE  R11 = R2[K15('UI')]
+ 114 [  43] GETTABLE  R11 = R11[K27('TASKS')]
+ 115 [  43] LEN       A=11 B=11 C=0
+ 116 [  43] ADD       A=11 B=11 C=260
+ 117 [  43] SETTABLE  R10[R11] = R9
+ 118 [  14] TFORCALL  A=5 B=0 C=2
+ 119 [  14] TFORLOOP  A=7 ->9
+ 120 [  47] RETURN    A=0 B=1 C=0
+ 121 [  47] RETURN    A=0 B=1 C=0

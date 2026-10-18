@@ -1,0 +1,128 @@
+[
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/X.luac",
+    "sha256": "4b3688d5431989751b82893f9ed684931c2cac4592d79d4599e4128943a9ac94",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-X-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/AHR.luac",
+    "sha256": "0ccd8ec1b865c3bfe12f027de2e132f9e1424333801bd03e7cbc06fb5f74145d",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-AHR-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/ATT.luac",
+    "sha256": "b005f1674bfa26b1d0a2fba88e532ebae75038954263bd8e028879b001d03a5d",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-ATT-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/CMP.luac",
+    "sha256": "94560196f8ba46112b0b3f07bd8ac72b21308591bf92e671e4d025141e665622",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-CMP-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/GPS.luac",
+    "sha256": "228dc7e8537f3f3e1b4010545d6271788e670fc2a74e99037ccc3cd0f08fed74",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-GPS-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/POS.luac",
+    "sha256": "c75ebae37ae86efef9860507449aa0dcb635f421a6c56fd5030b0c0e4b264489",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-POS-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/TIM.luac",
+    "sha256": "793549250bc6cf01afe9590ab5a7efcee464e9b3caf9d5b3fa06d8d6bb9a5d8e",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-TIM-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/TMR.luac",
+    "sha256": "c0034cd09e3fa11bd5382a40d150620a81e7bb94940f3ab328853cf27fce8f75",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-TMR-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/VTX.luac",
+    "sha256": "e5cc3ba78e60a8cd7d97c424acf19e5ae7d50a4ba0c2a390b222ff76a383d974",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-VTX-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/MPN.luac",
+    "sha256": "f99d187850b436ad8f1797947a00cbb06c05680d9fd9aac070f912e05d8342f1",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-MPN-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/SPN.luac",
+    "sha256": "8b4c7d75bdb5cca95a25f407f881088eb85faa12d3aabb0f8d3f23f322cf575b",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-SPN-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/GPS.luac",
+    "sha256": "ecab0bf84369402a2b888867a6a4f122b9f8873e5faf41e400d759ceec0cbd3f",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-MOD-GPS-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/TLM.luac",
+    "sha256": "bc0b40bf90ed385d3abd50edb9cba5b71a7941f64cd4ad4811f9fad0eb50bca5",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-MOD-TLM-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DBD.luac",
+    "sha256": "47fc9c66c3a0ce7a6506456d7cb785409042af0a29a7c6ccf25842b9d9696d16",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DBD-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UITSKRUN.luac",
+    "sha256": "952f585c337c862bcaa76dea148b22791ffc8bd31402f14e166905ca456aa837",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-UITSKRUN-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/UIML.luac",
+    "sha256": "ab2b6ef34d7234f612177570dd7acdc4314b81772f024cae5dbba3546b4c92ee",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/UI-UIML-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/ML.luac",
+    "sha256": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/MAIN-ML-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/GPS/GPSINIT.luac",
+    "sha256": "014660214bc6cce4caa2d0021d7914cf70c0d562b67e6c5630d9735ff57de949",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/LIB-GPS-GPSINIT-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.luac",
+    "sha256": "6f9698220306991976d7d68676f05057b2ed3bf20dfe1053dc61fd025252fec6",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/LIB-TLM-TBS-GPS-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/GYRO.luac",
+    "sha256": "23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/LIB-TLM-TBS-GYRO-original.txt"
+  },
+  {
+    "path": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.luac",
+    "sha256": "5e383ccbce0732ef4ac94bc41226497c5b76d7c9b3e24ad4af7f4658d2d1c863",
+    "recoveryReportMatches": true,
+    "disassembly": "work/edgetx/deep-parity-20261017/ui-evidence/LIB-TLM-TLMUPDS-original.txt"
+  }
+]

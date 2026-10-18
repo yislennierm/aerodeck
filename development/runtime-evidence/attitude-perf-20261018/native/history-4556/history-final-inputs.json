@@ -1,0 +1,40 @@
+{
+  "mainSHA256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+  "instrumentedSHA256": "05b2b6b1e0e6e575c6a99647d379419cee329e65fcc2d10b44ad0f37161e6e2f",
+  "fixtureOnly": true,
+  "callbackBudget": 20000,
+  "budgetHookModified": false,
+  "forcedGC": false,
+  "variant": "history-final",
+  "fixtureHistory": {
+    "explicitNativeExtrema": {
+      "volts": [
+        21.6,
+        25.2
+      ],
+      "currentAmps": [
+        0.5,
+        40
+      ],
+      "rawPitchDegrees": [
+        -20,
+        30
+      ],
+      "expectedPitchDegrees": [
+        -30,
+        20
+      ],
+      "rollDegrees": [
+        -45,
+        60
+      ]
+    },
+    "nativeOffsets": [
+      1,
+      2
+    ],
+    "currentValuesPreserved": true,
+    "apiTimingWrapper": "Only production native-extrema factory methods begin/step are wrapped to print completed publication timestamps; module file bytes unchanged",
+    "qaenvSha256": "92228c58cd94c18f5e5be9d476bf10da598b34700d43dfb8e7b8ad51ce51e70c"
+  }
+}

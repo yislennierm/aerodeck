@@ -1,0 +1,30 @@
+{
+  "baselineCommit": "ebb932a",
+  "build": "POWER-LIVE-20261017",
+  "sourceSha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+  "widgetSha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+  "scope": "Telemetry/battery/link/GPS data/sensors/alerts/logging/widget/lifecycle/scheduling/robustness/testing; full protocol scope remains required beyond first TX16S/BF/ELRS acceptance.",
+  "excluded": "Only activation/licence mechanism. Gated functional capabilities remain in rows.",
+  "rows": 120,
+  "statusCounts": {
+    "equivalent": 37,
+    "partial": 43,
+    "missing": 26,
+    "addition": 8,
+    "unverified": 6
+  },
+  "countsAreCompletionPercentage": false,
+  "method": "Production read-only. Recovered source is not executable specification;71 original modules disassembled without execution and hashed in data-evidence/module-index.json, including all53 data/lifecycle and all6 root/lifecycle modules. Evidence from sibling transport audit is identified explicitly.",
+  "limitations": [
+    "No production/canonical/SD changes or hardware tests.",
+    "No isolated diagnostic tool created.",
+    "Equivalent means source-level behavior exists, not physical certification.",
+    "Do not duplicate reference stale-value behavior, invented CRSF fix/HDOP or suspect widget background guard.",
+    "Reference flight-logger and CRSF individual-cell producer not established."
+  ],
+  "files": {
+    "main": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+    "widget": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua",
+    "originalModuleIndex": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/module-index.json"
+  }
+}

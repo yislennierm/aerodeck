@@ -1,0 +1,13 @@
+{
+  "sourceSHA256": "235cbd2b9f075af61766a5ebff330716adb4684a7fb57c80ef5025d7c4256caf",
+  "privateReview": true,
+  "runtimeFiles": 68,
+  "nativeBudgetHookModified": false,
+  "nativeErrors": false,
+  "screenshots": [
+    "flight.png",
+    "gps-track.png"
+  ],
+  "gpsImageSHA256": "3e78f8add423e66657d22c893e71af3ec657321f945b21703568f21f36321124",
+  "privateInput": "Declared Track route; public8766received no inputs"
+}

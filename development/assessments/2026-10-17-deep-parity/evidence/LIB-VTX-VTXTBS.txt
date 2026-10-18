@@ -1,0 +1,514 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXTBS.luac
+SHA256: d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/VTX/VTXTBS.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 17), ('F', 1, 17), ('D', 1, 17), ('X', 1, 17), ('mode', 1, 17), ('hwID', 1, 17), ('getTBSHW', 2, 17)]
+K0 'hw'
+K1 'pwr'
+K2 'VTX'
+K3 'getTBSHW'
+K4 'SN_VTX'
+   1 [   8] VARARG    A=0 B=7 C=0
+   2 [  33] CLOSURE   R6 = proto[0]
+   3 [  35] EQ        A=1 R4, K0('hw'); skip-next if condition != A
+   4 [  35] JMP       A=0 ->7
+   5 [  35] EQ        A=0 R4, K1('pwr'); skip-next if condition != A
+   6 [  35] JMP       A=0 ->12
+   7 [  36] MOVE      A=7 B=6 C=0
+   8 [  36] MOVE      A=8 B=4 C=0
+   9 [  36] MOVE      A=9 B=5 C=0
+  10 [  36] TAILCALL  A=7 B=3 C=0
+  11 [  36] RETURN    A=7 B=0 C=0
+  12 [  39] GETTABLE  R7 = R2[K2('VTX')]
+  13 [  39] SETTABLE  R7[K3('getTBSHW')] = R6
+  14 [ 187] CLOSURE   R7 = proto[1]
+  15 [ 187] SETTABLE  R1[K4('SN_VTX')] = R7
+  16 [ 189] RETURN    A=0 B=1 C=0
+  17 [ 189] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 2 vararg 0 stack 13 lines 10 33 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('mode', 0, 139), ('hwID', 0, 139), ('hw', 1, 139), ('hwList', 115, 124), ('(for generator)', 118, 123), ('(for state)', 118, 123), ('(for control)', 118, 123), ('i', 119, 121), ('v', 119, 121)]
+K0 1
+K1 'Sixty9'
+K2 0
+K3 14
+K4 20
+K5 26
+K6 30
+K7 'Uni Pro32 HV'
+K8 'Uni Pro32 Nano'
+K9 'Uni EVO'
+K10 'Uni Pro'
+K11 23
+K12 27
+K13 29
+K14 'Uni Pro HV'
+K15 'Uni Pro HV Race'
+K16 'Uni Pro Nano'
+K17 17
+K18 'hw'
+K19 'Unknown'
+K20 '-'
+K21 'ipairs'
+K22 'pwr'
+K23 2
+   1 [  11] NEWTABLE  A=2 B=0 C=0
+   2 [  12] LEN       A=3 B=2 C=0
+   3 [  12] ADD       A=3 B=3 C=256
+   4 [  12] NEWTABLE  A=4 B=2 C=0
+   5 [  12] LOADK     R5 = K1 ('Sixty9')
+   6 [  12] NEWTABLE  A=6 B=5 C=0
+   7 [  12] LOADK     R7 = K2 (0)
+   8 [  12] LOADK     R8 = K3 (14)
+   9 [  12] LOADK     R9 = K4 (20)
+  10 [  12] LOADK     R10 = K5 (26)
+  11 [  12] LOADK     R11 = K6 (30)
+  12 [  12] SETLIST   A=6 B=5 C=1
+  13 [  12] SETLIST   A=4 B=2 C=1
+  14 [  12] SETTABLE  R2[R3] = R4
+  15 [  13] LEN       A=3 B=2 C=0
+  16 [  13] ADD       A=3 B=3 C=256
+  17 [  13] NEWTABLE  A=4 B=2 C=0
+  18 [  13] LOADK     R5 = K7 ('Uni Pro32 HV')
+  19 [  13] NEWTABLE  A=6 B=5 C=0
+  20 [  13] LOADK     R7 = K2 (0)
+  21 [  13] LOADK     R8 = K3 (14)
+  22 [  13] LOADK     R9 = K4 (20)
+  23 [  13] LOADK     R10 = K5 (26)
+  24 [  13] LOADK     R11 = K6 (30)
+  25 [  13] SETLIST   A=6 B=5 C=1
+  26 [  13] SETLIST   A=4 B=2 C=1
+  27 [  13] SETTABLE  R2[R3] = R4
+  28 [  14] LEN       A=3 B=2 C=0
+  29 [  14] ADD       A=3 B=3 C=256
+  30 [  14] NEWTABLE  A=4 B=2 C=0
+  31 [  14] LOADK     R5 = K8 ('Uni Pro32 Nano')
+  32 [  14] NEWTABLE  A=6 B=4 C=0
+  33 [  14] LOADK     R7 = K2 (0)
+  34 [  14] LOADK     R8 = K3 (14)
+  35 [  14] LOADK     R9 = K4 (20)
+  36 [  14] LOADK     R10 = K5 (26)
+  37 [  14] SETLIST   A=6 B=4 C=1
+  38 [  14] SETLIST   A=4 B=2 C=1
+  39 [  14] SETTABLE  R2[R3] = R4
+  40 [  15] LEN       A=3 B=2 C=0
+  41 [  15] ADD       A=3 B=3 C=256
+  42 [  15] NEWTABLE  A=4 B=2 C=0
+  43 [  15] LOADK     R5 = K9 ('Uni EVO')
+  44 [  15] NEWTABLE  A=6 B=4 C=0
+  45 [  15] LOADK     R7 = K2 (0)
+  46 [  15] LOADK     R8 = K3 (14)
+  47 [  15] LOADK     R9 = K4 (20)
+  48 [  15] LOADK     R10 = K5 (26)
+  49 [  15] SETLIST   A=6 B=4 C=1
+  50 [  15] SETLIST   A=4 B=2 C=1
+  51 [  15] SETTABLE  R2[R3] = R4
+  52 [  16] LEN       A=3 B=2 C=0
+  53 [  16] ADD       A=3 B=3 C=256
+  54 [  16] NEWTABLE  A=4 B=2 C=0
+  55 [  16] LOADK     R5 = K10 ('Uni Pro')
+  56 [  16] NEWTABLE  A=6 B=6 C=0
+  57 [  16] LOADK     R7 = K2 (0)
+  58 [  16] LOADK     R8 = K3 (14)
+  59 [  16] LOADK     R9 = K11 (23)
+  60 [  16] LOADK     R10 = K12 (27)
+  61 [  16] LOADK     R11 = K13 (29)
+  62 [  16] LOADK     R12 = K6 (30)
+  63 [  16] SETLIST   A=6 B=6 C=1
+  64 [  16] SETLIST   A=4 B=2 C=1
+  65 [  16] SETTABLE  R2[R3] = R4
+  66 [  17] LEN       A=3 B=2 C=0
+  67 [  17] ADD       A=3 B=3 C=256
+  68 [  17] NEWTABLE  A=4 B=2 C=0
+  69 [  17] LOADK     R5 = K14 ('Uni Pro HV')
+  70 [  17] NEWTABLE  A=6 B=5 C=0
+  71 [  17] LOADK     R7 = K2 (0)
+  72 [  17] LOADK     R8 = K3 (14)
+  73 [  17] LOADK     R9 = K11 (23)
+  74 [  17] LOADK     R10 = K12 (27)
+  75 [  17] LOADK     R11 = K13 (29)
+  76 [  17] SETLIST   A=6 B=5 C=1
+  77 [  17] SETLIST   A=4 B=2 C=1
+  78 [  17] SETTABLE  R2[R3] = R4
+  79 [  18] LEN       A=3 B=2 C=0
+  80 [  18] ADD       A=3 B=3 C=256
+  81 [  18] NEWTABLE  A=4 B=2 C=0
+  82 [  18] LOADK     R5 = K15 ('Uni Pro HV Race')
+  83 [  18] NEWTABLE  A=6 B=3 C=0
+  84 [  18] LOADK     R7 = K2 (0)
+  85 [  18] LOADK     R8 = K3 (14)
+  86 [  18] LOADK     R9 = K11 (23)
+  87 [  18] SETLIST   A=6 B=3 C=1
+  88 [  18] SETLIST   A=4 B=2 C=1
+  89 [  18] SETTABLE  R2[R3] = R4
+  90 [  19] LEN       A=3 B=2 C=0
+  91 [  19] ADD       A=3 B=3 C=256
+  92 [  19] NEWTABLE  A=4 B=2 C=0
+  93 [  19] LOADK     R5 = K16 ('Uni Pro Nano')
+  94 [  19] NEWTABLE  A=6 B=3 C=0
+  95 [  19] LOADK     R7 = K2 (0)
+  96 [  19] LOADK     R8 = K3 (14)
+  97 [  19] LOADK     R9 = K17 (17)
+  98 [  19] SETLIST   A=6 B=3 C=1
+  99 [  19] SETLIST   A=4 B=2 C=1
+ 100 [  19] SETTABLE  R2[R3] = R4
+ 101 [  21] EQ        A=0 R0, K18('hw'); skip-next if condition != A
+ 102 [  21] JMP       A=0 ->126
+ 103 [  22] TEST      A=1 B=0 C=0
+ 104 [  22] JMP       A=0 ->114
+ 105 [  23] GETTABLE  R3 = R2[R1]
+ 106 [  23] TEST      A=3 B=0 C=0
+ 107 [  23] JMP       A=0 ->112
+ 108 [  23] GETTABLE  R3 = R2[R1]
+ 109 [  23] GETTABLE  R3 = R3[K0(1)]
+ 110 [  23] TEST      A=3 B=0 C=1
+ 111 [  23] JMP       A=0 ->113
+ 112 [  23] LOADK     R3 = K19 ('Unknown')
+ 113 [  23] RETURN    A=3 B=2 C=0
+ 114 [  25] NEWTABLE  A=3 B=0 C=1
+ 115 [  25] SETTABLE  R3[K2(0)] = K20('-')
+ 116 [  26] GETTABUP  R4 = UP0[K21('ipairs')]
+ 117 [  26] MOVE      A=5 B=2 C=0
+ 118 [  26] CALL      A=4 B=2 C=4
+ 119 [  26] JMP       A=0 ->122
+ 120 [  27] GETTABLE  R9 = R8[K0(1)]
+ 121 [  27] SETTABLE  R3[R7] = R9
+ 122 [  26] TFORCALL  A=4 B=0 C=2
+ 123 [  26] TFORLOOP  A=6 ->120
+ 124 [  29] RETURN    A=3 B=2 C=0
+ 125 [  29] JMP       A=0 ->139
+ 126 [  30] EQ        A=0 R0, K22('pwr'); skip-next if condition != A
+ 127 [  30] JMP       A=0 ->139
+ 128 [  31] TEST      A=1 B=0 C=0
+ 129 [  31] JMP       A=0 ->137
+ 130 [  31] GETTABLE  R3 = R2[R1]
+ 131 [  31] TEST      A=3 B=0 C=0
+ 132 [  31] JMP       A=0 ->137
+ 133 [  31] GETTABLE  R3 = R2[R1]
+ 134 [  31] GETTABLE  R3 = R3[K23(2)]
+ 135 [  31] TEST      A=3 B=0 C=1
+ 136 [  31] JMP       A=0 ->138
+ 137 [  31] NEWTABLE  A=3 B=0 C=0
+ 138 [  31] RETURN    A=3 B=2 C=0
+ 139 [  33] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 1 vararg 1 stack 13 lines 41 187 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('fn', 0, 255), ('cmd', 3, 190), ('data', 3, 190), ('sIDX', 97, 122), ('chData', 97, 122), ('(for generator)', 156, 171), ('(for state)', 156, 171), ('(for control)', 156, 171), ('i', 157, 169), ('v', 157, 169), ('frq', 194, 253), ('bid', 194, 253), ('cid', 194, 253), ('pwrID', 194, 253), ('pit', 194, 253), ('cmd', 195, 253), ('data', 196, 253), ('data', 208, 219), ('data', 227, 233), ('data', 241, 253), ('pwr_dbm', 244, 253)]
+K0 'read'
+K1 'S'
+K2 'TLM_ON'
+K3 'VTX_CONN_TYPE'
+K4 1
+K5 'crossfireTelemetryPop'
+K6 'RD'
+K7 'SIM'
+K8 16
+K9 236
+K10 26
+K11 23
+K12 29
+K13 0
+K14 'type'
+K15 'table'
+K16 'VTX'
+K17 'ready'
+K18 True
+K19 'dSrc'
+K20 'dSrcType'
+K21 'Vx'
+K22 206
+K23 'Rx'
+K24 'dLast'
+K25 3
+K26 4
+K27 'sFRQ'
+K28 256
+K29 'FN_FCH'
+K30 'sIDX'
+K31 'chName'
+K32 'cName'
+K33 'U'
+K34 'sBID'
+K35 'bid'
+K36 'sCID'
+K37 'cid'
+K38 'sBL'
+K39 'bl'
+K40 2
+K41 'sPwDB'
+K42 'pwOn'
+K43 'sPwMW'
+K44 'ipairs'
+K45 'tPwV'
+K46 'sPwID'
+K47 'tPwL'
+K48 5
+K49 'sPIT'
+K50 'bit'
+K51 'band'
+K52 'send'
+K53 50
+K54 234
+K55 8
+K56 'math'
+K57 'floor'
+K58 6
+K59 'crossfireTelemetryPush'
+   1 [  43] EQ        A=0 R0, K0('read'); skip-next if condition != A
+   2 [  43] JMP       A=0 ->192
+   3 [  47] VARARG    A=1 B=3 C=0
+   4 [  49] GETTABUP  R3 = UP0[K1('S')]
+   5 [  49] GETTABLE  R3 = R3[K2('TLM_ON')]
+   6 [  49] TEST      A=3 B=0 C=0
+   7 [  49] JMP       A=0 ->254
+   8 [  51] GETTABUP  R3 = UP0[K1('S')]
+   9 [  51] GETTABLE  R3 = R3[K2('TLM_ON')]
+  10 [  51] TEST      A=3 B=0 C=0
+  11 [  51] JMP       A=0 ->34
+  12 [  51] GETTABUP  R3 = UP0[K1('S')]
+  13 [  51] GETTABLE  R3 = R3[K3('VTX_CONN_TYPE')]
+  14 [  51] EQ        A=1 R3, K4(1); skip-next if condition != A
+  15 [  51] JMP       A=0 ->34
+  16 [  53] GETTABUP  R3 = UP1[K5('crossfireTelemetryPop')]
+  17 [  53] CALL      A=3 B=1 C=3
+  18 [  53] MOVE      A=2 B=4 C=0
+  19 [  53] MOVE      A=1 B=3 C=0
+  20 [  54] GETTABUP  R3 = UP0[K6('RD')]
+  21 [  54] GETTABLE  R3 = R3[K7('SIM')]
+  22 [  54] TEST      A=3 B=0 C=0
+  23 [  54] JMP       A=0 ->34
+  24 [  59] LOADK     R3 = K8 (16)
+  25 [  59] NEWTABLE  A=4 B=5 C=0
+  26 [  59] LOADK     R5 = K9 (236)
+  27 [  59] LOADK     R6 = K10 (26)
+  28 [  59] LOADK     R7 = K11 (23)
+  29 [  59] LOADK     R8 = K12 (29)
+  30 [  59] LOADK     R9 = K13 (0)
+  31 [  59] SETLIST   A=4 B=5 C=1
+  32 [  59] MOVE      A=2 B=4 C=0
+  33 [  59] MOVE      A=1 B=3 C=0
+  34 [  68] EQ        A=0 R1, K8(16); skip-next if condition != A
+  35 [  68] JMP       A=0 ->254
+  36 [  68] GETTABUP  R3 = UP1[K14('type')]
+  37 [  68] MOVE      A=4 B=2 C=0
+  38 [  68] CALL      A=3 B=2 C=2
+  39 [  68] EQ        A=0 R3, K15('table'); skip-next if condition != A
+  40 [  68] JMP       A=0 ->254
+  41 [  70] GETTABUP  R3 = UP0[K16('VTX')]
+  42 [  70] SETTABLE  R3[K17('ready')] = K18(True)
+  43 [  73] GETTABLE  R3 = R2[K4(1)]
+  44 [  73] EQ        A=0 R3, K9(236); skip-next if condition != A
+  45 [  73] JMP       A=0 ->55
+  46 [  73] GETTABUP  R3 = UP0[K16('VTX')]
+  47 [  73] GETTABLE  R3 = R3[K19('dSrc')]
+  48 [  73] EQ        A=1 R3, K9(236); skip-next if condition != A
+  49 [  73] JMP       A=0 ->55
+  50 [  74] GETTABUP  R3 = UP0[K16('VTX')]
+  51 [  74] SETTABLE  R3[K19('dSrc')] = K9(236)
+  52 [  75] GETTABUP  R3 = UP0[K16('VTX')]
+  53 [  75] SETTABLE  R3[K20('dSrcType')] = K21('Vx')
+  54 [  75] JMP       A=0 ->70
+  55 [  76] GETTABLE  R3 = R2[K4(1)]
+  56 [  76] EQ        A=0 R3, K22(206); skip-next if condition != A
+  57 [  76] JMP       A=0 ->70
+  58 [  76] GETTABUP  R3 = UP0[K16('VTX')]
+  59 [  76] GETTABLE  R3 = R3[K19('dSrc')]
+  60 [  76] EQ        A=1 R3, K22(206); skip-next if condition != A
+  61 [  76] JMP       A=0 ->70
+  62 [  76] GETTABUP  R3 = UP0[K16('VTX')]
+  63 [  76] GETTABLE  R3 = R3[K19('dSrc')]
+  64 [  76] EQ        A=1 R3, K9(236); skip-next if condition != A
+  65 [  76] JMP       A=0 ->70
+  66 [  77] GETTABUP  R3 = UP0[K16('VTX')]
+  67 [  77] SETTABLE  R3[K19('dSrc')] = K22(206)
+  68 [  78] GETTABUP  R3 = UP0[K16('VTX')]
+  69 [  78] SETTABLE  R3[K20('dSrcType')] = K23('Rx')
+  70 [  94] GETTABLE  R3 = R2[K4(1)]
+  71 [  94] GETTABUP  R4 = UP0[K16('VTX')]
+  72 [  94] GETTABLE  R4 = R4[K19('dSrc')]
+  73 [  94] EQ        A=0 R3, R4; skip-next if condition != A
+  74 [  94] JMP       A=0 ->254
+  75 [  96] GETTABUP  R3 = UP0[K16('VTX')]
+  76 [  96] GETTABLE  R3 = R3[K24('dLast')]
+  77 [  96] GETTABLE  R3 = R3[K25(3)]
+  78 [  96] GETTABLE  R4 = R2[K25(3)]
+  79 [  96] EQ        A=0 R3, R4; skip-next if condition != A
+  80 [  96] JMP       A=0 ->87
+  81 [  96] GETTABUP  R3 = UP0[K16('VTX')]
+  82 [  96] GETTABLE  R3 = R3[K24('dLast')]
+  83 [  96] GETTABLE  R3 = R3[K26(4)]
+  84 [  96] GETTABLE  R4 = R2[K26(4)]
+  85 [  96] EQ        A=1 R3, R4; skip-next if condition != A
+  86 [  96] JMP       A=0 ->123
+  87 [  97] GETTABUP  R3 = UP0[K16('VTX')]
+  88 [  97] GETTABLE  R4 = R2[K25(3)]
+  89 [  97] MUL       A=4 B=4 C=284
+  90 [  97] GETTABLE  R5 = R2[K26(4)]
+  91 [  97] ADD       A=4 B=4 C=5
+  92 [  97] SETTABLE  R3[K27('sFRQ')] = R4
+  93 [  98] GETTABUP  R3 = UP0[K16('VTX')]
+  94 [  98] GETTABLE  R3 = R3[K29('FN_FCH')]
+  95 [  98] GETTABUP  R4 = UP0[K16('VTX')]
+  96 [  98] GETTABLE  R4 = R4[K27('sFRQ')]
+  97 [  98] CALL      A=3 B=2 C=3
+  98 [  99] GETTABUP  R5 = UP0[K16('VTX')]
+  99 [  99] SETTABLE  R5[K30('sIDX')] = R3
+ 100 [ 100] GETTABUP  R5 = UP0[K16('VTX')]
+ 101 [ 100] TEST      A=4 B=0 C=0
+ 102 [ 100] JMP       A=0 ->106
+ 103 [ 100] GETTABLE  R6 = R4[K32('cName')]
+ 104 [ 100] TEST      A=6 B=0 C=1
+ 105 [ 100] JMP       A=0 ->107
+ 106 [ 100] LOADK     R6 = K33 ('U')
+ 107 [ 100] SETTABLE  R5[K31('chName')] = R6
+ 108 [ 101] GETTABUP  R5 = UP0[K16('VTX')]
+ 109 [ 101] TESTSET   A=6 B=4 C=0
+ 110 [ 101] JMP       A=0 ->112
+ 111 [ 101] GETTABLE  R6 = R4[K35('bid')]
+ 112 [ 101] SETTABLE  R5[K34('sBID')] = R6
+ 113 [ 102] GETTABUP  R5 = UP0[K16('VTX')]
+ 114 [ 102] TESTSET   A=6 B=4 C=0
+ 115 [ 102] JMP       A=0 ->117
+ 116 [ 102] GETTABLE  R6 = R4[K37('cid')]
+ 117 [ 102] SETTABLE  R5[K36('sCID')] = R6
+ 118 [ 103] GETTABUP  R5 = UP0[K16('VTX')]
+ 119 [ 103] TESTSET   A=6 B=4 C=0
+ 120 [ 103] JMP       A=0 ->122
+ 121 [ 103] GETTABLE  R6 = R4[K39('bl')]
+ 122 [ 103] SETTABLE  R5[K38('sBL')] = R6
+ 123 [ 106] GETTABUP  R3 = UP0[K16('VTX')]
+ 124 [ 106] GETTABLE  R3 = R3[K24('dLast')]
+ 125 [ 106] GETTABLE  R3 = R3[K40(2)]
+ 126 [ 106] GETTABLE  R4 = R2[K40(2)]
+ 127 [ 106] EQ        A=1 R3, R4; skip-next if condition != A
+ 128 [ 106] JMP       A=0 ->172
+ 129 [ 107] GETTABUP  R3 = UP0[K16('VTX')]
+ 130 [ 107] GETTABLE  R4 = R2[K40(2)]
+ 131 [ 107] TEST      A=4 B=0 C=1
+ 132 [ 107] JMP       A=0 ->134
+ 133 [ 107] LOADNIL   A=4 B=0 C=0
+ 134 [ 107] SETTABLE  R3[K41('sPwDB')] = R4
+ 135 [ 108] GETTABUP  R3 = UP0[K16('VTX')]
+ 136 [ 108] GETTABUP  R4 = UP0[K16('VTX')]
+ 137 [ 108] GETTABLE  R4 = R4[K41('sPwDB')]
+ 138 [ 108] TEST      A=4 B=0 C=0
+ 139 [ 108] JMP       A=0 ->146
+ 140 [ 108] GETTABUP  R4 = UP0[K16('VTX')]
+ 141 [ 108] GETTABLE  R4 = R4[K41('sPwDB')]
+ 142 [ 108] LT        A=1 K13(0), R4; skip-next if condition != A
+ 143 [ 108] JMP       A=0 ->145
+ 144 [ 108] LOADBOOL  A=4 B=0 C=1
+ 145 [ 108] LOADBOOL  A=4 B=1 C=0
+ 146 [ 108] SETTABLE  R3[K42('pwOn')] = R4
+ 147 [ 109] GETTABUP  R3 = UP0[K16('VTX')]
+ 148 [ 109] SETTABLE  R3[K43('sPwMW')] = K13(0)
+ 149 [ 110] GETTABUP  R3 = UP0[K16('VTX')]
+ 150 [ 110] GETTABLE  R3 = R3[K41('sPwDB')]
+ 151 [ 110] LT        A=0 K13(0), R3; skip-next if condition != A
+ 152 [ 110] JMP       A=0 ->172
+ 153 [ 111] GETTABUP  R3 = UP1[K44('ipairs')]
+ 154 [ 111] GETTABUP  R4 = UP0[K16('VTX')]
+ 155 [ 111] GETTABLE  R4 = R4[K45('tPwV')]
+ 156 [ 111] CALL      A=3 B=2 C=4
+ 157 [ 111] JMP       A=0 ->170
+ 158 [ 112] GETTABUP  R8 = UP0[K16('VTX')]
+ 159 [ 112] GETTABLE  R8 = R8[K41('sPwDB')]
+ 160 [ 112] EQ        A=0 R8, R7; skip-next if condition != A
+ 161 [ 112] JMP       A=0 ->170
+ 162 [ 113] GETTABUP  R8 = UP0[K16('VTX')]
+ 163 [ 113] SETTABLE  R8[K46('sPwID')] = R6
+ 164 [ 114] GETTABUP  R8 = UP0[K16('VTX')]
+ 165 [ 114] GETTABUP  R9 = UP0[K16('VTX')]
+ 166 [ 114] GETTABLE  R9 = R9[K47('tPwL')]
+ 167 [ 114] GETTABLE  R9 = R9[R6]
+ 168 [ 114] SETTABLE  R8[K43('sPwMW')] = R9
+ 169 [ 114] JMP       A=0 ->172
+ 170 [ 111] TFORCALL  A=3 B=0 C=2
+ 171 [ 111] TFORLOOP  A=5 ->158
+ 172 [ 122] GETTABUP  R3 = UP0[K16('VTX')]
+ 173 [ 122] GETTABLE  R3 = R3[K24('dLast')]
+ 174 [ 122] GETTABLE  R3 = R3[K48(5)]
+ 175 [ 122] GETTABLE  R4 = R2[K48(5)]
+ 176 [ 122] EQ        A=1 R3, R4; skip-next if condition != A
+ 177 [ 122] JMP       A=0 ->189
+ 178 [ 123] GETTABUP  R3 = UP0[K16('VTX')]
+ 179 [ 123] GETTABUP  R4 = UP2[K50('bit')]
+ 180 [ 123] GETTABLE  R4 = R4[K51('band')]
+ 181 [ 123] GETTABLE  R5 = R2[K48(5)]
+ 182 [ 123] LOADK     R6 = K4 (1)
+ 183 [ 123] CALL      A=4 B=3 C=2
+ 184 [ 123] EQ        A=1 R4, K4(1); skip-next if condition != A
+ 185 [ 123] JMP       A=0 ->187
+ 186 [ 123] LOADBOOL  A=4 B=0 C=1
+ 187 [ 123] LOADBOOL  A=4 B=1 C=0
+ 188 [ 123] SETTABLE  R3[K49('sPIT')] = R4
+ 189 [ 127] GETTABUP  R3 = UP0[K16('VTX')]
+ 190 [ 127] SETTABLE  R3[K24('dLast')] = R2
+ 191 [ 133] JMP       A=0 ->254
+ 192 [ 135] EQ        A=0 R0, K52('send'); skip-next if condition != A
+ 193 [ 135] JMP       A=0 ->254
+ 194 [ 138] VARARG    A=1 B=6 C=0
+ 195 [ 140] LOADK     R6 = K53 (50)
+ 196 [ 141] NEWTABLE  A=7 B=0 C=0
+ 197 [ 143] TEST      A=1 B=0 C=1
+ 198 [ 143] JMP       A=0 ->201
+ 199 [ 143] GETTABUP  R8 = UP0[K16('VTX')]
+ 200 [ 143] GETTABLE  R1 = R8[K27('sFRQ')]
+ 201 [ 144] TEST      A=1 B=0 C=0
+ 202 [ 144] JMP       A=0 ->220
+ 203 [ 146] NEWTABLE  A=8 B=4 C=0
+ 204 [ 146] LOADK     R9 = K22 (206)
+ 205 [ 146] LOADK     R10 = K54 (234)
+ 206 [ 146] LOADK     R11 = K55 (8)
+ 207 [ 146] LOADK     R12 = K40 (2)
+ 208 [ 146] SETLIST   A=8 B=4 C=1
+ 209 [ 147] GETTABUP  R9 = UP1[K56('math')]
+ 210 [ 147] GETTABLE  R9 = R9[K57('floor')]
+ 211 [ 147] DIV       A=10 B=1 C=284
+ 212 [ 147] CALL      A=9 B=2 C=2
+ 213 [ 147] SETTABLE  R8[K48(5)] = R9
+ 214 [ 148] MOD       A=9 B=1 C=284
+ 215 [ 148] SETTABLE  R8[K58(6)] = R9
+ 216 [ 153] GETTABUP  R9 = UP1[K59('crossfireTelemetryPush')]
+ 217 [ 153] MOVE      A=10 B=6 C=0
+ 218 [ 153] MOVE      A=11 B=8 C=0
+ 219 [ 153] CALL      A=9 B=3 C=1
+ 220 [ 156] TEST      A=5 B=0 C=0
+ 221 [ 156] JMP       A=0 ->234
+ 222 [ 158] NEWTABLE  A=8 B=4 C=0
+ 223 [ 158] LOADK     R9 = K22 (206)
+ 224 [ 158] LOADK     R10 = K54 (234)
+ 225 [ 158] LOADK     R11 = K55 (8)
+ 226 [ 158] LOADK     R12 = K55 (8)
+ 227 [ 158] SETLIST   A=8 B=4 C=1
+ 228 [ 159] SETTABLE  R8[K48(5)] = K13(0)
+ 229 [ 164] GETTABUP  R9 = UP1[K59('crossfireTelemetryPush')]
+ 230 [ 164] MOVE      A=10 B=6 C=0
+ 231 [ 164] MOVE      A=11 B=8 C=0
+ 232 [ 164] CALL      A=9 B=3 C=1
+ 233 [ 165] RETURN    A=0 B=1 C=0
+ 234 [ 168] TEST      A=4 B=0 C=0
+ 235 [ 168] JMP       A=0 ->254
+ 236 [ 170] NEWTABLE  A=8 B=4 C=0
+ 237 [ 170] LOADK     R9 = K22 (206)
+ 238 [ 170] LOADK     R10 = K54 (234)
+ 239 [ 170] LOADK     R11 = K55 (8)
+ 240 [ 170] LOADK     R12 = K55 (8)
+ 241 [ 170] SETLIST   A=8 B=4 C=1
+ 242 [ 171] GETTABUP  R9 = UP0[K16('VTX')]
+ 243 [ 171] GETTABLE  R9 = R9[K45('tPwV')]
+ 244 [ 171] GETTABLE  R9 = R9[R4]
+ 245 [ 172] TEST      A=9 B=0 C=1
+ 246 [ 172] JMP       A=0 ->248
+ 247 [ 173] RETURN    A=0 B=1 C=0
+ 248 [ 175] SETTABLE  R8[K48(5)] = R9
+ 249 [ 180] GETTABUP  R10 = UP1[K59('crossfireTelemetryPush')]
+ 250 [ 180] MOVE      A=11 B=6 C=0
+ 251 [ 180] MOVE      A=12 B=8 C=0
+ 252 [ 180] CALL      A=10 B=3 C=1
+ 253 [ 181] RETURN    A=0 B=1 C=0
+ 254 [ 186] RETURN    A=0 B=1 C=0
+ 255 [ 187] RETURN    A=0 B=1 C=0

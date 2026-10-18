@@ -1,0 +1,8 @@
+{
+  "pid": 61708,
+  "verifiedCommand": "/usr/local/bin/node --disable-warning=ExperimentalWarning /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/native-sim/host.cjs /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/power-live/interactive-review.js",
+  "signal": "SIGTERM",
+  "replacementSourceSHA256": "4556da247bde95062a20bb9e09ffe4808925fccbaf455ef643b769952b739bd5",
+  "candidateNativeTour": "tour-4556da247bde-8767-extrema/verification.json",
+  "scope": "Only the exact stale POWER-LIVE preview process; no broad Node or process termination."
+}

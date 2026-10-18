@@ -1,0 +1,270 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.luac
+SHA256: 582ebade13d1d87a93a7cca3896351e70f8bbb10e4c2014f7601d13e0c1bc37b
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/MSPRPT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'MSPRPT'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  80] CLOSURE   R4 = proto[0]
+   3 [  80] SETTABLE  R1[K0('MSPRPT')] = R4
+   4 [  82] RETURN    A=0 B=1 C=0
+   5 [  82] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 11 lines 12 80 source None
+UPVALUES [('D', (1, 2)), ('G', (1, 0)), ('F', (1, 1))]
+LOCALS [('s', 0, 205), ('pCond', 42, 205), ('frSkyMsp', 56, 205), ('fwCond', 76, 205), ('mpn', 128, 205), ('mpnCond', 144, 205), ('fcCond', 152, 170), ('asCond', 164, 170)]
+K0 'S'
+K1 'MDL_VTX_ON'
+K2 'VTX_CONN_TYPE'
+K3 1
+K4 'UI'
+K5 'MODS'
+K6 'selID'
+K7 'DBD'
+K8 'VTX'
+K9 'FC_MSP_VTX_INTVAL'
+K10 0
+K11 'MSP'
+K12 'RPT'
+K13 88
+K14 100
+K15 'nodup'
+K16 None
+K17 'RCP_pID'
+K18 'FRS'
+K19 'RCP_pverID'
+K20 'ACCST'
+K21 'R9'
+K22 'TBS'
+K23 'AST'
+K24 'ARM_STOP_TLM'
+K25 'FC_FW_ID'
+K26 'BF'
+K27 'FC'
+K28 'API_VERSION'
+K29 1.4600000381469727
+K30 'FC_MSP_ERR_INTVAL'
+K31 150
+K32 'ARM_STOP_MSP'
+K33 'ARMSTOPS'
+K34 'TASKS_ID'
+K35 'DB1MPN'
+K36 'fm'
+K37 'pgg'
+K38 'm'
+K39 'FCD'
+K40 'TARGET_NAME'
+K41 'MSPQAD'
+K42 4
+K43 'S_ACTIVE'
+K44 'MDL_GPS_ON'
+K45 'GPS'
+K46 164
+K47 1000
+K48 106
+   1 [  14] GETTABUP  R1 = UP0[K0('S')]
+   2 [  14] GETTABLE  R1 = R1[K1('MDL_VTX_ON')]
+   3 [  14] TEST      A=1 B=0 C=0
+   4 [  14] JMP       A=0 ->39
+   5 [  14] GETTABUP  R1 = UP0[K0('S')]
+   6 [  14] GETTABLE  R1 = R1[K2('VTX_CONN_TYPE')]
+   7 [  14] EQ        A=0 R1, K3(1); skip-next if condition != A
+   8 [  14] JMP       A=0 ->39
+   9 [  14] GETTABUP  R1 = UP0[K4('UI')]
+  10 [  14] GETTABLE  R1 = R1[K5('MODS')]
+  11 [  14] GETTABLE  R1 = R1[K6('selID')]
+  12 [  14] EQ        A=1 R1, K7('DBD'); skip-next if condition != A
+  13 [  14] JMP       A=0 ->19
+  14 [  14] GETTABUP  R1 = UP0[K4('UI')]
+  15 [  14] GETTABLE  R1 = R1[K5('MODS')]
+  16 [  14] GETTABLE  R1 = R1[K6('selID')]
+  17 [  14] EQ        A=0 R1, K8('VTX'); skip-next if condition != A
+  18 [  14] JMP       A=0 ->39
+  19 [  15] GETTABUP  R1 = UP0[K0('S')]
+  20 [  15] GETTABLE  R1 = R1[K9('FC_MSP_VTX_INTVAL')]
+  21 [  15] LT        A=0 K10(0), R1; skip-next if condition != A
+  22 [  15] JMP       A=0 ->42
+  23 [  16] GETTABUP  R1 = UP0[K11('MSP')]
+  24 [  16] GETTABLE  R1 = R1[K12('RPT')]
+  25 [  16] GETTABLE  R1 = R1[K13(88)]
+  26 [  16] TEST      A=1 B=0 C=1
+  27 [  16] JMP       A=0 ->42
+  28 [  17] GETTABUP  R1 = UP0[K11('MSP')]
+  29 [  17] GETTABLE  R1 = R1[K12('RPT')]
+  30 [  17] NEWTABLE  A=2 B=3 C=0
+  31 [  17] LOADK     R3 = K10 (0)
+  32 [  17] GETTABUP  R4 = UP0[K0('S')]
+  33 [  17] GETTABLE  R4 = R4[K9('FC_MSP_VTX_INTVAL')]
+  34 [  17] MUL       A=4 B=4 C=270
+  35 [  17] LOADK     R5 = K15 ('nodup')
+  36 [  17] SETLIST   A=2 B=3 C=1
+  37 [  17] SETTABLE  R1[K13(88)] = R2
+  38 [  19] JMP       A=0 ->42
+  39 [  21] GETTABUP  R1 = UP0[K11('MSP')]
+  40 [  21] GETTABLE  R1 = R1[K12('RPT')]
+  41 [  21] SETTABLE  R1[K13(88)] = K16(None)
+  42 [  25] LOADBOOL  A=1 B=0 C=0
+  43 [  26] GETTABUP  R2 = UP0[K0('S')]
+  44 [  26] GETTABLE  R2 = R2[K17('RCP_pID')]
+  45 [  26] EQ        A=0 R2, K18('FRS'); skip-next if condition != A
+  46 [  26] JMP       A=0 ->55
+  47 [  26] GETTABUP  R2 = UP0[K0('S')]
+  48 [  26] GETTABLE  R2 = R2[K19('RCP_pverID')]
+  49 [  26] EQ        A=1 R2, K20('ACCST'); skip-next if condition != A
+  50 [  26] JMP       A=0 ->56
+  51 [  26] GETTABUP  R2 = UP0[K0('S')]
+  52 [  26] GETTABLE  R2 = R2[K19('RCP_pverID')]
+  53 [  26] EQ        A=1 R2, K21('R9'); skip-next if condition != A
+  54 [  26] JMP       A=0 ->56
+  55 [  26] LOADBOOL  A=2 B=0 C=1
+  56 [  26] LOADBOOL  A=2 B=1 C=0
+  57 [  28] GETTABUP  R3 = UP0[K0('S')]
+  58 [  28] GETTABLE  R3 = R3[K17('RCP_pID')]
+  59 [  28] EQ        A=1 R3, K22('TBS'); skip-next if condition != A
+  60 [  28] JMP       A=0 ->63
+  61 [  28] TEST      A=2 B=0 C=0
+  62 [  28] JMP       A=0 ->75
+  63 [  29] GETTABUP  R3 = UP0[K4('UI')]
+  64 [  29] GETTABLE  R3 = R3[K5('MODS')]
+  65 [  29] GETTABLE  R3 = R3[K6('selID')]
+  66 [  29] EQ        A=1 R3, K7('DBD'); skip-next if condition != A
+  67 [  29] JMP       A=0 ->74
+  68 [  29] GETTABUP  R3 = UP0[K4('UI')]
+  69 [  29] GETTABLE  R3 = R3[K5('MODS')]
+  70 [  29] GETTABLE  R3 = R3[K6('selID')]
+  71 [  29] EQ        A=1 R3, K23('AST'); skip-next if condition != A
+  72 [  29] JMP       A=0 ->74
+  73 [  29] LOADBOOL  A=1 B=0 C=1
+  74 [  29] LOADBOOL  A=1 B=1 C=0
+  75 [  31] GETTABUP  R3 = UP0[K0('S')]
+  76 [  31] GETTABLE  R3 = R3[K24('ARM_STOP_TLM')]
+  77 [  32] GETTABUP  R4 = UP0[K0('S')]
+  78 [  32] GETTABLE  R4 = R4[K25('FC_FW_ID')]
+  79 [  32] EQ        A=0 R4, K26('BF'); skip-next if condition != A
+  80 [  32] JMP       A=0 ->91
+  81 [  32] GETTABUP  R4 = UP0[K27('FC')]
+  82 [  32] GETTABLE  R4 = R4[K28('API_VERSION')]
+  83 [  32] TEST      A=4 B=0 C=0
+  84 [  32] JMP       A=0 ->91
+  85 [  32] GETTABUP  R4 = UP0[K27('FC')]
+  86 [  32] GETTABLE  R4 = R4[K28('API_VERSION')]
+  87 [  32] EQ        A=0 R4, K29(1.4600000381469727); skip-next if condition != A
+  88 [  32] JMP       A=0 ->91
+  89 [  33] LOADBOOL  A=3 B=1 C=0
+  90 [  34] LOADBOOL  A=1 B=1 C=0
+  91 [  37] TEST      A=1 B=0 C=0
+  92 [  37] JMP       A=0 ->115
+  93 [  37] TEST      A=3 B=0 C=0
+  94 [  37] JMP       A=0 ->115
+  95 [  38] GETTABUP  R4 = UP0[K0('S')]
+  96 [  38] GETTABLE  R4 = R4[K30('FC_MSP_ERR_INTVAL')]
+  97 [  38] LT        A=0 K10(0), R4; skip-next if condition != A
+  98 [  38] JMP       A=0 ->122
+  99 [  39] GETTABUP  R4 = UP0[K11('MSP')]
+ 100 [  39] GETTABLE  R4 = R4[K12('RPT')]
+ 101 [  39] GETTABLE  R4 = R4[K31(150)]
+ 102 [  39] TEST      A=4 B=0 C=1
+ 103 [  39] JMP       A=0 ->122
+ 104 [  40] GETTABUP  R4 = UP0[K11('MSP')]
+ 105 [  40] GETTABLE  R4 = R4[K12('RPT')]
+ 106 [  40] NEWTABLE  A=5 B=3 C=0
+ 107 [  40] LOADK     R6 = K10 (0)
+ 108 [  40] GETTABUP  R7 = UP0[K0('S')]
+ 109 [  40] GETTABLE  R7 = R7[K30('FC_MSP_ERR_INTVAL')]
+ 110 [  40] MUL       A=7 B=7 C=270
+ 111 [  40] LOADK     R8 = K15 ('nodup')
+ 112 [  40] SETLIST   A=5 B=3 C=1
+ 113 [  40] SETTABLE  R4[K31(150)] = R5
+ 114 [  42] JMP       A=0 ->122
+ 115 [  44] GETTABUP  R4 = UP0[K11('MSP')]
+ 116 [  44] GETTABLE  R4 = R4[K12('RPT')]
+ 117 [  44] SETTABLE  R4[K31(150)] = K16(None)
+ 118 [  45] GETTABUP  R4 = UP0[K0('S')]
+ 119 [  45] SETTABLE  R4[K32('ARM_STOP_MSP')] = K16(None)
+ 120 [  46] GETTABUP  R4 = UP0[K27('FC')]
+ 121 [  46] SETTABLE  R4[K33('ARMSTOPS')] = K16(None)
+ 122 [  52] GETTABUP  R4 = UP0[K4('UI')]
+ 123 [  52] GETTABLE  R4 = R4[K34('TASKS_ID')]
+ 124 [  52] TEST      A=4 B=0 C=0
+ 125 [  52] JMP       A=0 ->129
+ 126 [  52] GETTABUP  R4 = UP0[K4('UI')]
+ 127 [  52] GETTABLE  R4 = R4[K34('TASKS_ID')]
+ 128 [  52] GETTABLE  R4 = R4[K35('DB1MPN')]
+ 129 [  53] GETTABUP  R5 = UP1[K36('fm')]
+ 130 [  53] GETTABLE  R5 = R5[K37('pgg')]
+ 131 [  53] TEST      A=5 B=0 C=0
+ 132 [  53] JMP       A=0 ->145
+ 133 [  53] GETTABUP  R5 = UP0[K4('UI')]
+ 134 [  53] GETTABLE  R5 = R5[K5('MODS')]
+ 135 [  53] GETTABLE  R5 = R5[K6('selID')]
+ 136 [  53] EQ        A=0 R5, K7('DBD'); skip-next if condition != A
+ 137 [  53] JMP       A=0 ->143
+ 138 [  53] TESTSET   A=5 B=4 C=0
+ 139 [  53] JMP       A=0 ->145
+ 140 [  53] GETTABLE  R5 = R4[K38('m')]
+ 141 [  53] EQ        A=1 R5, K39('FCD'); skip-next if condition != A
+ 142 [  53] JMP       A=0 ->144
+ 143 [  53] LOADBOOL  A=5 B=0 C=1
+ 144 [  53] LOADBOOL  A=5 B=1 C=0
+ 145 [  54] TEST      A=5 B=0 C=0
+ 146 [  54] JMP       A=0 ->171
+ 147 [  55] GETTABUP  R6 = UP0[K27('FC')]
+ 148 [  55] TEST      A=6 B=0 C=0
+ 149 [  55] JMP       A=0 ->153
+ 150 [  55] GETTABUP  R6 = UP0[K27('FC')]
+ 151 [  55] GETTABLE  R6 = R6[K40('TARGET_NAME')]
+ 152 [  55] NOT       A=6 B=6 C=0
+ 153 [  56] TEST      A=6 B=0 C=0
+ 154 [  56] JMP       A=0 ->159
+ 155 [  57] GETTABUP  R7 = UP2[K41('MSPQAD')]
+ 156 [  57] LOADK     R8 = K15 ('nodup')
+ 157 [  57] LOADK     R9 = K42 (4)
+ 158 [  57] CALL      A=7 B=3 C=1
+ 159 [  59] GETTABUP  R7 = UP0[K27('FC')]
+ 160 [  59] TEST      A=7 B=0 C=0
+ 161 [  59] JMP       A=0 ->165
+ 162 [  59] GETTABUP  R7 = UP0[K27('FC')]
+ 163 [  59] GETTABLE  R7 = R7[K43('S_ACTIVE')]
+ 164 [  59] NOT       A=7 B=7 C=0
+ 165 [  60] TEST      A=7 B=0 C=0
+ 166 [  60] JMP       A=0 ->171
+ 167 [  61] GETTABUP  R8 = UP2[K41('MSPQAD')]
+ 168 [  61] LOADK     R9 = K15 ('nodup')
+ 169 [  61] LOADK     R10 = K31 (150)
+ 170 [  61] CALL      A=8 B=3 C=1
+ 171 [  67] GETTABUP  R6 = UP1[K36('fm')]
+ 172 [  67] GETTABLE  R6 = R6[K37('pgg')]
+ 173 [  67] TEST      A=6 B=0 C=0
+ 174 [  67] JMP       A=0 ->198
+ 175 [  67] GETTABUP  R6 = UP0[K0('S')]
+ 176 [  67] GETTABLE  R6 = R6[K44('MDL_GPS_ON')]
+ 177 [  67] TEST      A=6 B=0 C=0
+ 178 [  67] JMP       A=0 ->198
+ 179 [  67] GETTABUP  R6 = UP0[K4('UI')]
+ 180 [  67] GETTABLE  R6 = R6[K5('MODS')]
+ 181 [  67] GETTABLE  R6 = R6[K6('selID')]
+ 182 [  67] EQ        A=0 R6, K45('GPS'); skip-next if condition != A
+ 183 [  67] JMP       A=0 ->198
+ 184 [  71] GETTABUP  R6 = UP0[K11('MSP')]
+ 185 [  71] GETTABLE  R6 = R6[K12('RPT')]
+ 186 [  71] GETTABLE  R6 = R6[K46(164)]
+ 187 [  71] TEST      A=6 B=0 C=1
+ 188 [  71] JMP       A=0 ->204
+ 189 [  72] GETTABUP  R6 = UP0[K11('MSP')]
+ 190 [  72] GETTABLE  R6 = R6[K12('RPT')]
+ 191 [  72] NEWTABLE  A=7 B=3 C=0
+ 192 [  72] LOADK     R8 = K10 (0)
+ 193 [  72] LOADK     R9 = K47 (1000)
+ 194 [  72] LOADK     R10 = K15 ('nodup')
+ 195 [  72] SETLIST   A=7 B=3 C=1
+ 196 [  72] SETTABLE  R6[K46(164)] = R7
+ 197 [  73] JMP       A=0 ->204
+ 198 [  75] GETTABUP  R6 = UP0[K11('MSP')]
+ 199 [  75] GETTABLE  R6 = R6[K12('RPT')]
+ 200 [  75] SETTABLE  R6[K48(106)] = K16(None)
+ 201 [  76] GETTABUP  R6 = UP0[K11('MSP')]
+ 202 [  76] GETTABLE  R6 = R6[K12('RPT')]
+ 203 [  76] SETTABLE  R6[K46(164)] = K16(None)
+ 204 [  79] RETURN    A=0 B=1 C=0
+ 205 [  80] RETURN    A=0 B=1 C=0

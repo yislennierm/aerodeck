@@ -1,0 +1,78 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/MDINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 14 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/MDINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 49), ('F', 1, 49), ('D', 1, 49), ('X', 1, 49), ('DM', 6, 49), ('(for generator)', 36, 42), ('(for state)', 36, 42), ('(for control)', 36, 42), ('i', 37, 40), ('mod', 37, 40)]
+K0 'UI'
+K1 'MODS'
+K2 'all'
+K3 'name'
+K4 'Dashboard'
+K5 'id'
+K6 'DBD'
+K7 'Configuration'
+K8 'CFG'
+K9 'Telemetry'
+K10 'TLM'
+K11 'VTX'
+K12 'GPS'
+K13 'Arm Stops'
+K14 'AST'
+K15 'Sticks commands'
+K16 'STK'
+K17 'About'
+K18 'ABT'
+K19 'ipairs'
+K20 'i'
+K21 'loadE'
+K22 'PUI'
+K23 'MDUPD'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('UI')]
+   3 [  12] NEWTABLE  A=5 B=0 C=0
+   4 [  12] SETTABLE  R4[K1('MODS')] = R5
+   5 [  13] GETTABLE  R4 = R2[K0('UI')]
+   6 [  13] GETTABLE  R4 = R4[K1('MODS')]
+   7 [  15] NEWTABLE  A=5 B=8 C=0
+   8 [  15] NEWTABLE  A=6 B=0 C=2
+   9 [  16] SETTABLE  R6[K3('name')] = K4('Dashboard')
+  10 [  16] SETTABLE  R6[K5('id')] = K6('DBD')
+  11 [  16] NEWTABLE  A=7 B=0 C=2
+  12 [  17] SETTABLE  R7[K3('name')] = K7('Configuration')
+  13 [  17] SETTABLE  R7[K5('id')] = K8('CFG')
+  14 [  17] NEWTABLE  A=8 B=0 C=2
+  15 [  18] SETTABLE  R8[K3('name')] = K9('Telemetry')
+  16 [  18] SETTABLE  R8[K5('id')] = K10('TLM')
+  17 [  18] NEWTABLE  A=9 B=0 C=2
+  18 [  19] SETTABLE  R9[K3('name')] = K11('VTX')
+  19 [  19] SETTABLE  R9[K5('id')] = K11('VTX')
+  20 [  19] NEWTABLE  A=10 B=0 C=2
+  21 [  20] SETTABLE  R10[K3('name')] = K12('GPS')
+  22 [  20] SETTABLE  R10[K5('id')] = K12('GPS')
+  23 [  20] NEWTABLE  A=11 B=0 C=2
+  24 [  21] SETTABLE  R11[K3('name')] = K13('Arm Stops')
+  25 [  21] SETTABLE  R11[K5('id')] = K14('AST')
+  26 [  21] NEWTABLE  A=12 B=0 C=2
+  27 [  22] SETTABLE  R12[K3('name')] = K15('Sticks commands')
+  28 [  22] SETTABLE  R12[K5('id')] = K16('STK')
+  29 [  22] NEWTABLE  A=13 B=0 C=2
+  30 [  23] SETTABLE  R13[K3('name')] = K17('About')
+  31 [  23] SETTABLE  R13[K5('id')] = K18('ABT')
+  32 [  24] SETLIST   A=5 B=8 C=1
+  33 [  24] SETTABLE  R4[K2('all')] = R5
+  34 [  27] GETTABUP  R5 = UP0[K19('ipairs')]
+  35 [  27] GETTABLE  R6 = R4[K2('all')]
+  36 [  27] CALL      A=5 B=2 C=4
+  37 [  27] JMP       A=0 ->41
+  38 [  28] SETTABLE  R9[K20('i')] = R8
+  39 [  29] GETTABLE  R10 = R9[K5('id')]
+  40 [  29] SETTABLE  R4[R10] = R9
+  41 [  27] TFORCALL  A=5 B=0 C=2
+  42 [  27] TFORLOOP  A=7 ->38
+  43 [  32] GETTABLE  R5 = R0[K21('loadE')]
+  44 [  32] GETTABLE  R6 = R0[K22('PUI')]
+  45 [  32] LOADK     R7 = K23 ('MDUPD')
+  46 [  32] CONCAT    A=6 B=6 C=7
+  47 [  32] CALL      A=5 B=2 C=1
+  48 [  34] RETURN    A=0 B=1 C=0
+  49 [  34] RETURN    A=0 B=1 C=0

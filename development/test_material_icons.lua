@@ -4,6 +4,7 @@ local f=assert(io.open('sdcard/SCRIPTS/TOOLS/telem.lua'));local app=f:read('*a')
 local first=assert(string.find(app,'local iconShapes={',1,true))
 local last=assert(string.find(app,'local function numberText',first,true))
 local make=assert(loadstring([[return function(api)
+ local inputRuntime={}
  local ROOT,Bitmap,lcd=api.root,api.Bitmap,api.lcd
  local SOLID,CUSTOM_COLOR=api.SOLID,api.CUSTOM_COLOR
  local collectgarbage=api.collectgarbage
@@ -15,10 +16,21 @@ local function check(value,why)assert(value,why);checks=checks+1 end
 local names={[0]='home',[1]='speed',[5]='table_chart',[7]='my_location',[11]='head_mounted_device',
  [8]='tune',[13]='build',[2]='route',[3]='battery_full',[9]='cell_tower',[10]='gpp_bad',
  [6]='sports_esports',[4]='sensors',[12]='bug_report',[14]='satellite_alt'}
-local navigation={0,1,5,7,11,8,13}
+local navigation={0,10,5,7,11,8,13}
 -- Eleven context icons plus the footer-only satellite; link and pack reuse9/3.
 local details={1,10,5,3,9,7,2,11,6,4,12,14}
 local function file(id,size)return names[id]..(size==18 and '-18' or '')..'.png'end
+-- These real PNG headers guard the native Bitmap contract independently of
+-- the mocked renderer: RGB8, exact dimensions, no enlarged raster substitute.
+local function pngHeader(path,size)
+ local f=assert(io.open('sdcard/SCRIPTS/TOOLS/AERODECK/icons/'..path,'rb'));local h=f:read(33);f:close()
+ check(type(h)=='string'and #h==33 and string.sub(h,1,8)=='\137PNG\13\10\26\10','PNG signature/header: '..path)
+ local function u32(at)local a,b,c,d=string.byte(h,at,at+3);return ((a*256+b)*256+c)*256+d end
+ check(string.sub(h,13,16)=='IHDR'and u32(17)==size and u32(21)==size,'exact native dimensions: '..path)
+ check(string.byte(h,25)==8 and string.byte(h,26)==2,'native mask must be8-bit RGB: '..path)
+end
+pngHeader('gpp_bad.png',30);pngHeader('800x480/gpp_bad.png',50)
+pngHeader('speed.png',30);pngHeader('800x480/speed.png',50)
 local realGC=collectgarbage
 local function fixture(options)
  options=options or {}
@@ -31,8 +43,6 @@ local function fixture(options)
  end
  api.Bitmap.open=function(path)
   local n=assert(string.match(path,'^/SCRIPTS/TOOLS/AERODECK/icons/(.+%.png)$'),'SD path must stay in the icon directory')
-  local previous=calls.events[#calls.events]
-  check(previous and previous[1]=='gc','collect decoded images immediately before each cold open')
   calls.opens[n]=(calls.opens[n]or 0)+1;calls.events[#calls.events+1]={'open',n}
   local size=string.find(n,'-18.png',1,true)and 18 or 30
   local dim=options.bad and options.bad[n]or {size,size}
@@ -64,7 +74,7 @@ for _,set in ipairs({{ids=navigation,size=30},{ids=details,size=18}})do
   check(p.mask==masks[n]and p.x==x and p.y==y and p.flags==4096 and p.color==color,'native mask coordinates/tint are preserved: '..n)
  end
 end
-check(calls.gc==19,'seven navigation, eleven context and one footer-only asset each collect once before loading')
+check(calls.gc==0,'cold icon decoding must not force a full collection in the rendering callback')
 local coldGC=calls.gc
 for frame=1,100 do
  for _,set in ipairs({{ids=navigation,size=30},{ids=details,size=18}})do
@@ -79,7 +89,7 @@ end
 check(#calls.lines==0 and calls.rects==0 and calls.circles==0,'available raster assets do not also draw vector fallbacks')
 realGC('collect')
 for n in pairs(calls.opens)do check(weak[n]==nil,'decoded userdata must be collectible after retaining only its mask: '..n)end
-check(#calls.patterns==1919,'every requested warm/native draw reaches the mask renderer')
+check(#calls.patterns==(#navigation+#details)*101,'every requested warm/native draw reaches the mask renderer')
 
 local function fallback(size,dimensions,options,opens)
  options=options or {};options.bad=options.bad or {};options.bad[file(0,size)]=dimensions
@@ -90,7 +100,7 @@ local function fallback(size,dimensions,options,opens)
  local p=seen.lines[1]
  if size==30 then check(p[1]==8 and p[2]==16 and p[3]==20 and p[4]==5,'30px fallback preserves the old28px origin plus one pixel')
  else check(p[1]==6 and p[2]==10 and p[3]==14 and p[4]==3,'18px fallback scales old geometry at the requested origin')end
- check((seen.opens[n]or 0)==opens and seen.gc==opens,'negative caches prevent repeated SD/GC attempts')
+ check((seen.opens[n]or 0)==opens and seen.gc==0,'negative caches prevent repeated SD attempts without forcing GC')
  check(seen.converts[n]==nil,'wrong-size/missing/unsupported assets do not convert')
  return draw,seen
 end
@@ -107,4 +117,4 @@ partial(0,5,2,0xffffff,18)
 check(seen.opens['home-18.png']==1 and #seen.patterns==2,'30px and18px success/failure caches are independent')
 local before=seen.gc;partial(0,5,2,0xffffff,24);partial(999,5,2,0xffffff)
 check(seen.gc==before,'unsupported size/id uses geometry without bitmap or GC work')
-print('PASS: '..checks..' Material icon native-size, cache, cold-GC, tint, lifetime and fallback checks')
+print('PASS: '..checks..' Material icon native-size, cache, no forced GC, tint, lifetime and fallback checks')

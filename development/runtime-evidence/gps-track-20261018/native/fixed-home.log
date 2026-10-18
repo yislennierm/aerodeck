@@ -1,0 +1,1734 @@
+(node:92920) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+EXPORT dimensions 480 272
+(node:92920) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:92920) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:92920) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+10ms: <audio> started
+10ms: <menus> started
+10ms: <timer_queue> started
+10ms: <audio> started
+
+10ms: edgeTxInit
+10ms: YAML radio settings reader
+10ms: <timer_queue> started
+
+10ms: <menus> started
+
+10ms: edgeTxInit
+
+10ms: YAML radio settings reader
+
+10ms: luaInitThemesAndWidgets
+10ms: luaInitThemesAndWidgets
+
+10ms: lsWidgets 0x216ba64
+10ms: luaLoadFiles() /WIDGETS
+10ms: lsWidgets 0x216ba64
+
+10ms: luaLoadFiles() /WIDGETS
+
+10ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+10ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+
+40ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+
+40ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+
+40ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+
+40ms: luaLoadWidgetCallback()
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget GaugeRotary
+40ms: Loaded Lua widget GaugeRotary
+
+40ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+40ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+
+50ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+50ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget Flights
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget Flights
+
+50ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+50ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+
+60ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+
+60ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+
+60ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: Cels
+init_compare_source: we do not have: Cels
+
+
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget BattCheck
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget BattCheck
+
+60ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+60ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+
+60ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget Micro Values
+60ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget Micro Values
+
+60ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+60ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+
+70ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget SerialPower
+70ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+
+70ms: luaLoadWidgetCallback()
+
+70ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+70ms: Loaded Lua widget SerialPower
+
+70ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+
+70ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget EventDemo
+70ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+
+70ms: luaLoadWidgetCallback()
+
+70ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+70ms: Loaded Lua widget EventDemo
+
+70ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+
+70ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget AERODECK
+70ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget AERODECK
+
+70ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+70ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+
+70ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: Loaded Lua widget Ghost
+70ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+
+70ms: luaLoadWidgetCallback()
+
+80ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+70ms: Loaded Lua widget Ghost
+
+80ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+
+80ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+
+80ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+80ms: luaLoadWidgetCallback()
+80ms: Loaded Lua widget SoarETX
+80ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+
+80ms: luaLoadWidgetCallback()
+
+80ms: Loaded Lua widget SoarETX
+
+80ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+80ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+
+80ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+80ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+
+90ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+90ms: luaLoadWidgetCallback()
+90ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+
+90ms: luaLoadWidgetCallback()
+
+90ms: Loaded Lua widget Timer2
+90ms: Loaded Lua widget Timer2
+
+90ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+90ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+
+90ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+90ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+
+90ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+90ms: luaLoadWidgetCallback()
+90ms: Loaded Lua widget TxGPStest
+90ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+
+90ms: luaLoadWidgetCallback()
+
+90ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+90ms: Loaded Lua widget TxGPStest
+
+90ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+
+100ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+100ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+
+100ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+100ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+
+100ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+100ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+
+100ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+100ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: VFAS
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: RxBt
+init_compare_source: we do not have: A1
+
+
+init_compare_source: we do not have: A2
+init_compare_source: we do not have: VFAS
+100ms: luaLoadWidgetCallback()
+100ms: Loaded Lua widget BattAnalog
+
+
+init_compare_source: we do not have: RxBt
+
+
+init_compare_source: we do not have: A1
+100ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+
+init_compare_source: we do not have: A2
+
+
+100ms: luaLoadWidgetCallback()
+
+100ms: Loaded Lua widget BattAnalog
+
+100ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+100ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+100ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+
+110ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+110ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+
+110ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+110ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+
+110ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+110ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+
+110ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+110ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+
+120ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+120ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+
+120ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+120ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+120ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+120ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+120ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+120ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+130ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+130ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: RQLY
+init_compare_source: we do not have: VFRinit_compare_source: we do not have: RQLY
+
+init_compare_source: we do not have: cell
+
+
+init_compare_source: we do not have: cels
+init_compare_source: we do not have: VFR
+init_compare_source: we do not have: RSSI
+
+
+init_compare_source: we do not have: RxBt
+init_compare_source: we do not have: cell
+130ms: luaLoadWidgetCallback()
+
+
+130ms: Loaded Lua widget Value2
+init_compare_source: we do not have: cels
+
+
+init_compare_source: we do not have: RSSI
+
+
+init_compare_source: we do not have: RxBt
+130ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+
+130ms: luaLoadWidgetCallback()
+
+130ms: Loaded Lua widget Value2
+
+130ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+130ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+130ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+
+130ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+130ms: luaLoadWidgetCallback()
+130ms: Loaded Lua widget LibGUI
+130ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+
+130ms: luaLoadWidgetCallback()
+
+130ms: Loaded Lua widget LibGUI
+
+130ms: storageReadAll
+130ms: storageReadAll
+
+130ms: YAML radio settings reader
+130ms: YAML radio settings reader
+
+140ms: YAML model reader
+140ms: YAML model reader
+
+160ms: opening directory: /THEMES
+160ms: opening directory: /THEMES
+
+160ms: scanForThemes: open successful
+160ms: scanForThemes: open successful
+
+160ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+160ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+
+160ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+160ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+
+160ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+160ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+
+160ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+160ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+
+190ms: addMainView(0x0x21761f0, 0)
+190ms: addMainView(0x0x21761f0, 0)
+
+200ms: WidgetFactory::create() setting option 'Low battery'
+200ms: WidgetFactory::create() setting option 'Mid battery'
+200ms: WidgetFactory::create() setting option 'High battery'
+200ms: WidgetFactory::create() setting option 'Low battery'
+
+200ms: WidgetFactory::create() setting option 'Mid battery'
+
+200ms: WidgetFactory::create() setting option 'High battery'
+
+200ms: WidgetFactory::create() setting option 'Color'
+200ms: WidgetFactory::create() setting option 'Color'
+
+220ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+220ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+
+230ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|1|ENV LOAD|0
+230ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|1|ENV LOAD|0
+
+
+240ms: luaInit
+240ms: lsScripts 0x21a6584
+240ms: luaInit
+
+240ms: lsScripts 0x21a6584
+
+QA_DEV_STAGE|animated|2|ENV CHUNK|0
+QA_DEV_STAGE|animated|2|ENV CHUNK|0
+
+
+QA_DEV_MEMORY|32|0|196.6348
+QA_DEV_MEMORY|32|0|196.6348
+QA_DEV_SYNTHETIC|animated|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+QA_DEV_STAGE|animated|3|ENV CREATE|7
+
+
+QA_DEV_SYNTHETIC|animated|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+
+
+QA_DEV_STAGE|animated|3|ENV CREATE|7
+
+
+380ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+380ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+390ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+390ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|4|STORE LOAD|0
+QA_DEV_STAGE|animated|4|STORE LOAD|0
+
+
+QA_DEV_STAGE|animated|5|STORE CHUNK|0
+QA_DEV_STAGE|animated|5|STORE CHUNK|0
+
+
+450ms: <mixer> started
+490ms: luaFstat cannot open /SCRIPTS/TOOLS/AERODECK/settings-model-71612d6d6f64656c2e796d6c.cfg.bak
+490ms: luaFstat cannot open /SCRIPTS/TOOLS/AERODECK/settings-model-71612d6d6f64656c2e796d6c.cfg.bak
+
+QA_DEV_STAGE|animated|6|SETTINGS SEED|9
+QA_DEV_STAGE|animated|6|SETTINGS SEED|9
+
+
+QA_DEV_STAGE|animated|7|BATTERY SEED|3
+QA_DEV_STAGE|animated|7|BATTERY SEED|3
+
+
+590ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+590ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+
+600ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|8|MSP LOAD|0600ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+
+
+QA_DEV_STAGE|animated|8|MSP LOAD|0
+
+
+QA_DEV_STAGE|animated|9|MSP CHUNK|0
+QA_DEV_STAGE|animated|9|MSP CHUNK|0
+
+
+QA_DEV_STAGE|animated|10|MSP CREATE|17
+QA_DEV_STAGE|animated|10|MSP CREATE|17
+
+
+760ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+760ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+
+790ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|11|APP LOAD|0
+790ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|11|APP LOAD|0
+
+
+QA_DEV_STAGE|animated|12|APP CHUNK|55
+QA_DEV_STAGE|animated|12|APP CHUNK|55
+
+
+QA_DEV_STAGE|animated|13|APP INIT|0
+QA_DEV_STAGE|animated|13|APP INIT|0
+
+
+920ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+920ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+
+930ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+930ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+
+970ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+970ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+1080ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+1080ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+
+1090ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+1090ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+
+1100ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+1100ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+
+1100ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+1100ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+
+1100ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+1100ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+
+1110ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+1110ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+
+1140ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+1140ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+
+1150ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+1150ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+
+1190ms: SD card write labels
+1190ms: SD card write labels
+
+2060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+2060ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+
+2070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+2070ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+
+2110ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+2110ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+
+2120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+2120ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+
+2130ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+2130ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+
+2130ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+2130ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+
+2130ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+2130ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+
+2140ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+2140ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+
+2170ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+2170ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+
+2180ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+2180ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+
+2330ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+2330ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+
+2340ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+2340ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+
+2340ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+2340ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+
+2350ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+2350ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+
+2350ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+2350ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+
+2360ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+2360ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+
+2380ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+2380ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+
+2390ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+2390ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+
+2440ms: luaOpenBitmap: 0x23484d0 (1800)
+2440ms: luaOpenBitmap: 0x23484d0 (1800)
+
+2490ms: luaOpenBitmap: 0x2355940 (1800)
+2490ms: luaOpenBitmap: 0x2355940 (1800)
+
+2540ms: luaOpenBitmap: 0x2356a40 (1800)
+2540ms: luaOpenBitmap: 0x2356a40 (1800)
+
+2600ms: luaOpenBitmap: 0x2357b90 (1800)
+2600ms: luaOpenBitmap: 0x2357b90 (1800)
+
+2650ms: luaOpenBitmap: 0x2358c90 (1800)
+2650ms: luaOpenBitmap: 0x2358c90 (1800)
+
+2710ms: luaOpenBitmap: 0x2359db0 (1800)
+2710ms: luaOpenBitmap: 0x2359db0 (1800)
+
+2760ms: luaOpenBitmap: 0x235ae80 (1800)
+2760ms: luaOpenBitmap: 0x235ae80 (1800)
+
+2820ms: luaOpenBitmap: 0x235bf70 (648)
+2820ms: luaOpenBitmap: 0x235bf70 (648)
+
+2870ms: luaOpenBitmap: 0x235c770 (648)
+2870ms: luaOpenBitmap: 0x235c770 (648)
+
+SHOT boot 261120
+2930ms: luaOpenBitmap: 0x235d010 (648)
+2930ms: luaOpenBitmap: 0x235d010 (648)
+
+2980ms: luaOpenBitmap: 0x235d820 (648)
+2980ms: luaOpenBitmap: 0x235d820 (648)
+
+3030ms: luaOpenBitmap: 0x235e010 (648)
+3030ms: luaOpenBitmap: 0x235e010 (648)
+
+3080ms: luaOpenBitmap: 0x235e820 (648)
+3080ms: luaOpenBitmap: 0x235e820 (648)
+
+3140ms: luaOpenBitmap: 0x235f010 (648)
+3140ms: luaOpenBitmap: 0x235f010 (648)
+
+3190ms: luaOpenBitmap: 0x235f800 (648)
+3190ms: luaOpenBitmap: 0x235f800 (648)
+
+3250ms: luaOpenBitmap: 0x2360010 (648)
+3250ms: luaOpenBitmap: 0x2360010 (648)
+
+3300ms: luaOpenBitmap: 0x2360800 (648)
+3300ms: luaOpenBitmap: 0x2360800 (648)
+
+3360ms: luaOpenBitmap: 0x2361170 (648)
+3360ms: luaOpenBitmap: 0x2361170 (648)
+
+3410ms: luaOpenBitmap: 0x2361960 (648)
+3410ms: luaOpenBitmap: 0x2361960 (648)
+
+3470ms: luaOpenBitmap: 0x2362170 (648)
+3470ms: luaOpenBitmap: 0x2362170 (648)
+
+3520ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/native-extrema.lua, t): loading /SCRIPTS/TOOLS/AERODECK/native-extrema.lua
+3520ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/native-extrema.lua, t): loading /SCRIPTS/TOOLS/AERODECK/native-extrema.lua
+
+3530ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/native-extrema.luac): Saved bytecode to file.
+3530ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/native-extrema.luac): Saved bytecode to file.
+
+3530ms: luaDestroyBitmap: 0x2362170 (648)
+3530ms: luaDestroyBitmap: 0x2362170 (648)
+
+3530ms: luaDestroyBitmap: 0x2361960 (648)
+3530ms: luaDestroyBitmap: 0x2361170 (648)
+3530ms: luaDestroyBitmap: 0x2361960 (648)
+
+3530ms: luaDestroyBitmap: 0x2361170 (648)
+
+3530ms: luaDestroyBitmap: 0x2360800 (648)
+3530ms: luaDestroyBitmap: 0x2360010 (648)
+3530ms: luaDestroyBitmap: 0x235f800 (648)
+3530ms: luaDestroyBitmap: 0x2360800 (648)
+
+3530ms: luaDestroyBitmap: 0x235f010 (648)
+3530ms: luaDestroyBitmap: 0x2360010 (648)
+
+3530ms: luaDestroyBitmap: 0x235f800 (648)
+
+3530ms: luaDestroyBitmap: 0x235f010 (648)
+
+QA_GPS_TRACK_STATE|357|0|nil|nil|false
+QA_GPS_TRACK_STATE|357|0|nil|nil|false
+
+
+3580ms: luaDestroyBitmap: 0x235e820 (648)
+3580ms: luaDestroyBitmap: 0x235e010 (648)
+3580ms: luaDestroyBitmap: 0x235e820 (648)
+
+3580ms: luaDestroyBitmap: 0x235d820 (648)
+3580ms: luaDestroyBitmap: 0x235e010 (648)
+
+3580ms: luaDestroyBitmap: 0x235d010 (648)
+3580ms: luaDestroyBitmap: 0x235d820 (648)
+
+3580ms: luaDestroyBitmap: 0x235c770 (648)
+3580ms: luaDestroyBitmap: 0x235bf70 (648)
+3580ms: luaDestroyBitmap: 0x235ae80 (1800)
+3580ms: luaDestroyBitmap: 0x235d010 (648)
+
+3580ms: luaDestroyBitmap: 0x2359db0 (1800)
+3580ms: luaDestroyBitmap: 0x235c770 (648)
+
+3580ms: luaDestroyBitmap: 0x235bf70 (648)
+
+3580ms: luaDestroyBitmap: 0x2358c90 (1800)
+3580ms: luaDestroyBitmap: 0x2357b90 (1800)
+3580ms: luaDestroyBitmap: 0x235ae80 (1800)
+
+3580ms: luaDestroyBitmap: 0x2356a40 (1800)
+3580ms: luaDestroyBitmap: 0x2355940 (1800)
+3580ms: luaDestroyBitmap: 0x23484d0 (1800)
+3580ms: luaDestroyBitmap: 0x2359db0 (1800)
+
+3580ms: luaDestroyBitmap: 0x2358c90 (1800)
+
+3580ms: luaDestroyBitmap: 0x2357b90 (1800)
+
+3580ms: luaDestroyBitmap: 0x2356a40 (1800)
+
+3580ms: luaDestroyBitmap: 0x2355940 (1800)
+
+3580ms: luaDestroyBitmap: 0x23484d0 (1800)
+
+QA_GPS_TRACK_STATE|358|1|25.99795|-97.157|true
+QA_GPS_TRACK_STATE|358|1|25.99795|-97.157|true
+
+
+QA_GPS_TRACK_STATE|466|2|25.99802|-97.15706|true
+QA_GPS_TRACK_STATE|466|2|25.99802|-97.15706|true
+
+
+QA_GPS_TRACK_STATE|576|3|25.99808|-97.15714|true
+QA_GPS_TRACK_STATE|576|3|25.99808|-97.15714|true
+
+
+QA_GPS_TRACK_STATE|684|4|25.99811|-97.15723|true
+QA_GPS_TRACK_STATE|684|4|25.99811|-97.15723|true
+
+
+QA_GPS_TRACK_STATE|793|5|25.99813|-97.15733|true
+QA_GPS_TRACK_STATE|793|5|25.99813|-97.15733|true
+
+
+QA_GPS_TRACK_STATE|901|6|25.99813|-97.15742|true
+QA_GPS_TRACK_STATE|901|6|25.99813|-97.15742|true
+
+
+QA_GPS_TRACK_STATE|1010|7|25.9981|-97.15752|true
+QA_GPS_TRACK_STATE|1010|7|25.9981|-97.15752|true
+
+
+QA_GPS_TRACK_STATE|1118|8|25.99805|-97.15761|true
+QA_GPS_TRACK_STATE|1118|8|25.99805|-97.15761|true
+
+
+QA_GPS_TRACK_STATE|1226|9|25.99799|-97.15768|true
+QA_GPS_TRACK_STATE|1226|9|25.99799|-97.15768|true
+
+
+QA_GPS_TRACK_STATE|1335|10|25.99791|-97.15774|true
+QA_GPS_TRACK_STATE|1335|10|25.99791|-97.15774|true
+
+
+QA_GPS_TRACK_STATE|1444|11|25.99783|-97.15778|true
+QA_GPS_TRACK_STATE|1444|11|25.99783|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|1559|12|25.99773|-97.15781|true
+QA_GPS_TRACK_STATE|1559|12|25.99773|-97.15781|true
+
+
+15970ms: TE_PRESSED
+15970ms: TE_PRESSED
+
+16400ms: LONG PRESS[0x2198580]
+16400ms: LONG PRESS[0x2198580]
+
+QA_GPS_TRACK_STATE|1667|13|25.99763|-97.15781|true
+QA_GPS_TRACK_STATE|1667|13|25.99763|-97.15781|true
+
+
+17050ms: TE_RELEASED
+17050ms: TE_RELEASED
+
+17050ms: CLICKED[0x2198580]
+17050ms: CLICKED[0x2198580]
+
+17530ms: TE_PRESSED
+17530ms: TE_PRESSED
+
+17640ms: TE_RELEASED
+17640ms: TE_RELEASED
+
+17640ms: enableWidgetSelect(0)
+17640ms: enableWidgetSelect(0)
+
+QA_GPS_TRACK_STATE|1791|14|25.99752|-97.15778|true
+QA_GPS_TRACK_STATE|1791|14|25.99752|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|1905|15|25.99743|-97.15773|true
+QA_GPS_TRACK_STATE|1905|15|25.99743|-97.15773|true
+
+
+QA_GPS_SHOT flight-start
+QA_GPS_TRACK_STATE|2014|16|25.99736|-97.15767|true
+QA_GPS_TRACK_STATE|2014|16|25.99736|-97.15767|true
+
+
+QA_GPS_TRACK_STATE|2122|17|25.9973|-97.15759|true
+QA_GPS_TRACK_STATE|2122|17|25.9973|-97.15759|true
+
+
+QA_GPS_TRACK_STATE|2236|18|25.99726|-97.1575|true
+QA_GPS_TRACK_STATE|2236|18|25.99726|-97.1575|true
+
+
+QA_GPS_TRACK_STATE|2345|19|25.99723|-97.15741|true
+QA_GPS_TRACK_STATE|2345|19|25.99723|-97.15741|true
+
+
+QA_GPS_TRACK_STATE|2454|20|25.99723|-97.15731|true
+QA_GPS_TRACK_STATE|2454|20|25.99723|-97.15731|true
+
+
+QA_GPS_TRACK_STATE|2569|21|25.99726|-97.1572|true
+QA_GPS_TRACK_STATE|2569|21|25.99726|-97.1572|true
+
+
+QA_GPS_TRACK_STATE|2677|22|25.9973|-97.15711|true
+QA_GPS_TRACK_STATE|2677|22|25.9973|-97.15711|true
+
+
+QA_GPS_TRACK_STATE|2791|23|25.99737|-97.15704|true
+QA_GPS_TRACK_STATE|2791|23|25.99737|-97.15704|true
+
+
+QA_GPS_TRACK_STATE|2899|24|25.99744|-97.15697|true
+QA_GPS_TRACK_STATE|2899|24|25.99744|-97.15697|true
+
+
+QA_GPS_TRACK_STATE|3010|25|25.99753|-97.15693|true
+QA_GPS_TRACK_STATE|3010|25|25.99753|-97.15693|true
+
+
+QA_DEV_MEMORY|32|3000|1219.049
+QA_DEV_MEMORY|32|3000|1219.049
+
+
+QA_GPS_TRACK_STATE|3124|26|25.99763|-97.15691|true
+QA_GPS_TRACK_STATE|3124|26|25.99763|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|3233|27|25.99772|-97.15691|true
+QA_GPS_TRACK_STATE|3233|27|25.99772|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|3341|28|25.99782|-97.15693|true
+QA_GPS_TRACK_STATE|3341|28|25.99782|-97.15693|true
+
+
+QA_GPS_TRACK_STATE|3456|29|25.99791|-97.15697|true
+QA_GPS_TRACK_STATE|3456|29|25.99791|-97.15697|true
+
+
+QA_GPS_TRACK_STATE|3564|30|25.99799|-97.15703|true
+QA_GPS_TRACK_STATE|3564|30|25.99799|-97.15703|true
+
+
+QA_GPS_TRACK_STATE|3673|31|25.99805|-97.1571|true
+QA_GPS_TRACK_STATE|3673|31|25.99805|-97.1571|true
+
+
+QA_GPS_TRACK_STATE|3787|32|25.9981|-97.1572|true
+QA_GPS_TRACK_STATE|3787|32|25.9981|-97.1572|true
+
+
+QA_GPS_TRACK_STATE|3898|33|25.99813|-97.1573|true
+QA_GPS_TRACK_STATE|3898|33|25.99813|-97.1573|true
+
+
+QA_GPS_TRACK_STATE|4012|34|25.99813|-97.1574|true
+QA_GPS_TRACK_STATE|4012|34|25.99813|-97.1574|true
+
+
+QA_GPS_TRACK_STATE|4121|35|25.99811|-97.15749|true
+QA_GPS_TRACK_STATE|4121|35|25.99811|-97.15749|true
+
+
+QA_GPS_TRACK_STATE|4230|36|25.99807|-97.15759|true
+QA_GPS_TRACK_STATE|4230|36|25.99807|-97.15759|true
+
+
+QA_GPS_TRACK_STATE|4343|37|25.99801|-97.15766|true
+QA_GPS_TRACK_STATE|4343|37|25.99801|-97.15766|true
+
+
+QA_GPS_TRACK_STATE|4452|38|25.99794|-97.15772|true
+QA_GPS_TRACK_STATE|4452|38|25.99794|-97.15772|true
+
+
+QA_GPS_TRACK_STATE|4560|39|25.99785|-97.15778|true
+QA_GPS_TRACK_STATE|4560|39|25.99785|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|4674|40|25.99776|-97.1578|true
+QA_GPS_TRACK_STATE|4674|40|25.99776|-97.1578|true
+
+
+QA_GPS_TRACK_STATE|4786|41|25.99764|-97.15781|true
+QA_GPS_TRACK_STATE|4786|41|25.99764|-97.15781|true
+
+
+QA_GPS_TRACK_STATE|4900|42|25.99755|-97.15778|true
+QA_GPS_TRACK_STATE|4900|42|25.99755|-97.15778|true
+
+
+QA_GPS_SHOT flight-growing
+49730ms: TE_PRESSED
+49730ms: EVT_TOUCH_FIRST [262,15]
+49730ms: TE_PRESSED
+
+49730ms: EVT_TOUCH_FIRST [262,15]
+
+49790ms: TE_RELEASED
+49790ms: CLICKED[0x2198580]
+49790ms: TE_RELEASED
+
+49790ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT gps-details
+QA_GPS_TRACK_STATE|5012|43|25.99746|-97.15775|true
+QA_GPS_TRACK_STATE|5012|43|25.99746|-97.15775|true
+
+
+QA_GPS_TRACK_STATE|5120|44|25.99738|-97.15769|true
+QA_GPS_TRACK_STATE|5120|44|25.99738|-97.15769|true
+
+
+QA_GPS_TRACK_STATE|5234|45|25.99731|-97.15762|true
+QA_GPS_TRACK_STATE|5234|45|25.99731|-97.15762|true
+
+
+QA_GPS_TRACK_STATE|5343|46|25.99726|-97.15753|true
+QA_GPS_TRACK_STATE|5343|46|25.99726|-97.15753|true
+
+
+QA_GPS_TRACK_STATE|5451|47|25.99724|-97.15744|true
+QA_GPS_TRACK_STATE|5451|47|25.99724|-97.15744|true
+
+
+55080ms: TE_PRESSED
+55090ms: EVT_TOUCH_FIRST [390,232]
+55080ms: TE_PRESSED
+
+55090ms: EVT_TOUCH_FIRST [390,232]
+
+55140ms: TE_RELEASED
+55140ms: EVT_TOUCH_BREAK
+55140ms: CLICKED[0x2198580]
+55140ms: TE_RELEASED
+
+55140ms: EVT_TOUCH_BREAK
+
+55140ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT gps-context-0
+QA_GPS_TRACK_STATE|5568|48|25.99723|-97.15733|true
+QA_GPS_TRACK_STATE|5568|48|25.99723|-97.15733|true
+
+
+QA_GPS_TRACK_STATE|5677|49|25.99725|-97.15724|true
+QA_GPS_TRACK_STATE|5677|49|25.99725|-97.15724|true
+
+
+QA_GPS_TRACK_STATE|5786|50|25.99728|-97.15715|true
+QA_GPS_TRACK_STATE|5786|50|25.99728|-97.15715|true
+
+
+QA_GPS_TRACK_STATE|5900|51|25.99735|-97.15705|true
+QA_GPS_TRACK_STATE|5900|51|25.99735|-97.15705|true
+
+
+QA_GPS_TRACK_STATE|6009|52|25.99742|-97.15699|true
+QA_GPS_TRACK_STATE|6009|52|25.99742|-97.15699|true
+
+
+QA_DEV_MEMORY|32|6004|1227.093
+QA_DEV_MEMORY|32|6004|1227.093
+
+
+60410ms: TE_PRESSED
+60410ms: EVT_TOUCH_FIRST [390,232]
+60410ms: TE_PRESSED
+
+60410ms: EVT_TOUCH_FIRST [390,232]
+
+60520ms: TE_RELEASED
+60520ms: EVT_TOUCH_BREAK
+60520ms: CLICKED[0x2198580]
+60520ms: TE_RELEASED
+
+60520ms: EVT_TOUCH_BREAK
+
+60520ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT gps-context-1
+QA_GPS_TRACK_STATE|6123|53|25.99751|-97.15694|true
+QA_GPS_TRACK_STATE|6123|53|25.99751|-97.15694|true
+
+
+QA_GPS_TRACK_STATE|6231|54|25.9976|-97.15691|true
+QA_GPS_TRACK_STATE|6231|54|25.9976|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|6339|55|25.9977|-97.15691|true
+QA_GPS_TRACK_STATE|6339|55|25.9977|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|6455|56|25.9978|-97.15692|true
+QA_GPS_TRACK_STATE|6455|56|25.9978|-97.15692|true
+
+
+QA_GPS_TRACK_STATE|6563|57|25.99789|-97.15696|true
+QA_GPS_TRACK_STATE|6563|57|25.99789|-97.15696|true
+
+
+65800ms: TE_PRESSED
+65800ms: EVT_TOUCH_FIRST [390,232]
+65800ms: TE_PRESSED
+
+65800ms: EVT_TOUCH_FIRST [390,232]
+
+65850ms: TE_RELEASED
+65850ms: EVT_TOUCH_BREAK
+65850ms: CLICKED[0x2198580]
+65850ms: TE_RELEASED
+
+65850ms: EVT_TOUCH_BREAK
+
+65850ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT gps-context-2
+QA_GPS_TRACK_STATE|6672|58|25.99797|-97.15701|true
+QA_GPS_TRACK_STATE|6672|58|25.99797|-97.15701|true
+
+
+QA_GPS_TRACK_STATE|6786|59|25.99804|-97.15708|true
+QA_GPS_TRACK_STATE|6786|59|25.99804|-97.15708|true
+
+
+QA_GPS_TRACK_STATE|6895|60|25.99809|-97.15717|true
+QA_GPS_TRACK_STATE|6895|60|25.99809|-97.15717|true
+
+
+QA_GPS_TRACK_STATE|7004|61|25.99812|-97.15726|true
+QA_GPS_TRACK_STATE|7004|61|25.99812|-97.15726|true
+
+
+71120ms: TE_PRESSED
+71120ms: EVT_TOUCH_FIRST [350,44]
+71120ms: TE_PRESSED
+
+71120ms: EVT_TOUCH_FIRST [350,44]
+
+QA_GPS_TRACK_STATE|7118|62|25.99813|-97.15737|true
+QA_GPS_TRACK_STATE|7118|62|25.99813|-97.15737|true
+
+
+71230ms: TE_RELEASED
+71230ms: EVT_TOUCH_BREAK
+71230ms: CLICKED[0x2198580]
+71230ms: TE_RELEASED
+
+71230ms: EVT_TOUCH_BREAK
+
+71230ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT track-first
+QA_GPS_TRACK_STATE|7226|63|25.99812|-97.15747|true
+QA_GPS_TRACK_STATE|7226|63|25.99812|-97.15747|true
+
+
+QA_GPS_TRACK_STATE|7340|64|25.99808|-97.15756|true
+QA_GPS_TRACK_STATE|7340|64|25.99808|-97.15756|true
+
+
+QA_GPS_TRACK_STATE|7451|65|25.99803|-97.15764|true
+QA_GPS_TRACK_STATE|7451|65|25.99803|-97.15764|true
+
+
+QA_GPS_TRACK_STATE|7559|66|25.99796|-97.15771|true
+QA_GPS_TRACK_STATE|7559|66|25.99796|-97.15771|true
+
+
+QA_GPS_TRACK_STATE|7673|67|25.99788|-97.15776|true
+QA_GPS_TRACK_STATE|7673|67|25.99788|-97.15776|true
+
+
+QA_GPS_TRACK_STATE|7787|68|25.99778|-97.1578|true
+QA_GPS_TRACK_STATE|7787|68|25.99778|-97.1578|true
+
+
+QA_GPS_TRACK_STATE|7900|69|25.99768|-97.15781|true
+QA_GPS_TRACK_STATE|7900|69|25.99768|-97.15781|true
+
+
+QA_GPS_TRACK_STATE|8014|70|25.99757|-97.15779|true
+QA_GPS_TRACK_STATE|8014|70|25.99757|-97.15779|true
+
+
+QA_GPS_TRACK_STATE|8123|71|25.99747|-97.15775|true
+QA_GPS_TRACK_STATE|8123|71|25.99747|-97.15775|true
+
+
+QA_GPS_TRACK_STATE|8237|72|25.99739|-97.1577|true
+QA_GPS_TRACK_STATE|8237|72|25.99739|-97.1577|true
+
+
+QA_GPS_TRACK_STATE|8345|73|25.99733|-97.15763|true
+QA_GPS_TRACK_STATE|8345|73|25.99733|-97.15763|true
+
+
+QA_GPS_TRACK_STATE|8454|74|25.99727|-97.15755|true
+QA_GPS_TRACK_STATE|8454|74|25.99727|-97.15755|true
+
+
+QA_GPS_TRACK_STATE|8569|75|25.99724|-97.15746|true
+QA_GPS_TRACK_STATE|8569|75|25.99724|-97.15746|true
+
+
+QA_GPS_TRACK_STATE|8678|76|25.99723|-97.15736|true
+QA_GPS_TRACK_STATE|8678|76|25.99723|-97.15736|true
+
+
+QA_GPS_TRACK_STATE|8786|77|25.99724|-97.15726|true
+QA_GPS_TRACK_STATE|8786|77|25.99724|-97.15726|true
+
+
+QA_GPS_SHOT track-grow-0
+88460ms: TE_PRESSED
+88460ms: EVT_TOUCH_FIRST [150,232]
+88460ms: TE_PRESSED
+
+88460ms: EVT_TOUCH_FIRST [150,232]
+
+88570ms: TE_RELEASED
+88570ms: EVT_TOUCH_BREAK
+88570ms: TE_RELEASED
+
+88570ms: CLICKED[0x2198580]
+88570ms: EVT_TOUCH_BREAK
+
+88570ms: CLICKED[0x2198580]
+
+QA_GPS_TRACK_STATE|8900|78|25.99727|-97.15717|true
+QA_GPS_TRACK_STATE|8900|78|25.99727|-97.15717|true
+
+
+QA_GPS_SHOT zoom-0
+QA_GPS_TRACK_STATE|9009|79|25.99732|-97.15709|true
+QA_GPS_TRACK_STATE|9009|79|25.99732|-97.15709|true
+
+
+QA_DEV_MEMORY|32|9004|1309.738
+QA_DEV_MEMORY|32|9004|1309.738
+
+
+QA_GPS_TRACK_STATE|9120|80|25.99739|-97.15701|true
+QA_GPS_TRACK_STATE|9120|80|25.99739|-97.15701|true
+
+
+QA_GPS_TRACK_STATE|9235|81|25.99749|-97.15695|true
+QA_GPS_TRACK_STATE|9235|81|25.99749|-97.15695|true
+
+
+QA_GPS_TRACK_STATE|9343|82|25.99758|-97.15692|true
+QA_GPS_TRACK_STATE|9343|82|25.99758|-97.15692|true
+
+
+QA_GPS_TRACK_STATE|9457|83|25.99768|-97.15691|true
+QA_GPS_TRACK_STATE|9457|83|25.99768|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|9566|84|25.99777|-97.15691|true
+QA_GPS_TRACK_STATE|9566|84|25.99777|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|9675|85|25.99787|-97.15694|true
+QA_GPS_TRACK_STATE|9675|85|25.99787|-97.15694|true
+
+
+QA_GPS_TRACK_STATE|9789|86|25.99795|-97.157|true
+QA_GPS_TRACK_STATE|9789|86|25.99795|-97.157|true
+
+
+QA_GPS_TRACK_STATE|9897|87|25.99802|-97.15706|true
+QA_GPS_TRACK_STATE|9897|87|25.99802|-97.15706|true
+
+
+QA_GPS_TRACK_STATE|10006|88|25.99808|-97.15714|true
+QA_GPS_TRACK_STATE|10006|88|25.99808|-97.15714|true
+
+
+QA_GPS_TRACK_STATE|10123|89|25.99811|-97.15723|true
+QA_GPS_TRACK_STATE|10123|89|25.99811|-97.15723|true
+
+
+QA_GPS_TRACK_STATE|10231|90|25.99813|-97.15733|true
+QA_GPS_TRACK_STATE|10231|90|25.99813|-97.15733|true
+
+
+QA_GPS_TRACK_STATE|10345|91|25.99812|-97.15745|true
+QA_GPS_TRACK_STATE|10345|91|25.99812|-97.15745|true
+
+
+QA_GPS_TRACK_STATE|10454|92|25.99809|-97.15754|true
+QA_GPS_TRACK_STATE|10454|92|25.99809|-97.15754|true
+
+
+QA_GPS_TRACK_STATE|10563|93|25.99804|-97.15762|true
+QA_GPS_TRACK_STATE|10563|93|25.99804|-97.15762|true
+
+
+QA_GPS_SHOT track-grow-1
+106550ms: TE_PRESSED
+106550ms: EVT_TOUCH_FIRST [150,232]
+106550ms: TE_PRESSED
+
+106550ms: EVT_TOUCH_FIRST [150,232]
+
+106600ms: TE_RELEASED
+106600ms: EVT_TOUCH_BREAK
+106600ms: CLICKED[0x2198580]
+106600ms: TE_RELEASED
+
+106600ms: EVT_TOUCH_BREAK
+
+106600ms: CLICKED[0x2198580]
+
+QA_GPS_TRACK_STATE|10677|94|25.99797|-97.1577|true
+QA_GPS_TRACK_STATE|10677|94|25.99797|-97.1577|true
+
+
+QA_GPS_SHOT zoom-1
+QA_GPS_TRACK_STATE|10785|95|25.99789|-97.15775|true
+QA_GPS_TRACK_STATE|10785|95|25.99789|-97.15775|true
+
+
+QA_GPS_TRACK_STATE|10898|96|25.9978|-97.15779|true
+QA_GPS_TRACK_STATE|10898|96|25.9978|-97.15779|true
+
+
+QA_GPS_TRACK_STATE|11012|97|25.99771|-97.15781|true
+QA_GPS_TRACK_STATE|11012|97|25.99771|-97.15781|true
+
+
+QA_GPS_TRACK_STATE|11121|98|25.99761|-97.1578|true
+QA_GPS_TRACK_STATE|11121|98|25.99761|-97.1578|true
+
+
+QA_GPS_TRACK_STATE|11230|99|25.99752|-97.15778|true
+QA_GPS_TRACK_STATE|11230|99|25.99752|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|11343|100|25.99742|-97.15772|true
+QA_GPS_TRACK_STATE|11343|100|25.99742|-97.15772|true
+
+
+QA_GPS_TRACK_STATE|11457|101|25.99734|-97.15765|true
+QA_GPS_TRACK_STATE|11457|101|25.99734|-97.15765|true
+
+
+QA_GPS_TRACK_STATE|11571|102|25.99728|-97.15757|true
+QA_GPS_TRACK_STATE|11571|102|25.99728|-97.15757|true
+
+
+QA_GPS_TRACK_STATE|11679|103|25.99725|-97.15748|true
+QA_GPS_TRACK_STATE|11679|103|25.99725|-97.15748|true
+
+
+QA_GPS_TRACK_STATE|11788|104|25.99723|-97.15739|true
+QA_GPS_TRACK_STATE|11788|104|25.99723|-97.15739|true
+
+
+QA_GPS_TRACK_STATE|11902|105|25.99724|-97.15729|true
+QA_GPS_TRACK_STATE|11902|105|25.99724|-97.15729|true
+
+
+QA_GPS_TRACK_STATE|12010|106|25.99726|-97.15719|true
+QA_GPS_TRACK_STATE|12010|106|25.99726|-97.15719|true
+
+
+QA_DEV_MEMORY|32|12006|1259.251
+QA_DEV_MEMORY|32|12006|1259.251
+
+
+QA_GPS_TRACK_STATE|12119|107|25.99731|-97.1571|true
+QA_GPS_TRACK_STATE|12119|107|25.99731|-97.1571|true
+
+
+QA_GPS_TRACK_STATE|12233|108|25.99737|-97.15703|true
+QA_GPS_TRACK_STATE|12233|108|25.99737|-97.15703|true
+
+
+QA_GPS_TRACK_STATE|12348|109|25.99745|-97.15697|true
+QA_GPS_TRACK_STATE|12348|109|25.99745|-97.15697|true
+
+
+QA_GPS_SHOT track-grow-2
+124560ms: TE_PRESSED
+124560ms: EVT_TOUCH_FIRST [150,232]
+124560ms: TE_PRESSED
+
+124560ms: EVT_TOUCH_FIRST [150,232]
+
+QA_GPS_TRACK_STATE|12456|110|25.99754|-97.15693|true
+QA_GPS_TRACK_STATE|12456|110|25.99754|-97.15693|true
+
+
+124670ms: TE_RELEASED
+124670ms: EVT_TOUCH_BREAK
+124670ms: CLICKED[0x2198580]
+124670ms: TE_RELEASED
+
+124670ms: EVT_TOUCH_BREAK
+
+124670ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT zoom-2
+QA_GPS_TRACK_STATE|12570|111|25.99766|-97.15691|true
+QA_GPS_TRACK_STATE|12570|111|25.99766|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|12679|112|25.99775|-97.15691|true
+QA_GPS_TRACK_STATE|12679|112|25.99775|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|12793|113|25.99785|-97.15694|true
+QA_GPS_TRACK_STATE|12793|113|25.99785|-97.15694|true
+
+
+QA_GPS_TRACK_STATE|12902|114|25.99793|-97.15698|true
+QA_GPS_TRACK_STATE|12902|114|25.99793|-97.15698|true
+
+
+QA_GPS_TRACK_STATE|13010|115|25.99801|-97.15704|true
+QA_GPS_TRACK_STATE|13010|115|25.99801|-97.15704|true
+
+
+QA_GPS_TRACK_STATE|13128|116|25.99807|-97.15713|true
+QA_GPS_TRACK_STATE|13128|116|25.99807|-97.15713|true
+
+
+QA_GPS_TRACK_STATE|13236|117|25.99811|-97.15722|true
+QA_GPS_TRACK_STATE|13236|117|25.99811|-97.15722|true
+
+
+QA_GPS_TRACK_STATE|13345|118|25.99813|-97.15731|true
+QA_GPS_TRACK_STATE|13345|118|25.99813|-97.15731|true
+
+
+QA_GPS_TRACK_STATE|13459|119|25.99813|-97.15741|true
+QA_GPS_TRACK_STATE|13459|119|25.99813|-97.15741|true
+
+
+134640ms: TE_PRESSED
+134640ms: EVT_TOUCH_FIRST [140,44]
+134640ms: TE_PRESSED
+
+134640ms: EVT_TOUCH_FIRST [140,44]
+
+134750ms: TE_RELEASED
+134750ms: EVT_TOUCH_BREAK
+134750ms: CLICKED[0x2198580]
+134750ms: TE_RELEASED
+
+134750ms: EVT_TOUCH_BREAK
+
+134750ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT gps-return
+QA_GPS_TRACK_STATE|13567|120|25.99811|-97.1575|true
+QA_GPS_TRACK_STATE|13567|120|25.99811|-97.1575|true
+
+
+QA_GPS_TRACK_STATE|13681|121|25.99805|-97.15761|true
+QA_GPS_TRACK_STATE|13681|121|25.99805|-97.15761|true
+
+
+QA_GPS_TRACK_STATE|13790|122|25.99799|-97.15768|true
+QA_GPS_TRACK_STATE|13790|122|25.99799|-97.15768|true
+
+
+QA_GPS_TRACK_STATE|13902|123|25.99792|-97.15774|true
+QA_GPS_TRACK_STATE|13902|123|25.99792|-97.15774|true
+
+
+QA_GPS_TRACK_STATE|14016|124|25.99783|-97.15778|true
+QA_GPS_TRACK_STATE|14016|124|25.99783|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|14124|125|25.99773|-97.15781|true
+QA_GPS_TRACK_STATE|14124|125|25.99773|-97.15781|true
+
+
+QA_GPS_TRACK_STATE|14232|126|25.99763|-97.15781|true
+QA_GPS_TRACK_STATE|14232|126|25.99763|-97.15781|true
+
+
+QA_GPS_TRACK_STATE|14345|127|25.99754|-97.15778|true
+QA_GPS_TRACK_STATE|14345|127|25.99754|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|14454|128|25.99745|-97.15775|true
+QA_GPS_TRACK_STATE|14454|128|25.99745|-97.15775|true
+
+
+144980ms: TE_PRESSED
+144980ms: EVT_TOUCH_FIRST [20,15]
+144980ms: TE_PRESSED
+
+144980ms: EVT_TOUCH_FIRST [20,15]
+
+145090ms: TE_RELEASED
+145090ms: EVT_TOUCH_BREAK
+145090ms: TE_RELEASED
+
+145090ms: CLICKED[0x2198580]
+145090ms: EVT_TOUCH_BREAK
+
+145090ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT flight-return
+QA_GPS_TRACK_STATE|14563|129|25.99737|-97.15768|true
+QA_GPS_TRACK_STATE|14563|129|25.99737|-97.15768|true
+
+
+QA_GPS_TRACK_STATE|14680|130|25.9973|-97.15759|true
+QA_GPS_TRACK_STATE|14680|130|25.9973|-97.15759|true
+
+
+QA_GPS_TRACK_STATE|14789|131|25.99726|-97.1575|true
+QA_GPS_TRACK_STATE|14789|131|25.99726|-97.1575|true
+
+
+QA_GPS_TRACK_STATE|14904|132|25.99723|-97.15741|true
+QA_GPS_TRACK_STATE|14904|132|25.99723|-97.15741|true
+
+
+QA_GPS_TRACK_STATE|15012|133|25.99723|-97.15731|true
+QA_GPS_TRACK_STATE|15012|133|25.99723|-97.15731|true
+
+
+QA_DEV_MEMORY|32|15008|1280.679
+QA_DEV_MEMORY|32|15008|1280.679
+
+
+QA_GPS_TRACK_STATE|15121|134|25.99725|-97.15721|true
+QA_GPS_TRACK_STATE|15121|134|25.99725|-97.15721|true
+
+
+QA_GPS_TRACK_STATE|15235|135|25.9973|-97.15713|true
+QA_GPS_TRACK_STATE|15235|135|25.9973|-97.15713|true
+
+
+QA_GPS_TRACK_STATE|15344|136|25.99735|-97.15704|true
+QA_GPS_TRACK_STATE|15344|136|25.99735|-97.15704|true
+
+
+QA_GPS_TRACK_STATE|15452|137|25.99743|-97.15698|true
+QA_GPS_TRACK_STATE|15452|137|25.99743|-97.15698|true
+
+
+155340ms: TE_PRESSED
+155340ms: EVT_TOUCH_FIRST [262,15]
+155340ms: TE_PRESSED
+
+155340ms: EVT_TOUCH_FIRST [262,15]
+
+155450ms: TE_RELEASED
+155450ms: EVT_TOUCH_BREAK
+155450ms: CLICKED[0x2198580]
+155450ms: TE_RELEASED
+
+155450ms: EVT_TOUCH_BREAK
+
+155450ms: CLICKED[0x2198580]
+
+QA_GPS_TRACK_STATE|15567|138|25.99751|-97.15694|true
+QA_GPS_TRACK_STATE|15567|138|25.99751|-97.15694|true
+
+
+155720ms: TE_PRESSED
+155720ms: EVT_TOUCH_FIRST [350,44]
+155720ms: TE_PRESSED
+
+155720ms: EVT_TOUCH_FIRST [350,44]
+
+155780ms: TE_RELEASED
+155780ms: EVT_TOUCH_BREAK
+155780ms: CLICKED[0x2198580]
+155780ms: TE_RELEASED
+
+155780ms: EVT_TOUCH_BREAK
+
+155780ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT track-reentry
+QA_GPS_TRACK_STATE|15679|139|25.99761|-97.15691|true
+QA_GPS_TRACK_STATE|15679|139|25.99761|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|15787|140|25.99771|-97.15691|true
+QA_GPS_TRACK_STATE|15787|140|25.99771|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|15901|141|25.99782|-97.15693|true
+QA_GPS_TRACK_STATE|15901|141|25.99782|-97.15693|true
+
+
+QA_GPS_TRACK_STATE|16010|142|25.99791|-97.15697|true
+QA_GPS_TRACK_STATE|16010|142|25.99791|-97.15697|true
+
+
+QA_GPS_TRACK_STATE|16124|143|25.99799|-97.15703|true
+QA_GPS_TRACK_STATE|16124|143|25.99799|-97.15703|true
+
+
+QA_GPS_TRACK_STATE|16233|144|25.99805|-97.1571|true
+QA_GPS_TRACK_STATE|16233|144|25.99805|-97.1571|true
+
+
+QA_GPS_TRACK_STATE|16341|145|25.9981|-97.15719|true
+QA_GPS_TRACK_STATE|16341|145|25.9981|-97.15719|true
+
+
+QA_GPS_TRACK_STATE|16456|146|25.99813|-97.15729|true
+QA_GPS_TRACK_STATE|16456|146|25.99813|-97.15729|true
+
+
+QA_GPS_TRACK_STATE|16566|147|25.99813|-97.15738|true
+QA_GPS_TRACK_STATE|16566|147|25.99813|-97.15738|true
+
+
+QA_GPS_TRACK_STATE|16675|148|25.99811|-97.15748|true
+QA_GPS_TRACK_STATE|16675|148|25.99811|-97.15748|true
+
+
+QA_GPS_TRACK_STATE|16789|149|25.99808|-97.15757|true
+QA_GPS_TRACK_STATE|16789|149|25.99808|-97.15757|true
+
+
+QA_GPS_TRACK_STATE|16907|150|25.998|-97.15767|true
+QA_GPS_TRACK_STATE|16907|150|25.998|-97.15767|true
+
+
+QA_GPS_TRACK_STATE|17024|151|25.99793|-97.15773|true
+QA_GPS_TRACK_STATE|17024|151|25.99793|-97.15773|true
+
+
+QA_GPS_TRACK_STATE|17133|152|25.99784|-97.15778|true
+QA_GPS_TRACK_STATE|17133|152|25.99784|-97.15778|true
+
+
+QA_GPS_TRACK_STATE|17242|153|25.99775|-97.1578|true
+QA_GPS_TRACK_STATE|17242|153|25.99775|-97.1578|true
+
+
+QA_GPS_TRACK_STATE|17356|154|25.99765|-97.15781|true
+QA_GPS_TRACK_STATE|17356|154|25.99765|-97.15781|true
+
+
+QA_GPS_TRACK_STATE|17465|155|25.99755|-97.15779|true
+QA_GPS_TRACK_STATE|17465|155|25.99755|-97.15779|true
+
+
+QA_GPS_TRACK_STATE|17573|156|25.99746|-97.15775|true
+QA_GPS_TRACK_STATE|17573|156|25.99746|-97.15775|true
+
+
+QA_GPS_SHOT track-max-0
+176060ms: TE_PRESSED
+176060ms: EVT_TOUCH_FIRST [150,232]
+176060ms: TE_PRESSED
+
+176060ms: EVT_TOUCH_FIRST [150,232]
+
+176170ms: TE_RELEASED
+176170ms: EVT_TOUCH_BREAK
+176170ms: CLICKED[0x2198580]
+176170ms: TE_RELEASED
+
+176170ms: EVT_TOUCH_BREAK
+
+176170ms: CLICKED[0x2198580]
+
+QA_GPS_TRACK_STATE|17687|157|25.99738|-97.15769|true
+QA_GPS_TRACK_STATE|17687|157|25.99738|-97.15769|true
+
+
+QA_GPS_SHOT max-zoom-0
+QA_GPS_TRACK_STATE|17799|158|25.99731|-97.15761|true
+QA_GPS_TRACK_STATE|17799|158|25.99731|-97.15761|true
+
+
+QA_GPS_TRACK_STATE|17908|159|25.99726|-97.15752|true
+QA_GPS_TRACK_STATE|17908|159|25.99726|-97.15752|true
+
+
+QA_GPS_TRACK_STATE|18022|160|25.99724|-97.15742|true
+QA_GPS_TRACK_STATE|18022|160|25.99724|-97.15742|true
+
+
+QA_DEV_MEMORY|32|18012|1356.484
+QA_DEV_MEMORY|32|18012|1356.484
+
+
+QA_GPS_TRACK_STATE|18131|161|25.99723|-97.15733|true
+QA_GPS_TRACK_STATE|18131|161|25.99723|-97.15733|true
+
+
+QA_GPS_TRACK_STATE|18250|162|25.99725|-97.15723|true
+QA_GPS_TRACK_STATE|18250|162|25.99725|-97.15723|true
+
+
+QA_GPS_TRACK_STATE|18358|163|25.99728|-97.15714|true
+QA_GPS_TRACK_STATE|18358|163|25.99728|-97.15714|true
+
+
+QA_GPS_TRACK_STATE|18467|164|25.99734|-97.15707|true
+QA_GPS_TRACK_STATE|18467|164|25.99734|-97.15707|true
+
+
+QA_GPS_TRACK_STATE|18581|165|25.99743|-97.15698|true
+QA_GPS_TRACK_STATE|18581|165|25.99743|-97.15698|true
+
+
+QA_GPS_TRACK_STATE|18690|166|25.99751|-97.15694|true
+QA_GPS_TRACK_STATE|18690|166|25.99751|-97.15694|true
+
+
+QA_GPS_TRACK_STATE|18798|167|25.99761|-97.15691|true
+QA_GPS_TRACK_STATE|18798|167|25.99761|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|18912|168|25.9977|-97.15691|true
+QA_GPS_TRACK_STATE|18912|168|25.9977|-97.15691|true
+
+
+QA_GPS_TRACK_STATE|19021|169|25.9978|-97.15692|true
+QA_GPS_TRACK_STATE|19021|169|25.9978|-97.15692|true
+
+
+QA_GPS_TRACK_STATE|19135|170|25.99789|-97.15696|true
+QA_GPS_TRACK_STATE|19135|170|25.99789|-97.15696|true
+
+
+QA_GPS_TRACK_STATE|19243|171|25.99797|-97.15701|true
+QA_GPS_TRACK_STATE|19243|171|25.99797|-97.15701|true
+
+
+QA_GPS_TRACK_STATE|19352|172|25.99804|-97.15708|true
+QA_GPS_TRACK_STATE|19352|172|25.99804|-97.15708|true
+
+
+QA_GPS_TRACK_STATE|19466|173|25.99809|-97.15717|true
+QA_GPS_TRACK_STATE|19466|173|25.99809|-97.15717|true
+
+
+QA_GPS_TRACK_STATE|19577|174|25.99812|-97.15726|true
+QA_GPS_TRACK_STATE|19577|174|25.99812|-97.15726|true
+
+
+QA_GPS_TRACK_STATE|19686|175|25.99813|-97.15736|true
+QA_GPS_TRACK_STATE|19686|175|25.99813|-97.15736|true
+
+
+QA_GPS_SHOT track-max-1
+197130ms: TE_PRESSED
+197130ms: EVT_TOUCH_FIRST [150,232]
+197130ms: TE_PRESSED
+
+197130ms: EVT_TOUCH_FIRST [150,232]
+
+197190ms: TE_RELEASED
+197190ms: EVT_TOUCH_BREAK
+197190ms: CLICKED[0x2198580]
+197190ms: TE_RELEASED
+
+197190ms: EVT_TOUCH_BREAK
+
+197190ms: CLICKED[0x2198580]
+
+QA_GPS_TRACK_STATE|19800|176|25.99812|-97.15748|true
+QA_GPS_TRACK_STATE|19800|176|25.99812|-97.15748|true
+
+
+QA_GPS_SHOT max-zoom-1
+QA_GPS_TRACK_STATE|19908|177|25.99808|-97.15756|true
+QA_GPS_TRACK_STATE|19908|177|25.99808|-97.15756|true
+
+
+QA_GPS_TRACK_STATE|20017|178|25.99802|-97.15765|true
+QA_GPS_TRACK_STATE|20017|178|25.99802|-97.15765|true
+
+
+QA_GPS_TRACK_STATE|20132|179|25.99795|-97.15771|true
+QA_GPS_TRACK_STATE|20132|179|25.99795|-97.15771|true
+
+
+QA_GPS_TRACK_STATE|20240|180|25.99787|-97.15776|true
+QA_GPS_TRACK_STATE|20240|180|25.99787|-97.15776|true
+
+
+QA_DEV_MEMORY|32|21017|1395.105
+QA_DEV_MEMORY|32|21017|1395.105
+
+
+QA_GPS_SHOT track-max-2
+218180ms: TE_PRESSED
+218180ms: EVT_TOUCH_FIRST [150,232]
+218180ms: TE_PRESSED
+
+218180ms: EVT_TOUCH_FIRST [150,232]
+
+218240ms: TE_RELEASED
+218240ms: EVT_TOUCH_BREAK
+218240ms: TE_RELEASED
+
+218240ms: CLICKED[0x2198580]
+218240ms: EVT_TOUCH_BREAK
+
+218240ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT max-zoom-2
+QA_GPS_SHOT track-max-3
+239210ms: TE_PRESSED
+239210ms: EVT_TOUCH_FIRST [150,232]
+239210ms: TE_PRESSED
+
+239210ms: EVT_TOUCH_FIRST [150,232]
+
+239320ms: TE_RELEASED
+239320ms: EVT_TOUCH_BREAK
+239320ms: CLICKED[0x2198580]
+239320ms: TE_RELEASED
+
+239320ms: EVT_TOUCH_BREAK
+
+239320ms: CLICKED[0x2198580]
+
+QA_GPS_SHOT max-zoom-3
+QA_GPS_SHOT track-end
+QA_LCD_PUMP {"intervalMs":16,"frames":4401,"elapsedMs":240345,"continuousDirtyCopyThenAck":true,"screenshotExtraAck":false}

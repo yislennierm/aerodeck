@@ -1,0 +1,196 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/FCINIT.luac 
+SHA256 f85163c956957c0a81bd0f15d95bbfa63535c82a6e7a9471318a22577165797f
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FC/FCINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 111), ('F', 1, 111), ('D', 1, 111), ('X', 1, 111)]
+K0 'FC'
+K1 'clear'
+K2 '+FC'
+K3 'ids'
+K4 0
+K5 'OFF'
+K6 'BF'
+K7 'names'
+K8 '-'
+K9 'BetaFlight'
+K10 'fm'
+K11 'sxx'
+K12 2
+K13 'IN'
+K14 'INAV'
+K15 'S'
+K16 'FC_FW_ID'
+K17 None
+K18 'FC_FM_MODES'
+K19 'MDL_FC_ON'
+K20 'MDL_FC'
+K21 1
+K22 'OK'
+K23 'Ready'
+K24 'ACRO'
+K25 'Acro'
+K26 'AIR'
+K27 'Air Mode'
+K28 'ANGL'
+K29 'Angle'
+K30 'ALTH'
+K31 'Altidude Hold'
+K32 'CHIR'
+K33 'Chirp'
+K34 'ERR'
+K35 'Arm stop'
+K36 'FS'
+K37 'Fail safe'
+K38 'HEAD'
+K39 'Headfree'
+K40 'HOR'
+K41 'Horizon'
+K42 'MAG'
+K43 'STAB'
+K44 'RTH'
+K45 'Return Home'
+K46 'PASS'
+K47 'Pass Thru'
+K48 'POSH'
+K49 'Position Hold'
+K50 'WAIT'
+K51 'Wait for GPS'
+K52 'ALT'
+K53 'Altitude Hold'
+K54 'ANGH'
+K55 'Angle Hold'
+K56 'CRSH'
+K57 'Course Hold'
+K58 'CRUZ'
+K59 'Cruise'
+K60 'GEO'
+K61 'Geofence'
+K62 'HOLD'
+K63 'HRST'
+K64 'Home reset'
+K65 'LAND'
+K66 'Auto Landing'
+K67 'LOTR'
+K68 'Loiter'
+K69 'MANU'
+K70 'Manual'
+K71 'TURT'
+K72 'Turtle Mode'
+K73 'WP'
+K74 'Waypoint'
+K75 'WRTH'
+K76 'Waypoint RTH'
+K77 'dbg'
+K78 'FC firmware ID'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('FC')]
+   3 [  12] TEST      A=4 B=0 C=1
+   4 [  12] JMP       A=0 ->6
+   5 [  12] NEWTABLE  A=4 B=0 C=0
+   6 [  12] SETTABLE  R2[K0('FC')] = R4
+   7 [  13] GETTABLE  R4 = R0[K1('clear')]
+   8 [  13] MOVE      A=5 B=2 C=0
+   9 [  13] LOADK     R6 = K2 ('+FC')
+  10 [  13] CALL      A=4 B=3 C=1
+  11 [  15] GETTABLE  R4 = R2[K0('FC')]
+  12 [  15] NEWTABLE  A=5 B=1 C=1
+  13 [  15] SETTABLE  R5[K4(0)] = K5('OFF')
+  14 [  15] LOADK     R6 = K6 ('BF')
+  15 [  15] SETLIST   A=5 B=1 C=1
+  16 [  15] SETTABLE  R4[K3('ids')] = R5
+  17 [  16] GETTABLE  R4 = R2[K0('FC')]
+  18 [  16] NEWTABLE  A=5 B=1 C=1
+  19 [  16] SETTABLE  R5[K4(0)] = K8('-')
+  20 [  16] LOADK     R6 = K9 ('BetaFlight')
+  21 [  16] SETLIST   A=5 B=1 C=1
+  22 [  16] SETTABLE  R4[K7('names')] = R5
+  23 [  17] GETTABLE  R4 = R0[K10('fm')]
+  24 [  17] GETTABLE  R4 = R4[K11('sxx')]
+  25 [  17] TEST      A=4 B=0 C=0
+  26 [  17] JMP       A=0 ->33
+  27 [  18] GETTABLE  R4 = R2[K0('FC')]
+  28 [  18] GETTABLE  R4 = R4[K3('ids')]
+  29 [  18] SETTABLE  R4[K12(2)] = K13('IN')
+  30 [  19] GETTABLE  R4 = R2[K0('FC')]
+  31 [  19] GETTABLE  R4 = R4[K7('names')]
+  32 [  19] SETTABLE  R4[K12(2)] = K14('INAV')
+  33 [  22] GETTABLE  R4 = R2[K15('S')]
+  34 [  22] SETTABLE  R4[K16('FC_FW_ID')] = K17(None)
+  35 [  23] GETTABLE  R4 = R2[K15('S')]
+  36 [  23] NEWTABLE  A=5 B=0 C=0
+  37 [  23] SETTABLE  R4[K18('FC_FM_MODES')] = R5
+  38 [  25] GETTABLE  R4 = R2[K15('S')]
+  39 [  25] GETTABLE  R4 = R4[K19('MDL_FC_ON')]
+  40 [  25] TEST      A=4 B=0 C=1
+  41 [  25] JMP       A=0 ->43
+  42 [  25] RETURN    A=0 B=1 C=0
+  43 [  27] GETTABLE  R4 = R2[K15('S')]
+  44 [  27] GETTABLE  R4 = R4[K20('MDL_FC')]
+  45 [  27] EQ        A=0 R4, K21(1); skip-next if condition != A
+  46 [  27] JMP       A=0 ->69
+  47 [  28] GETTABLE  R4 = R2[K15('S')]
+  48 [  28] SETTABLE  R4[K16('FC_FW_ID')] = K6('BF')
+  49 [  30] GETTABLE  R4 = R2[K15('S')]
+  50 [  30] NEWTABLE  A=5 B=0 C=16
+  51 [  31] SETTABLE  R5[K22('OK')] = K23('Ready')
+  52 [  32] SETTABLE  R5[K24('ACRO')] = K25('Acro')
+  53 [  33] SETTABLE  R5[K26('AIR')] = K27('Air Mode')
+  54 [  34] SETTABLE  R5[K28('ANGL')] = K29('Angle')
+  55 [  35] SETTABLE  R5[K30('ALTH')] = K31('Altidude Hold')
+  56 [  36] SETTABLE  R5[K32('CHIR')] = K33('Chirp')
+  57 [  37] SETTABLE  R5[K34('ERR')] = K35('Arm stop')
+  58 [  38] SETTABLE  R5[K36('FS')] = K37('Fail safe')
+  59 [  39] SETTABLE  R5[K38('HEAD')] = K39('Headfree')
+  60 [  40] SETTABLE  R5[K40('HOR')] = K41('Horizon')
+  61 [  41] SETTABLE  R5[K42('MAG')] = K42('MAG')
+  62 [  42] SETTABLE  R5[K43('STAB')] = K29('Angle')
+  63 [  43] SETTABLE  R5[K44('RTH')] = K45('Return Home')
+  64 [  44] SETTABLE  R5[K46('PASS')] = K47('Pass Thru')
+  65 [  45] SETTABLE  R5[K48('POSH')] = K49('Position Hold')
+  66 [  46] SETTABLE  R5[K50('WAIT')] = K51('Wait for GPS')
+  67 [  47] SETTABLE  R4[K18('FC_FM_MODES')] = R5
+  68 [  47] JMP       A=0 ->105
+  69 [  49] GETTABLE  R4 = R0[K10('fm')]
+  70 [  49] GETTABLE  R4 = R4[K11('sxx')]
+  71 [  49] TEST      A=4 B=0 C=0
+  72 [  49] JMP       A=0 ->105
+  73 [  49] GETTABLE  R4 = R2[K15('S')]
+  74 [  49] GETTABLE  R4 = R4[K20('MDL_FC')]
+  75 [  49] EQ        A=0 R4, K12(2); skip-next if condition != A
+  76 [  49] JMP       A=0 ->105
+  77 [  50] GETTABLE  R4 = R2[K15('S')]
+  78 [  50] SETTABLE  R4[K16('FC_FW_ID')] = K13('IN')
+  79 [  52] GETTABLE  R4 = R2[K15('S')]
+  80 [  52] NEWTABLE  A=5 B=0 C=20
+  81 [  53] SETTABLE  R5[K22('OK')] = K23('Ready')
+  82 [  54] SETTABLE  R5[K24('ACRO')] = K25('Acro')
+  83 [  55] SETTABLE  R5[K26('AIR')] = K27('Air Mode')
+  84 [  56] SETTABLE  R5[K52('ALT')] = K53('Altitude Hold')
+  85 [  57] SETTABLE  R5[K28('ANGL')] = K29('Angle')
+  86 [  58] SETTABLE  R5[K54('ANGH')] = K55('Angle Hold')
+  87 [  59] SETTABLE  R5[K56('CRSH')] = K57('Course Hold')
+  88 [  60] SETTABLE  R5[K58('CRUZ')] = K59('Cruise')
+  89 [  61] SETTABLE  R5[K34('ERR')] = K35('Arm stop')
+  90 [  62] SETTABLE  R5[K36('FS')] = K37('Fail safe')
+  91 [  63] SETTABLE  R5[K60('GEO')] = K61('Geofence')
+  92 [  64] SETTABLE  R5[K38('HEAD')] = K39('Headfree')
+  93 [  65] SETTABLE  R5[K62('HOLD')] = K49('Position Hold')
+  94 [  66] SETTABLE  R5[K40('HOR')] = K41('Horizon')
+  95 [  67] SETTABLE  R5[K63('HRST')] = K64('Home reset')
+  96 [  68] SETTABLE  R5[K65('LAND')] = K66('Auto Landing')
+  97 [  69] SETTABLE  R5[K67('LOTR')] = K68('Loiter')
+  98 [  70] SETTABLE  R5[K69('MANU')] = K70('Manual')
+  99 [  71] SETTABLE  R5[K44('RTH')] = K45('Return Home')
+ 100 [  72] SETTABLE  R5[K71('TURT')] = K72('Turtle Mode')
+ 101 [  73] SETTABLE  R5[K50('WAIT')] = K51('Wait for GPS')
+ 102 [  74] SETTABLE  R5[K73('WP')] = K74('Waypoint')
+ 103 [  75] SETTABLE  R5[K75('WRTH')] = K76('Waypoint RTH')
+ 104 [  76] SETTABLE  R4[K18('FC_FM_MODES')] = R5
+ 105 [  80] GETTABLE  R4 = R0[K77('dbg')]
+ 106 [  80] LOADK     R5 = K78 ('FC firmware ID')
+ 107 [  80] GETTABLE  R6 = R2[K15('S')]
+ 108 [  80] GETTABLE  R6 = R6[K16('FC_FW_ID')]
+ 109 [  80] CALL      A=4 B=3 C=1
+ 110 [  83] RETURN    A=0 B=1 C=0
+ 111 [  83] RETURN    A=0 B=1 C=0

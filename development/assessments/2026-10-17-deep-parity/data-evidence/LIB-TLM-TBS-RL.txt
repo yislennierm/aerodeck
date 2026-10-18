@@ -1,0 +1,584 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/RL.luac
+
+FUNCTION main params 0 vararg 1 stack 13 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TBS/RL.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 291), ('F', 1, 291), ('D', 1, 291), ('X', 1, 291), ('add', 1, 291), ('sensors', 20, 291), ('getRFModeTable', 183, 289), ('rfModeTable', 185, 289), ('TX_RSI_CH1_fn', 186, 289), ('TX_RFM_CH1_fn', 187, 289)]
+K0 'S'
+K1 'RX_QLY_CH1'
+K2 None
+K3 'RX_RSI_CH1'
+K4 'RX_RSI_CH2'
+K5 'RX_SNR_CH1'
+K6 'TX_QLY_CH1'
+K7 'TX_RSI_CH1'
+K8 'TX_SNR_CH1'
+K9 'TX_PWR_CH1'
+K10 'TX_RFM_CH1'
+K11 'SEN'
+K12 'SN11n'
+K13 'RQLY'
+K14 'SN11m'
+K15 0
+K16 'SN11x'
+K17 100
+K18 'SN11l'
+K19 'RL_RQL_L'
+K20 20
+K21 'SN11c'
+K22 'RL_RQL_C'
+K23 10
+K24 'SN11u'
+K25 '%'
+K26 'SN11v'
+K27 'SN11vs'
+K28 'SN11vf'
+K29 'math'
+K30 'floor'
+K31 'SN12n'
+K32 'RSSI'
+K33 'SN12m'
+K34 -130
+K35 'SN12x'
+K36 'SN12l'
+K37 'RL_RSI_L'
+K38 -90
+K39 'SN12c'
+K40 'RL_RSI_C'
+K41 -100
+K42 'SN12u'
+K43 'dBm'
+K44 'SN12v'
+K45 'SN12vs'
+K46 'SN12vf'
+K47 'SN13n'
+K48 'RSNR'
+K49 'SN13m'
+K50 -6
+K51 'SN13x'
+K52 50
+K53 'SN13l'
+K54 'SNnL'
+K55 4
+K56 'SN13c'
+K57 'SNnC'
+K58 'SN13u'
+K59 'dB'
+K60 'SN13v'
+K61 'SN13vs'
+K62 'SN13vf'
+K63 'SN17n'
+K64 'TX POWER'
+K65 'SN17m'
+K66 'SN17x'
+K67 'huge'
+K68 'SN17l'
+K69 'SN17c'
+K70 1000
+K71 'SN17u'
+K72 'mW'
+K73 'SN17i'
+K74 True
+K75 'SN17v'
+K76 'SN17vs'
+K77 'SN17vf'
+K78 'SN18n'
+K79 'RF MODE'
+K80 'SN18m'
+K81 'SN18x'
+K82 'SN18l'
+K83 'SN18c'
+K84 'SN18i'
+K85 'SN18vs'
+K86 'SN18vf'
+K87 'SN19n'
+K88 'TQLY'
+K89 'SN19m'
+K90 'SN19x'
+K91 'SN19l'
+K92 30
+K93 'SN19c'
+K94 'SN19u'
+K95 'SN19v'
+K96 'SN19vs'
+K97 'SN19vf'
+K98 'table'
+K99 'insert'
+K100 'sName'
+K101 'TX_RFM_CH1'
+K102 'pName'
+K103 'RFMD'
+K104 'sLabel'
+K105 'RF Mode'
+K106 'dUnit'
+K107 'NONE'
+K108 'sMin'
+K109 0
+K110 'sMax'
+K111 'uFN'
+K112 'TRSS'
+K113 'Tx RSSI'
+K114 'DBM'
+K115 'TQly'
+K116 'Tx Quality'
+K117 'PERCENT'
+K118 'TSNR'
+K119 'Tx SNR'
+K120 'DB'
+K121 -50
+K122 'TPWR'
+K123 'Tx Power'
+K124 'MILLIWATT'
+K125 5000
+K126 'RX_RSI_CH1'
+K127 '1RSS'
+K128 'Rx RSSI1'
+K129 'RX_RSI_CH2'
+K130 '2RSS'
+K131 'Rx RSSI2'
+K132 'RQly'
+K133 'Rx Quality'
+K134 'Rx SNR'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('RX_QLY_CH1')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('RX_RSI_CH1')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('RX_RSI_CH2')] = K2(None)
+   8 [  15] GETTABLE  R5 = R2[K0('S')]
+   9 [  15] SETTABLE  R5[K5('RX_SNR_CH1')] = K2(None)
+  10 [  16] GETTABLE  R5 = R2[K0('S')]
+  11 [  16] SETTABLE  R5[K6('TX_QLY_CH1')] = K2(None)
+  12 [  17] GETTABLE  R5 = R2[K0('S')]
+  13 [  17] SETTABLE  R5[K7('TX_RSI_CH1')] = K2(None)
+  14 [  18] GETTABLE  R5 = R2[K0('S')]
+  15 [  18] SETTABLE  R5[K8('TX_SNR_CH1')] = K2(None)
+  16 [  19] GETTABLE  R5 = R2[K0('S')]
+  17 [  19] SETTABLE  R5[K9('TX_PWR_CH1')] = K2(None)
+  18 [  20] GETTABLE  R5 = R2[K0('S')]
+  19 [  20] SETTABLE  R5[K10('TX_RFM_CH1')] = K2(None)
+  20 [  22] NEWTABLE  A=5 B=0 C=0
+  21 [  24] TEST      A=4 B=0 C=0
+  22 [  24] JMP       A=0 ->290
+  23 [  26] GETTABLE  R6 = R2[K11('SEN')]
+  24 [  26] SETTABLE  R6[K12('SN11n')] = K13('RQLY')
+  25 [  27] GETTABLE  R6 = R2[K11('SEN')]
+  26 [  27] SETTABLE  R6[K14('SN11m')] = K15(0)
+  27 [  28] GETTABLE  R6 = R2[K11('SEN')]
+  28 [  28] SETTABLE  R6[K16('SN11x')] = K17(100)
+  29 [  29] GETTABLE  R6 = R2[K11('SEN')]
+  30 [  29] GETTABLE  R7 = R2[K0('S')]
+  31 [  29] GETTABLE  R7 = R7[K19('RL_RQL_L')]
+  32 [  29] TEST      A=7 B=0 C=1
+  33 [  29] JMP       A=0 ->35
+  34 [  29] LOADK     R7 = K20 (20)
+  35 [  29] SETTABLE  R6[K18('SN11l')] = R7
+  36 [  30] GETTABLE  R6 = R2[K11('SEN')]
+  37 [  30] GETTABLE  R7 = R2[K0('S')]
+  38 [  30] GETTABLE  R7 = R7[K22('RL_RQL_C')]
+  39 [  30] TEST      A=7 B=0 C=1
+  40 [  30] JMP       A=0 ->42
+  41 [  30] LOADK     R7 = K23 (10)
+  42 [  30] SETTABLE  R6[K21('SN11c')] = R7
+  43 [  31] GETTABLE  R6 = R2[K11('SEN')]
+  44 [  31] SETTABLE  R6[K24('SN11u')] = K25('%')
+  45 [  32] GETTABLE  R6 = R2[K11('SEN')]
+  46 [  32] SETTABLE  R6[K26('SN11v')] = K2(None)
+  47 [  33] GETTABLE  R6 = R2[K11('SEN')]
+  48 [  33] SETTABLE  R6[K27('SN11vs')] = K1('RX_QLY_CH1')
+  49 [  34] GETTABLE  R6 = R2[K11('SEN')]
+  50 [  34] GETTABUP  R7 = UP0[K29('math')]
+  51 [  34] GETTABLE  R7 = R7[K30('floor')]
+  52 [  34] SETTABLE  R6[K28('SN11vf')] = R7
+  53 [  36] GETTABLE  R6 = R2[K11('SEN')]
+  54 [  36] SETTABLE  R6[K31('SN12n')] = K32('RSSI')
+  55 [  37] GETTABLE  R6 = R2[K11('SEN')]
+  56 [  37] SETTABLE  R6[K33('SN12m')] = K34(-130)
+  57 [  38] GETTABLE  R6 = R2[K11('SEN')]
+  58 [  38] SETTABLE  R6[K35('SN12x')] = K15(0)
+  59 [  39] GETTABLE  R6 = R2[K11('SEN')]
+  60 [  39] GETTABLE  R7 = R2[K0('S')]
+  61 [  39] GETTABLE  R7 = R7[K37('RL_RSI_L')]
+  62 [  39] TEST      A=7 B=0 C=1
+  63 [  39] JMP       A=0 ->65
+  64 [  39] LOADK     R7 = K38 (-90)
+  65 [  39] SETTABLE  R6[K36('SN12l')] = R7
+  66 [  40] GETTABLE  R6 = R2[K11('SEN')]
+  67 [  40] GETTABLE  R7 = R2[K0('S')]
+  68 [  40] GETTABLE  R7 = R7[K40('RL_RSI_C')]
+  69 [  40] TEST      A=7 B=0 C=1
+  70 [  40] JMP       A=0 ->72
+  71 [  40] LOADK     R7 = K41 (-100)
+  72 [  40] SETTABLE  R6[K39('SN12c')] = R7
+  73 [  41] GETTABLE  R6 = R2[K11('SEN')]
+  74 [  41] SETTABLE  R6[K42('SN12u')] = K43('dBm')
+  75 [  42] GETTABLE  R6 = R2[K11('SEN')]
+  76 [  42] SETTABLE  R6[K44('SN12v')] = K2(None)
+  77 [  43] GETTABLE  R6 = R2[K11('SEN')]
+  78 [  43] SETTABLE  R6[K45('SN12vs')] = K3('RX_RSI_CH1')
+  79 [  44] GETTABLE  R6 = R2[K11('SEN')]
+  80 [  44] GETTABUP  R7 = UP0[K29('math')]
+  81 [  44] GETTABLE  R7 = R7[K30('floor')]
+  82 [  44] SETTABLE  R6[K46('SN12vf')] = R7
+  83 [  46] GETTABLE  R6 = R2[K11('SEN')]
+  84 [  46] SETTABLE  R6[K47('SN13n')] = K48('RSNR')
+  85 [  47] GETTABLE  R6 = R2[K11('SEN')]
+  86 [  47] SETTABLE  R6[K49('SN13m')] = K50(-6)
+  87 [  48] GETTABLE  R6 = R2[K11('SEN')]
+  88 [  48] SETTABLE  R6[K51('SN13x')] = K52(50)
+  89 [  49] GETTABLE  R6 = R2[K11('SEN')]
+  90 [  49] GETTABLE  R7 = R2[K0('S')]
+  91 [  49] GETTABLE  R7 = R7[K54('SNnL')]
+  92 [  49] TEST      A=7 B=0 C=1
+  93 [  49] JMP       A=0 ->95
+  94 [  49] LOADK     R7 = K55 (4)
+  95 [  49] SETTABLE  R6[K53('SN13l')] = R7
+  96 [  50] GETTABLE  R6 = R2[K11('SEN')]
+  97 [  50] GETTABLE  R7 = R2[K0('S')]
+  98 [  50] GETTABLE  R7 = R7[K57('SNnC')]
+  99 [  50] TEST      A=7 B=0 C=1
+ 100 [  50] JMP       A=0 ->102
+ 101 [  50] LOADK     R7 = K15 (0)
+ 102 [  50] SETTABLE  R6[K56('SN13c')] = R7
+ 103 [  51] GETTABLE  R6 = R2[K11('SEN')]
+ 104 [  51] SETTABLE  R6[K58('SN13u')] = K59('dB')
+ 105 [  52] GETTABLE  R6 = R2[K11('SEN')]
+ 106 [  52] SETTABLE  R6[K60('SN13v')] = K2(None)
+ 107 [  53] GETTABLE  R6 = R2[K11('SEN')]
+ 108 [  53] SETTABLE  R6[K61('SN13vs')] = K5('RX_SNR_CH1')
+ 109 [  54] GETTABLE  R6 = R2[K11('SEN')]
+ 110 [  54] GETTABUP  R7 = UP0[K29('math')]
+ 111 [  54] GETTABLE  R7 = R7[K30('floor')]
+ 112 [  54] SETTABLE  R6[K62('SN13vf')] = R7
+ 113 [  56] GETTABLE  R6 = R2[K11('SEN')]
+ 114 [  56] SETTABLE  R6[K63('SN17n')] = K64('TX POWER')
+ 115 [  57] GETTABLE  R6 = R2[K11('SEN')]
+ 116 [  57] SETTABLE  R6[K65('SN17m')] = K15(0)
+ 117 [  58] GETTABLE  R6 = R2[K11('SEN')]
+ 118 [  58] GETTABUP  R7 = UP0[K29('math')]
+ 119 [  58] GETTABLE  R7 = R7[K67('huge')]
+ 120 [  58] SETTABLE  R6[K66('SN17x')] = R7
+ 121 [  59] GETTABLE  R6 = R2[K11('SEN')]
+ 122 [  59] GETTABUP  R7 = UP0[K29('math')]
+ 123 [  59] GETTABLE  R7 = R7[K67('huge')]
+ 124 [  59] SETTABLE  R6[K68('SN17l')] = R7
+ 125 [  60] GETTABLE  R6 = R2[K11('SEN')]
+ 126 [  60] SETTABLE  R6[K69('SN17c')] = K70(1000)
+ 127 [  61] GETTABLE  R6 = R2[K11('SEN')]
+ 128 [  61] SETTABLE  R6[K71('SN17u')] = K72('mW')
+ 129 [  62] GETTABLE  R6 = R2[K11('SEN')]
+ 130 [  62] SETTABLE  R6[K73('SN17i')] = K74(True)
+ 131 [  63] GETTABLE  R6 = R2[K11('SEN')]
+ 132 [  63] SETTABLE  R6[K75('SN17v')] = K2(None)
+ 133 [  64] GETTABLE  R6 = R2[K11('SEN')]
+ 134 [  64] SETTABLE  R6[K76('SN17vs')] = K9('TX_PWR_CH1')
+ 135 [  65] GETTABLE  R6 = R2[K11('SEN')]
+ 136 [  65] GETTABUP  R7 = UP0[K29('math')]
+ 137 [  65] GETTABLE  R7 = R7[K30('floor')]
+ 138 [  65] SETTABLE  R6[K77('SN17vf')] = R7
+ 139 [  67] GETTABLE  R6 = R2[K11('SEN')]
+ 140 [  67] SETTABLE  R6[K78('SN18n')] = K79('RF MODE')
+ 141 [  68] GETTABLE  R6 = R2[K11('SEN')]
+ 142 [  68] SETTABLE  R6[K80('SN18m')] = K15(0)
+ 143 [  69] GETTABLE  R6 = R2[K11('SEN')]
+ 144 [  69] GETTABUP  R7 = UP0[K29('math')]
+ 145 [  69] GETTABLE  R7 = R7[K67('huge')]
+ 146 [  69] SETTABLE  R6[K81('SN18x')] = R7
+ 147 [  70] GETTABLE  R6 = R2[K11('SEN')]
+ 148 [  70] GETTABUP  R7 = UP0[K29('math')]
+ 149 [  70] GETTABLE  R7 = R7[K67('huge')]
+ 150 [  70] SETTABLE  R6[K82('SN18l')] = R7
+ 151 [  71] GETTABLE  R6 = R2[K11('SEN')]
+ 152 [  71] GETTABUP  R7 = UP0[K29('math')]
+ 153 [  71] GETTABLE  R7 = R7[K67('huge')]
+ 154 [  71] SETTABLE  R6[K83('SN18c')] = R7
+ 155 [  73] GETTABLE  R6 = R2[K11('SEN')]
+ 156 [  73] SETTABLE  R6[K84('SN18i')] = K74(True)
+ 157 [  74] GETTABLE  R6 = R2[K11('SEN')]
+ 158 [  74] SETTABLE  R6[K85('SN18vs')] = K10('TX_RFM_CH1')
+ 159 [  75] GETTABLE  R6 = R2[K11('SEN')]
+ 160 [  75] GETTABUP  R7 = UP0[K29('math')]
+ 161 [  75] GETTABLE  R7 = R7[K30('floor')]
+ 162 [  75] SETTABLE  R6[K86('SN18vf')] = R7
+ 163 [  77] GETTABLE  R6 = R2[K11('SEN')]
+ 164 [  77] SETTABLE  R6[K87('SN19n')] = K88('TQLY')
+ 165 [  78] GETTABLE  R6 = R2[K11('SEN')]
+ 166 [  78] SETTABLE  R6[K89('SN19m')] = K2(None)
+ 167 [  79] GETTABLE  R6 = R2[K11('SEN')]
+ 168 [  79] SETTABLE  R6[K90('SN19x')] = K2(None)
+ 169 [  80] GETTABLE  R6 = R2[K11('SEN')]
+ 170 [  80] SETTABLE  R6[K91('SN19l')] = K92(30)
+ 171 [  81] GETTABLE  R6 = R2[K11('SEN')]
+ 172 [  81] SETTABLE  R6[K93('SN19c')] = K23(10)
+ 173 [  82] GETTABLE  R6 = R2[K11('SEN')]
+ 174 [  82] SETTABLE  R6[K94('SN19u')] = K25('%')
+ 175 [  83] GETTABLE  R6 = R2[K11('SEN')]
+ 176 [  83] SETTABLE  R6[K95('SN19v')] = K2(None)
+ 177 [  84] GETTABLE  R6 = R2[K11('SEN')]
+ 178 [  84] SETTABLE  R6[K96('SN19vs')] = K6('TX_QLY_CH1')
+ 179 [  85] GETTABLE  R6 = R2[K11('SEN')]
+ 180 [  85] GETTABUP  R7 = UP0[K29('math')]
+ 181 [  85] GETTABLE  R7 = R7[K30('floor')]
+ 182 [  85] SETTABLE  R6[K97('SN19vf')] = R7
+ 183 [ 100] CLOSURE   R6 = proto[0]
+ 184 [ 101] MOVE      A=7 B=6 C=0
+ 185 [ 101] CALL      A=7 B=1 C=2
+ 186 [ 105] CLOSURE   R8 = proto[1]
+ 187 [ 109] CLOSURE   R9 = proto[2]
+ 188 [ 116] GETTABUP  R10 = UP0[K98('table')]
+ 189 [ 116] GETTABLE  R10 = R10[K99('insert')]
+ 190 [ 116] MOVE      A=11 B=5 C=0
+ 191 [ 116] NEWTABLE  A=12 B=0 C=7
+ 192 [ 116] SETTABLE  R12[K100('sName')] = K101('TX_RFM_CH1')
+ 193 [ 116] SETTABLE  R12[K102('pName')] = K103('RFMD')
+ 194 [ 116] SETTABLE  R12[K104('sLabel')] = K105('RF Mode')
+ 195 [ 116] SETTABLE  R12[K106('dUnit')] = K107('NONE')
+ 196 [ 116] SETTABLE  R12[K108('sMin')] = K109(0)
+ 197 [ 116] SETTABLE  R12[K110('sMax')] = K20(20)
+ 198 [ 116] SETTABLE  R12[K111('uFN')] = R9
+ 199 [ 116] CALL      A=10 B=3 C=1
+ 200 [ 117] GETTABUP  R10 = UP0[K98('table')]
+ 201 [ 117] GETTABLE  R10 = R10[K99('insert')]
+ 202 [ 117] MOVE      A=11 B=5 C=0
+ 203 [ 117] NEWTABLE  A=12 B=0 C=7
+ 204 [ 117] SETTABLE  R12[K100('sName')] = K7('TX_RSI_CH1')
+ 205 [ 117] SETTABLE  R12[K102('pName')] = K112('TRSS')
+ 206 [ 117] SETTABLE  R12[K104('sLabel')] = K113('Tx RSSI')
+ 207 [ 117] SETTABLE  R12[K106('dUnit')] = K114('DBM')
+ 208 [ 117] SETTABLE  R12[K108('sMin')] = K34(-130)
+ 209 [ 117] SETTABLE  R12[K110('sMax')] = K109(0)
+ 210 [ 117] SETTABLE  R12[K111('uFN')] = R8
+ 211 [ 117] CALL      A=10 B=3 C=1
+ 212 [ 118] GETTABUP  R10 = UP0[K98('table')]
+ 213 [ 118] GETTABLE  R10 = R10[K99('insert')]
+ 214 [ 118] MOVE      A=11 B=5 C=0
+ 215 [ 118] NEWTABLE  A=12 B=0 C=6
+ 216 [ 118] SETTABLE  R12[K100('sName')] = K6('TX_QLY_CH1')
+ 217 [ 118] SETTABLE  R12[K102('pName')] = K115('TQly')
+ 218 [ 118] SETTABLE  R12[K104('sLabel')] = K116('Tx Quality')
+ 219 [ 118] SETTABLE  R12[K106('dUnit')] = K117('PERCENT')
+ 220 [ 118] SETTABLE  R12[K108('sMin')] = K109(0)
+ 221 [ 118] SETTABLE  R12[K110('sMax')] = K17(100)
+ 222 [ 118] CALL      A=10 B=3 C=1
+ 223 [ 119] GETTABUP  R10 = UP0[K98('table')]
+ 224 [ 119] GETTABLE  R10 = R10[K99('insert')]
+ 225 [ 119] MOVE      A=11 B=5 C=0
+ 226 [ 119] NEWTABLE  A=12 B=0 C=6
+ 227 [ 119] SETTABLE  R12[K100('sName')] = K8('TX_SNR_CH1')
+ 228 [ 119] SETTABLE  R12[K102('pName')] = K118('TSNR')
+ 229 [ 119] SETTABLE  R12[K104('sLabel')] = K119('Tx SNR')
+ 230 [ 119] SETTABLE  R12[K106('dUnit')] = K120('DB')
+ 231 [ 119] SETTABLE  R12[K108('sMin')] = K121(-50)
+ 232 [ 119] SETTABLE  R12[K110('sMax')] = K52(50)
+ 233 [ 119] CALL      A=10 B=3 C=1
+ 234 [ 120] GETTABUP  R10 = UP0[K98('table')]
+ 235 [ 120] GETTABLE  R10 = R10[K99('insert')]
+ 236 [ 120] MOVE      A=11 B=5 C=0
+ 237 [ 120] NEWTABLE  A=12 B=0 C=6
+ 238 [ 120] SETTABLE  R12[K100('sName')] = K9('TX_PWR_CH1')
+ 239 [ 120] SETTABLE  R12[K102('pName')] = K122('TPWR')
+ 240 [ 120] SETTABLE  R12[K104('sLabel')] = K123('Tx Power')
+ 241 [ 120] SETTABLE  R12[K106('dUnit')] = K124('MILLIWATT')
+ 242 [ 120] SETTABLE  R12[K108('sMin')] = K109(0)
+ 243 [ 120] SETTABLE  R12[K110('sMax')] = K125(5000)
+ 244 [ 120] CALL      A=10 B=3 C=1
+ 245 [ 121] GETTABUP  R10 = UP0[K98('table')]
+ 246 [ 121] GETTABLE  R10 = R10[K99('insert')]
+ 247 [ 121] MOVE      A=11 B=5 C=0
+ 248 [ 121] NEWTABLE  A=12 B=0 C=6
+ 249 [ 121] SETTABLE  R12[K100('sName')] = K126('RX_RSI_CH1')
+ 250 [ 121] SETTABLE  R12[K102('pName')] = K127('1RSS')
+ 251 [ 121] SETTABLE  R12[K104('sLabel')] = K128('Rx RSSI1')
+ 252 [ 121] SETTABLE  R12[K106('dUnit')] = K114('DBM')
+ 253 [ 121] SETTABLE  R12[K108('sMin')] = K34(-130)
+ 254 [ 121] SETTABLE  R12[K110('sMax')] = K109(0)
+ 255 [ 121] CALL      A=10 B=3 C=1
+ 256 [ 122] GETTABUP  R10 = UP0[K98('table')]
+ 257 [ 122] GETTABLE  R10 = R10[K99('insert')]
+ 258 [ 122] MOVE      A=11 B=5 C=0
+ 259 [ 122] NEWTABLE  A=12 B=0 C=6
+ 260 [ 122] SETTABLE  R12[K100('sName')] = K129('RX_RSI_CH2')
+ 261 [ 122] SETTABLE  R12[K102('pName')] = K130('2RSS')
+ 262 [ 122] SETTABLE  R12[K104('sLabel')] = K131('Rx RSSI2')
+ 263 [ 122] SETTABLE  R12[K106('dUnit')] = K114('DBM')
+ 264 [ 122] SETTABLE  R12[K108('sMin')] = K34(-130)
+ 265 [ 122] SETTABLE  R12[K110('sMax')] = K109(0)
+ 266 [ 122] CALL      A=10 B=3 C=1
+ 267 [ 123] GETTABUP  R10 = UP0[K98('table')]
+ 268 [ 123] GETTABLE  R10 = R10[K99('insert')]
+ 269 [ 123] MOVE      A=11 B=5 C=0
+ 270 [ 123] NEWTABLE  A=12 B=0 C=6
+ 271 [ 123] SETTABLE  R12[K100('sName')] = K1('RX_QLY_CH1')
+ 272 [ 123] SETTABLE  R12[K102('pName')] = K132('RQly')
+ 273 [ 123] SETTABLE  R12[K104('sLabel')] = K133('Rx Quality')
+ 274 [ 123] SETTABLE  R12[K106('dUnit')] = K117('PERCENT')
+ 275 [ 123] SETTABLE  R12[K108('sMin')] = K109(0)
+ 276 [ 123] SETTABLE  R12[K110('sMax')] = K17(100)
+ 277 [ 123] CALL      A=10 B=3 C=1
+ 278 [ 124] GETTABUP  R10 = UP0[K98('table')]
+ 279 [ 124] GETTABLE  R10 = R10[K99('insert')]
+ 280 [ 124] MOVE      A=11 B=5 C=0
+ 281 [ 124] NEWTABLE  A=12 B=0 C=6
+ 282 [ 124] SETTABLE  R12[K100('sName')] = K5('RX_SNR_CH1')
+ 283 [ 124] SETTABLE  R12[K102('pName')] = K48('RSNR')
+ 284 [ 124] SETTABLE  R12[K104('sLabel')] = K134('Rx SNR')
+ 285 [ 124] SETTABLE  R12[K106('dUnit')] = K120('DB')
+ 286 [ 124] SETTABLE  R12[K108('sMin')] = K121(-50)
+ 287 [ 124] SETTABLE  R12[K110('sMax')] = K52(50)
+ 288 [ 124] CALL      A=10 B=3 C=1
+ 289 [ 124] JMP       A=7 ->290
+ 290 [ 128] RETURN    A=5 B=2 C=0
+ 291 [ 128] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 14 lines 87 100 source None
+UPVALUES [('D', (1, 2))]
+LOCALS []
+K0 'S'
+K1 'RCP_pverID'
+K2 'XF'
+K3 0
+K4 '4'
+K5 '50'
+K6 '150'
+K7 'TRS'
+K8 '-'
+K9 '250'
+K10 'EL2'
+K11 '25'
+K12 '100'
+K13 '200'
+K14 '500'
+K15 'EL3'
+K16 '100F'
+K17 '333F'
+K18 'D250'
+K19 'D500'
+K20 'F500'
+K21 'F1k'
+   1 [  88] GETTABUP  R0 = UP0[K0('S')]
+   2 [  88] GETTABLE  R0 = R0[K1('RCP_pverID')]
+   3 [  88] EQ        A=0 R0, K2('XF'); skip-next if condition != A
+   4 [  88] JMP       A=0 ->12
+   5 [  89] NEWTABLE  A=0 B=2 C=1
+   6 [  89] SETTABLE  R0[K3(0)] = K4('4')
+   7 [  89] LOADK     R1 = K5 ('50')
+   8 [  89] LOADK     R2 = K6 ('150')
+   9 [  89] SETLIST   A=0 B=2 C=1
+  10 [  89] RETURN    A=0 B=2 C=0
+  11 [  89] JMP       A=0 ->59
+  12 [  90] GETTABUP  R0 = UP0[K0('S')]
+  13 [  90] GETTABLE  R0 = R0[K1('RCP_pverID')]
+  14 [  90] EQ        A=0 R0, K7('TRS'); skip-next if condition != A
+  15 [  90] JMP       A=0 ->22
+  16 [  91] NEWTABLE  A=0 B=1 C=1
+  17 [  91] SETTABLE  R0[K3(0)] = K8('-')
+  18 [  91] LOADK     R1 = K9 ('250')
+  19 [  91] SETLIST   A=0 B=1 C=1
+  20 [  91] RETURN    A=0 B=2 C=0
+  21 [  91] JMP       A=0 ->59
+  22 [  92] GETTABUP  R0 = UP0[K0('S')]
+  23 [  92] GETTABLE  R0 = R0[K1('RCP_pverID')]
+  24 [  92] EQ        A=0 R0, K10('EL2'); skip-next if condition != A
+  25 [  92] JMP       A=0 ->38
+  26 [  93] NEWTABLE  A=0 B=7 C=1
+  27 [  93] SETTABLE  R0[K3(0)] = K8('-')
+  28 [  93] LOADK     R1 = K11 ('25')
+  29 [  93] LOADK     R2 = K5 ('50')
+  30 [  93] LOADK     R3 = K12 ('100')
+  31 [  93] LOADK     R4 = K6 ('150')
+  32 [  93] LOADK     R5 = K13 ('200')
+  33 [  93] LOADK     R6 = K9 ('250')
+  34 [  93] LOADK     R7 = K14 ('500')
+  35 [  93] SETLIST   A=0 B=7 C=1
+  36 [  93] RETURN    A=0 B=2 C=0
+  37 [  93] JMP       A=0 ->59
+  38 [  94] GETTABUP  R0 = UP0[K0('S')]
+  39 [  94] GETTABLE  R0 = R0[K1('RCP_pverID')]
+  40 [  94] EQ        A=0 R0, K15('EL3'); skip-next if condition != A
+  41 [  94] JMP       A=0 ->59
+  42 [  95] NEWTABLE  A=0 B=13 C=1
+  43 [  95] SETTABLE  R0[K3(0)] = K8('-')
+  44 [  95] LOADK     R1 = K11 ('25')
+  45 [  95] LOADK     R2 = K5 ('50')
+  46 [  95] LOADK     R3 = K12 ('100')
+  47 [  95] LOADK     R4 = K16 ('100F')
+  48 [  95] LOADK     R5 = K6 ('150')
+  49 [  95] LOADK     R6 = K13 ('200')
+  50 [  95] LOADK     R7 = K9 ('250')
+  51 [  95] LOADK     R8 = K17 ('333F')
+  52 [  95] LOADK     R9 = K14 ('500')
+  53 [  95] LOADK     R10 = K18 ('D250')
+  54 [  95] LOADK     R11 = K19 ('D500')
+  55 [  95] LOADK     R12 = K20 ('F500')
+  56 [  95] LOADK     R13 = K21 ('F1k')
+  57 [  95] SETLIST   A=0 B=13 C=1
+  58 [  95] RETURN    A=0 B=2 C=0
+  59 [  99] NEWTABLE  A=0 B=0 C=0
+  60 [  99] RETURN    A=0 B=2 C=0
+  61 [ 100] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 4 lines 103 105 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS []
+K0 'SEN'
+K1 'SN12vo'
+K2 'S'
+K3 'RX_RSI_CH2'
+K4 0
+K5 'math'
+K6 'max'
+K7 'RX_RSI_CH1'
+   1 [ 104] GETTABUP  R0 = UP0[K0('SEN')]
+   2 [ 104] GETTABUP  R1 = UP0[K2('S')]
+   3 [ 104] GETTABLE  R1 = R1[K3('RX_RSI_CH2')]
+   4 [ 104] TEST      A=1 B=0 C=0
+   5 [ 104] JMP       A=0 ->19
+   6 [ 104] GETTABUP  R1 = UP0[K2('S')]
+   7 [ 104] GETTABLE  R1 = R1[K3('RX_RSI_CH2')]
+   8 [ 104] LT        A=0 R1, K4(0); skip-next if condition != A
+   9 [ 104] JMP       A=0 ->19
+  10 [ 104] GETTABUP  R1 = UP1[K5('math')]
+  11 [ 104] GETTABLE  R1 = R1[K6('max')]
+  12 [ 104] GETTABUP  R2 = UP0[K2('S')]
+  13 [ 104] GETTABLE  R2 = R2[K7('RX_RSI_CH1')]
+  14 [ 104] GETTABUP  R3 = UP0[K2('S')]
+  15 [ 104] GETTABLE  R3 = R3[K3('RX_RSI_CH2')]
+  16 [ 104] CALL      A=1 B=3 C=2
+  17 [ 104] TEST      A=1 B=0 C=1
+  18 [ 104] JMP       A=0 ->28
+  19 [ 104] GETTABUP  R1 = UP0[K2('S')]
+  20 [ 104] GETTABLE  R1 = R1[K7('RX_RSI_CH1')]
+  21 [ 104] TEST      A=1 B=0 C=0
+  22 [ 104] JMP       A=0 ->27
+  23 [ 104] GETTABUP  R1 = UP0[K2('S')]
+  24 [ 104] GETTABLE  R1 = R1[K7('RX_RSI_CH1')]
+  25 [ 104] TEST      A=1 B=0 C=1
+  26 [ 104] JMP       A=0 ->28
+  27 [ 104] LOADNIL   A=1 B=0 C=0
+  28 [ 104] SETTABLE  R0[K1('SN12vo')] = R1
+  29 [ 105] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 2 lines 107 109 source None
+UPVALUES [('D', (1, 2)), ('rfModeTable', (1, 7))]
+LOCALS []
+K0 'SEN'
+K1 'SN18vd'
+K2 'S'
+K3 'TX_RFM_CH1'
+   1 [ 108] GETTABUP  R0 = UP0[K0('SEN')]
+   2 [ 108] GETTABUP  R1 = UP0[K2('S')]
+   3 [ 108] GETTABLE  R1 = R1[K3('TX_RFM_CH1')]
+   4 [ 108] TEST      A=1 B=0 C=0
+   5 [ 108] JMP       A=0 ->15
+   6 [ 108] GETTABUP  R1 = UP0[K2('S')]
+   7 [ 108] GETTABLE  R1 = R1[K3('TX_RFM_CH1')]
+   8 [ 108] GETTABUP  R1 = UP1[R1]
+   9 [ 108] TEST      A=1 B=0 C=1
+  10 [ 108] JMP       A=0 ->16
+  11 [ 108] GETTABUP  R1 = UP0[K2('S')]
+  12 [ 108] GETTABLE  R1 = R1[K3('TX_RFM_CH1')]
+  13 [ 108] TEST      A=1 B=0 C=1
+  14 [ 108] JMP       A=0 ->16
+  15 [ 108] LOADNIL   A=1 B=0 C=0
+  16 [ 108] SETTABLE  R0[K1('SN18vd')] = R1
+  17 [ 109] RETURN    A=0 B=1 C=0

@@ -1,0 +1,251 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/RCPINIT.luac 
+SHA256 66094d810ef6a19b61f12f89326315c22806c3a88db08c5d020fc673e82138ac
+
+FUNCTION main params 0 vararg 1 stack 12 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/RCPINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 194), ('F', 1, 194), ('D', 1, 194), ('X', 1, 194)]
+K0 'RCP'
+K1 'clear'
+K2 '+RCP*'
+K3 'pIDS'
+K4 0
+K5 'OFF'
+K6 'TBS'
+K7 'FRS'
+K8 'pNames'
+K9 'TBS/ELRS'
+K10 'FrSky'
+K11 'pverIDS'
+K12 'ACCST'
+K13 'R9'
+K14 'XF'
+K15 'TRS'
+K16 'EL2'
+K17 'EL3'
+K18 'ELG'
+K19 'pverNames'
+K20 'Crossfire'
+K21 'Tracer'
+K22 'ELRS 2.x'
+K23 'ELRS 3.x'
+K24 'ELRS Gemini'
+K25 'mspSuppList'
+K26 False
+K27 True
+K28 'S'
+K29 'RCP_pID'
+K30 'MDL_RCP'
+K31 'RCP_pName'
+K32 ''
+K33 'dbg'
+K34 'RCPINIT'
+K35 'D.S.RCP_pID'
+K36 'D.S.RCP_pName'
+K37 'RC Link protocol is OFF'
+K38 'RCP_pverIDList'
+K39 'RCP_pv'
+K40 1
+K41 'RCP_pverID'
+K42 'RCP_pverNameList'
+K43 'RCP_pverName'
+K44 'D.S.RCP_pverID'
+K45 'D.S.RCP_pverName'
+K46 'RC Link protocol version is OFF'
+K47 'RCP_RLD'
+K48 'loadE'
+K49 'PLIBTLM'
+K50 'TLMRLD'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('RCP')]
+   3 [  12] TEST      A=4 B=0 C=1
+   4 [  12] JMP       A=0 ->6
+   5 [  12] NEWTABLE  A=4 B=0 C=0
+   6 [  12] SETTABLE  R2[K0('RCP')] = R4
+   7 [  13] GETTABLE  R4 = R0[K1('clear')]
+   8 [  13] MOVE      A=5 B=2 C=0
+   9 [  13] LOADK     R6 = K2 ('+RCP*')
+  10 [  13] CALL      A=4 B=3 C=1
+  11 [  16] GETTABLE  R4 = R2[K0('RCP')]
+  12 [  16] NEWTABLE  A=5 B=2 C=1
+  13 [  17] SETTABLE  R5[K4(0)] = K5('OFF')
+  14 [  18] LOADK     R6 = K6 ('TBS')
+  15 [  20] LOADK     R7 = K7 ('FRS')
+  16 [  20] SETLIST   A=5 B=2 C=1
+  17 [  20] SETTABLE  R4[K3('pIDS')] = R5
+  18 [  22] GETTABLE  R4 = R2[K0('RCP')]
+  19 [  22] NEWTABLE  A=5 B=2 C=1
+  20 [  23] SETTABLE  R5[K4(0)] = K5('OFF')
+  21 [  24] LOADK     R6 = K9 ('TBS/ELRS')
+  22 [  26] LOADK     R7 = K10 ('FrSky')
+  23 [  26] SETLIST   A=5 B=2 C=1
+  24 [  26] SETTABLE  R4[K8('pNames')] = R5
+  25 [  28] GETTABLE  R4 = R2[K0('RCP')]
+  26 [  28] NEWTABLE  A=5 B=0 C=3
+  27 [  29] NEWTABLE  A=6 B=1 C=0
+  28 [  29] LOADK     R7 = K5 ('OFF')
+  29 [  29] SETLIST   A=6 B=1 C=1
+  30 [  29] SETTABLE  R5[K5('OFF')] = R6
+  31 [  31] NEWTABLE  A=6 B=2 C=0
+  32 [  31] LOADK     R7 = K12 ('ACCST')
+  33 [  31] LOADK     R8 = K13 ('R9')
+  34 [  31] SETLIST   A=6 B=2 C=1
+  35 [  31] SETTABLE  R5[K7('FRS')] = R6
+  36 [  32] NEWTABLE  A=6 B=5 C=0
+  37 [  32] LOADK     R7 = K14 ('XF')
+  38 [  32] LOADK     R8 = K15 ('TRS')
+  39 [  32] LOADK     R9 = K16 ('EL2')
+  40 [  32] LOADK     R10 = K17 ('EL3')
+  41 [  32] LOADK     R11 = K18 ('ELG')
+  42 [  32] SETLIST   A=6 B=5 C=1
+  43 [  32] SETTABLE  R5[K6('TBS')] = R6
+  44 [  33] SETTABLE  R4[K11('pverIDS')] = R5
+  45 [  35] GETTABLE  R4 = R2[K0('RCP')]
+  46 [  35] NEWTABLE  A=5 B=0 C=3
+  47 [  36] NEWTABLE  A=6 B=1 C=0
+  48 [  36] LOADK     R7 = K5 ('OFF')
+  49 [  36] SETLIST   A=6 B=1 C=1
+  50 [  36] SETTABLE  R5[K5('OFF')] = R6
+  51 [  38] NEWTABLE  A=6 B=2 C=0
+  52 [  38] LOADK     R7 = K12 ('ACCST')
+  53 [  38] LOADK     R8 = K13 ('R9')
+  54 [  38] SETLIST   A=6 B=2 C=1
+  55 [  38] SETTABLE  R5[K7('FRS')] = R6
+  56 [  39] NEWTABLE  A=6 B=5 C=0
+  57 [  39] LOADK     R7 = K20 ('Crossfire')
+  58 [  39] LOADK     R8 = K21 ('Tracer')
+  59 [  39] LOADK     R9 = K22 ('ELRS 2.x')
+  60 [  39] LOADK     R10 = K23 ('ELRS 3.x')
+  61 [  39] LOADK     R11 = K24 ('ELRS Gemini')
+  62 [  39] SETLIST   A=6 B=5 C=1
+  63 [  39] SETTABLE  R5[K6('TBS')] = R6
+  64 [  40] SETTABLE  R4[K19('pverNames')] = R5
+  65 [  42] GETTABLE  R4 = R2[K0('RCP')]
+  66 [  42] NEWTABLE  A=5 B=0 C=3
+  67 [  43] SETTABLE  R5[K5('OFF')] = K26(False)
+  68 [  44] SETTABLE  R5[K7('FRS')] = K27(True)
+  69 [  45] SETTABLE  R5[K6('TBS')] = K27(True)
+  70 [  46] SETTABLE  R4[K25('mspSuppList')] = R5
+  71 [  48] GETTABLE  R4 = R2[K28('S')]
+  72 [  48] GETTABLE  R5 = R2[K0('RCP')]
+  73 [  48] GETTABLE  R5 = R5[K3('pIDS')]
+  74 [  48] GETTABLE  R6 = R2[K28('S')]
+  75 [  48] GETTABLE  R6 = R6[K30('MDL_RCP')]
+  76 [  48] GETTABLE  R5 = R5[R6]
+  77 [  48] TEST      A=5 B=0 C=1
+  78 [  48] JMP       A=0 ->80
+  79 [  48] LOADK     R5 = K5 ('OFF')
+  80 [  48] SETTABLE  R4[K29('RCP_pID')] = R5
+  81 [  49] GETTABLE  R4 = R2[K28('S')]
+  82 [  49] GETTABLE  R5 = R2[K0('RCP')]
+  83 [  49] GETTABLE  R5 = R5[K8('pNames')]
+  84 [  49] GETTABLE  R6 = R2[K28('S')]
+  85 [  49] GETTABLE  R6 = R6[K30('MDL_RCP')]
+  86 [  49] GETTABLE  R5 = R5[R6]
+  87 [  49] TEST      A=5 B=0 C=1
+  88 [  49] JMP       A=0 ->90
+  89 [  49] LOADK     R5 = K32 ('')
+  90 [  49] SETTABLE  R4[K31('RCP_pName')] = R5
+  91 [  51] GETTABLE  R4 = R0[K33('dbg')]
+  92 [  51] LOADK     R5 = K34 ('RCPINIT')
+  93 [  51] LOADK     R6 = K35 ('D.S.RCP_pID')
+  94 [  51] GETTABLE  R7 = R2[K28('S')]
+  95 [  51] GETTABLE  R7 = R7[K29('RCP_pID')]
+  96 [  51] CALL      A=4 B=4 C=1
+  97 [  52] GETTABLE  R4 = R0[K33('dbg')]
+  98 [  52] LOADK     R5 = K34 ('RCPINIT')
+  99 [  52] LOADK     R6 = K36 ('D.S.RCP_pName')
+ 100 [  52] GETTABLE  R7 = R2[K28('S')]
+ 101 [  52] GETTABLE  R7 = R7[K31('RCP_pName')]
+ 102 [  52] CALL      A=4 B=4 C=1
+ 103 [  54] GETTABLE  R4 = R2[K28('S')]
+ 104 [  54] GETTABLE  R4 = R4[K29('RCP_pID')]
+ 105 [  54] EQ        A=0 R4, K5('OFF'); skip-next if condition != A
+ 106 [  54] JMP       A=0 ->111
+ 107 [  55] GETTABLE  R4 = R0[K33('dbg')]
+ 108 [  55] LOADK     R5 = K34 ('RCPINIT')
+ 109 [  55] LOADK     R6 = K37 ('RC Link protocol is OFF')
+ 110 [  55] CALL      A=4 B=3 C=1
+ 111 [  58] GETTABLE  R4 = R2[K28('S')]
+ 112 [  58] GETTABLE  R5 = R2[K0('RCP')]
+ 113 [  58] GETTABLE  R5 = R5[K11('pverIDS')]
+ 114 [  58] GETTABLE  R6 = R2[K28('S')]
+ 115 [  58] GETTABLE  R6 = R6[K29('RCP_pID')]
+ 116 [  58] GETTABLE  R5 = R5[R6]
+ 117 [  58] TEST      A=5 B=0 C=1
+ 118 [  58] JMP       A=0 ->122
+ 119 [  58] NEWTABLE  A=5 B=1 C=0
+ 120 [  58] LOADK     R6 = K5 ('OFF')
+ 121 [  58] SETLIST   A=5 B=1 C=1
+ 122 [  58] SETTABLE  R4[K38('RCP_pverIDList')] = R5
+ 123 [  59] GETTABLE  R4 = R2[K28('S')]
+ 124 [  59] GETTABLE  R4 = R4[K38('RCP_pverIDList')]
+ 125 [  59] GETTABLE  R5 = R2[K28('S')]
+ 126 [  59] GETTABLE  R5 = R5[K39('RCP_pv')]
+ 127 [  59] GETTABLE  R4 = R4[R5]
+ 128 [  59] TEST      A=4 B=0 C=1
+ 129 [  59] JMP       A=0 ->132
+ 130 [  60] GETTABLE  R4 = R2[K28('S')]
+ 131 [  60] SETTABLE  R4[K39('RCP_pv')] = K40(1)
+ 132 [  62] GETTABLE  R4 = R2[K28('S')]
+ 133 [  62] GETTABLE  R5 = R2[K28('S')]
+ 134 [  62] GETTABLE  R5 = R5[K38('RCP_pverIDList')]
+ 135 [  62] GETTABLE  R6 = R2[K28('S')]
+ 136 [  62] GETTABLE  R6 = R6[K39('RCP_pv')]
+ 137 [  62] GETTABLE  R5 = R5[R6]
+ 138 [  62] TEST      A=5 B=0 C=1
+ 139 [  62] JMP       A=0 ->141
+ 140 [  62] LOADK     R5 = K5 ('OFF')
+ 141 [  62] SETTABLE  R4[K41('RCP_pverID')] = R5
+ 142 [  63] GETTABLE  R4 = R2[K28('S')]
+ 143 [  63] GETTABLE  R5 = R2[K0('RCP')]
+ 144 [  63] GETTABLE  R5 = R5[K19('pverNames')]
+ 145 [  63] GETTABLE  R6 = R2[K28('S')]
+ 146 [  63] GETTABLE  R6 = R6[K29('RCP_pID')]
+ 147 [  63] GETTABLE  R5 = R5[R6]
+ 148 [  63] TEST      A=5 B=0 C=1
+ 149 [  63] JMP       A=0 ->153
+ 150 [  63] NEWTABLE  A=5 B=1 C=0
+ 151 [  63] LOADK     R6 = K5 ('OFF')
+ 152 [  63] SETLIST   A=5 B=1 C=1
+ 153 [  63] SETTABLE  R4[K42('RCP_pverNameList')] = R5
+ 154 [  64] GETTABLE  R4 = R2[K28('S')]
+ 155 [  64] GETTABLE  R5 = R2[K28('S')]
+ 156 [  64] GETTABLE  R5 = R5[K42('RCP_pverNameList')]
+ 157 [  64] GETTABLE  R6 = R2[K28('S')]
+ 158 [  64] GETTABLE  R6 = R6[K39('RCP_pv')]
+ 159 [  64] GETTABLE  R5 = R5[R6]
+ 160 [  64] TEST      A=5 B=0 C=1
+ 161 [  64] JMP       A=0 ->163
+ 162 [  64] LOADK     R5 = K32 ('')
+ 163 [  64] SETTABLE  R4[K43('RCP_pverName')] = R5
+ 164 [  66] GETTABLE  R4 = R0[K33('dbg')]
+ 165 [  66] LOADK     R5 = K34 ('RCPINIT')
+ 166 [  66] LOADK     R6 = K44 ('D.S.RCP_pverID')
+ 167 [  66] GETTABLE  R7 = R2[K28('S')]
+ 168 [  66] GETTABLE  R7 = R7[K41('RCP_pverID')]
+ 169 [  66] CALL      A=4 B=4 C=1
+ 170 [  67] GETTABLE  R4 = R0[K33('dbg')]
+ 171 [  67] LOADK     R5 = K34 ('RCPINIT')
+ 172 [  67] LOADK     R6 = K45 ('D.S.RCP_pverName')
+ 173 [  67] GETTABLE  R7 = R2[K28('S')]
+ 174 [  67] GETTABLE  R7 = R7[K43('RCP_pverName')]
+ 175 [  67] CALL      A=4 B=4 C=1
+ 176 [  69] GETTABLE  R4 = R2[K28('S')]
+ 177 [  69] GETTABLE  R4 = R4[K41('RCP_pverID')]
+ 178 [  69] EQ        A=0 R4, K5('OFF'); skip-next if condition != A
+ 179 [  69] JMP       A=0 ->184
+ 180 [  70] GETTABLE  R4 = R0[K33('dbg')]
+ 181 [  70] LOADK     R5 = K34 ('RCPINIT')
+ 182 [  70] LOADK     R6 = K46 ('RC Link protocol version is OFF')
+ 183 [  70] CALL      A=4 B=3 C=1
+ 184 [  73] GETTABLE  R4 = R2[K28('S')]
+ 185 [  73] GETTABLE  R5 = R0[K48('loadE')]
+ 186 [  73] GETTABLE  R6 = R0[K49('PLIBTLM')]
+ 187 [  73] LOADK     R7 = K50 ('TLMRLD')
+ 188 [  73] CONCAT    A=6 B=6 C=7
+ 189 [  73] GETTABLE  R7 = R2[K28('S')]
+ 190 [  73] GETTABLE  R7 = R7[K41('RCP_pverID')]
+ 191 [  73] CALL      A=5 B=3 C=2
+ 192 [  73] SETTABLE  R4[K47('RCP_RLD')] = R5
+ 193 [  76] RETURN    A=0 B=1 C=0
+ 194 [  76] RETURN    A=0 B=1 C=0

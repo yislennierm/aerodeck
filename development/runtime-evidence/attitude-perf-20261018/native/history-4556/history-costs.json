@@ -1,0 +1,788 @@
+{
+  "fieldCount": 24,
+  "usagePercent": {
+    "begin": {
+      "samples": 15,
+      "min": 9,
+      "median": 11,
+      "max": 11
+    },
+    "begin+step": {
+      "samples": 15,
+      "min": 13,
+      "median": 15,
+      "max": 15
+    },
+    "ordinary": {
+      "samples": 56,
+      "min": 4,
+      "median": 4.0,
+      "max": 5
+    },
+    "final": {
+      "samples": 13,
+      "min": 11,
+      "median": 11,
+      "max": 11
+    }
+  },
+  "loggingWrapperIncluded": true,
+  "measurements": [
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 19,
+      "afterStep": 23,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 20,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 21,
+      "done": true,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 20,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 20,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 14,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 21,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MAX",
+      "began": true,
+      "entry": 10,
+      "afterBegin": 20,
+      "afterStep": 25,
+      "done": false,
+      "processed": 4
+    },
+    {
+      "mode": "MIN",
+      "began": false,
+      "entry": 10,
+      "afterBegin": 10,
+      "afterStep": 15,
+      "done": false,
+      "processed": 4
+    }
+  ]
+}

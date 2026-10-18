@@ -1,0 +1,271 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGVTX.luac
+Original SHA256: edb8074d9aa662d5286b415fbae4a9e7e8948a34b70445055eec9cb1a55dbcfb
+
+FUNCTION main params 0 vararg 1 stack 13 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 75), ('F', 1, 75), ('D', 1, 75), ('X', 1, 75), ('T', 1, 75), ('list_VTX_CONN_TYPE', 19, 75), ('list_VTX_MODEL', 25, 75)]
+K0 'pID'
+K1 'VTX'
+K2 'pN'
+K3 'dVxo'
+K4 'LCD_W'
+K5 480
+K6 300
+K7 320
+K8 150
+K9 120
+K10 0
+K11 'None'
+K12 'loadE'
+K13 'PLIBVTX'
+K14 'VTXTBS'
+K15 'hw'
+K16 1
+K17 'FC MSP'
+K18 2
+K19 'TBS RX'
+K20 'cv'
+K21 'VTX_CONN_TYPE'
+K22 'o'
+K23 'l'
+K24 ' VTX connection'
+K25 't'
+K26 'L'
+K27 'lv'
+K28 'VTX_MODEL'
+K29 '  VTX model'
+K30 'VTX_PROXY_ON'
+K31 3
+K32 '  proxy'
+K33 'S'
+K34 'VTX_FRQ_RANGE'
+K35 4
+K36 'Frequency range'
+K37 'ALL (5600-5900)'
+K38 'EU (5650-5850)'
+K39 'US (5650-5925)'
+K40 'readDS'
+K41 'updateDisp'
+K42 'cv'
+K43 'VTX_CONN_TYPE'
+K44 'onChange'
+K45 'cv'
+K46 'VTX_CONN_TYPE'
+K47 'onSave'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('VTX')
+   3 [  11] SETTABLE  R4[K2('pN')] = K1('VTX')
+   4 [  12] GETTABUP  R5 = UP0[K4('LCD_W')]
+   5 [  12] LT        A=0 K5(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K6 (300)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K4('LCD_W')]
+  11 [  12] LT        A=0 K7(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K8 (150)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K9 (120)
+  17 [  12] SETTABLE  R4[K3('dVxo')] = R5
+  18 [  14] NEWTABLE  A=5 B=0 C=1
+  19 [  14] SETTABLE  R5[K10(0)] = K11('None')
+  20 [  15] GETTABLE  R6 = R0[K12('loadE')]
+  21 [  15] GETTABLE  R7 = R0[K13('PLIBVTX')]
+  22 [  15] LOADK     R8 = K14 ('VTXTBS')
+  23 [  15] CONCAT    A=7 B=7 C=8
+  24 [  15] LOADK     R8 = K15 ('hw')
+  25 [  15] CALL      A=6 B=3 C=2
+  26 [  17] SETTABLE  R5[K16(1)] = K17('FC MSP')
+  27 [  18] SETTABLE  R5[K18(2)] = K19('TBS RX')
+  28 [  22] NEWTABLE  A=7 B=0 C=0
+  29 [  22] SETTABLE  R4[K20('cv')] = R7
+  30 [  23] GETTABLE  R7 = R4[K20('cv')]
+  31 [  23] NEWTABLE  A=8 B=0 C=4
+  32 [  23] SETTABLE  R8[K22('o')] = K16(1)
+  33 [  23] SETTABLE  R8[K23('l')] = K24(' VTX connection')
+  34 [  23] SETTABLE  R8[K25('t')] = K26('L')
+  35 [  23] SETTABLE  R8[K27('lv')] = R5
+  36 [  23] SETTABLE  R7[K21('VTX_CONN_TYPE')] = R8
+  37 [  24] GETTABLE  R7 = R4[K20('cv')]
+  38 [  24] NEWTABLE  A=8 B=0 C=4
+  39 [  24] SETTABLE  R8[K22('o')] = K18(2)
+  40 [  24] SETTABLE  R8[K23('l')] = K29('  VTX model')
+  41 [  24] SETTABLE  R8[K25('t')] = K26('L')
+  42 [  24] SETTABLE  R8[K27('lv')] = R6
+  43 [  24] SETTABLE  R7[K28('VTX_MODEL')] = R8
+  44 [  25] GETTABLE  R7 = R4[K20('cv')]
+  45 [  25] NEWTABLE  A=8 B=0 C=3
+  46 [  25] SETTABLE  R8[K22('o')] = K31(3)
+  47 [  25] SETTABLE  R8[K23('l')] = K32('  proxy')
+  48 [  25] SETTABLE  R8[K25('t')] = K33('S')
+  49 [  25] SETTABLE  R7[K30('VTX_PROXY_ON')] = R8
+  50 [  26] GETTABLE  R7 = R4[K20('cv')]
+  51 [  26] NEWTABLE  A=8 B=0 C=4
+  52 [  26] SETTABLE  R8[K22('o')] = K35(4)
+  53 [  26] SETTABLE  R8[K23('l')] = K36('Frequency range')
+  54 [  26] SETTABLE  R8[K25('t')] = K26('L')
+  55 [  26] NEWTABLE  A=9 B=3 C=0
+  56 [  26] LOADK     R10 = K37 ('ALL (5600-5900)')
+  57 [  26] LOADK     R11 = K38 ('EU (5650-5850)')
+  58 [  26] LOADK     R12 = K39 ('US (5650-5925)')
+  59 [  26] SETLIST   A=9 B=3 C=1
+  60 [  26] SETTABLE  R8[K27('lv')] = R9
+  61 [  26] SETTABLE  R7[K34('VTX_FRQ_RANGE')] = R8
+  62 [  30] GETTABLE  R7 = R4[K40('readDS')]
+  63 [  30] CALL      A=7 B=1 C=1
+  64 [  37] CLOSURE   R7 = proto[0]
+  65 [  37] SETTABLE  R4[K41('updateDisp')] = R7
+  66 [  40] GETTABLE  R7 = R4[K42('cv')]
+  67 [  40] GETTABLE  R7 = R7[K43('VTX_CONN_TYPE')]
+  68 [  55] CLOSURE   R8 = proto[1]
+  69 [  55] SETTABLE  R7[K44('onChange')] = R8
+  70 [  58] GETTABLE  R7 = R4[K45('cv')]
+  71 [  58] GETTABLE  R7 = R7[K46('VTX_CONN_TYPE')]
+  72 [  64] CLOSURE   R8 = proto[2]
+  73 [  64] SETTABLE  R7[K47('onSave')] = R8
+  74 [  66] RETURN    A=0 B=1 C=0
+  75 [  66] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 2 lines 32 37 source None
+UPVALUES [('T', (1, 4)), ('D', (1, 2))]
+LOCALS []
+K0 'cv'
+K1 'VTX_MODEL'
+K2 'h'
+K3 'VTX_CONN_TYPE'
+K4 'v'
+K5 1
+K6 'VTX_PROXY_ON'
+K7 'VTX_FRQ_RANGE'
+K8 'S'
+K9 'MDL_VTX_ON'
+   1 [  33] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  33] GETTABLE  R0 = R0[K1('VTX_MODEL')]
+   3 [  33] GETTABUP  R1 = UP0[K0('cv')]
+   4 [  33] GETTABLE  R1 = R1[K3('VTX_CONN_TYPE')]
+   5 [  33] GETTABLE  R1 = R1[K4('v')]
+   6 [  33] LE        A=1 R1, K5(1); skip-next if condition != A
+   7 [  33] JMP       A=0 ->9
+   8 [  33] LOADBOOL  A=1 B=0 C=1
+   9 [  33] LOADBOOL  A=1 B=1 C=0
+  10 [  33] SETTABLE  R0[K2('h')] = R1
+  11 [  34] GETTABUP  R0 = UP0[K0('cv')]
+  12 [  34] GETTABLE  R0 = R0[K6('VTX_PROXY_ON')]
+  13 [  34] GETTABUP  R1 = UP0[K0('cv')]
+  14 [  34] GETTABLE  R1 = R1[K3('VTX_CONN_TYPE')]
+  15 [  34] GETTABLE  R1 = R1[K4('v')]
+  16 [  34] EQ        A=0 R1, K5(1); skip-next if condition != A
+  17 [  34] JMP       A=0 ->19
+  18 [  34] LOADBOOL  A=1 B=0 C=1
+  19 [  34] LOADBOOL  A=1 B=1 C=0
+  20 [  34] SETTABLE  R0[K2('h')] = R1
+  21 [  35] GETTABUP  R0 = UP0[K0('cv')]
+  22 [  35] GETTABLE  R0 = R0[K7('VTX_FRQ_RANGE')]
+  23 [  35] GETTABUP  R1 = UP1[K8('S')]
+  24 [  35] GETTABLE  R1 = R1[K9('MDL_VTX_ON')]
+  25 [  35] NOT       A=1 B=1 C=0
+  26 [  35] SETTABLE  R0[K2('h')] = R1
+  27 [  37] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 2 lines 40 55 source None
+UPVALUES [('T', (1, 4))]
+LOCALS []
+K0 'cv'
+K1 'VTX_CONN_TYPE'
+K2 'v'
+K3 2
+K4 'VTX_MODEL'
+K5 1
+K6 'x'
+K7 None
+K8 'VTX_PROXY_ON'
+K9 0
+   1 [  42] GETTABUP  R0 = UP0[K0('cv')]
+   2 [  42] GETTABLE  R0 = R0[K1('VTX_CONN_TYPE')]
+   3 [  42] GETTABLE  R0 = R0[K2('v')]
+   4 [  42] EQ        A=0 R0, K3(2); skip-next if condition != A
+   5 [  42] JMP       A=0 ->16
+   6 [  43] GETTABUP  R0 = UP0[K0('cv')]
+   7 [  43] GETTABLE  R0 = R0[K4('VTX_MODEL')]
+   8 [  43] SETTABLE  R0[K2('v')] = K5(1)
+   9 [  44] GETTABUP  R0 = UP0[K0('cv')]
+  10 [  44] GETTABLE  R0 = R0[K4('VTX_MODEL')]
+  11 [  44] SETTABLE  R0[K6('x')] = K7(None)
+  12 [  45] GETTABUP  R0 = UP0[K0('cv')]
+  13 [  45] GETTABLE  R0 = R0[K8('VTX_PROXY_ON')]
+  14 [  45] SETTABLE  R0[K2('v')] = K9(0)
+  15 [  45] JMP       A=0 ->45
+  16 [  46] GETTABUP  R0 = UP0[K0('cv')]
+  17 [  46] GETTABLE  R0 = R0[K1('VTX_CONN_TYPE')]
+  18 [  46] GETTABLE  R0 = R0[K2('v')]
+  19 [  46] EQ        A=0 R0, K5(1); skip-next if condition != A
+  20 [  46] JMP       A=0 ->31
+  21 [  47] GETTABUP  R0 = UP0[K0('cv')]
+  22 [  47] GETTABLE  R0 = R0[K4('VTX_MODEL')]
+  23 [  47] SETTABLE  R0[K2('v')] = K5(1)
+  24 [  48] GETTABUP  R0 = UP0[K0('cv')]
+  25 [  48] GETTABLE  R0 = R0[K4('VTX_MODEL')]
+  26 [  48] SETTABLE  R0[K6('x')] = K7(None)
+  27 [  49] GETTABUP  R0 = UP0[K0('cv')]
+  28 [  49] GETTABLE  R0 = R0[K8('VTX_PROXY_ON')]
+  29 [  49] SETTABLE  R0[K2('v')] = K5(1)
+  30 [  49] JMP       A=0 ->45
+  31 [  50] GETTABUP  R0 = UP0[K0('cv')]
+  32 [  50] GETTABLE  R0 = R0[K1('VTX_CONN_TYPE')]
+  33 [  50] GETTABLE  R0 = R0[K2('v')]
+  34 [  50] EQ        A=0 R0, K9(0); skip-next if condition != A
+  35 [  50] JMP       A=0 ->45
+  36 [  51] GETTABUP  R0 = UP0[K0('cv')]
+  37 [  51] GETTABLE  R0 = R0[K4('VTX_MODEL')]
+  38 [  51] SETTABLE  R0[K2('v')] = K5(1)
+  39 [  52] GETTABUP  R0 = UP0[K0('cv')]
+  40 [  52] GETTABLE  R0 = R0[K4('VTX_MODEL')]
+  41 [  52] SETTABLE  R0[K6('x')] = K7(None)
+  42 [  53] GETTABUP  R0 = UP0[K0('cv')]
+  43 [  53] GETTABLE  R0 = R0[K8('VTX_PROXY_ON')]
+  44 [  53] SETTABLE  R0[K2('v')] = K9(0)
+  45 [  55] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 5 lines 58 64 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS []
+K0 'table'
+K1 'insert'
+K2 'RINIT'
+K3 'fn'
+K4 'PLIBVTX'
+K5 'VTXINIT'
+K6 'PUI'
+K7 'MDUPD'
+K8 'PLIBCFG'
+K9 'CFGUPDP'
+   1 [  60] GETTABUP  R0 = UP0[K0('table')]
+   2 [  60] GETTABLE  R0 = R0[K1('insert')]
+   3 [  60] GETTABUP  R1 = UP1[K2('RINIT')]
+   4 [  60] NEWTABLE  A=2 B=0 C=1
+   5 [  60] GETTABUP  R3 = UP2[K4('PLIBVTX')]
+   6 [  60] LOADK     R4 = K5 ('VTXINIT')
+   7 [  60] CONCAT    A=3 B=3 C=4
+   8 [  60] SETTABLE  R2[K3('fn')] = R3
+   9 [  60] CALL      A=0 B=3 C=1
+  10 [  62] GETTABUP  R0 = UP0[K0('table')]
+  11 [  62] GETTABLE  R0 = R0[K1('insert')]
+  12 [  62] GETTABUP  R1 = UP1[K2('RINIT')]
+  13 [  62] NEWTABLE  A=2 B=0 C=1
+  14 [  62] GETTABUP  R3 = UP2[K6('PUI')]
+  15 [  62] LOADK     R4 = K7 ('MDUPD')
+  16 [  62] CONCAT    A=3 B=3 C=4
+  17 [  62] SETTABLE  R2[K3('fn')] = R3
+  18 [  62] CALL      A=0 B=3 C=1
+  19 [  63] GETTABUP  R0 = UP0[K0('table')]
+  20 [  63] GETTABLE  R0 = R0[K1('insert')]
+  21 [  63] GETTABUP  R1 = UP1[K2('RINIT')]
+  22 [  63] NEWTABLE  A=2 B=0 C=1
+  23 [  63] GETTABUP  R3 = UP2[K8('PLIBCFG')]
+  24 [  63] LOADK     R4 = K9 ('CFGUPDP')
+  25 [  63] CONCAT    A=3 B=3 C=4
+  26 [  63] SETTABLE  R2[K3('fn')] = R3
+  27 [  63] CALL      A=0 B=3 C=1
+  28 [  64] RETURN    A=0 B=1 C=0

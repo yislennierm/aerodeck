@@ -1,0 +1,15 @@
+PUBLIC GPS FAILURE PRESERVED
+
+Source: 3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89.
+Native widget CPU limit at telem.lua:1471 after GPS (254,19) at 106.860 s
+and Track (289,41) at 107.820 s; release 107.930 s. No restart or inputs sent.
+
+The latest passing 4556 tour entered Track at 35.270 s and left at 36.110 s,
+only 840 ms later. The preceding ed839 tour visited it at 27.870–28.630 s.
+Both exercised a short trail. Later warm tests stayed on Flight
+or Telemetry, so no mature-trail Track repaint was covered. Exact failed trail
+count is not logged; default is 90 and maximum 180, sampled about once/second.
+
+Track projects every retained point using full spherical geometry and clips
+every segment on every paint. Test a full 180-point history, all three zoom scales,
+entry/reentry, and off-plot segments under the unchanged 20k callback limit.

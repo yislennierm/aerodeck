@@ -1,0 +1,657 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/QM.luac
+
+FUNCTION main params 0 vararg 1 stack 14 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/QM.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 31), ('F', 1, 31), ('D', 1, 31), ('X', 1, 31), ('T', 1, 31), ('queueRinit', 2, 31), ('resetSensors', 3, 31)]
+K0 'mute'
+K1 'cmds_common'
+K2 'Mute'
+K3 'Reset Flight Data'
+K4 'Reload ToolBox'
+K5 'i'
+K6 'd'
+K7 'e'
+   1 [  22] VARARG    A=0 B=6 C=0
+   2 [  29] CLOSURE   R5 = proto[0]
+   3 [  37] CLOSURE   R6 = proto[1]
+   4 [  48] CLOSURE   R7 = proto[2]
+   5 [  48] SETTABLE  R4[K0('mute')] = R7
+   6 [  50] NEWTABLE  A=7 B=3 C=0
+   7 [  50] NEWTABLE  A=8 B=3 C=0
+   8 [  51] LOADK     R9 = K2 ('Mute')
+   9 [  51] CLOSURE   R10 = proto[3]
+  10 [  51] LOADBOOL  A=11 B=1 C=0
+  11 [  51] SETLIST   A=8 B=3 C=1
+  12 [  51] NEWTABLE  A=9 B=3 C=0
+  13 [  52] LOADK     R10 = K3 ('Reset Flight Data')
+  14 [  63] CLOSURE   R11 = proto[4]
+  15 [  63] LOADBOOL  A=12 B=1 C=0
+  16 [  63] SETLIST   A=9 B=3 C=1
+  17 [  63] NEWTABLE  A=10 B=3 C=0
+  18 [  64] LOADK     R11 = K4 ('Reload ToolBox')
+  19 [  66] CLOSURE   R12 = proto[5]
+  20 [  66] LOADBOOL  A=13 B=1 C=0
+  21 [  66] SETLIST   A=10 B=3 C=1
+  22 [  67] SETLIST   A=7 B=3 C=1
+  23 [  67] SETTABLE  R4[K1('cmds_common')] = R7
+  24 [ 104] CLOSURE   R7 = proto[6]
+  25 [ 104] SETTABLE  R4[K5('i')] = R7
+  26 [ 128] CLOSURE   R7 = proto[7]
+  27 [ 128] SETTABLE  R4[K6('d')] = R7
+  28 [ 152] CLOSURE   R7 = proto[8]
+  29 [ 152] SETTABLE  R4[K7('e')] = R7
+  30 [ 154] RETURN    A=0 B=1 C=0
+  31 [ 154] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 1 stack 8 lines 24 29 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('(for generator)', 10, 18), ('(for state)', 10, 18), ('(for control)', 10, 18), ('i', 11, 16), ('job', 11, 16)]
+K0 'RINIT'
+K1 'ipairs'
+K2 'table'
+K3 'insert'
+   1 [  25] GETTABUP  R0 = UP0[K0('RINIT')]
+   2 [  25] TEST      A=0 B=0 C=1
+   3 [  25] JMP       A=0 ->5
+   4 [  25] NEWTABLE  A=0 B=0 C=0
+   5 [  25] SETTABUP  UP0[K0('RINIT')] = R0
+   6 [  26] GETTABUP  R0 = UP1[K1('ipairs')]
+   7 [  26] NEWTABLE  A=1 B=0 C=0
+   8 [  26] VARARG    A=2 B=0 C=0
+   9 [  26] SETLIST   A=1 B=0 C=1
+  10 [  26] CALL      A=0 B=2 C=4
+  11 [  26] JMP       A=0 ->17
+  12 [  27] GETTABUP  R5 = UP1[K2('table')]
+  13 [  27] GETTABLE  R5 = R5[K3('insert')]
+  14 [  27] GETTABUP  R6 = UP0[K0('RINIT')]
+  15 [  27] MOVE      A=7 B=4 C=0
+  16 [  27] CALL      A=5 B=3 C=1
+  17 [  26] TFORCALL  A=0 B=0 C=2
+  18 [  26] TFORLOOP  A=2 ->12
+  19 [  29] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 2 vararg 0 stack 3 lines 31 37 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('first', 0, 3), ('last', 0, 3)]
+   1 [  36] CLOSURE   R2 = proto[0]
+   2 [  36] RETURN    A=2 B=2 C=0
+   3 [  37] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1/0 params 0 vararg 0 stack 6 lines 32 36 source None
+UPVALUES [('first', (1, 0)), ('last', (1, 1)), ('_ENV', (0, 0))]
+LOCALS [('(for index)', 3, 9), ('(for limit)', 3, 9), ('(for step)', 3, 9), ('i', 4, 8)]
+K0 1
+K1 'model'
+K2 'resetSensor'
+   1 [  33] GETUPVAL  A=0 B=0 C=0
+   2 [  33] GETUPVAL  A=1 B=1 C=0
+   3 [  33] LOADK     R2 = K0 (1)
+   4 [  33] FORPREP   A=0 ->9
+   5 [  34] GETTABUP  R4 = UP2[K1('model')]
+   6 [  34] GETTABLE  R4 = R4[K2('resetSensor')]
+   7 [  34] MOVE      A=5 B=3 C=0
+   8 [  34] CALL      A=4 B=2 C=1
+   9 [  33] FORLOOP   A=0 ->5
+  10 [  36] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 0 vararg 0 stack 2 lines 39 48 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4))]
+LOCALS []
+K0 'UI'
+K1 'mute'
+K2 'cmds'
+K3 1
+K4 'Enable alerts'
+K5 'Mute alerts'
+   1 [  40] GETTABUP  R0 = UP0[K0('UI')]
+   2 [  40] GETTABUP  R1 = UP0[K0('UI')]
+   3 [  40] GETTABLE  R1 = R1[K1('mute')]
+   4 [  40] NOT       A=1 B=1 C=0
+   5 [  40] SETTABLE  R0[K1('mute')] = R1
+   6 [  42] GETTABUP  R0 = UP0[K0('UI')]
+   7 [  42] GETTABLE  R0 = R0[K1('mute')]
+   8 [  42] TEST      A=0 B=0 C=0
+   9 [  42] JMP       A=0 ->14
+  10 [  43] GETTABUP  R0 = UP1[K2('cmds')]
+  11 [  43] GETTABLE  R0 = R0[K3(1)]
+  12 [  43] SETTABLE  R0[K3(1)] = K4('Enable alerts')
+  13 [  43] JMP       A=0 ->17
+  14 [  45] GETTABUP  R0 = UP1[K2('cmds')]
+  15 [  45] GETTABLE  R0 = R0[K3(1)]
+  16 [  45] SETTABLE  R0[K3(1)] = K5('Mute alerts')
+  17 [  47] RETURN    A=0 B=1 C=0
+  18 [  48] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 0 vararg 0 stack 2 lines 51 51 source None
+UPVALUES [('D', (1, 2))]
+LOCALS []
+K0 'UI'
+K1 'T_QM'
+K2 'mute'
+   1 [  51] GETTABUP  R0 = UP0[K0('UI')]
+   2 [  51] GETTABLE  R0 = R0[K1('T_QM')]
+   3 [  51] GETTABLE  R0 = R0[K2('mute')]
+   4 [  51] CALL      A=0 B=1 C=1
+   5 [  51] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4 params 0 vararg 0 stack 11 lines 52 63 source None
+UPVALUES [('queueRinit', (1, 5)), ('G', (1, 0)), ('resetSensors', (1, 6))]
+LOCALS []
+K0 'fn'
+K1 'PLIBRD'
+K2 'TMR'
+K3 'args'
+K4 'reset'
+K5 'PLIBTLM'
+K6 'TLMINIT'
+K7 'cb'
+K8 0
+K9 15
+K10 16
+K11 31
+K12 32
+K13 47
+K14 48
+K15 63
+K16 'PLIBVTX'
+K17 'VTXINIT'
+K18 'PLIBGPS'
+K19 'GPSINIT'
+   1 [  53] GETUPVAL  A=0 B=0 C=0
+   2 [  53] NEWTABLE  A=1 B=0 C=2
+   3 [  54] GETTABUP  R2 = UP1[K1('PLIBRD')]
+   4 [  54] LOADK     R3 = K2 ('TMR')
+   5 [  54] CONCAT    A=2 B=2 C=3
+   6 [  54] SETTABLE  R1[K0('fn')] = R2
+   7 [  54] NEWTABLE  A=2 B=1 C=0
+   8 [  54] LOADK     R3 = K4 ('reset')
+   9 [  54] SETLIST   A=2 B=1 C=1
+  10 [  54] SETTABLE  R1[K3('args')] = R2
+  11 [  54] NEWTABLE  A=2 B=0 C=1
+  12 [  55] GETTABUP  R3 = UP1[K5('PLIBTLM')]
+  13 [  55] LOADK     R4 = K6 ('TLMINIT')
+  14 [  55] CONCAT    A=3 B=3 C=4
+  15 [  55] SETTABLE  R2[K0('fn')] = R3
+  16 [  55] NEWTABLE  A=3 B=0 C=1
+  17 [  56] GETUPVAL  A=4 B=2 C=0
+  18 [  56] LOADK     R5 = K8 (0)
+  19 [  56] LOADK     R6 = K9 (15)
+  20 [  56] CALL      A=4 B=3 C=2
+  21 [  56] SETTABLE  R3[K7('cb')] = R4
+  22 [  56] NEWTABLE  A=4 B=0 C=1
+  23 [  57] GETUPVAL  A=5 B=2 C=0
+  24 [  57] LOADK     R6 = K10 (16)
+  25 [  57] LOADK     R7 = K11 (31)
+  26 [  57] CALL      A=5 B=3 C=2
+  27 [  57] SETTABLE  R4[K7('cb')] = R5
+  28 [  57] NEWTABLE  A=5 B=0 C=1
+  29 [  58] GETUPVAL  A=6 B=2 C=0
+  30 [  58] LOADK     R7 = K12 (32)
+  31 [  58] LOADK     R8 = K13 (47)
+  32 [  58] CALL      A=6 B=3 C=2
+  33 [  58] SETTABLE  R5[K7('cb')] = R6
+  34 [  58] NEWTABLE  A=6 B=0 C=1
+  35 [  59] GETUPVAL  A=7 B=2 C=0
+  36 [  59] LOADK     R8 = K14 (48)
+  37 [  59] LOADK     R9 = K15 (63)
+  38 [  59] CALL      A=7 B=3 C=2
+  39 [  59] SETTABLE  R6[K7('cb')] = R7
+  40 [  59] NEWTABLE  A=7 B=0 C=1
+  41 [  60] GETTABUP  R8 = UP1[K16('PLIBVTX')]
+  42 [  60] LOADK     R9 = K17 ('VTXINIT')
+  43 [  60] CONCAT    A=8 B=8 C=9
+  44 [  60] SETTABLE  R7[K0('fn')] = R8
+  45 [  60] NEWTABLE  A=8 B=0 C=1
+  46 [  61] GETTABUP  R9 = UP1[K18('PLIBGPS')]
+  47 [  61] LOADK     R10 = K19 ('GPSINIT')
+  48 [  61] CONCAT    A=9 B=9 C=10
+  49 [  61] SETTABLE  R8[K0('fn')] = R9
+  50 [  53] CALL      A=0 B=9 C=1
+  51 [  63] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5 params 0 vararg 0 stack 3 lines 64 66 source None
+UPVALUES [('queueRinit', (1, 5)), ('G', (1, 0))]
+LOCALS []
+K0 'cb'
+   1 [  65] GETUPVAL  A=0 B=0 C=0
+   2 [  65] NEWTABLE  A=1 B=0 C=1
+   3 [  65] CLOSURE   R2 = proto[0]
+   4 [  65] SETTABLE  R1[K0('cb')] = R2
+   5 [  65] CALL      A=0 B=2 C=1
+   6 [  66] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5/0 params 0 vararg 0 stack 2 lines 65 65 source None
+UPVALUES [('G', (0, 1))]
+LOCALS []
+K0 'initDone'
+K1 None
+   1 [  65] SETTABUP  UP0[K0('initDone')] = K1(None)
+   2 [  65] RETURN    A=0 B=1 C=0
+
+FUNCTION main/6 params 1 vararg 0 stack 14 lines 70 104 source None
+UPVALUES [('G', (1, 0)), ('T', (1, 4)), ('D', (1, 2)), ('_ENV', (0, 0)), ('X', (1, 3)), ('queueRinit', (1, 5))]
+LOCALS [('w', 0, 108), ('_', 26, 108), ('h', 26, 108), ('(for generator)', 33, 41), ('(for state)', 33, 41), ('(for control)', 33, 41), ('_', 34, 39), ('cmd', 34, 39), ('(for generator)', 82, 97), ('(for state)', 82, 97), ('(for control)', 82, 97), ('_', 83, 95), ('cmd', 83, 95)]
+K0 'dbg'
+K1 'QM init'
+K2 'cmds'
+K3 'clear'
+K4 '+cmds'
+K5 'S'
+K6 'QM_ON'
+K7 False
+K8 'cmdSel'
+K9 1
+K10 'menuW'
+K11 'LCD_W'
+K12 0.33000001311302185
+K13 'lineH'
+K14 'LCD_H'
+K15 0.09000000357627869
+K16 'lcd'
+K17 'sizeText'
+K18 'Reset flight data'
+K19 'FONT_STD_BOLD'
+K20 'yText'
+K21 2
+K22 'ipairs'
+K23 'cmds_common'
+K24 'table'
+K25 'insert'
+K26 'UI'
+K27 'mute'
+K28 'Enable alerts'
+K29 'Mute alerts'
+K30 'MDL_FC_ON'
+K31 'FC_MSP_ON'
+K32 'Restart MSP'
+K33 'QM_CMDS'
+K34 3
+K35 '+QM_CMDS'
+K36 'menuH'
+   1 [  71] GETTABUP  R1 = UP0[K0('dbg')]
+   2 [  71] LOADK     R2 = K1 ('QM init')
+   3 [  71] CALL      A=1 B=2 C=1
+   4 [  72] GETTABUP  R1 = UP1[K2('cmds')]
+   5 [  72] TEST      A=1 B=0 C=1
+   6 [  72] JMP       A=0 ->8
+   7 [  72] NEWTABLE  A=1 B=0 C=0
+   8 [  72] SETTABUP  UP1[K2('cmds')] = R1
+   9 [  73] GETTABUP  R1 = UP0[K3('clear')]
+  10 [  73] GETUPVAL  A=2 B=1 C=0
+  11 [  73] LOADK     R3 = K4 ('+cmds')
+  12 [  73] CALL      A=1 B=3 C=1
+  13 [  75] GETTABUP  R1 = UP2[K5('S')]
+  14 [  75] SETTABLE  R1[K6('QM_ON')] = K7(False)
+  15 [  76] SETTABUP  UP1[K8('cmdSel')] = K9(1)
+  16 [  77] GETTABUP  R1 = UP3[K11('LCD_W')]
+  17 [  77] MUL       A=1 B=1 C=268
+  18 [  77] SETTABUP  UP1[K10('menuW')] = R1
+  19 [  78] GETTABUP  R1 = UP3[K14('LCD_H')]
+  20 [  78] MUL       A=1 B=1 C=271
+  21 [  78] SETTABUP  UP1[K13('lineH')] = R1
+  22 [  79] GETTABUP  R1 = UP3[K16('lcd')]
+  23 [  79] GETTABLE  R1 = R1[K17('sizeText')]
+  24 [  79] LOADK     R2 = K18 ('Reset flight data')
+  25 [  79] GETTABUP  R3 = UP4[K19('FONT_STD_BOLD')]
+  26 [  79] CALL      A=1 B=3 C=3
+  27 [  80] GETTABUP  R3 = UP1[K13('lineH')]
+  28 [  80] SUB       A=3 B=3 C=2
+  29 [  80] DIV       A=3 B=3 C=277
+  30 [  80] SETTABUP  UP1[K20('yText')] = R3
+  31 [  82] GETTABUP  R3 = UP3[K22('ipairs')]
+  32 [  82] GETTABUP  R4 = UP1[K23('cmds_common')]
+  33 [  82] CALL      A=3 B=2 C=4
+  34 [  82] JMP       A=0 ->40
+  35 [  83] GETTABUP  R8 = UP3[K24('table')]
+  36 [  83] GETTABLE  R8 = R8[K25('insert')]
+  37 [  83] GETTABUP  R9 = UP1[K2('cmds')]
+  38 [  83] MOVE      A=10 B=7 C=0
+  39 [  83] CALL      A=8 B=3 C=1
+  40 [  82] TFORCALL  A=3 B=0 C=2
+  41 [  82] TFORLOOP  A=5 ->35
+  42 [  85] GETTABUP  R3 = UP1[K2('cmds')]
+  43 [  85] GETTABLE  R3 = R3[K9(1)]
+  44 [  85] GETTABUP  R4 = UP2[K26('UI')]
+  45 [  85] GETTABLE  R4 = R4[K27('mute')]
+  46 [  85] TEST      A=4 B=0 C=0
+  47 [  85] JMP       A=0 ->51
+  48 [  85] LOADK     R4 = K28 ('Enable alerts')
+  49 [  85] TEST      A=4 B=0 C=1
+  50 [  85] JMP       A=0 ->52
+  51 [  85] LOADK     R4 = K29 ('Mute alerts')
+  52 [  85] SETTABLE  R3[K9(1)] = R4
+  53 [  86] GETTABUP  R3 = UP2[K5('S')]
+  54 [  86] GETTABLE  R3 = R3[K30('MDL_FC_ON')]
+  55 [  86] TEST      A=3 B=0 C=0
+  56 [  86] JMP       A=0 ->72
+  57 [  86] GETTABUP  R3 = UP2[K5('S')]
+  58 [  86] GETTABLE  R3 = R3[K31('FC_MSP_ON')]
+  59 [  86] TEST      A=3 B=0 C=0
+  60 [  86] JMP       A=0 ->72
+  61 [  87] GETTABUP  R3 = UP3[K24('table')]
+  62 [  87] GETTABLE  R3 = R3[K25('insert')]
+  63 [  87] GETTABUP  R4 = UP1[K2('cmds')]
+  64 [  87] GETTABUP  R5 = UP1[K2('cmds')]
+  65 [  87] LEN       A=5 B=5 C=0
+  66 [  87] NEWTABLE  A=6 B=3 C=0
+  67 [  87] LOADK     R7 = K32 ('Restart MSP')
+  68 [  89] CLOSURE   R8 = proto[0]
+  69 [  89] LOADBOOL  A=9 B=1 C=0
+  70 [  89] SETLIST   A=6 B=3 C=1
+  71 [  87] CALL      A=3 B=4 C=1
+  72 [  93] GETTABUP  R3 = UP2[K5('S')]
+  73 [  93] GETTABUP  R4 = UP2[K5('S')]
+  74 [  93] GETTABLE  R4 = R4[K33('QM_CMDS')]
+  75 [  93] TEST      A=4 B=0 C=1
+  76 [  93] JMP       A=0 ->78
+  77 [  93] NEWTABLE  A=4 B=0 C=0
+  78 [  93] SETTABLE  R3[K33('QM_CMDS')] = R4
+  79 [  94] GETTABUP  R3 = UP3[K22('ipairs')]
+  80 [  94] GETTABUP  R4 = UP2[K5('S')]
+  81 [  94] GETTABLE  R4 = R4[K33('QM_CMDS')]
+  82 [  94] CALL      A=3 B=2 C=4
+  83 [  94] JMP       A=0 ->96
+  84 [  95] GETTABUP  R8 = UP3[K24('table')]
+  85 [  95] GETTABLE  R8 = R8[K25('insert')]
+  86 [  95] GETTABUP  R9 = UP1[K2('cmds')]
+  87 [  95] NEWTABLE  A=10 B=3 C=0
+  88 [  95] GETTABLE  R11 = R7[K9(1)]
+  89 [  95] GETTABLE  R12 = R7[K21(2)]
+  90 [  95] GETTABLE  R13 = R7[K34(3)]
+  91 [  95] TEST      A=13 B=0 C=1
+  92 [  95] JMP       A=0 ->94
+  93 [  95] LOADBOOL  A=13 B=1 C=0
+  94 [  95] SETLIST   A=10 B=3 C=1
+  95 [  95] CALL      A=8 B=3 C=1
+  96 [  94] TFORCALL  A=3 B=0 C=2
+  97 [  94] TFORLOOP  A=5 ->84
+  98 [  97] GETTABUP  R3 = UP0[K3('clear')]
+  99 [  97] GETTABUP  R4 = UP2[K5('S')]
+ 100 [  97] LOADK     R5 = K35 ('+QM_CMDS')
+ 101 [  97] CALL      A=3 B=3 C=1
+ 102 [  99] GETTABUP  R3 = UP1[K2('cmds')]
+ 103 [  99] LEN       A=3 B=3 C=0
+ 104 [  99] GETTABUP  R4 = UP1[K13('lineH')]
+ 105 [  99] MUL       A=3 B=3 C=4
+ 106 [  99] SETTABUP  UP1[K36('menuH')] = R3
+ 107 [ 103] RETURN    A=0 B=1 C=0
+ 108 [ 104] RETURN    A=0 B=1 C=0
+
+FUNCTION main/6/0 params 0 vararg 0 stack 4 lines 87 89 source None
+UPVALUES [('queueRinit', (0, 5)), ('G', (0, 0))]
+LOCALS []
+K0 'fn'
+K1 'PLIBMSP'
+K2 'MSPINIT'
+   1 [  88] GETUPVAL  A=0 B=0 C=0
+   2 [  88] NEWTABLE  A=1 B=0 C=1
+   3 [  88] GETTABUP  R2 = UP1[K1('PLIBMSP')]
+   4 [  88] LOADK     R3 = K2 ('MSPINIT')
+   5 [  88] CONCAT    A=2 B=2 C=3
+   6 [  88] SETTABLE  R1[K0('fn')] = R2
+   7 [  88] CALL      A=0 B=2 C=1
+   8 [  89] RETURN    A=0 B=1 C=0
+
+FUNCTION main/7 params 1 vararg 0 stack 19 lines 106 128 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4)), ('_ENV', (0, 0)), ('X', (1, 3))]
+LOCALS [('w', 0, 99), ('mc', 5, 97), ('mx', 8, 97), ('my', 13, 97), ('(for generator)', 54, 97), ('(for state)', 54, 97), ('(for control)', 54, 97), ('i', 55, 95), ('cmd', 55, 95), ('y', 59, 95), ('ctx', 68, 95), ('cbg', 76, 95)]
+K0 'S'
+K1 'QM_ON'
+K2 'xc'
+K3 'menuW'
+K4 2
+K5 'LCD_H'
+K6 'menuH'
+K7 'RCF'
+K8 'xl'
+K9 'yt'
+K10 'w'
+K11 'h'
+K12 'C'
+K13 'BLACK'
+K14 'UI'
+K15 'dimMENU'
+K16 4
+K17 'MD_B'
+K18 'RC'
+K19 'MD_L'
+K20 1
+K21 3
+K22 6
+K23 'MD_L2'
+K24 'ipairs'
+K25 'cmds'
+K26 'lineH'
+K27 'cmdSel'
+K28 'MN_TS'
+K29 'MN_TN'
+K30 'MN_BS'
+K31 'TX'
+K32 'yText'
+K33 'FONT_STD_BOLD'
+K34 'TEXT_CENTER'
+   1 [ 107] GETTABUP  R1 = UP0[K0('S')]
+   2 [ 107] GETTABLE  R1 = R1[K1('QM_ON')]
+   3 [ 107] TEST      A=1 B=0 C=0
+   4 [ 107] JMP       A=0 ->98
+   5 [ 108] GETTABLE  R1 = R0[K2('xc')]
+   6 [ 109] GETTABUP  R2 = UP1[K3('menuW')]
+   7 [ 109] DIV       A=2 B=2 C=260
+   8 [ 109] SUB       A=2 B=1 C=2
+   9 [ 110] GETTABUP  R3 = UP2[K5('LCD_H')]
+  10 [ 110] DIV       A=3 B=3 C=260
+  11 [ 110] GETTABUP  R4 = UP1[K6('menuH')]
+  12 [ 110] DIV       A=4 B=4 C=260
+  13 [ 110] SUB       A=3 B=3 C=4
+  14 [ 112] GETTABUP  R4 = UP3[K7('RCF')]
+  15 [ 112] GETTABLE  R5 = R0[K8('xl')]
+  16 [ 112] GETTABLE  R6 = R0[K9('yt')]
+  17 [ 112] GETTABLE  R7 = R0[K10('w')]
+  18 [ 112] GETTABLE  R8 = R0[K11('h')]
+  19 [ 112] GETTABUP  R9 = UP0[K12('C')]
+  20 [ 112] GETTABLE  R9 = R9[K13('BLACK')]
+  21 [ 112] GETTABUP  R10 = UP0[K14('UI')]
+  22 [ 112] GETTABLE  R10 = R10[K15('dimMENU')]
+  23 [ 112] CALL      A=4 B=7 C=1
+  24 [ 113] GETTABUP  R4 = UP3[K7('RCF')]
+  25 [ 113] MOVE      A=5 B=2 C=0
+  26 [ 113] SUB       A=6 B=3 C=260
+  27 [ 113] GETTABUP  R7 = UP1[K3('menuW')]
+  28 [ 113] GETTABUP  R8 = UP1[K6('menuH')]
+  29 [ 113] ADD       A=8 B=8 C=272
+  30 [ 113] GETTABUP  R9 = UP0[K12('C')]
+  31 [ 113] GETTABLE  R9 = R9[K17('MD_B')]
+  32 [ 113] CALL      A=4 B=6 C=1
+  33 [ 114] GETTABUP  R4 = UP3[K18('RC')]
+  34 [ 114] MOVE      A=5 B=2 C=0
+  35 [ 114] SUB       A=6 B=3 C=260
+  36 [ 114] GETTABUP  R7 = UP1[K3('menuW')]
+  37 [ 114] GETTABUP  R8 = UP1[K6('menuH')]
+  38 [ 114] ADD       A=8 B=8 C=272
+  39 [ 114] GETTABUP  R9 = UP0[K12('C')]
+  40 [ 114] GETTABLE  R9 = R9[K19('MD_L')]
+  41 [ 114] CALL      A=4 B=6 C=1
+  42 [ 115] GETTABUP  R4 = UP3[K18('RC')]
+  43 [ 115] SUB       A=5 B=2 C=276
+  44 [ 115] SUB       A=6 B=3 C=277
+  45 [ 115] GETTABUP  R7 = UP1[K3('menuW')]
+  46 [ 115] ADD       A=7 B=7 C=260
+  47 [ 115] GETTABUP  R8 = UP1[K6('menuH')]
+  48 [ 115] ADD       A=8 B=8 C=278
+  49 [ 115] GETTABUP  R9 = UP0[K12('C')]
+  50 [ 115] GETTABLE  R9 = R9[K23('MD_L2')]
+  51 [ 115] CALL      A=4 B=6 C=1
+  52 [ 117] GETTABUP  R4 = UP2[K24('ipairs')]
+  53 [ 117] GETTABUP  R5 = UP1[K25('cmds')]
+  54 [ 117] CALL      A=4 B=2 C=4
+  55 [ 117] JMP       A=0 ->96
+  56 [ 118] SUB       A=9 B=7 C=276
+  57 [ 118] GETTABUP  R10 = UP1[K26('lineH')]
+  58 [ 118] MUL       A=9 B=9 C=10
+  59 [ 118] ADD       A=9 B=3 C=9
+  60 [ 119] GETTABUP  R10 = UP1[K27('cmdSel')]
+  61 [ 119] EQ        A=0 R7, R10; skip-next if condition != A
+  62 [ 119] JMP       A=0 ->67
+  63 [ 119] GETTABUP  R10 = UP0[K12('C')]
+  64 [ 119] GETTABLE  R10 = R10[K28('MN_TS')]
+  65 [ 119] TEST      A=10 B=0 C=1
+  66 [ 119] JMP       A=0 ->69
+  67 [ 119] GETTABUP  R10 = UP0[K12('C')]
+  68 [ 119] GETTABLE  R10 = R10[K29('MN_TN')]
+  69 [ 120] GETTABUP  R11 = UP1[K27('cmdSel')]
+  70 [ 120] EQ        A=0 R7, R11; skip-next if condition != A
+  71 [ 120] JMP       A=0 ->76
+  72 [ 120] GETTABUP  R11 = UP0[K12('C')]
+  73 [ 120] GETTABLE  R11 = R11[K30('MN_BS')]
+  74 [ 120] TEST      A=11 B=0 C=1
+  75 [ 120] JMP       A=0 ->77
+  76 [ 120] LOADNIL   A=11 B=0 C=0
+  77 [ 121] TEST      A=11 B=0 C=0
+  78 [ 121] JMP       A=0 ->87
+  79 [ 122] GETTABUP  R12 = UP3[K7('RCF')]
+  80 [ 122] MOVE      A=13 B=2 C=0
+  81 [ 122] SUB       A=14 B=9 C=276
+  82 [ 122] GETTABUP  R15 = UP1[K3('menuW')]
+  83 [ 122] GETTABUP  R16 = UP1[K26('lineH')]
+  84 [ 122] ADD       A=16 B=16 C=260
+  85 [ 122] MOVE      A=17 B=11 C=0
+  86 [ 122] CALL      A=12 B=6 C=1
+  87 [ 124] GETTABUP  R12 = UP3[K31('TX')]
+  88 [ 124] MOVE      A=13 B=1 C=0
+  89 [ 124] GETTABUP  R14 = UP1[K32('yText')]
+  90 [ 124] ADD       A=14 B=9 C=14
+  91 [ 124] GETTABLE  R15 = R8[K20(1)]
+  92 [ 124] GETTABUP  R16 = UP3[K33('FONT_STD_BOLD')]
+  93 [ 124] GETTABUP  R17 = UP3[K34('TEXT_CENTER')]
+  94 [ 124] MOVE      A=18 B=10 C=0
+  95 [ 124] CALL      A=12 B=7 C=1
+  96 [ 117] TFORCALL  A=4 B=0 C=2
+  97 [ 117] TFORLOOP  A=6 ->56
+  98 [ 127] RETURN    A=0 B=1 C=0
+  99 [ 128] RETURN    A=0 B=1 C=0
+
+FUNCTION main/8 params 0 vararg 0 stack 5 lines 130 152 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4)), ('G', (1, 0))]
+LOCALS []
+K0 'S'
+K1 'QM_ON'
+K2 'evt'
+K3 'K'
+K4 'EX'
+K5 'MN'
+K6 False
+K7 'UI'
+K8 'TASKS'
+K9 'el'
+K10 'ell'
+K11 1
+K12 'EN'
+K13 'cmds'
+K14 'cmdSel'
+K15 3
+K16 2
+K17 'RT'
+K18 'next'
+K19 'LT'
+K20 'i'
+K21 'w'
+K22 True
+K23 0
+   1 [ 131] GETTABUP  R0 = UP0[K0('S')]
+   2 [ 131] GETTABLE  R0 = R0[K1('QM_ON')]
+   3 [ 131] TEST      A=0 B=0 C=0
+   4 [ 131] JMP       A=0 ->84
+   5 [ 132] GETTABUP  R0 = UP0[K2('evt')]
+   6 [ 132] GETTABUP  R1 = UP0[K3('K')]
+   7 [ 132] GETTABLE  R1 = R1[K4('EX')]
+   8 [ 132] EQ        A=1 R0, R1; skip-next if condition != A
+   9 [ 132] JMP       A=0 ->15
+  10 [ 132] GETTABUP  R0 = UP0[K2('evt')]
+  11 [ 132] GETTABUP  R1 = UP0[K3('K')]
+  12 [ 132] GETTABLE  R1 = R1[K5('MN')]
+  13 [ 132] EQ        A=0 R0, R1; skip-next if condition != A
+  14 [ 132] JMP       A=0 ->27
+  15 [ 133] GETTABUP  R0 = UP0[K0('S')]
+  16 [ 133] SETTABLE  R0[K1('QM_ON')] = K6(False)
+  17 [ 134] GETTABUP  R0 = UP0[K7('UI')]
+  18 [ 134] GETTABLE  R0 = R0[K8('TASKS')]
+  19 [ 134] GETTABUP  R1 = UP0[K7('UI')]
+  20 [ 134] GETTABLE  R1 = R1[K8('TASKS')]
+  21 [ 134] GETTABLE  R1 = R1[K10('ell')]
+  22 [ 134] TEST      A=1 B=0 C=1
+  23 [ 134] JMP       A=0 ->25
+  24 [ 134] LOADK     R1 = K11 (1)
+  25 [ 134] SETTABLE  R0[K9('el')] = R1
+  26 [ 134] JMP       A=0 ->97
+  27 [ 135] GETTABUP  R0 = UP0[K2('evt')]
+  28 [ 135] GETTABUP  R1 = UP0[K3('K')]
+  29 [ 135] GETTABLE  R1 = R1[K12('EN')]
+  30 [ 135] EQ        A=0 R0, R1; skip-next if condition != A
+  31 [ 135] JMP       A=0 ->54
+  32 [ 136] GETTABUP  R0 = UP0[K0('S')]
+  33 [ 136] GETTABUP  R1 = UP1[K13('cmds')]
+  34 [ 136] GETTABUP  R2 = UP1[K14('cmdSel')]
+  35 [ 136] GETTABLE  R1 = R1[R2]
+  36 [ 136] GETTABLE  R1 = R1[K15(3)]
+  37 [ 136] NOT       A=1 B=1 C=0
+  38 [ 136] SETTABLE  R0[K1('QM_ON')] = R1
+  39 [ 137] GETTABUP  R0 = UP0[K7('UI')]
+  40 [ 137] GETTABLE  R0 = R0[K8('TASKS')]
+  41 [ 137] GETTABUP  R1 = UP0[K7('UI')]
+  42 [ 137] GETTABLE  R1 = R1[K8('TASKS')]
+  43 [ 137] GETTABLE  R1 = R1[K10('ell')]
+  44 [ 137] TEST      A=1 B=0 C=1
+  45 [ 137] JMP       A=0 ->47
+  46 [ 137] LOADK     R1 = K11 (1)
+  47 [ 137] SETTABLE  R0[K9('el')] = R1
+  48 [ 138] GETTABUP  R0 = UP1[K13('cmds')]
+  49 [ 138] GETTABUP  R1 = UP1[K14('cmdSel')]
+  50 [ 138] GETTABLE  R0 = R0[R1]
+  51 [ 138] GETTABLE  R0 = R0[K16(2)]
+  52 [ 138] CALL      A=0 B=1 C=1
+  53 [ 138] JMP       A=0 ->97
+  54 [ 139] GETTABUP  R0 = UP0[K2('evt')]
+  55 [ 139] GETTABUP  R1 = UP0[K3('K')]
+  56 [ 139] GETTABLE  R1 = R1[K17('RT')]
+  57 [ 139] EQ        A=0 R0, R1; skip-next if condition != A
+  58 [ 139] JMP       A=0 ->69
+  59 [ 140] GETTABUP  R0 = UP2[K18('next')]
+  60 [ 140] GETTABUP  R1 = UP1[K14('cmdSel')]
+  61 [ 140] ADD       A=1 B=1 C=267
+  62 [ 140] LOADK     R2 = K11 (1)
+  63 [ 140] GETTABUP  R3 = UP1[K13('cmds')]
+  64 [ 140] LEN       A=3 B=3 C=0
+  65 [ 140] LOADBOOL  A=4 B=1 C=0
+  66 [ 140] CALL      A=0 B=5 C=2
+  67 [ 140] SETTABUP  UP1[K14('cmdSel')] = R0
+  68 [ 140] JMP       A=0 ->97
+  69 [ 141] GETTABUP  R0 = UP0[K2('evt')]
+  70 [ 141] GETTABUP  R1 = UP0[K3('K')]
+  71 [ 141] GETTABLE  R1 = R1[K19('LT')]
+  72 [ 141] EQ        A=0 R0, R1; skip-next if condition != A
+  73 [ 141] JMP       A=0 ->97
+  74 [ 142] GETTABUP  R0 = UP2[K18('next')]
+  75 [ 142] GETTABUP  R1 = UP1[K14('cmdSel')]
+  76 [ 142] SUB       A=1 B=1 C=267
+  77 [ 142] LOADK     R2 = K11 (1)
+  78 [ 142] GETTABUP  R3 = UP1[K13('cmds')]
+  79 [ 142] LEN       A=3 B=3 C=0
+  80 [ 142] LOADBOOL  A=4 B=1 C=0
+  81 [ 142] CALL      A=0 B=5 C=2
+  82 [ 142] SETTABUP  UP1[K14('cmdSel')] = R0
+  83 [ 143] JMP       A=0 ->97
+  84 [ 145] GETTABUP  R0 = UP0[K2('evt')]
+  85 [ 145] GETTABUP  R1 = UP0[K3('K')]
+  86 [ 145] GETTABLE  R1 = R1[K5('MN')]
+  87 [ 145] EQ        A=0 R0, R1; skip-next if condition != A
+  88 [ 145] JMP       A=0 ->97
+  89 [ 146] GETTABUP  R0 = UP1[K20('i')]
+  90 [ 146] GETTABUP  R1 = UP1[K21('w')]
+  91 [ 146] CALL      A=0 B=2 C=1
+  92 [ 147] GETTABUP  R0 = UP0[K0('S')]
+  93 [ 147] SETTABLE  R0[K1('QM_ON')] = K22(True)
+  94 [ 148] GETTABUP  R0 = UP0[K7('UI')]
+  95 [ 148] GETTABLE  R0 = R0[K8('TASKS')]
+  96 [ 148] SETTABLE  R0[K9('el')] = K23(0)
+  97 [ 151] RETURN    A=0 B=1 C=0
+  98 [ 152] RETURN    A=0 B=1 C=0

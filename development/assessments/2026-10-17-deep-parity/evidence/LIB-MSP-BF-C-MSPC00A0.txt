@@ -1,0 +1,48 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC00A0.luac
+SHA256: 2cf69110ebf52c39744ee6f31124b09c949c00e6f4aa254dabb2d9368ad67c87
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC00A0.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 33), ('F', 1, 33), ('D', 1, 33), ('X', 1, 33)]
+K0 'FC'
+K1 'UIDR'
+K2 'string'
+K3 'format'
+K4 '%08X'
+K5 'MSPP'
+K6 'U32'
+K7 'dbgMSP'
+K8 'D.FC.UIDR'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R2[K0('FC')]
+   3 [  11] GETTABUP  R5 = UP0[K2('string')]
+   4 [  11] GETTABLE  R5 = R5[K3('format')]
+   5 [  11] LOADK     R6 = K4 ('%08X')
+   6 [  11] GETTABLE  R7 = R1[K5('MSPP')]
+   7 [  11] LOADK     R8 = K6 ('U32')
+   8 [  11] CALL      A=7 B=2 C=0
+   9 [  11] CALL      A=5 B=0 C=2
+  10 [  11] GETTABUP  R6 = UP0[K2('string')]
+  11 [  11] GETTABLE  R6 = R6[K3('format')]
+  12 [  11] LOADK     R7 = K4 ('%08X')
+  13 [  11] GETTABLE  R8 = R1[K5('MSPP')]
+  14 [  11] LOADK     R9 = K6 ('U32')
+  15 [  11] CALL      A=8 B=2 C=0
+  16 [  11] CALL      A=6 B=0 C=2
+  17 [  11] GETTABUP  R7 = UP0[K2('string')]
+  18 [  11] GETTABLE  R7 = R7[K3('format')]
+  19 [  11] LOADK     R8 = K4 ('%08X')
+  20 [  11] GETTABLE  R9 = R1[K5('MSPP')]
+  21 [  11] LOADK     R10 = K6 ('U32')
+  22 [  11] CALL      A=9 B=2 C=0
+  23 [  11] CALL      A=7 B=0 C=2
+  24 [  11] CONCAT    A=5 B=5 C=7
+  25 [  11] SETTABLE  R4[K1('UIDR')] = R5
+  26 [  12] GETTABLE  R4 = R0[K7('dbgMSP')]
+  27 [  12] LOADK     R5 = K5 ('MSPP')
+  28 [  12] LOADK     R6 = K8 ('D.FC.UIDR')
+  29 [  12] GETTABLE  R7 = R2[K0('FC')]
+  30 [  12] GETTABLE  R7 = R7[K1('UIDR')]
+  31 [  12] CALL      A=4 B=4 C=1
+  32 [  14] RETURN    A=0 B=1 C=0
+  33 [  14] RETURN    A=0 B=1 C=0

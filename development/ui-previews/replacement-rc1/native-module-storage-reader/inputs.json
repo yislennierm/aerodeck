@@ -1,0 +1,15 @@
+{
+  "developmentOnly": true,
+  "nativeHookUnchanged": true,
+  "budgetInstructions": 20000,
+  "productionModuleSha256": {
+    "sdcard/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua": "99f9efecf51b41a2993c2bcf17dcf83179cb3ed9906664512cb8a603d2cae28c",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/vtx-cache.lua": "389bb57e0d2e49464c1e1049b2a0a6b2c24fa3569f452d8c1efee06134a5338b",
+    "sdcard/SCRIPTS/TOOLS/AERODECK/protocols.lua": "a81ec5b37edf67999a4667776ea00aab9d4bf2948d570c9876872ac30f7692f8"
+  },
+  "checkerSha256": "ec7fa4056e89642c96f4ff7e007170ea579760fd6d2fcc06da5c338a94d44d68",
+  "logBytes": 3404,
+  "cacheBytes": 2562,
+  "syntheticEventsOnly": true,
+  "scope": "disposable native widget VM; native filesystem; no radio; no production edits"
+}

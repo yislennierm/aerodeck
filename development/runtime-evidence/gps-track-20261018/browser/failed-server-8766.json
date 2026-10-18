@@ -1,0 +1,8 @@
+{
+  "pid": 92069,
+  "port": 8766,
+  "log": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/current-preview-20261018/server-8766.log",
+  "build": "ATTITUDE-PERF-20261018",
+  "sourceSHA256": "3f94e062c5bcf9b5d84f725e540eb363055b42b6242d7f78caa40c3d19d50e89",
+  "url": "http://127.0.0.1:8766/"
+}

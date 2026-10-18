@@ -1,0 +1,186 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGUI.luac
+Original SHA256: 76ffb909da1b692d82fc91a270c5deb4b2028303c02ecc50054074b6a98575f9
+
+FUNCTION main params 0 vararg 1 stack 9 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGUI.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 72), ('F', 1, 72), ('D', 1, 72), ('X', 1, 72), ('T', 1, 72), ('listThNames', 22, 72), ('listThIDs', 27, 72)]
+K0 'pID'
+K1 'UI'
+K2 'pN'
+K3 'USER INTERFACE'
+K4 'dVxo'
+K5 'LCD_W'
+K6 480
+K7 350
+K8 320
+K9 150
+K10 110
+K11 'getList'
+K12 'THM'
+K13 'names'
+K14 'ids'
+K15 'cv'
+K16 '_theme'
+K17 'o'
+K18 1
+K19 'l'
+K20 'Theme'
+K21 't'
+K22 'L'
+K23 'lv'
+K24 '_ov'
+K25 2
+K26 'Draw GFX overlay'
+K27 'S'
+K28 'v'
+K29 'selN'
+K30 'UI_THM_OV'
+K31 0
+K32 'onSave'
+K33 'cv'
+   1 [   8] VARARG    A=0 B=6 C=0
+   2 [  10] SETTABLE  R4[K0('pID')] = K1('UI')
+   3 [  11] SETTABLE  R4[K2('pN')] = K3('USER INTERFACE')
+   4 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+   5 [  12] LT        A=0 K6(480), R5; skip-next if condition != A
+   6 [  12] JMP       A=0 ->10
+   7 [  12] LOADK     R5 = K7 (350)
+   8 [  12] TEST      A=5 B=0 C=1
+   9 [  12] JMP       A=0 ->17
+  10 [  12] GETTABUP  R5 = UP0[K5('LCD_W')]
+  11 [  12] LT        A=0 K8(320), R5; skip-next if condition != A
+  12 [  12] JMP       A=0 ->16
+  13 [  12] LOADK     R5 = K9 (150)
+  14 [  12] TEST      A=5 B=0 C=1
+  15 [  12] JMP       A=0 ->17
+  16 [  12] LOADK     R5 = K10 (110)
+  17 [  12] SETTABLE  R4[K4('dVxo')] = R5
+  18 [  14] GETTABLE  R5 = R4[K11('getList')]
+  19 [  14] GETTABLE  R6 = R2[K1('UI')]
+  20 [  14] GETTABLE  R6 = R6[K12('THM')]
+  21 [  14] GETTABLE  R6 = R6[K13('names')]
+  22 [  14] CALL      A=5 B=2 C=2
+  23 [  15] GETTABLE  R6 = R4[K11('getList')]
+  24 [  15] GETTABLE  R7 = R2[K1('UI')]
+  25 [  15] GETTABLE  R7 = R7[K12('THM')]
+  26 [  15] GETTABLE  R7 = R7[K14('ids')]
+  27 [  15] CALL      A=6 B=2 C=2
+  28 [  19] NEWTABLE  A=7 B=0 C=0
+  29 [  19] SETTABLE  R4[K15('cv')] = R7
+  30 [  20] GETTABLE  R7 = R4[K15('cv')]
+  31 [  20] NEWTABLE  A=8 B=0 C=4
+  32 [  20] SETTABLE  R8[K17('o')] = K18(1)
+  33 [  20] SETTABLE  R8[K19('l')] = K20('Theme')
+  34 [  20] SETTABLE  R8[K21('t')] = K22('L')
+  35 [  20] SETTABLE  R8[K23('lv')] = R5
+  36 [  20] SETTABLE  R7[K16('_theme')] = R8
+  37 [  21] GETTABLE  R7 = R4[K15('cv')]
+  38 [  21] NEWTABLE  A=8 B=0 C=3
+  39 [  21] SETTABLE  R8[K17('o')] = K25(2)
+  40 [  21] SETTABLE  R8[K19('l')] = K26('Draw GFX overlay')
+  41 [  21] SETTABLE  R8[K21('t')] = K27('S')
+  42 [  21] SETTABLE  R7[K24('_ov')] = R8
+  43 [  23] GETTABLE  R7 = R4[K15('cv')]
+  44 [  23] GETTABLE  R7 = R7[K16('_theme')]
+  45 [  23] GETTABLE  R8 = R2[K1('UI')]
+  46 [  23] GETTABLE  R8 = R8[K12('THM')]
+  47 [  23] GETTABLE  R8 = R8[K29('selN')]
+  48 [  23] TEST      A=8 B=0 C=1
+  49 [  23] JMP       A=0 ->51
+  50 [  23] LOADK     R8 = K18 (1)
+  51 [  23] SETTABLE  R7[K28('v')] = R8
+  52 [  24] GETTABLE  R7 = R4[K15('cv')]
+  53 [  24] GETTABLE  R7 = R7[K24('_ov')]
+  54 [  24] GETTABLE  R8 = R2[K27('S')]
+  55 [  24] GETTABLE  R8 = R8[K30('UI_THM_OV')]
+  56 [  24] TEST      A=8 B=0 C=0
+  57 [  24] JMP       A=0 ->61
+  58 [  24] LOADK     R8 = K18 (1)
+  59 [  24] TEST      A=8 B=0 C=1
+  60 [  24] JMP       A=0 ->62
+  61 [  24] LOADK     R8 = K31 (0)
+  62 [  24] SETTABLE  R7[K28('v')] = R8
+  63 [  26] GETTABLE  R7 = R4[K15('cv')]
+  64 [  26] GETTABLE  R7 = R7[K16('_theme')]
+  65 [  37] CLOSURE   R8 = proto[0]
+  66 [  37] SETTABLE  R7[K32('onSave')] = R8
+  67 [  39] GETTABLE  R7 = R4[K33('cv')]
+  68 [  39] GETTABLE  R7 = R7[K24('_ov')]
+  69 [  42] CLOSURE   R8 = proto[1]
+  70 [  42] SETTABLE  R7[K32('onSave')] = R8
+  71 [  44] RETURN    A=0 B=1 C=0
+  72 [  44] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 4 lines 26 37 source None
+UPVALUES [('listThIDs', (1, 6)), ('T', (1, 4)), ('D', (1, 2)), ('G', (1, 0))]
+LOCALS [('nThID', 4, 26)]
+K0 'cv'
+K1 '_theme'
+K2 'v'
+K3 'UI'
+K4 'thmN'
+K5 'S'
+K6 'UI_THM_ID'
+K7 'loadE'
+K8 'PLIBCFG'
+K9 'CFGUPD'
+K10 'PUI'
+K11 'THMLD'
+K12 'initDone'
+K13 None
+   1 [  27] GETTABUP  R0 = UP1[K0('cv')]
+   2 [  27] GETTABLE  R0 = R0[K1('_theme')]
+   3 [  27] GETTABLE  R0 = R0[K2('v')]
+   4 [  27] GETTABUP  R0 = UP0[R0]
+   5 [  29] TEST      A=0 B=0 C=0
+   6 [  29] JMP       A=0 ->14
+   7 [  30] GETTABUP  R1 = UP2[K3('UI')]
+   8 [  30] GETTABUP  R2 = UP1[K0('cv')]
+   9 [  30] GETTABLE  R2 = R2[K1('_theme')]
+  10 [  30] GETTABLE  R2 = R2[K2('v')]
+  11 [  30] SETTABLE  R1[K4('thmN')] = R2
+  12 [  31] GETTABUP  R1 = UP2[K5('S')]
+  13 [  31] SETTABLE  R1[K6('UI_THM_ID')] = R0
+  14 [  34] GETTABUP  R1 = UP3[K7('loadE')]
+  15 [  34] GETTABUP  R2 = UP3[K8('PLIBCFG')]
+  16 [  34] LOADK     R3 = K9 ('CFGUPD')
+  17 [  34] CONCAT    A=2 B=2 C=3
+  18 [  34] LOADK     R3 = K3 ('UI')
+  19 [  34] CALL      A=1 B=3 C=1
+  20 [  35] GETTABUP  R1 = UP3[K7('loadE')]
+  21 [  35] GETTABUP  R2 = UP3[K10('PUI')]
+  22 [  35] LOADK     R3 = K11 ('THMLD')
+  23 [  35] CONCAT    A=2 B=2 C=3
+  24 [  35] CALL      A=1 B=2 C=1
+  25 [  36] SETTABUP  UP3[K12('initDone')] = K13(None)
+  26 [  37] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 0 vararg 0 stack 3 lines 39 42 source None
+UPVALUES [('D', (1, 2)), ('T', (1, 4)), ('G', (1, 0))]
+LOCALS []
+K0 'S'
+K1 'UI_THM_OV'
+K2 'cv'
+K3 '_ov'
+K4 'v'
+K5 1
+K6 'loadE'
+K7 'PLIBCFG'
+K8 'CFGUPD'
+K9 'UI'
+   1 [  40] GETTABUP  R0 = UP0[K0('S')]
+   2 [  40] GETTABUP  R1 = UP1[K2('cv')]
+   3 [  40] GETTABLE  R1 = R1[K3('_ov')]
+   4 [  40] GETTABLE  R1 = R1[K4('v')]
+   5 [  40] EQ        A=1 R1, K5(1); skip-next if condition != A
+   6 [  40] JMP       A=0 ->8
+   7 [  40] LOADBOOL  A=1 B=0 C=1
+   8 [  40] LOADBOOL  A=1 B=1 C=0
+   9 [  40] SETTABLE  R0[K1('UI_THM_OV')] = R1
+  10 [  41] GETTABUP  R0 = UP2[K6('loadE')]
+  11 [  41] GETTABUP  R1 = UP2[K7('PLIBCFG')]
+  12 [  41] LOADK     R2 = K8 ('CFGUPD')
+  13 [  41] CONCAT    A=1 B=1 C=2
+  14 [  41] LOADK     R2 = K9 ('UI')
+  15 [  41] CALL      A=0 B=3 C=1
+  16 [  42] RETURN    A=0 B=1 C=0

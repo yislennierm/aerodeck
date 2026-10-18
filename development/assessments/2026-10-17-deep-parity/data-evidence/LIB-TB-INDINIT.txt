@@ -1,0 +1,334 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/INDINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TB/INDINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 84), ('F', 1, 84), ('D', 1, 84), ('X', 1, 84), ('decodeSWPos', 2, 84), ('decodeSW', 3, 84), ('decodeSR', 4, 84)]
+K0 'IND_SW'
+K1 'IND_SR'
+K2 'clear'
+K3 '+IND*'
+K4 'S'
+K5 'IND_*'
+K6 'AR'
+K7 'IN_AR_src'
+K8 'TC'
+K9 'IN_TC_src'
+K10 'THL'
+K11 'IN_TL_src'
+K12 'TL'
+K13 'FC_FW_ID'
+K14 'BF'
+K15 'FMAC'
+K16 'IN_FMAC_src'
+K17 'FMHR'
+K18 'IN_FMHR_src'
+K19 'FMAN'
+K20 'IN_FMAN_src'
+K21 'TU'
+K22 'IN_TU_src'
+K23 'AM'
+K24 'IN_AM_src'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  14] CLOSURE   R4 = proto[0]
+   3 [  53] CLOSURE   R5 = proto[1]
+   4 [  72] CLOSURE   R6 = proto[2]
+   5 [  74] GETTABLE  R7 = R2[K0('IND_SW')]
+   6 [  74] TEST      A=7 B=0 C=1
+   7 [  74] JMP       A=0 ->9
+   8 [  74] NEWTABLE  A=7 B=0 C=0
+   9 [  74] SETTABLE  R2[K0('IND_SW')] = R7
+  10 [  75] GETTABLE  R7 = R2[K1('IND_SR')]
+  11 [  75] TEST      A=7 B=0 C=1
+  12 [  75] JMP       A=0 ->14
+  13 [  75] NEWTABLE  A=7 B=0 C=0
+  14 [  75] SETTABLE  R2[K1('IND_SR')] = R7
+  15 [  76] GETTABLE  R7 = R0[K2('clear')]
+  16 [  76] MOVE      A=8 B=2 C=0
+  17 [  76] LOADK     R9 = K3 ('+IND*')
+  18 [  76] CALL      A=7 B=3 C=1
+  19 [  77] GETTABLE  R7 = R0[K2('clear')]
+  20 [  77] GETTABLE  R8 = R2[K4('S')]
+  21 [  77] LOADK     R9 = K5 ('IND_*')
+  22 [  77] CALL      A=7 B=3 C=1
+  23 [  79] GETTABLE  R7 = R2[K0('IND_SW')]
+  24 [  79] MOVE      A=8 B=5 C=0
+  25 [  79] GETTABLE  R9 = R2[K4('S')]
+  26 [  79] GETTABLE  R9 = R9[K7('IN_AR_src')]
+  27 [  79] LOADK     R10 = K6 ('AR')
+  28 [  79] CALL      A=8 B=3 C=2
+  29 [  79] SETTABLE  R7[K6('AR')] = R8
+  30 [  80] GETTABLE  R7 = R2[K0('IND_SW')]
+  31 [  80] MOVE      A=8 B=5 C=0
+  32 [  80] GETTABLE  R9 = R2[K4('S')]
+  33 [  80] GETTABLE  R9 = R9[K9('IN_TC_src')]
+  34 [  80] LOADK     R10 = K8 ('TC')
+  35 [  80] CALL      A=8 B=3 C=2
+  36 [  80] SETTABLE  R7[K8('TC')] = R8
+  37 [  81] GETTABLE  R7 = R2[K1('IND_SR')]
+  38 [  81] MOVE      A=8 B=6 C=0
+  39 [  81] GETTABLE  R9 = R2[K4('S')]
+  40 [  81] GETTABLE  R9 = R9[K11('IN_TL_src')]
+  41 [  81] LOADK     R10 = K12 ('TL')
+  42 [  81] CALL      A=8 B=3 C=2
+  43 [  81] SETTABLE  R7[K10('THL')] = R8
+  44 [  83] GETTABLE  R7 = R2[K4('S')]
+  45 [  83] GETTABLE  R7 = R7[K13('FC_FW_ID')]
+  46 [  83] EQ        A=0 R7, K14('BF'); skip-next if condition != A
+  47 [  83] JMP       A=0 ->83
+  48 [  84] GETTABLE  R7 = R2[K0('IND_SW')]
+  49 [  84] MOVE      A=8 B=5 C=0
+  50 [  84] GETTABLE  R9 = R2[K4('S')]
+  51 [  84] GETTABLE  R9 = R9[K16('IN_FMAC_src')]
+  52 [  84] LOADK     R10 = K15 ('FMAC')
+  53 [  84] CALL      A=8 B=3 C=2
+  54 [  84] SETTABLE  R7[K15('FMAC')] = R8
+  55 [  85] GETTABLE  R7 = R2[K0('IND_SW')]
+  56 [  85] MOVE      A=8 B=5 C=0
+  57 [  85] GETTABLE  R9 = R2[K4('S')]
+  58 [  85] GETTABLE  R9 = R9[K18('IN_FMHR_src')]
+  59 [  85] LOADK     R10 = K17 ('FMHR')
+  60 [  85] CALL      A=8 B=3 C=2
+  61 [  85] SETTABLE  R7[K17('FMHR')] = R8
+  62 [  86] GETTABLE  R7 = R2[K0('IND_SW')]
+  63 [  86] MOVE      A=8 B=5 C=0
+  64 [  86] GETTABLE  R9 = R2[K4('S')]
+  65 [  86] GETTABLE  R9 = R9[K20('IN_FMAN_src')]
+  66 [  86] LOADK     R10 = K19 ('FMAN')
+  67 [  86] CALL      A=8 B=3 C=2
+  68 [  86] SETTABLE  R7[K19('FMAN')] = R8
+  69 [  87] GETTABLE  R7 = R2[K0('IND_SW')]
+  70 [  87] MOVE      A=8 B=5 C=0
+  71 [  87] GETTABLE  R9 = R2[K4('S')]
+  72 [  87] GETTABLE  R9 = R9[K22('IN_TU_src')]
+  73 [  87] LOADK     R10 = K21 ('TU')
+  74 [  87] CALL      A=8 B=3 C=2
+  75 [  87] SETTABLE  R7[K21('TU')] = R8
+  76 [  88] GETTABLE  R7 = R2[K0('IND_SW')]
+  77 [  88] MOVE      A=8 B=5 C=0
+  78 [  88] GETTABLE  R9 = R2[K4('S')]
+  79 [  88] GETTABLE  R9 = R9[K24('IN_AM_src')]
+  80 [  88] LOADK     R10 = K23 ('AM')
+  81 [  88] CALL      A=8 B=3 C=2
+  82 [  88] SETTABLE  R7[K23('AM')] = R8
+  83 [  91] RETURN    A=0 B=1 C=0
+  84 [  91] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 2 lines 12 14 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('srcSwPos', 0, 18)]
+K0 '+'
+K1 'CHAR_UP'
+K2 '*'
+K3 '-'
+K4 'CHAR_DOWN'
+K5 ''
+   1 [  13] EQ        A=0 R0, K0('+'); skip-next if condition != A
+   2 [  13] JMP       A=0 ->6
+   3 [  13] GETTABUP  R1 = UP0[K1('CHAR_UP')]
+   4 [  13] TEST      A=1 B=0 C=1
+   5 [  13] JMP       A=0 ->17
+   6 [  13] EQ        A=0 R0, K2('*'); skip-next if condition != A
+   7 [  13] JMP       A=0 ->11
+   8 [  13] LOADK     R1 = K3 ('-')
+   9 [  13] TEST      A=1 B=0 C=1
+  10 [  13] JMP       A=0 ->17
+  11 [  13] EQ        A=0 R0, K3('-'); skip-next if condition != A
+  12 [  13] JMP       A=0 ->16
+  13 [  13] GETTABUP  R1 = UP0[K4('CHAR_DOWN')]
+  14 [  13] TEST      A=1 B=0 C=1
+  15 [  13] JMP       A=0 ->17
+  16 [  13] LOADK     R1 = K5 ('')
+  17 [  13] RETURN    A=1 B=2 C=0
+  18 [  14] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 2 vararg 0 stack 14 lines 16 53 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2)), ('decodeSWPos', (1, 4))]
+LOCALS [('value', 0, 101), ('name', 0, 101), ('swListID', 1, 101), ('srcNeg', 11, 101), ('srcName', 26, 101), ('srcType', 37, 101), ('srcValue', 43, 101), ('srcSwPos', 48, 101), ('swID', 56, 83), ('swData', 59, 83), ('swPos', 62, 83), ('swListName', 79, 83), ('swListName', 95, 99)]
+K0 'string'
+K1 'sub'
+K2 1
+K3 '!'
+K4 2
+K5 4
+K6 '-'
+K7 3
+K8 5
+K9 'SW'
+K10 'RD'
+K11 'SWK'
+K12 0
+K13 'fid'
+K14 ''
+K15 'upper'
+K16 'getSwitchIndex'
+K17 'LS'
+K18 'L'
+   1 [  19] LOADNIL   A=2 B=0 C=0
+   2 [  21] GETTABUP  R3 = UP0[K0('string')]
+   3 [  21] GETTABLE  R3 = R3[K1('sub')]
+   4 [  21] MOVE      A=4 B=0 C=0
+   5 [  21] LOADK     R5 = K2 (1)
+   6 [  21] LOADK     R6 = K2 (1)
+   7 [  21] CALL      A=3 B=4 C=2
+   8 [  21] EQ        A=1 R3, K3('!'); skip-next if condition != A
+   9 [  21] JMP       A=0 ->11
+  10 [  21] LOADBOOL  A=3 B=0 C=1
+  11 [  21] LOADBOOL  A=3 B=1 C=0
+  12 [  22] TEST      A=3 B=0 C=0
+  13 [  22] JMP       A=0 ->21
+  14 [  22] GETTABUP  R4 = UP0[K0('string')]
+  15 [  22] GETTABLE  R4 = R4[K1('sub')]
+  16 [  22] MOVE      A=5 B=0 C=0
+  17 [  22] LOADK     R6 = K4 (2)
+  18 [  22] CALL      A=4 B=3 C=2
+  19 [  22] TESTSET   A=0 B=4 C=1
+  20 [  22] JMP       A=0 ->21
+  21 [  25] GETTABUP  R4 = UP0[K0('string')]
+  22 [  25] GETTABLE  R4 = R4[K1('sub')]
+  23 [  25] MOVE      A=5 B=0 C=0
+  24 [  25] LOADK     R6 = K2 (1)
+  25 [  25] LOADK     R7 = K5 (4)
+  26 [  25] CALL      A=4 B=4 C=2
+  27 [  26] EQ        A=0 R4, K6('-'); skip-next if condition != A
+  28 [  26] JMP       A=0 ->32
+  29 [  26] LOADK     R5 = K6 ('-')
+  30 [  26] TEST      A=5 B=0 C=1
+  31 [  26] JMP       A=0 ->38
+  32 [  26] GETTABUP  R5 = UP0[K0('string')]
+  33 [  26] GETTABLE  R5 = R5[K1('sub')]
+  34 [  26] MOVE      A=6 B=0 C=0
+  35 [  26] LOADK     R7 = K2 (1)
+  36 [  26] LOADK     R8 = K4 (2)
+  37 [  26] CALL      A=5 B=4 C=2
+  38 [  27] GETTABUP  R6 = UP0[K0('string')]
+  39 [  27] GETTABLE  R6 = R6[K1('sub')]
+  40 [  27] MOVE      A=7 B=0 C=0
+  41 [  27] LOADK     R8 = K7 (3)
+  42 [  27] LOADK     R9 = K5 (4)
+  43 [  27] CALL      A=6 B=4 C=2
+  44 [  28] GETTABUP  R7 = UP0[K0('string')]
+  45 [  28] GETTABLE  R7 = R7[K1('sub')]
+  46 [  28] MOVE      A=8 B=0 C=0
+  47 [  28] LOADK     R9 = K8 (5)
+  48 [  28] CALL      A=7 B=3 C=2
+  49 [  30] EQ        A=0 R5, K9('SW'); skip-next if condition != A
+  50 [  30] JMP       A=0 ->85
+  51 [  32] GETTABUP  R8 = UP1[K10('RD')]
+  52 [  32] GETTABLE  R8 = R8[K11('SWK')]
+  53 [  32] GETTABLE  R8 = R8[R4]
+  54 [  32] TEST      A=8 B=0 C=1
+  55 [  32] JMP       A=0 ->57
+  56 [  32] LOADK     R8 = K12 (0)
+  57 [  34] GETTABUP  R9 = UP1[K10('RD')]
+  58 [  34] GETTABLE  R9 = R9[K9('SW')]
+  59 [  34] GETTABLE  R9 = R9[R8]
+  60 [  35] GETUPVAL  A=10 B=2 C=0
+  61 [  35] MOVE      A=11 B=7 C=0
+  62 [  35] CALL      A=10 B=2 C=2
+  63 [  36] TEST      A=9 B=0 C=0
+  64 [  36] JMP       A=0 ->100
+  65 [  36] GETTABLE  R11 = R9[K13('fid')]
+  66 [  36] TEST      A=11 B=0 C=0
+  67 [  36] JMP       A=0 ->100
+  68 [  37] TEST      A=3 B=0 C=0
+  69 [  37] JMP       A=0 ->73
+  70 [  37] LOADK     R11 = K3 ('!')
+  71 [  37] TEST      A=11 B=0 C=1
+  72 [  37] JMP       A=0 ->74
+  73 [  37] LOADK     R11 = K14 ('')
+  74 [  37] GETTABUP  R12 = UP0[K0('string')]
+  75 [  37] GETTABLE  R12 = R12[K15('upper')]
+  76 [  37] GETTABLE  R13 = R9[K13('fid')]
+  77 [  37] CALL      A=12 B=2 C=2
+  78 [  37] MOVE      A=13 B=10 C=0
+  79 [  37] CONCAT    A=11 B=11 C=13
+  80 [  39] GETTABUP  R12 = UP0[K16('getSwitchIndex')]
+  81 [  39] MOVE      A=13 B=11 C=0
+  82 [  39] CALL      A=12 B=2 C=2
+  83 [  39] MOVE      A=2 B=12 C=0
+  84 [  40] JMP       A=0 ->100
+  85 [  42] EQ        A=0 R5, K17('LS'); skip-next if condition != A
+  86 [  42] JMP       A=0 ->100
+  87 [  44] TEST      A=3 B=0 C=0
+  88 [  44] JMP       A=0 ->92
+  89 [  44] LOADK     R8 = K3 ('!')
+  90 [  44] TEST      A=8 B=0 C=1
+  91 [  44] JMP       A=0 ->93
+  92 [  44] LOADK     R8 = K14 ('')
+  93 [  44] LOADK     R9 = K18 ('L')
+  94 [  44] MOVE      A=10 B=6 C=0
+  95 [  44] CONCAT    A=8 B=8 C=10
+  96 [  46] GETTABUP  R9 = UP0[K16('getSwitchIndex')]
+  97 [  46] MOVE      A=10 B=8 C=0
+  98 [  46] CALL      A=9 B=2 C=2
+  99 [  46] MOVE      A=2 B=9 C=0
+ 100 [  51] RETURN    A=2 B=2 C=0
+ 101 [  53] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 2 vararg 0 stack 6 lines 55 72 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('value', 0, 53), ('name', 0, 53), ('srcType', 6, 53), ('srcID', 7, 53), ('srcData', 18, 21), ('srcData', 33, 36), ('srcData', 48, 51)]
+K0 'string'
+K1 'sub'
+K2 1
+K3 2
+K4 'PT'
+K5 'RD'
+K6 'SRK'
+K7 0
+K8 'srcid'
+K9 'SL'
+K10 'TR'
+   1 [  56] GETTABUP  R2 = UP0[K0('string')]
+   2 [  56] GETTABLE  R2 = R2[K1('sub')]
+   3 [  56] MOVE      A=3 B=0 C=0
+   4 [  56] LOADK     R4 = K2 (1)
+   5 [  56] LOADK     R5 = K3 (2)
+   6 [  56] CALL      A=2 B=4 C=2
+   7 [  57] LOADNIL   A=3 B=0 C=0
+   8 [  59] EQ        A=0 R2, K4('PT'); skip-next if condition != A
+   9 [  59] JMP       A=0 ->23
+  10 [  60] GETTABUP  R4 = UP1[K5('RD')]
+  11 [  60] GETTABLE  R4 = R4[K4('PT')]
+  12 [  60] GETTABUP  R5 = UP1[K5('RD')]
+  13 [  60] GETTABLE  R5 = R5[K6('SRK')]
+  14 [  60] GETTABLE  R5 = R5[R0]
+  15 [  60] TEST      A=5 B=0 C=1
+  16 [  60] JMP       A=0 ->18
+  17 [  60] LOADK     R5 = K7 (0)
+  18 [  60] GETTABLE  R4 = R4[R5]
+  19 [  61] TESTSET   A=3 B=4 C=0
+  20 [  61] JMP       A=0 ->22
+  21 [  61] GETTABLE  R3 = R4[K8('srcid')]
+  22 [  61] JMP       A=0 ->52
+  23 [  62] EQ        A=0 R2, K9('SL'); skip-next if condition != A
+  24 [  62] JMP       A=0 ->38
+  25 [  63] GETTABUP  R4 = UP1[K5('RD')]
+  26 [  63] GETTABLE  R4 = R4[K9('SL')]
+  27 [  63] GETTABUP  R5 = UP1[K5('RD')]
+  28 [  63] GETTABLE  R5 = R5[K6('SRK')]
+  29 [  63] GETTABLE  R5 = R5[R0]
+  30 [  63] TEST      A=5 B=0 C=1
+  31 [  63] JMP       A=0 ->33
+  32 [  63] LOADK     R5 = K7 (0)
+  33 [  63] GETTABLE  R4 = R4[R5]
+  34 [  64] TESTSET   A=3 B=4 C=0
+  35 [  64] JMP       A=0 ->37
+  36 [  64] GETTABLE  R3 = R4[K8('srcid')]
+  37 [  64] JMP       A=0 ->52
+  38 [  65] EQ        A=0 R2, K10('TR'); skip-next if condition != A
+  39 [  65] JMP       A=0 ->52
+  40 [  66] GETTABUP  R4 = UP1[K5('RD')]
+  41 [  66] GETTABLE  R4 = R4[K10('TR')]
+  42 [  66] GETTABUP  R5 = UP1[K5('RD')]
+  43 [  66] GETTABLE  R5 = R5[K6('SRK')]
+  44 [  66] GETTABLE  R5 = R5[R0]
+  45 [  66] TEST      A=5 B=0 C=1
+  46 [  66] JMP       A=0 ->48
+  47 [  66] LOADK     R5 = K7 (0)
+  48 [  66] GETTABLE  R4 = R4[R5]
+  49 [  67] TESTSET   A=3 B=4 C=0
+  50 [  67] JMP       A=0 ->52
+  51 [  67] GETTABLE  R3 = R4[K8('srcid')]
+  52 [  71] RETURN    A=3 B=2 C=0
+  53 [  72] RETURN    A=0 B=1 C=0

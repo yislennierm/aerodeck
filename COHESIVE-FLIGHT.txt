@@ -1,0 +1,41 @@
+COHESIVE-FLIGHT-20261018
+Main SHA256:235cbd2b9f075af61766a5ebff330716adb4684a7fb57c80ef5025d7c4256caf
+Local review build; radio remains ATTITUDE-CLEAN-20261018.
+
+Composition:
+Flight has a continuous surface,1px structural dividers, aligned LQ/pack-voltage
+rows and gauges, and a full-width central footer. Former dark gutters/margins and
+stepped tape tails are gone. Heading, native horizon datum/signs, all telemetry,
+large-value fitting and body controls remain functional. Selected tape values
+retain their contrast windows with a single thin index rather than green bars.
+
+Semantic imagery and rendering balance:
+-Quad is an original editable SVG exported directly to18px and30px native PNG
+ masks. GPS uses the symmetric picture for position and a small exact-course
+ tick for direction; the glyph does not claim to show body yaw.
+-Material home-18 is reused for map home and the Flight home-bearing marker.
+ At coincident/nearby map markers a connected home callout retains the true point.
+-Attitude datum, ladder, bank pointer, trails, grid and dynamic battery gauge use
+ native primitives. No bitmap rotation, pixel loop or generated image per frame.
+
+Header:
+Home, a30px-tall live TX gauge, then voltage above model name. Remaining six
+icons have60px cells; focus/touch and source-derived browser shortcuts agree.
+Clock/date/timer views remain on identity tap; gauge stays visible. The prior
+battery_full icon was static except warning tint. New fill uses radio-status
+percent from native configured voltage limits, sampled once per second. This is
+a voltage-range estimate, not measured state of charge. Missing/stale readings
+clear fill; low-voltage warning tint follows native limits. No extra TX reads.
+
+Validation:
+57portable suites PASS in each VM; low/mid/full/stale gauge, header boundaries,
+GPS loss, map collision and cache checks included.21icon variants are primed one
+per callback; only one variant was added. Cached successes/failures are retained,
+with no warm SD reads, forced GC or per-frame table added by the new gauge.
+Native Flight/GPS captures reviewed, including a warmed180point GPS view. No
+script/CPU-limit errors;20000callback budget unchanged. Physical radio/quad
+rendering and performance are not established by these simulator checks.
+
+Editable asset:development/icons/quad.svg
+Native evidence:development/runtime-evidence/cohesive-flight-20261018/native/
+Deployment authority:DEPLOYMENT.txt. No radio install or GitHub push this turn.

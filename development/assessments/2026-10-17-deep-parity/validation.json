@@ -1,0 +1,26 @@
+{
+  "rows": 350,
+  "uniqueIDs": 350,
+  "evidenceReferences": 1061,
+  "scope": {
+    "onlyExcluded": "Activation/licence enforcement mechanism",
+    "gatedFunctionalCapabilitiesRequired": true,
+    "fullProtocolsAndPackagedResolutionsRequired": true,
+    "productionModified": false,
+    "hardwareTestedThisAudit": false
+  },
+  "productionRuntimeFilesChecked": 39,
+  "changedProductionFiles": [],
+  "embeddedRows": 350,
+  "staticLinksChecked": 19,
+  "missingStaticLinks": [],
+  "moduleInventory": 287,
+  "coverageRows": 287,
+  "configurationFieldRows": 90,
+  "configurationWorkflowRows": 10,
+  "physicalHardwareTestPerformed": false,
+  "browserVisualVerification": "Unavailable: computer-use browser inventory is empty. Static links,embedded data and JS behavior checked separately; no report-browser screenshot claimed.",
+  "errors": [],
+  "passed": true,
+  "checkedAt": "2026-10-17T18:42:12.124394+02:00"
+}

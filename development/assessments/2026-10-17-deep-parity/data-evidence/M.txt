@@ -1,0 +1,735 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/M.luac
+
+FUNCTION main params 0 vararg 1 stack 17 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/M.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('arg', 4, 320), ('G', 5, 320), ('F', 6, 320), ('D', 7, 320), ('X', 8, 320), ('AP', 22, 320), ('libs', 76, 320), ('(for generator)', 79, 90), ('(for state)', 79, 90), ('(for control)', 79, 90), ('_', 80, 88), ('v', 80, 88), ('estat', 142, 320), ('lcdw', 159, 320), ('initLogoName', 164, 320)]
+K0 'print'
+K1 '*** TOOLBOX START ***'
+K2 'MODE'
+K3 'OT'
+K4 'FP'
+K5 '/FM2M/'
+K6 'AP'
+K7 'TOOLBOX2/'
+K8 'PAPP'
+K9 'APPS/'
+K10 'PGFX'
+K11 'ASSETS/GFX/'
+K12 'PTHM'
+K13 'ASSETS/THEMES/'
+K14 'PMAIN'
+K15 'MAIN/'
+K16 'PUI'
+K17 'UI/'
+K18 'PUSER'
+K19 'USER/'
+K20 'PLOGS'
+K21 'LOGS/'
+K22 'PKEYS'
+K23 'KEYS/'
+K24 'PCFG'
+K25 'CONFIGS/'
+K26 'PLIB'
+K27 'LIB/'
+K28 'CFG'
+K29 'FC'
+K30 'FS'
+K31 'GPS'
+K32 'MSP'
+K33 'OS'
+K34 'RD'
+K35 'TB'
+K36 'TLM'
+K37 'VTX'
+K38 'ipairs'
+K39 '/'
+K40 'SLM'
+K41 'bx'
+K42 'SLC'
+K43 'string'
+K44 'upper'
+K45 'sub'
+K46 1
+K47 'B'
+K48 'appExit'
+K49 0
+K50 'UIR'
+K51 False
+K52 'evt'
+K53 None
+K54 'DEVON'
+K55 'DEVFULL'
+K56 'LOGINIT'
+K57 'LOGQ'
+K58 'LOGQP'
+K59 'MSPLOGQ'
+K60 'MSPLOGQP'
+K61 'LOGDEBUGSW'
+K62 'sd'
+K63 'LOGDEBUG'
+K64 'getValue'
+K65 50
+K66 'ERR'
+K67 'list'
+K68 'LCD_W'
+K69 800
+K70 480
+K71 320
+K72 'FM2M_LOGO'
+K73 '.png'
+K74 'initLogo'
+K75 'Bitmap'
+K76 'open'
+K77 'initLogoW'
+K78 'initLogoH'
+K79 'getSize'
+K80 'loadScript'
+K81 'GF'
+K82 'arg'
+K83 '---'
+K84 'TOOLBOX DEV MODE ON'
+K85 'G.PAPP'
+K86 'G.PGFX'
+K87 'G.PLIB'
+K88 'G.PMAIN'
+K89 'G.PUI'
+K90 'G.PUSER'
+K91 'G.PLOGS'
+K92 'G.PKEYS'
+K93 'G.PCFG'
+K94 'G.PTHM'
+K95 'G.SLM'
+K96 'G.SLC'
+K97 'G.DEVON'
+K98 'G.DEVFULL'
+K99 'G.appExit'
+K100 ''
+K101 'logWrite'
+K102 'memC'
+K103 'memX'
+K104 'xpc'
+K105 'init'
+K106 'run'
+K107 'MODE'
+K108 'run'
+K109 'WG'
+K110 'G'
+K111 'F'
+K112 'D'
+K113 'X'
+K114 'assert'
+K115 'Unknown FM2M app mode: '
+   1 [   8] GETTABUP  R0 = UP0[K0('print')]
+   2 [   8] LOADK     R1 = K1 ('*** TOOLBOX START ***')
+   3 [   8] CALL      A=0 B=2 C=1
+   4 [  10] VARARG    A=0 B=2 C=0
+   5 [  16] NEWTABLE  A=1 B=0 C=0
+   6 [  18] NEWTABLE  A=2 B=0 C=0
+   7 [  20] NEWTABLE  A=3 B=0 C=0
+   8 [  22] NEWTABLE  A=4 B=0 C=0
+   9 [  34] GETTABLE  R5 = R0[K2('MODE')]
+  10 [  34] TEST      A=5 B=0 C=1
+  11 [  34] JMP       A=0 ->13
+  12 [  34] LOADK     R5 = K3 ('OT')
+  13 [  34] SETTABLE  R1[K2('MODE')] = R5
+  14 [  35] GETTABLE  R5 = R0[K4('FP')]
+  15 [  35] TEST      A=5 B=0 C=1
+  16 [  35] JMP       A=0 ->18
+  17 [  35] LOADK     R5 = K5 ('/FM2M/')
+  18 [  35] SETTABLE  R1[K4('FP')] = R5
+  19 [  36] GETTABLE  R5 = R0[K6('AP')]
+  20 [  36] TEST      A=5 B=0 C=1
+  21 [  36] JMP       A=0 ->23
+  22 [  36] LOADK     R5 = K7 ('TOOLBOX2/')
+  23 [  37] GETTABLE  R6 = R1[K4('FP')]
+  24 [  37] LOADK     R7 = K9 ('APPS/')
+  25 [  37] MOVE      A=8 B=5 C=0
+  26 [  37] CONCAT    A=6 B=6 C=8
+  27 [  37] SETTABLE  R1[K8('PAPP')] = R6
+  28 [  38] GETTABLE  R6 = R1[K8('PAPP')]
+  29 [  38] LOADK     R7 = K11 ('ASSETS/GFX/')
+  30 [  38] CONCAT    A=6 B=6 C=7
+  31 [  38] SETTABLE  R1[K10('PGFX')] = R6
+  32 [  39] GETTABLE  R6 = R1[K8('PAPP')]
+  33 [  39] LOADK     R7 = K13 ('ASSETS/THEMES/')
+  34 [  39] CONCAT    A=6 B=6 C=7
+  35 [  39] SETTABLE  R1[K12('PTHM')] = R6
+  36 [  40] GETTABLE  R6 = R1[K8('PAPP')]
+  37 [  40] LOADK     R7 = K15 ('MAIN/')
+  38 [  40] CONCAT    A=6 B=6 C=7
+  39 [  40] SETTABLE  R1[K14('PMAIN')] = R6
+  40 [  41] GETTABLE  R6 = R1[K8('PAPP')]
+  41 [  41] LOADK     R7 = K17 ('UI/')
+  42 [  41] CONCAT    A=6 B=6 C=7
+  43 [  41] SETTABLE  R1[K16('PUI')] = R6
+  44 [  42] GETTABLE  R6 = R1[K4('FP')]
+  45 [  42] LOADK     R7 = K19 ('USER/')
+  46 [  42] MOVE      A=8 B=5 C=0
+  47 [  42] CONCAT    A=6 B=6 C=8
+  48 [  42] SETTABLE  R1[K18('PUSER')] = R6
+  49 [  43] GETTABLE  R6 = R1[K18('PUSER')]
+  50 [  43] LOADK     R7 = K21 ('LOGS/')
+  51 [  43] CONCAT    A=6 B=6 C=7
+  52 [  43] SETTABLE  R1[K20('PLOGS')] = R6
+  53 [  44] GETTABLE  R6 = R1[K4('FP')]
+  54 [  44] LOADK     R7 = K23 ('KEYS/')
+  55 [  44] CONCAT    A=6 B=6 C=7
+  56 [  44] SETTABLE  R1[K22('PKEYS')] = R6
+  57 [  45] GETTABLE  R6 = R1[K18('PUSER')]
+  58 [  45] LOADK     R7 = K25 ('CONFIGS/')
+  59 [  45] CONCAT    A=6 B=6 C=7
+  60 [  45] SETTABLE  R1[K24('PCFG')] = R6
+  61 [  47] GETTABLE  R6 = R1[K8('PAPP')]
+  62 [  47] LOADK     R7 = K27 ('LIB/')
+  63 [  47] CONCAT    A=6 B=6 C=7
+  64 [  47] SETTABLE  R1[K26('PLIB')] = R6
+  65 [  48] NEWTABLE  A=6 B=10 C=0
+  66 [  49] LOADK     R7 = K28 ('CFG')
+  67 [  50] LOADK     R8 = K29 ('FC')
+  68 [  51] LOADK     R9 = K30 ('FS')
+  69 [  52] LOADK     R10 = K31 ('GPS')
+  70 [  53] LOADK     R11 = K32 ('MSP')
+  71 [  54] LOADK     R12 = K33 ('OS')
+  72 [  55] LOADK     R13 = K34 ('RD')
+  73 [  56] LOADK     R14 = K35 ('TB')
+  74 [  57] LOADK     R15 = K36 ('TLM')
+  75 [  59] LOADK     R16 = K37 ('VTX')
+  76 [  59] SETLIST   A=6 B=10 C=1
+  77 [  60] GETTABUP  R7 = UP0[K38('ipairs')]
+  78 [  60] MOVE      A=8 B=6 C=0
+  79 [  60] CALL      A=7 B=2 C=4
+  80 [  60] JMP       A=0 ->89
+  81 [  61] LOADK     R12 = K26 ('PLIB')
+  82 [  61] MOVE      A=13 B=11 C=0
+  83 [  61] CONCAT    A=12 B=12 C=13
+  84 [  61] GETTABLE  R13 = R1[K26('PLIB')]
+  85 [  61] MOVE      A=14 B=11 C=0
+  86 [  61] LOADK     R15 = K39 ('/')
+  87 [  61] CONCAT    A=13 B=13 C=15
+  88 [  61] SETTABLE  R1[R12] = R13
+  89 [  60] TFORCALL  A=7 B=0 C=2
+  90 [  60] TFORLOOP  A=9 ->81
+  91 [  64] GETTABLE  R7 = R0[K40('SLM')]
+  92 [  64] TEST      A=7 B=0 C=1
+  93 [  64] JMP       A=0 ->95
+  94 [  64] LOADK     R7 = K41 ('bx')
+  95 [  64] SETTABLE  R1[K40('SLM')] = R7
+  96 [  65] GETTABUP  R7 = UP0[K43('string')]
+  97 [  65] GETTABLE  R7 = R7[K44('upper')]
+  98 [  65] GETTABUP  R8 = UP0[K43('string')]
+  99 [  65] GETTABLE  R8 = R8[K45('sub')]
+ 100 [  65] GETTABLE  R9 = R1[K40('SLM')]
+ 101 [  65] LOADK     R10 = K46 (1)
+ 102 [  65] LOADK     R11 = K46 (1)
+ 103 [  65] CALL      A=8 B=4 C=0
+ 104 [  65] CALL      A=7 B=0 C=2
+ 105 [  65] EQ        A=1 R7, K47('B'); skip-next if condition != A
+ 106 [  65] JMP       A=0 ->108
+ 107 [  65] LOADBOOL  A=7 B=0 C=1
+ 108 [  65] LOADBOOL  A=7 B=1 C=0
+ 109 [  65] SETTABLE  R1[K42('SLC')] = R7
+ 110 [  67] SETTABLE  R1[K48('appExit')] = K49(0)
+ 111 [  69] SETTABLE  R1[K50('UIR')] = K51(False)
+ 112 [  71] SETTABLE  R1[K52('evt')] = K53(None)
+ 113 [  74] GETTABLE  R7 = R0[K54('DEVON')]
+ 114 [  74] TEST      A=7 B=0 C=1
+ 115 [  74] JMP       A=0 ->117
+ 116 [  74] LOADBOOL  A=7 B=0 C=0
+ 117 [  74] SETTABLE  R1[K54('DEVON')] = R7
+ 118 [  75] GETTABLE  R7 = R0[K55('DEVFULL')]
+ 119 [  75] TEST      A=7 B=0 C=1
+ 120 [  75] JMP       A=0 ->122
+ 121 [  75] LOADBOOL  A=7 B=0 C=0
+ 122 [  75] SETTABLE  R1[K55('DEVFULL')] = R7
+ 123 [  77] SETTABLE  R1[K56('LOGINIT')] = K51(False)
+ 124 [  78] NEWTABLE  A=7 B=0 C=0
+ 125 [  78] SETTABLE  R1[K57('LOGQ')] = R7
+ 126 [  79] SETTABLE  R1[K58('LOGQP')] = K49(0)
+ 127 [  80] NEWTABLE  A=7 B=0 C=0
+ 128 [  80] SETTABLE  R1[K59('MSPLOGQ')] = R7
+ 129 [  81] SETTABLE  R1[K60('MSPLOGQP')] = K49(0)
+ 130 [  82] GETTABLE  R7 = R1[K54('DEVON')]
+ 131 [  82] TEST      A=7 B=0 C=0
+ 132 [  82] JMP       A=0 ->142
+ 133 [  83] SETTABLE  R1[K61('LOGDEBUGSW')] = K62('sd')
+ 134 [  84] GETTABUP  R7 = UP0[K64('getValue')]
+ 135 [  84] GETTABLE  R8 = R1[K61('LOGDEBUGSW')]
+ 136 [  84] CALL      A=7 B=2 C=2
+ 137 [  84] LT        A=1 K65(50), R7; skip-next if condition != A
+ 138 [  84] JMP       A=0 ->140
+ 139 [  84] LOADBOOL  A=7 B=0 C=1
+ 140 [  84] LOADBOOL  A=7 B=1 C=0
+ 141 [  84] SETTABLE  R1[K63('LOGDEBUG')] = R7
+ 142 [  88] LOADNIL   A=7 B=0 C=0
+ 143 [  89] NEWTABLE  A=8 B=0 C=1
+ 144 [  89] NEWTABLE  A=9 B=0 C=0
+ 145 [  89] SETTABLE  R8[K67('list')] = R9
+ 146 [  89] SETTABLE  R1[K66('ERR')] = R8
+ 147 [  91] GETTABUP  R8 = UP0[K68('LCD_W')]
+ 148 [  91] LE        A=0 K69(800), R8; skip-next if condition != A
+ 149 [  91] JMP       A=0 ->153
+ 150 [  91] LOADK     R8 = K69 (800)
+ 151 [  91] TEST      A=8 B=0 C=1
+ 152 [  91] JMP       A=0 ->160
+ 153 [  91] GETTABUP  R8 = UP0[K68('LCD_W')]
+ 154 [  91] LE        A=0 K70(480), R8; skip-next if condition != A
+ 155 [  91] JMP       A=0 ->159
+ 156 [  91] LOADK     R8 = K70 (480)
+ 157 [  91] TEST      A=8 B=0 C=1
+ 158 [  91] JMP       A=0 ->160
+ 159 [  91] LOADK     R8 = K71 (320)
+ 160 [  92] GETTABLE  R9 = R1[K10('PGFX')]
+ 161 [  92] LOADK     R10 = K72 ('FM2M_LOGO')
+ 162 [  92] MOVE      A=11 B=8 C=0
+ 163 [  92] LOADK     R12 = K73 ('.png')
+ 164 [  92] CONCAT    A=9 B=9 C=12
+ 165 [  93] GETTABUP  R10 = UP0[K75('Bitmap')]
+ 166 [  93] GETTABLE  R10 = R10[K76('open')]
+ 167 [  93] MOVE      A=11 B=9 C=0
+ 168 [  93] CALL      A=10 B=2 C=2
+ 169 [  93] SETTABLE  R1[K74('initLogo')] = R10
+ 170 [  94] LOADK     R10 = K49 (0)
+ 171 [  94] SETTABLE  R1[K78('initLogoH')] = K49(0)
+ 172 [  94] SETTABLE  R1[K77('initLogoW')] = R10
+ 173 [  95] GETTABLE  R10 = R1[K74('initLogo')]
+ 174 [  95] TEST      A=10 B=0 C=0
+ 175 [  95] JMP       A=0 ->182
+ 176 [  96] GETTABUP  R10 = UP0[K75('Bitmap')]
+ 177 [  96] GETTABLE  R10 = R10[K79('getSize')]
+ 178 [  96] GETTABLE  R11 = R1[K74('initLogo')]
+ 179 [  96] CALL      A=10 B=2 C=3
+ 180 [  96] SETTABLE  R1[K78('initLogoH')] = R11
+ 181 [  96] SETTABLE  R1[K77('initLogoW')] = R10
+ 182 [ 100] GETTABUP  R10 = UP0[K80('loadScript')]
+ 183 [ 100] GETTABLE  R11 = R1[K14('PMAIN')]
+ 184 [ 100] LOADK     R12 = K81 ('GF')
+ 185 [ 100] CONCAT    A=11 B=11 C=12
+ 186 [ 100] GETTABLE  R12 = R1[K40('SLM')]
+ 187 [ 100] CALL      A=10 B=3 C=2
+ 188 [ 100] MOVE      A=11 B=1 C=0
+ 189 [ 100] MOVE      A=12 B=2 C=0
+ 190 [ 100] MOVE      A=13 B=3 C=0
+ 191 [ 100] MOVE      A=14 B=4 C=0
+ 192 [ 100] CALL      A=10 B=5 C=1
+ 193 [ 102] GETTABLE  R10 = R1[K54('DEVON')]
+ 194 [ 102] TEST      A=10 B=0 C=0
+ 195 [ 102] JMP       A=0 ->290
+ 196 [ 103] GETTABLE  R10 = R1[K0('print')]
+ 197 [ 103] LOADK     R11 = K82 ('arg')
+ 198 [ 103] LOADK     R12 = K4 ('FP')
+ 199 [ 103] GETTABLE  R13 = R0[K4('FP')]
+ 200 [ 103] CALL      A=10 B=4 C=1
+ 201 [ 104] GETTABLE  R10 = R1[K0('print')]
+ 202 [ 104] LOADK     R11 = K82 ('arg')
+ 203 [ 104] LOADK     R12 = K6 ('AP')
+ 204 [ 104] GETTABLE  R13 = R0[K6('AP')]
+ 205 [ 104] CALL      A=10 B=4 C=1
+ 206 [ 105] GETTABLE  R10 = R1[K0('print')]
+ 207 [ 105] LOADK     R11 = K82 ('arg')
+ 208 [ 105] LOADK     R12 = K2 ('MODE')
+ 209 [ 105] GETTABLE  R13 = R0[K2('MODE')]
+ 210 [ 105] CALL      A=10 B=4 C=1
+ 211 [ 106] GETTABLE  R10 = R1[K0('print')]
+ 212 [ 106] LOADK     R11 = K82 ('arg')
+ 213 [ 106] LOADK     R12 = K40 ('SLM')
+ 214 [ 106] GETTABLE  R13 = R0[K40('SLM')]
+ 215 [ 106] CALL      A=10 B=4 C=1
+ 216 [ 107] GETTABLE  R10 = R1[K0('print')]
+ 217 [ 107] LOADK     R11 = K83 ('---')
+ 218 [ 107] CALL      A=10 B=2 C=1
+ 219 [ 108] GETTABLE  R10 = R1[K0('print')]
+ 220 [ 108] LOADK     R11 = K84 ('TOOLBOX DEV MODE ON')
+ 221 [ 108] CALL      A=10 B=2 C=1
+ 222 [ 109] GETTABLE  R10 = R1[K0('print')]
+ 223 [ 109] LOADK     R11 = K85 ('G.PAPP')
+ 224 [ 109] GETTABLE  R12 = R1[K8('PAPP')]
+ 225 [ 109] CALL      A=10 B=3 C=1
+ 226 [ 110] GETTABLE  R10 = R1[K0('print')]
+ 227 [ 110] LOADK     R11 = K86 ('G.PGFX')
+ 228 [ 110] GETTABLE  R12 = R1[K10('PGFX')]
+ 229 [ 110] CALL      A=10 B=3 C=1
+ 230 [ 111] GETTABLE  R10 = R1[K0('print')]
+ 231 [ 111] LOADK     R11 = K87 ('G.PLIB')
+ 232 [ 111] GETTABLE  R12 = R1[K26('PLIB')]
+ 233 [ 111] CALL      A=10 B=3 C=1
+ 234 [ 112] GETTABLE  R10 = R1[K0('print')]
+ 235 [ 112] LOADK     R11 = K88 ('G.PMAIN')
+ 236 [ 112] GETTABLE  R12 = R1[K14('PMAIN')]
+ 237 [ 112] CALL      A=10 B=3 C=1
+ 238 [ 113] GETTABLE  R10 = R1[K0('print')]
+ 239 [ 113] LOADK     R11 = K89 ('G.PUI')
+ 240 [ 113] GETTABLE  R12 = R1[K16('PUI')]
+ 241 [ 113] CALL      A=10 B=3 C=1
+ 242 [ 114] GETTABLE  R10 = R1[K0('print')]
+ 243 [ 114] LOADK     R11 = K90 ('G.PUSER')
+ 244 [ 114] GETTABLE  R12 = R1[K18('PUSER')]
+ 245 [ 114] CALL      A=10 B=3 C=1
+ 246 [ 115] GETTABLE  R10 = R1[K0('print')]
+ 247 [ 115] LOADK     R11 = K91 ('G.PLOGS')
+ 248 [ 115] GETTABLE  R12 = R1[K20('PLOGS')]
+ 249 [ 115] CALL      A=10 B=3 C=1
+ 250 [ 116] GETTABLE  R10 = R1[K0('print')]
+ 251 [ 116] LOADK     R11 = K92 ('G.PKEYS')
+ 252 [ 116] GETTABLE  R12 = R1[K22('PKEYS')]
+ 253 [ 116] CALL      A=10 B=3 C=1
+ 254 [ 117] GETTABLE  R10 = R1[K0('print')]
+ 255 [ 117] LOADK     R11 = K93 ('G.PCFG')
+ 256 [ 117] GETTABLE  R12 = R1[K24('PCFG')]
+ 257 [ 117] CALL      A=10 B=3 C=1
+ 258 [ 118] GETTABLE  R10 = R1[K0('print')]
+ 259 [ 118] LOADK     R11 = K94 ('G.PTHM')
+ 260 [ 118] GETTABLE  R12 = R1[K12('PTHM')]
+ 261 [ 118] CALL      A=10 B=3 C=1
+ 262 [ 119] GETTABLE  R10 = R1[K0('print')]
+ 263 [ 119] LOADK     R11 = K95 ('G.SLM')
+ 264 [ 119] GETTABLE  R12 = R1[K40('SLM')]
+ 265 [ 119] CALL      A=10 B=3 C=1
+ 266 [ 120] GETTABLE  R10 = R1[K0('print')]
+ 267 [ 120] LOADK     R11 = K96 ('G.SLC')
+ 268 [ 120] GETTABLE  R12 = R1[K42('SLC')]
+ 269 [ 120] CALL      A=10 B=3 C=1
+ 270 [ 121] GETTABLE  R10 = R1[K0('print')]
+ 271 [ 121] LOADK     R11 = K97 ('G.DEVON')
+ 272 [ 121] GETTABLE  R12 = R1[K54('DEVON')]
+ 273 [ 121] CALL      A=10 B=3 C=1
+ 274 [ 122] GETTABLE  R10 = R1[K0('print')]
+ 275 [ 122] LOADK     R11 = K98 ('G.DEVFULL')
+ 276 [ 122] GETTABLE  R12 = R1[K55('DEVFULL')]
+ 277 [ 122] CALL      A=10 B=3 C=1
+ 278 [ 123] GETTABLE  R10 = R1[K0('print')]
+ 279 [ 123] LOADK     R11 = K99 ('G.appExit')
+ 280 [ 123] GETTABLE  R12 = R1[K48('appExit')]
+ 281 [ 123] CALL      A=10 B=3 C=1
+ 282 [ 124] GETTABLE  R10 = R1[K0('print')]
+ 283 [ 124] LOADK     R11 = K83 ('---')
+ 284 [ 124] CALL      A=10 B=2 C=1
+ 285 [ 125] GETTABLE  R10 = R1[K0('print')]
+ 286 [ 125] LOADK     R11 = K100 ('')
+ 287 [ 125] CALL      A=10 B=2 C=1
+ 288 [ 126] GETTABLE  R10 = R1[K101('logWrite')]
+ 289 [ 126] CALL      A=10 B=1 C=1
+ 290 [ 130] SETTABLE  R1[K102('memC')] = K49(0)
+ 291 [ 131] SETTABLE  R1[K103('memX')] = K49(0)
+ 292 [ 136] CLOSURE   R10 = proto[0]
+ 293 [ 136] SETTABLE  R1[K104('xpc')] = R10
+ 294 [ 227] CLOSURE   R10 = proto[1]
+ 295 [ 227] SETTABLE  R1[K105('init')] = R10
+ 296 [ 257] CLOSURE   R10 = proto[2]
+ 297 [ 257] SETTABLE  R1[K106('run')] = R10
+ 298 [ 261] GETTABLE  R10 = R1[K107('MODE')]
+ 299 [ 261] EQ        A=0 R10, K3('OT'); skip-next if condition != A
+ 300 [ 261] JMP       A=0 ->304
+ 301 [ 262] GETTABLE  R10 = R1[K108('run')]
+ 302 [ 262] RETURN    A=10 B=2 C=0
+ 303 [ 262] JMP       A=0 ->320
+ 304 [ 264] GETTABLE  R10 = R1[K107('MODE')]
+ 305 [ 264] EQ        A=0 R10, K109('WG'); skip-next if condition != A
+ 306 [ 264] JMP       A=0 ->314
+ 307 [ 266] NEWTABLE  A=10 B=0 C=4
+ 308 [ 266] SETTABLE  R10[K110('G')] = R1
+ 309 [ 266] SETTABLE  R10[K111('F')] = R2
+ 310 [ 266] SETTABLE  R10[K112('D')] = R3
+ 311 [ 266] SETTABLE  R10[K113('X')] = R4
+ 312 [ 266] RETURN    A=10 B=2 C=0
+ 313 [ 266] JMP       A=0 ->320
+ 314 [ 268] GETTABUP  R10 = UP0[K114('assert')]
+ 315 [ 268] LOADBOOL  A=11 B=0 C=0
+ 316 [ 268] LOADK     R12 = K115 ('Unknown FM2M app mode: ')
+ 317 [ 268] GETTABLE  R13 = R1[K107('MODE')]
+ 318 [ 268] CONCAT    A=12 B=12 C=13
+ 319 [ 268] CALL      A=10 B=3 C=1
+ 320 [ 269] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 1 stack 3 lines 133 136 source None
+UPVALUES []
+LOCALS [('fn', 0, 5)]
+   1 [ 135] MOVE      A=1 B=0 C=0
+   2 [ 135] VARARG    A=2 B=0 C=0
+   3 [ 135] TAILCALL  A=1 B=0 C=0
+   4 [ 135] RETURN    A=1 B=0 C=0
+   5 [ 136] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 4 vararg 0 stack 10 lines 138 227 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('G', 0, 164), ('F', 0, 164), ('D', 0, 164), ('X', 0, 164)]
+K0 'INIT_do'
+K1 True
+K2 'lcd'
+K3 'clear'
+K4 'BLACK'
+K5 'drawBitmap'
+K6 'initLogo'
+K7 'LCD_W'
+K8 2
+K9 'initLogoW'
+K10 'LCD_H'
+K11 'initLogoH'
+K12 'drawText'
+K13 'ToolBox'
+K14 'MIDSIZE'
+K15 'CENTER'
+K16 'WHITE'
+K17 45
+K18 'Loading'
+K19 'initStep'
+K20 'clr'
+K21 'MODE'
+K22 'WG'
+K23 'initClrStep'
+K24 '*'
+K25 'd'
+K26 'x'
+K27 None
+K28 'LOG'
+K29 'rd'
+K30 'loadE'
+K31 'PMAIN'
+K32 'RD'
+K33 'lib'
+K34 'dev'
+K35 'DEVON'
+K36 'PLIBDEV'
+K37 'PAPP'
+K38 'DEV/'
+K39 'DEV'
+K40 'rdkey'
+K41 'PLIBRD'
+K42 'RDKEY'
+K43 'rdinp'
+K44 'RDINP'
+K45 'app'
+K46 'AI'
+K47 'ML'
+K48 'initDone'
+   1 [ 140] SETTABLE  R2[K0('INIT_do')] = K1(True)
+   2 [ 145] GETTABUP  R4 = UP0[K2('lcd')]
+   3 [ 145] GETTABLE  R4 = R4[K3('clear')]
+   4 [ 145] GETTABUP  R5 = UP0[K4('BLACK')]
+   5 [ 145] CALL      A=4 B=2 C=1
+   6 [ 146] GETTABUP  R4 = UP0[K2('lcd')]
+   7 [ 146] GETTABLE  R4 = R4[K5('drawBitmap')]
+   8 [ 146] GETTABLE  R5 = R0[K6('initLogo')]
+   9 [ 146] GETTABUP  R6 = UP0[K7('LCD_W')]
+  10 [ 146] DIV       A=6 B=6 C=264
+  11 [ 146] GETTABLE  R7 = R0[K9('initLogoW')]
+  12 [ 146] DIV       A=7 B=7 C=264
+  13 [ 146] SUB       A=6 B=6 C=7
+  14 [ 146] GETTABUP  R7 = UP0[K10('LCD_H')]
+  15 [ 146] DIV       A=7 B=7 C=264
+  16 [ 146] GETTABLE  R8 = R0[K11('initLogoH')]
+  17 [ 146] SUB       A=7 B=7 C=8
+  18 [ 146] CALL      A=4 B=4 C=1
+  19 [ 147] GETTABUP  R4 = UP0[K2('lcd')]
+  20 [ 147] GETTABLE  R4 = R4[K12('drawText')]
+  21 [ 147] GETTABUP  R5 = UP0[K7('LCD_W')]
+  22 [ 147] DIV       A=5 B=5 C=264
+  23 [ 147] GETTABUP  R6 = UP0[K10('LCD_H')]
+  24 [ 147] DIV       A=6 B=6 C=264
+  25 [ 147] LOADK     R7 = K13 ('ToolBox')
+  26 [ 147] GETTABUP  R8 = UP0[K14('MIDSIZE')]
+  27 [ 147] GETTABUP  R9 = UP0[K15('CENTER')]
+  28 [ 147] ADD       A=8 B=8 C=9
+  29 [ 147] GETTABUP  R9 = UP0[K16('WHITE')]
+  30 [ 147] ADD       A=8 B=8 C=9
+  31 [ 147] CALL      A=4 B=5 C=1
+  32 [ 148] GETTABUP  R4 = UP0[K2('lcd')]
+  33 [ 148] GETTABLE  R4 = R4[K12('drawText')]
+  34 [ 148] GETTABUP  R5 = UP0[K7('LCD_W')]
+  35 [ 148] DIV       A=5 B=5 C=264
+  36 [ 148] GETTABUP  R6 = UP0[K10('LCD_H')]
+  37 [ 148] DIV       A=6 B=6 C=264
+  38 [ 148] ADD       A=6 B=6 C=273
+  39 [ 148] LOADK     R7 = K18 ('Loading')
+  40 [ 148] GETTABUP  R8 = UP0[K15('CENTER')]
+  41 [ 148] GETTABUP  R9 = UP0[K16('WHITE')]
+  42 [ 148] ADD       A=8 B=8 C=9
+  43 [ 148] CALL      A=4 B=5 C=1
+  44 [ 150] GETTABLE  R4 = R0[K19('initStep')]
+  45 [ 150] EQ        A=0 R4, K20('clr'); skip-next if condition != A
+  46 [ 150] JMP       A=0 ->95
+  47 [ 152] GETTABLE  R4 = R0[K21('MODE')]
+  48 [ 152] EQ        A=0 R4, K22('WG'); skip-next if condition != A
+  49 [ 152] JMP       A=0 ->79
+  50 [ 153] GETTABLE  R4 = R0[K23('initClrStep')]
+  51 [ 153] TEST      A=4 B=0 C=1
+  52 [ 153] JMP       A=0 ->60
+  53 [ 154] GETTABLE  R4 = R0[K3('clear')]
+  54 [ 154] MOVE      A=5 B=1 C=0
+  55 [ 154] LOADK     R6 = K24 ('*')
+  56 [ 154] CALL      A=4 B=3 C=1
+  57 [ 155] SETTABLE  R0[K23('initClrStep')] = K25('d')
+  58 [ 156] RETURN    A=0 B=1 C=0
+  59 [ 156] JMP       A=0 ->91
+  60 [ 157] GETTABLE  R4 = R0[K23('initClrStep')]
+  61 [ 157] EQ        A=0 R4, K25('d'); skip-next if condition != A
+  62 [ 157] JMP       A=0 ->70
+  63 [ 158] GETTABLE  R4 = R0[K3('clear')]
+  64 [ 158] MOVE      A=5 B=2 C=0
+  65 [ 158] LOADK     R6 = K24 ('*')
+  66 [ 158] CALL      A=4 B=3 C=1
+  67 [ 159] SETTABLE  R0[K23('initClrStep')] = K26('x')
+  68 [ 160] RETURN    A=0 B=1 C=0
+  69 [ 160] JMP       A=0 ->91
+  70 [ 161] GETTABLE  R4 = R0[K23('initClrStep')]
+  71 [ 161] EQ        A=0 R4, K26('x'); skip-next if condition != A
+  72 [ 161] JMP       A=0 ->91
+  73 [ 162] GETTABLE  R4 = R0[K3('clear')]
+  74 [ 162] MOVE      A=5 B=3 C=0
+  75 [ 162] LOADK     R6 = K24 ('*')
+  76 [ 162] CALL      A=4 B=3 C=1
+  77 [ 163] SETTABLE  R0[K23('initClrStep')] = K27(None)
+  78 [ 164] JMP       A=0 ->91
+  79 [ 167] GETTABLE  R4 = R0[K3('clear')]
+  80 [ 167] MOVE      A=5 B=1 C=0
+  81 [ 167] LOADK     R6 = K24 ('*')
+  82 [ 167] CALL      A=4 B=3 C=1
+  83 [ 168] GETTABLE  R4 = R0[K3('clear')]
+  84 [ 168] MOVE      A=5 B=2 C=0
+  85 [ 168] LOADK     R6 = K24 ('*')
+  86 [ 168] CALL      A=4 B=3 C=1
+  87 [ 169] GETTABLE  R4 = R0[K3('clear')]
+  88 [ 169] MOVE      A=5 B=3 C=0
+  89 [ 169] LOADK     R6 = K24 ('*')
+  90 [ 169] CALL      A=4 B=3 C=1
+  91 [ 173] NEWTABLE  A=4 B=0 C=0
+  92 [ 173] SETTABLE  R0[K28('LOG')] = R4
+  93 [ 175] SETTABLE  R0[K19('initStep')] = K29('rd')
+  94 [ 175] JMP       A=0 ->163
+  95 [ 177] GETTABLE  R4 = R0[K19('initStep')]
+  96 [ 177] EQ        A=0 R4, K29('rd'); skip-next if condition != A
+  97 [ 177] JMP       A=0 ->105
+  98 [ 178] GETTABLE  R4 = R0[K30('loadE')]
+  99 [ 178] GETTABLE  R5 = R0[K31('PMAIN')]
+ 100 [ 178] LOADK     R6 = K32 ('RD')
+ 101 [ 178] CONCAT    A=5 B=5 C=6
+ 102 [ 178] CALL      A=4 B=2 C=1
+ 103 [ 180] SETTABLE  R0[K19('initStep')] = K33('lib')
+ 104 [ 180] JMP       A=0 ->163
+ 105 [ 182] GETTABLE  R4 = R0[K19('initStep')]
+ 106 [ 182] EQ        A=0 R4, K33('lib'); skip-next if condition != A
+ 107 [ 182] JMP       A=0 ->110
+ 108 [ 196] SETTABLE  R0[K19('initStep')] = K34('dev')
+ 109 [ 196] JMP       A=0 ->163
+ 110 [ 198] GETTABLE  R4 = R0[K19('initStep')]
+ 111 [ 198] EQ        A=0 R4, K34('dev'); skip-next if condition != A
+ 112 [ 198] JMP       A=0 ->127
+ 113 [ 199] GETTABLE  R4 = R0[K35('DEVON')]
+ 114 [ 199] TEST      A=4 B=0 C=0
+ 115 [ 199] JMP       A=0 ->125
+ 116 [ 200] GETTABLE  R4 = R0[K37('PAPP')]
+ 117 [ 200] LOADK     R5 = K38 ('DEV/')
+ 118 [ 200] CONCAT    A=4 B=4 C=5
+ 119 [ 200] SETTABLE  R0[K36('PLIBDEV')] = R4
+ 120 [ 201] GETTABLE  R4 = R0[K30('loadE')]
+ 121 [ 201] GETTABLE  R5 = R0[K36('PLIBDEV')]
+ 122 [ 201] LOADK     R6 = K39 ('DEV')
+ 123 [ 201] CONCAT    A=5 B=5 C=6
+ 124 [ 201] CALL      A=4 B=2 C=1
+ 125 [ 203] SETTABLE  R0[K19('initStep')] = K40('rdkey')
+ 126 [ 203] JMP       A=0 ->163
+ 127 [ 205] GETTABLE  R4 = R0[K19('initStep')]
+ 128 [ 205] EQ        A=0 R4, K40('rdkey'); skip-next if condition != A
+ 129 [ 205] JMP       A=0 ->137
+ 130 [ 206] GETTABLE  R4 = R0[K30('loadE')]
+ 131 [ 206] GETTABLE  R5 = R0[K41('PLIBRD')]
+ 132 [ 206] LOADK     R6 = K42 ('RDKEY')
+ 133 [ 206] CONCAT    A=5 B=5 C=6
+ 134 [ 206] CALL      A=4 B=2 C=1
+ 135 [ 208] SETTABLE  R0[K19('initStep')] = K43('rdinp')
+ 136 [ 208] JMP       A=0 ->163
+ 137 [ 210] GETTABLE  R4 = R0[K19('initStep')]
+ 138 [ 210] EQ        A=0 R4, K43('rdinp'); skip-next if condition != A
+ 139 [ 210] JMP       A=0 ->147
+ 140 [ 211] GETTABLE  R4 = R0[K30('loadE')]
+ 141 [ 211] GETTABLE  R5 = R0[K41('PLIBRD')]
+ 142 [ 211] LOADK     R6 = K44 ('RDINP')
+ 143 [ 211] CONCAT    A=5 B=5 C=6
+ 144 [ 211] CALL      A=4 B=2 C=1
+ 145 [ 212] SETTABLE  R0[K19('initStep')] = K45('app')
+ 146 [ 212] JMP       A=0 ->163
+ 147 [ 214] GETTABLE  R4 = R0[K19('initStep')]
+ 148 [ 214] EQ        A=0 R4, K45('app'); skip-next if condition != A
+ 149 [ 214] JMP       A=0 ->163
+ 150 [ 215] GETTABLE  R4 = R0[K30('loadE')]
+ 151 [ 215] GETTABLE  R5 = R0[K31('PMAIN')]
+ 152 [ 215] LOADK     R6 = K46 ('AI')
+ 153 [ 215] CONCAT    A=5 B=5 C=6
+ 154 [ 215] CALL      A=4 B=2 C=1
+ 155 [ 216] GETTABLE  R4 = R0[K30('loadE')]
+ 156 [ 216] GETTABLE  R5 = R0[K31('PMAIN')]
+ 157 [ 216] LOADK     R6 = K47 ('ML')
+ 158 [ 216] CONCAT    A=5 B=5 C=6
+ 159 [ 216] CALL      A=4 B=2 C=2
+ 160 [ 216] SETTABLE  R0[K47('ML')] = R4
+ 161 [ 220] SETTABLE  R0[K19('initStep')] = K27(None)
+ 162 [ 221] SETTABLE  R0[K48('initDone')] = K1(True)
+ 163 [ 226] RETURN    A=0 B=1 C=0
+ 164 [ 227] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 2 vararg 0 stack 9 lines 230 257 source None
+UPVALUES [('G', (1, 1)), ('D', (1, 3)), ('estat', (1, 7)), ('F', (1, 2)), ('X', (1, 4))]
+LOCALS [('evt', 0, 51), ('ts', 0, 51)]
+K0 'logWrite'
+K1 'evt'
+K2 'initDone'
+K3 'initStep'
+K4 'clr'
+K5 'xpc'
+K6 'init'
+K7 'ML'
+K8 'run'
+K9 'DEVON'
+K10 'DEV'
+K11 'cg'
+K12 'appExit'
+   1 [ 233] GETTABUP  R2 = UP0[K0('logWrite')]
+   2 [ 233] CALL      A=2 B=1 C=1
+   3 [ 235] SETTABUP  UP1[K1('evt')] = R0
+   4 [ 238] GETTABUP  R2 = UP0[K2('initDone')]
+   5 [ 238] TEST      A=2 B=0 C=1
+   6 [ 238] JMP       A=0 ->21
+   7 [ 239] GETTABUP  R2 = UP0[K3('initStep')]
+   8 [ 239] TEST      A=2 B=0 C=1
+   9 [ 239] JMP       A=0 ->11
+  10 [ 239] LOADK     R2 = K4 ('clr')
+  11 [ 239] SETTABUP  UP0[K3('initStep')] = R2
+  12 [ 240] GETTABUP  R2 = UP0[K5('xpc')]
+  13 [ 240] GETTABUP  R3 = UP0[K6('init')]
+  14 [ 240] GETUPVAL  A=4 B=0 C=0
+  15 [ 240] GETUPVAL  A=5 B=3 C=0
+  16 [ 240] GETUPVAL  A=6 B=1 C=0
+  17 [ 240] GETUPVAL  A=7 B=4 C=0
+  18 [ 240] CALL      A=2 B=6 C=2
+  19 [ 240] SETUPVAL  A=2 B=2 C=0
+  20 [ 240] JMP       A=0 ->49
+  21 [ 245] GETTABUP  R2 = UP0[K5('xpc')]
+  22 [ 245] GETTABUP  R3 = UP0[K7('ML')]
+  23 [ 245] GETTABLE  R3 = R3[K8('run')]
+  24 [ 245] MOVE      A=4 B=0 C=0
+  25 [ 245] CALL      A=2 B=3 C=2
+  26 [ 245] SETUPVAL  A=2 B=2 C=0
+  27 [ 248] GETTABUP  R2 = UP0[K9('DEVON')]
+  28 [ 248] TEST      A=2 B=0 C=0
+  29 [ 248] JMP       A=0 ->47
+  30 [ 248] GETTABUP  R2 = UP0[K10('DEV')]
+  31 [ 248] TEST      A=2 B=0 C=0
+  32 [ 248] JMP       A=0 ->47
+  33 [ 248] GETTABUP  R2 = UP0[K10('DEV')]
+  34 [ 248] GETTABLE  R2 = R2[K8('run')]
+  35 [ 248] TEST      A=2 B=0 C=0
+  36 [ 248] JMP       A=0 ->47
+  37 [ 249] GETTABUP  R2 = UP0[K5('xpc')]
+  38 [ 249] GETTABUP  R3 = UP0[K10('DEV')]
+  39 [ 249] GETTABLE  R3 = R3[K8('run')]
+  40 [ 249] GETUPVAL  A=4 B=0 C=0
+  41 [ 249] GETUPVAL  A=5 B=3 C=0
+  42 [ 249] GETUPVAL  A=6 B=1 C=0
+  43 [ 249] GETUPVAL  A=7 B=4 C=0
+  44 [ 249] MOVE      A=8 B=0 C=0
+  45 [ 249] CALL      A=2 B=7 C=2
+  46 [ 249] SETUPVAL  A=2 B=2 C=0
+  47 [ 252] GETTABUP  R2 = UP0[K11('cg')]
+  48 [ 252] CALL      A=2 B=1 C=1
+  49 [ 256] GETTABUP  R2 = UP0[K12('appExit')]
+  50 [ 256] RETURN    A=2 B=2 C=0
+  51 [ 257] RETURN    A=0 B=1 C=0

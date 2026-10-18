@@ -1,0 +1,120 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.luac
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 7), ('F', 1, 7), ('D', 1, 7), ('X', 1, 7)]
+K0 'TLM_UPD'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  57] CLOSURE   R4 = proto[0]
+   3 [  57] SETTABLE  R1[K0('TLM_UPD')] = R4
+   4 [  58] GETTABLE  R4 = R1[K0('TLM_UPD')]
+   5 [  58] CALL      A=4 B=1 C=1
+   6 [  60] RETURN    A=0 B=1 C=0
+   7 [  60] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 10 lines 12 57 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('(for generator)', 4, 61), ('(for state)', 4, 61), ('(for control)', 4, 61), ('_', 5, 59), ('snData', 5, 59), ('rawVal', 11, 59), ('clipVal', 12, 59), ('corrVal', 49, 59), ('(for generator)', 65, 73), ('(for state)', 65, 73), ('(for control)', 65, 73), ('_', 66, 71), ('snData', 66, 71)]
+K0 'pairs'
+K1 'TLM'
+K2 'SN'
+K3 'sActive'
+K4 'getSourceValue'
+K5 'srcID'
+K6 None
+K7 'type'
+K8 'number'
+K9 'sMin'
+K10 'sMax'
+K11 'rVal'
+K12 'rValMin'
+K13 1
+K14 'rValMax'
+K15 2
+K16 'vFN'
+K17 'S'
+K18 'sName'
+K19 'uFN'
+K20 'TLM_ON'
+K21 'TLM_data'
+K22 True
+   1 [  14] GETTABUP  R0 = UP0[K0('pairs')]
+   2 [  14] GETTABUP  R1 = UP1[K1('TLM')]
+   3 [  14] GETTABLE  R1 = R1[K2('SN')]
+   4 [  14] CALL      A=0 B=2 C=4
+   5 [  14] JMP       A=0 ->60
+   6 [  16] GETTABLE  R5 = R4[K3('sActive')]
+   7 [  16] TEST      A=5 B=0 C=0
+   8 [  16] JMP       A=0 ->60
+   9 [  17] GETTABUP  R5 = UP0[K4('getSourceValue')]
+  10 [  17] GETTABLE  R6 = R4[K5('srcID')]
+  11 [  17] CALL      A=5 B=2 C=2
+  12 [  21] MOVE      A=6 B=5 C=0
+  13 [  22] EQ        A=1 R6, K6(None); skip-next if condition != A
+  14 [  22] JMP       A=0 ->35
+  15 [  22] GETTABUP  R7 = UP0[K7('type')]
+  16 [  22] MOVE      A=8 B=6 C=0
+  17 [  22] CALL      A=7 B=2 C=2
+  18 [  22] EQ        A=0 R7, K8('number'); skip-next if condition != A
+  19 [  22] JMP       A=0 ->35
+  20 [  23] GETTABLE  R7 = R4[K9('sMin')]
+  21 [  23] TEST      A=7 B=0 C=0
+  22 [  23] JMP       A=0 ->28
+  23 [  23] GETTABLE  R7 = R4[K9('sMin')]
+  24 [  23] LT        A=0 R6, R7; skip-next if condition != A
+  25 [  23] JMP       A=0 ->28
+  26 [  24] GETTABLE  R6 = R4[K9('sMin')]
+  27 [  24] JMP       A=0 ->35
+  28 [  25] GETTABLE  R7 = R4[K10('sMax')]
+  29 [  25] TEST      A=7 B=0 C=0
+  30 [  25] JMP       A=0 ->35
+  31 [  25] GETTABLE  R7 = R4[K10('sMax')]
+  32 [  25] LT        A=0 R7, R6; skip-next if condition != A
+  33 [  25] JMP       A=0 ->35
+  34 [  26] GETTABLE  R6 = R4[K10('sMax')]
+  35 [  30] SETTABLE  R4[K11('rVal')] = R6
+  36 [  32] GETTABLE  R7 = R4[K5('srcID')]
+  37 [  32] TEST      A=7 B=0 C=0
+  38 [  32] JMP       A=0 ->49
+  39 [  33] GETTABUP  R7 = UP0[K4('getSourceValue')]
+  40 [  33] GETTABLE  R8 = R4[K5('srcID')]
+  41 [  33] ADD       A=8 B=8 C=269
+  42 [  33] CALL      A=7 B=2 C=2
+  43 [  33] SETTABLE  R4[K12('rValMin')] = R7
+  44 [  34] GETTABUP  R7 = UP0[K4('getSourceValue')]
+  45 [  34] GETTABLE  R8 = R4[K5('srcID')]
+  46 [  34] ADD       A=8 B=8 C=271
+  47 [  34] CALL      A=7 B=2 C=2
+  48 [  34] SETTABLE  R4[K14('rValMax')] = R7
+  49 [  38] GETTABLE  R7 = R4[K11('rVal')]
+  50 [  40] GETTABLE  R8 = R4[K16('vFN')]
+  51 [  40] TEST      A=8 B=0 C=0
+  52 [  40] JMP       A=0 ->57
+  53 [  41] GETTABLE  R8 = R4[K16('vFN')]
+  54 [  41] MOVE      A=9 B=4 C=0
+  55 [  41] CALL      A=8 B=2 C=2
+  56 [  41] MOVE      A=7 B=8 C=0
+  57 [  45] GETTABUP  R8 = UP1[K17('S')]
+  58 [  45] GETTABLE  R9 = R4[K18('sName')]
+  59 [  45] SETTABLE  R8[R9] = R7
+  60 [  14] TFORCALL  A=0 B=0 C=2
+  61 [  14] TFORLOOP  A=2 ->6
+  62 [  49] GETTABUP  R0 = UP0[K0('pairs')]
+  63 [  49] GETTABUP  R1 = UP1[K1('TLM')]
+  64 [  49] GETTABLE  R1 = R1[K2('SN')]
+  65 [  49] CALL      A=0 B=2 C=4
+  66 [  49] JMP       A=0 ->72
+  67 [  50] GETTABLE  R5 = R4[K19('uFN')]
+  68 [  50] TEST      A=5 B=0 C=0
+  69 [  50] JMP       A=0 ->72
+  70 [  51] GETTABLE  R5 = R4[K19('uFN')]
+  71 [  51] CALL      A=5 B=1 C=1
+  72 [  49] TFORCALL  A=0 B=0 C=2
+  73 [  49] TFORLOOP  A=2 ->67
+  74 [  54] GETTABUP  R0 = UP1[K17('S')]
+  75 [  54] GETTABLE  R0 = R0[K20('TLM_ON')]
+  76 [  54] TEST      A=0 B=0 C=0
+  77 [  54] JMP       A=0 ->80
+  78 [  55] GETTABUP  R0 = UP1[K17('S')]
+  79 [  55] SETTABLE  R0[K21('TLM_data')] = K22(True)
+  80 [  57] RETURN    A=0 B=1 C=0

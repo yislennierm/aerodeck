@@ -1,0 +1,126 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/ASCS.luac 
+SHA256 0088591f83745cfb947dc63b0265e147dd4bb6dc3cde7db561f9a1ca1d4d3751
+
+FUNCTION main params 0 vararg 1 stack 8 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FC/BF/ASCS.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 62), ('F', 1, 62), ('D', 1, 62), ('X', 1, 62), ('asID', 1, 62), ('as', 31, 62), ('bf46', 45, 62)]
+K0 1
+K1 'NOGYRO'
+K2 2
+K3 '!FS!'
+K4 3
+K5 'RXLOSS'
+K6 4
+K7 'BADRX'
+K8 5
+K9 'BFAILS'
+K10 6
+K11 'RUNAWAY'
+K12 7
+K13 'CRASH'
+K14 8
+K15 'THR LVL'
+K16 9
+K17 'ANGLE'
+K18 10
+K19 'BOOT'
+K20 11
+K21 'PREARM'
+K22 12
+K23 'LOAD'
+K24 13
+K25 'CALIB'
+K26 14
+K27 'CLI'
+K28 15
+K29 'CMS'
+K30 16
+K31 'BST'
+K32 17
+K33 'MSP'
+K34 18
+K35 'PARAL'
+K36 19
+K37 'GPS RES'
+K38 20
+K39 'RESC SW'
+K40 21
+K41 'RPM FLT'
+K42 22
+K43 'REBOOT'
+K44 23
+K45 'DSHOT'
+K46 24
+K47 'ACC CAL'
+K48 25
+K49 'MOTOR P'
+K50 'FC'
+K51 'API_VERSION'
+K52 'tonumber'
+K53 1.4700000286102295
+K54 'CFLIP'
+K55 'ALTH'
+K56 'POSH'
+K57 'ARM SW'
+   1 [  15] VARARG    A=0 B=6 C=0
+   2 [  17] TEST      A=4 B=0 C=1
+   3 [  17] JMP       A=0 ->6
+   4 [  18] LOADNIL   A=5 B=0 C=0
+   5 [  18] RETURN    A=5 B=2 C=0
+   6 [  20] NEWTABLE  A=5 B=0 C=21
+   7 [  21] SETTABLE  R5[K0(1)] = K1('NOGYRO')
+   8 [  22] SETTABLE  R5[K2(2)] = K3('!FS!')
+   9 [  23] SETTABLE  R5[K4(3)] = K5('RXLOSS')
+  10 [  24] SETTABLE  R5[K6(4)] = K7('BADRX')
+  11 [  25] SETTABLE  R5[K8(5)] = K9('BFAILS')
+  12 [  26] SETTABLE  R5[K10(6)] = K11('RUNAWAY')
+  13 [  27] SETTABLE  R5[K12(7)] = K13('CRASH')
+  14 [  28] SETTABLE  R5[K14(8)] = K15('THR LVL')
+  15 [  29] SETTABLE  R5[K16(9)] = K17('ANGLE')
+  16 [  30] SETTABLE  R5[K18(10)] = K19('BOOT')
+  17 [  31] SETTABLE  R5[K20(11)] = K21('PREARM')
+  18 [  32] SETTABLE  R5[K22(12)] = K23('LOAD')
+  19 [  33] SETTABLE  R5[K24(13)] = K25('CALIB')
+  20 [  34] SETTABLE  R5[K26(14)] = K27('CLI')
+  21 [  35] SETTABLE  R5[K28(15)] = K29('CMS')
+  22 [  36] SETTABLE  R5[K30(16)] = K31('BST')
+  23 [  37] SETTABLE  R5[K32(17)] = K33('MSP')
+  24 [  38] SETTABLE  R5[K34(18)] = K35('PARAL')
+  25 [  39] SETTABLE  R5[K36(19)] = K37('GPS RES')
+  26 [  40] SETTABLE  R5[K38(20)] = K39('RESC SW')
+  27 [  41] SETTABLE  R5[K40(21)] = K41('RPM FLT')
+  28 [  42] SETTABLE  R5[K42(22)] = K43('REBOOT')
+  29 [  43] SETTABLE  R5[K44(23)] = K45('DSHOT')
+  30 [  44] SETTABLE  R5[K46(24)] = K47('ACC CAL')
+  31 [  45] SETTABLE  R5[K48(25)] = K49('MOTOR P')
+  32 [  49] GETTABLE  R6 = R2[K50('FC')]
+  33 [  49] GETTABLE  R6 = R6[K51('API_VERSION')]
+  34 [  49] TEST      A=6 B=0 C=0
+  35 [  49] JMP       A=0 ->42
+  36 [  49] GETTABUP  R6 = UP0[K52('tonumber')]
+  37 [  49] GETTABLE  R7 = R2[K50('FC')]
+  38 [  49] GETTABLE  R7 = R7[K51('API_VERSION')]
+  39 [  49] CALL      A=6 B=2 C=2
+  40 [  49] LE        A=1 K53(1.4700000286102295), R6; skip-next if condition != A
+  41 [  49] JMP       A=0 ->45
+  42 [  49] LOADBOOL  A=6 B=0 C=0
+  43 [  49] JMP       A=0 ->46
+  44 [  49] LOADBOOL  A=6 B=0 C=1
+  45 [  49] LOADBOOL  A=6 B=1 C=0
+  46 [  50] TEST      A=6 B=0 C=0
+  47 [  50] JMP       A=0 ->57
+  48 [  51] LEN       A=7 B=5 C=0
+  49 [  51] ADD       A=7 B=7 C=256
+  50 [  51] SETTABLE  R5[R7] = K54('CFLIP')
+  51 [  52] LEN       A=7 B=5 C=0
+  52 [  52] ADD       A=7 B=7 C=256
+  53 [  52] SETTABLE  R5[R7] = K55('ALTH')
+  54 [  53] LEN       A=7 B=5 C=0
+  55 [  53] ADD       A=7 B=7 C=256
+  56 [  53] SETTABLE  R5[R7] = K56('POSH')
+  57 [  56] LEN       A=7 B=5 C=0
+  58 [  56] ADD       A=7 B=7 C=256
+  59 [  56] SETTABLE  R5[R7] = K57('ARM SW')
+  60 [  58] GETTABLE  R7 = R5[R4]
+  61 [  58] RETURN    A=7 B=2 C=0
+  62 [  58] RETURN    A=0 B=1 C=0

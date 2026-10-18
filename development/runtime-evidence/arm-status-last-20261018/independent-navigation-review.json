@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "sourceSha256": "476ae7be86d0efad2cff531ea2ece7f528cf07a4432dc8629f2dd0a0b50782e6",
+  "files": {
+    "sdcard/SCRIPTS/TOOLS/telem.lua": "476ae7be86d0efad2cff531ea2ece7f528cf07a4432dc8629f2dd0a0b50782e6",
+    "development/navigation_contract.lua": "de9538383beba86e1615c3f6fa50216f33f900530a2e88a4bc1bf381c526cd44",
+    "development/test_ui_navigation.lua": "e5041989fed456d7a348b9bf01c557c094b93bd254e0394dbacbf1e6c46e3984",
+    "development/test_ui_features.lua": "c23f31e2075399e42fb9a9793dab05ea4b28bbaf07beb13cec8bffafaca03958",
+    "development/test_widget_budget.lua": "3243afb01917164b77b0e360078b2ff81036fd0062833c6dc5912521397a7cca"
+  },
+  "runtimes": [
+    "LuaJIT",
+    "stock Lua5.3 int32/float32"
+  ],
+  "results": {
+    "navigationContractScenarios": 17,
+    "actualUiScenarios": 33,
+    "actualUiFeaturesChecks": 15,
+    "retainedWidgetBudgetChecks": 11318
+  },
+  "runtimeModifiedByReviewer": false,
+  "coverage": [
+    "Home0 plus Data1/GPS2/Video3/Setup4/Tools5/Arm6 keyboard PAGE and touch order",
+    "Arm last-cell touch edges417..479 and visible30px focus geometry",
+    "Known clear current status green; blockers red",
+    "Unknown API/count even with zero flags red",
+    "Malformed stale unavailable status red",
+    "Cyan/Amber accent cannot recolor green status",
+    "Footer descriptive colors unchanged and full-width status inert",
+    "Full480px warning target/focus remains functional",
+    "Setup draft and active value-edit preservation",
+    "Arm Inputs parent-back and repeated sibling return ownership",
+    "Data Arm Inputs Settings Inputs Arm Data complete caller chain",
+    "Quick Pack modal owns final Arm and Home touches",
+    "Retained high-usage navigation still reaches Data without skipping rendered progress"
+  ],
+  "negativeControl": {
+    "sourceSha256": "5ff3931b3b6bcf01fa4df6cb9b767d6296961385d1457e5538a0923b87e02bbd",
+    "result": "FAIL",
+    "case": "unsupported API with zero mask produced green shield",
+    "resolution": "Green requires flags.mappingKnown==true; footer remains unchanged."
+  },
+  "limits": [
+    "Portable checks do not establish physical-radio FPS or CPU use."
+  ]
+}

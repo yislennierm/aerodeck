@@ -1,0 +1,268 @@
+--- FLIGHT-PANELS
++++ COHESIVE-FLIGHT
+@@ -10,7 +10,7 @@
+ local nativeLcd=lcd
+ local lcd=nativeLcd
+ local display,displayError
+-local BUILD_ID='FLIGHT-PANELS-20261018'
++local BUILD_ID='COHESIVE-FLIGHT-20261018'
+ local uiTheme
+ local alertsMuted=false
+ local alertPlayback={queue=function(event)
+@@ -1613,13 +1613,23 @@
+     lcd.drawLineWithClipping(a.x,a.y,b.x,b.y,11,197,65,214,SOLID,CUSTOM_COLOR)
+    end
+   end
++  local ax,ay;if pos then ax,ay=pt(pos)end
+   if navHome then
+-   line(cx-5,cy,cx,cy-5,p.orange);line(cx,cy-5,cx+5,cy,p.orange);rect(cx-3,cy,6,5,p.orange)
++   local hx,hy=cx,cy
++   if ax and math.abs(ax-cx)<20 and math.abs(ay-cy)<20 then
++    hx,hy=cx-22,cy+18;line(cx,cy,hx+6,hy-5,p.orange);rect(cx-1,cy-1,3,3,p.orange)
++   end
++   inputRuntime.symbol(0,hx,hy,p.orange)
+   end
+   if pos then
+-   local x,y=pt(pos)
++   local x,y=ax,ay
+    if x>=20 and x<=188 and y>=74 and y<=203 then
+-    if heading then triangle(x,y,heading,7,p.white) else circle(x,y,4,p.white) end
++    inputRuntime.symbol(15,x,y,p.white)
++    if heading then
++     local a=heading*pi/180;local dx,dy=math.sin(a),-math.cos(a)
++     local x1,y1,x2,y2=x+dx*10,y+dy*10,x+dx*15,y+dy*15
++     if x1>=11 and x1<=197 and x2>=11 and x2<=197 and y1>=65 and y1<=214 and y2>=65 and y2<=214 then line(x1,y1,x2,y2,p.cyan)end
++    end
+    else smallText(18,183,'AIRCRAFT OFF PLOT',p.orange) end
+   end
+  else smallText(28,129,'WAITING FOR GPS',p.muted) end
+@@ -1812,6 +1822,7 @@
+  [10]={lines={{14,1,25,5},{25,5,25,14},{25,14,20,22},{20,22,14,27},{14,27,8,22},{8,22,3,14},{3,14,3,5},{3,5,14,1}},rects={{13,7,3,9},{13,19,3,3}}},
+  [6]={circles={{8,16,4},{20,16,4}},lines={{2,7,26,7},{26,7,26,26},{26,26,2,26},{2,26,2,7},{14,1,14,7},{8,16,6,13},{20,16,21,13}},rects={{6,12,2,2},{20,12,2,2}}},
+  [4]={lines={{1,15,6,15},{6,15,10,5},{10,5,15,24},{15,24,20,10},{20,10,23,15},{23,15,28,15}}},
++ [15]={circles={{7,7,5},{21,7,5},{7,21,5},{21,21,5}},lines={{7,7,21,21},{21,7,7,21}}},
+  [12]={circles={{14,14,12}},rects={{13,6,3,3},{13,12,3,10}}}
+ }
+ -- Native 30px navigation / 18px detail masks. Cache successes and failures across pages.
+@@ -1819,15 +1830,15 @@
+  local names={[0]='home',[1]='speed',[5]='table_chart',[7]='my_location',
+   [11]='head_mounted_device',[8]='tune',[13]='build',[2]='route',
+   [3]='battery_full',[9]='cell_tower',[10]='gpp_bad',[6]='sports_esports',
+-  [4]='sensors',[12]='bug_report',[14]='satellite_alt'}
++  [4]='sensors',[12]='bug_report',[14]='satellite_alt',[15]='quad'}
+  local smallNames={}
+  for id,name in pairs(names)do smallNames[id]=name..'-18'end
+- -- These are the seven navigation and thirteen detail variants used by the
++ -- These are the seven navigation and fourteen detail variants used by the
+  -- application. One cold asset is prepared per retained startup callback.
+  local primeOrder={
+   {0,30},{10,30},{5,30},{7,30},{11,30},{8,30},{13,30},
+   {0,18},{1,18},{2,18},{3,18},{4,18},{5,18},{6,18},
+-  {7,18},{9,18},{10,18},{11,18},{12,18},{14,18}}
++  {7,18},{9,18},{10,18},{11,18},{12,18},{14,18},{15,18}}
+  for _,item in ipairs(primeOrder)do item.file=(item[2]==18 and smallNames or names)[item[1]]end
+  local masks={};local primeAt=1
+  local contextDisplay,contextPattern,contextOpen,contextMask=false,false,false,false
+@@ -1895,6 +1906,11 @@
+   local a,b,r=round(x+v[1]*scale),round(y+v[2]*scale),round(v[3]*scale)
+   lcd.drawCircle(a,b,r,CUSTOM_COLOR);if r>1 then lcd.drawCircle(a,b,r-1,CUSTOM_COLOR)end
+  end end
++end
++-- Native-size cached semantic markers; instruments retain native primitives.
++function inputRuntime.symbol(id,x,y,c)
++ x=round(x)-9;y=round(y)-9
++ icon(id,x+1,y+1,palette.black,18);icon(id,x,y,c,18)
+ end
+ local function numberText(v,fmt,unit)return type(v)=='number' and string.format(fmt or '%.0f',v)..(unit or '') or '--' end
+ frame=function(title,d)
+@@ -2074,20 +2090,20 @@
+ end
+ local function flightStrip(d)
+  local p=palette
+- rect(136,222,209,22,p.black);line(136,222,344,222,p.border)
++ rect(76,222,328,22,p.tape);line(76,222,403,222,p.border)
+  local throttle=d.inputs and d.inputs.roles.throttle;local limiter=d.inputs and d.inputs.roles.limiter
+  local value=throttle and throttle.state=='LIVE'and throttle.value or nil
+  local caption='THR '..(value~=nil and string.format('%.0f%%',value)or'--')..' >'
+  if limiter and limiter.state=='LIVE'then caption='T'..(value~=nil and string.format('%.0f',value)or'--')..' L'..string.format('%.0f',limiter.value)end
+- local shown,font=fittedText(caption,70,SMLSIZE);vlabel(203,222,22,shown,p.cyan,font)
+- vlabel(141,222,22,flightBank==0 and'PFD >'or flightBank==1 and'VIDEO >'or'GPS >',p.cyan,SMLSIZE)
+- line(197,226,197,239,p.border)
+- line(277,226,277,239,p.border)
++ local shown,font=fittedText(caption,100,SMLSIZE);vlabel(192,222,22,shown,p.cyan,font)
++ vlabel(82,222,22,flightBank==0 and'PFD >'or flightBank==1 and'VIDEO >'or'GPS >',p.cyan,SMLSIZE)
++ line(184,226,184,239,p.border)
++ line(294,226,294,239,p.border)
+  local timer=d.session and d.session.modelTimer;local seconds=timer and timer.value or(d.session and d.session.flightSeconds)or 0
+  local sign=seconds<0 and'-'or'';seconds=math.abs(seconds)
+  local timerText=sign..string.format('%02d:%02d',math.floor(seconds/60),math.floor(seconds)%60)
+- shown,font=fittedText(timerText,57,SMLSIZE);vlabel(339,222,22,shown,p.white,font,true)
+- line(78,244,401,244,p.border)
++ shown,font=fittedText(timerText,99,SMLSIZE);vlabel(399,222,22,shown,p.white,font,true)
++ line(0,245,479,245,p.border)
+ end
+ local function cockpit(d)
+  local p=palette
+@@ -2096,16 +2112,19 @@
+  if configuration.get('compassSource')==1 then heading=d.yaw end
+  if heading~=nil then heading=heading%360 end
+  -- Three primary metrics per rail; radio power and calculated cell average are context.
+- rect(4,35,70,209,p.tape);rect(406,35,70,209,p.tape)
+- rect(4,35,70,1,p.border);rect(406,35,70,1,p.border)
++ rect(0,34,480,212,p.tape)
++ line(75,34,75,243,p.border);line(404,34,404,243,p.border)
+  local frsky=d.protocol and d.protocol.family=='FRSKY'
+  local quality=frsky and d.rssi or d.lq;local critical=frsky and'rssiCrit'or'lqCrit';local low=frsky and'rssiLow'or'lqLow'
+  local lqColor=quality and(quality<=configuration.threshold(critical,d)and p.red or quality<=configuration.threshold(low,d)and p.orange or p.green)or p.muted
+  local batteryColor=d.v and(d.battery and p.orange or p.green)or p.muted
+- icon(9,8,39,lqColor,18);vlabel(31,36,23,frsky and'RSSI'or'LINK',p.muted,TINSIZE or SMLSIZE)
++ icon(9,8,66,lqColor,18);vlabel(31,66,20,frsky and'RSSI'or'LINK',p.muted,TINSIZE or SMLSIZE)
++ local subtype=d.protocol and d.protocol.subtype
++ local linkCaption=(subtype=='EL2'or subtype=='EL3'or subtype=='ELG')and'ELRS'or subtype=='XF'and'TBS CRSF'or subtype=='TRS'and'TRACER'or subtype or'RADIO'
++ vlabel(8,86,15,linkCaption,p.muted,TINSIZE or SMLSIZE)
+  -- Voltage leads; cell count and remaining charge form two bounded columns.
+  -- AUTO describes inferred cells; EST describes a capacity estimate, not confidence.
+- flightValue(8,61,62,34,quality and round(quality)or '--','%',MIDSIZE,lqColor)
++ flightValue(8,35,62,30,quality and round(quality)or '--','%',MIDSIZE,lqColor)
+  flightValue(410,35,62,30,d.v and string.format('%.1f',d.v)or '--','V',MIDSIZE,d.v and(d.battery and p.orange or p.white)or p.muted)
+  local cellCaption=d.cells and d.cells..'S'or'--'
+  flightValue(410,66,29,20,cellCaption,'',SMLSIZE,d.cells and p.white or p.muted,true)
+@@ -2113,8 +2132,8 @@
+  flightValue(443,66,29,20,pct,'',SMLSIZE,d.pct~=nil and(d.battery and p.orange or p.white)or p.muted,true)
+  flightValue(410,86,29,15,d.cellsEstimated and'AUTO'or'CELLS','',TINSIZE or SMLSIZE,p.muted,true)
+  flightValue(443,86,29,15,d.pct~=nil and d.estimated and'EST'or'LEFT','',TINSIZE or SMLSIZE,p.muted,true)
+- rect(8,100,62,4,p.dim);rect(410,103,62,4,p.dim)
+- if quality then rect(8,100,62*clamp(quality,0,100)/100,4,lqColor)end
++ rect(8,103,62,4,p.dim);rect(410,103,62,4,p.dim)
++ if quality then rect(8,103,62*clamp(quality,0,100)/100,4,lqColor)end
+  if d.pct then rect(410,103,62*clamp(d.pct,0,100)/100,4,d.battery and p.orange or p.green)end
+  for x=8,410,402 do
+   rect(x,108,62,1,p.border);rect(x,159,62,1,p.border);rect(x,208,62,1,p.border)
+@@ -2141,9 +2160,8 @@
+  local attitude=d.pitch~=nil and d.roll~=nil
+  local roll=attitude and displayRoll(d.roll)or nil
+  local speed=d.airspeed or d.speed;local altitude=d.alt or d.baro
+- rect(78,35,324,209,p.tape)
+  -- Near-heading references use larger type; minor ticks stay unlabelled.
+- rect(78,34,324,30,p.black)
++ rect(76,34,328,30,p.tape)
+  if heading then
+   local hdg=heading%360;local base=math.floor(hdg/30)*30
+   for bearing=base-60,base+60,15 do
+@@ -2185,37 +2203,35 @@
+  if attitude and configuration.get('attitudeOverlay')==1 then bankReference(roll)end
+  if d.session and d.session.current and d.session.homeBearing and heading~=nil then
+   local relative=(d.session.homeBearing-heading+540)%360-180
+-  local xx=round(clamp(240+relative*1.8,142,338))
+-  -- The center badge keeps its own number; the caret sits below it in the HUD.
+-  local yy=84
+-  line(xx-5,yy+4,xx,yy,p.orange);line(xx,yy,xx+5,yy+4,p.orange);line(xx-3,yy+3,xx-3,yy+9,p.orange);line(xx+3,yy+3,xx+3,yy+9,p.orange);line(xx-3,yy+9,xx+3,yy+9,p.orange)
++  local xx=round(clamp(240+relative*1.8,146,334))
++  inputRuntime.symbol(0,xx,75,p.orange)
+  end
+  --56px opaque tapes are siblings of the horizon, never horizon overlays.
+  -- Their54px value cells retain the29px font through signed three-digit values.
+- rect(78,64,56,180,p.tape);rect(346,64,56,180,p.tape)
++ 
+  vlabel(81,64,17,d.airspeed and 'AS km/h'or 'GS km/h',p.muted,TINSIZE or SMLSIZE)
+  vlabel(399,64,17,d.alt~=nil and 'GPS m'or d.baro~=nil and 'BARO m'or 'ALT m',p.muted,TINSIZE or SMLSIZE,true)
+- line(134,64,134,243,p.border);line(345,64,345,243,p.border)
++ line(134,64,134,221,p.border);line(345,64,345,221,p.border)
+  for offset=-40,40,10 do
+   if speed then
+    local value=math.floor(speed/10)*10+offset;local yy=round(154-(value-speed)*2.4)
+-   if value>=0 and yy>86 and yy<237 then
++   if value>=0 and yy>86 and yy<217 then
+     local font=textWidth(value,SMLSIZE)<=42 and SMLSIZE or(TINSIZE or SMLSIZE)
+     local tick=fittedText(value,42,font);local height=font==TINSIZE and 12 or 17;local top=yy-math.floor(height/2)
+-    if top>=82 and top+height<=242 and(top+height<=138 or top>=170)then vlabel(124,top,height,tick,p.muted,font,true)end;line(127,yy,133,yy,p.muted)
++    if top>=82 and top+height<=221 and(top+height<=138 or top>=170)then vlabel(124,top,height,tick,p.muted,font,true)end;line(127,yy,133,yy,p.muted)
+    end
+   end
+   if altitude then
+    local value=math.floor(altitude/10)*10+offset;local yy=round(154-(value-altitude)*2.4)
+-   if yy>86 and yy<237 then
++   if yy>86 and yy<217 then
+     local font=textWidth(value,SMLSIZE)<=42 and SMLSIZE or(TINSIZE or SMLSIZE)
+     local tick=fittedText(value,42,font);local height=font==TINSIZE and 12 or 17;local top=yy-math.floor(height/2)
+-    if top>=82 and top+height<=242 and(top+height<=138 or top>=170)then vlabel(397,top,height,tick,p.muted,font,true)end;line(347,yy,353,yy,p.muted)
++    if top>=82 and top+height<=221 and(top+height<=138 or top>=170)then vlabel(397,top,height,tick,p.muted,font,true)end;line(347,yy,353,yy,p.muted)
+    end
+   end
+  end
+  rect(78,138,56,32,p.black);rect(346,138,56,32,p.black)
+- for x=78,346,268 do line(x,138,x+55,138,p.green);line(x,169,x+55,169,p.green)end
++ rect(133,139,1,30,p.cyan);rect(346,139,1,30,p.cyan)
+  flightValue(79,139,54,30,speed and round(speed)or '--','',MIDSIZE,nil,true)
+  flightValue(347,139,54,30,altitude and round(altitude)or '--','',MIDSIZE,nil,true)
+  if attitude then
+@@ -2814,7 +2830,7 @@
+  -- Shared rectangles keep paint, keyboard focus and touch on the same grid.
+  local navCells,tabCells={},{}
+  for i=1,#groups do
+-  local x=104+math.floor((i-1)*376/6);local right=104+math.floor(i*376/6)
++  local x=120+math.floor((i-1)*360/6);local right=120+math.floor(i*360/6)
+   local ix=x+math.floor((right-x-30)/2)
+   navCells[i]={x=x,w=right-x,iconX=ix,plateX=ix-7,plateW=44}
+  end
+@@ -2829,7 +2845,7 @@
+   end
+  end
+  local bodies={
+-  [1]={{'flightBank',136,222,62,22,'FLIGHT PANEL'},{'inputStates',198,222,80,22,'THROTTLE / INPUT STATES'}},
++  [1]={{'flightBank',76,222,109,22,'FLIGHT PANEL'},{'inputStates',185,222,110,22,'THROTTLE / INPUT STATES'}},
+   [13]={{'inputSetup',8,222,228,21,'INPUTS / TIMERS'},{'modeSetup',244,222,228,21,'MODE INDICATORS'}},
+   [12]={{'diagView',8,64,464,24,'DIAGNOSTIC VIEW'},{'restartMsp',8,89,225,29,'RESTART MSP SESSION'},{'reloadApp',242,89,230,29,'RELOAD AERODECK'},{'diagRefresh',8,222,145,21,'REFRESH LIVE SOURCES'},{'mute',161,222,150,21,'MUTE ALERTS'},{'newFlight',319,222,153,21,'NEW FLIGHT'},{'logPrevious',8,222,110,21,'PREVIOUS ERROR'},{'logNext',126,222,110,21,'NEXT ERROR'},{'logSave',244,222,228,21,'SAVE ERROR LOG'}},
+   [5]={{'telemetryMode',1,35,158,26,'LIVE / NATIVE MIN / MAX'}},
+@@ -2906,7 +2922,7 @@
+  end
+  local function hit(x,y,id)
+   if y<34 then
+-   if x<40 then return 1 elseif x<104 then return nil end
++   if x<40 then return 1 elseif x<120 then return nil end
+    for i,cell in ipairs(navCells)do
+     if x>=cell.x and x<cell.x+cell.w then return sectionRoots[i]end
+    end
+@@ -2947,17 +2963,27 @@
+    if getDateTime then local date=getDateTime();if date then clock=string.format('%02d:%02d',date.hour,date.min);if date.year and date.mon and date.day then dateText=string.format('%04d/%02d/%02d',date.year,date.mon,date.day);renderStats.date=dateText;end end end
+    clockAt=now
+   end
++  local radio=d.radioStatus;local percent=radio and radio.percent
++  local gaugeColor=d.radioWarning and p.orange or percent~=nil and(p.statusGreen or p.green)or p.muted
++  -- Frame and fill are dynamic native rectangles; the value is a voltage-range
++  -- estimate from existing once-per-second sampling, never a claimed SOC.
++  rect(47,2,5,3,gaugeColor);rect(44,5,11,26,gaugeColor);rect(45,6,9,24,p.black)
++  if percent~=nil then
++   local fill=round(22*clamp(percent,0,100)/100)
++   if fill>0 then rect(46,29-fill,7,fill,gaugeColor)end
++  else line(47,18,51,18,p.muted)end
+   if headerView==1 then
+-   icon(3,43,0,d.radioWarning and p.orange or p.muted,18);vlabel(96,0,18,d.radioVoltage and string.format('%.1f',d.radioVoltage)or'--',p.white,SMLSIZE,true)
+-  elseif headerView==2 then vlabel(43,0,18,clock,p.white)
+-  elseif headerView==4 then local shown,font=fittedText(dateText,60,TINSIZE or SMLSIZE);vlabel(43,0,18,shown,p.white,font)
++   local shown,font=fittedText(d.radioVoltage and string.format('%.1f V',d.radioVoltage)or'-- V',54,SMLSIZE)
++   vlabel(60,0,18,shown,d.radioWarning and p.orange or p.white,font)
++  elseif headerView==2 then vlabel(60,0,18,clock,p.white)
++  elseif headerView==4 then local shown,font=fittedText(dateText,54,TINSIZE or SMLSIZE);vlabel(60,0,18,shown,p.white,font)
+   else
+    local timer=d.session and d.session.modelTimer;local seconds=timer and timer.value or flightSeconds
+-   vlabel(43,0,18,timer and'T'..timer.index or'APP',p.cyan,TINSIZE or SMLSIZE)
+-   vlabel(102,0,18,string.format('%02d:%02d',math.floor(math.abs(seconds)/60),math.floor(math.abs(seconds))%60),p.white,TINSIZE or SMLSIZE,true)
++   local shown,font=fittedText((timer and'T'..timer.index or'APP')..' '..string.format('%02d:%02d',math.floor(math.abs(seconds)/60),math.floor(math.abs(seconds))%60),54,TINSIZE or SMLSIZE)
++   vlabel(60,0,18,shown,p.white,font)
+   end
+   local modelCaption,modelFont=fittedText(modelName or '',54,TINSIZE or SMLSIZE)
+-  vlabel(43,18,15,modelCaption,p.muted,modelFont)
++  vlabel(60,18,15,modelCaption,p.muted,modelFont)
+   for i,section in ipairs(groups)do
+    local cell=navCells[i]
+    if selected==i then rect(cell.plateX,1,cell.plateW,32,p.tape);rect(cell.plateX,31,cell.plateW,2,p.green)end
+@@ -3228,7 +3254,7 @@
+   lastFrame=-100
+  elseif menuEvent then
+   menuOpen=not menuOpen;menuIndex=shell.group(page);controlFocus=0;lastFrame=-100
+- elseif isTap and touch.y<34 and touch.x>=40 and touch.x<104 then shell.cycleHeader();lastFrame=-100
++ elseif isTap and touch.y<34 and touch.x>=40 and touch.x<120 then shell.cycleHeader();lastFrame=-100
+  elseif isTap and touch.y<34 then
+   local target=shell.hit(touch.x,touch.y,page)
+   if target then chooseSection(target)end

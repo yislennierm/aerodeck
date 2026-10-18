@@ -1,0 +1,100 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/BAT.luac
+
+FUNCTION main params 0 vararg 1 stack 9 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/RD/BAT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 51), ('F', 1, 51), ('D', 1, 51), ('X', 1, 51), ('GS', 5, 51)]
+K0 'RD'
+K1 'BATT_S'
+K2 'tx-voltage'
+K3 'getGeneralSettings'
+K4 'SEN'
+K5 'SN01n'
+K6 'Radio'
+K7 'SN01m'
+K8 'battMin'
+K9 6.800000190734863
+K10 'SN01x'
+K11 'battMax'
+K12 8.399999618530273
+K13 'SN01l'
+K14 3
+K15 'SN01c'
+K16 5
+K17 'SN01u'
+K18 'V'
+K19 'SN01f'
+K20 '%.1f'
+K21 'SN01vs'
+K22 'RD_BT_V'
+K23 'RD_BT'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  10] GETTABLE  R4 = R2[K0('RD')]
+   3 [  10] SETTABLE  R4[K1('BATT_S')] = K2('tx-voltage')
+   4 [  11] GETTABUP  R4 = UP0[K3('getGeneralSettings')]
+   5 [  11] CALL      A=4 B=1 C=2
+   6 [  12] GETTABLE  R5 = R2[K4('SEN')]
+   7 [  12] SETTABLE  R5[K5('SN01n')] = K6('Radio')
+   8 [  13] GETTABLE  R5 = R2[K4('SEN')]
+   9 [  13] GETTABLE  R6 = R4[K8('battMin')]
+  10 [  13] TEST      A=6 B=0 C=1
+  11 [  13] JMP       A=0 ->13
+  12 [  13] LOADK     R6 = K9 (6.800000190734863)
+  13 [  13] SETTABLE  R5[K7('SN01m')] = R6
+  14 [  14] GETTABLE  R5 = R2[K4('SEN')]
+  15 [  14] GETTABLE  R6 = R4[K11('battMax')]
+  16 [  14] TEST      A=6 B=0 C=1
+  17 [  14] JMP       A=0 ->19
+  18 [  14] LOADK     R6 = K12 (8.399999618530273)
+  19 [  14] SETTABLE  R5[K10('SN01x')] = R6
+  20 [  15] GETTABLE  R5 = R2[K4('SEN')]
+  21 [  15] GETTABLE  R6 = R2[K4('SEN')]
+  22 [  15] GETTABLE  R6 = R6[K7('SN01m')]
+  23 [  15] GETTABLE  R7 = R2[K4('SEN')]
+  24 [  15] GETTABLE  R7 = R7[K10('SN01x')]
+  25 [  15] GETTABLE  R8 = R2[K4('SEN')]
+  26 [  15] GETTABLE  R8 = R8[K7('SN01m')]
+  27 [  15] SUB       A=7 B=7 C=8
+  28 [  15] DIV       A=7 B=7 C=270
+  29 [  15] ADD       A=6 B=6 C=7
+  30 [  15] SETTABLE  R5[K13('SN01l')] = R6
+  31 [  16] GETTABLE  R5 = R2[K4('SEN')]
+  32 [  16] GETTABLE  R6 = R2[K4('SEN')]
+  33 [  16] GETTABLE  R6 = R6[K7('SN01m')]
+  34 [  16] GETTABLE  R7 = R2[K4('SEN')]
+  35 [  16] GETTABLE  R7 = R7[K10('SN01x')]
+  36 [  16] GETTABLE  R8 = R2[K4('SEN')]
+  37 [  16] GETTABLE  R8 = R8[K7('SN01m')]
+  38 [  16] SUB       A=7 B=7 C=8
+  39 [  16] DIV       A=7 B=7 C=272
+  40 [  16] ADD       A=6 B=6 C=7
+  41 [  16] SETTABLE  R5[K15('SN01c')] = R6
+  42 [  17] GETTABLE  R5 = R2[K4('SEN')]
+  43 [  17] SETTABLE  R5[K17('SN01u')] = K18('V')
+  44 [  18] GETTABLE  R5 = R2[K4('SEN')]
+  45 [  18] SETTABLE  R5[K19('SN01f')] = K20('%.1f')
+  46 [  19] GETTABLE  R5 = R2[K4('SEN')]
+  47 [  19] SETTABLE  R5[K21('SN01vs')] = K22('RD_BT_V')
+  48 [  28] CLOSURE   R5 = proto[0]
+  49 [  28] SETTABLE  R1[K23('RD_BT')] = R5
+  50 [  30] RETURN    A=0 B=1 C=0
+  51 [  30] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 4 lines 21 28 source None
+UPVALUES [('_ENV', (0, 0)), ('D', (1, 2))]
+LOCALS [('GS', 2, 10)]
+K0 'getGeneralSettings'
+K1 'S'
+K2 'RD_BT_V'
+K3 'getValue'
+K4 'RD'
+K5 'BATT_S'
+   1 [  23] GETTABUP  R0 = UP0[K0('getGeneralSettings')]
+   2 [  23] CALL      A=0 B=1 C=2
+   3 [  24] GETTABUP  R1 = UP1[K1('S')]
+   4 [  24] GETTABUP  R2 = UP0[K3('getValue')]
+   5 [  24] GETTABUP  R3 = UP1[K4('RD')]
+   6 [  24] GETTABLE  R3 = R3[K5('BATT_S')]
+   7 [  24] CALL      A=2 B=2 C=2
+   8 [  24] SETTABLE  R1[K2('RD_BT_V')] = R2
+   9 [  27] RETURN    A=0 B=1 C=0
+  10 [  28] RETURN    A=0 B=1 C=0

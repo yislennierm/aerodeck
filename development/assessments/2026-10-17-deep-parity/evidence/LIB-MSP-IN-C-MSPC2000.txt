@@ -1,0 +1,166 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC2000.luac
+SHA256: 173e6c420ee94548a540b6e106e95ac627fc47589361b5bb068c201506874ae5
+
+FUNCTION main params 0 vararg 1 stack 18 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/IN/C/MSPC2000.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 126), ('F', 1, 126), ('D', 1, 126), ('X', 1, 126), ('activeSensors', 6, 126), ('asF', 11, 126), ('(for index)', 45, 76), ('(for limit)', 45, 76), ('(for step)', 45, 76), ('i', 46, 75), ('test', 51, 75), ('asNo', 58, 75), ('asID', 64, 75)]
+K0 'MSP'
+K1 'dptr'
+K2 5
+K3 'MSPP'
+K4 'U16'
+K5 10
+K6 'U32'
+K7 'dbgMSP'
+K8 'activeSensors'
+K9 'strHex'
+K10 2
+K11 'strBin'
+K12 'armingDisableFlags'
+K13 4
+K14 64
+K15 'FC'
+K16 'ARMSTOPS'
+K17 6
+K18 30
+K19 1
+K20 'bit'
+K21 'bcheck'
+K22 'loadE'
+K23 'PLIBFC'
+K24 'IN/ASCS'
+K25 0
+K26 'S'
+K27 'ARM_STOP_MSP'
+K28 True
+K29 'ARM_STOP_LIST'
+K30 ' '
+K31 ''
+K32 'clear'
+K33 None
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  13] GETTABLE  R4 = R2[K0('MSP')]
+   3 [  13] SETTABLE  R4[K1('dptr')] = K2(5)
+   4 [  14] GETTABLE  R4 = R1[K3('MSPP')]
+   5 [  14] LOADK     R5 = K4 ('U16')
+   6 [  14] CALL      A=4 B=2 C=2
+   7 [  17] GETTABLE  R5 = R2[K0('MSP')]
+   8 [  17] SETTABLE  R5[K1('dptr')] = K5(10)
+   9 [  18] GETTABLE  R5 = R1[K3('MSPP')]
+  10 [  18] LOADK     R6 = K6 ('U32')
+  11 [  18] CALL      A=5 B=2 C=2
+  12 [  21] GETTABLE  R6 = R0[K7('dbgMSP')]
+  13 [  21] LOADK     R7 = K3 ('MSPP')
+  14 [  21] LOADK     R8 = K8 ('activeSensors')
+  15 [  21] GETTABLE  R9 = R0[K9('strHex')]
+  16 [  21] MOVE      A=10 B=4 C=0
+  17 [  21] LOADK     R11 = K10 (2)
+  18 [  21] CALL      A=9 B=3 C=2
+  19 [  21] GETTABLE  R10 = R0[K11('strBin')]
+  20 [  21] MOVE      A=11 B=4 C=0
+  21 [  21] LOADK     R12 = K10 (2)
+  22 [  21] CALL      A=10 B=3 C=0
+  23 [  21] CALL      A=6 B=0 C=1
+  24 [  22] GETTABLE  R6 = R0[K7('dbgMSP')]
+  25 [  22] LOADK     R7 = K3 ('MSPP')
+  26 [  22] LOADK     R8 = K12 ('armingDisableFlags')
+  27 [  22] GETTABLE  R9 = R0[K9('strHex')]
+  28 [  22] MOVE      A=10 B=5 C=0
+  29 [  22] LOADK     R11 = K13 (4)
+  30 [  22] CALL      A=9 B=3 C=2
+  31 [  22] GETTABLE  R10 = R0[K11('strBin')]
+  32 [  22] MOVE      A=11 B=5 C=0
+  33 [  22] LOADK     R12 = K13 (4)
+  34 [  22] CALL      A=10 B=3 C=0
+  35 [  22] CALL      A=6 B=0 C=1
+  36 [  25] TEST      A=5 B=0 C=0
+  37 [  25] JMP       A=0 ->106
+  38 [  25] LE        A=0 K14(64), R5; skip-next if condition != A
+  39 [  25] JMP       A=0 ->106
+  40 [  26] GETTABLE  R6 = R2[K15('FC')]
+  41 [  26] NEWTABLE  A=7 B=0 C=0
+  42 [  26] SETTABLE  R6[K16('ARMSTOPS')] = R7
+  43 [  27] LOADK     R6 = K17 (6)
+  44 [  27] LOADK     R7 = K18 (30)
+  45 [  27] LOADK     R8 = K19 (1)
+  46 [  27] FORPREP   A=6 ->76
+  47 [  28] GETTABLE  R10 = R0[K20('bit')]
+  48 [  28] GETTABLE  R10 = R10[K21('bcheck')]
+  49 [  28] MOVE      A=11 B=5 C=0
+  50 [  28] MOVE      A=12 B=9 C=0
+  51 [  28] CALL      A=10 B=3 C=2
+  52 [  29] GETTABLE  R11 = R0[K7('dbgMSP')]
+  53 [  29] MOVE      A=12 B=9 C=0
+  54 [  29] MOVE      A=13 B=10 C=0
+  55 [  29] CALL      A=11 B=3 C=1
+  56 [  30] TEST      A=10 B=0 C=0
+  57 [  30] JMP       A=0 ->76
+  58 [  31] ADD       A=11 B=9 C=275
+  59 [  32] GETTABLE  R12 = R0[K22('loadE')]
+  60 [  32] GETTABLE  R13 = R0[K23('PLIBFC')]
+  61 [  32] LOADK     R14 = K24 ('IN/ASCS')
+  62 [  32] CONCAT    A=13 B=13 C=14
+  63 [  32] MOVE      A=14 B=11 C=0
+  64 [  32] CALL      A=12 B=3 C=2
+  65 [  33] GETTABLE  R13 = R2[K15('FC')]
+  66 [  33] GETTABLE  R13 = R13[K16('ARMSTOPS')]
+  67 [  33] GETTABLE  R14 = R2[K15('FC')]
+  68 [  33] GETTABLE  R14 = R14[K16('ARMSTOPS')]
+  69 [  33] LEN       A=14 B=14 C=0
+  70 [  33] ADD       A=14 B=14 C=275
+  71 [  33] NEWTABLE  A=15 B=2 C=0
+  72 [  33] MOVE      A=16 B=11 C=0
+  73 [  33] MOVE      A=17 B=12 C=0
+  74 [  33] SETLIST   A=15 B=2 C=1
+  75 [  33] SETTABLE  R13[R14] = R15
+  76 [  27] FORLOOP   A=6 ->47
+  77 [  37] GETTABLE  R6 = R2[K15('FC')]
+  78 [  37] GETTABLE  R6 = R6[K16('ARMSTOPS')]
+  79 [  37] LEN       A=6 B=6 C=0
+  80 [  37] LT        A=0 K25(0), R6; skip-next if condition != A
+  81 [  37] JMP       A=0 ->114
+  82 [  38] GETTABLE  R6 = R2[K26('S')]
+  83 [  38] SETTABLE  R6[K27('ARM_STOP_MSP')] = K28(True)
+  84 [  39] GETTABLE  R6 = R2[K26('S')]
+  85 [  39] GETTABLE  R7 = R2[K15('FC')]
+  86 [  39] GETTABLE  R7 = R7[K16('ARMSTOPS')]
+  87 [  39] GETTABLE  R7 = R7[K19(1)]
+  88 [  39] GETTABLE  R7 = R7[K10(2)]
+  89 [  39] GETTABLE  R8 = R2[K15('FC')]
+  90 [  39] GETTABLE  R8 = R8[K16('ARMSTOPS')]
+  91 [  39] GETTABLE  R8 = R8[K10(2)]
+  92 [  39] TEST      A=8 B=0 C=0
+  93 [  39] JMP       A=0 ->102
+  94 [  39] LOADK     R8 = K30 (' ')
+  95 [  39] GETTABLE  R9 = R2[K15('FC')]
+  96 [  39] GETTABLE  R9 = R9[K16('ARMSTOPS')]
+  97 [  39] GETTABLE  R9 = R9[K10(2)]
+  98 [  39] GETTABLE  R9 = R9[K10(2)]
+  99 [  39] CONCAT    A=8 B=8 C=9
+ 100 [  39] TEST      A=8 B=0 C=1
+ 101 [  39] JMP       A=0 ->103
+ 102 [  39] LOADK     R8 = K31 ('')
+ 103 [  39] CONCAT    A=7 B=7 C=8
+ 104 [  39] SETTABLE  R6[K29('ARM_STOP_LIST')] = R7
+ 105 [  40] JMP       A=0 ->114
+ 106 [  42] GETTABLE  R6 = R0[K32('clear')]
+ 107 [  42] GETTABLE  R7 = R2[K15('FC')]
+ 108 [  42] LOADK     R8 = K16 ('ARMSTOPS')
+ 109 [  42] CALL      A=6 B=3 C=1
+ 110 [  43] GETTABLE  R6 = R2[K26('S')]
+ 111 [  43] SETTABLE  R6[K27('ARM_STOP_MSP')] = K33(None)
+ 112 [  44] GETTABLE  R6 = R2[K26('S')]
+ 113 [  44] SETTABLE  R6[K29('ARM_STOP_LIST')] = K33(None)
+ 114 [  47] GETTABLE  R6 = R0[K7('dbgMSP')]
+ 115 [  47] LOADK     R7 = K3 ('MSPP')
+ 116 [  47] LOADK     R8 = K12 ('armingDisableFlags')
+ 117 [  47] GETTABLE  R9 = R0[K9('strHex')]
+ 118 [  47] MOVE      A=10 B=5 C=0
+ 119 [  47] CALL      A=9 B=2 C=2
+ 120 [  47] GETTABLE  R10 = R0[K11('strBin')]
+ 121 [  47] MOVE      A=11 B=5 C=0
+ 122 [  47] LOADK     R12 = K13 (4)
+ 123 [  47] CALL      A=10 B=3 C=0
+ 124 [  47] CALL      A=6 B=0 C=1
+ 125 [  49] RETURN    A=0 B=1 C=0
+ 126 [  49] RETURN    A=0 B=1 C=0

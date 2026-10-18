@@ -1,0 +1,66 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GPS.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/GPS.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 41), ('F', 1, 41), ('D', 1, 41), ('X', 1, 41), ('add', 1, 41)]
+K0 'S'
+K1 'GPS_DATA'
+K2 None
+K3 'GPS_SATS'
+K4 'GPS_HDOP'
+K5 'ALT_GPS'
+K6 'SPD_GND'
+K7 'POS_FIX'
+K8 'POS_LAT'
+K9 'POS_LON'
+K10 'POS_FIXH'
+K11 'POS_LATH'
+K12 'POS_LONH'
+K13 'POS_DISTH'
+K14 'POS_TIMEH'
+K15 'DIR_GC'
+K16 'DIR_GCH'
+K17 'DIR_RBH'
+K18 'DIR_HDG'
+K19 'SN_GPS'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('GPS_DATA')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('GPS_SATS')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('GPS_HDOP')] = K2(None)
+   8 [  16] GETTABLE  R5 = R2[K0('S')]
+   9 [  16] SETTABLE  R5[K5('ALT_GPS')] = K2(None)
+  10 [  17] GETTABLE  R5 = R2[K0('S')]
+  11 [  17] SETTABLE  R5[K6('SPD_GND')] = K2(None)
+  12 [  19] GETTABLE  R5 = R2[K0('S')]
+  13 [  19] SETTABLE  R5[K7('POS_FIX')] = K2(None)
+  14 [  20] GETTABLE  R5 = R2[K0('S')]
+  15 [  20] SETTABLE  R5[K8('POS_LAT')] = K2(None)
+  16 [  21] GETTABLE  R5 = R2[K0('S')]
+  17 [  21] SETTABLE  R5[K9('POS_LON')] = K2(None)
+  18 [  22] GETTABLE  R5 = R2[K0('S')]
+  19 [  22] SETTABLE  R5[K10('POS_FIXH')] = K2(None)
+  20 [  23] GETTABLE  R5 = R2[K0('S')]
+  21 [  23] SETTABLE  R5[K11('POS_LATH')] = K2(None)
+  22 [  24] GETTABLE  R5 = R2[K0('S')]
+  23 [  24] SETTABLE  R5[K12('POS_LONH')] = K2(None)
+  24 [  25] GETTABLE  R5 = R2[K0('S')]
+  25 [  25] SETTABLE  R5[K13('POS_DISTH')] = K2(None)
+  26 [  26] GETTABLE  R5 = R2[K0('S')]
+  27 [  26] SETTABLE  R5[K14('POS_TIMEH')] = K2(None)
+  28 [  28] GETTABLE  R5 = R2[K0('S')]
+  29 [  28] SETTABLE  R5[K15('DIR_GC')] = K2(None)
+  30 [  29] GETTABLE  R5 = R2[K0('S')]
+  31 [  29] SETTABLE  R5[K16('DIR_GCH')] = K2(None)
+  32 [  30] GETTABLE  R5 = R2[K0('S')]
+  33 [  30] SETTABLE  R5[K17('DIR_RBH')] = K2(None)
+  34 [  31] GETTABLE  R5 = R2[K0('S')]
+  35 [  31] SETTABLE  R5[K18('DIR_HDG')] = K2(None)
+  36 [  33] GETTABLE  R5 = R2[K0('S')]
+  37 [  33] SETTABLE  R5[K1('GPS_DATA')] = K2(None)
+  38 [  35] SETTABLE  R1[K19('SN_GPS')] = K2(None)
+  39 [  37] NEWTABLE  A=5 B=0 C=0
+  40 [  37] RETURN    A=5 B=2 C=0
+  41 [  37] RETURN    A=0 B=1 C=0

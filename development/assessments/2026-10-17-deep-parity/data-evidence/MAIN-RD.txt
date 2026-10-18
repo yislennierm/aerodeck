@@ -1,0 +1,100 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/RD.luac
+
+FUNCTION main params 0 vararg 1 stack 16 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/MAIN/RD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 70), ('F', 1, 70), ('D', 1, 70), ('X', 1, 70), ('version', 3, 70), ('radio', 3, 70), ('major', 3, 70), ('minor', 3, 70), ('revision', 3, 70), ('name', 3, 70)]
+K0 'getVersion'
+K1 'RD'
+K2 'SIM'
+K3 'string'
+K4 'find'
+K5 '-simu'
+K6 'OSID'
+K7 'etx'
+K8 'OSV_MAJOR'
+K9 'OSV_MINOR'
+K10 'OSV'
+K11 '.'
+K12 'MODEL'
+K13 'sub'
+K14 1
+K15 'LCDRES'
+K16 'LCD_W'
+K17 'X'
+K18 'LCD_H'
+K19 'COLOR'
+K20 'lcd'
+K21 'RGB'
+K22 None
+K23 'CHMODE'
+K24 2
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABUP  R4 = UP0[K0('getVersion')]
+   3 [  12] CALL      A=4 B=1 C=7
+   4 [  13] NEWTABLE  A=10 B=0 C=0
+   5 [  13] SETTABLE  R2[K1('RD')] = R10
+   6 [  14] GETTABLE  R10 = R2[K1('RD')]
+   7 [  14] GETTABUP  R11 = UP0[K3('string')]
+   8 [  14] GETTABLE  R11 = R11[K4('find')]
+   9 [  14] MOVE      A=12 B=5 C=0
+  10 [  14] LOADK     R13 = K5 ('-simu')
+  11 [  14] CALL      A=11 B=3 C=2
+  12 [  14] SETTABLE  R10[K2('SIM')] = R11
+  13 [  16] GETTABLE  R10 = R2[K1('RD')]
+  14 [  16] SETTABLE  R10[K6('OSID')] = K7('etx')
+  15 [  17] GETTABLE  R10 = R2[K1('RD')]
+  16 [  17] SETTABLE  R10[K8('OSV_MAJOR')] = R6
+  17 [  18] GETTABLE  R10 = R2[K1('RD')]
+  18 [  18] SETTABLE  R10[K9('OSV_MINOR')] = R7
+  19 [  19] GETTABLE  R10 = R2[K1('RD')]
+  20 [  19] MOVE      A=11 B=6 C=0
+  21 [  19] LOADK     R12 = K11 ('.')
+  22 [  19] MOVE      A=13 B=7 C=0
+  23 [  19] LOADK     R14 = K11 ('.')
+  24 [  19] MOVE      A=15 B=8 C=0
+  25 [  19] CONCAT    A=11 B=11 C=15
+  26 [  19] SETTABLE  R10[K10('OSV')] = R11
+  27 [  20] GETTABLE  R10 = R2[K1('RD')]
+  28 [  20] GETTABLE  R11 = R2[K1('RD')]
+  29 [  20] GETTABLE  R11 = R11[K2('SIM')]
+  30 [  20] TEST      A=11 B=0 C=0
+  31 [  20] JMP       A=0 ->42
+  32 [  20] GETTABUP  R11 = UP0[K3('string')]
+  33 [  20] GETTABLE  R11 = R11[K13('sub')]
+  34 [  20] MOVE      A=12 B=5 C=0
+  35 [  20] LOADK     R13 = K14 (1)
+  36 [  20] GETTABLE  R14 = R2[K1('RD')]
+  37 [  20] GETTABLE  R14 = R14[K2('SIM')]
+  38 [  20] SUB       A=14 B=14 C=270
+  39 [  20] CALL      A=11 B=4 C=2
+  40 [  20] TEST      A=11 B=0 C=1
+  41 [  20] JMP       A=0 ->43
+  42 [  20] MOVE      A=11 B=5 C=0
+  43 [  20] SETTABLE  R10[K12('MODEL')] = R11
+  44 [  21] GETTABLE  R10 = R2[K1('RD')]
+  45 [  21] GETTABLE  R11 = R2[K1('RD')]
+  46 [  21] GETTABLE  R11 = R11[K2('SIM')]
+  47 [  21] TEST      A=11 B=0 C=0
+  48 [  21] JMP       A=0 ->52
+  49 [  21] LOADBOOL  A=11 B=1 C=0
+  50 [  21] TEST      A=11 B=0 C=1
+  51 [  21] JMP       A=0 ->53
+  52 [  21] LOADBOOL  A=11 B=0 C=0
+  53 [  21] SETTABLE  R10[K2('SIM')] = R11
+  54 [  22] GETTABLE  R10 = R2[K1('RD')]
+  55 [  22] GETTABUP  R11 = UP0[K16('LCD_W')]
+  56 [  22] LOADK     R12 = K17 ('X')
+  57 [  22] GETTABUP  R13 = UP0[K18('LCD_H')]
+  58 [  22] CONCAT    A=11 B=11 C=13
+  59 [  22] SETTABLE  R10[K15('LCDRES')] = R11
+  60 [  23] GETTABLE  R10 = R2[K1('RD')]
+  61 [  23] GETTABUP  R11 = UP0[K20('lcd')]
+  62 [  23] GETTABLE  R11 = R11[K21('RGB')]
+  63 [  23] EQ        A=0 R11, K22(None); skip-next if condition != A
+  64 [  23] JMP       A=0 ->66
+  65 [  23] LOADBOOL  A=11 B=0 C=1
+  66 [  23] LOADBOOL  A=11 B=1 C=0
+  67 [  23] SETTABLE  R10[K19('COLOR')] = R11
+  68 [  24] GETTABLE  R10 = R2[K1('RD')]
+  69 [  24] SETTABLE  R10[K23('CHMODE')] = K24(2)
+  70 [  24] RETURN    A=0 B=1 C=0

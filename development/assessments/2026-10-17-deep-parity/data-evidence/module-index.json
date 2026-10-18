@@ -1,0 +1,641 @@
+[
+  {
+    "module": "LIB/TLM/RCPINIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/RCPINIT.luac",
+    "originalSha256": "66094d810ef6a19b61f12f89326315c22806c3a88db08c5d020fc673e82138ac",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-RCPINIT.txt",
+    "disassemblySha256": "ecd277a8e7b572c3d03ad4424007df66b9cf706dfb6e5a98edd7a0593986a13c",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/RCPINIT.lua",
+    "recoveredSha256": "a82df1a7983ad503c2038fda2339fc09b3cca0c89f7bc8d0e8109984a47f245d"
+  },
+  {
+    "module": "LIB/TLM/TLMRLD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMRLD.luac",
+    "originalSha256": "0ad1fd8ef2a0686d49ed256da7452cf9ff0a8b311e3412fa8b22da2d3dfd9e02",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMRLD.txt",
+    "disassemblySha256": "17ee736fbe2366aef33ece31bdbcea6d941ef8e993684a5bf5924d3cf3873c53",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMRLD.lua",
+    "recoveredSha256": "00018ecaff82b16d0a9b6be14a1a0770a211a28f596d80f14982c075c96ed24e"
+  },
+  {
+    "module": "LIB/TLM/TLMSADD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMSADD.luac",
+    "originalSha256": "ae5df9faa9ebddb56fd2475904a95961202250090a6a0dc5f0e31281eefc45d3",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMSADD.txt",
+    "disassemblySha256": "3678dba8dbc925a4661afb77e1daf8c90800f4c7b16afce45cd2c609fb76d2ac",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMSADD.lua",
+    "recoveredSha256": "87df8f60b871d3f24c97813326b079c7e9d9b6ae39dcf28b5bfaa60056fcbfd3"
+  },
+  {
+    "module": "LIB/TLM/TLMUPDS",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.luac",
+    "originalSha256": "5e383ccbce0732ef4ac94bc41226497c5b76d7c9b3e24ad4af7f4658d2d1c863",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMUPDS.txt",
+    "disassemblySha256": "93ca5f6412a84c8c5a1207ff4365b2ce6ece4b659bfbd7fc8ae15473748b25c1",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMUPDS.lua",
+    "recoveredSha256": "099d65d340e80bbf302fa4fb208917152a7242dcaac6998927ebc23d300a7221"
+  },
+  {
+    "module": "LIB/TLM/TBS/RL",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/RL.luac",
+    "originalSha256": "f6207492f0e64cfe09096b777cdcefeca1b3561abf3790913f65a96faa464c88",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-RL.txt",
+    "disassemblySha256": "f5013229d90989d68f4020bdea57e1237dc6c5fdef0aceeed2f5e2ac8d68e52b",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/RL.lua",
+    "recoveredSha256": "014e6c5a7e31baccc8a3f9db0130f789fba763668d8b8427f062a2948388dad2"
+  },
+  {
+    "module": "LIB/TLM/FRS/RL",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/RL.luac",
+    "originalSha256": "f182ead3b26cf2bc89c4263254f9b2258ad11167da552e9db6e33b462613273a",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-RL.txt",
+    "disassemblySha256": "78954d1a1fb2cfd9182c03d84f59dd2a511570173ad41d2b015cb2d7df562069",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/RL.lua",
+    "recoveredSha256": "46b1a49ce26a2a67ce58d61303cdc72286fb58c14d37fd65513d26955557a946"
+  },
+  {
+    "module": "LIB/TLM/TBS/GPS",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.luac",
+    "originalSha256": "6f9698220306991976d7d68676f05057b2ed3bf20dfe1053dc61fd025252fec6",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-GPS.txt",
+    "disassemblySha256": "2393828255efa8eab4b829a9ae3455562c40a1114d243f9d42fd98ce9f20473a",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.lua",
+    "recoveredSha256": "082e7986ecadfbe9593873f0e1718b25e903f14f262926f56e984f6486b900c2"
+  },
+  {
+    "module": "LIB/TLM/FRS/GPS_BF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GPS_BF.luac",
+    "originalSha256": "26902d0285e82c04fe5c01c385cf8930a070014cdc66f76ad21bd8f5b129c0ff",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS_BF.txt",
+    "disassemblySha256": "10b3e0d6f60b7231176ba500ec91c34fe6f731f36199437a3a9fe621f53e6220",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/GPS_BF.lua",
+    "recoveredSha256": "0d1bec2f3de050283d890d0345b06aa3f70d7b575a5823630e8969b280efc756"
+  },
+  {
+    "module": "LIB/TLM/FRS/GPS_IN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GPS_IN.luac",
+    "originalSha256": "9b6d8010744d05ad86b36330a2ee2dcf071813e847c9cb7fac39de577438d823",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS_IN.txt",
+    "disassemblySha256": "a43d1c910acc52e2ad847987ad32d6c32a80c3d7e77bb04bbf0fb02eae943ad0",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/GPS_IN.lua",
+    "recoveredSha256": "81c24fdec898c6c8021a512e4c9a309202f6093397e46c5b075a86a5bbf72e49"
+  },
+  {
+    "module": "LIB/TLM/FRS/BTV",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/BTV.luac",
+    "originalSha256": "b4e507af3f346eb7fc374a6fce4df52bef173522c68af572b536b48424c54872",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BTV.txt",
+    "disassemblySha256": "858980a1f6acd94d2fe541acdc10adbcfba2e98c9d8d54d5ed46f890276527d8",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/BTV.lua",
+    "recoveredSha256": "98024058b2b9484a22a2312c3f31aaccc4804ae8829fbd8a96cc9296ad538655"
+  },
+  {
+    "module": "LIB/TLM/FRS/BTA",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/BTA.luac",
+    "originalSha256": "db47d5174d78cf35e1bb87e8f7ef17c08eee6f850b00a50a2342ac33c3ad474b",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BTA.txt",
+    "disassemblySha256": "36222a1a5946616c98cab280560853f8143b3feeecd125278205700345540d91",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/BTA.lua",
+    "recoveredSha256": "4db55537b5b77f3a867bfb9f3fcf6c3711326a3bada4ebb0229a3eb2d7fa11c2"
+  },
+  {
+    "module": "LIB/TLM/TBS/BTV",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.luac",
+    "originalSha256": "5f48aa079e394e8e9dfd20d500d548010d475eae229e2f4bed40ed869a05f61a",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BTV.txt",
+    "disassemblySha256": "f5e0507a3d5d9270efc394758c445ab67dee350c498db545e2e5ad779f9631a9",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTV.lua",
+    "recoveredSha256": "f1f59154e420ca0608170b10448e3244fdfca9f52e7901acabff3636b46708d6"
+  },
+  {
+    "module": "LIB/TLM/TBS/BTA",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.luac",
+    "originalSha256": "997ec0508dbcc8919e976e364bf2f7d5805ad2344d5442fa30f5d88f4afc35c6",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BTA.txt",
+    "disassemblySha256": "c878e914892cfae56c76bb8e5072d21a95669b74889a129146c85be91cd8ceec",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+    "recoveredSha256": "3ba7194b10b45bda6ad47b2d1ad8cb3f3cd3f8cdcb49582ba7ac62350fa2a2d4"
+  },
+  {
+    "module": "LIB/TB/BTCNO",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/BTCNO.luac",
+    "originalSha256": "9504eec4974495157aae021315097d4f1206aca64b4f7386f4950b0115d60792",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-BTCNO.txt",
+    "disassemblySha256": "d223bb91c881e307106a90fba60603ead11cff2346c6cfdc26cd437bbd812d7f",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/BTCNO.lua",
+    "recoveredSha256": "85fb9394dc9d442f5db91b2a8e0d57b79664dab3ba83bb58c2bc95a2a1052558"
+  },
+  {
+    "module": "LIB/CFG/CFGBFV",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGBFV.luac",
+    "originalSha256": "a305098a214b190b7a454aa507f19843cfdd1d017bc6bfdf15a9aa604dee1a29",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGBFV.txt",
+    "disassemblySha256": "24ceb4969ef90ecb2cce31ceb767dec4cf37c44501e76d13442cdceada070470",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBFV.lua",
+    "recoveredSha256": "b41612bfdf41f0fd4a4c44e2a0f416a251228025275e0a9f759841ba87e34586"
+  },
+  {
+    "module": "LIB/CFG/CFGBAT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGBAT.luac",
+    "originalSha256": "1dbec91f6ab8dfb059494135f20b436cc5b738f5708a1f1a5e31b67c5ab08669",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGBAT.txt",
+    "disassemblySha256": "9ba470d4ca135bac470d47df960535ed98bf2fbcdd9466c25d29ab6a78df6abb",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua",
+    "recoveredSha256": "ba4adbf9fe4d98d11557a66044786e6a55e4657edef52b155f1e53cf63a11be2"
+  },
+  {
+    "module": "LIB/CFG/CFGSRDE",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSRDE.luac",
+    "originalSha256": "7ed7a8fa96d7fb72ada3beadf5fa19ed7420cef94f486182d643651ce0f7644c",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGSRDE.txt",
+    "disassemblySha256": "0cc217bc1fc930f752d1cdcad1d3c6345af9382b3085adc45f9fea72e405c2e2",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGSRDE.lua",
+    "recoveredSha256": "1a26e043b48fd00243b44c8c462681c4b48e8b5cab927c9fa89fe6a59e49e1a8"
+  },
+  {
+    "module": "LIB/CFG/CFGSREN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSREN.luac",
+    "originalSha256": "ba5dde59e879e53b9285426fc15b909c1ee85553bf9d180b01a10437f41ffdbe",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGSREN.txt",
+    "disassemblySha256": "279e65881b79ffa36549a33bf021dba5be7d54aa3cb54cdfb68d74543de75e38",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGSREN.lua",
+    "recoveredSha256": "8442a3b0eaf25905900264239602090da0c4a57ac9ba267cb5b5bbf436863bc2"
+  },
+  {
+    "module": "LIB/CFG/CFGRCL",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGRCL.luac",
+    "originalSha256": "ace24be15bf5f48f34fdde96c55f9fa16900d57380b96b98b1052c6b630afa17",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGRCL.txt",
+    "disassemblySha256": "a5245decd855034203a7827e528b42f26fca0400d9c2d1f8d380bcd662fc7c00",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua",
+    "recoveredSha256": "3184336db71c72f7be4acca9b5aacd7cc6da93705a4cd233c759905bb60edfb8"
+  },
+  {
+    "module": "LIB/CFG/CFGIND",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGIND.luac",
+    "originalSha256": "81143b6a9771a5b09dd6387f7f9b85b3ab8a5b05ecb575edb0d6d70a06cbb98f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGIND.txt",
+    "disassemblySha256": "280ceee3235ad68272faccead6519df867f65823efd7e9c70600fc18d1eeccd8",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+    "recoveredSha256": "0208ef27fa9306bb57faa07d01c3ae89da189d9bfdb5d7788b815448ab9401ff"
+  },
+  {
+    "module": "LIB/CFG/CFGGPS",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGGPS.luac",
+    "originalSha256": "819e2a77cdb1a9a94b10e6d223ac65bc62fbbc1dd78c93ca819f9d2c9af2a2d2",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGGPS.txt",
+    "disassemblySha256": "0d1a61e1d3c3bd72f5d1e0e9aeca95f26aa056319a33b0523a87dd4a44470fb0",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGGPS.lua",
+    "recoveredSha256": "4fe7236f79a4400c31b757b336dfca02b57a1dd27aad88e5e7ff546d6c459fca"
+  },
+  {
+    "module": "LIB/TLM/TBS/GYRO",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/GYRO.luac",
+    "originalSha256": "23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-GYRO.txt",
+    "disassemblySha256": "7c1b8ea68bf934acfdc614d7a55213bf6a5a3b2b5275b6b55c753720b51fc8d4",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GYRO.lua",
+    "recoveredSha256": "996323beb64df0c7ce371a330d088962d1e3027255cabcb66429235c64b2a152"
+  },
+  {
+    "module": "LIB/TLM/TBS/BARO",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/BARO.luac",
+    "originalSha256": "8eab1a6aecca2ee6657c27a1cde8cae6a693b97f67a80e7b6017634aa384b518",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BARO.txt",
+    "disassemblySha256": "c6b310a487595a21e822781bca817b6c17b603d886b1a4bda85717c1adfdb5e3",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BARO.lua",
+    "recoveredSha256": "06f287f4622b970e6de6fa487e6b3d0cac6437fb6faad95c3ba286b073306d84"
+  },
+  {
+    "module": "LIB/TLM/TBS/PITOT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/PITOT.luac",
+    "originalSha256": "85e4f18e03e279635bcf4158cf76bd8e57e8ca69687711660aba6ad67d65cd74",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-PITOT.txt",
+    "disassemblySha256": "72a39bc206a06d2af9ec97e83c80b390e84a1baf3c88a715d75320323906a329",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/PITOT.lua",
+    "recoveredSha256": "1c122e71e4ac6def4e14c2fe672c913e7565edffe94ded5643a2ce8eda59d11b"
+  },
+  {
+    "module": "LIB/TLM/FRS/GYRO_BF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO_BF.luac",
+    "originalSha256": "aee6bc0a90c568d9c2c0a3f09cb0349042990eeb65a4a27d7b64c4870d3a4d8e",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO_BF.txt",
+    "disassemblySha256": "c9c06d3c243a0fb905c782cbd7f09f503640eb426fc4f5de03eaa0d794f70b98",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO_BF.lua",
+    "recoveredSha256": "1c4f6b75ed6a21ac8a5190506e499e8d5a244a3833d8dac6d4a172d5dce3e962"
+  },
+  {
+    "module": "LIB/TLM/FRS/GYRO_IN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO_IN.luac",
+    "originalSha256": "0f0d9088fa0689b2eda4dccaf6c1416fc06e4c93bff6f606da2382f5cc53756f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO_IN.txt",
+    "disassemblySha256": "98bec494cc8d80566b9aebff0c65d2485a88a8acf1c7c2468ffecac2526cff91",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO_IN.lua",
+    "recoveredSha256": "a4d6a01d45e64a608a1c009b94e647535e418b6d887c4b5d711ba91342bec2be"
+  },
+  {
+    "module": "LIB/GPS/GPSINIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/GPS/GPSINIT.luac",
+    "originalSha256": "014660214bc6cce4caa2d0021d7914cf70c0d562b67e6c5630d9735ff57de949",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-GPS-GPSINIT.txt",
+    "disassemblySha256": "949c6c5b50193fa01fb9b21b3e2ac92b908f3f7636279426a1913441737c52a3",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/GPS/GPSINIT.lua",
+    "recoveredSha256": "1d8800ca17dd7b6acaf12102305bd44d48d30351cca121fa00ab96f05c9fbd25"
+  },
+  {
+    "module": "LIB/RD/BAT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/BAT.luac",
+    "originalSha256": "9f3d33277f726391de24a0afa6afbe6d0bb663a5aa749095ee4c1665b4c4b16b",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-BAT.txt",
+    "disassemblySha256": "33ad156fb67487f58074d4c380639ba7fadeab10c0aadbe6b1365ba6cefe05dd",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/BAT.lua",
+    "recoveredSha256": "43a3431c6bae708beb2fc4a54ded0aec5d47196bcae9c8701dc85c8b90a5a392"
+  },
+  {
+    "module": "LIB/RD/SND",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/SND.luac",
+    "originalSha256": "e1f36b0909f709cb68ae0f0000a473df8e011aa6b9c62d7cfd78f65624e53596",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SND.txt",
+    "disassemblySha256": "af1fbedc57cee6ce0dcb2649ef5c0a7ab2c60d2603a9969d63d6174581f4d90f",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SND.lua",
+    "recoveredSha256": "ad14787df575d83da8cf76a8213dbfbb74c23b1900bab22babd3f642f2b93f15"
+  },
+  {
+    "module": "LIB/RD/TMR",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/TMR.luac",
+    "originalSha256": "d8f138d463fa09514edff3595ad54ded95a9dd03a6828d1688b2d77f8da6814f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-TMR.txt",
+    "disassemblySha256": "ae3c545f6f0d5c3a248871ab281d6e7d92f2d700019adb8bf5baa44d7b639920",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/TMR.lua",
+    "recoveredSha256": "21bc4b2516cc995ff70159c4681fac6de9a475dbfc60c479f302ace325ee86d5"
+  },
+  {
+    "module": "LIB/FS/FSLOG",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSLOG.luac",
+    "originalSha256": "e43240472411f585464ca6e60051d8e03871e2c9ad888efc22b5f6baac753022",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSLOG.txt",
+    "disassemblySha256": "2b1f5dcd976f0a2d4dc2afaa83f16ca428c063f68b82c15c9d27e6e77ef00cd0",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FS/FSLOG.lua",
+    "recoveredSha256": "54e58f3eef0c4cca6ca0af6f028e938a18a676acb40abc95c91c83bbd17b8cee"
+  },
+  {
+    "module": "MAIN/ML",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/ML.luac",
+    "originalSha256": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-ML.txt",
+    "disassemblySha256": "703d8a363c359c45aac8ca439eb1c3b35d7e843d0cd5cc093c060d796fee6ad2",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+    "recoveredSha256": "b562289729075603251476440da7426011df5d4a1cb0b9a296d663cb65f1d566"
+  },
+  {
+    "module": "LIB/TB/RST",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/RST.luac",
+    "originalSha256": "fbd89a76d8bde3371ad771a143ff7a39f153c8e25539b77f276be6a288e9c10d",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-RST.txt",
+    "disassemblySha256": "f97dd5b30b378edf1b14f32829781c0ee984a6fb27394b3fa249fea4a1f9d647",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/RST.lua",
+    "recoveredSha256": "43a188a463e02f8159baa06a2668485ff6656ce9a5ff750b4cec7d3d19c45cd0"
+  },
+  {
+    "module": "UI/QM",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/QM.luac",
+    "originalSha256": "ae9a3ab1b69faceea4937d35386ae2fa6f9382e7bf2850aed6f3ccfb372ca5ea",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-QM.txt",
+    "disassemblySha256": "13b089ee502e5aa1364facd21f283f635dc5b2615797cbea7f7a99e89db7d757",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/QM.lua",
+    "recoveredSha256": "5fa73f6b73a1bc456630f908bf1d7ab5ca2d072805aea7831ae3e7000d9de2cf"
+  },
+  {
+    "module": "WIDGET/loader",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/WIDGET/loader.luac",
+    "originalSha256": "6dae407066af5bbb92810a30fa32030f5394a9b172e1a0c819cc5a95d4a110ed",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/WIDGET-loader.txt",
+    "disassemblySha256": "0cfb32c058611f12b7a07afbb433e768be999bbb363f3116633017fa803d64d9",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/WIDGET/loader.lua",
+    "recoveredSha256": "b7f2b1a99520427db96f7b181dcee7ac89cf6e53e0a0591e2dd47c3b89c21128"
+  },
+  {
+    "module": "M",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/M.luac",
+    "originalSha256": "ee0742ca4f3ff3ca2e323982941194e75eea071ac0cf97b93dc55a931f12148c",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/M.txt",
+    "disassemblySha256": "20ac7453c5758a408484c84fd9743df4e01048dea1f278a5823eb0516da76f07",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/M.lua",
+    "recoveredSha256": "29556f2ba8151cb72dbde6d0341a7734b684a71d9f586d9ea8f53b9a28e471ec"
+  },
+  {
+    "module": "UI/480X272/MOD/TLM",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/TLM.luac",
+    "originalSha256": "bc0b40bf90ed385d3abd50edb9cba5b71a7941f64cd4ad4811f9fad0eb50bca5",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-480X272-MOD-TLM.txt",
+    "disassemblySha256": "515aa2f86dac981947994e0137c8fed36df1fe7c80622603af55fde0a67ad903",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/TLM.lua",
+    "recoveredSha256": "ce6a7183381d91d1392a3a799f39ab73ac002aebd50907ed04b6328efb784f5f"
+  },
+  {
+    "module": "UI/480X272/MOD/GPS",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/MOD/GPS.luac",
+    "originalSha256": "ecab0bf84369402a2b888867a6a4f122b9f8873e5faf41e400d759ceec0cbd3f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-480X272-MOD-GPS.txt",
+    "disassemblySha256": "aa9cab723587f15fd89983fc0b67f572b2788aa3899d27369034397daeffaeeb",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua",
+    "recoveredSha256": "eed359a68b2bbdf65fade71ab6461a83ac8d0d0c0902865f00b004528927fba9"
+  },
+  {
+    "module": "UI/480X272/DB1/BFV",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/BFV.luac",
+    "originalSha256": "3701fad9cb929f0e81ee85ac72a76cad0dd1fba447b28ee002f97418e8ff73e7",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-480X272-DB1-BFV.txt",
+    "disassemblySha256": "e81c1a54ac1c74a537fe398b671a847c001d6afa49c559b837adf474a6ff1860",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BFV.lua",
+    "recoveredSha256": "232191c802eb5e471cb2769d1cd81e5e3cef44f91a4b678e5a6cdc87e2067ecf"
+  },
+  {
+    "module": "LIB/CFG/CFGD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGD.luac",
+    "originalSha256": "93d4405a1dcf6beaba612e0adb3a2947326a381738e14fd244247a14ac7ea39f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGD.txt",
+    "disassemblySha256": "971640ae592053b93c2115a5a6248fc7d9699dea72b8bcc220157c09344c2735",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGD.lua",
+    "recoveredSha256": "f4ae05a0709da4d4dc894f582066498f42394eb96f5ba12d9bc58f19b703c159"
+  },
+  {
+    "module": "LIB/TB/DATAINIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/DATAINIT.luac",
+    "originalSha256": "b88f1e8e0901908ec71c99cb394b336f6fc629057d7bb65e0a50d1317fccec5b",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-DATAINIT.txt",
+    "disassemblySha256": "cf97159d388a0fd6578a6cba0477cdf01a482d1fa8721da35996faeaebb3136f",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/DATAINIT.lua",
+    "recoveredSha256": "373b4ef078cbff3c109d2a93efba66989e2ab446c82aa28ca770858f2e7dab41"
+  },
+  {
+    "module": "LIB/OS/UETX",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/OS/UETX.luac",
+    "originalSha256": "da589ca5c5f7519da3149477a56d908d2b086ef0abd933b42d85085e735933eb",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-OS-UETX.txt",
+    "disassemblySha256": "274d3d4c27da0ea82e11671f0bd5211fb911f9a7f04af0298d137070723911a3",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/OS/UETX.lua",
+    "recoveredSha256": "9069689c020bf84eb4e5c293c9d461faf31bd9a6a945a6f9125427023aae38ae"
+  },
+  {
+    "module": "LIB/TLM/TBS/FC_BF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/FC_BF.luac",
+    "originalSha256": "18d3c77c43d929e6d93bcda6e997b53760c56727cf8f68d2db97ddfb704ffbd2",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC_BF.txt",
+    "disassemblySha256": "c70bcbbf9ce489828b11782752232913fcf9f80b987d1eb1bc8614ca999d2127",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/FC_BF.lua",
+    "recoveredSha256": "df47aea2a6a35cc32cd407db9e5325ddb69bad52443d13a568b151fe9a20f90a"
+  },
+  {
+    "module": "LIB/TLM/TBS/FC_IN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/FC_IN.luac",
+    "originalSha256": "20dea8552ab5746ecc827de319f9f938a13c8b1d6fe842dcdca960c4bbe062d3",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC_IN.txt",
+    "disassemblySha256": "eb2579488ee56eb63bf23a06afc6ff90356cde69c396a0923c0e80eff91175f9",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/FC_IN.lua",
+    "recoveredSha256": "1d74b722247961dcc629454861285eb06ccd767c9a04e934840b73f56cc84224"
+  },
+  {
+    "module": "LIB/FS/FSDIR",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSDIR.luac",
+    "originalSha256": "fe65856395001f9247db7d65a76eaa5513832e90df99a4b7d2b708d1fa71c528",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSDIR.txt",
+    "disassemblySha256": "6555fb95300c2750f7efa8e0d1ae853d0362cd01e20272df3f4057846c183e78",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FS/FSDIR.lua",
+    "recoveredSha256": "8a5d8ae9fe45fd6d8b631c70d37c6d9d59ab8d0eeda510e8fa3679d99c47ab14"
+  },
+  {
+    "module": "LIB/FS/FSLF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSLF.luac",
+    "originalSha256": "b189eac93bfbbe1556b4f77c7c7dd893a458e6424bae10e6cbb1c6897a055ddb",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSLF.txt",
+    "disassemblySha256": "1d279194b8e9cb12b386adf7325c249baf3f994cc67be79aca5e3bf18ff58da9",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FS/FSLF.lua",
+    "recoveredSha256": "29f76b6822e6f155ef46b0b9d807cb11a140d8e7cb885fc9d9f2e291876cef36"
+  },
+  {
+    "module": "LIB/FS/FSWF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSWF.luac",
+    "originalSha256": "3a265aa5090e389200fa4fe47d39fc74510fe08120ee817dfb4807cf06b60784",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSWF.txt",
+    "disassemblySha256": "9852da630f1dd260766f91704d7406df74d251482bde6003ce3d8cd7e8df858f",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FS/FSWF.lua",
+    "recoveredSha256": "e7f24000748502b864de16eb6bb1ac5f4a146aef002e0811d05e88ee8fc8e683"
+  },
+  {
+    "module": "LIB/FS/FSWP",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FS/FSWP.luac",
+    "originalSha256": "0d0b1fa18b83190f0aeacc84ed6af6f08d0b6b3844a6542cee8f1155d4fd135e",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSWP.txt",
+    "disassemblySha256": "94d4e43253694cb11255959776a012b25613df81e1a91c6def1a8a96c592af13",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FS/FSWP.lua",
+    "recoveredSha256": "7d98d48acba39e54f013022f1140a2aad2a614bf18cdfa73f523f4903ca11abf"
+  },
+  {
+    "module": "LIB/RD/RDINP",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/RDINP.luac",
+    "originalSha256": "440a24d91a189628fdbf8b7e4635870095dfc02d87aee1cae82d84c17754477f",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-RDINP.txt",
+    "disassemblySha256": "d3e979029ab36da328f6ebcf47770b3cdb454c88eca20e89fe2601c796b5d70f",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/RDINP.lua",
+    "recoveredSha256": "8662e7424e3d22cf8e7eb222ab3021b242c26bdfbc9879179b1fd47756cf6b63"
+  },
+  {
+    "module": "LIB/RD/RDKEY",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/RDKEY.luac",
+    "originalSha256": "002e45fa65399fe393b8dcb9b068f960e02f03531a89d2fdb46b0c74919e78c5",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-RDKEY.txt",
+    "disassemblySha256": "456248bf75da38dbb600339104c671d06a541f28f37db0edafa6de6256b8d77c",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/RDKEY.lua",
+    "recoveredSha256": "0ebea191df0667506b5c45cf0a70f93ec3b8a727fc54cbcd77633207fc4d936d"
+  },
+  {
+    "module": "LIB/RD/SIN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/SIN.luac",
+    "originalSha256": "e2497070956bb9b8ed28cc570d1ee0228a79149bb0b900f6bf3236f4a418abc2",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SIN.txt",
+    "disassemblySha256": "86a7936aee3737b06a23cda1efdfb3e9ecc019422b9bbe317b8215d1a31e6bef",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SIN.lua",
+    "recoveredSha256": "35436007a4b6023e6ed02314c98b07349b679ade993af3b40f11fa3ffd50c34c"
+  },
+  {
+    "module": "LIB/RD/SSW",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/SSW.luac",
+    "originalSha256": "0ea55293009bff6ea15437fe0705c01f7a1b408b192f27e2bea64766978abb55",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SSW.txt",
+    "disassemblySha256": "5730d620fef360cdb82c8b874f1748cacf02c113586b3f7bdcaf4da47ba7a3d1",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/SSW.lua",
+    "recoveredSha256": "ce9f1fc5ac8cb752d7e2ff0b8ac27798e75e56611f19dde1f96c55d52b446b3b"
+  },
+  {
+    "module": "LIB/TB/INDINIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/INDINIT.luac",
+    "originalSha256": "5db1652c1e4a29e65135f0b94ae5f6efa7fa67be105c90058b5391d5f062eb91",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-INDINIT.txt",
+    "disassemblySha256": "bb8f41c7dc7b23f90f1dc331e9528d932e2a7132f6e8950c1752f62f9dd74413",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDINIT.lua",
+    "recoveredSha256": "aba9f5f2b2997d5e600f3f3e235d6b1ed4434e03a9279d33de8e020c3d841b47"
+  },
+  {
+    "module": "LIB/TB/INDUPD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/INDUPD.luac",
+    "originalSha256": "a4ade69404ddacd0404a22be62070d77985905244011652a7713df22442057b5",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-INDUPD.txt",
+    "disassemblySha256": "5adb92aa1e5dab886c5ef3869598e836d5066fa1e5b888face3cc85cb0fd296e",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDUPD.lua",
+    "recoveredSha256": "599aaacb2c445e05772dcc5962b4df3819ed9c38f1fcf9f6c76e3c6a151a0ad1"
+  },
+  {
+    "module": "LIB/TLM/FRS/ACC",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/ACC.luac",
+    "originalSha256": "2928cf5ae4a2c24505eda31685c81efcdca036374a9c133145df45df553cf1df",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-ACC.txt",
+    "disassemblySha256": "ddc25c82e83c7ae3a245bab847bc62529587d819c42733a7602d41093065113e",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/ACC.lua",
+    "recoveredSha256": "d44a51953ee63961ec57a9b8226f516391c89d798af49120565afdcf3e4be77d"
+  },
+  {
+    "module": "LIB/TLM/FRS/BARO",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/BARO.luac",
+    "originalSha256": "38a86e83c26d64883bfd017652117e40a2ddd5ea5bb3cff2922a9995481829b3",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BARO.txt",
+    "disassemblySha256": "2c0e709f05b3b17e5db21449c802f2fda9c82f7cba8e48c9b632725e47cdd563",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/BARO.lua",
+    "recoveredSha256": "2c0e5de47f511d1b7e92150fc2d885808918f3a1fca7529962b234a663329759"
+  },
+  {
+    "module": "LIB/TLM/FRS/FC",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/FC.luac",
+    "originalSha256": "7fbb63ef46c326bfedf171d042015b944e13ee32e2b55d5947421a1d813166ce",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-FC.txt",
+    "disassemblySha256": "9e223731f0a00399ee023f16073f9c2bbd4baff488521a110aa4c54e96c3eb03",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/FC.lua",
+    "recoveredSha256": "b18e46fdbabbe8317b26e8701a47cb980df5a6940b59d980e5df0bad99435616"
+  },
+  {
+    "module": "LIB/TLM/FRS/FC_BF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/FC_BF.luac",
+    "originalSha256": "e71d38298902e49d3c36c15384ae49fa6e8d931f5acd8ab021fd7c9612600132",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-FC_BF.txt",
+    "disassemblySha256": "396c61cce3faf5bb3b942aa5ea930c6694d60ee27ad929daaceb1b45c09fdd55",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/FC_BF.lua",
+    "recoveredSha256": "f63ab813c934974670b12c604ea10acf96bbf6be63172a6fee8f69d81fc38ab2"
+  },
+  {
+    "module": "LIB/TLM/FRS/FC_IN",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/FC_IN.luac",
+    "originalSha256": "c29ad1eae19fd03085828317d62ec96e1a63f8e6cf974bde4dca1c7e2b4648a4",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-FC_IN.txt",
+    "disassemblySha256": "6373ee4cae7bfb93396d8c72f965c04c31f399db98861bd45e809cef525b2b7e",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/FC_IN.lua",
+    "recoveredSha256": "94677c96ab6fc89438b30fbd6f721578b95a42f1e7896805896e26d2c8cc66d9"
+  },
+  {
+    "module": "LIB/TLM/FRS/GPS",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GPS.luac",
+    "originalSha256": "1e461fe175f3c110f77cd4d25f7034bd415b403ae79f84221124a7b96215e022",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS.txt",
+    "disassemblySha256": "2440e927525acca52b7342f1ce44659d51ee33961367e31422d828f92180bf3a",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/GPS.lua",
+    "recoveredSha256": "633d997f96e5cdc5eaeae545e068faf18ceea8b6a9ff4b326298cc93d1377fa5"
+  },
+  {
+    "module": "LIB/TLM/FRS/GYRO",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO.luac",
+    "originalSha256": "3d49a1ab650115f9b850d4fc6233abee5dfda9259c4e31ddb0c1f1cf96c71e33",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO.txt",
+    "disassemblySha256": "57e564a0d7cc52ed35dd09f30452922cf16c15a85c4fe26abd16619fa28521ea",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO.lua",
+    "recoveredSha256": "330f2aa8b537337dffe8201aaa19609a5e4da2dfcfa70102ad7f1d2d4250c6f7"
+  },
+  {
+    "module": "LIB/TLM/FRS/PITOT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/PITOT.luac",
+    "originalSha256": "26d9b672d6381abd1fb2856f7fc6a50666c54526ecd8e12aaf01ea86184b9136",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-PITOT.txt",
+    "disassemblySha256": "a69919ebe816e37eb727cc901a999ad7ffc758b7ac9e8a65c93c4a16d029aee1",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/FRS/PITOT.lua",
+    "recoveredSha256": "1c122e71e4ac6def4e14c2fe672c913e7565edffe94ded5643a2ce8eda59d11b"
+  },
+  {
+    "module": "LIB/TLM/TBS/ACC",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/ACC.luac",
+    "originalSha256": "9ac3e176e99f96c2a071492d62765a81b3045e96e6b8c4f5d127b3bca20d4261",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-ACC.txt",
+    "disassemblySha256": "6ff1652aeec6cc9139bfb20c75874ff995989d941916e843303a8ee449accb67",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/ACC.lua",
+    "recoveredSha256": "45d9485f3fa597656b247947c205364e95f3435b96333bd3e109f06ae04bba2b"
+  },
+  {
+    "module": "LIB/TLM/TBS/FC",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TBS/FC.luac",
+    "originalSha256": "cbb853eedd4a77c6fbf28f8422f8a9fb14f4bc2122ebf0361ae8aea4a2e80eb3",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC.txt",
+    "disassemblySha256": "93b00417675cd92fbefc427fac19b24cc7e07355b44efffe80edc4d3edb4f146",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/FC.lua",
+    "recoveredSha256": "b18e46fdbabbe8317b26e8701a47cb980df5a6940b59d980e5df0bad99435616"
+  },
+  {
+    "module": "LIB/TLM/TLMINIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMINIT.luac",
+    "originalSha256": "67f9f11ecdb5b8ff54a2913a55d3d7afede57091f7325fd770e600dab4c2807a",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMINIT.txt",
+    "disassemblySha256": "d321ee11a571026ce0a0e3bae004de15466e318c801e5fbf66a9cddc0e1b369f",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMINIT.lua",
+    "recoveredSha256": "c2da967db352b806c53eedd18abea2c8f26e7a5c2c71a11cca53a7f3272662c8"
+  },
+  {
+    "module": "LIB/TLM/TLMRST",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMRST.luac",
+    "originalSha256": "b1dcbd16d4317e0dd9a8a908ed601a9b07004b824d6c395a51a03c710f2445b4",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMRST.txt",
+    "disassemblySha256": "7e3a7f0a770ea3bf4dbc68ce04ddd6c9ed0a560e8eab92c7d6a6f57931c6d518",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMRST.lua",
+    "recoveredSha256": "3b94270d1ce146631a062b5121c7bc795def6711f2538dbf67e69356d1148088"
+  },
+  {
+    "module": "LIB/TLM/TLMSDEL",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMSDEL.luac",
+    "originalSha256": "a07d11171c1f8c25e4ebe4a0e72c0d5497177eefd844261a8e00b9834e370b47",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMSDEL.txt",
+    "disassemblySha256": "8210ccdccc81399a51b78f69e636373cd5782d7f7fede9dcba0eb56af1e1510c",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMSDEL.lua",
+    "recoveredSha256": "652addd6317b9b12958807d6365bcc97a1d2eedaf7dfc6f1adf16e3d59a9d73f"
+  },
+  {
+    "module": "MAIN/AI",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/AI.luac",
+    "originalSha256": "5d09503d62be4632f8e250fd9cd2019c393dabc8aae66ba8d771f3c0f5f7d4f3",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-AI.txt",
+    "disassemblySha256": "251152266032d548d005eb2643e88325735988fb2b3f6f6bc655b2a5ebf0f9a8",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/AI.lua",
+    "recoveredSha256": "baf0b1af02efb08ce391ac7fa42ae6849cfe6f7e3764ab30e01da9b4eac3d443"
+  },
+  {
+    "module": "MAIN/GF",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/GF.luac",
+    "originalSha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-GF.txt",
+    "disassemblySha256": "24fc4923250cfd4da17e1dbe8b1676915c25277993bd4969cbd513b3e0824437",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/GF.lua",
+    "recoveredSha256": "c4a2e43791a7aa04da66915e6d42114eaa93d0c9ce84ea7093c9c4dc40480c7f"
+  },
+  {
+    "module": "MAIN/INIT",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/INIT.luac",
+    "originalSha256": "ba438661659e481f6d94b4bd56f005fefa69ad1fe2fa04df819cc1e6389f2792",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-INIT.txt",
+    "disassemblySha256": "4615c345cea1a023fb455d5a5a631cc8177a6cc506a2537e255ec209a292a9ec",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/INIT.lua",
+    "recoveredSha256": "8ba62d8f58f90841961529c327b9546483c83e2cf02f170281823c8501b620b5"
+  },
+  {
+    "module": "MAIN/RD",
+    "originalFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/MAIN/RD.luac",
+    "originalSha256": "e154de085f36cdfc4ff9c96d4122c75989a6b30806e4667930b9b9427395fcc6",
+    "disassembly": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-RD.txt",
+    "disassemblySha256": "a86e0d7fa5796986efb0b5661a37d847cce474fac4e171c7d2c8b2cbbc5fdb9e",
+    "recoveredFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/RD.lua",
+    "recoveredSha256": "b0c38f149964fb334958fc27af133f02af64f8037e27a0a46351a611901d3ee0"
+  }
+]

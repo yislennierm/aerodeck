@@ -1,0 +1,1184 @@
+[
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/AHR.lua",
+    "sha256": "327a7a37b156fe694dc67b3922721588e510b30cbe77432641a6ae5f7bcb5c49",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/AHR.lua",
+    "bytes": 9709
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+    "sha256": "c25b2f2e16276be03f7239be26f71e590de76af79fb710b9309566127bea184b",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/telem.lua",
+    "bytes": 95095
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-AHR-original.txt",
+    "sha256": "9bfe203a2aee37688bf968f8849cda6b85ddf2ae75055a262ff6e779a9717026",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-AHR-original.txt",
+    "bytes": 51715
+  },
+  {
+    "file": "source-evidence/external/664d3597b2eb-api_colorlcd2124.cpp",
+    "sha256": "664d3597b2eb079519aaa904f3d6d472c623f45cda11c61c75049c81e79602ba",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/api_colorlcd2124.cpp",
+    "bytes": 44534
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GYRO.lua",
+    "sha256": "996323beb64df0c7ce371a330d088962d1e3027255cabcb66429235c64b2a152",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GYRO.lua",
+    "bytes": 1179
+  },
+  {
+    "file": "ui-evidence/LIB-TLM-TBS-GYRO-original.txt",
+    "sha256": "7c1b8ea68bf934acfdc614d7a55213bf6a5a3b2b5275b6b55c753720b51fc8d4",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/LIB-TLM-TBS-GYRO-original.txt",
+    "bytes": 5307
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/ATT.lua",
+    "sha256": "4c5f1ce0aba4897ca3352bae9f526de2a5b7f16d8794238f61974d0fbebaa798",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/ATT.lua",
+    "bytes": 2183
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-ATT-original.txt",
+    "sha256": "d9aa25e90003bc79bed2b14a23e7dcec5bcdb2e8037087623bb05bdfcb019358",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-ATT-original.txt",
+    "bytes": 13642
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/CMP.lua",
+    "sha256": "f12494a68bde53362867bd44b83fdcc6d1f0341308e5da8a00bfe2430a45dcd5",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/CMP.lua",
+    "bytes": 1363
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-CMP-original.txt",
+    "sha256": "4b2ce2db8fbaaf7e9fc7e4abac9cce9dacef650c30186d75f6efd34ef28dc861",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-CMP-original.txt",
+    "bytes": 7931
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+    "sha256": "b562289729075603251476440da7426011df5d4a1cb0b9a296d663cb65f1d566",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/ML.lua",
+    "bytes": 4760
+  },
+  {
+    "file": "ui-evidence/MAIN-ML-original.txt",
+    "sha256": "703d8a363c359c45aac8ca439eb1c3b35d7e843d0cd5cc093c060d796fee6ad2",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/MAIN-ML-original.txt",
+    "bytes": 23656
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/RCL.lua",
+    "sha256": "33c44fe56550dca36f8c13675b02d30b25139d77a7f68b190a8dbc11f6296bb9",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/RCL.lua",
+    "bytes": 1925
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/RDB.lua",
+    "sha256": "3d09adf71ab6198cb99042d4c086146cbe031dc9661e37687f055550320b27a2",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/RDB.lua",
+    "bytes": 1166
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BAT.lua",
+    "sha256": "87aed2fa17415ed443fcd32a13691e912a16df2c86b6ced036b36038f6b5aab9",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BAT.lua",
+    "bytes": 2423
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MPN.lua",
+    "sha256": "07c8ddb27173edda41a083cb9db2b2bb08ce72ba2faf4d27c11bba277d2a0627",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MPN.lua",
+    "bytes": 922
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-MPN-original.txt",
+    "sha256": "ea463798adf12d033cf51e5277f2d0c0a28fcf65660318a7af98ff7b144654f0",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-MPN-original.txt",
+    "bytes": 4975
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BTC.lua",
+    "sha256": "8c3d722b53dfd162f44282fcd9da6990d05a7e04a3ab0afc181b4ca0a93ea48b",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BTC.lua",
+    "bytes": 1080
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TIM.lua",
+    "sha256": "25599593271002a99ace480054e4e4c7a22d9b1adcd0a95439d12505b02cf278",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TIM.lua",
+    "bytes": 742
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-TIM-original.txt",
+    "sha256": "29c77f00d67728db75bbe0b45e8df447eb1f0f6d2d0c4381d5e35c020997b2c7",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-TIM-original.txt",
+    "bytes": 3522
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TMR.lua",
+    "sha256": "a1d692d2c340e8db471bb9cc882240785b375004e0f08e11a490badbfbf745dd",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TMR.lua",
+    "bytes": 1049
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-TMR-original.txt",
+    "sha256": "9254297013f42a40c697e4f0fd25d24282a76b3f2e1037d2b703643a153e7f45",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-TMR-original.txt",
+    "bytes": 5438
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FM.lua",
+    "sha256": "5850f2eae5401382dbfb2458d7a7afb1b01733ef9c204a072dbe07d13b002183",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FM.lua",
+    "bytes": 435
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FMI.lua",
+    "sha256": "c201a191010d46edab0831aaf4179e508836b76cb92212eec006e449aa749724",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FMI.lua",
+    "bytes": 826
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/THR.lua",
+    "sha256": "4e922e417ebb5e074185392b8c5ba78451e5a420c66c538255046252da040a82",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/THR.lua",
+    "bytes": 2433
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VTX.lua",
+    "sha256": "09ec9d0216012bbcbe59015d148b7e54f4739fb9408d3a1871389b823ea69b16",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VTX.lua",
+    "bytes": 3073
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-VTX-original.txt",
+    "sha256": "6f783b0620578dc452b88e4642daaaf6ee1ac8603893445f1f9e6b4fb82817c4",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-VTX-original.txt",
+    "bytes": 20795
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MDL.lua",
+    "sha256": "b9d3a3cb0fc6fcf139deba91a40c0973711a55a07efbb43445668b51a339c497",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MDL.lua",
+    "bytes": 1810
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/SYS.lua",
+    "sha256": "3540cff61ecc897eabf4d4f4d8ebce857fc2091f5ce22e89276eafa3020f002e",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/SYS.lua",
+    "bytes": 1384
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+    "sha256": "dbf1805c0af6de24d7c07558d8bb0288ebca6410bc7b114c9e1af94010b4f5d3",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua",
+    "bytes": 5055
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TLM.lua",
+    "sha256": "aa55703606f4ad9283da0ab8920c45d84d7889d7bbabcc118038a59ad11fda8a",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/TLM.lua",
+    "bytes": 1637
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD.lua",
+    "sha256": "bad97c401361cecafa7ba1295eb418e38367c84e90fe99384e3e2a804f04c249",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD.lua",
+    "bytes": 1264
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua",
+    "sha256": "eed359a68b2bbdf65fade71ab6461a83ac8d0d0c0902865f00b004528927fba9",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/GPS.lua",
+    "bytes": 5265
+  },
+  {
+    "file": "ui-evidence/UI-480X272-MOD-GPS-original.txt",
+    "sha256": "aa9cab723587f15fd89983fc0b67f572b2788aa3899d27369034397daeffaeeb",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-MOD-GPS-original.txt",
+    "bytes": 28402
+  },
+  {
+    "file": "ui-evidence/LIB-TLM-TBS-GPS-original.txt",
+    "sha256": "2393828255efa8eab4b829a9ae3455562c40a1114d243f9d42fd98ce9f20473a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/LIB-TLM-TBS-GPS-original.txt",
+    "bytes": 15259
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua",
+    "sha256": "b592be410214879ad930417caea4fe4e319d278b656a5dac12261faf61a83049",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/GPS.lua",
+    "bytes": 3537
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-GPS-original.txt",
+    "sha256": "9a7ff10570e1cb8e6f3318f81505c084bc4c14d90ca2e02787eee954dc9bd4f7",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-GPS-original.txt",
+    "bytes": 21473
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.lua",
+    "sha256": "082e7986ecadfbe9593873f0e1718b25e903f14f262926f56e984f6486b900c2",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/GPS.lua",
+    "bytes": 2757
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/POS.lua",
+    "sha256": "2ac9ee20e6392bae317aacd77c92ea1eee79ff02014230c13ca032503f1ecc4e",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/POS.lua",
+    "bytes": 2418
+  },
+  {
+    "file": "ui-evidence/UI-480X272-DB1-POS-original.txt",
+    "sha256": "0c3280d551827f9dbf4f74f158413233c0cf5ba9a2780f7b4e0ca3c23b9eee19",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-DB1-POS-original.txt",
+    "bytes": 15521
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/GPS/GPSINIT.lua",
+    "sha256": "1d8800ca17dd7b6acaf12102305bd44d48d30351cca121fa00ab96f05c9fbd25",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/GPS/GPSINIT.lua",
+    "bytes": 3917
+  },
+  {
+    "file": "ui-evidence/LIB-GPS-GPSINIT-original.txt",
+    "sha256": "949c6c5b50193fa01fb9b21b3e2ac92b908f3f7636279426a1913441737c52a3",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/LIB-GPS-GPSINIT-original.txt",
+    "bytes": 20198
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/TLM.lua",
+    "sha256": "ce6a7183381d91d1392a3a799f39ab73ac002aebd50907ed04b6328efb784f5f",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/TLM.lua",
+    "bytes": 4126
+  },
+  {
+    "file": "ui-evidence/UI-480X272-MOD-TLM-original.txt",
+    "sha256": "515aa2f86dac981947994e0137c8fed36df1fe7c80622603af55fde0a67ad903",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-480X272-MOD-TLM-original.txt",
+    "bytes": 24667
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VFV.lua",
+    "sha256": "70aaf7948a1f55467797d1c56838e79c013a3536a016c9bc1d417217513967bd",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/VFV.lua",
+    "bytes": 2611
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+    "sha256": "42bd35b31e3490e5a00906c1ddd562449806cc5a918d7c156375174a1488c982",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/AST.lua",
+    "bytes": 5019
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/STK.lua",
+    "sha256": "c6553617a1dc3c558f732de377ab212b4c8f645cf41a3cb15227a4552a79e631",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/STK.lua",
+    "bytes": 2851
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/CFG.lua",
+    "sha256": "f4e72f0356a4c49f9e6e937e90cb9ed5273e10abc96c3b102dd028c5aee10b26",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/CFG.lua",
+    "bytes": 2774
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MEM.lua",
+    "sha256": "2a4415cdd1ebeb2ea8ac35451edccc40a988a51da172a5eb2510894626aab352",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/MEM.lua",
+    "bytes": 470
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/ABT.lua",
+    "sha256": "c20677ce7a840d707da9168fbdd2abc82fc2e2e81c924d08d18356a57e7afa06",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/ABT.lua",
+    "bytes": 3733
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/MENU.lua",
+    "sha256": "9746dc61b36d0101a4f9e4489b55f4da2de13e47062c3d99dce4e1ac57e6ae7a",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/MOD/MENU.lua",
+    "bytes": 2590
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/X.lua",
+    "sha256": "16b59c3557bdd9c8c8e85bae22f617c940c965ecdbc94327bcd9e6639960e0e6",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/X.lua",
+    "bytes": 2205
+  },
+  {
+    "file": "ui-evidence/UI-X-original.txt",
+    "sha256": "1b2d362c9c6856f776bbbb2c7d6846b92d8cfb2e1f889213d310b0a7fd589460",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-X-original.txt",
+    "bytes": 14641
+  },
+  {
+    "file": "ui-evidence/toolbox-critical-assets.json",
+    "sha256": "b539daaae082135c706eef42b58dfa6307285246264e9beac14c71a63908b763",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/toolbox-critical-assets.json",
+    "bytes": 2054
+  },
+  {
+    "file": "ui-evidence/toolbox-critical-assets-contact.png",
+    "sha256": "ce5755b6b2432b0b259544e8e0e06da483a646a605affdfe65962a6345642201",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/toolbox-critical-assets-contact.png",
+    "bytes": 13622
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/OV.lua",
+    "sha256": "8eadab39a1ae7ca2c69dfbf11970e249ac2df5360e16918f644bf8a1afcfe4e1",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/OV.lua",
+    "bytes": 399
+  },
+  {
+    "file": "ui-evidence/aerodeck-assets.json",
+    "sha256": "1352a9755cc4b9fc7c6b9c521eef32b1fa819e77d12355e2004a1563935f3fe1",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/aerodeck-assets.json",
+    "bytes": 12747
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/THMINIT.lua",
+    "sha256": "0b5b761f9d34137480da087c18feb92960041fe7bf58c2060eb2922cc56a50dd",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/THMINIT.lua",
+    "bytes": 1006
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/UIML.lua",
+    "sha256": "addd81f2964565b90e5232cfd49a9e12c158f29cfa587d347deb9b655ddec34b",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/UIML.lua",
+    "bytes": 1080
+  },
+  {
+    "file": "ui-evidence/UI-UIML-original.txt",
+    "sha256": "844de6c440acb59e14266d780fab72ec92315d5c9c0b81246589210b1f5e34be",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/ui-evidence/UI-UIML-original.txt",
+    "bytes": 6005
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/MAIN/RD.lua",
+    "sha256": "b0c38f149964fb334958fc27af133f02af64f8037e27a0a46351a611901d3ee0",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/RD.lua",
+    "bytes": 650
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/UIINIT.lua",
+    "sha256": "8afd1ea685556686c6168f889a9cfa57b29da129f9cc5fef07a535d16e16fa8c",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/UIINIT.lua",
+    "bytes": 1373
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/M.lua",
+    "sha256": "29556f2ba8151cb72dbde6d0341a7734b684a71d9f586d9ea8f53b9a28e471ec",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/M.lua",
+    "bytes": 4619
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua",
+    "sha256": "1f33a1a079fcb4b54f32fcd8d1f165a8dfd596d23e841359f949e48b7fc3dbe3",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/WIDGETS/AERODECK/main.lua",
+    "bytes": 3077
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/WIDGET/loader.lua",
+    "sha256": "b7f2b1a99520427db96f7b181dcee7ac89cf6e53e0a0591e2dd47c3b89c21128",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/WIDGET/loader.lua",
+    "bytes": 1591
+  },
+  {
+    "file": "data-evidence/WIDGET-loader.txt",
+    "sha256": "0cfb32c058611f12b7a07afbb433e768be999bbb363f3116633017fa803d64d9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/WIDGET-loader.txt",
+    "bytes": 7221
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/RD/RDKEY.lua",
+    "sha256": "0ebea191df0667506b5c45cf0a70f93ec3b8a727fc54cbcd77633207fc4d936d",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/RD/RDKEY.lua",
+    "bytes": 2427
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/ui-previews/power-live/verification.json",
+    "sha256": "c65f2899279763a056454b00f716139d432f0e44a295448258e9071960391f1d",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/ui-previews/power-live/verification.json",
+    "bytes": 49444
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua",
+    "sha256": "eaa7a922685cf493686b81337d5ca82101893c3b8c38196837d8c2af2592997b",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/FCD.lua",
+    "bytes": 2643
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BFV.lua",
+    "sha256": "232191c802eb5e471cb2769d1cd81e5e3cef44f91a4b678e5a6cdc87e2067ecf",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/480X272/DB1/BFV.lua",
+    "bytes": 3120
+  },
+  {
+    "file": "data-evidence/LIB-TLM-RCPINIT.txt",
+    "sha256": "ecd277a8e7b572c3d03ad4424007df66b9cf706dfb6e5a98edd7a0593986a13c",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-RCPINIT.txt",
+    "bytes": 8877
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TLMSADD.txt",
+    "sha256": "3678dba8dbc925a4661afb77e1daf8c90800f4c7b16afce45cd2c609fb76d2ac",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMSADD.txt",
+    "bytes": 8313
+  },
+  {
+    "file": "data-evidence/LIB-TLM-FRS-BTV.txt",
+    "sha256": "858980a1f6acd94d2fe541acdc10adbcfba2e98c9d8d54d5ed46f890276527d8",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BTV.txt",
+    "bytes": 9831
+  },
+  {
+    "file": "data-evidence/LIB-TLM-FRS-BTA.txt",
+    "sha256": "36222a1a5946616c98cab280560853f8143b3feeecd125278205700345540d91",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-BTA.txt",
+    "bytes": 8831
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-FC_IN.txt",
+    "sha256": "eb2579488ee56eb63bf23a06afc6ff90356cde69c396a0923c0e80eff91175f9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC_IN.txt",
+    "bytes": 5751
+  },
+  {
+    "file": "data-evidence/LIB-TLM-FRS-GPS_IN.txt",
+    "sha256": "a43d1c910acc52e2ad847987ad32d6c32a80c3d7e77bb04bbf0fb02eae943ad0",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS_IN.txt",
+    "bytes": 17157
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMINIT.lua",
+    "sha256": "c2da967db352b806c53eedd18abea2c8f26e7a5c2c71a11cca53a7f3272662c8",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMINIT.lua",
+    "bytes": 1560
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TLMUPDS.txt",
+    "sha256": "93ca5f6412a84c8c5a1207ff4365b2ce6ece4b659bfbd7fc8ae15473748b25c1",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMUPDS.txt",
+    "bytes": 4379
+  },
+  {
+    "file": "data-evidence/UI-480X272-MOD-TLM.txt",
+    "sha256": "515aa2f86dac981947994e0137c8fed36df1fe7c80622603af55fde0a67ad903",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-480X272-MOD-TLM.txt",
+    "bytes": 24667
+  },
+  {
+    "file": "data-evidence/UI-QM.txt",
+    "sha256": "13b089ee502e5aa1364facd21f283f635dc5b2615797cbea7f7a99e89db7d757",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-QM.txt",
+    "bytes": 22031
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/test_rendering.lua",
+    "sha256": "631eb9a2c21902493e51a3d368925deec7c72e255bac1011d70f6805409da62a",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/test_rendering.lua",
+    "bytes": 2916
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/test_telemetry.lua",
+    "sha256": "f582703d391f74b3aef9f958099a340009a0bbd86f6fee4ac17a140486e78a47",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/test_telemetry.lua",
+    "bytes": 8978
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua",
+    "sha256": "0b9535ee839bf78215641d536d0ccb43fd7b6ce6e3decfd8bd320f8d540477cc",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGMDL.lua",
+    "bytes": 3442
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/test_power.lua",
+    "sha256": "eb19f9909d975fa5761bb54cb4190877505106b17f073f072d78dcb194d26fb5",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/test_power.lua",
+    "bytes": 11047
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-BTV.txt",
+    "sha256": "f5e0507a3d5d9270efc394758c445ab67dee350c498db545e2e5ad779f9631a9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BTV.txt",
+    "bytes": 5389
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-BTA.txt",
+    "sha256": "c878e914892cfae56c76bb8e5072d21a95669b74889a129146c85be91cd8ceec",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BTA.txt",
+    "bytes": 10714
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-RL.txt",
+    "sha256": "f5013229d90989d68f4020bdea57e1237dc6c5fdef0aceeed2f5e2ac8d68e52b",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-RL.txt",
+    "bytes": 20183
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-GPS.txt",
+    "sha256": "2393828255efa8eab4b829a9ae3455562c40a1114d243f9d42fd98ce9f20473a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-GPS.txt",
+    "bytes": 15259
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-GYRO.txt",
+    "sha256": "7c1b8ea68bf934acfdc614d7a55213bf6a5a3b2b5275b6b55c753720b51fc8d4",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-GYRO.txt",
+    "bytes": 5307
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-BARO.txt",
+    "sha256": "c6b310a487595a21e822781bca817b6c17b603d886b1a4bda85717c1adfdb5e3",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-BARO.txt",
+    "bytes": 2077
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-PITOT.txt",
+    "sha256": "72a39bc206a06d2af9ec97e83c80b390e84a1baf3c88a715d75320323906a329",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-PITOT.txt",
+    "bytes": 1357
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TBS-FC_BF.txt",
+    "sha256": "c70bcbbf9ce489828b11782752232913fcf9f80b987d1eb1bc8614ca999d2127",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TBS-FC_BF.txt",
+    "bytes": 5624
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/ACC.lua",
+    "sha256": "45d9485f3fa597656b247947c205364e95f3435b96333bd3e109f06ae04bba2b",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/ACC.lua",
+    "bytes": 705
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TLMINIT.txt",
+    "sha256": "d321ee11a571026ce0a0e3bae004de15466e318c801e5fbf66a9cddc0e1b369f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMINIT.txt",
+    "bytes": 8708
+  },
+  {
+    "file": "config-evidence/CFGMDL.txt",
+    "sha256": "bf2d5d5594ab6749a5567bd8361b0b4cc1fa249f92e6a22dde11f36a50973ae0",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGMDL.txt",
+    "bytes": 21368
+  },
+  {
+    "file": "config-evidence/CFGUPD.txt",
+    "sha256": "19e21fbb95145088d62a1439c7865e288d83c83e5def541d1dff8f8ff444046b",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGUPD.txt",
+    "bytes": 38778
+  },
+  {
+    "file": "data-evidence/LIB-TLM-FRS-RL.txt",
+    "sha256": "78954d1a1fb2cfd9182c03d84f59dd2a511570173ad41d2b015cb2d7df562069",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-RL.txt",
+    "bytes": 10961
+  },
+  {
+    "file": "data-evidence/LIB-TLM-FRS-GYRO_BF.txt",
+    "sha256": "c9c06d3c243a0fb905c782cbd7f09f503640eb426fc4f5de03eaa0d794f70b98",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GYRO_BF.txt",
+    "bytes": 4233
+  },
+  {
+    "file": "data-evidence/LIB-TB-BTCNO.txt",
+    "sha256": "d223bb91c881e307106a90fba60603ead11cff2346c6cfdc26cd437bbd812d7f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-BTCNO.txt",
+    "bytes": 2639
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMRST.lua",
+    "sha256": "3b94270d1ce146631a062b5121c7bc795def6711f2538dbf67e69356d1148088",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TLMRST.lua",
+    "bytes": 1607
+  },
+  {
+    "file": "data-evidence/LIB-CFG-CFGBFV.txt",
+    "sha256": "24ceb4969ef90ecb2cce31ceb767dec4cf37c44501e76d13442cdceada070470",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGBFV.txt",
+    "bytes": 9248
+  },
+  {
+    "file": "data-evidence/UI-480X272-DB1-BFV.txt",
+    "sha256": "e81c1a54ac1c74a537fe398b671a847c001d6afa49c559b837adf474a6ff1860",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/UI-480X272-DB1-BFV.txt",
+    "bytes": 18162
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBFV.lua",
+    "sha256": "b41612bfdf41f0fd4a4c44e2a0f416a251228025275e0a9f759841ba87e34586",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBFV.lua",
+    "bytes": 1523
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/UI/SNV.lua",
+    "sha256": "7521cd68cf5af71fa72b52fcb15f3348ed1e23e3123f48632f3eb1cdc31083e4",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/UI/SNV.lua",
+    "bytes": 3414
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+    "sha256": "3ba7194b10b45bda6ad47b2d1ad8cb3f3cd3f8cdcb49582ba7ac62350fa2a2d4",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/BTA.lua",
+    "bytes": 2199
+  },
+  {
+    "file": "data-evidence/LIB-CFG-CFGD.txt",
+    "sha256": "971640ae592053b93c2115a5a6248fc7d9699dea72b8bcc220157c09344c2735",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGD.txt",
+    "bytes": 2466
+  },
+  {
+    "file": "data-evidence/LIB-CFG-CFGBAT.txt",
+    "sha256": "9ba470d4ca135bac470d47df960535ed98bf2fbcdd9466c25d29ab6a78df6abb",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-CFG-CFGBAT.txt",
+    "bytes": 17135
+  },
+  {
+    "file": "data-evidence/MAIN-ML.txt",
+    "sha256": "703d8a363c359c45aac8ca439eb1c3b35d7e843d0cd5cc093c060d796fee6ad2",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/MAIN-ML.txt",
+    "bytes": 23656
+  },
+  {
+    "file": "data-evidence/LIB-RD-SND.txt",
+    "sha256": "af1fbedc57cee6ce0dcb2649ef5c0a7ab2c60d2603a9969d63d6174581f4d90f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SND.txt",
+    "bytes": 5578
+  },
+  {
+    "file": "data-evidence/LIB-RD-BAT.txt",
+    "sha256": "33ad156fb67487f58074d4c380639ba7fadeab10c0aadbe6b1365ba6cefe05dd",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-BAT.txt",
+    "bytes": 3348
+  },
+  {
+    "file": "data-evidence/LIB-TLM-TLMRLD.txt",
+    "sha256": "17ee736fbe2366aef33ece31bdbcea6d941ef8e993684a5bf5924d3cf3873c53",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-TLMRLD.txt",
+    "bytes": 5616
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/RL.lua",
+    "sha256": "014e6c5a7e31baccc8a3f9db0130f789fba763668d8b8427f062a2948388dad2",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TLM/TBS/RL.lua",
+    "bytes": 3862
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDUPD.lua",
+    "sha256": "599aaacb2c445e05772dcc5962b4df3819ed9c38f1fcf9f6c76e3c6a151a0ad1",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/TB/INDUPD.lua",
+    "bytes": 1204
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+    "sha256": "0208ef27fa9306bb57faa07d01c3ae89da189d9bfdb5d7788b815448ab9401ff",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGIND.lua",
+    "bytes": 4022
+  },
+  {
+    "file": "data-evidence/LIB-RD-TMR.txt",
+    "sha256": "ae3c545f6f0d5c3a248871ab281d6e7d92f2d700019adb8bf5baa44d7b639920",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-TMR.txt",
+    "bytes": 3479
+  },
+  {
+    "file": "data-evidence/LIB-TLM-FRS-GPS_BF.txt",
+    "sha256": "10b3e0d6f60b7231176ba500ec91c34fe6f731f36199437a3a9fe621f53e6220",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TLM-FRS-GPS_BF.txt",
+    "bytes": 16868
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC00A4.txt",
+    "sha256": "a868c4973223b173ee9758b163e7d2920e18e2342ec6088bd4362af1f2bc5bb2",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00A4.txt",
+    "bytes": 3581
+  },
+  {
+    "file": "data-evidence/LIB-GPS-GPSINIT.txt",
+    "sha256": "949c6c5b50193fa01fb9b21b3e2ac92b908f3f7636279426a1913441737c52a3",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-GPS-GPSINIT.txt",
+    "bytes": 20198
+  },
+  {
+    "file": "data-evidence/M.txt",
+    "sha256": "20ac7453c5758a408484c84fd9743df4e01048dea1f278a5823eb0516da76f07",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/M.txt",
+    "bytes": 24960
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/MSPML.lua",
+    "sha256": "205db631f5cdea539e51cdcfe524d5722156ce277d55b4f65b00efe07205c584",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/MSP/MSPML.lua",
+    "bytes": 3120
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/test_attitude_loop.lua",
+    "sha256": "f036de4117fd752af297db0b8d7c65a629edfc92ebaa611d0ea6367558daae00",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/test_attitude_loop.lua",
+    "bytes": 3628
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/MAIN/GF.lua",
+    "sha256": "c4a2e43791a7aa04da66915e6d42114eaa93d0c9ce84ea7093c9c4dc40480c7f",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/MAIN/GF.lua",
+    "bytes": 12720
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGAPP.lua",
+    "sha256": "ca4fc5e24e0b4502b4069de6376eee3fc26d37bf09dd2ebaf2aaafafc92798ff",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGAPP.lua",
+    "bytes": 422
+  },
+  {
+    "file": "data-evidence/LIB-FS-FSLOG.txt",
+    "sha256": "2b1f5dcd976f0a2d4dc2afaa83f16ca428c063f68b82c15c9d27e6e77ef00cd0",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-FS-FSLOG.txt",
+    "bytes": 2184
+  },
+  {
+    "file": "config-evidence/CFGAPP.txt",
+    "sha256": "e533c5bc107f215a7b4ed19bc9482b7459bf05601917b68c52128f54b7857963",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGAPP.txt",
+    "bytes": 1856
+  },
+  {
+    "file": "data-evidence/LIB-TB-DATAINIT.txt",
+    "sha256": "cf97159d388a0fd6578a6cba0477cdf01a482d1fa8721da35996faeaebb3136f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-DATAINIT.txt",
+    "bytes": 42417
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGWR.lua",
+    "sha256": "04205eafceae7e41e34bd39485aa8d848d5dd4881501d2abc1d5d4236126e121",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGWR.lua",
+    "bytes": 676
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/build-POWER-LIVE-20261017.json",
+    "sha256": "8121a07ff4bff2bec771113162d51640d91011ebc29d29a3205dc7f792c43311",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/build-POWER-LIVE-20261017.json",
+    "bytes": 70027
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/development/deployments/POWER-LIVE-20261017.json",
+    "sha256": "b37534a0c36f2697314cce786dcc4fde5f5afd869a16ec36ca099085faa1b691",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/development/deployments/POWER-LIVE-20261017.json",
+    "bytes": 6322
+  },
+  {
+    "file": "data-evidence/LIB-RD-RDINP.txt",
+    "sha256": "d3e979029ab36da328f6ebcf47770b3cdb454c88eca20e89fe2601c796b5d70f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-RDINP.txt",
+    "bytes": 7056
+  },
+  {
+    "file": "data-evidence/LIB-TB-INDINIT.txt",
+    "sha256": "bb8f41c7dc7b23f90f1dc331e9528d932e2a7132f6e8950c1752f62f9dd74413",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-TB-INDINIT.txt",
+    "bytes": 11594
+  },
+  {
+    "file": "data-evidence/LIB-RD-SIN.txt",
+    "sha256": "86a7936aee3737b06a23cda1efdfb3e9ecc019422b9bbe317b8215d1a31e6bef",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SIN.txt",
+    "bytes": 5349
+  },
+  {
+    "file": "data-evidence/LIB-RD-SSW.txt",
+    "sha256": "5730d620fef360cdb82c8b874f1748cacf02c113586b3f7bdcaf4da47ba7a3d1",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/data-evidence/LIB-RD-SSW.txt",
+    "bytes": 6357
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-MSPCFC.txt",
+    "sha256": "3300569edf6f6741f79d360f0f22cf7dab6c0c08a2b1bf85fcabdd1acfb2f994",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPCFC.txt",
+    "bytes": 6785
+  },
+  {
+    "file": "evidence/LIB-MSP-IN-MSPCFC.txt",
+    "sha256": "47f2608198f5a91fefc81148457aa7c8a8c72c841e0b3b861858bbc0d67ee1aa",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPCFC.txt",
+    "bytes": 5244
+  },
+  {
+    "file": "evidence/LIB-MSP-WR-MSPWXF.txt",
+    "sha256": "a9be82f6d77a0d198e735395d29f15412245311c2cded87563f83ad956fbb00f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWXF.txt",
+    "bytes": 9381
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-V2-MSPOUT.txt",
+    "sha256": "2a0414836097ee4a8d029a0d8ed839bc69d6edceeaeb39930fc111562e1598a0",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-V2-MSPOUT.txt",
+    "bytes": 8078
+  },
+  {
+    "file": "evidence/LIB-MSP-WR-MSPWSP.txt",
+    "sha256": "1eef094dc15db7e823a68eeca7ffcd39b29ee8468dd38d6e0c2753a4c9e8bb94",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-WR-MSPWSP.txt",
+    "bytes": 13583
+  },
+  {
+    "file": "evidence/LIB-MSP-MSPINIT.txt",
+    "sha256": "2cc96caeed4cf4bea00a6043b4b27cafc7fa80728c0917c111b6fbac2aad41d9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPINIT.txt",
+    "bytes": 18193
+  },
+  {
+    "file": "evidence/LIB-TLM-RCPINIT.txt",
+    "sha256": "9176491d845bf9f36a5d865c4f5d191e818140405cbf9129df46e2345caf8733",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-TLM-RCPINIT.txt",
+    "bytes": 8954
+  },
+  {
+    "file": "evidence/LIB-MSP-MSPQAD.txt",
+    "sha256": "10a7eeec2e4d5d84606b7c928ae7d8310aa3223f93455c94bc86b02e76f15c09",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPQAD.txt",
+    "bytes": 2283
+  },
+  {
+    "file": "evidence/LIB-MSP-MSPML.txt",
+    "sha256": "0818d5acd9c64bd1913d33e73d3babe7026c29254d0e1b6ad335283c9a0d0ff1",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPML.txt",
+    "bytes": 14671
+  },
+  {
+    "file": "evidence/LIB-VTX-VTXTBS.txt",
+    "sha256": "7c5cdac5649e88c3be3627a04426629e0235d8cf9fc2a37950af5ea9930b5885",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXTBS.txt",
+    "bytes": 18181
+  },
+  {
+    "file": "evidence/LIB-MSP-MSPRST.txt",
+    "sha256": "1ddd97c5a09735a22b2b1821e75a82c605c26987e7b7df006109c2e2ce20b7ac",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPRST.txt",
+    "bytes": 6429
+  },
+  {
+    "file": "evidence/MAIN-ML.txt",
+    "sha256": "b784537e9b8c5092480a9c3ca84a183411dd0951dc29254360522a430eea47c7",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/MAIN-ML.txt",
+    "bytes": 23733
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC00A0.txt",
+    "sha256": "854b780b6c2ae7cacf36bd6d59ab14713b502b2efab2339e12b0e5ad04e3e540",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00A0.txt",
+    "bytes": 1782
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC0004.txt",
+    "sha256": "9d2cd4d3ee8886479ce97a2e0adf7446d100f2fe90e0db0309aa044e3d297a0a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0004.txt",
+    "bytes": 1613
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-MSPRPT.txt",
+    "sha256": "c54c060b66057787bebe2953ace437d2842109bd7ab596138b0c9936bc309324",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-MSPRPT.txt",
+    "bytes": 9936
+  },
+  {
+    "file": "evidence/UI-480X272-DB1-FCD.txt",
+    "sha256": "f437a5057c4a2dcfd27abe68c3338a8f1a390088787200dce1a7a98e45970b80",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-FCD.txt",
+    "bytes": 15517
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC0096.txt",
+    "sha256": "13a7003de5d04e790e9b92f7a339d05135dbc77161f7805ac52daa1945afa42c",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0096.txt",
+    "bytes": 7186
+  },
+  {
+    "file": "evidence/LIB-MSP-IN-C-MSPC0097.txt",
+    "sha256": "2f652c1b70fef73ab7ceb90153bdf65981c9ec0cc24eb5f71a035aa617b5e44d",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC0097.txt",
+    "bytes": 4083
+  },
+  {
+    "file": "evidence/LIB-MSP-IN-MSPRPT.txt",
+    "sha256": "d1e75f37e00b413ece3a64e911d2de50291bc4f7bd7ee50a9068f067cad1850f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-MSPRPT.txt",
+    "bytes": 8011
+  },
+  {
+    "file": "evidence/LIB-FC-BF-ASC.txt",
+    "sha256": "c8b00faa80217511d5cdbbb92a4b9b1b8a38b1e75c69b5396ad6ff5c8fe55dad",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-ASC.txt",
+    "bytes": 15716
+  },
+  {
+    "file": "source-evidence/repository/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+    "sha256": "b34ff1a243a034a57824fb1975b27dfe89f217f85d72304bdfb99e74d6995b34",
+    "baselineFile": "/Users/nene/Documents/fpv-1/radiomaster_tx16s_mkII/LUA/sdcard/SCRIPTS/TOOLS/AERODECK/arm-status.lua",
+    "bytes": 7484
+  },
+  {
+    "file": "evidence/LIB-MSP-IN-C-MSPC2000.txt",
+    "sha256": "aad608c7d199fa3ef700b29cd2ea1c1438a2c987cdcd6c270b30a1b57737e607",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-IN-C-MSPC2000.txt",
+    "bytes": 5935
+  },
+  {
+    "file": "evidence/LIB-FC-IN-ASC.txt",
+    "sha256": "431c47b8c8461e2cf59d367e263bd356d92a6978a40c070a247c8ed2e233d1a9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-ASC.txt",
+    "bytes": 12548
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua",
+    "sha256": "128d8b44975ba84f6ddeebf17b26b6cbd4a88634082cf0a13b5e247ec1dc9a08",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua",
+    "bytes": 4195
+  },
+  {
+    "file": "evidence/UI-480X272-MOD-AST.txt",
+    "sha256": "233bdf0e6d9650ca46f08194b6683c8557e2ac8884a24c124263ca7fa293f459",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-AST.txt",
+    "bytes": 26462
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC0058.txt",
+    "sha256": "7d24736cea7dea0820d3889bfc8bdc61a901ea8b40245591aae6366fa5d3a850",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0058.txt",
+    "bytes": 16034
+  },
+  {
+    "file": "evidence/LIB-VTX-VTXMSP.txt",
+    "sha256": "6614122290d6ea07ff2c3fde67f80f6bee236e438c4cd458c42354a02cff613f",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXMSP.txt",
+    "bytes": 7931
+  },
+  {
+    "file": "evidence/LIB-MSP-MSPTC.txt",
+    "sha256": "79b023b1a1c0f4f58611ba462fe56cdf28a070d900c5e5c50f2e342adab3d410",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTC.txt",
+    "bytes": 5468
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC0089.txt",
+    "sha256": "92dd1a25864368d87ce8a7f2746d5f4b94302153e0063fe775be82716a9cac76",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0089.txt",
+    "bytes": 2565
+  },
+  {
+    "file": "evidence/LIB-MSP-MSPTP.txt",
+    "sha256": "a4770a699902f03e79a566b7b012a7ca8b3541c4f86f963b7b770b5737de38c9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-MSPTP.txt",
+    "bytes": 4294
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC008A.txt",
+    "sha256": "d2afb8713c7278619cc4443c25e9053f61c9ebdc71754a4452cdd3f6dc826946",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC008A.txt",
+    "bytes": 1678
+  },
+  {
+    "file": "evidence/LIB-VTX-VTXPXW.txt",
+    "sha256": "7df8336a62f3e56dd04fa8678e0d8fbc7c276b2b71c9f9f39e9663ab2261e1eb",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXPXW.txt",
+    "bytes": 6668
+  },
+  {
+    "file": "evidence/UI-480X272-MOD-VTX.txt",
+    "sha256": "8350734729333e35595644a2e78888d70dbaa3e17ac4e23b169bd2040e152cc8",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-VTX.txt",
+    "bytes": 77135
+  },
+  {
+    "file": "evidence/LIB-VTX-VTXBFR.txt",
+    "sha256": "bd3877c2b7c6bebbfc97c0772a32294d8882f256142fb6ec0ead5ba5bde7995a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXBFR.txt",
+    "bytes": 3132
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC0059.txt",
+    "sha256": "1d0cd4cfbc41fd818356be2b87f78ca4fa581bc47e18628cd6262c5793d6fc50",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC0059.txt",
+    "bytes": 611
+  },
+  {
+    "file": "evidence/LIB-MSP-BF-C-MSPC00FA.txt",
+    "sha256": "ead6bbc9fa5f0e926a81899fce3e3b621678f28bcacd2576bbc5910f95d44855",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-MSP-BF-C-MSPC00FA.txt",
+    "bytes": 609
+  },
+  {
+    "file": "evidence/LIB-VTX-VTXINIT.txt",
+    "sha256": "07c44f9fa7cb71c9f7383bcb37187d1540ae155ce4c19b3d1a433fabd9babc9a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-VTX-VTXINIT.txt",
+    "bytes": 13701
+  },
+  {
+    "file": "evidence/LIB-CFG-CFGVFV.txt",
+    "sha256": "edf5d0d32cca84b149b42679b94021eb786e3107f59ba45eeb0773f3f38ab9f3",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVFV.txt",
+    "bytes": 7345
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua",
+    "sha256": "fa188ee233648959ea1952481a54952dac01e28302aa13334eae37cee46ebb98",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVFV.lua",
+    "bytes": 1321
+  },
+  {
+    "file": "evidence/UI-480X272-DB1-VFV.txt",
+    "sha256": "03f7d51ae2e1b217032d40dde075241562a4b2d314826710d03e620624c05932",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-DB1-VFV.txt",
+    "bytes": 16059
+  },
+  {
+    "file": "evidence/LIB-FC-BF-STK.txt",
+    "sha256": "4be84e828343d169f9c4942680e2788c6b5ec2c29b4c4f38ebf868f4bb899d96",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-BF-STK.txt",
+    "bytes": 6621
+  },
+  {
+    "file": "evidence/UI-480X272-MOD-STK.txt",
+    "sha256": "1c3ced65f6fc274ec2fe918ca4439a72dae4db095d015e52f707dbad7738f5c0",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/UI-480X272-MOD-STK.txt",
+    "bytes": 16706
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua",
+    "sha256": "3648233b08fc79108f5a8f30b195cc69c49dd4f514247fff039d3ab755588048",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/FC/BF/STK.lua",
+    "bytes": 1436
+  },
+  {
+    "file": "evidence/LIB-FC-IN-STK.txt",
+    "sha256": "8d68dbc0d78eac10425e0102069a9a4a896542c1d692b78aae7ce19276fdeb81",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-FC-IN-STK.txt",
+    "bytes": 9078
+  },
+  {
+    "file": "evidence/LIB-CFG-CFGVTX.txt",
+    "sha256": "0718ae0c81da66e9be5abda86a0dd0bb1dbbb7be2fd5624a17c11be64cb449d3",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/evidence/LIB-CFG-CFGVTX.txt",
+    "bytes": 9135
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua",
+    "sha256": "bbb49c221e615c4544c4a926583f28571e420f516540627586abc97510375382",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGVTX.lua",
+    "bytes": 1688
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua",
+    "sha256": "3184336db71c72f7be4acca9b5aacd7cc6da93705a4cd233c759905bb60edfb8",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGRCL.lua",
+    "bytes": 2810
+  },
+  {
+    "file": "config-evidence/CFGRCL.txt",
+    "sha256": "ded6ebfcc434ddfbb42151985ffb953986f7559044c9198d4f254e4e5cc2cc88",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGRCL.txt",
+    "bytes": 16788
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua",
+    "sha256": "ba4adbf9fe4d98d11557a66044786e6a55e4657edef52b155f1e53cf63a11be2",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGBAT.lua",
+    "bytes": 3308
+  },
+  {
+    "file": "config-evidence/CFGBAT.txt",
+    "sha256": "4dbde36af9544680f14ef0f2891f68139f0d9d3d168f151fa2baf081e4f2de9b",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGBAT.txt",
+    "bytes": 17272
+  },
+  {
+    "file": "config-evidence/CFGBFV.txt",
+    "sha256": "c0269e99b8e34ca8a0c0a31c9346fa2ecab9eb820ca1d2766bd9a54dc1dbcf8a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGBFV.txt",
+    "bytes": 9385
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFC.lua",
+    "sha256": "7abfb96a847baeb145d1ff3f49b82b4388af83a0346344e9d449b9e596a28101",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGFC.lua",
+    "bytes": 1502
+  },
+  {
+    "file": "config-evidence/CFGFC.txt",
+    "sha256": "ff10f519086aa3a86cb13b22511014c9438ad325017dbe4db52d4ad4c44ecaa9",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGFC.txt",
+    "bytes": 8820
+  },
+  {
+    "file": "config-evidence/CFGIND.txt",
+    "sha256": "0b850a414011a23b60586ca0a9681d4096d8521f342f72e783b6e8df091e97db",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGIND.txt",
+    "bytes": 26444
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua",
+    "sha256": "66b075b43cec9a1e6b6e0d271b5e7d7e5eed2ca1ed7bdd9ab2abb653cf05d8b0",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGINDBF.lua",
+    "bytes": 4339
+  },
+  {
+    "file": "config-evidence/CFGINDBF.txt",
+    "sha256": "75355dc07b8a54406d3e5383d85c98a81388e7a52f3e607d323c82eaa3c23c48",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGINDBF.txt",
+    "bytes": 26028
+  },
+  {
+    "file": "config-evidence/CFGVTX.txt",
+    "sha256": "2f5cc5089bb4d639a4a1b726f49d7aff5b8b749cb5d61252b1c47790985251c8",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGVTX.txt",
+    "bytes": 9195
+  },
+  {
+    "file": "config-evidence/CFGVFV.txt",
+    "sha256": "565dafd960009c767971fd969258684d2c8831e212e318d630f4e06a11cae76b",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGVFV.txt",
+    "bytes": 7405
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGGPS.lua",
+    "sha256": "4fe7236f79a4400c31b757b336dfca02b57a1dd27aad88e5e7ff546d6c459fca",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGGPS.lua",
+    "bytes": 450
+  },
+  {
+    "file": "config-evidence/CFGGPS.txt",
+    "sha256": "d5c5d89f5fea4544520f50d22320e8d330b878e459974046e4dc5e66565c7c8a",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGGPS.txt",
+    "bytes": 2065
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUI.lua",
+    "sha256": "564c445f539daf1de7ce22e2087a8a7bc2b6b64bae001d281617d64353ddbcf1",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUI.lua",
+    "bytes": 1085
+  },
+  {
+    "file": "config-evidence/CFGUI.txt",
+    "sha256": "db14517a5a72793e0dfa27825c7affcfe862a0a83419857d842705a05551a2e1",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGUI.txt",
+    "bytes": 5978
+  },
+  {
+    "file": "source-evidence/repository/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua",
+    "sha256": "8c9c2b605609fb8da1bd8f26e1d3f818ba4e33bfb045270f0ed40623d61b4ec5",
+    "baselineFile": "/Users/nene/Documents/fpv-1/toolbox2_source/APPS/TOOLBOX2/LIB/CFG/CFGUPDP.lua",
+    "bytes": 1177
+  },
+  {
+    "file": "config-evidence/CFGUPDP.txt",
+    "sha256": "ef20fda6d628a8d302eae4ccc7c9a3ec518eb891e2a91c9c68cf1ff3f5e9a394",
+    "baselineFile": "/Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/deep-parity-20261017/config-evidence/CFGUPDP.txt",
+    "bytes": 6710
+  }
+]

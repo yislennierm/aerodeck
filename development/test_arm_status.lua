@@ -16,11 +16,13 @@ local function bitBytes(bit)
  local b={0,0,0,0};b[math.floor(bit/8)+1]=2^(bit%8);return b
 end
 local expected146={'NOGYRO','FAILSAFE','RXLOSS','NOT_DISARMED','BOXFAILSAFE','RUNAWAY','CRASH','THROTTLE','ANGLE','BOOTGRACE','NOPREARM','LOAD','CALIB','CLI','CMS','BST','MSP','PARALYZE','GPS','RESCUE_SW','DSHOT_TELEM','REBOOT_REQD','DSHOT_BBANG','NO_ACC_CAL','MOTOR_PROTO','ARMSWITCH'}
+local expected144={};for i=1,26 do expected144[i]=expected146[i]end
+expected144[4]='BADRX';expected144[21]='RPMFILTER'
 local expected147={};for i=1,25 do expected147[i]=expected146[i]end
 expected147[26]='FLIP_SWITCH';expected147[27]='ALT_HOLD_SW';expected147[28]='POS_HOLD_SW';expected147[29]='ARM_SWITCH'
 local expected148={};for i=1,28 do expected148[i]=expected147[i]end
 expected148[29]='AUTOPILOT_SW';expected148[30]='ARM_SWITCH'
-for _,version in ipairs({{46,26,expected146},{47,29,expected147},{48,30,expected148}})do
+for _,version in ipairs({{44,26,expected144},{45,26,expected144},{46,26,expected146},{47,29,expected147},{48,30,expected148}})do
  for bit=0,version[2]-1 do
   local bytes=bitBytes(bit)
   local r=reason(bytes,version[2],1,version[1])
@@ -30,6 +32,38 @@ for _,version in ipairs({{46,26,expected146},{47,29,expected147},{48,30,expected
   assert(r.maskHex==string.format('%02X%02X%02X%02X',bytes[4],bytes[3],bytes[2],bytes[1]))
  end
 end
+-- Verified older APIs retain their own public codes in live and reference views.
+local olderChecks=0
+local function olderCheck(value,message)olderChecks=olderChecks+1;assert(value,message)end
+for _,minor in ipairs({44,45})do
+ local cat=assert(decoder.catalogue('BF',1,minor,26))
+ olderCheck(cat.mappingKnown and cat.apiMinor==minor and #cat==26,'Exact older API catalogue')
+ for bit=0,25 do
+  local meta=cat[bit+1];local live=reason(bitBytes(bit),26,1,minor,15,0xAF).reasons[1]
+  olderCheck(meta.bit==bit and meta.code==expected144[bit+1]and meta.beepId==bit+1,'Older reference bit/code/beep order')
+  olderCheck(live.bit==bit and live.code==meta.code and live.known,'Older variable-offset packet must match catalogue')
+ end
+ local mixed=reason({8,0,16,2},26,1,minor)
+ olderCheck(#mixed.reasons==3 and mixed.reasons[1].code=='BADRX'and mixed.reasons[2].code=='RPMFILTER'and mixed.reasons[3].code=='ARMSWITCH','Older low/high mixed flags')
+ local clear=reason({0,0,0,0},26,1,minor)
+ olderCheck(clear.mappingKnown and #clear.reasons==0 and clear.ready==nil and clear.armed==nil,'Older zero mask does not prove safe/armed')
+ for _,count in ipairs({25,27,29,30,32})do
+  local wrong=reason(bitBytes(20),count,1,minor)
+  olderCheck(not wrong.mappingKnown and wrong.reasons[1].code=='BIT 20','Older API mismatched count must not borrow names')
+  local manual=assert(decoder.catalogue('BF',1,minor,count))
+  olderCheck(not manual.mappingKnown and manual.reference,'Mismatched reference count remains manual')
+ end
+ local excess=fixture({0,0,0,4},26);local bad,err=decoder.decode(excess,1,minor)
+ olderCheck(bad==nil and err=='FLAGS EXCEED COUNT','Older API mask beyond count rejected')
+ local truncated=fixture({0,0,16,0},26,4);truncated[#truncated]=nil
+ olderCheck(decoder.decode(truncated,1,minor)==nil,'Older API truncated variable header rejected')
+end
+for _,minor in ipairs({43,49})do
+ local unknown=reason(bitBytes(20),26,1,minor)
+ olderCheck(not unknown.mappingKnown and unknown.reasons[1].code=='BIT 20','Unverified older/future API remains numbered')
+end
+assert(olderChecks==136,'Older API regression check count')
+print('PASS: '..olderChecks..' additional BF API1.44/1.45 live/catalogue/count/unknown regression checks')
 -- Literal bytes preserve bit0 alongside high bit25 without ever building U32.
 local multi,d=reason({129,0,128,2},26,1,46,3,0xA3)
 assert(multi.extraModeBytes==3 and #multi.reasons==4 and multi.maskHex=='02800081')
@@ -49,7 +83,7 @@ local noVersion=assert(decoder.decode(fixture({0,0,0,2}),nil,nil));assert(not no
 local api147=reason({1,0,0,30},29,1,47)
 assert(#api147.reasons==5 and api147.reasons[1].code=='NOGYRO' and api147.reasons[2].code=='FLIP_SWITCH' and api147.reasons[5].code=='ARM_SWITCH')
 -- The reported zero-based BIT18 now has its exact GPS meaning on stable API1.48.
-for _,version in ipairs({{46,26},{47,29},{48,30}})do
+for _,version in ipairs({{44,26},{45,26},{46,26},{47,29},{48,30}})do
  local gps=reason({0,0,4,0},version[2],1,version[1]).reasons[1]
  assert(gps.bit==18 and gps.code=='GPS'and gps.known,'GPS bit18 must not shift between the supported releases')
  assert(string.find(gps.detail,'valid GPS fix',1,true)and string.find(gps.help,'configured minimum satellites',1,true),'GPS guidance must describe both required fix and configured satellite threshold')
@@ -89,4 +123,4 @@ assert(decoder.decode(truncated148,1,48)==nil,'Truncated API1.48 variable flags 
 local oversized=fixture({0,0,0,0});for i=#oversized+1,257 do oversized[i]=0 end;invalid(oversized,'oversize')
 local extension=fixture({128,0,0,0},26,15);for i=#extension+1,256 do extension[i]=255 end
 assert(decoder.decode(extension,1,46).reasons[1].code=='THROTTLE','bounded future trailing payload')
-print('PASS: STATUS_EX offsets, every API1.46/1.47/1.48 flag, GPS18, autopilot28, arm-switch29, bytewise low/high bits, strict unknown APIs/counts, malformed rejection, no input mutation')
+print('PASS: STATUS_EX offsets, every API1.44/1.45/1.46/1.47/1.48 flag, GPS18, autopilot28, arm-switch29, bytewise low/high bits, strict unknown APIs/counts, malformed rejection, no input mutation')

@@ -1,0 +1,61 @@
+{
+  "version": "v2.12.4",
+  "sources": [
+    {
+      "file": "radio-src-lua-api_colorlcd.cpp",
+      "sourcePath": "radio/src/lua/api_colorlcd.cpp",
+      "url": "https://raw.githubusercontent.com/EdgeTX/edgetx/v2.12.4/radio/src/lua/api_colorlcd.cpp",
+      "sha256": "664d3597b2eb079519aaa904f3d6d472c623f45cda11c61c75049c81e79602ba",
+      "bytes": 44534
+    },
+    {
+      "file": "radio-src-lua-lua_widget.cpp",
+      "sourcePath": "radio/src/lua/lua_widget.cpp",
+      "url": "https://raw.githubusercontent.com/EdgeTX/edgetx/v2.12.4/radio/src/lua/lua_widget.cpp",
+      "sha256": "8d091eab978a6200c6d7df144cdafa679e48660a99575e2cebdb6e7746eb27e4",
+      "bytes": 16571
+    },
+    {
+      "file": "work/edgetx/ux-cleanup/evidence/standalone_lua-2.12.4.cpp",
+      "sourcePath": "radio/src/gui/colorlcd/standalone_lua.cpp",
+      "url": "https://github.com/EdgeTX/edgetx/blob/v2.12.4/radio/src/gui/colorlcd/standalone_lua.cpp",
+      "sha256": "aa9c43a0682293fb16654038d0432c8fc048abbdd5c6649d91577a13646af9a2"
+    }
+  ],
+  "facts": [
+    {
+      "file": "radio/src/gui/colorlcd/standalone_lua.cpp",
+      "lines": [
+        151,
+        154,
+        253,
+        255,
+        295,
+        296
+      ],
+      "fact": "Standalone allocates one BitmapBuffer, clears it on construction, then points luaLcdBuffer to that persistent object for subsequent runs. Throttled standalone redraws can retain the prior picture."
+    },
+    {
+      "file": "radio/src/lua/lua_widget.cpp",
+      "lines": [
+        195,
+        227,
+        320,
+        322,
+        525,
+        537
+      ],
+      "fact": "Widget redraw wraps the current LVGL draw context buffer, invokes refresh, then clears luaLcdBuffer. The foreground invalidates the object for another callback. A widget must paint each scheduled refresh."
+    },
+    {
+      "file": "radio/src/lua/api_colorlcd.cpp",
+      "lines": [
+        38,
+        55
+      ],
+      "fact": "Color lcd.refresh is a no-op; it is not a supported frame-retention solution."
+    }
+  ],
+  "scope": "Primary-source API/ownership contract only; not target-radio performance acceptance.",
+  "hardwareVerified": false
+}

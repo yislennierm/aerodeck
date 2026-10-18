@@ -1,0 +1,183 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGINIT.luac
+Original SHA256: 03775742d8621e7797bb6c238d66def0f5a3e5a58460579b944e9614e5fe4fed
+
+FUNCTION main params 0 vararg 1 stack 20 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 126), ('F', 1, 126), ('D', 1, 126), ('X', 1, 126), ('scv', 33, 126), ('appv', 37, 126), ('(for generator)', 115, 122), ('(for state)', 115, 122), ('(for control)', 115, 122), ('i', 116, 120), ('v', 116, 120)]
+K0 'CFGSTR'
+K1 'dbg'
+K2 'D.CFGSTR'
+K3 'loadE'
+K4 'PLIBCFG'
+K5 'CFGLD'
+K6 'T'
+K7 '0'
+K8 'tonumber'
+K9 'string'
+K10 'match'
+K11 '^(%d+%.?%d*)'
+K12 0
+K13 'AI'
+K14 'VER'
+K15 'CFGD'
+K16 'loading default config'
+K17 'MODCFG'
+K18 'clear'
+K19 '+MODCFG'
+K20 'pages'
+K21 'id'
+K22 'MDL'
+K23 'vis'
+K24 True
+K25 'name'
+K26 'MODEL'
+K27 'RCL'
+K28 False
+K29 'RC LINK'
+K30 'BAT'
+K31 'BATTERY'
+K32 'BFV'
+K33 'BATTERY FAVS'
+K34 'FC'
+K35 'FLIGHT CONTROLLER'
+K36 'IND'
+K37 'INDICATORS'
+K38 'INDBF'
+K39 'INDICATORS BETAFLIGHT'
+K40 'VTX'
+K41 'VFV'
+K42 'VTX FAVS'
+K43 'GPS'
+K44 'UI'
+K45 'USER INTERFACE'
+K46 'APP'
+K47 'APPLICATION'
+K48 'pagesByID'
+K49 'ipairs'
+K50 'pagesVisible'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('CFGSTR')]
+   3 [  12] TEST      A=4 B=0 C=1
+   4 [  12] JMP       A=0 ->6
+   5 [  12] NEWTABLE  A=4 B=0 C=0
+   6 [  12] SETTABLE  R2[K0('CFGSTR')] = R4
+   7 [  13] GETTABLE  R4 = R0[K1('dbg')]
+   8 [  13] LOADK     R5 = K2 ('D.CFGSTR')
+   9 [  13] GETTABLE  R6 = R2[K0('CFGSTR')]
+  10 [  13] CALL      A=4 B=3 C=1
+  11 [  16] GETTABLE  R4 = R0[K3('loadE')]
+  12 [  16] GETTABLE  R5 = R0[K4('PLIBCFG')]
+  13 [  16] LOADK     R6 = K5 ('CFGLD')
+  14 [  16] CONCAT    A=5 B=5 C=6
+  15 [  16] CALL      A=4 B=2 C=1
+  16 [  17] GETTABLE  R4 = R2[K0('CFGSTR')]
+  17 [  17] GETTABLE  R5 = R2[K0('CFGSTR')]
+  18 [  17] GETTABLE  R5 = R5[K6('T')]
+  19 [  17] TEST      A=5 B=0 C=1
+  20 [  17] JMP       A=0 ->22
+  21 [  17] LOADK     R5 = K7 ('0')
+  22 [  17] SETTABLE  R4[K6('T')] = R5
+  23 [  18] GETTABUP  R4 = UP0[K8('tonumber')]
+  24 [  18] GETTABUP  R5 = UP0[K9('string')]
+  25 [  18] GETTABLE  R5 = R5[K10('match')]
+  26 [  18] GETTABLE  R6 = R2[K0('CFGSTR')]
+  27 [  18] GETTABLE  R6 = R6[K6('T')]
+  28 [  18] LOADK     R7 = K11 ('^(%d+%.?%d*)')
+  29 [  18] CALL      A=5 B=3 C=0
+  30 [  18] CALL      A=4 B=0 C=2
+  31 [  18] TEST      A=4 B=0 C=1
+  32 [  18] JMP       A=0 ->34
+  33 [  18] LOADK     R4 = K12 (0)
+  34 [  19] GETTABUP  R5 = UP0[K8('tonumber')]
+  35 [  19] GETTABLE  R6 = R2[K13('AI')]
+  36 [  19] GETTABLE  R6 = R6[K14('VER')]
+  37 [  19] CALL      A=5 B=2 C=2
+  38 [  22] LT        A=0 R4, R5; skip-next if condition != A
+  39 [  22] JMP       A=0 ->48
+  40 [  25] GETTABLE  R6 = R0[K3('loadE')]
+  41 [  25] GETTABLE  R7 = R0[K4('PLIBCFG')]
+  42 [  25] LOADK     R8 = K15 ('CFGD')
+  43 [  25] CONCAT    A=7 B=7 C=8
+  44 [  25] CALL      A=6 B=2 C=1
+  45 [  26] GETTABLE  R6 = R0[K1('dbg')]
+  46 [  26] LOADK     R7 = K16 ('loading default config')
+  47 [  26] CALL      A=6 B=2 C=1
+  48 [  29] GETTABLE  R6 = R2[K17('MODCFG')]
+  49 [  29] TEST      A=6 B=0 C=1
+  50 [  29] JMP       A=0 ->52
+  51 [  29] NEWTABLE  A=6 B=0 C=0
+  52 [  29] SETTABLE  R2[K17('MODCFG')] = R6
+  53 [  30] GETTABLE  R6 = R0[K18('clear')]
+  54 [  30] MOVE      A=7 B=2 C=0
+  55 [  30] LOADK     R8 = K19 ('+MODCFG')
+  56 [  30] CALL      A=6 B=3 C=1
+  57 [  32] GETTABLE  R6 = R2[K17('MODCFG')]
+  58 [  32] NEWTABLE  A=7 B=12 C=0
+  59 [  32] NEWTABLE  A=8 B=0 C=3
+  60 [  33] SETTABLE  R8[K21('id')] = K22('MDL')
+  61 [  33] SETTABLE  R8[K23('vis')] = K24(True)
+  62 [  33] SETTABLE  R8[K25('name')] = K26('MODEL')
+  63 [  33] NEWTABLE  A=9 B=0 C=3
+  64 [  34] SETTABLE  R9[K21('id')] = K27('RCL')
+  65 [  34] SETTABLE  R9[K23('vis')] = K28(False)
+  66 [  34] SETTABLE  R9[K25('name')] = K29('RC LINK')
+  67 [  34] NEWTABLE  A=10 B=0 C=3
+  68 [  35] SETTABLE  R10[K21('id')] = K30('BAT')
+  69 [  35] SETTABLE  R10[K23('vis')] = K28(False)
+  70 [  35] SETTABLE  R10[K25('name')] = K31('BATTERY')
+  71 [  35] NEWTABLE  A=11 B=0 C=3
+  72 [  36] SETTABLE  R11[K21('id')] = K32('BFV')
+  73 [  36] SETTABLE  R11[K23('vis')] = K28(False)
+  74 [  36] SETTABLE  R11[K25('name')] = K33('BATTERY FAVS')
+  75 [  36] NEWTABLE  A=12 B=0 C=3
+  76 [  37] SETTABLE  R12[K21('id')] = K34('FC')
+  77 [  37] SETTABLE  R12[K23('vis')] = K28(False)
+  78 [  37] SETTABLE  R12[K25('name')] = K35('FLIGHT CONTROLLER')
+  79 [  37] NEWTABLE  A=13 B=0 C=3
+  80 [  38] SETTABLE  R13[K21('id')] = K36('IND')
+  81 [  38] SETTABLE  R13[K23('vis')] = K28(False)
+  82 [  38] SETTABLE  R13[K25('name')] = K37('INDICATORS')
+  83 [  38] NEWTABLE  A=14 B=0 C=3
+  84 [  39] SETTABLE  R14[K21('id')] = K38('INDBF')
+  85 [  39] SETTABLE  R14[K23('vis')] = K28(False)
+  86 [  39] SETTABLE  R14[K25('name')] = K39('INDICATORS BETAFLIGHT')
+  87 [  39] NEWTABLE  A=15 B=0 C=3
+  88 [  40] SETTABLE  R15[K21('id')] = K40('VTX')
+  89 [  40] SETTABLE  R15[K23('vis')] = K28(False)
+  90 [  40] SETTABLE  R15[K25('name')] = K40('VTX')
+  91 [  40] NEWTABLE  A=16 B=0 C=3
+  92 [  41] SETTABLE  R16[K21('id')] = K41('VFV')
+  93 [  41] SETTABLE  R16[K23('vis')] = K28(False)
+  94 [  41] SETTABLE  R16[K25('name')] = K42('VTX FAVS')
+  95 [  41] NEWTABLE  A=17 B=0 C=3
+  96 [  42] SETTABLE  R17[K21('id')] = K43('GPS')
+  97 [  42] SETTABLE  R17[K23('vis')] = K28(False)
+  98 [  42] SETTABLE  R17[K25('name')] = K43('GPS')
+  99 [  42] NEWTABLE  A=18 B=0 C=3
+ 100 [  43] SETTABLE  R18[K21('id')] = K44('UI')
+ 101 [  43] SETTABLE  R18[K23('vis')] = K28(False)
+ 102 [  43] SETTABLE  R18[K25('name')] = K45('USER INTERFACE')
+ 103 [  43] NEWTABLE  A=19 B=0 C=3
+ 104 [  44] SETTABLE  R19[K21('id')] = K46('APP')
+ 105 [  44] SETTABLE  R19[K23('vis')] = K24(True)
+ 106 [  44] SETTABLE  R19[K25('name')] = K47('APPLICATION')
+ 107 [  45] SETLIST   A=7 B=12 C=1
+ 108 [  45] SETTABLE  R6[K20('pages')] = R7
+ 109 [  47] GETTABLE  R6 = R2[K17('MODCFG')]
+ 110 [  47] NEWTABLE  A=7 B=0 C=0
+ 111 [  47] SETTABLE  R6[K48('pagesByID')] = R7
+ 112 [  48] GETTABUP  R6 = UP0[K49('ipairs')]
+ 113 [  48] GETTABLE  R7 = R2[K17('MODCFG')]
+ 114 [  48] GETTABLE  R7 = R7[K20('pages')]
+ 115 [  48] CALL      A=6 B=2 C=4
+ 116 [  48] JMP       A=0 ->121
+ 117 [  49] GETTABLE  R11 = R2[K17('MODCFG')]
+ 118 [  49] GETTABLE  R11 = R11[K48('pagesByID')]
+ 119 [  49] GETTABLE  R12 = R10[K21('id')]
+ 120 [  49] SETTABLE  R11[R12] = R10
+ 121 [  48] TFORCALL  A=6 B=0 C=2
+ 122 [  48] TFORLOOP  A=8 ->117
+ 123 [  52] GETTABLE  R6 = R2[K17('MODCFG')]
+ 124 [  52] NEWTABLE  A=7 B=0 C=0
+ 125 [  52] SETTABLE  R6[K50('pagesVisible')] = R7
+ 126 [  52] RETURN    A=0 B=1 C=0

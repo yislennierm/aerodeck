@@ -1,0 +1,584 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/SNV.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/SNV.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 6), ('F', 1, 6), ('D', 1, 6), ('X', 1, 6)]
+K0 'UI'
+K1 'SNV'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R2[K0('UI')]
+   3 [ 161] CLOSURE   R5 = proto[0]
+   4 [ 161] SETTABLE  R4[K1('SNV')] = R5
+   5 [ 163] RETURN    A=0 B=1 C=0
+   6 [ 163] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 2 vararg 0 stack 23 lines 12 161 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('a', 0, 487), ('bar', 0, 487), ('drv', 15, 487), ('txt', 55, 487), ('varName', 62, 85), ('vsn', 90, 487), ('unit', 260, 487), ('cv', 261, 487), ('cb', 261, 487), ('cl', 261, 487), ('ci', 261, 487), ('cbar', 261, 487), ('val', 370, 487), ('pcLimit', 419, 445), ('pc', 433, 445), ('ret', 454, 487), ('shift', 459, 487), ('vM', 461, 487), ('vX', 463, 487), ('vL', 465, 487), ('vC', 467, 487), ('v', 469, 487), ('range', 478, 487), ('pct', 483, 487)]
+K0 'val'
+K1 ''
+K2 'unit'
+K3 'cv'
+K4 'C'
+K5 'MD_V'
+K6 'cb'
+K7 'MD_B'
+K8 'cl'
+K9 'MD_L'
+K10 'ci'
+K11 'type'
+K12 'table'
+K13 's'
+K14 'data'
+K15 'S'
+K16 'TLM_data'
+K17 'n'
+K18 'SEN'
+K19 'txt'
+K20 'vs'
+K21 'vo'
+K22 'v'
+K23 'vf'
+K24 'vd'
+K25 'i'
+K26 'f'
+K27 'vM'
+K28 'm'
+K29 0
+K30 'vX'
+K31 'x'
+K32 100
+K33 'vL'
+K34 'l'
+K35 20
+K36 'vC'
+K37 'c'
+K38 10
+K39 'pd'
+K40 'pc'
+K41 'TLM_ON'
+K42 'pr'
+K43 50
+K44 'u'
+K45 'cbC'
+K46 'SNB_C'
+K47 'cvC'
+K48 'SNV_C'
+K49 'clC'
+K50 'SNL_C'
+K51 'ciC'
+K52 'WARN'
+K53 'cbar'
+K54 'BR_C'
+K55 'cbL'
+K56 'SNB_L'
+K57 'cvL'
+K58 'SNV_L'
+K59 'clL'
+K60 'SNL_L'
+K61 'ciL'
+K62 'ALERT'
+K63 'BR_L'
+K64 'cbN'
+K65 'SNB_N'
+K66 'cvN'
+K67 'SNV_N'
+K68 'clN'
+K69 'SNL_N'
+K70 'ciN'
+K71 'OK'
+K72 'BR_N'
+K73 'string'
+K74 'format'
+K75 'pcv'
+K76 'TI'
+K77 'tick'
+K78 'round'
+K79 'pct'
+   1 [  51] NEWTABLE  A=2 B=0 C=6
+   2 [  51] SETTABLE  R2[K0('val')] = K1('')
+   3 [  51] SETTABLE  R2[K2('unit')] = K1('')
+   4 [  51] GETTABUP  R3 = UP0[K4('C')]
+   5 [  51] GETTABLE  R3 = R3[K5('MD_V')]
+   6 [  51] SETTABLE  R2[K3('cv')] = R3
+   7 [  51] GETTABUP  R3 = UP0[K4('C')]
+   8 [  51] GETTABLE  R3 = R3[K7('MD_B')]
+   9 [  51] SETTABLE  R2[K6('cb')] = R3
+  10 [  51] GETTABUP  R3 = UP0[K4('C')]
+  11 [  51] GETTABLE  R3 = R3[K9('MD_L')]
+  12 [  51] SETTABLE  R2[K8('cl')] = R3
+  13 [  51] GETTABUP  R3 = UP0[K4('C')]
+  14 [  51] GETTABLE  R3 = R3[K7('MD_B')]
+  15 [  51] SETTABLE  R2[K10('ci')] = R3
+  16 [  52] GETTABUP  R3 = UP1[K11('type')]
+  17 [  52] MOVE      A=4 B=0 C=0
+  18 [  52] CALL      A=3 B=2 C=2
+  19 [  52] EQ        A=0 R3, K12('table'); skip-next if condition != A
+  20 [  52] JMP       A=0 ->24
+  21 [  52] GETTABLE  R3 = R0[K13('s')]
+  22 [  52] TEST      A=3 B=0 C=1
+  23 [  52] JMP       A=0 ->26
+  24 [  53] RETURN    A=2 B=2 C=0
+  25 [  53] JMP       A=0 ->36
+  26 [  55] GETTABLE  R3 = R0[K14('data')]
+  27 [  55] TEST      A=3 B=0 C=1
+  28 [  55] JMP       A=0 ->31
+  29 [  55] GETTABUP  R3 = UP0[K15('S')]
+  30 [  55] GETTABLE  R3 = R3[K16('TLM_data')]
+  31 [  55] SETTABLE  R0[K14('data')] = R3
+  32 [  56] GETTABLE  R3 = R0[K14('data')]
+  33 [  56] TEST      A=3 B=0 C=1
+  34 [  56] JMP       A=0 ->36
+  35 [  56] RETURN    A=2 B=2 C=0
+  36 [  61] GETTABUP  R3 = UP0[K18('SEN')]
+  37 [  61] GETTABLE  R4 = R0[K13('s')]
+  38 [  61] LOADK     R5 = K17 ('n')
+  39 [  61] CONCAT    A=4 B=4 C=5
+  40 [  61] GETTABLE  R3 = R3[R4]
+  41 [  61] TEST      A=3 B=0 C=1
+  42 [  61] JMP       A=0 ->47
+  43 [  61] GETTABLE  R3 = R0[K17('n')]
+  44 [  61] TEST      A=3 B=0 C=1
+  45 [  61] JMP       A=0 ->47
+  46 [  61] LOADK     R3 = K1 ('')
+  47 [  61] SETTABLE  R0[K17('n')] = R3
+  48 [  62] GETTABUP  R3 = UP0[K18('SEN')]
+  49 [  62] GETTABLE  R4 = R0[K13('s')]
+  50 [  62] LOADK     R5 = K19 ('txt')
+  51 [  62] CONCAT    A=4 B=4 C=5
+  52 [  62] GETTABLE  R3 = R3[R4]
+  53 [  62] TEST      A=3 B=0 C=1
+  54 [  62] JMP       A=0 ->56
+  55 [  62] LOADBOOL  A=3 B=0 C=0
+  56 [  63] TEST      A=3 B=0 C=0
+  57 [  63] JMP       A=0 ->86
+  58 [  64] GETTABUP  R4 = UP0[K18('SEN')]
+  59 [  64] GETTABLE  R5 = R0[K13('s')]
+  60 [  64] LOADK     R6 = K20 ('vs')
+  61 [  64] CONCAT    A=5 B=5 C=6
+  62 [  64] GETTABLE  R4 = R4[R5]
+  63 [  65] NEWTABLE  A=5 B=0 C=7
+  64 [  65] GETTABLE  R6 = R0[K17('n')]
+  65 [  65] SETTABLE  R5[K17('n')] = R6
+  66 [  65] GETTABUP  R6 = UP0[K15('S')]
+  67 [  65] GETTABLE  R6 = R6[R4]
+  68 [  65] TEST      A=6 B=0 C=1
+  69 [  65] JMP       A=0 ->71
+  70 [  65] LOADK     R6 = K1 ('')
+  71 [  65] SETTABLE  R5[K0('val')] = R6
+  72 [  65] SETTABLE  R5[K2('unit')] = K1('')
+  73 [  65] GETTABUP  R6 = UP0[K4('C')]
+  74 [  65] GETTABLE  R6 = R6[K5('MD_V')]
+  75 [  65] SETTABLE  R5[K3('cv')] = R6
+  76 [  65] GETTABUP  R6 = UP0[K4('C')]
+  77 [  65] GETTABLE  R6 = R6[K7('MD_B')]
+  78 [  65] SETTABLE  R5[K6('cb')] = R6
+  79 [  65] GETTABUP  R6 = UP0[K4('C')]
+  80 [  65] GETTABLE  R6 = R6[K9('MD_L')]
+  81 [  65] SETTABLE  R5[K8('cl')] = R6
+  82 [  65] GETTABUP  R6 = UP0[K4('C')]
+  83 [  65] GETTABLE  R6 = R6[K7('MD_B')]
+  84 [  65] SETTABLE  R5[K10('ci')] = R6
+  85 [  65] RETURN    A=5 B=2 C=0
+  86 [  67] GETTABUP  R4 = UP0[K18('SEN')]
+  87 [  67] GETTABLE  R5 = R0[K13('s')]
+  88 [  67] LOADK     R6 = K20 ('vs')
+  89 [  67] CONCAT    A=5 B=5 C=6
+  90 [  67] GETTABLE  R4 = R4[R5]
+  91 [  68] GETTABLE  R5 = R0[K21('vo')]
+  92 [  68] TEST      A=5 B=0 C=1
+  93 [  68] JMP       A=0 ->105
+  94 [  68] GETTABLE  R5 = R0[K13('s')]
+  95 [  68] TEST      A=5 B=0 C=0
+  96 [  68] JMP       A=0 ->104
+  97 [  68] GETTABUP  R5 = UP0[K18('SEN')]
+  98 [  68] GETTABLE  R6 = R0[K13('s')]
+  99 [  68] LOADK     R7 = K21 ('vo')
+ 100 [  68] CONCAT    A=6 B=6 C=7
+ 101 [  68] GETTABLE  R5 = R5[R6]
+ 102 [  68] TEST      A=5 B=0 C=1
+ 103 [  68] JMP       A=0 ->105
+ 104 [  68] LOADNIL   A=5 B=0 C=0
+ 105 [  68] SETTABLE  R0[K21('vo')] = R5
+ 106 [  69] GETTABLE  R5 = R0[K21('vo')]
+ 107 [  69] TEST      A=5 B=0 C=0
+ 108 [  69] JMP       A=0 ->112
+ 109 [  70] GETTABLE  R5 = R0[K21('vo')]
+ 110 [  70] SETTABLE  R0[K22('v')] = R5
+ 111 [  70] JMP       A=0 ->120
+ 112 [  72] TEST      A=4 B=0 C=0
+ 113 [  72] JMP       A=0 ->118
+ 114 [  72] GETTABUP  R5 = UP0[K15('S')]
+ 115 [  72] GETTABLE  R5 = R5[R4]
+ 116 [  72] TEST      A=5 B=0 C=1
+ 117 [  72] JMP       A=0 ->119
+ 118 [  72] GETTABLE  R5 = R0[K22('v')]
+ 119 [  72] SETTABLE  R0[K22('v')] = R5
+ 120 [  74] GETTABLE  R5 = R0[K22('v')]
+ 121 [  74] TEST      A=5 B=0 C=0
+ 122 [  74] JMP       A=0 ->139
+ 123 [  74] GETTABUP  R5 = UP0[K18('SEN')]
+ 124 [  74] GETTABLE  R6 = R0[K13('s')]
+ 125 [  74] LOADK     R7 = K23 ('vf')
+ 126 [  74] CONCAT    A=6 B=6 C=7
+ 127 [  74] GETTABLE  R5 = R5[R6]
+ 128 [  74] TEST      A=5 B=0 C=0
+ 129 [  74] JMP       A=0 ->139
+ 130 [  74] GETTABUP  R5 = UP0[K18('SEN')]
+ 131 [  74] GETTABLE  R6 = R0[K13('s')]
+ 132 [  74] LOADK     R7 = K23 ('vf')
+ 133 [  74] CONCAT    A=6 B=6 C=7
+ 134 [  74] GETTABLE  R5 = R5[R6]
+ 135 [  74] GETTABLE  R6 = R0[K22('v')]
+ 136 [  74] CALL      A=5 B=2 C=2
+ 137 [  74] TEST      A=5 B=0 C=1
+ 138 [  74] JMP       A=0 ->140
+ 139 [  74] GETTABLE  R5 = R0[K22('v')]
+ 140 [  74] SETTABLE  R0[K22('v')] = R5
+ 141 [  75] GETTABUP  R5 = UP0[K18('SEN')]
+ 142 [  75] GETTABLE  R6 = R0[K13('s')]
+ 143 [  75] LOADK     R7 = K24 ('vd')
+ 144 [  75] CONCAT    A=6 B=6 C=7
+ 145 [  75] GETTABLE  R5 = R5[R6]
+ 146 [  75] TEST      A=5 B=0 C=1
+ 147 [  75] JMP       A=0 ->149
+ 148 [  75] GETTABLE  R5 = R0[K24('vd')]
+ 149 [  75] SETTABLE  R0[K24('vd')] = R5
+ 150 [  76] GETTABUP  R5 = UP0[K18('SEN')]
+ 151 [  76] GETTABLE  R6 = R0[K13('s')]
+ 152 [  76] LOADK     R7 = K25 ('i')
+ 153 [  76] CONCAT    A=6 B=6 C=7
+ 154 [  76] GETTABLE  R5 = R5[R6]
+ 155 [  76] TEST      A=5 B=0 C=1
+ 156 [  76] JMP       A=0 ->161
+ 157 [  76] GETTABLE  R5 = R0[K25('i')]
+ 158 [  76] TEST      A=5 B=0 C=1
+ 159 [  76] JMP       A=0 ->161
+ 160 [  76] LOADBOOL  A=5 B=0 C=0
+ 161 [  76] SETTABLE  R0[K25('i')] = R5
+ 162 [  77] GETTABLE  R5 = R0[K26('f')]
+ 163 [  77] TEST      A=5 B=0 C=1
+ 164 [  77] JMP       A=0 ->173
+ 165 [  77] GETTABUP  R5 = UP0[K18('SEN')]
+ 166 [  77] GETTABLE  R6 = R0[K13('s')]
+ 167 [  77] LOADK     R7 = K26 ('f')
+ 168 [  77] CONCAT    A=6 B=6 C=7
+ 169 [  77] GETTABLE  R5 = R5[R6]
+ 170 [  77] TEST      A=5 B=0 C=1
+ 171 [  77] JMP       A=0 ->173
+ 172 [  77] LOADNIL   A=5 B=0 C=0
+ 173 [  77] SETTABLE  R0[K26('f')] = R5
+ 174 [  78] GETTABUP  R5 = UP0[K18('SEN')]
+ 175 [  78] GETTABLE  R6 = R0[K13('s')]
+ 176 [  78] LOADK     R7 = K28 ('m')
+ 177 [  78] CONCAT    A=6 B=6 C=7
+ 178 [  78] GETTABLE  R5 = R5[R6]
+ 179 [  78] TEST      A=5 B=0 C=1
+ 180 [  78] JMP       A=0 ->185
+ 181 [  78] GETTABLE  R5 = R0[K27('vM')]
+ 182 [  78] TEST      A=5 B=0 C=1
+ 183 [  78] JMP       A=0 ->185
+ 184 [  78] LOADK     R5 = K29 (0)
+ 185 [  78] SETTABLE  R0[K27('vM')] = R5
+ 186 [  79] GETTABUP  R5 = UP0[K18('SEN')]
+ 187 [  79] GETTABLE  R6 = R0[K13('s')]
+ 188 [  79] LOADK     R7 = K31 ('x')
+ 189 [  79] CONCAT    A=6 B=6 C=7
+ 190 [  79] GETTABLE  R5 = R5[R6]
+ 191 [  79] TEST      A=5 B=0 C=1
+ 192 [  79] JMP       A=0 ->197
+ 193 [  79] GETTABLE  R5 = R0[K30('vX')]
+ 194 [  79] TEST      A=5 B=0 C=1
+ 195 [  79] JMP       A=0 ->197
+ 196 [  79] LOADK     R5 = K32 (100)
+ 197 [  79] SETTABLE  R0[K30('vX')] = R5
+ 198 [  80] GETTABUP  R5 = UP0[K18('SEN')]
+ 199 [  80] GETTABLE  R6 = R0[K13('s')]
+ 200 [  80] LOADK     R7 = K34 ('l')
+ 201 [  80] CONCAT    A=6 B=6 C=7
+ 202 [  80] GETTABLE  R5 = R5[R6]
+ 203 [  80] TEST      A=5 B=0 C=1
+ 204 [  80] JMP       A=0 ->209
+ 205 [  80] GETTABLE  R5 = R0[K33('vL')]
+ 206 [  80] TEST      A=5 B=0 C=1
+ 207 [  80] JMP       A=0 ->209
+ 208 [  80] LOADK     R5 = K35 (20)
+ 209 [  80] SETTABLE  R0[K33('vL')] = R5
+ 210 [  81] GETTABUP  R5 = UP0[K18('SEN')]
+ 211 [  81] GETTABLE  R6 = R0[K13('s')]
+ 212 [  81] LOADK     R7 = K37 ('c')
+ 213 [  81] CONCAT    A=6 B=6 C=7
+ 214 [  81] GETTABLE  R5 = R5[R6]
+ 215 [  81] TEST      A=5 B=0 C=1
+ 216 [  81] JMP       A=0 ->221
+ 217 [  81] GETTABLE  R5 = R0[K36('vC')]
+ 218 [  81] TEST      A=5 B=0 C=1
+ 219 [  81] JMP       A=0 ->221
+ 220 [  81] LOADK     R5 = K38 (10)
+ 221 [  81] SETTABLE  R0[K36('vC')] = R5
+ 222 [  83] GETTABLE  R5 = R0[K39('pd')]
+ 223 [  83] TEST      A=5 B=0 C=1
+ 224 [  83] JMP       A=0 ->226
+ 225 [  83] LOADBOOL  A=5 B=0 C=0
+ 226 [  83] SETTABLE  R0[K39('pd')] = R5
+ 227 [  84] GETTABLE  R5 = R0[K40('pc')]
+ 228 [  84] TEST      A=5 B=0 C=1
+ 229 [  84] JMP       A=0 ->236
+ 230 [  84] GETTABUP  R5 = UP0[K15('S')]
+ 231 [  84] GETTABLE  R5 = R5[K41('TLM_ON')]
+ 232 [  84] TEST      A=5 B=0 C=0
+ 233 [  84] JMP       A=0 ->236
+ 234 [  84] GETTABUP  R5 = UP0[K15('S')]
+ 235 [  84] GETTABLE  R5 = R5[K16('TLM_data')]
+ 236 [  84] SETTABLE  R0[K40('pc')] = R5
+ 237 [  85] GETTABLE  R5 = R0[K42('pr')]
+ 238 [  85] TEST      A=5 B=0 C=1
+ 239 [  85] JMP       A=0 ->241
+ 240 [  85] LOADK     R5 = K43 (50)
+ 241 [  85] SETTABLE  R0[K42('pr')] = R5
+ 242 [  87] GETTABLE  R5 = R0[K22('v')]
+ 243 [  87] TEST      A=5 B=0 C=1
+ 244 [  87] JMP       A=0 ->246
+ 245 [  87] GETTABLE  R5 = R0[K27('vM')]
+ 246 [  87] SETTABLE  R0[K22('v')] = R5
+ 247 [  90] GETTABLE  R5 = R0[K44('u')]
+ 248 [  90] TEST      A=5 B=0 C=1
+ 249 [  90] JMP       A=0 ->261
+ 250 [  90] GETTABLE  R5 = R0[K13('s')]
+ 251 [  90] TEST      A=5 B=0 C=0
+ 252 [  90] JMP       A=0 ->260
+ 253 [  90] GETTABUP  R5 = UP0[K18('SEN')]
+ 254 [  90] GETTABLE  R6 = R0[K13('s')]
+ 255 [  90] LOADK     R7 = K44 ('u')
+ 256 [  90] CONCAT    A=6 B=6 C=7
+ 257 [  90] GETTABLE  R5 = R5[R6]
+ 258 [  90] TEST      A=5 B=0 C=1
+ 259 [  90] JMP       A=0 ->261
+ 260 [  90] LOADK     R5 = K1 ('')
+ 261 [  93] LOADNIL   A=6 B=4 C=0
+ 262 [  97] GETTABLE  R11 = R0[K25('i')]
+ 263 [  97] TEST      A=11 B=0 C=0
+ 264 [  97] JMP       A=0 ->269
+ 265 [  97] GETTABLE  R11 = R0[K22('v')]
+ 266 [  97] GETTABLE  R12 = R0[K36('vC')]
+ 267 [  97] LE        A=1 R12, R11; skip-next if condition != A
+ 268 [  97] JMP       A=0 ->276
+ 269 [  97] GETTABLE  R11 = R0[K25('i')]
+ 270 [  97] TEST      A=11 B=0 C=1
+ 271 [  97] JMP       A=0 ->302
+ 272 [  97] GETTABLE  R11 = R0[K22('v')]
+ 273 [  97] GETTABLE  R12 = R0[K36('vC')]
+ 274 [  97] LE        A=0 R11, R12; skip-next if condition != A
+ 275 [  97] JMP       A=0 ->302
+ 276 [  99] GETTABLE  R11 = R0[K45('cbC')]
+ 277 [  99] TESTSET   A=7 B=11 C=1
+ 278 [  99] JMP       A=0 ->281
+ 279 [  99] GETTABUP  R11 = UP0[K4('C')]
+ 280 [  99] GETTABLE  R7 = R11[K46('SNB_C')]
+ 281 [ 100] GETTABLE  R11 = R0[K47('cvC')]
+ 282 [ 100] TESTSET   A=6 B=11 C=1
+ 283 [ 100] JMP       A=0 ->286
+ 284 [ 100] GETTABUP  R11 = UP0[K4('C')]
+ 285 [ 100] GETTABLE  R6 = R11[K48('SNV_C')]
+ 286 [ 101] GETTABLE  R11 = R0[K49('clC')]
+ 287 [ 101] TESTSET   A=8 B=11 C=1
+ 288 [ 101] JMP       A=0 ->291
+ 289 [ 101] GETTABUP  R11 = UP0[K4('C')]
+ 290 [ 101] GETTABLE  R8 = R11[K50('SNL_C')]
+ 291 [ 102] GETTABLE  R11 = R0[K51('ciC')]
+ 292 [ 102] TESTSET   A=9 B=11 C=1
+ 293 [ 102] JMP       A=0 ->296
+ 294 [ 102] GETTABUP  R11 = UP0[K4('C')]
+ 295 [ 102] GETTABLE  R9 = R11[K52('WARN')]
+ 296 [ 103] GETTABLE  R11 = R0[K53('cbar')]
+ 297 [ 103] TESTSET   A=10 B=11 C=1
+ 298 [ 103] JMP       A=0 ->301
+ 299 [ 103] GETTABUP  R11 = UP0[K4('C')]
+ 300 [ 103] GETTABLE  R10 = R11[K54('BR_C')]
+ 301 [ 103] JMP       A=0 ->367
+ 302 [ 104] GETTABLE  R11 = R0[K25('i')]
+ 303 [ 104] TEST      A=11 B=0 C=0
+ 304 [ 104] JMP       A=0 ->309
+ 305 [ 104] GETTABLE  R11 = R0[K22('v')]
+ 306 [ 104] GETTABLE  R12 = R0[K33('vL')]
+ 307 [ 104] LE        A=1 R12, R11; skip-next if condition != A
+ 308 [ 104] JMP       A=0 ->316
+ 309 [ 104] GETTABLE  R11 = R0[K25('i')]
+ 310 [ 104] TEST      A=11 B=0 C=1
+ 311 [ 104] JMP       A=0 ->342
+ 312 [ 104] GETTABLE  R11 = R0[K22('v')]
+ 313 [ 104] GETTABLE  R12 = R0[K33('vL')]
+ 314 [ 104] LE        A=0 R11, R12; skip-next if condition != A
+ 315 [ 104] JMP       A=0 ->342
+ 316 [ 106] GETTABLE  R11 = R0[K55('cbL')]
+ 317 [ 106] TESTSET   A=7 B=11 C=1
+ 318 [ 106] JMP       A=0 ->321
+ 319 [ 106] GETTABUP  R11 = UP0[K4('C')]
+ 320 [ 106] GETTABLE  R7 = R11[K56('SNB_L')]
+ 321 [ 107] GETTABLE  R11 = R0[K57('cvL')]
+ 322 [ 107] TESTSET   A=6 B=11 C=1
+ 323 [ 107] JMP       A=0 ->326
+ 324 [ 107] GETTABUP  R11 = UP0[K4('C')]
+ 325 [ 107] GETTABLE  R6 = R11[K58('SNV_L')]
+ 326 [ 108] GETTABLE  R11 = R0[K59('clL')]
+ 327 [ 108] TESTSET   A=8 B=11 C=1
+ 328 [ 108] JMP       A=0 ->331
+ 329 [ 108] GETTABUP  R11 = UP0[K4('C')]
+ 330 [ 108] GETTABLE  R8 = R11[K60('SNL_L')]
+ 331 [ 109] GETTABLE  R11 = R0[K61('ciL')]
+ 332 [ 109] TESTSET   A=9 B=11 C=1
+ 333 [ 109] JMP       A=0 ->336
+ 334 [ 109] GETTABUP  R11 = UP0[K4('C')]
+ 335 [ 109] GETTABLE  R9 = R11[K62('ALERT')]
+ 336 [ 110] GETTABLE  R11 = R0[K53('cbar')]
+ 337 [ 110] TESTSET   A=10 B=11 C=1
+ 338 [ 110] JMP       A=0 ->341
+ 339 [ 110] GETTABUP  R11 = UP0[K4('C')]
+ 340 [ 110] GETTABLE  R10 = R11[K63('BR_L')]
+ 341 [ 110] JMP       A=0 ->367
+ 342 [ 113] GETTABLE  R11 = R0[K64('cbN')]
+ 343 [ 113] TESTSET   A=7 B=11 C=1
+ 344 [ 113] JMP       A=0 ->347
+ 345 [ 113] GETTABUP  R11 = UP0[K4('C')]
+ 346 [ 113] GETTABLE  R7 = R11[K65('SNB_N')]
+ 347 [ 114] GETTABLE  R11 = R0[K66('cvN')]
+ 348 [ 114] TESTSET   A=6 B=11 C=1
+ 349 [ 114] JMP       A=0 ->352
+ 350 [ 114] GETTABUP  R11 = UP0[K4('C')]
+ 351 [ 114] GETTABLE  R6 = R11[K67('SNV_N')]
+ 352 [ 115] GETTABLE  R11 = R0[K68('clN')]
+ 353 [ 115] TESTSET   A=8 B=11 C=1
+ 354 [ 115] JMP       A=0 ->357
+ 355 [ 115] GETTABUP  R11 = UP0[K4('C')]
+ 356 [ 115] GETTABLE  R8 = R11[K69('SNL_N')]
+ 357 [ 116] GETTABLE  R11 = R0[K70('ciN')]
+ 358 [ 116] TESTSET   A=9 B=11 C=1
+ 359 [ 116] JMP       A=0 ->362
+ 360 [ 116] GETTABUP  R11 = UP0[K4('C')]
+ 361 [ 116] GETTABLE  R9 = R11[K71('OK')]
+ 362 [ 117] GETTABLE  R11 = R0[K53('cbar')]
+ 363 [ 117] TESTSET   A=10 B=11 C=1
+ 364 [ 117] JMP       A=0 ->367
+ 365 [ 117] GETTABUP  R11 = UP0[K4('C')]
+ 366 [ 117] GETTABLE  R10 = R11[K72('BR_N')]
+ 367 [ 120] GETTABLE  R11 = R0[K22('v')]
+ 368 [ 120] TEST      A=11 B=0 C=1
+ 369 [ 120] JMP       A=0 ->371
+ 370 [ 120] LOADK     R11 = K1 ('')
+ 371 [ 123] GETTABLE  R12 = R0[K22('v')]
+ 372 [ 123] GETTABLE  R13 = R0[K30('vX')]
+ 373 [ 123] LT        A=0 R13, R12; skip-next if condition != A
+ 374 [ 123] JMP       A=0 ->378
+ 375 [ 123] GETTABLE  R12 = R0[K30('vX')]
+ 376 [ 123] TESTSET   A=11 B=12 C=1
+ 377 [ 123] JMP       A=0 ->386
+ 378 [ 123] GETTABLE  R12 = R0[K22('v')]
+ 379 [ 123] GETTABLE  R13 = R0[K27('vM')]
+ 380 [ 123] LT        A=0 R12, R13; skip-next if condition != A
+ 381 [ 123] JMP       A=0 ->385
+ 382 [ 123] GETTABLE  R12 = R0[K27('vM')]
+ 383 [ 123] TESTSET   A=11 B=12 C=1
+ 384 [ 123] JMP       A=0 ->386
+ 385 [ 123] GETTABLE  R11 = R0[K22('v')]
+ 386 [ 125] GETTABLE  R12 = R0[K24('vd')]
+ 387 [ 125] TEST      A=12 B=0 C=0
+ 388 [ 125] JMP       A=0 ->392
+ 389 [ 125] GETTABLE  R12 = R0[K24('vd')]
+ 390 [ 125] TESTSET   A=11 B=12 C=1
+ 391 [ 125] JMP       A=0 ->392
+ 392 [ 126] GETTABUP  R12 = UP1[K11('type')]
+ 393 [ 126] MOVE      A=13 B=11 C=0
+ 394 [ 126] CALL      A=12 B=2 C=2
+ 395 [ 126] EQ        A=1 R12, K73('string'); skip-next if condition != A
+ 396 [ 126] JMP       A=0 ->407
+ 397 [ 126] GETTABLE  R12 = R0[K26('f')]
+ 398 [ 126] TEST      A=12 B=0 C=0
+ 399 [ 126] JMP       A=0 ->407
+ 400 [ 126] GETTABUP  R12 = UP1[K73('string')]
+ 401 [ 126] GETTABLE  R12 = R12[K74('format')]
+ 402 [ 126] GETTABLE  R13 = R0[K26('f')]
+ 403 [ 126] MOVE      A=14 B=11 C=0
+ 404 [ 126] CALL      A=12 B=3 C=2
+ 405 [ 126] TESTSET   A=11 B=12 C=1
+ 406 [ 126] JMP       A=0 ->407
+ 407 [ 131] GETTABLE  R12 = R0[K39('pd')]
+ 408 [ 131] TEST      A=12 B=0 C=1
+ 409 [ 131] JMP       A=0 ->446
+ 410 [ 132] GETTABLE  R12 = R0[K75('pcv')]
+ 411 [ 132] TEST      A=12 B=0 C=1
+ 412 [ 132] JMP       A=0 ->420
+ 413 [ 132] GETTABLE  R12 = R0[K25('i')]
+ 414 [ 132] TEST      A=12 B=0 C=0
+ 415 [ 132] JMP       A=0 ->419
+ 416 [ 132] GETTABLE  R12 = R0[K30('vX')]
+ 417 [ 132] TEST      A=12 B=0 C=1
+ 418 [ 132] JMP       A=0 ->420
+ 419 [ 132] GETTABLE  R12 = R0[K27('vM')]
+ 420 [ 133] GETTABLE  R13 = R0[K25('i')]
+ 421 [ 133] TEST      A=13 B=0 C=1
+ 422 [ 133] JMP       A=0 ->426
+ 423 [ 133] GETTABLE  R13 = R0[K22('v')]
+ 424 [ 133] LE        A=1 R13, R12; skip-next if condition != A
+ 425 [ 133] JMP       A=0 ->433
+ 426 [ 133] GETTABLE  R13 = R0[K25('i')]
+ 427 [ 133] TEST      A=13 B=0 C=0
+ 428 [ 133] JMP       A=0 ->434
+ 429 [ 133] GETTABLE  R13 = R0[K22('v')]
+ 430 [ 133] LE        A=1 R12, R13; skip-next if condition != A
+ 431 [ 133] JMP       A=0 ->433
+ 432 [ 133] LOADBOOL  A=13 B=0 C=1
+ 433 [ 133] LOADBOOL  A=13 B=1 C=0
+ 434 [ 134] TEST      A=13 B=0 C=0
+ 435 [ 134] JMP       A=0 ->446
+ 436 [ 134] GETTABUP  R14 = UP0[K76('TI')]
+ 437 [ 134] LOADK     R15 = K77 ('tick')
+ 438 [ 134] GETTABLE  R16 = R0[K42('pr')]
+ 439 [ 134] CONCAT    A=15 B=15 C=16
+ 440 [ 134] GETTABLE  R14 = R14[R15]
+ 441 [ 134] TEST      A=14 B=0 C=0
+ 442 [ 134] JMP       A=0 ->446
+ 443 [ 134] LOADK     R14 = K1 ('')
+ 444 [ 134] TESTSET   A=11 B=14 C=1
+ 445 [ 134] JMP       A=0 ->446
+ 446 [ 139] NEWTABLE  A=12 B=0 C=7
+ 447 [ 139] GETTABLE  R13 = R0[K17('n')]
+ 448 [ 139] SETTABLE  R12[K17('n')] = R13
+ 449 [ 139] SETTABLE  R12[K0('val')] = R11
+ 450 [ 139] SETTABLE  R12[K2('unit')] = R5
+ 451 [ 139] SETTABLE  R12[K3('cv')] = R6
+ 452 [ 139] SETTABLE  R12[K6('cb')] = R7
+ 453 [ 139] SETTABLE  R12[K8('cl')] = R8
+ 454 [ 139] SETTABLE  R12[K10('ci')] = R9
+ 455 [ 140] TEST      A=1 B=0 C=1
+ 456 [ 140] JMP       A=0 ->458
+ 457 [ 141] RETURN    A=12 B=2 C=0
+ 458 [ 145] GETTABLE  R13 = R0[K27('vM')]
+ 459 [ 145] SUB       A=13 B=285 C=13
+ 460 [ 146] GETTABLE  R14 = R0[K27('vM')]
+ 461 [ 146] ADD       A=14 B=14 C=13
+ 462 [ 147] GETTABLE  R15 = R0[K30('vX')]
+ 463 [ 147] ADD       A=15 B=15 C=13
+ 464 [ 148] GETTABLE  R16 = R0[K33('vL')]
+ 465 [ 148] ADD       A=16 B=16 C=13
+ 466 [ 149] GETTABLE  R17 = R0[K36('vC')]
+ 467 [ 149] ADD       A=17 B=17 C=13
+ 468 [ 150] GETTABLE  R18 = R0[K22('v')]
+ 469 [ 150] ADD       A=18 B=18 C=13
+ 470 [ 152] LT        A=0 R15, R18; skip-next if condition != A
+ 471 [ 152] JMP       A=0 ->474
+ 472 [ 152] TESTSET   A=18 B=15 C=1
+ 473 [ 152] JMP       A=0 ->478
+ 474 [ 152] LT        A=0 R18, R14; skip-next if condition != A
+ 475 [ 152] JMP       A=0 ->478
+ 476 [ 152] TESTSET   A=18 B=14 C=1
+ 477 [ 152] JMP       A=0 ->478
+ 478 [ 154] SUB       A=19 B=15 C=14
+ 479 [ 155] GETTABUP  R20 = UP2[K78('round')]
+ 480 [ 155] MUL       A=21 B=18 C=288
+ 481 [ 155] DIV       A=21 B=21 C=19
+ 482 [ 155] LOADK     R22 = K29 (0)
+ 483 [ 155] CALL      A=20 B=3 C=2
+ 484 [ 157] SETTABLE  R12[K53('cbar')] = R10
+ 485 [ 158] SETTABLE  R12[K79('pct')] = R20
+ 486 [ 160] RETURN    A=12 B=2 C=0
+ 487 [ 161] RETURN    A=0 B=1 C=0

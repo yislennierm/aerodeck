@@ -6,7 +6,7 @@
 --
 -- makeAdapter(E) returns a fresh app/fixture, initially warmed on Flight:
 --   send(event,touch) -> actual app.run result (nil event must remain nil)
---   state() -> {page, navFocus=nil|1..6, controlFocus=nil|id,
+--   state() -> {page, navFocus=nil|0..6, controlFocus=nil|id,
 --               navCaption=string, controlCaption=string}
 --   arrange(page) -> test-only page arrangement; clear focus, keep app initialized
 --   bitmapLoads() -> cumulative Bitmap.open counter
@@ -17,7 +17,7 @@
 local contract={}
 function contract.run(makeAdapter,E)
  assert(type(makeAdapter)=='function','provide real-app adapter factory')
- local roots={1,5,7,11,8,6}
+ local roots={5,7,11,8,6,10}
  local required={'send','state','arrange','bitmapLoads','setWarning','visible'}
  local count=0
  local function eq(actual,expected,message)
@@ -61,26 +61,26 @@ function contract.run(makeAdapter,E)
  end)
  scenario('one SYS press focuses once and release selects nothing',function(a)
   normal(a,E.EVT_SYS_FIRST);noFocus(a)
-  normal(a,E.EVT_SYS_BREAK);eq(a.state().navFocus,1,'SYS focuses current section');page(a,1)
+  normal(a,E.EVT_SYS_BREAK);eq(a.state().navFocus,0,'SYS focuses current section');page(a,1)
   assert(type(a.state().navCaption)=='string' and #a.state().navCaption>0,'focused icon has a readable name')
-  normal(a,E.EVT_ENTER_FIRST);eq(a.state().navFocus,1,'ENTER FIRST does not activate')
+  normal(a,E.EVT_ENTER_FIRST);eq(a.state().navFocus,0,'ENTER FIRST does not activate')
   normal(a,E.EVT_VIRTUAL_ENTER);noFocus(a);page(a,1)
  end)
  scenario('guarded MDL virtual-menu alias also focuses navigation',function(a)
-  normal(a,E.EVT_VIRTUAL_MENU);eq(a.state().navFocus,1,'virtual menu focuses current section')
+  normal(a,E.EVT_VIRTUAL_MENU);eq(a.state().navFocus,0,'virtual menu focuses current section')
   normal(a,E.EVT_VIRTUAL_EXIT);noFocus(a);page(a,1)
  end)
  scenario('focused rotary and PAGE only move focus, with wrapping',function(a)
   normal(a,E.EVT_SYS_BREAK)
-  normal(a,E.EVT_VIRTUAL_INC);eq(a.state().navFocus,2,'one aliased INC/NEXT event moves once');page(a,1)
-  normal(a,E.EVT_VIRTUAL_PREV_PAGE);eq(a.state().navFocus,1,'focused PAGE previous');page(a,1)
+  normal(a,E.EVT_VIRTUAL_INC);eq(a.state().navFocus,1,'one aliased INC/NEXT event moves once');page(a,1)
+  normal(a,E.EVT_VIRTUAL_PREV_PAGE);eq(a.state().navFocus,0,'focused PAGE previous');page(a,1)
   normal(a,E.EVT_VIRTUAL_PREV);eq(a.state().navFocus,6,'backward wrap');page(a,1)
-  normal(a,E.EVT_VIRTUAL_NEXT_PAGE);eq(a.state().navFocus,1,'forward wrap');page(a,1)
+  normal(a,E.EVT_VIRTUAL_NEXT_PAGE);eq(a.state().navFocus,0,'forward wrap');page(a,1)
   local captions={}
-  for i=1,6 do
+  for i=0,6 do
    eq(a.state().navFocus,i,'focused section order')
    local caption=a.state().navCaption
-   assert(type(caption)=='string' and #caption>0 and not captions[caption],'six focus captions are readable and distinct')
+   assert(type(caption)=='string' and #caption>0 and not captions[caption],'seven focus captions are readable and distinct')
    captions[caption]=true;normal(a,E.EVT_VIRTUAL_NEXT);page(a,1)
   end
   normal(a,E.EVT_VIRTUAL_EXIT);noFocus(a);page(a,1)
@@ -89,12 +89,12 @@ function contract.run(makeAdapter,E)
   normal(a,E.EVT_SYS_BREAK);normal(a,E.EVT_VIRTUAL_NEXT);normal(a,E.EVT_VIRTUAL_ENTER)
   page(a,5);noFocus(a)
  end)
- scenario('normal PAGE follows the same six root destinations',function(a)
-  for _,id in ipairs({5,7,11,8,6,1})do normal(a,E.EVT_VIRTUAL_NEXT_PAGE);page(a,id);noFocus(a)end
-  for _,id in ipairs({6,8,11,7,5,1})do normal(a,E.EVT_VIRTUAL_PREV_PAGE);page(a,id);noFocus(a)end
+ scenario('normal PAGE follows the same seven root destinations',function(a)
+  for _,id in ipairs({5,7,11,8,6,10,1})do normal(a,E.EVT_VIRTUAL_NEXT_PAGE);page(a,id);noFocus(a)end
+  for _,id in ipairs({10,6,8,11,7,5,1})do normal(a,E.EVT_VIRTUAL_PREV_PAGE);page(a,id);noFocus(a)end
  end)
  scenario('detail PAGE uses its owner section before cycling',function(a)
-  for _,case in ipairs({{10,5,6},{3,7,1},{9,7,1},{2,11,5},{4,1,8},{12,1,8}})do
+  for _,case in ipairs({{10,1,6},{13,1,6},{3,7,1},{9,7,1},{2,11,5},{4,10,8},{12,10,8}})do
    a.arrange(case[1]);normal(a,E.EVT_VIRTUAL_NEXT_PAGE);page(a,case[2])
    a.arrange(case[1]);normal(a,E.EVT_VIRTUAL_PREV_PAGE);page(a,case[3])
   end
@@ -102,7 +102,7 @@ function contract.run(makeAdapter,E)
  scenario('section touch always opens its root, not a remembered detail',function(a)
   for i,id in ipairs(roots)do
    a.arrange(({10,9,2,11,8,12})[i])
-   local left=104+math.floor((i-1)*376/6);local right=104+math.floor(i*376/6)
+   local left=120+math.floor((i-1)*360/6);local right=120+math.floor(i*360/6)
    normal(a,E.EVT_TOUCH_TAP,{x=left,y=0});page(a,id)
    normal(a,E.EVT_TOUCH_TAP,{x=right-1,y=33});page(a,id)
   end
@@ -112,13 +112,13 @@ function contract.run(makeAdapter,E)
  end)
  scenario('same-page touch or focus activation keeps bitmap caches',function(a)
   normal(a,0);normal(a,0);local before=a.bitmapLoads()
-  normal(a,E.EVT_TOUCH_TAP,{x=130,y=15});page(a,1)
+  normal(a,E.EVT_TOUCH_TAP,{x=20,y=15});page(a,1)
   normal(a,E.EVT_TOUCH_TAP,{x=20,y=15});page(a,1)
   normal(a,E.EVT_SYS_BREAK);normal(a,E.EVT_VIRTUAL_ENTER);page(a,1)
   eq(a.bitmapLoads(),before,'active-page selections open no bitmaps')
  end)
  scenario('normal ENTER reveals the first visible control before action',function(a)
-  for _,case in ipairs({{1,10},{5,3},{7,2},{6,4}})do
+  for _,case in ipairs({{1,1},{5,3},{7,7},{6,4}})do
    a.arrange(case[1]);local scans=a.sourceScans and a.sourceScans()
    normal(a,E.EVT_VIRTUAL_ENTER);page(a,case[1])
    assert(a.state().controlFocus~=nil,'first ENTER shows a visible control focus')
@@ -132,7 +132,7 @@ function contract.run(makeAdapter,E)
   normal(a,E.EVT_VIRTUAL_EXIT);page(a,1);eq(a.state().controlFocus,nil,'local focus cleared on back')
  end)
  scenario('RTN from details returns owner root',function(a)
-  for _,case in ipairs({{10,1},{3,5},{9,5},{2,7},{4,6},{12,6}})do
+  for _,case in ipairs({{10,1},{3,5},{9,5},{4,6},{12,6}})do
    a.arrange(case[1]);normal(a,E.EVT_VIRTUAL_EXIT);page(a,case[2])
   end
  end)
@@ -142,9 +142,9 @@ function contract.run(makeAdapter,E)
   end
   a.arrange(1);eq(a.send(E.EVT_VIRTUAL_EXIT),1,'short RTN on clean Flight exits')
  end)
- scenario('ordinary footer is status, not another navigation surface',function(a)
+ scenario('ordinary full-width footer is status, not another navigation surface',function(a)
   a.arrange(1)
-  for _,x in ipairs({20,170,280,410})do normal(a,E.EVT_TOUCH_TAP,{x=x,y=257});page(a,1)end
+  for _,x in ipairs({20,170,280,410,455,479})do normal(a,E.EVT_TOUCH_TAP,{x=x,y=257});page(a,1)end
  end)
  scenario('critical warning survives navigation focus and destination changes',function(a)
   a.setWarning(true);normal(a,0);assert(a.visible('BATTERY CRITICAL'),'critical warning visible')

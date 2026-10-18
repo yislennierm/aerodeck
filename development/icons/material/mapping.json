@@ -1,12 +1,6 @@
 {
   "main": [
     {
-      "screen": "FLIGHT",
-      "icon": "speed",
-      "file": "speed.png",
-      "size": 30
-    },
-    {
       "screen": "DATA",
       "icon": "table_chart",
       "file": "table_chart.png",
@@ -35,6 +29,13 @@
       "icon": "build",
       "file": "build.png",
       "size": 30
+    },
+    {
+      "screen": "ARM INFO",
+      "icon": "gpp_bad",
+      "file": "gpp_bad.png",
+      "size": 30,
+      "id": 10
     }
   ],
   "secondary": [
@@ -47,7 +48,7 @@
       "icon": "cell_tower"
     },
     {
-      "screen": "ARM STOPS",
+      "screen": "ARM INFO",
       "icon": "gpp_bad"
     },
     {
@@ -73,7 +74,9 @@
       "screen": "FLIGHT",
       "icon": "speed",
       "file": "speed-18.png",
-      "size": 18
+      "size": 18,
+      "active": false,
+      "note": "Retained detail mask; the Flight page has no context tab row."
     },
     {
       "page": 2,
@@ -126,7 +129,7 @@
     },
     {
       "page": 10,
-      "screen": "ARM STOPS",
+      "screen": "ARM INFO",
       "icon": "gpp_bad",
       "file": "gpp_bad-18.png",
       "size": 18
@@ -161,5 +164,37 @@
       "size": 18,
       "id": 14
     }
-  ]
+  ],
+  "home": {
+    "screen": "FLIGHT",
+    "icon": "home",
+    "file": "home.png",
+    "size": 30,
+    "id": 0
+  },
+  "retainedUnusedNavigationAssets": [
+    "speed.png",
+    "800x480/speed.png"
+  ],
+  "currentBuild": "GPS-SIMPLE-20261018",
+  "retainedUnusedContextAssets": [
+    "speed-18.png",
+    "800x480/speed-18.png"
+  ],
+  "markers": [
+    {
+      "purpose": "Map home / Flight home-distance status",
+      "icon": "Material home",
+      "file": "home-18.png",
+      "size": 18,
+      "id": 0
+    }
+  ],
+  "radioBattery": "Dynamic native30px-tall voltage-range gauge",
+  "aircraftPosition": {
+    "renderer": "Two native filled circles: dark radius5 halo and white radius3 dot",
+    "images": false,
+    "directional": false,
+    "removedRuntimeAssets": "quad*.png; original editable masters and historical build archives retained"
+  }
 }

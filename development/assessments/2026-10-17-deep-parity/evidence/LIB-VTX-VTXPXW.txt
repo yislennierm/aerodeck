@@ -1,0 +1,176 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/VTX/VTXPXW.luac 
+SHA256 28a70128c17e42bf19f0a3afeefb0f04089286eae5b1964a5c4e4f5fe06495cf
+
+FUNCTION main params 0 vararg 1 stack 21 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/VTX/VTXPXW.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 138), ('F', 1, 138), ('D', 1, 138), ('X', 1, 138), ('uid', 1, 138), ('overwrite', 1, 138), ('cF', 6, 138), ('cD', 7, 138), ('(for generator)', 14, 53), ('(for state)', 14, 53), ('(for control)', 14, 53), ('i', 15, 51), ('v', 15, 51), ('(for generator)', 34, 41), ('(for state)', 34, 41), ('(for control)', 34, 41), ('i2', 35, 39), ('v2', 35, 39), ('(for generator)', 74, 81), ('(for state)', 74, 81), ('(for control)', 74, 81), ('i', 75, 79), ('v', 75, 79), ('(for generator)', 109, 118), ('(for state)', 109, 118), ('(for control)', 109, 118), ('i', 110, 116), ('v', 110, 116)]
+K0 'PCFG'
+K1 'VTX/'
+K2 '.cfg'
+K3 'local t=... \r\n'
+K4 't.VTX.TBLR={\r\n'
+K5 'ipairs'
+K6 'VTX'
+K7 'TBLR'
+K8 '['
+K9 '] = {bl="'
+K10 'bl'
+K11 '",f={'
+K12 'type'
+K13 'f'
+K14 'table'
+K15 0
+K16 ','
+K17 'string'
+K18 'sub'
+K19 1
+K20 -2
+K21 '}},\r\n'
+K22 '}\r\n'
+K23 't.VTX.tPwV = {'
+K24 'tPwV'
+K25 't.VTX.tPwL = {'
+K26 'tPwL'
+K27 '"'
+K28 'loadE'
+K29 'PLIBFS'
+K30 'FSWF'
+K31 'w'
+   1 [   8] VARARG    A=0 B=7 C=0
+   2 [  11] GETTABLE  R6 = R0[K0('PCFG')]
+   3 [  11] LOADK     R7 = K1 ('VTX/')
+   4 [  11] MOVE      A=8 B=4 C=0
+   5 [  11] LOADK     R9 = K2 ('.cfg')
+   6 [  11] CONCAT    A=6 B=6 C=9
+   7 [  12] LOADK     R7 = K3 ('local t=... \r\n')
+   8 [  14] MOVE      A=8 B=7 C=0
+   9 [  14] LOADK     R9 = K4 ('t.VTX.TBLR={\r\n')
+  10 [  14] CONCAT    A=7 B=8 C=9
+  11 [  15] GETTABUP  R8 = UP0[K5('ipairs')]
+  12 [  15] GETTABLE  R9 = R2[K6('VTX')]
+  13 [  15] GETTABLE  R9 = R9[K7('TBLR')]
+  14 [  15] CALL      A=8 B=2 C=4
+  15 [  15] JMP       A=0 ->52
+  16 [  16] MOVE      A=13 B=7 C=0
+  17 [  16] LOADK     R14 = K8 ('[')
+  18 [  16] MOVE      A=15 B=11 C=0
+  19 [  16] LOADK     R16 = K9 ('] = {bl="')
+  20 [  16] GETTABLE  R17 = R12[K10('bl')]
+  21 [  16] LOADK     R18 = K11 ('",f={')
+  22 [  16] CONCAT    A=7 B=13 C=18
+  23 [  17] GETTABUP  R13 = UP0[K12('type')]
+  24 [  17] GETTABLE  R14 = R12[K13('f')]
+  25 [  17] CALL      A=13 B=2 C=2
+  26 [  17] EQ        A=0 R13, K14('table'); skip-next if condition != A
+  27 [  17] JMP       A=0 ->49
+  28 [  17] GETTABLE  R13 = R12[K13('f')]
+  29 [  17] LEN       A=13 B=13 C=0
+  30 [  17] LT        A=0 K15(0), R13; skip-next if condition != A
+  31 [  17] JMP       A=0 ->49
+  32 [  18] GETTABUP  R13 = UP0[K5('ipairs')]
+  33 [  18] GETTABLE  R14 = R12[K13('f')]
+  34 [  18] CALL      A=13 B=2 C=4
+  35 [  18] JMP       A=0 ->40
+  36 [  19] MOVE      A=18 B=7 C=0
+  37 [  19] MOVE      A=19 B=17 C=0
+  38 [  19] LOADK     R20 = K16 (',')
+  39 [  19] CONCAT    A=7 B=18 C=20
+  40 [  18] TFORCALL  A=13 B=0 C=2
+  41 [  18] TFORLOOP  A=15 ->36
+  42 [  21] GETTABUP  R13 = UP0[K17('string')]
+  43 [  21] GETTABLE  R13 = R13[K18('sub')]
+  44 [  21] MOVE      A=14 B=7 C=0
+  45 [  21] LOADK     R15 = K19 (1)
+  46 [  21] LOADK     R16 = K20 (-2)
+  47 [  21] CALL      A=13 B=4 C=2
+  48 [  21] MOVE      A=7 B=13 C=0
+  49 [  23] MOVE      A=13 B=7 C=0
+  50 [  23] LOADK     R14 = K21 ('}},\r\n')
+  51 [  23] CONCAT    A=7 B=13 C=14
+  52 [  15] TFORCALL  A=8 B=0 C=2
+  53 [  15] TFORLOOP  A=10 ->16
+  54 [  25] MOVE      A=8 B=7 C=0
+  55 [  25] LOADK     R9 = K22 ('}\r\n')
+  56 [  25] CONCAT    A=7 B=8 C=9
+  57 [  26] MOVE      A=8 B=7 C=0
+  58 [  26] LOADK     R9 = K23 ('t.VTX.tPwV = {')
+  59 [  26] CONCAT    A=7 B=8 C=9
+  60 [  27] GETTABUP  R8 = UP0[K12('type')]
+  61 [  27] GETTABLE  R9 = R2[K6('VTX')]
+  62 [  27] GETTABLE  R9 = R9[K24('tPwV')]
+  63 [  27] CALL      A=8 B=2 C=2
+  64 [  27] EQ        A=0 R8, K14('table'); skip-next if condition != A
+  65 [  27] JMP       A=0 ->89
+  66 [  27] GETTABLE  R8 = R2[K6('VTX')]
+  67 [  27] GETTABLE  R8 = R8[K24('tPwV')]
+  68 [  27] LEN       A=8 B=8 C=0
+  69 [  27] LT        A=0 K15(0), R8; skip-next if condition != A
+  70 [  27] JMP       A=0 ->89
+  71 [  28] GETTABUP  R8 = UP0[K5('ipairs')]
+  72 [  28] GETTABLE  R9 = R2[K6('VTX')]
+  73 [  28] GETTABLE  R9 = R9[K24('tPwV')]
+  74 [  28] CALL      A=8 B=2 C=4
+  75 [  28] JMP       A=0 ->80
+  76 [  29] MOVE      A=13 B=7 C=0
+  77 [  29] MOVE      A=14 B=12 C=0
+  78 [  29] LOADK     R15 = K16 (',')
+  79 [  29] CONCAT    A=7 B=13 C=15
+  80 [  28] TFORCALL  A=8 B=0 C=2
+  81 [  28] TFORLOOP  A=10 ->76
+  82 [  31] GETTABUP  R8 = UP0[K17('string')]
+  83 [  31] GETTABLE  R8 = R8[K18('sub')]
+  84 [  31] MOVE      A=9 B=7 C=0
+  85 [  31] LOADK     R10 = K19 (1)
+  86 [  31] LOADK     R11 = K20 (-2)
+  87 [  31] CALL      A=8 B=4 C=2
+  88 [  31] MOVE      A=7 B=8 C=0
+  89 [  33] MOVE      A=8 B=7 C=0
+  90 [  33] LOADK     R9 = K22 ('}\r\n')
+  91 [  33] CONCAT    A=7 B=8 C=9
+  92 [  34] MOVE      A=8 B=7 C=0
+  93 [  34] LOADK     R9 = K25 ('t.VTX.tPwL = {')
+  94 [  34] CONCAT    A=7 B=8 C=9
+  95 [  35] GETTABUP  R8 = UP0[K12('type')]
+  96 [  35] GETTABLE  R9 = R2[K6('VTX')]
+  97 [  35] GETTABLE  R9 = R9[K26('tPwL')]
+  98 [  35] CALL      A=8 B=2 C=2
+  99 [  35] EQ        A=0 R8, K14('table'); skip-next if condition != A
+ 100 [  35] JMP       A=0 ->126
+ 101 [  35] GETTABLE  R8 = R2[K6('VTX')]
+ 102 [  35] GETTABLE  R8 = R8[K26('tPwL')]
+ 103 [  35] LEN       A=8 B=8 C=0
+ 104 [  35] LT        A=0 K15(0), R8; skip-next if condition != A
+ 105 [  35] JMP       A=0 ->126
+ 106 [  36] GETTABUP  R8 = UP0[K5('ipairs')]
+ 107 [  36] GETTABLE  R9 = R2[K6('VTX')]
+ 108 [  36] GETTABLE  R9 = R9[K26('tPwL')]
+ 109 [  36] CALL      A=8 B=2 C=4
+ 110 [  36] JMP       A=0 ->117
+ 111 [  37] MOVE      A=13 B=7 C=0
+ 112 [  37] LOADK     R14 = K27 ('"')
+ 113 [  37] MOVE      A=15 B=12 C=0
+ 114 [  37] LOADK     R16 = K27 ('"')
+ 115 [  37] LOADK     R17 = K16 (',')
+ 116 [  37] CONCAT    A=7 B=13 C=17
+ 117 [  36] TFORCALL  A=8 B=0 C=2
+ 118 [  36] TFORLOOP  A=10 ->111
+ 119 [  39] GETTABUP  R8 = UP0[K17('string')]
+ 120 [  39] GETTABLE  R8 = R8[K18('sub')]
+ 121 [  39] MOVE      A=9 B=7 C=0
+ 122 [  39] LOADK     R10 = K19 (1)
+ 123 [  39] LOADK     R11 = K20 (-2)
+ 124 [  39] CALL      A=8 B=4 C=2
+ 125 [  39] MOVE      A=7 B=8 C=0
+ 126 [  41] MOVE      A=8 B=7 C=0
+ 127 [  41] LOADK     R9 = K22 ('}\r\n')
+ 128 [  41] CONCAT    A=7 B=8 C=9
+ 129 [  42] GETTABLE  R8 = R0[K28('loadE')]
+ 130 [  42] GETTABLE  R9 = R0[K29('PLIBFS')]
+ 131 [  42] LOADK     R10 = K30 ('FSWF')
+ 132 [  42] CONCAT    A=9 B=9 C=10
+ 133 [  42] MOVE      A=10 B=6 C=0
+ 134 [  42] MOVE      A=11 B=7 C=0
+ 135 [  42] LOADK     R12 = K31 ('w')
+ 136 [  42] CALL      A=8 B=5 C=1
+ 137 [  45] RETURN    A=0 B=1 C=0
+ 138 [  45] RETURN    A=0 B=1 C=0

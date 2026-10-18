@@ -1,0 +1,446 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/X.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/X.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 80), ('F', 1, 80), ('D', 1, 80), ('X', 1, 80)]
+K0 'dbg'
+K1 'UI/X loaded'
+K2 'TEXT_LEFT'
+K3 0
+K4 'TEXT_RIGHT'
+K5 'RIGHT'
+K6 'TEXT_CENTER'
+K7 'CENTER'
+K8 'PEN_SOLID'
+K9 'SOLID'
+K10 'PEN_DOTTED'
+K11 'DOTTED'
+K12 'FONT_XXS'
+K13 'TINSIZE'
+K14 'FONT_XS'
+K15 'FONT_S'
+K16 'SMLSIZE'
+K17 'FONT_STD'
+K18 'FONT_STD_BOLD'
+K19 'BOLD'
+K20 'FONT_L'
+K21 'MIDSIZE'
+K22 'FONT_XL'
+K23 'DBLSIZE'
+K24 'FONT_XXL'
+K25 'XXLSIZE'
+K26 'RC'
+K27 'RCF'
+K28 'lcd'
+K29 'drawFilledRectangle'
+K30 'TR'
+K31 'drawTriangle'
+K32 'TRF'
+K33 'drawFilledTriangle'
+K34 'CR'
+K35 'drawCircle'
+K36 'CRF'
+K37 'drawFilledCircle'
+K38 'LN'
+K39 'drawLine'
+K40 'TX'
+K41 'TXL'
+K42 'TXS'
+K43 'GA'
+K44 'CLR'
+K45 'lcd'
+K46 'clear'
+K47 'HR'
+K48 'drawHudRectangle'
+K49 'LBM'
+K50 'Bitmap'
+K51 'open'
+K52 'BM'
+K53 'LMK'
+K54 'MK'
+K55 'RGB'
+K56 'lcd'
+K57 'RGBE'
+K58 'RGBD'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [   9] GETTABLE  R4 = R0[K0('dbg')]
+   3 [   9] LOADK     R5 = K1 ('UI/X loaded')
+   4 [   9] CALL      A=4 B=2 C=1
+   5 [  12] SETTABLE  R3[K2('TEXT_LEFT')] = K3(0)
+   6 [  13] GETTABUP  R4 = UP0[K5('RIGHT')]
+   7 [  13] SETTABLE  R3[K4('TEXT_RIGHT')] = R4
+   8 [  14] GETTABUP  R4 = UP0[K7('CENTER')]
+   9 [  14] SETTABLE  R3[K6('TEXT_CENTER')] = R4
+  10 [  16] GETTABUP  R4 = UP0[K9('SOLID')]
+  11 [  16] SETTABLE  R3[K8('PEN_SOLID')] = R4
+  12 [  17] GETTABUP  R4 = UP0[K11('DOTTED')]
+  13 [  17] SETTABLE  R3[K10('PEN_DOTTED')] = R4
+  14 [  19] GETTABUP  R4 = UP0[K13('TINSIZE')]
+  15 [  19] SETTABLE  R3[K12('FONT_XXS')] = R4
+  16 [  20] GETTABUP  R4 = UP0[K13('TINSIZE')]
+  17 [  20] SETTABLE  R3[K14('FONT_XS')] = R4
+  18 [  21] GETTABUP  R4 = UP0[K16('SMLSIZE')]
+  19 [  21] SETTABLE  R3[K15('FONT_S')] = R4
+  20 [  22] SETTABLE  R3[K17('FONT_STD')] = K3(0)
+  21 [  23] GETTABUP  R4 = UP0[K19('BOLD')]
+  22 [  23] SETTABLE  R3[K18('FONT_STD_BOLD')] = R4
+  23 [  24] GETTABUP  R4 = UP0[K21('MIDSIZE')]
+  24 [  24] SETTABLE  R3[K20('FONT_L')] = R4
+  25 [  25] GETTABUP  R4 = UP0[K23('DBLSIZE')]
+  26 [  25] SETTABLE  R3[K22('FONT_XL')] = R4
+  27 [  26] GETTABUP  R4 = UP0[K25('XXLSIZE')]
+  28 [  26] SETTABLE  R3[K24('FONT_XXL')] = R4
+  29 [  39] CLOSURE   R4 = proto[0]
+  30 [  39] SETTABLE  R3[K26('RC')] = R4
+  31 [  41] GETTABUP  R4 = UP0[K28('lcd')]
+  32 [  41] GETTABLE  R4 = R4[K29('drawFilledRectangle')]
+  33 [  41] SETTABLE  R3[K27('RCF')] = R4
+  34 [  43] GETTABUP  R4 = UP0[K28('lcd')]
+  35 [  43] GETTABLE  R4 = R4[K31('drawTriangle')]
+  36 [  43] SETTABLE  R3[K30('TR')] = R4
+  37 [  45] GETTABUP  R4 = UP0[K28('lcd')]
+  38 [  45] GETTABLE  R4 = R4[K33('drawFilledTriangle')]
+  39 [  45] SETTABLE  R3[K32('TRF')] = R4
+  40 [  47] GETTABUP  R4 = UP0[K28('lcd')]
+  41 [  47] GETTABLE  R4 = R4[K35('drawCircle')]
+  42 [  47] SETTABLE  R3[K34('CR')] = R4
+  43 [  49] GETTABUP  R4 = UP0[K28('lcd')]
+  44 [  49] GETTABLE  R4 = R4[K37('drawFilledCircle')]
+  45 [  49] SETTABLE  R3[K36('CRF')] = R4
+  46 [  51] GETTABUP  R4 = UP0[K28('lcd')]
+  47 [  51] GETTABLE  R4 = R4[K39('drawLine')]
+  48 [  51] SETTABLE  R3[K38('LN')] = R4
+  49 [  61] CLOSURE   R4 = proto[1]
+  50 [  61] SETTABLE  R3[K40('TX')] = R4
+  51 [  65] CLOSURE   R4 = proto[2]
+  52 [  65] SETTABLE  R3[K41('TXL')] = R4
+  53 [  68] CLOSURE   R4 = proto[3]
+  54 [  68] SETTABLE  R3[K42('TXS')] = R4
+  55 [  72] CLOSURE   R4 = proto[4]
+  56 [  72] SETTABLE  R3[K43('GA')] = R4
+  57 [  74] GETTABUP  R4 = UP0[K45('lcd')]
+  58 [  74] GETTABLE  R4 = R4[K46('clear')]
+  59 [  74] SETTABLE  R3[K44('CLR')] = R4
+  60 [  76] GETTABUP  R4 = UP0[K45('lcd')]
+  61 [  76] GETTABLE  R4 = R4[K48('drawHudRectangle')]
+  62 [  76] SETTABLE  R3[K47('HR')] = R4
+  63 [  79] GETTABUP  R4 = UP0[K50('Bitmap')]
+  64 [  79] GETTABLE  R4 = R4[K51('open')]
+  65 [  79] SETTABLE  R3[K49('LBM')] = R4
+  66 [  86] CLOSURE   R4 = proto[5]
+  67 [  86] SETTABLE  R3[K52('BM')] = R4
+  68 [  92] CLOSURE   R4 = proto[6]
+  69 [  92] SETTABLE  R3[K53('LMK')] = R4
+  70 [  99] CLOSURE   R4 = proto[7]
+  71 [  99] SETTABLE  R3[K54('MK')] = R4
+  72 [ 102] GETTABUP  R4 = UP0[K56('lcd')]
+  73 [ 102] GETTABLE  R4 = R4[K55('RGB')]
+  74 [ 102] SETTABLE  R3[K55('RGB')] = R4
+  75 [ 108] CLOSURE   R4 = proto[8]
+  76 [ 108] SETTABLE  R3[K57('RGBE')] = R4
+  77 [ 121] CLOSURE   R4 = proto[9]
+  78 [ 111] SETTABLE  R3[K58('RGBD')] = R4
+  79 [ 123] RETURN    A=0 B=1 C=0
+  80 [ 123] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 6 vararg 0 stack 13 lines 30 39 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('x', 0, 56), ('y', 0, 56), ('w', 0, 56), ('h', 0, 56), ('c', 0, 56), ('p', 0, 56)]
+K0 'lcd'
+K1 'drawRectangle'
+K2 'drawLine'
+K3 1
+   1 [  31] TEST      A=5 B=0 C=1
+   2 [  31] JMP       A=0 ->12
+   3 [  32] GETTABUP  R6 = UP0[K0('lcd')]
+   4 [  32] GETTABLE  R6 = R6[K1('drawRectangle')]
+   5 [  32] MOVE      A=7 B=0 C=0
+   6 [  32] MOVE      A=8 B=1 C=0
+   7 [  32] MOVE      A=9 B=2 C=0
+   8 [  32] MOVE      A=10 B=3 C=0
+   9 [  32] MOVE      A=11 B=4 C=0
+  10 [  32] CALL      A=6 B=6 C=1
+  11 [  32] JMP       A=0 ->56
+  12 [  34] GETTABUP  R6 = UP0[K0('lcd')]
+  13 [  34] GETTABLE  R6 = R6[K2('drawLine')]
+  14 [  34] MOVE      A=7 B=0 C=0
+  15 [  34] MOVE      A=8 B=1 C=0
+  16 [  34] ADD       A=9 B=0 C=2
+  17 [  34] SUB       A=9 B=9 C=259
+  18 [  34] MOVE      A=10 B=1 C=0
+  19 [  34] MOVE      A=11 B=5 C=0
+  20 [  34] MOVE      A=12 B=4 C=0
+  21 [  34] CALL      A=6 B=7 C=1
+  22 [  35] GETTABUP  R6 = UP0[K0('lcd')]
+  23 [  35] GETTABLE  R6 = R6[K2('drawLine')]
+  24 [  35] MOVE      A=7 B=0 C=0
+  25 [  35] MOVE      A=8 B=1 C=0
+  26 [  35] MOVE      A=9 B=0 C=0
+  27 [  35] ADD       A=10 B=1 C=3
+  28 [  35] SUB       A=10 B=10 C=259
+  29 [  35] MOVE      A=11 B=5 C=0
+  30 [  35] MOVE      A=12 B=4 C=0
+  31 [  35] CALL      A=6 B=7 C=1
+  32 [  36] GETTABUP  R6 = UP0[K0('lcd')]
+  33 [  36] GETTABLE  R6 = R6[K2('drawLine')]
+  34 [  36] ADD       A=7 B=0 C=2
+  35 [  36] SUB       A=7 B=7 C=259
+  36 [  36] MOVE      A=8 B=1 C=0
+  37 [  36] ADD       A=9 B=0 C=2
+  38 [  36] SUB       A=9 B=9 C=259
+  39 [  36] ADD       A=10 B=1 C=3
+  40 [  36] SUB       A=10 B=10 C=259
+  41 [  36] MOVE      A=11 B=5 C=0
+  42 [  36] MOVE      A=12 B=4 C=0
+  43 [  36] CALL      A=6 B=7 C=1
+  44 [  37] GETTABUP  R6 = UP0[K0('lcd')]
+  45 [  37] GETTABLE  R6 = R6[K2('drawLine')]
+  46 [  37] MOVE      A=7 B=0 C=0
+  47 [  37] ADD       A=8 B=1 C=3
+  48 [  37] SUB       A=8 B=8 C=259
+  49 [  37] ADD       A=9 B=0 C=2
+  50 [  37] SUB       A=9 B=9 C=259
+  51 [  37] ADD       A=10 B=1 C=3
+  52 [  37] SUB       A=10 B=10 C=259
+  53 [  37] MOVE      A=11 B=5 C=0
+  54 [  37] MOVE      A=12 B=4 C=0
+  55 [  37] CALL      A=6 B=7 C=1
+  56 [  39] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 6 vararg 0 stack 11 lines 53 61 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('x', 0, 21), ('y', 0, 21), ('t', 0, 21), ('f', 0, 21), ('a', 0, 21), ('c', 0, 21)]
+K0 'NIL'
+K1 0
+K2 'lcd'
+K3 'drawText'
+   1 [  56] TEST      A=2 B=0 C=1
+   2 [  56] JMP       A=0 ->4
+   3 [  56] LOADK     R2 = K0 ('NIL')
+   4 [  57] TEST      A=3 B=0 C=1
+   5 [  57] JMP       A=0 ->7
+   6 [  57] LOADK     R3 = K1 (0)
+   7 [  58] TEST      A=4 B=0 C=1
+   8 [  58] JMP       A=0 ->10
+   9 [  58] LOADK     R4 = K1 (0)
+  10 [  59] TEST      A=5 B=0 C=1
+  11 [  59] JMP       A=0 ->13
+  12 [  59] LOADK     R5 = K1 (0)
+  13 [  60] GETTABUP  R6 = UP0[K2('lcd')]
+  14 [  60] GETTABLE  R6 = R6[K3('drawText')]
+  15 [  60] MOVE      A=7 B=0 C=0
+  16 [  60] MOVE      A=8 B=1 C=0
+  17 [  60] MOVE      A=9 B=2 C=0
+  18 [  60] ADD       A=10 B=3 C=4
+  19 [  60] ADD       A=10 B=10 C=5
+  20 [  60] CALL      A=6 B=5 C=1
+  21 [  61] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 9 vararg 0 stack 16 lines 63 65 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('x', 0, 11), ('y', 0, 11), ('w', 0, 11), ('h', 0, 11), ('t', 0, 11), ('f', 0, 11), ('a', 0, 11), ('c', 0, 11), ('th', 0, 11)]
+K0 'lcd'
+K1 'drawTextLines'
+   1 [  64] GETTABUP  R9 = UP0[K0('lcd')]
+   2 [  64] GETTABLE  R9 = R9[K1('drawTextLines')]
+   3 [  64] MOVE      A=10 B=0 C=0
+   4 [  64] MOVE      A=11 B=1 C=0
+   5 [  64] MOVE      A=12 B=2 C=0
+   6 [  64] MOVE      A=13 B=3 C=0
+   7 [  64] MOVE      A=14 B=4 C=0
+   8 [  64] ADD       A=15 B=5 C=6
+   9 [  64] ADD       A=15 B=15 C=7
+  10 [  64] CALL      A=9 B=7 C=1
+  11 [  65] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 2 vararg 0 stack 5 lines 66 68 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('t', 0, 7), ('f', 0, 7)]
+K0 'lcd'
+K1 'sizeText'
+   1 [  67] GETTABUP  R2 = UP0[K0('lcd')]
+   2 [  67] GETTABLE  R2 = R2[K1('sizeText')]
+   3 [  67] MOVE      A=3 B=0 C=0
+   4 [  67] MOVE      A=4 B=1 C=0
+   5 [  67] TAILCALL  A=2 B=3 C=0
+   6 [  67] RETURN    A=2 B=0 C=0
+   7 [  68] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4 params 8 vararg 0 stack 16 lines 70 72 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('x', 0, 11), ('y', 0, 11), ('w', 0, 11), ('h', 0, 11), ('v', 0, 11), ('vmax', 0, 11), ('p', 0, 11), ('c', 0, 11)]
+K0 'lcd'
+K1 'drawGauge'
+   1 [  71] GETTABUP  R8 = UP0[K0('lcd')]
+   2 [  71] GETTABLE  R8 = R8[K1('drawGauge')]
+   3 [  71] MOVE      A=9 B=0 C=0
+   4 [  71] MOVE      A=10 B=1 C=0
+   5 [  71] MOVE      A=11 B=2 C=0
+   6 [  71] MOVE      A=12 B=3 C=0
+   7 [  71] MOVE      A=13 B=4 C=0
+   8 [  71] MOVE      A=14 B=5 C=0
+   9 [  71] MOVE      A=15 B=7 C=0
+  10 [  71] CALL      A=8 B=8 C=1
+  11 [  72] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5 params 4 vararg 0 stack 9 lines 81 86 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('b', 0, 10), ('x', 0, 10), ('y', 0, 10), ('s', 0, 10)]
+K0 'lcd'
+K1 'drawBitmap'
+   1 [  83] TEST      A=0 B=0 C=0
+   2 [  83] JMP       A=0 ->10
+   3 [  84] GETTABUP  R4 = UP0[K0('lcd')]
+   4 [  84] GETTABLE  R4 = R4[K1('drawBitmap')]
+   5 [  84] MOVE      A=5 B=0 C=0
+   6 [  84] MOVE      A=6 B=1 C=0
+   7 [  84] MOVE      A=7 B=2 C=0
+   8 [  84] MOVE      A=8 B=3 C=0
+   9 [  84] CALL      A=4 B=5 C=1
+  10 [  86] RETURN    A=0 B=1 C=0
+
+FUNCTION main/6 params 1 vararg 0 stack 4 lines 88 92 source None
+UPVALUES [('X', (1, 3)), ('_ENV', (0, 0))]
+LOCALS [('b', 0, 9), ('bmp', 3, 9), ('bmk', 7, 9)]
+K0 'LBM'
+K1 'Bitmap'
+K2 'toMask'
+   1 [  89] GETTABUP  R1 = UP0[K0('LBM')]
+   2 [  89] MOVE      A=2 B=0 C=0
+   3 [  89] CALL      A=1 B=2 C=2
+   4 [  90] GETTABUP  R2 = UP1[K1('Bitmap')]
+   5 [  90] GETTABLE  R2 = R2[K2('toMask')]
+   6 [  90] MOVE      A=3 B=1 C=0
+   7 [  90] CALL      A=2 B=2 C=2
+   8 [  91] RETURN    A=2 B=2 C=0
+   9 [  92] RETURN    A=0 B=1 C=0
+
+FUNCTION main/7 params 4 vararg 0 stack 9 lines 94 99 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('b', 0, 10), ('x', 0, 10), ('y', 0, 10), ('c', 0, 10)]
+K0 'lcd'
+K1 'drawBitmapPattern'
+   1 [  96] TEST      A=0 B=0 C=0
+   2 [  96] JMP       A=0 ->10
+   3 [  97] GETTABUP  R4 = UP0[K0('lcd')]
+   4 [  97] GETTABLE  R4 = R4[K1('drawBitmapPattern')]
+   5 [  97] MOVE      A=5 B=0 C=0
+   6 [  97] MOVE      A=6 B=1 C=0
+   7 [  97] MOVE      A=7 B=2 C=0
+   8 [  97] MOVE      A=8 B=3 C=0
+   9 [  97] CALL      A=4 B=5 C=1
+  10 [  99] RETURN    A=0 B=1 C=0
+
+FUNCTION main/8 params 1 vararg 0 stack 9 lines 105 108 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('sHex', 0, 32), ('c', 30, 32)]
+K0 'lcd'
+K1 'RGB'
+K2 'tonumber'
+K3 'string'
+K4 'sub'
+K5 1
+K6 2
+K7 16
+K8 3
+K9 4
+K10 5
+K11 6
+   1 [ 106] GETTABUP  R1 = UP0[K0('lcd')]
+   2 [ 106] GETTABLE  R1 = R1[K1('RGB')]
+   3 [ 106] GETTABUP  R2 = UP0[K2('tonumber')]
+   4 [ 106] GETTABUP  R3 = UP0[K3('string')]
+   5 [ 106] GETTABLE  R3 = R3[K4('sub')]
+   6 [ 106] MOVE      A=4 B=0 C=0
+   7 [ 106] LOADK     R5 = K5 (1)
+   8 [ 106] LOADK     R6 = K6 (2)
+   9 [ 106] CALL      A=3 B=4 C=2
+  10 [ 106] LOADK     R4 = K7 (16)
+  11 [ 106] CALL      A=2 B=3 C=2
+  12 [ 106] GETTABUP  R3 = UP0[K2('tonumber')]
+  13 [ 106] GETTABUP  R4 = UP0[K3('string')]
+  14 [ 106] GETTABLE  R4 = R4[K4('sub')]
+  15 [ 106] MOVE      A=5 B=0 C=0
+  16 [ 106] LOADK     R6 = K8 (3)
+  17 [ 106] LOADK     R7 = K9 (4)
+  18 [ 106] CALL      A=4 B=4 C=2
+  19 [ 106] LOADK     R5 = K7 (16)
+  20 [ 106] CALL      A=3 B=3 C=2
+  21 [ 106] GETTABUP  R4 = UP0[K2('tonumber')]
+  22 [ 106] GETTABUP  R5 = UP0[K3('string')]
+  23 [ 106] GETTABLE  R5 = R5[K4('sub')]
+  24 [ 106] MOVE      A=6 B=0 C=0
+  25 [ 106] LOADK     R7 = K10 (5)
+  26 [ 106] LOADK     R8 = K11 (6)
+  27 [ 106] CALL      A=5 B=4 C=2
+  28 [ 106] LOADK     R6 = K7 (16)
+  29 [ 106] CALL      A=4 B=3 C=0
+  30 [ 106] CALL      A=1 B=0 C=2
+  31 [ 107] RETURN    A=1 B=2 C=0
+  32 [ 108] RETURN    A=0 B=1 C=0
+
+FUNCTION main/9 params 1 vararg 0 stack 7 lines 111 121 source None
+UPVALUES [('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('val', 0, 49), ('r', 9, 49), ('g', 18, 49), ('b', 23, 49)]
+K0 'bit'
+K1 'rshift'
+K2 'band'
+K3 63488
+K4 11
+K5 2016
+K6 5
+K7 31
+K8 'math'
+K9 'floor'
+K10 255
+K11 0.5
+K12 63
+   1 [ 113] GETTABUP  R1 = UP0[K0('bit')]
+   2 [ 113] GETTABLE  R1 = R1[K1('rshift')]
+   3 [ 113] GETTABUP  R2 = UP0[K0('bit')]
+   4 [ 113] GETTABLE  R2 = R2[K2('band')]
+   5 [ 113] MOVE      A=3 B=0 C=0
+   6 [ 113] LOADK     R4 = K3 (63488)
+   7 [ 113] CALL      A=2 B=3 C=2
+   8 [ 113] LOADK     R3 = K4 (11)
+   9 [ 113] CALL      A=1 B=3 C=2
+  10 [ 114] GETTABUP  R2 = UP0[K0('bit')]
+  11 [ 114] GETTABLE  R2 = R2[K1('rshift')]
+  12 [ 114] GETTABUP  R3 = UP0[K0('bit')]
+  13 [ 114] GETTABLE  R3 = R3[K2('band')]
+  14 [ 114] MOVE      A=4 B=0 C=0
+  15 [ 114] LOADK     R5 = K5 (2016)
+  16 [ 114] CALL      A=3 B=3 C=2
+  17 [ 114] LOADK     R4 = K6 (5)
+  18 [ 114] CALL      A=2 B=3 C=2
+  19 [ 115] GETTABUP  R3 = UP0[K0('bit')]
+  20 [ 115] GETTABLE  R3 = R3[K2('band')]
+  21 [ 115] MOVE      A=4 B=0 C=0
+  22 [ 115] LOADK     R5 = K7 (31)
+  23 [ 115] CALL      A=3 B=3 C=2
+  24 [ 117] GETTABUP  R4 = UP1[K8('math')]
+  25 [ 117] GETTABLE  R4 = R4[K9('floor')]
+  26 [ 117] MUL       A=5 B=1 C=266
+  27 [ 117] DIV       A=5 B=5 C=263
+  28 [ 117] ADD       A=5 B=5 C=267
+  29 [ 117] CALL      A=4 B=2 C=2
+  30 [ 117] MOVE      A=1 B=4 C=0
+  31 [ 118] GETTABUP  R4 = UP1[K8('math')]
+  32 [ 118] GETTABLE  R4 = R4[K9('floor')]
+  33 [ 118] MUL       A=5 B=2 C=266
+  34 [ 118] DIV       A=5 B=5 C=268
+  35 [ 118] ADD       A=5 B=5 C=267
+  36 [ 118] CALL      A=4 B=2 C=2
+  37 [ 118] MOVE      A=2 B=4 C=0
+  38 [ 119] GETTABUP  R4 = UP1[K8('math')]
+  39 [ 119] GETTABLE  R4 = R4[K9('floor')]
+  40 [ 119] MUL       A=5 B=3 C=266
+  41 [ 119] DIV       A=5 B=5 C=263
+  42 [ 119] ADD       A=5 B=5 C=267
+  43 [ 119] CALL      A=4 B=2 C=2
+  44 [ 119] MOVE      A=3 B=4 C=0
+  45 [ 120] MOVE      A=4 B=1 C=0
+  46 [ 120] MOVE      A=5 B=2 C=0
+  47 [ 120] MOVE      A=6 B=3 C=0
+  48 [ 120] RETURN    A=4 B=4 C=0
+  49 [ 121] RETURN    A=0 B=1 C=0

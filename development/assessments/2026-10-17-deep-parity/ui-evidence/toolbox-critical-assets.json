@@ -1,0 +1,58 @@
+[
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/DBD_AHL.png",
+    "width": 30,
+    "height": 6,
+    "mode": "RGBA",
+    "format": "PNG",
+    "sha256": "1455533416e5613a862280cef9596e2845516bd5c8a0fe5a36f597319f79f1d8"
+  },
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/DBD_ATT_MASK.jpg",
+    "width": 108,
+    "height": 109,
+    "mode": "RGB",
+    "format": "JPEG",
+    "sha256": "ce950d67d1caf18370121693b502433e4f4425694bcc86c965097a91fbb88903"
+  },
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/DBD_ATTB_MASK.jpg",
+    "width": 108,
+    "height": 110,
+    "mode": "RGB",
+    "format": "JPEG",
+    "sha256": "f61f6fd407cfd130f98ef9bc2a28d4108117c9082615d92df02d0b42daa7a724"
+  },
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/DBD_CMP_MASK.jpg",
+    "width": 108,
+    "height": 110,
+    "mode": "RGB",
+    "format": "JPEG",
+    "sha256": "652a683834c873422a5366ed5db204aacb422a9d55268ba48c80542f7024a941"
+  },
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/GPS_SAT_MASK.jpg",
+    "width": 20,
+    "height": 20,
+    "mode": "RGB",
+    "format": "JPEG",
+    "sha256": "90158cd5baad85ea4ad95146a0aeebba81a2ea3dd6c1b8ff0202d1f1ea2080fb"
+  },
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/GPS_HOME.png",
+    "width": 20,
+    "height": 20,
+    "mode": "RGBA",
+    "format": "PNG",
+    "sha256": "531f79baa809b91f395eafc57e52e8d5c91f6ac0a87d777379c563d0d5f70d61"
+  },
+  {
+    "file": "work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/ASSETS/GFX/480X272/GPS_PLANE.png",
+    "width": 20,
+    "height": 20,
+    "mode": "RGBA",
+    "format": "PNG",
+    "sha256": "38c01eab121c8eb7500c1515efb98017d00fdd9cb7d335bc54fc03e6657c82dd"
+  }
+]

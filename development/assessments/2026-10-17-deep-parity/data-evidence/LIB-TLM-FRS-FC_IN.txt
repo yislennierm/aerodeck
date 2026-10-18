@@ -1,0 +1,442 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/FC_IN.luac
+
+FUNCTION main params 0 vararg 1 stack 10 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/FC_IN.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 44), ('F', 1, 44), ('D', 1, 44), ('X', 1, 44), ('add', 1, 44), ('sensors', 14, 44), ('FC_STAT_fn', 33, 42)]
+K0 'S'
+K1 'ARMED'
+K2 None
+K3 'ARM_STOP_TLM'
+K4 'ARM_STOP_MSP'
+K5 'ARM_STOP_LIST'
+K6 'FC_FM'
+K7 'FC_FM_NAME'
+K8 ''
+K9 'SEN'
+K10 'SN02n'
+K11 'ARMSTAT'
+K12 'SN02m'
+K13 0
+K14 'SN02x'
+K15 2
+K16 'SN02l'
+K17 1
+K18 'SN02c'
+K19 'SN02i'
+K20 True
+K21 'SN02u'
+K22 'SN02vs'
+K23 'table'
+K24 'insert'
+K25 'sName'
+K26 'FC_FM'
+K27 'pName'
+K28 '0470'
+K29 'sLabel'
+K30 'Flight Mode'
+K31 'uFN'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('ARMED')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('ARM_STOP_TLM')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('ARM_STOP_MSP')] = K2(None)
+   8 [  15] GETTABLE  R5 = R2[K0('S')]
+   9 [  15] SETTABLE  R5[K5('ARM_STOP_LIST')] = K2(None)
+  10 [  16] GETTABLE  R5 = R2[K0('S')]
+  11 [  16] SETTABLE  R5[K6('FC_FM')] = K2(None)
+  12 [  17] GETTABLE  R5 = R2[K0('S')]
+  13 [  17] SETTABLE  R5[K7('FC_FM_NAME')] = K8('')
+  14 [  20] NEWTABLE  A=5 B=0 C=0
+  15 [  22] TEST      A=4 B=0 C=0
+  16 [  22] JMP       A=0 ->43
+  17 [  24] GETTABLE  R6 = R2[K9('SEN')]
+  18 [  24] SETTABLE  R6[K10('SN02n')] = K11('ARMSTAT')
+  19 [  25] GETTABLE  R6 = R2[K9('SEN')]
+  20 [  25] SETTABLE  R6[K12('SN02m')] = K13(0)
+  21 [  26] GETTABLE  R6 = R2[K9('SEN')]
+  22 [  26] SETTABLE  R6[K14('SN02x')] = K15(2)
+  23 [  27] GETTABLE  R6 = R2[K9('SEN')]
+  24 [  27] SETTABLE  R6[K16('SN02l')] = K17(1)
+  25 [  28] GETTABLE  R6 = R2[K9('SEN')]
+  26 [  28] SETTABLE  R6[K18('SN02c')] = K15(2)
+  27 [  29] GETTABLE  R6 = R2[K9('SEN')]
+  28 [  29] SETTABLE  R6[K19('SN02i')] = K20(True)
+  29 [  30] GETTABLE  R6 = R2[K9('SEN')]
+  30 [  30] SETTABLE  R6[K21('SN02u')] = K8('')
+  31 [  31] GETTABLE  R6 = R2[K9('SEN')]
+  32 [  31] SETTABLE  R6[K22('SN02vs')] = K11('ARMSTAT')
+  33 [ 103] CLOSURE   R6 = proto[0]
+  34 [ 105] GETTABUP  R7 = UP0[K23('table')]
+  35 [ 105] GETTABLE  R7 = R7[K24('insert')]
+  36 [ 105] MOVE      A=8 B=5 C=0
+  37 [ 105] NEWTABLE  A=9 B=0 C=4
+  38 [ 105] SETTABLE  R9[K25('sName')] = K26('FC_FM')
+  39 [ 105] SETTABLE  R9[K27('pName')] = K28('0470')
+  40 [ 105] SETTABLE  R9[K29('sLabel')] = K30('Flight Mode')
+  41 [ 105] SETTABLE  R9[K31('uFN')] = R6
+  42 [ 105] CALL      A=7 B=3 C=1
+  43 [ 109] RETURN    A=5 B=2 C=0
+  44 [ 109] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 0 vararg 0 stack 16 lines 33 103 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0)), ('G', (1, 0))]
+LOCALS [('fcStat', 2, 311), ('value', 16, 310), ('s', 21, 310), ('A', 32, 310), ('B', 43, 310), ('C', 54, 310), ('Dd', 65, 310), ('E', 76, 310), ('Fd', 87, 310), ('Gd', 98, 310), ('armed', 103, 310), ('armStop', 108, 310), ('fm', 109, 310)]
+K0 'S'
+K1 'FC_FM'
+K2 'math'
+K3 'floor'
+K4 'abs'
+K5 'tonumber'
+K6 0
+K7 'string'
+K8 'format'
+K9 '%07d'
+K10 'sub'
+K11 1
+K12 2
+K13 3
+K14 4
+K15 5
+K16 6
+K17 7
+K18 'bit'
+K19 'bcheck'
+K20 'OK'
+K21 'ACRO'
+K22 'FS'
+K23 'MANU'
+K24 'WRTH'
+K25 'ANGH'
+K26 'TURT'
+K27 'LAND'
+K28 'GEO'
+K29 'LOTR'
+K30 'RTH'
+K31 'WP'
+K32 'HEAD'
+K33 'CRSH'
+K34 'HOLD'
+K35 'CRUZ'
+K36 'ALT'
+K37 'ANGL'
+K38 'HOR'
+K39 'ERR'
+K40 'ARMED'
+K41 'ARM_STOP_TLM'
+K42 'ARMSTAT'
+K43 'ARM_STOP_MSP'
+K44 'FC_FM_NAME'
+K45 'FC_FM_MODES'
+   1 [  35] GETTABUP  R0 = UP0[K0('S')]
+   2 [  35] GETTABLE  R0 = R0[K1('FC_FM')]
+   3 [  37] TEST      A=0 B=0 C=0
+   4 [  37] JMP       A=0 ->311
+   5 [  39] GETTABUP  R1 = UP1[K2('math')]
+   6 [  39] GETTABLE  R1 = R1[K3('floor')]
+   7 [  39] GETTABUP  R2 = UP1[K2('math')]
+   8 [  39] GETTABLE  R2 = R2[K4('abs')]
+   9 [  39] GETTABUP  R3 = UP1[K5('tonumber')]
+  10 [  39] MOVE      A=4 B=0 C=0
+  11 [  39] CALL      A=3 B=2 C=2
+  12 [  39] TEST      A=3 B=0 C=1
+  13 [  39] JMP       A=0 ->15
+  14 [  39] LOADK     R3 = K6 (0)
+  15 [  39] CALL      A=2 B=2 C=0
+  16 [  39] CALL      A=1 B=0 C=2
+  17 [  42] GETTABUP  R2 = UP1[K7('string')]
+  18 [  42] GETTABLE  R2 = R2[K8('format')]
+  19 [  42] LOADK     R3 = K9 ('%07d')
+  20 [  42] MOVE      A=4 B=1 C=0
+  21 [  42] CALL      A=2 B=3 C=2
+  22 [  43] GETTABUP  R3 = UP1[K5('tonumber')]
+  23 [  43] GETTABUP  R4 = UP1[K7('string')]
+  24 [  43] GETTABLE  R4 = R4[K10('sub')]
+  25 [  43] MOVE      A=5 B=2 C=0
+  26 [  43] LOADK     R6 = K11 (1)
+  27 [  43] LOADK     R7 = K11 (1)
+  28 [  43] CALL      A=4 B=4 C=0
+  29 [  43] CALL      A=3 B=0 C=2
+  30 [  43] TEST      A=3 B=0 C=1
+  31 [  43] JMP       A=0 ->33
+  32 [  43] LOADK     R3 = K6 (0)
+  33 [  44] GETTABUP  R4 = UP1[K5('tonumber')]
+  34 [  44] GETTABUP  R5 = UP1[K7('string')]
+  35 [  44] GETTABLE  R5 = R5[K10('sub')]
+  36 [  44] MOVE      A=6 B=2 C=0
+  37 [  44] LOADK     R7 = K12 (2)
+  38 [  44] LOADK     R8 = K12 (2)
+  39 [  44] CALL      A=5 B=4 C=0
+  40 [  44] CALL      A=4 B=0 C=2
+  41 [  44] TEST      A=4 B=0 C=1
+  42 [  44] JMP       A=0 ->44
+  43 [  44] LOADK     R4 = K6 (0)
+  44 [  45] GETTABUP  R5 = UP1[K5('tonumber')]
+  45 [  45] GETTABUP  R6 = UP1[K7('string')]
+  46 [  45] GETTABLE  R6 = R6[K10('sub')]
+  47 [  45] MOVE      A=7 B=2 C=0
+  48 [  45] LOADK     R8 = K13 (3)
+  49 [  45] LOADK     R9 = K13 (3)
+  50 [  45] CALL      A=6 B=4 C=0
+  51 [  45] CALL      A=5 B=0 C=2
+  52 [  45] TEST      A=5 B=0 C=1
+  53 [  45] JMP       A=0 ->55
+  54 [  45] LOADK     R5 = K6 (0)
+  55 [  46] GETTABUP  R6 = UP1[K5('tonumber')]
+  56 [  46] GETTABUP  R7 = UP1[K7('string')]
+  57 [  46] GETTABLE  R7 = R7[K10('sub')]
+  58 [  46] MOVE      A=8 B=2 C=0
+  59 [  46] LOADK     R9 = K14 (4)
+  60 [  46] LOADK     R10 = K14 (4)
+  61 [  46] CALL      A=7 B=4 C=0
+  62 [  46] CALL      A=6 B=0 C=2
+  63 [  46] TEST      A=6 B=0 C=1
+  64 [  46] JMP       A=0 ->66
+  65 [  46] LOADK     R6 = K6 (0)
+  66 [  47] GETTABUP  R7 = UP1[K5('tonumber')]
+  67 [  47] GETTABUP  R8 = UP1[K7('string')]
+  68 [  47] GETTABLE  R8 = R8[K10('sub')]
+  69 [  47] MOVE      A=9 B=2 C=0
+  70 [  47] LOADK     R10 = K15 (5)
+  71 [  47] LOADK     R11 = K15 (5)
+  72 [  47] CALL      A=8 B=4 C=0
+  73 [  47] CALL      A=7 B=0 C=2
+  74 [  47] TEST      A=7 B=0 C=1
+  75 [  47] JMP       A=0 ->77
+  76 [  47] LOADK     R7 = K6 (0)
+  77 [  48] GETTABUP  R8 = UP1[K5('tonumber')]
+  78 [  48] GETTABUP  R9 = UP1[K7('string')]
+  79 [  48] GETTABLE  R9 = R9[K10('sub')]
+  80 [  48] MOVE      A=10 B=2 C=0
+  81 [  48] LOADK     R11 = K16 (6)
+  82 [  48] LOADK     R12 = K16 (6)
+  83 [  48] CALL      A=9 B=4 C=0
+  84 [  48] CALL      A=8 B=0 C=2
+  85 [  48] TEST      A=8 B=0 C=1
+  86 [  48] JMP       A=0 ->88
+  87 [  48] LOADK     R8 = K6 (0)
+  88 [  49] GETTABUP  R9 = UP1[K5('tonumber')]
+  89 [  49] GETTABUP  R10 = UP1[K7('string')]
+  90 [  49] GETTABLE  R10 = R10[K10('sub')]
+  91 [  49] MOVE      A=11 B=2 C=0
+  92 [  49] LOADK     R12 = K17 (7)
+  93 [  49] LOADK     R13 = K17 (7)
+  94 [  49] CALL      A=10 B=4 C=0
+  95 [  49] CALL      A=9 B=0 C=2
+  96 [  49] TEST      A=9 B=0 C=1
+  97 [  49] JMP       A=0 ->99
+  98 [  49] LOADK     R9 = K6 (0)
+  99 [  51] GETTABUP  R10 = UP2[K18('bit')]
+ 100 [  51] GETTABLE  R10 = R10[K19('bcheck')]
+ 101 [  51] MOVE      A=11 B=9 C=0
+ 102 [  51] LOADK     R12 = K12 (2)
+ 103 [  51] CALL      A=10 B=3 C=2
+ 104 [  52] GETTABUP  R11 = UP2[K18('bit')]
+ 105 [  52] GETTABLE  R11 = R11[K19('bcheck')]
+ 106 [  52] MOVE      A=12 B=9 C=0
+ 107 [  52] LOADK     R13 = K11 (1)
+ 108 [  52] CALL      A=11 B=3 C=2
+ 109 [  54] LOADK     R12 = K20 ('OK')
+ 110 [  55] TEST      A=10 B=0 C=0
+ 111 [  55] JMP       A=0 ->273
+ 112 [  56] LOADK     R12 = K21 ('ACRO')
+ 113 [  57] GETTABUP  R13 = UP2[K18('bit')]
+ 114 [  57] GETTABLE  R13 = R13[K19('bcheck')]
+ 115 [  57] MOVE      A=14 B=5 C=0
+ 116 [  57] LOADK     R15 = K12 (2)
+ 117 [  57] CALL      A=13 B=3 C=2
+ 118 [  57] TEST      A=13 B=0 C=0
+ 119 [  57] JMP       A=0 ->122
+ 120 [  58] LOADK     R12 = K22 ('FS')
+ 121 [  58] JMP       A=0 ->276
+ 122 [  59] GETTABUP  R13 = UP2[K18('bit')]
+ 123 [  59] GETTABLE  R13 = R13[K19('bcheck')]
+ 124 [  59] MOVE      A=14 B=8 C=0
+ 125 [  59] LOADK     R15 = K12 (2)
+ 126 [  59] CALL      A=13 B=3 C=2
+ 127 [  59] TEST      A=13 B=0 C=0
+ 128 [  59] JMP       A=0 ->131
+ 129 [  60] LOADK     R12 = K23 ('MANU')
+ 130 [  60] JMP       A=0 ->276
+ 131 [  61] GETTABUP  R13 = UP2[K18('bit')]
+ 132 [  61] GETTABLE  R13 = R13[K19('bcheck')]
+ 133 [  61] MOVE      A=14 B=3 C=0
+ 134 [  61] LOADK     R15 = K6 (0)
+ 135 [  61] CALL      A=13 B=3 C=2
+ 136 [  61] TEST      A=13 B=0 C=0
+ 137 [  61] JMP       A=0 ->140
+ 138 [  62] LOADK     R12 = K24 ('WRTH')
+ 139 [  62] JMP       A=0 ->276
+ 140 [  63] GETTABUP  R13 = UP2[K18('bit')]
+ 141 [  63] GETTABLE  R13 = R13[K19('bcheck')]
+ 142 [  63] MOVE      A=14 B=3 C=0
+ 143 [  63] LOADK     R15 = K11 (1)
+ 144 [  63] CALL      A=13 B=3 C=2
+ 145 [  63] TEST      A=13 B=0 C=0
+ 146 [  63] JMP       A=0 ->149
+ 147 [  64] LOADK     R12 = K25 ('ANGH')
+ 148 [  64] JMP       A=0 ->276
+ 149 [  65] GETTABUP  R13 = UP2[K18('bit')]
+ 150 [  65] GETTABLE  R13 = R13[K19('bcheck')]
+ 151 [  65] MOVE      A=14 B=4 C=0
+ 152 [  65] LOADK     R15 = K11 (1)
+ 153 [  65] CALL      A=13 B=3 C=2
+ 154 [  65] TEST      A=13 B=0 C=0
+ 155 [  65] JMP       A=0 ->158
+ 156 [  66] LOADK     R12 = K26 ('TURT')
+ 157 [  66] JMP       A=0 ->276
+ 158 [  67] GETTABUP  R13 = UP2[K18('bit')]
+ 159 [  67] GETTABLE  R13 = R13[K19('bcheck')]
+ 160 [  67] MOVE      A=14 B=4 C=0
+ 161 [  67] LOADK     R15 = K6 (0)
+ 162 [  67] CALL      A=13 B=3 C=2
+ 163 [  67] TEST      A=13 B=0 C=0
+ 164 [  67] JMP       A=0 ->167
+ 165 [  68] LOADK     R12 = K27 ('LAND')
+ 166 [  68] JMP       A=0 ->276
+ 167 [  69] GETTABUP  R13 = UP2[K18('bit')]
+ 168 [  69] GETTABLE  R13 = R13[K19('bcheck')]
+ 169 [  69] MOVE      A=14 B=4 C=0
+ 170 [  69] LOADK     R15 = K12 (2)
+ 171 [  69] CALL      A=13 B=3 C=2
+ 172 [  69] TEST      A=13 B=0 C=0
+ 173 [  69] JMP       A=0 ->176
+ 174 [  70] LOADK     R12 = K28 ('GEO')
+ 175 [  70] JMP       A=0 ->276
+ 176 [  71] GETTABUP  R13 = UP2[K18('bit')]
+ 177 [  71] GETTABLE  R13 = R13[K19('bcheck')]
+ 178 [  71] MOVE      A=14 B=4 C=0
+ 179 [  71] LOADK     R15 = K13 (3)
+ 180 [  71] CALL      A=13 B=3 C=2
+ 181 [  71] TEST      A=13 B=0 C=0
+ 182 [  71] JMP       A=0 ->185
+ 183 [  72] LOADK     R12 = K29 ('LOTR')
+ 184 [  72] JMP       A=0 ->276
+ 185 [  73] GETTABUP  R13 = UP2[K18('bit')]
+ 186 [  73] GETTABLE  R13 = R13[K19('bcheck')]
+ 187 [  73] MOVE      A=14 B=6 C=0
+ 188 [  73] LOADK     R15 = K6 (0)
+ 189 [  73] CALL      A=13 B=3 C=2
+ 190 [  73] TEST      A=13 B=0 C=0
+ 191 [  73] JMP       A=0 ->194
+ 192 [  74] LOADK     R12 = K30 ('RTH')
+ 193 [  74] JMP       A=0 ->276
+ 194 [  75] GETTABUP  R13 = UP2[K18('bit')]
+ 195 [  75] GETTABLE  R13 = R13[K19('bcheck')]
+ 196 [  75] MOVE      A=14 B=6 C=0
+ 197 [  75] LOADK     R15 = K11 (1)
+ 198 [  75] CALL      A=13 B=3 C=2
+ 199 [  75] TEST      A=13 B=0 C=0
+ 200 [  75] JMP       A=0 ->203
+ 201 [  76] LOADK     R12 = K31 ('WP')
+ 202 [  76] JMP       A=0 ->276
+ 203 [  77] GETTABUP  R13 = UP2[K18('bit')]
+ 204 [  77] GETTABLE  R13 = R13[K19('bcheck')]
+ 205 [  77] MOVE      A=14 B=6 C=0
+ 206 [  77] LOADK     R15 = K12 (2)
+ 207 [  77] CALL      A=13 B=3 C=2
+ 208 [  77] TEST      A=13 B=0 C=0
+ 209 [  77] JMP       A=0 ->212
+ 210 [  78] LOADK     R12 = K32 ('HEAD')
+ 211 [  78] JMP       A=0 ->276
+ 212 [  79] GETTABUP  R13 = UP2[K18('bit')]
+ 213 [  79] GETTABLE  R13 = R13[K19('bcheck')]
+ 214 [  79] MOVE      A=14 B=6 C=0
+ 215 [  79] LOADK     R15 = K13 (3)
+ 216 [  79] CALL      A=13 B=3 C=2
+ 217 [  79] TEST      A=13 B=0 C=0
+ 218 [  79] JMP       A=0 ->221
+ 219 [  80] LOADK     R12 = K33 ('CRSH')
+ 220 [  80] JMP       A=0 ->276
+ 221 [  81] GETTABUP  R13 = UP2[K18('bit')]
+ 222 [  81] GETTABLE  R13 = R13[K19('bcheck')]
+ 223 [  81] MOVE      A=14 B=7 C=0
+ 224 [  81] LOADK     R15 = K12 (2)
+ 225 [  81] CALL      A=13 B=3 C=2
+ 226 [  81] TEST      A=13 B=0 C=0
+ 227 [  81] JMP       A=0 ->230
+ 228 [  82] LOADK     R12 = K34 ('HOLD')
+ 229 [  82] JMP       A=0 ->276
+ 230 [  83] GETTABUP  R13 = UP2[K18('bit')]
+ 231 [  83] GETTABLE  R13 = R13[K19('bcheck')]
+ 232 [  83] MOVE      A=14 B=7 C=0
+ 233 [  83] LOADK     R15 = K6 (0)
+ 234 [  83] CALL      A=13 B=3 C=2
+ 235 [  83] TEST      A=13 B=0 C=0
+ 236 [  83] JMP       A=0 ->246
+ 237 [  83] GETTABUP  R13 = UP2[K18('bit')]
+ 238 [  83] GETTABLE  R13 = R13[K19('bcheck')]
+ 239 [  83] MOVE      A=14 B=7 C=0
+ 240 [  83] LOADK     R15 = K11 (1)
+ 241 [  83] CALL      A=13 B=3 C=2
+ 242 [  83] TEST      A=13 B=0 C=0
+ 243 [  83] JMP       A=0 ->246
+ 244 [  84] LOADK     R12 = K35 ('CRUZ')
+ 245 [  84] JMP       A=0 ->276
+ 246 [  85] GETTABUP  R13 = UP2[K18('bit')]
+ 247 [  85] GETTABLE  R13 = R13[K19('bcheck')]
+ 248 [  85] MOVE      A=14 B=7 C=0
+ 249 [  85] LOADK     R15 = K11 (1)
+ 250 [  85] CALL      A=13 B=3 C=2
+ 251 [  85] TEST      A=13 B=0 C=0
+ 252 [  85] JMP       A=0 ->255
+ 253 [  86] LOADK     R12 = K36 ('ALT')
+ 254 [  86] JMP       A=0 ->276
+ 255 [  87] GETTABUP  R13 = UP2[K18('bit')]
+ 256 [  87] GETTABLE  R13 = R13[K19('bcheck')]
+ 257 [  87] MOVE      A=14 B=8 C=0
+ 258 [  87] LOADK     R15 = K6 (0)
+ 259 [  87] CALL      A=13 B=3 C=2
+ 260 [  87] TEST      A=13 B=0 C=0
+ 261 [  87] JMP       A=0 ->264
+ 262 [  88] LOADK     R12 = K37 ('ANGL')
+ 263 [  88] JMP       A=0 ->276
+ 264 [  89] GETTABUP  R13 = UP2[K18('bit')]
+ 265 [  89] GETTABLE  R13 = R13[K19('bcheck')]
+ 266 [  89] MOVE      A=14 B=8 C=0
+ 267 [  89] LOADK     R15 = K11 (1)
+ 268 [  89] CALL      A=13 B=3 C=2
+ 269 [  89] TEST      A=13 B=0 C=0
+ 270 [  89] JMP       A=0 ->276
+ 271 [  90] LOADK     R12 = K38 ('HOR')
+ 272 [  91] JMP       A=0 ->276
+ 273 [  92] TEST      A=11 B=0 C=0
+ 274 [  92] JMP       A=0 ->276
+ 275 [  93] LOADK     R12 = K39 ('ERR')
+ 276 [  96] GETTABUP  R13 = UP0[K0('S')]
+ 277 [  96] SETTABLE  R13[K40('ARMED')] = R10
+ 278 [  97] GETTABUP  R13 = UP0[K0('S')]
+ 279 [  97] SETTABLE  R13[K41('ARM_STOP_TLM')] = R11
+ 280 [  98] GETTABUP  R13 = UP0[K0('S')]
+ 281 [  98] GETTABUP  R14 = UP0[K0('S')]
+ 282 [  98] GETTABLE  R14 = R14[K41('ARM_STOP_TLM')]
+ 283 [  98] TEST      A=14 B=0 C=1
+ 284 [  98] JMP       A=0 ->289
+ 285 [  98] GETTABUP  R14 = UP0[K0('S')]
+ 286 [  98] GETTABLE  R14 = R14[K43('ARM_STOP_MSP')]
+ 287 [  98] TEST      A=14 B=0 C=0
+ 288 [  98] JMP       A=0 ->292
+ 289 [  98] LOADK     R14 = K12 (2)
+ 290 [  98] TEST      A=14 B=0 C=1
+ 291 [  98] JMP       A=0 ->300
+ 292 [  98] GETTABUP  R14 = UP0[K0('S')]
+ 293 [  98] GETTABLE  R14 = R14[K40('ARMED')]
+ 294 [  98] TEST      A=14 B=0 C=0
+ 295 [  98] JMP       A=0 ->299
+ 296 [  98] LOADK     R14 = K11 (1)
+ 297 [  98] TEST      A=14 B=0 C=1
+ 298 [  98] JMP       A=0 ->300
+ 299 [  98] LOADK     R14 = K6 (0)
+ 300 [  98] SETTABLE  R13[K42('ARMSTAT')] = R14
+ 301 [  99] GETTABUP  R13 = UP0[K0('S')]
+ 302 [  99] SETTABLE  R13[K1('FC_FM')] = R12
+ 303 [ 100] GETTABUP  R13 = UP0[K0('S')]
+ 304 [ 100] GETTABUP  R14 = UP0[K0('S')]
+ 305 [ 100] GETTABLE  R14 = R14[K45('FC_FM_MODES')]
+ 306 [ 100] GETTABLE  R14 = R14[R12]
+ 307 [ 100] TEST      A=14 B=0 C=1
+ 308 [ 100] JMP       A=0 ->310
+ 309 [ 100] MOVE      A=14 B=12 C=0
+ 310 [ 100] SETTABLE  R13[K44('FC_FM_NAME')] = R14
+ 311 [ 103] RETURN    A=0 B=1 C=0

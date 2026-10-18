@@ -1,3 +1,211 @@
+CURRENT LOCAL BUILD: GPS-UNIFIED-20261018
+Source:e3eb82d23231;59suites PASS in both numeric VMs.
+GPS shares Flight's75px rails/font hierarchy, with four compact readouts per
+side, exact coordinates and recovery code on the dashboard. Centered328x180
+map retained. Five GPS views replaced by one live scrollable Info sheet.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-unified-install.zip. Installed on the radio;66runtime
+files read back and verified, SD safely ejected (see DEPLOYMENT.txt).
+Hardware/live telemetry acceptance pending. See GPS-UNIFIED.txt for build notes.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: GPS-CENTER-20261018
+Source:8f4ed60e998b;59suites PASS in both numeric VMs.
+Central320x180GPS map, narrow supporting side rails, labelled real-metre
+rings/grid synchronized with the published trail zoom. Native position dot.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-center-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-CENTER.txt.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: GPS-SIMPLE-20261018
+Source:0b1dfbbbff05;59suites PASS in both numeric VMs.
+GPS uses a native position dot, no projection counter or aircraft images.
+Larger return/speed/altitude values; sparse grid; direct views and actions retained.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-simple-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-SIMPLE.txt.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: GPS-SPACE-20261018
+Source:ec3ea40cb6c0;59suites PASS in both numeric VMs.
+280x180GPS plot, compact return-data rail, direct view selector, contextual
+actions and source-qualified nose direction from cached image frames.
+Preview:http://127.0.0.1:8766/ (native simulator, sample telemetry).
+Package:AERODECK-gps-space-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-SPACE.txt.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: UNIFIED-GPS-20261018
+Source: ae0f441dc9cb;58 suites PASS in both numeric VMs.
+Home-bearing cue moved to the heading ribbon; no floating home over attitude.
+One GPS destination with map/return overview and preserved supporting views.
+Preview: http://127.0.0.1:8766/ (native simulator, sample telemetry).
+Package: AERODECK-unified-gps-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt).
+See UNIFIED-GPS.txt for controls, compatibility and verification scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: COHESIVE-FLIGHT-20261018
+Source:235cbd2b9f07;57suites PASS in both numeric VMs.
+Continuous Flight panels, aligned rails, full central footer; image quad/home
+markers and live30px TX gauge with voltage/model stack. Native Flight/GPS
+captures reviewed; no script/CPU-limit errors.
+Preview:http://127.0.0.1:8766/ (local sample telemetry).
+Local package:AERODECK-cohesive-flight-install.zip.
+Radio remains ATTITUDE-CLEAN-20261018; see DEPLOYMENT.txt.
+See COHESIVE-FLIGHT.txt for asset/rendering choices and verification scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: FLIGHT-PANELS-20261018
+Main:ad252b2772d3;56suites PASS in both numeric VMs.
+Native123m/1234m samples visually verified; no script/CPU-limit errors.
+Flight horizon confined to its panel; wider tapes fit signed three-digit values.
+Battery: voltage first, cells/charge columns with explicit AUTO/EST labels.
+Local package:AERODECK-flight-panels-install.zip.
+Preview:http://127.0.0.1:8766/ (sample123m telemetry).
+Radio remains on ATTITUDE-CLEAN-20261018; see DEPLOYMENT.txt.
+See FLIGHT-PANELS.txt for dimensions, range checks and evidence scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT BUILD ON RADIO: ATTITUDE-CLEAN-20261018
+Installed, readback verified and safely ejected on 2026-10-18T11:16:29.552431+02:00.
+Main source: ee3c98c82e67; all 66 runtime files verified.
+Models/settings/ELRS/Toolbox preserved. Reopen AERODECK after unplugging USB.
+DEPLOYMENT.txt is the installation record; the notes below retain their original
+creation-time local-candidate status. Hardware/live-data acceptance is separate.
+
+BUILD DEVELOPMENT NOTES FOLLOW
+
+CURRENT LOCAL BUILD: ATTITUDE-CLEAN-20261018
+Status: local Flight attitude cleanup; not installed on the radio.
+Browser: http://127.0.0.1:8766/ (native simulator; sample telemetry).
+Current source: ee3c98c82e67; see development/build-ATTITUDE-CLEAN-20261018.json.
+Local package: AERODECK-attitude-clean-install.zip.
+
+Flight uses the native horizon, fixed aircraft datum, pitch rungs and bank marks.
+Moving ladder numbers, duplicate P/R degree cells and the COG/YAW caption have
+been removed. Their sorting, relocation, collision checks and scratch arrays are
+also gone. Compass bearing, speed/altitude tapes and telemetry values remain.
+Raw angles are still available in Data; the Video detail view retains its angles.
+No telemetry cadence, sign conventions, smoothing, budget or radio files changed.
+See ATTITUDE-CLEAN.txt for source-bound checks and measurement scope.
+
+PREVIOUS ARM-STATUS NOTES BELOW
+
+CURRENT LOCAL BUILD: ARM-STATUS-20261018
+Status: final Arm shield position and red/green status; local only. Last file-
+verified radio build is REPLACEMENT-RC1-20261017; see DEPLOYMENT.txt.
+Browser: http://127.0.0.1:8766/ (native simulator; sample telemetry).
+Current source:476ae7be86d0 (56 suites PASS under each numeric interpreter).
+Local package:AERODECK-arm-status-install.zip; previous archives stay frozen.
+
+Order: Home, Data, GPS, Video, Setup, Tools, Arm Info. The last shield is green
+for a fresh known clear flag report, red for flags/unavailable/stale/error status.
+Its status color is independent of the highlight accent. Green does not prove
+armed state or readiness. Caller handling and the reclaimed footer are unchanged.
+See ARM-STATUS.txt for scope and source-bound checks. ARM-TOOLBAR.txt preserves
+the previous navigation evidence; battery and GPS fixes remain included.
+
+PREVIOUS ATTITUDE-PERF NOTES BELOW
+
+PREVIOUS LOCAL BUILD: ATTITUDE-PERF-20261018
+Status: local performance revision; not installed. Last file-verified radio build
+is REPLACEMENT-RC1-20261017; DEPLOYMENT.txt is the installation record.
+Browser: http://127.0.0.1:8766/ (local native simulator; sample telemetry).
+The page identifies its exact source hash and refuses stale snapshots.
+Current source:3f94e062c5bc (54 suites PASS in each VM).
+Current local package:AERODECK-attitude-perf-install.zip; older archives are frozen.
+
+The native EdgeTX horizon API and existing roll-direction setting are retained.
+Slow standalone telemetry now honors its 200ms/revision cache; attitude remains
+callback-fresh. Bounded text/fit caches avoid repeated font/layout work. Widget
+startup prepares one icon per callback before normal rendering; no full forced
+GC runs at icon loads or page navigation. Full widget buffers still repaint.
+See ATTITUDE-PERF.txt for measured scope and acceptance limitations.
+
+PREVIOUS ROLL DISPLAY NOTES BELOW
+
+CURRENT LOCAL BUILD: ROLL-DISPLAY-20261018
+Status: local roll-display correction; not installed. Radio remains on RC1; see DEPLOYMENT.txt.
+
+User-reported roll inversion is a physical acceptance issue, not resolved by a
+feature count. Setup > User Interface > Roll display direction now supports a
+saved per-model Reversed correction across all three HUDs and angle readouts.
+Raw Data Roll stays unchanged. Fixed-arc bank pointer now follows the sky normal.
+Existing settings default to Normal; the affected model must receive Reversed.
+See ROLL-DISPLAY.txt and the new build-specific reports/previews. The original
+RC1 audit and accepted evidence remain frozen to their original source hashes.
+
+PREVIOUS RC1 NOTES BELOW
+
+CURRENT LOCAL BUILD: REPLACEMENT-RC1-20261017
+Status: release candidate; not installed on the radio by this revision.
+Last verified radio installation remains POWER-LIVE-20261017 in DEPLOYMENT.txt.
+
+This revision implements the audited replacement paths while retaining the flat
+AERODECK design, native attitude drawing and qualified current telemetry reads.
+- Six icon sections / thirteen destinations, consistent touch and rotary focus.
+- Flight PFD, live Video and Navigation centre panels; tap the lower PANEL cell.
+- Separate GPS-course/body-yaw compass and Minimal/Graduated attitude markings.
+- Pack voltage range and consumed-capacity estimates remain separate measures.
+- Real input mapping, input-state page and explicit battery-profile chooser.
+- Protocol-aware CRSF/FrSky data, native extrema and GPS recovery/Plus Codes.
+- BF/verified INAV CRSF/S.Port MSP, native TBS and guarded VTX write/readback.
+- Complete conditional settings, per-model recovery and shared widget session.
+- Widget load/init and physical input discovery span bounded callbacks; source
+  refresh is incremental and model changes yield before using new-owner data.
+- Thirteen cold phases prepare source readers, FC clients and the arm decoder.
+  Widget refresh always paints its transient native buffer. Slow work has four
+  phases: first field batch, remaining fields/summary, power, session/publication.
+  Acquisition starts target a 200 ms period. At 20 callbacks/s, the field window
+  is about 50 ms and publication follows about 150 ms after the first batch.
+  Repeated cancelled work never mutates the displayed sample. Attitude is current
+  on normal callbacks; tool redraw rate does not throttle widget painting.
+- Slow phases wait for headroom while cached data and fresh attitude paint.
+  Published400ms/pending200ms thresholds reserve transport-free sampling
+  callbacks; modal bodies can progress without drawing an occluded PFD.
+  Nominal sampling/publication timings can stretch under load.
+- Cached unit/alias readers retain the original validation results. Fixed bank
+  and aircraft strokes avoid repeated Lua geometry work without changing pixels.
+- Explicit Save Log uses model-bound transaction steps with an opaque progress
+  view. No periodic telemetry refresh writes to the SD card.
+- Hold SYS or MDL for alerts/reset/MSP restart/table reads/reload quick actions.
+- About/System, native radio battery limits, optional model image and error log.
+
+Only activation/licence enforcement is excluded from the replacement scope.
+The 350-row ledger keeps code coverage, reference limitations and outstanding
+physical acceptance explicit: IMPLEMENTATION-STATUS.txt and its JSON ledger.
+
+Current controls/install guide: AERODECK.txt / START-HERE.txt.
+Release notes and physical acceptance: REPLACEMENT-RC1.txt.
+Portable test evidence: development/test-results-REPLACEMENT-RC1-20261017.json.
+Actual native Lua previews: development/ui-previews/replacement-rc1/.
+Build file hashes: development/build-REPLACEMENT-RC1-20261017.json.
+
+Native previews use EdgeTX 3.0 TX16S WASM with synthetic development-only data.
+They do not establish target EdgeTX 2.12.4 RF behavior, physical readability or
+performance against Toolbox on the radio. There is no production demo provider.
+The accepted exact-source native bundle contains 19 cases and 133 reviewed PNGs,
+including clean widget startup/all 13 pages and populated current-data poses.
+A roughly 203.6-second full-widget run includes 170.365 seconds / 4,500 monitored
+frames with no blanks, ordinary updating screens or instruction-limit errors.
+These are synthetic simulator results. Shared-VM heap counts include fixtures,
+and getUsage measures instruction allowance, not physical CPU utilization.
+All 48 portable suites pass on LuaJIT and stock Lua int32/float32. Target-radio
+acceptance and a physical comparison with Toolbox remain open.
+
+
+HISTORICAL REVISION RECORDS BELOW — descriptions of earlier builds are retained;
+none overrides the current local status above or DEPLOYMENT.txt installation.
+
 CURRENT UI: POWER-LIVE-20261017
 Power gains explicit source health, Sources/Refresh/Limits actions, calculated
 watts and capacity-based remaining charge. Five favourites are supported.

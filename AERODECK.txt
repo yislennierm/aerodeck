@@ -1,177 +1,406 @@
-CURRENT SOFTWARE: POWER-LIVE-20261017. See POWER-LIVE.txt and DEPLOYMENT.txt.
-The Flight-Status footer and GPS decoder are included. Power source recovery,
-source health/actions and five battery profiles are included. Live quad values
-require verification after reopening the installed app.
+CURRENT LOCAL BUILD: GPS-UNIFIED-20261018
+Source:e3eb82d23231;59suites PASS in both numeric VMs.
+GPS shares Flight's75px rails/font hierarchy, with four compact readouts per
+side, exact coordinates and recovery code on the dashboard. Centered328x180
+map retained. Five GPS views replaced by one live scrollable Info sheet.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-unified-install.zip. Installed on the radio;66runtime
+files read back and verified, SD safely ejected (see DEPLOYMENT.txt).
+Hardware/live telemetry acceptance pending. See GPS-UNIFIED.txt for build notes.
 
-HISTORICAL FLIGHT-STATUS NOTES FOLLOW
-AERODECK — RadioMaster TX16S MkII, 480 × 272
-CURRENT LOCAL BUILD: FLIGHT-STATUS-20261017 — LOCAL ONLY; not installed on the radio.
-Previous local build: FLIGHT-PRIORITY-20261017.
-Last verified radio build: FLIGHT-PRIORITY-20261017; see DEPLOYMENT.txt.
-See FLIGHT-STATUS.txt for the shared arming-status footer and API 1.48 decoder,
-FLIGHT-PRIORITY.txt for data hierarchy, and FLIGHT-GLANCE.txt for HUD design.
+PREVIOUS BUILD NOTES FOLLOW
 
-OPEN / INSTALL
-Open SYS > Tools > AERODECK. For a home-screen widget, add AERODECK through
-EdgeTX widget setup and choose Full screen; it loads the same telem.lua app.
-The compact widget shows live pack voltage/current/link quality. Compact or
-hidden mode stops the full app, its alarms, MSP and local session timer.
+CURRENT LOCAL BUILD: GPS-CENTER-20261018
+Source:8f4ed60e998b;59suites PASS in both numeric VMs.
+Central320x180GPS map, narrow supporting side rails, labelled real-metre
+rings/grid synchronized with the published trail zoom. Native position dot.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-center-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-CENTER.txt.
 
-To install, exit the app and merge only SCRIPTS/WIDGETS into the SD root.
-Preserve settings-*.cfg, battery-*.cfg and their backups. Do not replace MODELS
-or RADIO. Remove stale app caches only after backing up the existing app:
-SCRIPTS/TOOLS/telem.luac and SCRIPTS/TOOLS/AERODECK/arm-status.luac, if present.
-Then reopen AERODECK. This local revision has not been installed.
+PREVIOUS BUILD NOTES FOLLOW
 
-NAVIGATION
-Six stable icon sections with 30 px Material images, in the same touch/PAGE order:
-  Flight: Instruments, Arm Info (arming-block reasons)
+CURRENT LOCAL BUILD: GPS-SIMPLE-20261018
+Source:0b1dfbbbff05;59suites PASS in both numeric VMs.
+GPS uses a native position dot, no projection counter or aircraft images.
+Larger return/speed/altitude values; sparse grid; direct views and actions retained.
+Preview:http://127.0.0.1:8766/ (sample telemetry).
+Package:AERODECK-gps-simple-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-SIMPLE.txt.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: GPS-SPACE-20261018
+Source:ec3ea40cb6c0;59suites PASS in both numeric VMs.
+280x180GPS plot, compact return-data rail, direct view selector, contextual
+actions and source-qualified nose direction from cached image frames.
+Preview:http://127.0.0.1:8766/ (native simulator, sample telemetry).
+Package:AERODECK-gps-space-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt). See GPS-SPACE.txt.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: UNIFIED-GPS-20261018
+Source: ae0f441dc9cb;58 suites PASS in both numeric VMs.
+Home-bearing cue moved to the heading ribbon; no floating home over attitude.
+One GPS destination with map/return overview and preserved supporting views.
+Preview: http://127.0.0.1:8766/ (native simulator, sample telemetry).
+Package: AERODECK-unified-gps-install.zip. Local only; radio remains
+ATTITUDE-CLEAN-20261018 (see DEPLOYMENT.txt).
+See UNIFIED-GPS.txt for controls, compatibility and verification scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: COHESIVE-FLIGHT-20261018
+Source:235cbd2b9f07;57suites PASS in both numeric VMs.
+Continuous Flight panels, aligned rails, full central footer; image quad/home
+markers and live30px TX gauge with voltage/model stack. Native Flight/GPS
+captures reviewed; no script/CPU-limit errors.
+Preview:http://127.0.0.1:8766/ (local sample telemetry).
+Local package:AERODECK-cohesive-flight-install.zip.
+Radio remains ATTITUDE-CLEAN-20261018; see DEPLOYMENT.txt.
+See COHESIVE-FLIGHT.txt for asset/rendering choices and verification scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT LOCAL BUILD: FLIGHT-PANELS-20261018
+Main:ad252b2772d3;56suites PASS in both numeric VMs.
+Native123m/1234m samples visually verified; no script/CPU-limit errors.
+Flight horizon confined to its panel; wider tapes fit signed three-digit values.
+Battery: voltage first, cells/charge columns with explicit AUTO/EST labels.
+Local package:AERODECK-flight-panels-install.zip.
+Preview:http://127.0.0.1:8766/ (sample123m telemetry).
+Radio remains on ATTITUDE-CLEAN-20261018; see DEPLOYMENT.txt.
+See FLIGHT-PANELS.txt for dimensions, range checks and evidence scope.
+
+PREVIOUS BUILD NOTES FOLLOW
+
+CURRENT BUILD ON RADIO: ATTITUDE-CLEAN-20261018
+Installed, readback verified and safely ejected on 2026-10-18T11:16:29.552431+02:00.
+Main source: ee3c98c82e67; all 66 runtime files verified.
+Models/settings/ELRS/Toolbox preserved. Reopen AERODECK after unplugging USB.
+DEPLOYMENT.txt is the installation record; the notes below retain their original
+creation-time local-candidate status. Hardware/live-data acceptance is separate.
+
+BUILD DEVELOPMENT NOTES FOLLOW
+
+CURRENT LOCAL BUILD: ATTITUDE-CLEAN-20261018
+Status: local Flight attitude cleanup; not installed on the radio.
+Browser: http://127.0.0.1:8766/ (native simulator; sample telemetry).
+Current source: ee3c98c82e67; see development/build-ATTITUDE-CLEAN-20261018.json.
+Local package: AERODECK-attitude-clean-install.zip.
+
+Flight uses the native horizon, fixed aircraft datum, pitch rungs and bank marks.
+Moving ladder numbers, duplicate P/R degree cells and the COG/YAW caption have
+been removed. Their sorting, relocation, collision checks and scratch arrays are
+also gone. Compass bearing, speed/altitude tapes and telemetry values remain.
+Raw angles are still available in Data; the Video detail view retains its angles.
+No telemetry cadence, sign conventions, smoothing, budget or radio files changed.
+See ATTITUDE-CLEAN.txt for source-bound checks and measurement scope.
+
+PREVIOUS ARM-STATUS NOTES BELOW
+
+CURRENT LOCAL BUILD: ARM-STATUS-20261018
+Status: final Arm shield position and red/green status; local only. Last file-
+verified radio build is REPLACEMENT-RC1-20261017; see DEPLOYMENT.txt.
+Browser: http://127.0.0.1:8766/ (native simulator; sample telemetry).
+Current source:476ae7be86d0 (56 suites PASS under each numeric interpreter).
+Local package:AERODECK-arm-status-install.zip; previous archives stay frozen.
+
+Order: Home, Data, GPS, Video, Setup, Tools, Arm Info. The last shield is green
+for a fresh known clear flag report, red for flags/unavailable/stale/error status.
+Its status color is independent of the highlight accent. Green does not prove
+armed state or readiness. Caller handling and the reclaimed footer are unchanged.
+See ARM-STATUS.txt for scope and source-bound checks. ARM-TOOLBAR.txt preserves
+the previous navigation evidence; battery and GPS fixes remain included.
+
+PREVIOUS ATTITUDE-PERF NOTES BELOW
+
+PREVIOUS LOCAL BUILD: ATTITUDE-PERF-20261018
+Status: local performance revision; not installed. Last file-verified radio build
+is REPLACEMENT-RC1-20261017; DEPLOYMENT.txt is the installation record.
+Browser: http://127.0.0.1:8766/ (local native simulator; sample telemetry).
+The page identifies its exact source hash and refuses stale snapshots.
+Current source:3f94e062c5bc (54 suites PASS in each VM).
+Current local package:AERODECK-attitude-perf-install.zip; older archives are frozen.
+
+The native EdgeTX horizon API and existing roll-direction setting are retained.
+Slow standalone telemetry now honors its 200ms/revision cache; attitude remains
+callback-fresh. Bounded text/fit caches avoid repeated font/layout work. Widget
+startup prepares one icon per callback before normal rendering; no full forced
+GC runs at icon loads or page navigation. Full widget buffers still repaint.
+See ATTITUDE-PERF.txt for measured scope and acceptance limitations.
+
+PREVIOUS ROLL DISPLAY NOTES BELOW
+
+CURRENT LOCAL PATCH: ROLL-DISPLAY-20261018
+Roll presentation can be Normal or Reversed per model in Setup > User Interface.
+The saved direction applies to all three attitude views and their angle readouts.
+Raw Roll on the Data page remains unchanged. The fixed-arc bank pointer follows
+the horizon. See ROLL-DISPLAY.txt; DEPLOYMENT.txt records actual installation.
+
+BASE RC1 GUIDE BELOW
+
+AERODECK — REPLACEMENT-RC1-20261017
+RadioMaster TX16S MkII / EdgeTX 2.12.4 is the first physical acceptance target.
+LOCAL RELEASE CANDIDATE; NOT INSTALLED OR HARDWARE-VERIFIED.
+The last file-verified radio install is POWER-LIVE-20261017; see DEPLOYMENT.txt.
+See REPLACEMENT-RC1.txt for changes and IMPLEMENTATION-STATUS.txt for open work.
+
+OPEN AND NAVIGATE
+Open SYS > Tools > AERODECK. Add the AERODECK home-screen widget through EdgeTX
+widget setup; Full screen opens the same app. The compact card uses its current
+shared values. Returning to compact/hidden keeps the session, local home/track,
+configured alarm state and timer continuity while EdgeTX schedules its callbacks.
+Battery alerts run with that scheduled app session. Opening a standalone tool
+disables widget refresh until the tool closes. Foreground MSP/reference playback
+is suspended when the widget leaves full screen. A standalone tool closes its
+session on a controlled exit.
+
+On first widget use, cold load, chunk execution and session initialization use
+separate callbacks. The app shows STARTING AERODECK and stage progress while 13
+initialization phases complete, including bounded native input discovery,
+compiled source plans, the FC client and arming decoder. No partial
+telemetry snapshot is presented as live. A runtime input refresh is incremental
+and keeps flight/home state. The final cold callback yields before live service.
+
+Native widget LCD buffers are transient, so every scheduled refresh paints a
+frame. Slow telemetry uses four bounded callbacks: the first field batch, the
+remaining fields/summary, power derivation, then session/publication. Acquisition
+starts target a 200 ms period. The fields are not sampled simultaneously: at
+20 callbacks/s, acquisition spans about 50 ms and publication follows about
+150 ms after the first batch. Displayed raw/derived/session values stay intact
+until completed publication, including repeated source-setting cancellations or
+expired-work restarts. Normal callbacks read pitch/roll and immediately update the
+displayed attitude, including loss.
+The render-rate preference targets the standalone tool only; its bitmap buffer
+persists between runs. Widgets receive transient draw buffers and always paint.
+Primary source contract: development/runtime-evidence/edgetx-2124-frame-contract.json. First-sample, heavy explicit actions or exceptional FC/cache
+work paint an opaque progress view instead of leaving the LCD buffer blank.
+Ordinary sampling continues to paint the current page.
+
+Slow phases can wait when earlier work uses more than the reserved instruction margin.
+The complete cached page still paints, with freshly read attitude. If publication
+has waited 400 ms or pending work 200 ms, sampling gets a callback without the
+transport dispatcher; transport resumes with fresh guards afterward. This does
+not issue RF writes or promise a maximum data age. A modal's cheaper body can
+advance slow work while the PFD is hidden. Pending work older than 300 ms or
+using an obsolete settings/battery revision is discarded and sampled again.
+The nominal 200 ms cadence and 150 ms publication delay can stretch under load;
+real radio performance remains a separate acceptance check.
+
+A widget background SESSION ERROR suspends that instance and attempts controlled
+closure. Use the EdgeTX widget Update action to retry closure/restart. If native
+timer restoration fails, its session and recovery metadata remain available; a
+new app instance is not silently substituted over the failed one. This is not a
+promise of recovery from every arbitrary module or firmware failure.
+
+The six top sections are stable, in PAGE/touch order:
+  Flight: Instruments, Arm Info, Radio Inputs
   Data: Telemetry, Power, RC Link
   GPS: Details, Track/Home
-  Video: saved VTX frequency references
-  Setup: named settings categories
+  Video: VTX Control
+  Setup: Configuration categories
   Tools: Stick Guide, Sensors, Diagnostics
-SYS short press focuses the same six-icon bar. Rotary or PAGE moves its focus;
-ENTER opens; RTN cancels. PAGE outside that mode changes section directly.
-Clock/model text uses centered native font metrics, with TINSIZE for the model.
-The selected/focused navigation plates are 44 × 32 px. Detail tabs center native 18 px
-symbols and labels inside 26 px context frames outside the Flight root. Flight's
-compass uses the full 324 px header width; Arm Info is in the shared footer.
-Other editable SVGs: development/icons/material/masters/.
-The home image returns to Flight. Its editable SVG is development/icons/home-outlined-30.svg;
-radio asset: SCRIPTS/TOOLS/AERODECK/icons/home.png, 30 × 30 opaque RGB PNG mask.
-Replace the PNG and exit/reopen to reload; grey smooths edges and Lua supplies colour.
-The home symbol returns to Flight. There is no separate twelve-tile chooser.
-A section opens its stable root instead of an unpredictable remembered subpage.
+Short SYS/MDL focuses this bar. Rotary chooses, ENTER opens, RTN cancels.
+PAGE outside bar focus changes section. The home icon returns to Flight.
+On a page, rotary focuses a visible tab/action and ENTER activates. ENTER with
+no focus first highlights an action. Touch operates the same visible targets.
+RTN backs through the current detail to its origin, then Flight, then exit.
 
-On normal pages turn the rotary to focus a visible tab/action, then ENTER. ENTER
-with no focus highlights an available control first. Focus remains for repeat
-actions such as Zoom, Mode and Refresh. Arm Stops uses rotary to select its
-reason list. Touch works on the corresponding visible controls.
+Hold SYS to open Quick Actions from any section. Rotary/touch chooses; ENTER
+executes; RTN or Cancel closes. Actions are Mute/Enable Alerts, confirmed Reset
+Flight Data, Reload AERODECK, and conditional Restart MSP / Read VTX Tables.
+Read VTX Tables forces fresh discovery and cache bypass; viewing never applies
+settings. Reset is a second-press confirmation and retains armed/error guards.
+The selected timer/native-statistics reset options control its reset scope.
+Reload reinitializes the local app/session/settings; close and reopen the app
+after editing Lua source. Reload is not a source hot-reload command.
 
-RTN backs out of a detail to its owner, then Flight. From Setup it first cancels
-an active value edit, then returns to categories, then the originating page.
-Short RTN on Flight exits; unsaved drafts offer Keep Editing or Discard/Exit.
-Held RTN is EdgeTX's firmware-controlled forced exit.
+FLIGHT AND GLOBAL STATUS
+Flight retains the wide native attitude display and readable power/link rails.
+Use PFD > / VIDEO > / GPS > to choose its centre panel; Setup > User Interface
+sets the default. Video shows live reported FC/native VTX data with a mini
+attitude view. Navigation uses the same current/local-home session as GPS.
+COG uses GPS ground course. Optional YAW uses body yaw and shows -- when that
+selected source is unavailable. Minimal/Graduated changes attitude markings
+without changing pitch sign or the native horizon. Clock/model/radio/date
+context cycles by tapping the left header information.
 
-All twelve pages share one 26 px footer: flight mode, app-local home distance,
-satellites, a current arming-block summary, and a separate 48 px Arm Info icon.
-The mode has no repeated FM prefix. LQ, RSSI and voltage are not repeated here.
-Missing sensor values show --. A fresh supported mask shows the first reason
-code plus the number of additional reasons. NO FLAGS means only that the
-reported disable mask is clear; it never claims READY or ARMED. FLAGS -- means
-unavailable, STATUS OLD means stale, and STATUS ERROR means malformed status.
-Unknown API/count combinations retain numbered bits.
+The Flight footer shows mode, local-home distance, satellites and arming status.
+Other pages show mode, pack voltage, family-appropriate link quality and arming.
+The right shield opens Arm Info on normal and warning pages; RTN returns to the
+origin, preserving a Setup draft/edit. Warning text opens the relevant detail.
+NO FLAGS means a clear reported disable mask, never ready/armed. FLAGS --,
+STATUS OLD and STATUS ERROR distinguish unavailable, stale and malformed data.
+Unknown firmware/API/bit layouts remain explicit rather than borrowing a map.
 
-The rightmost Arm Info icon remains visible during warnings and notices.
-Warnings occupy the left 432 px; touch or focused ENTER opens their details.
-The separate right icon opens the read-only reason list on normal or warning
-pages. RTN returns to the originating page and preserves an active Setup value
-edit and draft. From the first Setup category, PREV can focus the footer icon.
-Normal mode/home/satellite/status readings remain informational.
+REAL TELEMETRY AND POWER
+Setup > Model Setup selects protocol, FC, source mappings and provider enables.
+Auto uses the selected profile's native aliases. None/Off explicitly disables a
+quantity. Manual sources require compatible units; supported quantities convert
+mA/A, Ah/mAh, W/mW and navigation units. Current zero is valid; stale or invalid
+values are unavailable. Discover sensors in EdgeTX before refreshing app sources.
+Power provides Sources, Refresh and Limits with cached source-health reasons.
 
-SETTINGS
-Select a category with rotary/ENTER or touch. Existing protocol/FC/source/VTX
-conditions determine available categories; hidden values remain saved.
-Choose an editable row, ENTER, adjust with rotary, ENTER to finish the draft.
-RTN during editing restores that one value. Touch a row and use -/+ to adjust.
-Rotary also reaches Save, Revert and More Rows; notes are not editable.
-SAVE SETTINGS commits the shared non-battery draft. SAVE BATTERY commits only
-cell count/voltage/alert preferences. Their pending badges are independent.
-A save validates, writes and verifies the file, retaining the previous values
-as a backup. Saving one store does not commit the other. Notes-only categories
-have no editing/save buttons. See UX-CLEANUP.txt for the complete control model.
+Power and Quick Pack support five enabled LiPo/Li-ion profiles with cells and
+capacity. Tap the Power pack header, select a proposal and choose Use Pack.
+Selection alone writes nothing; Use validates and saves the active profile.
+Reported Bat% and calculated remaining mAh/% retain separate provenance. A ~
+marks an estimate. The thin voltage-range bar is independent from charge left.
+A4 is a measured cell source; pack voltage divided by cells is an average.
+Automatic cell count is labelled as an estimate; unsupported counts remain --.
 
-Preferences use settings-<hex-model-name>.cfg and battery-<hex-model-name>.cfg
-inside SCRIPTS/TOOLS/AERODECK. Renaming a model selects different settings;
-duplicate names share preferences. These are app settings, not FC/output writes.
-Legacy RC/FC profile None still permits automatic native CRSF detection; use
-the real Read-only FC connection Off control to disable MSP.
+Link values/default warnings follow the selected family: CRSF dBm/LQ/SNR and
+FrSky percentage RSSI are not interchangeable. RC Link shows the available
+family metrics. Native transmitter voltage and configured battMin/battMax/
+battWarn drive a separate range estimate and radio-battery warning/detail page.
 
-FLIGHT PAGE
-Designed for the user's reported 30–40 cm viewing distance. Native font sizes
-are measured; physical readability has not been measured on the radio.
-The battery rail prioritizes pack voltage, consumed mAh and current with 29 px
-values when they fit. Derived AVG CELL V moves to the 17 px bottom slot; it is
-pack voltage divided by configured cells, not an individual cell measurement.
-Battery comparisons round per-cell voltage to 0.1 mV before checking the saved
-0.1 V thresholds. This fixes an ABOVE MAXIMUM false warning for an exact full
-pack caused by native float32 roundoff. Saved values and alarm policy are unchanged.
-The link rail uses 29 px LQ, RSSI and SNR values; TX mW moves to the 17 px
-supporting slot. Longer values still use measured fitting rather than overlap.
-Estimated percentage retains its ~ prefix. Its bar accommodates the measured
-percentage label, including ~100%, without crossing the separator.
-Missing readings and their status icons are muted. The link icon follows the
-actual configured LQ thresholds; the battery icon turns orange on a warning.
-The 232 × 180 visible attitude field, full HUD, aircraft datum, tapes, rails and
-six navigation icons retain the preceding build's geometry and priorities.
-Removing the header ARM INFO text button returns all 324 px above the HUD to
-the compass. Arm Info is now the persistent icon-only footer control; it does
-not arm the quad. The global footer replaces the old per-page status footers.
-See FLIGHT-STATUS.txt for this revision and FLIGHT-GLANCE.txt for HUD geometry.
+DATA, GPS AND REFERENCES
+Telemetry offers normalized LIVE/MIN/MAX. Sensors browses every discovered
+eligible source with raw LIVE/MIN/MAX in its native units. Native extrema stay
+separate from local chart samples. Refresh rebuilds bindings/units; bounded
+retry also picks up later native telemetry arrivals without reopening.
 
-DATA / CAPABILITIES
-Production telemetry is live-only. Missing/stale values show --; unavailable
-attitude is masked rather than shown as level flight. No demo fixture ships.
-The full app uses telemetry-qualified cached source IDs and unit conversions.
-Discover sensors in the radio's Telemetry menu and map custom names in Setup.
-Telemetry has 27 current display slots, not 27 guaranteed sensors or Min/Max.
-Cell average is pack voltage/configured cells, not individual measured cells.
-Capacity-based remaining is labelled estimated and assumes a full pack with
-reset consumption. Power/RC traces retain up to 90 foreground samples.
+GPS separates current position, last known position and app-local home. Choose
+Off, First Valid or On Arm home capture; the satellite threshold alone never
+claims a 3D fix. Known no-fix/stale data cannot become a current home reference.
+Details/quality/recovery/track views expose genuine reported fix/quality, local
+versus FC home, distance/bearing, relative home, ETA and Plus Code. Recovery is
+in-session RAM history; it is not an SD flight recorder. BF satellite details
+come from genuine supported MSP records. INAV's compatibility stub is not a
+satellite/constellation inventory, and CRSF supplies no fabricated physical HDOP.
 
-GPS shows current coordinates, satellites, speed, altitude, course and local
-home distance/bearing. Track is a north-up relative plot, not a map. Local home
-does not alter FC home. Satellite count does not prove a 3D fix. Home capture
-and track sampling still run only on GPS pages; this is not continuous logging.
-GPS-source changes do not yet invalidate old home/history automatically.
+Arm Info offers live verified BF/INAV blockers, reason detail, offline reference
+and explicit beep examples. Stick Guide displays FC-specific gestures and stick
+modes to follow on the controls; it does not automatically execute the gestures.
+Radio Inputs distinguishes FC-reported states from configured radio overrides,
+physical switch/logical predicates and throttle/limiter percentages. Learn is
+an explicit movement-based picker. None, unavailable and live false stay distinct.
 
-Arm Info decodes current STATUS_EX flags for exact verified API/count pairs:
-1.46/26, 1.47/29 and stable Betaflight 2026.6.2 API 1.48/30. API 1.48 names GPS
-at bit 18, AUTOPILOT_SW at bit 28 and ARM_SWITCH at bit 29 (zero-based).
-GPS Rescue requires a valid fix and the configured minimum satellite count;
-the explanation does not infer a fix from satellites alone. Unknown APIs or
-counts, including API 1.49, retain numbered bits rather than guessed names.
-Decoding is cached per status reply; footer and list share the same eight-second
-freshness rule. Stale, malformed, unavailable or stopped status clears current
-reasons. A clear mask proves neither readiness nor armed state. Radio switch
-arm/cut indicators and the local arm stopwatch remain separate from FC state
-and EdgeTX timers.
+FC AND VIDEO
+CRSF and FrSky S.Port adapters share one bounded MSP dispatcher. Diagnostics
+shows actual FC variant/API/firmware, board/UID, sensor presence or INAV health.
+BF API 1.44–1.48 arming maps have verified version/count guards, including
+BF 4.3/4.4 BADRX and RPMFILTER codes. Original Toolbox requires BF 4.3 or newer.
+Verified INAV stable releases are 8.0.0, 8.0.1, 9.0.0, 9.0.1 and 9.1.0;
+INAV 1–7 are also rejected by the original Toolbox. Unknown releases stay
+unsupported for mapped status/writes until their wire layouts are verified.
 
-Stick Guide contains 12 reference diagrams in modes 1–4; it sends no commands.
-Video shows eight offline frequency notes, common band labels and a live
-attitude inset. There is no connected VTX status/table/power/PIT/Apply/Save.
+Video selects FC MSP or TBS native. BF table cache is UID/metadata-bound; cached
+choices recheck selected live band/power after fresh preflight before writing.
+INAV uses its verified firmware frequency group and power data. Native TBS uses
+the selected supported hardware map; passive reports can work with FC/MSP Off.
+In every backend, choosing a favourite/channel/power is pending only. Apply is
+explicit, requires current link and known disarmed state, and exposes pending,
+reported, confirmed, failed or cancelled outcomes. Reopen/Refresh reads state.
+MSP status requests share the bounded transport; configured Off/interval and
+current/arm guards still apply. No stored RF packet rate/telemetry ratio is edited.
 
-The existing bounded read-only CRSF MSP loop is unchanged: identify Betaflight,
-then status every 3 seconds only with explicitly disarmed current FM and
-eligible link/profile settings. It stops for armed/unknown/stale/failsafe/off
-states. No automatic runtime SD logging or FC/RF/model/output writes are
-introduced. Details: TELEMETRY-CONNECTION.txt; source/feature audit under
-development/assessments/.
+SETTINGS, OWNERSHIP AND FILES
+The twelve category definitions are Model Setup, RC Link, Model Battery,
+Battery Favourites, Flight Controller, Indicators/Timers, FC Mode Indicators,
+VTX, VTX Favourites, GPS, User Interface and Application.
+Available categories/rows depend on effective protocol/FC/provider/VTX/pack
+choices. Hidden rows keep saved values. Select a row, ENTER, adjust with rotary,
+ENTER to end the draft. RTN cancels the current edit snapshot, including linked
+battery-threshold adjustments. Save/Revert are focusable physical controls.
+Save Settings commits app preferences; Save Battery commits only battery limits
+and alert policy. Dirty badges and exit recovery keep these stores separate.
 
-DEVELOPMENT / VERIFICATION
-Main source: sdcard/SCRIPTS/TOOLS/telem.lua
-Widget: sdcard/WIDGETS/AERODECK/main.lua
-Assets: sdcard/SCRIPTS/TOOLS/AERODECK/
-Run all twelve portable test_*.lua suites under development/, including the
-Flight layout regression suite. The configuration suite locates its actual
-project source independently of the working directory.
-Native font centering also aligns body rows, button labels and Setup/Battery.
-Telemetry unit gaps use measured widths; Video values retain centered alignment.
-The install archive is a snapshot; edit source under sdcard.
+Preferences now use settings-model-<hex-model-filename>.cfg and
+battery-model-<hex-model-filename>.cfg, with verified ownership/checksum, atomic
+save and backup recovery. Renaming the displayed model does not change ownership.
+Setup > Application offers explicit Import Legacy App Settings / Import Legacy
+Battery for old name-based files. Review before importing; old files are retained.
+New models retain AERODECK's documented 4.2 V/visual-only battery defaults; all
+limits and sound/haptic options remain configurable. Existing values are preserved.
 
-The expanded center still uses no Flight-specific bitmap loads or conversions.
-All historical artwork stays locally; runtime filenames are unchanged. Native
-fonts and measured fitting retain data readability instead of shrinking all
-text. Attitude and telemetry/MSP sampling and widget code are preserved. Battery
-boundary classification includes the float32 roundoff correction described above.
-Release gates require all twelve fresh portable suites and matching main plus
-decoder hashes in native QA. Current preview location:
-development/ui-previews/flight-status/. The native review covers all twelve
-pages and footer controls, named API 1.48 GPS, zero flags, unknown API/count,
-stale/malformed status, missing/numeric-zero data and warnings. Release evidence
-and exact accepted counts are recorded in development/build-FLIGHT-STATUS-20261017.json
-after packaging; the install archive remains a snapshot until then.
-EdgeTX 3.0.0 WASM uses isolated synthetic inputs; physical radio firmware is
-2.12.4. This revision is local only. Hardware rendering, physical viewing
-distance, live RF latency and frame-rate/memory performance remain unverified.
+Timer host RADIO preserves native timer settings. Choosing AERODECK explicitly
+claims the selected native timer using a reserved eight-character ADxxxxxx name.
+An occupied marker blocks another app/widget instance before any timer reset.
+The app checks ownership before writes, start/pause/reset and controlled release.
+A controlled close/reload restores the captured timer configuration, then its
+original name; elapsed time is not restored. A restoration error retains the
+marker and in-memory recovery information so the app can remain open and retry.
+
+A forced script abort or model switch can leave a stale ADxxxxxx marker. The
+original configuration snapshot exists only in Lua memory; clearing that name
+cannot reconstruct it. Inspect the native timer, manually restore the desired
+mode/start/beeps/persistence and rename it away from ADxxxxxx before explicitly
+claiming it again. A manual name change revokes app ownership without restoring
+over the user's new settings. Use a controlled exit whenever possible.
+New Flight clears local session/home/track and optionally selected native timer
+and radio sensor statistics; FC battery counters are not reset by local arithmetic.
+
+Diagnostics includes runtime/memory, FC, sensor health, Quick Actions, opt-in
+error log, About/System and Radio Battery views. Error events are bounded in RAM;
+Save Log is explicit, rate-limited and verified SD persistence. In the widget,
+prepare and promotion use separate opaque Saving callbacks; Saved appears only
+after final verification. A failure keeps the RAM events pending, and a model
+change cancels an old pending transaction before further log IO. Model Image in
+User Interface displays the current model's real image on System, caches its
+handle and does no image IO when Off. No activation/licence mechanism is included.
+
+INSTALL / PRESERVE EXISTING WORK
+Use source under sdcard for development. For installation, verify the build ID
+and archive SHA-256 of AERODECK-install.zip against the RC1 manifest:
+  development/build-REPLACEMENT-RC1-20261017.json
+The manifest records the matching runtime files and checksums.
+Exit AERODECK and back up the SD card. Merge only SCRIPTS and WIDGETS into the SD
+root. Preserve MODELS, RADIO, Toolbox, all settings/battery files and backups,
+VTX cache records, logs and unrelated/legacy artwork.
+After backup remove stale compiled app files only: SCRIPTS/TOOLS/telem.luac,
+*.luac inside SCRIPTS/TOOLS/AERODECK, and WIDGETS/AERODECK/*.luac. Do not remove
+other apps' compiled files. Safely eject, restart the radio and reopen AERODECK.
+
+All 48 portable suites pass on both LuaJIT and stock Lua 5.3 int32/float32.
+Reports match all 48 current test files and 64 runtime code/image hashes.
+Compiled readers match the unchanged normalization oracle in 1,912,664
+comparisons per interpreter; this is correctness evidence, not a physical speed
+claim. The retained scheduler has 11,191 actual-app checks per interpreter for
+always-drawn frames, coherent publication, current attitude, source revisions,
+loss/recovery and action guards. Exact-runtime full-suite reports belong here:
+  development/test-results-REPLACEMENT-RC1-20261017.json
+  development/test-results-REPLACEMENT-RC1-20261017-float32.json
+The exact-source unmodified production widget passes cold startup and all
+13 pages under the actual 20,000-instruction hook; all 27 captures are reviewed.
+The populated widget also ran approximately 203 seconds in EdgeTX 3.0 TX16S
+WASM. A 170.365-second, 4,500-sample monitor recorded no blank frames, ordinary
+updating screens or instruction-limit errors with the unchanged 20,000-instruction hook.
+Simulator diagnostics reported 17.2 draw FPS / 17.2 distinct attitude-value Hz
+and 4.1–4.2 slow publications/s. The shared widget Lua VM reported
+1,348.9 KiB heap use with a 1,387.0 KiB observed peak, including the development
+fixture and other loaded factories; bitmap pixels are outside that GC metric.
+Automatic GC remained enabled without forced collection. Full PFD callbacks
+used 80–92% of the Lua instruction allowance, with a 96% observed prelude peak.
+This is not physical CPU utilization or available/free RAM. A full 1,389-byte settings file reopened successfully with Pack 5.
+These are synthetic simulator measurements, not target-radio rates, physical
+memory limits or a Toolbox performance comparison. The complete accepted
+manifest records current-data views, poses, source hashes and limitations.
+Its input inventory advances in bounded batches with native Lua instruction-budget checks.
+Separate telemetry/visual previews use synthetic values. These EdgeTX 3.0 TX16S WASM checks
+are distinct from the physical EdgeTX 2.12.4 target. No real quad telemetry,
+RF-write success or sustained hardware performance is claimed here. The layout
+is designed for the reported 30–40 cm viewing distance; physical readability still needs verification.
+REPLACEMENT-RC1.txt and the current ledger list remaining acceptance.
+DEPLOYMENT.txt records actual prior installations; this candidate has not been
+recorded as installed.
+
+FULL-APP RADIO ACCEPTANCE
+Use this app for acceptance; do not add another isolated attitude test.
+Match the known-working Toolbox radio/model/RF settings for a direct comparison.
+After installing/reopening, verify real voltage/current/consumption, link values,
+FC identity, GPS provenance and source states. Tilt nose up/down and both roll
+ways; compare the physical response, pitch sign and roll sign with Toolbox.
+Record diagnostic draw FPS, distinct attitude-value Hz and current/observed-peak
+RAM at launch, about 2 seconds, 1 minute and 10 minutes. A repaint counter alone
+does not establish live telemetry response. Confirm no progressive slowdown.
+Disconnect/reconnect telemetry and confirm stale values clear and current data
+returns. Check compact/fullscreen transitions retain local home, session and
+owned timer state while the callback/standalone scheduling rules above apply.
+Verify imports and profile/source changes preserve unrelated saved preferences.
+Check labels and controls on the actual screen at the reported 30–40 cm distance.
+Only if the user chooses a known safe VTX entry, with props removed and the quad
+disarmed, exercise explicit Apply and confirm the actual reported readback.
+Record findings with the exact installed build; file-copy verification is separate.

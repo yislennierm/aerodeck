@@ -1,0 +1,45 @@
+AERODECK ROLL DISPLAY CORRECTION — ROLL-DISPLAY-20261018
+
+The user reported inverted roll on the real quad after RC1 installation. RC1's
+feature coverage and synthetic pose checks did not establish physical roll
+direction. Complete physical parity must not be inferred from those checks.
+
+Setup > User Interface > Roll display direction is saved per model:
+- Normal retains the Toolbox/native horizon roll convention.
+- Reversed negates display roll once, consistently across the main PFD, Flight
+  Video dashboard, and Video attitude panel, including their numerical readouts.
+  Use Reversed for the model with the reported inversion.
+Accept the value, then SAVE SETTINGS. A draft has no runtime effect.
+
+The fixed bank arc now uses a sky pointer that follows the upper normal of the
+moving horizon. The horizon, pitch ladder and pointer use the same display roll.
+The Data page continues to show the original normalized Roll sensor value, so
+its sign can differ from the displayed R angle when Reversed is selected.
+Zero stays positive zero, and missing attitude remains unavailable.
+
+No FC configuration, sensor values, telemetry polarity, pitch/yaw conversion,
+source binding, sampling cadence or RF settings are changed by this patch.
+Existing models default to Normal until their display setting is explicitly
+saved. Existing settings/battery files and backups remain intact.
+
+VALIDATION
+The saved setting and actual application renderers have 643 dedicated portable
+checks, including all three horizon consumers, both angle readouts, the full
+pitch ladder, pointer/horizon geometry, raw/native extrema and per-model saves.
+Complete regression reports and exact-source native screenshots are recorded in:
+  development/test-results-ROLL-DISPLAY-20261018.json
+  development/test-results-ROLL-DISPLAY-20261018-float32.json
+  development/ui-previews/roll-display-20261018/verification.json
+Native scenes are synthetic EdgeTX 3.0 TX16S WASM checks with the actual unchanged
+20,000-instruction hook. Physical EdgeTX 2.12.4 direction/performance acceptance
+is still required. They are not proof that the user's observed inversion is
+resolved until the configured patch is checked on the radio.
+
+INSTALLATION
+AERODECK-roll-display-install.zip contains the complete RC1 runtime with only
+telem.lua changed. Back up the radio before merging its SCRIPTS and WIDGETS.
+Clear only backed-up AERODECK Lua cache siblings; preserve all preferences,
+models, radio configuration, ELRS, Toolbox, logs, caches and unrelated artwork.
+The original AERODECK-install.zip is the frozen RC1 baseline, not this patch.
+DEPLOYMENT.txt is the installation authority; source files and a local archive
+alone do not mean that a build was installed.

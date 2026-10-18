@@ -5,6 +5,7 @@ local app=f:read('*a');f:close()
 local first=assert(string.find(app,'local iconShapes={',1,true))
 local last=assert(string.find(app,'local function numberText',first,true))
 local source=[[return function(api)
+ local inputRuntime={}
  local ROOT,Bitmap,lcd=api.root,api.Bitmap,api.lcd
  local SOLID,CUSTOM_COLOR=api.SOLID,api.CUSTOM_COLOR
  local function round(x)return math.floor(x+.5)end

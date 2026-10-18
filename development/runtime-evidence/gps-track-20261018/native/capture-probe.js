@@ -1,0 +1,2 @@
+const h=base+'/../gps-track-20261018/';const save=n=>fs.writeFileSync(h+'probe-'+n+'.raw',copyFrame());await sleep(13000);e.simuTouchDown(300,145);await sleep(1100);e.simuTouchUp();await sleep(500);await tap(220,150);await sleep(1800);save('flight');await sleep(5500);await tap(262,15);save('gps');await sleep(3000);await tap(350,44);save('track-initial');
+const start=Date.now();for(let i=0;i<6;i++){await sleep(10000);save('track-'+((i+1)*10));console.log('QA_TRACK_ELAPSED',Date.now()-start);if(i===1||i===3){await tap(150,232);save('zoom-'+i);}}process.exit(0);

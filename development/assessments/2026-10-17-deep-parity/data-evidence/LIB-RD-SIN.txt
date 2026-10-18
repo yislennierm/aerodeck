@@ -1,0 +1,142 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/RD/SIN.luac
+
+FUNCTION main params 0 vararg 1 stack 20 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/RD/SIN.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 115), ('F', 1, 115), ('D', 1, 115), ('X', 1, 115), ('inputs', 1, 115), ('retValType', 1, 115), ('retVal', 2, 115), ('(for generator)', 13, 87), ('(for state)', 13, 87), ('(for control)', 13, 87), ('n', 14, 85), ('v', 14, 85), ('i', 22, 85), ('iN', 27, 85), ('cVal', 30, 85), ('r', 42, 85), ('swPos', 66, 85), ('(for generator)', 97, 113), ('(for state)', 97, 113), ('(for control)', 97, 113), ('i', 98, 111), ('n', 98, 111), ('iv', 101, 111)]
+K0 'UI'
+K1 'SIN'
+K2 'pairs'
+K3 'tonumber'
+K4 'string'
+K5 'sub'
+K6 1
+K7 2
+K8 3
+K9 'getValue'
+K10 4
+K11 'trim'
+K12 200
+K13 'clear'
+K14 'UI_SIN'
+K15 -50
+K16 50
+K17 'all'
+K18 'inp'
+K19 'ipairs'
+K20 'format'
+K21 '%02d'
+   1 [  22] VARARG    A=0 B=7 C=0
+   2 [  24] LOADNIL   A=6 B=0 C=0
+   3 [  28] GETTABLE  R7 = R2[K0('UI')]
+   4 [  28] GETTABLE  R7 = R7[K1('SIN')]
+   5 [  28] TEST      A=7 B=0 C=1
+   6 [  28] JMP       A=0 ->10
+   7 [  29] GETTABLE  R7 = R2[K0('UI')]
+   8 [  29] NEWTABLE  A=8 B=0 C=0
+   9 [  29] SETTABLE  R7[K1('SIN')] = R8
+  10 [  32] GETTABUP  R7 = UP0[K2('pairs')]
+  11 [  32] GETTABLE  R8 = R2[K0('UI')]
+  12 [  32] GETTABLE  R8 = R8[K1('SIN')]
+  13 [  32] CALL      A=7 B=2 C=4
+  14 [  32] JMP       A=0 ->86
+  15 [  34] GETTABUP  R12 = UP0[K3('tonumber')]
+  16 [  34] GETTABUP  R13 = UP0[K4('string')]
+  17 [  34] GETTABLE  R13 = R13[K5('sub')]
+  18 [  34] MOVE      A=14 B=10 C=0
+  19 [  34] LOADK     R15 = K6 (1)
+  20 [  34] LOADK     R16 = K7 (2)
+  21 [  34] CALL      A=13 B=4 C=0
+  22 [  34] CALL      A=12 B=0 C=2
+  23 [  35] GETTABUP  R13 = UP0[K4('string')]
+  24 [  35] GETTABLE  R13 = R13[K5('sub')]
+  25 [  35] MOVE      A=14 B=10 C=0
+  26 [  35] LOADK     R15 = K8 (3)
+  27 [  35] CALL      A=13 B=3 C=2
+  28 [  36] GETTABUP  R14 = UP0[K9('getValue')]
+  29 [  36] MOVE      A=15 B=13 C=0
+  30 [  36] CALL      A=14 B=2 C=2
+  31 [  39] GETTABUP  R15 = UP0[K4('string')]
+  32 [  39] GETTABLE  R15 = R15[K5('sub')]
+  33 [  39] MOVE      A=16 B=10 C=0
+  34 [  39] LOADK     R17 = K6 (1)
+  35 [  39] LOADK     R18 = K10 (4)
+  36 [  39] CALL      A=15 B=4 C=2
+  37 [  39] EQ        A=0 R15, K11('trim'); skip-next if condition != A
+  38 [  39] JMP       A=0 ->42
+  39 [  39] LOADK     R15 = K8 (3)
+  40 [  39] TEST      A=15 B=0 C=1
+  41 [  39] JMP       A=0 ->43
+  42 [  39] LOADK     R15 = K12 (200)
+  43 [  41] ADD       A=16 B=11 C=15
+  44 [  41] LT        A=1 R16, R14; skip-next if condition != A
+  45 [  41] JMP       A=0 ->49
+  46 [  41] SUB       A=16 B=11 C=15
+  47 [  41] LT        A=0 R14, R16; skip-next if condition != A
+  48 [  41] JMP       A=0 ->86
+  49 [  42] GETTABLE  R16 = R0[K13('clear')]
+  50 [  42] MOVE      A=17 B=2 C=0
+  51 [  42] LOADK     R18 = K14 ('UI_SIN')
+  52 [  42] CALL      A=16 B=3 C=1
+  53 [  43] GETTABLE  R16 = R2[K0('UI')]
+  54 [  43] NEWTABLE  A=17 B=0 C=0
+  55 [  43] SETTABLE  R16[K1('SIN')] = R17
+  56 [  44] LT        A=0 R14, K15(-50); skip-next if condition != A
+  57 [  44] JMP       A=0 ->61
+  58 [  44] LOADK     R16 = K6 (1)
+  59 [  44] TEST      A=16 B=0 C=1
+  60 [  44] JMP       A=0 ->67
+  61 [  44] LT        A=0 K16(50), R14; skip-next if condition != A
+  62 [  44] JMP       A=0 ->66
+  63 [  44] LOADK     R16 = K8 (3)
+  64 [  44] TEST      A=16 B=0 C=1
+  65 [  44] JMP       A=0 ->67
+  66 [  44] LOADK     R16 = K7 (2)
+  67 [  45] EQ        A=0 R5, K17('all'); skip-next if condition != A
+  68 [  45] JMP       A=0 ->75
+  69 [  45] NEWTABLE  A=17 B=2 C=0
+  70 [  45] MOVE      A=18 B=12 C=0
+  71 [  45] MOVE      A=19 B=16 C=0
+  72 [  45] SETLIST   A=17 B=2 C=1
+  73 [  45] TESTSET   A=6 B=17 C=1
+  74 [  45] JMP       A=0 ->86
+  75 [  45] EQ        A=0 R5, K18('inp'); skip-next if condition != A
+  76 [  45] JMP       A=0 ->82
+  77 [  45] NEWTABLE  A=17 B=1 C=0
+  78 [  45] MOVE      A=18 B=12 C=0
+  79 [  45] SETLIST   A=17 B=1 C=1
+  80 [  45] TESTSET   A=6 B=17 C=1
+  81 [  45] JMP       A=0 ->86
+  82 [  45] NEWTABLE  A=17 B=1 C=0
+  83 [  45] MOVE      A=18 B=16 C=0
+  84 [  45] SETLIST   A=17 B=1 C=1
+  85 [  45] MOVE      A=6 B=17 C=0
+  86 [  32] TFORCALL  A=7 B=0 C=2
+  87 [  32] TFORLOOP  A=9 ->15
+  88 [  50] GETTABLE  R7 = R0[K13('clear')]
+  89 [  50] MOVE      A=8 B=2 C=0
+  90 [  50] LOADK     R9 = K14 ('UI_SIN')
+  91 [  50] CALL      A=7 B=3 C=1
+  92 [  51] GETTABLE  R7 = R2[K0('UI')]
+  93 [  51] NEWTABLE  A=8 B=0 C=0
+  94 [  51] SETTABLE  R7[K1('SIN')] = R8
+  95 [  52] GETTABUP  R7 = UP0[K19('ipairs')]
+  96 [  52] MOVE      A=8 B=4 C=0
+  97 [  52] CALL      A=7 B=2 C=4
+  98 [  52] JMP       A=0 ->112
+  99 [  53] GETTABUP  R12 = UP0[K9('getValue')]
+ 100 [  53] GETTABLE  R13 = R4[R10]
+ 101 [  53] CALL      A=12 B=2 C=2
+ 102 [  54] GETTABLE  R13 = R2[K0('UI')]
+ 103 [  54] GETTABLE  R13 = R13[K1('SIN')]
+ 104 [  54] GETTABUP  R14 = UP0[K4('string')]
+ 105 [  54] GETTABLE  R14 = R14[K20('format')]
+ 106 [  54] LOADK     R15 = K21 ('%02d')
+ 107 [  54] MOVE      A=16 B=10 C=0
+ 108 [  54] CALL      A=14 B=3 C=2
+ 109 [  54] MOVE      A=15 B=11 C=0
+ 110 [  54] CONCAT    A=14 B=14 C=15
+ 111 [  54] SETTABLE  R13[R14] = R12
+ 112 [  52] TFORCALL  A=7 B=0 C=2
+ 113 [  52] TFORLOOP  A=9 ->99
+ 114 [  59] RETURN    A=6 B=2 C=0
+ 115 [  59] RETURN    A=0 B=1 C=0

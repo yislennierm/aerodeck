@@ -1,0 +1,40 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/THMLD.luac
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/THMLD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 23), ('F', 1, 23), ('D', 1, 23), ('X', 1, 23)]
+K0 'PTHMS'
+K1 'PTHM'
+K2 'UI'
+K3 'THM'
+K4 'selID'
+K5 '/'
+K6 'PTHMSR'
+K7 'PUIDIR'
+K8 'loadE'
+K9 'C'
+K10 'PGFXR'
+K11 'PGFX'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  12] GETTABLE  R4 = R0[K1('PTHM')]
+   3 [  12] GETTABLE  R5 = R2[K2('UI')]
+   4 [  12] GETTABLE  R5 = R5[K3('THM')]
+   5 [  12] GETTABLE  R5 = R5[K4('selID')]
+   6 [  12] LOADK     R6 = K5 ('/')
+   7 [  12] CONCAT    A=4 B=4 C=6
+   8 [  12] SETTABLE  R0[K0('PTHMS')] = R4
+   9 [  13] GETTABLE  R4 = R0[K0('PTHMS')]
+  10 [  13] GETTABLE  R5 = R0[K7('PUIDIR')]
+  11 [  13] CONCAT    A=4 B=4 C=5
+  12 [  13] SETTABLE  R0[K6('PTHMSR')] = R4
+  13 [  14] GETTABLE  R4 = R0[K8('loadE')]
+  14 [  14] GETTABLE  R5 = R0[K0('PTHMS')]
+  15 [  14] LOADK     R6 = K9 ('C')
+  16 [  14] CONCAT    A=5 B=5 C=6
+  17 [  14] CALL      A=4 B=2 C=1
+  18 [  15] GETTABLE  R4 = R0[K11('PGFX')]
+  19 [  15] GETTABLE  R5 = R0[K7('PUIDIR')]
+  20 [  15] CONCAT    A=4 B=4 C=5
+  21 [  15] SETTABLE  R0[K10('PGFXR')] = R4
+  22 [  18] RETURN    A=0 B=1 C=0
+  23 [  18] RETURN    A=0 B=1 C=0

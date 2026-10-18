@@ -1,0 +1,30 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/FC.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/FC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 16), ('F', 1, 16), ('D', 1, 16), ('X', 1, 16), ('add', 1, 16), ('sensors', 14, 16)]
+K0 'S'
+K1 'ARMED'
+K2 None
+K3 'ARM_STOP_TLM'
+K4 'ARM_STOP_MSP'
+K5 'ARM_STOP_LIST'
+K6 'FC_FM'
+K7 'FC_FM_NAME'
+K8 ''
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] GETTABLE  R5 = R2[K0('S')]
+   3 [  12] SETTABLE  R5[K1('ARMED')] = K2(None)
+   4 [  13] GETTABLE  R5 = R2[K0('S')]
+   5 [  13] SETTABLE  R5[K3('ARM_STOP_TLM')] = K2(None)
+   6 [  14] GETTABLE  R5 = R2[K0('S')]
+   7 [  14] SETTABLE  R5[K4('ARM_STOP_MSP')] = K2(None)
+   8 [  15] GETTABLE  R5 = R2[K0('S')]
+   9 [  15] SETTABLE  R5[K5('ARM_STOP_LIST')] = K2(None)
+  10 [  16] GETTABLE  R5 = R2[K0('S')]
+  11 [  16] SETTABLE  R5[K6('FC_FM')] = K2(None)
+  12 [  17] GETTABLE  R5 = R2[K0('S')]
+  13 [  17] SETTABLE  R5[K7('FC_FM_NAME')] = K8('')
+  14 [  19] NEWTABLE  A=5 B=0 C=0
+  15 [  21] RETURN    A=5 B=2 C=0
+  16 [  21] RETURN    A=0 B=1 C=0

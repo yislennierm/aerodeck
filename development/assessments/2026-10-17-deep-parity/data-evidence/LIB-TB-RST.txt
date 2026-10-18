@@ -1,0 +1,109 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TB/RST.luac
+
+FUNCTION main params 0 vararg 1 stack 11 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TB/RST.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 77), ('F', 1, 77), ('D', 1, 77), ('X', 1, 77), ('fn', 1, 77), ('(for index)', 23, 29), ('(for limit)', 23, 29), ('(for step)', 23, 29), ('i', 24, 28)]
+K0 'all'
+K1 'flight'
+K2 'loadE'
+K3 'PLIBRD'
+K4 'TMR'
+K5 'reset'
+K6 'cg'
+K7 'PLIBTLM'
+K8 'TLMINIT'
+K9 0
+K10 63
+K11 1
+K12 'model'
+K13 'resetSensor'
+K14 'PLIBFC'
+K15 'FCINIT'
+K16 'PLIBMSP'
+K17 'MSPINIT'
+K18 'PLIBVTX'
+K19 'VTXINIT'
+K20 'PLIBGPS'
+K21 'GPSINIT'
+K22 'clear'
+K23 '+LOG'
+K24 'PLIBCFG'
+K25 'CFGUPD'
+K26 'APP'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  12] EQ        A=1 R4, K0('all'); skip-next if condition != A
+   3 [  12] JMP       A=0 ->6
+   4 [  12] EQ        A=0 R4, K1('flight'); skip-next if condition != A
+   5 [  12] JMP       A=0 ->30
+   6 [  13] GETTABLE  R5 = R0[K2('loadE')]
+   7 [  13] GETTABLE  R6 = R0[K3('PLIBRD')]
+   8 [  13] LOADK     R7 = K4 ('TMR')
+   9 [  13] CONCAT    A=6 B=6 C=7
+  10 [  13] LOADK     R7 = K5 ('reset')
+  11 [  13] CALL      A=5 B=3 C=1
+  12 [  14] GETTABLE  R5 = R0[K6('cg')]
+  13 [  14] CALL      A=5 B=1 C=1
+  14 [  15] GETTABLE  R5 = R0[K2('loadE')]
+  15 [  15] GETTABLE  R6 = R0[K7('PLIBTLM')]
+  16 [  15] LOADK     R7 = K8 ('TLMINIT')
+  17 [  15] CONCAT    A=6 B=6 C=7
+  18 [  15] CALL      A=5 B=2 C=1
+  19 [  16] GETTABLE  R5 = R0[K6('cg')]
+  20 [  16] CALL      A=5 B=1 C=1
+  21 [  17] LOADK     R5 = K9 (0)
+  22 [  17] LOADK     R6 = K10 (63)
+  23 [  17] LOADK     R7 = K11 (1)
+  24 [  17] FORPREP   A=5 ->29
+  25 [  18] GETTABUP  R9 = UP0[K12('model')]
+  26 [  18] GETTABLE  R9 = R9[K13('resetSensor')]
+  27 [  18] MOVE      A=10 B=8 C=0
+  28 [  18] CALL      A=9 B=2 C=1
+  29 [  17] FORLOOP   A=5 ->25
+  30 [  21] EQ        A=0 R4, K0('all'); skip-next if condition != A
+  31 [  21] JMP       A=0 ->46
+  32 [  22] GETTABLE  R5 = R0[K2('loadE')]
+  33 [  22] GETTABLE  R6 = R0[K14('PLIBFC')]
+  34 [  22] LOADK     R7 = K15 ('FCINIT')
+  35 [  22] CONCAT    A=6 B=6 C=7
+  36 [  22] CALL      A=5 B=2 C=1
+  37 [  23] GETTABLE  R5 = R0[K6('cg')]
+  38 [  23] CALL      A=5 B=1 C=1
+  39 [  24] GETTABLE  R5 = R0[K2('loadE')]
+  40 [  24] GETTABLE  R6 = R0[K16('PLIBMSP')]
+  41 [  24] LOADK     R7 = K17 ('MSPINIT')
+  42 [  24] CONCAT    A=6 B=6 C=7
+  43 [  24] CALL      A=5 B=2 C=1
+  44 [  25] GETTABLE  R5 = R0[K6('cg')]
+  45 [  25] CALL      A=5 B=1 C=1
+  46 [  27] EQ        A=1 R4, K0('all'); skip-next if condition != A
+  47 [  27] JMP       A=0 ->50
+  48 [  27] EQ        A=0 R4, K1('flight'); skip-next if condition != A
+  49 [  27] JMP       A=0 ->64
+  50 [  28] GETTABLE  R5 = R0[K2('loadE')]
+  51 [  28] GETTABLE  R6 = R0[K18('PLIBVTX')]
+  52 [  28] LOADK     R7 = K19 ('VTXINIT')
+  53 [  28] CONCAT    A=6 B=6 C=7
+  54 [  28] CALL      A=5 B=2 C=1
+  55 [  29] GETTABLE  R5 = R0[K6('cg')]
+  56 [  29] CALL      A=5 B=1 C=1
+  57 [  30] GETTABLE  R5 = R0[K2('loadE')]
+  58 [  30] GETTABLE  R6 = R0[K20('PLIBGPS')]
+  59 [  30] LOADK     R7 = K21 ('GPSINIT')
+  60 [  30] CONCAT    A=6 B=6 C=7
+  61 [  30] CALL      A=5 B=2 C=1
+  62 [  31] GETTABLE  R5 = R0[K6('cg')]
+  63 [  31] CALL      A=5 B=1 C=1
+  64 [  33] EQ        A=0 R4, K0('all'); skip-next if condition != A
+  65 [  33] JMP       A=0 ->76
+  66 [  34] GETTABLE  R5 = R0[K22('clear')]
+  67 [  34] MOVE      A=6 B=0 C=0
+  68 [  34] LOADK     R7 = K23 ('+LOG')
+  69 [  34] CALL      A=5 B=3 C=1
+  70 [  35] GETTABLE  R5 = R0[K2('loadE')]
+  71 [  35] GETTABLE  R6 = R0[K24('PLIBCFG')]
+  72 [  35] LOADK     R7 = K25 ('CFGUPD')
+  73 [  35] CONCAT    A=6 B=6 C=7
+  74 [  35] LOADK     R7 = K26 ('APP')
+  75 [  35] CALL      A=5 B=3 C=1
+  76 [  38] RETURN    A=0 B=1 C=0
+  77 [  38] RETURN    A=0 B=1 C=0

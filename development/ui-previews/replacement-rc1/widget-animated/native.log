@@ -1,0 +1,2749 @@
+(node:83807) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+EXPORT dimensions 480 272
+(node:83807) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83807) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83807) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+10ms: <menus> started
+10ms: <timer_queue> started
+10ms: <audio> started
+10ms: <timer_queue> started
+
+10ms: edgeTxInit
+10ms: <menus> started
+
+10ms: YAML radio settings reader
+10ms: edgeTxInit
+
+10ms: YAML radio settings reader
+
+10ms: <audio> started
+
+10ms: luaInitThemesAndWidgets
+10ms: luaInitThemesAndWidgets
+
+10ms: lsWidgets 0x216ba24
+10ms: luaLoadFiles() /WIDGETS
+10ms: lsWidgets 0x216ba24
+
+10ms: luaLoadFiles() /WIDGETS
+
+10ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+10ms: luaLoadFile(/WIDGETS/GaugeRotary/main.lua)
+
+10ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+10ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/main.lua, T): loading /WIDGETS/GaugeRotary/main.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/main.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_log.lua, tcd): loading /WIDGETS/GaugeRotary/lib_log.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_log.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/lib_widget_tools.lua, tcd): loading /WIDGETS/GaugeRotary/lib_widget_tools.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/lib_widget_tools.luac): Saved bytecode to file.
+
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+20ms: luaLoadScriptFileToState(/WIDGETS/GaugeRotary/gauge_core.lua, tcd): loading /WIDGETS/GaugeRotary/gauge_core.lua
+
+20ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+20ms: luaDumpState(/WIDGETS/GaugeRotary/gauge_core.luac): Saved bytecode to file.
+
+30ms: luaLoadWidgetCallback()
+30ms: luaLoadWidgetCallback()
+
+30ms: Loaded Lua widget GaugeRotary
+30ms: Loaded Lua widget GaugeRotary
+
+30ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+30ms: luaLoadFile(/WIDGETS/Flights/main.lua)
+
+30ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/Flights/main.lua, T): loading /WIDGETS/Flights/main.lua
+
+30ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+30ms: luaDumpState(/WIDGETS/Flights/main.luac): Saved bytecode to file.
+
+30ms: luaLoadWidgetCallback()
+30ms: Loaded Lua widget Flights
+30ms: luaLoadWidgetCallback()
+
+30ms: Loaded Lua widget Flights
+
+30ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+30ms: luaLoadFile(/WIDGETS/BattCheck/main.lua)
+
+30ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+30ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/main.lua, T): loading /WIDGETS/BattCheck/main.lua
+
+40ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/BattCheck/main.luac): Saved bytecode to file.
+
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/BattCheck/lib_sensors.lua, tcd): loading /WIDGETS/BattCheck/lib_sensors.lua
+
+40ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+40ms: luaDumpState(/WIDGETS/BattCheck/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: Cels
+init_compare_source: we do not have: Cels
+
+
+40ms: luaLoadWidgetCallback()
+40ms: Loaded Lua widget BattCheck
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget BattCheck
+
+40ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+40ms: luaLoadFile(/WIDGETS/MicroValues/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/MicroValues/main.lua, T): loading /WIDGETS/MicroValues/main.lua
+
+40ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+40ms: luaLoadWidgetCallback()
+40ms: luaDumpState(/WIDGETS/MicroValues/main.luac): Saved bytecode to file.
+
+40ms: Loaded Lua widget Micro Values
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget Micro Values
+
+40ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+40ms: luaLoadFile(/WIDGETS/SerialPower/main.lua)
+
+40ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+40ms: luaLoadScriptFileToState(/WIDGETS/SerialPower/main.lua, T): loading /WIDGETS/SerialPower/main.lua
+
+40ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+40ms: luaLoadWidgetCallback()
+40ms: luaDumpState(/WIDGETS/SerialPower/main.luac): Saved bytecode to file.
+
+40ms: Loaded Lua widget SerialPower
+40ms: luaLoadWidgetCallback()
+
+40ms: Loaded Lua widget SerialPower
+
+50ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+50ms: luaLoadFile(/WIDGETS/EventDemo/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/EventDemo/main.lua, T): loading /WIDGETS/EventDemo/main.lua
+
+50ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget EventDemo
+50ms: luaDumpState(/WIDGETS/EventDemo/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget EventDemo
+
+50ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+50ms: luaLoadFile(/WIDGETS/AERODECK/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/AERODECK/main.lua, T): loading /WIDGETS/AERODECK/main.lua
+
+50ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget AERODECK
+50ms: luaDumpState(/WIDGETS/AERODECK/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget AERODECK
+
+50ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+50ms: luaLoadFile(/WIDGETS/Ghost/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/Ghost/main.lua, T): loading /WIDGETS/Ghost/main.lua
+
+50ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget Ghost
+50ms: luaDumpState(/WIDGETS/Ghost/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+
+50ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+50ms: Loaded Lua widget Ghost
+
+50ms: luaLoadFile(/WIDGETS/SoarETX/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/SoarETX/main.lua, T): loading /WIDGETS/SoarETX/main.lua
+
+50ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+50ms: luaLoadWidgetCallback()
+50ms: Loaded Lua widget SoarETX
+50ms: luaDumpState(/WIDGETS/SoarETX/main.luac): Saved bytecode to file.
+
+50ms: luaLoadWidgetCallback()
+
+50ms: Loaded Lua widget SoarETX
+
+50ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+50ms: luaLoadFile(/WIDGETS/Timer2/main.lua)
+
+50ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+50ms: luaLoadScriptFileToState(/WIDGETS/Timer2/main.lua, T): loading /WIDGETS/Timer2/main.lua
+
+50ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+50ms: luaDumpState(/WIDGETS/Timer2/main.luac): Saved bytecode to file.
+
+60ms: Loaded Lua widget Timer2
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget Timer2
+
+60ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+60ms: luaLoadFile(/WIDGETS/TxGPStest/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/TxGPStest/main.lua, T): loading /WIDGETS/TxGPStest/main.lua
+
+60ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+60ms: luaLoadWidgetCallback()
+60ms: Loaded Lua widget TxGPStest
+60ms: luaDumpState(/WIDGETS/TxGPStest/main.luac): Saved bytecode to file.
+
+60ms: luaLoadWidgetCallback()
+
+60ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+60ms: Loaded Lua widget TxGPStest
+
+60ms: luaLoadFile(/WIDGETS/BattAnalog/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/main.lua, T): loading /WIDGETS/BattAnalog/main.lua
+
+60ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/BattAnalog/main.luac): Saved bytecode to file.
+
+60ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/BattAnalog/lib_sensors.lua, tcd): loading /WIDGETS/BattAnalog/lib_sensors.lua
+
+60ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/BattAnalog/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: cell
+init_compare_source: we do not have: VFAS
+init_compare_source: we do not have: RxBtinit_compare_source: we do not have: cell
+
+init_compare_source: we do not have: A1
+
+
+init_compare_source: we do not have: A2
+init_compare_source: we do not have: VFAS
+60ms: luaLoadWidgetCallback()
+
+
+init_compare_source: we do not have: RxBt
+60ms: Loaded Lua widget BattAnalog
+
+
+init_compare_source: we do not have: A1
+60ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+
+init_compare_source: we do not have: A2
+
+
+60ms: luaLoadWidgetCallback()
+
+60ms: Loaded Lua widget BattAnalog
+
+60ms: luaLoadFile(/WIDGETS/Value2/main.lua)
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/main.lua, T): loading /WIDGETS/Value2/main.lua
+
+60ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+60ms: luaDumpState(/WIDGETS/Value2/main.luac): Saved bytecode to file.
+
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+60ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_log.lua, tcd): loading /WIDGETS/Value2/lib_log.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/lib_log.luac): Saved bytecode to file.
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_widget_tools.lua, tcd): loading /WIDGETS/Value2/lib_widget_tools.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/lib_widget_tools.luac): Saved bytecode to file.
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/Value2/lib_sensors.lua, tcd): loading /WIDGETS/Value2/lib_sensors.lua
+
+70ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+70ms: luaDumpState(/WIDGETS/Value2/lib_sensors.luac): Saved bytecode to file.
+
+init_compare_source: we do not have: RQLY
+init_compare_source: we do not have: VFRinit_compare_source: we do not have: RQLY
+
+init_compare_source: we do not have: cell
+
+init_compare_source: we do not have: VFR
+
+
+
+init_compare_source: we do not have: celsinit_compare_source: we do not have: cell
+
+
+
+init_compare_source: we do not have: RSSI
+init_compare_source: we do not have: cels
+init_compare_source: we do not have: RxBt
+
+
+init_compare_source: we do not have: RSSI
+70ms: luaLoadWidgetCallback()
+
+
+70ms: Loaded Lua widget Value2
+init_compare_source: we do not have: RxBt
+
+
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget Value2
+
+70ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+70ms: luaLoadFile(/WIDGETS/LibGUI/main.lua)
+
+70ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+70ms: luaLoadScriptFileToState(/WIDGETS/LibGUI/main.lua, T): loading /WIDGETS/LibGUI/main.lua
+
+70ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+70ms: luaLoadWidgetCallback()
+70ms: luaDumpState(/WIDGETS/LibGUI/main.luac): Saved bytecode to file.
+
+70ms: Loaded Lua widget LibGUI
+70ms: luaLoadWidgetCallback()
+
+70ms: Loaded Lua widget LibGUI
+
+70ms: storageReadAll
+70ms: storageReadAll
+
+70ms: YAML radio settings reader
+70ms: YAML radio settings reader
+
+80ms: YAML model reader
+80ms: YAML model reader
+
+90ms: opening directory: /THEMES
+90ms: opening directory: /THEMES
+
+90ms: scanForThemes: open successful
+90ms: scanForThemes: open successful
+
+90ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+90ms: scanForThemes: found file /THEMES/FM2M_HellYeah/theme.yml
+
+90ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+90ms: scanForThemes: found file /THEMES/FM2M_Greenfields/theme.yml
+
+90ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+90ms: scanForThemes: found file /THEMES/FM2M_Concrete/theme.yml
+
+90ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+90ms: scanForThemes: found file /THEMES/FM2M_Vineyard/theme.yml
+
+110ms: addMainView(0x0x217de40, 0)
+110ms: addMainView(0x0x217de40, 0)
+
+110ms: WidgetFactory::create() setting option 'Low battery'
+110ms: WidgetFactory::create() setting option 'Mid battery'
+110ms: WidgetFactory::create() setting option 'High battery'
+110ms: WidgetFactory::create() setting option 'Low battery'
+
+110ms: WidgetFactory::create() setting option 'Mid battery'
+
+110ms: WidgetFactory::create() setting option 'High battery'
+
+110ms: WidgetFactory::create() setting option 'Color'
+110ms: WidgetFactory::create() setting option 'Color'
+
+120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+120ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAENV.lua, t): loading /SCRIPTS/TOOLS/QAENV.lua
+
+120ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+120ms: luaDumpState(/SCRIPTS/TOOLS/QAENV.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|1|ENV LOAD|0
+QA_DEV_STAGE|animated|1|ENV LOAD|0
+
+
+120ms: luaInit
+120ms: lsScripts 0x218e334
+120ms: luaInit
+
+120ms: lsScripts 0x218e334
+
+160ms: <mixer> started
+QA_DEV_STAGE|animated|2|ENV CHUNK|0
+QA_DEV_STAGE|animated|2|ENV CHUNK|0
+
+
+QA_DEV_MEMORY|23|0|196.5889
+QA_DEV_MEMORY|23|0|196.5889
+QA_DEV_SYNTHETIC|animated|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+
+
+QA_DEV_SYNTHETIC|animated|IDS30000_PLUS_3I|NATIVE_PHYSICAL_FALLTHROUGH|PRIVATE_VM_GLOBALS
+QA_DEV_STAGE|animated|3|ENV CREATE|7
+
+
+QA_DEV_STAGE|animated|3|ENV CREATE|7
+
+
+290ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+290ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+290ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|4|STORE LOAD|0
+290ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-store.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|4|STORE LOAD|0
+
+
+QA_DEV_STAGE|animated|5|STORE CHUNK|0
+QA_DEV_STAGE|animated|5|STORE CHUNK|0
+
+
+QA_DEV_STAGE|animated|6|SETTINGS SEED|5
+QA_DEV_STAGE|animated|6|SETTINGS SEED|5
+
+
+QA_DEV_STAGE|animated|7|BATTERY SEED|3
+QA_DEV_STAGE|animated|7|BATTERY SEED|3
+
+
+510ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+510ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/QAMSP.lua, t): loading /SCRIPTS/TOOLS/QAMSP.lua
+
+520ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|8|MSP LOAD|0
+520ms: luaDumpState(/SCRIPTS/TOOLS/QAMSP.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|8|MSP LOAD|0
+
+
+QA_DEV_STAGE|animated|9|MSP CHUNK|0
+QA_DEV_STAGE|animated|9|MSP CHUNK|0
+
+
+QA_DEV_STAGE|animated|10|MSP CREATE|17
+QA_DEV_STAGE|animated|10|MSP CREATE|17
+
+
+690ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+690ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/telem.lua, t): loading /SCRIPTS/TOOLS/telem.lua
+
+710ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+QA_DEV_STAGE|animated|11|APP LOAD|0
+710ms: luaDumpState(/SCRIPTS/TOOLS/telem.luac): Saved bytecode to file.
+
+QA_DEV_STAGE|animated|11|APP LOAD|0
+
+
+QA_DEV_STAGE|animated|12|APP CHUNK|53
+QA_DEV_STAGE|animated|12|APP CHUNK|53
+
+
+QA_DEV_STAGE|animated|13|APP INIT|0
+QA_DEV_STAGE|animated|13|APP INIT|0
+
+
+860ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+860ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/display.lua, t): loading /SCRIPTS/TOOLS/AERODECK/display.lua
+
+870ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+870ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/display.luac): Saved bytecode to file.
+
+920ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+920ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-store.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-store.lua
+
+1040ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+1040ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/power-policy.lua, t): loading /SCRIPTS/TOOLS/AERODECK/power-policy.lua
+
+1040ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+1040ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/power-policy.luac): Saved bytecode to file.
+
+1050ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+1050ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/radio-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/radio-status.lua
+
+1050ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+1050ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/radio-status.luac): Saved bytecode to file.
+
+1050ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+1050ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/protocols.lua, t): loading /SCRIPTS/TOOLS/AERODECK/protocols.lua
+
+1060ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+1060ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/protocols.luac): Saved bytecode to file.
+
+1100ms: SD card write labels
+1100ms: SD card write labels
+
+1100ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+1100ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-indicators.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-indicators.lua
+
+1100ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+1100ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-indicators.luac): Saved bytecode to file.
+
+2090ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+2090ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/link.lua, t): loading /SCRIPTS/TOOLS/AERODECK/link.lua
+
+2090ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+2090ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/link.luac): Saved bytecode to file.
+
+2150ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+2150ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/timer-owner.lua, t): loading /SCRIPTS/TOOLS/AERODECK/timer-owner.lua
+
+2150ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+2150ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/timer-owner.luac): Saved bytecode to file.
+
+2150ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+2150ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua, t): loading /SCRIPTS/TOOLS/AERODECK/diagnostics-log.lua
+
+2150ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+2150ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/diagnostics-log.luac): Saved bytecode to file.
+
+2150ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+2150ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.lua, t): loading /SCRIPTS/TOOLS/AERODECK/navigation-utils.lua
+
+2160ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+2160ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/navigation-utils.luac): Saved bytecode to file.
+
+2200ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+2200ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/session.lua, t): loading /SCRIPTS/TOOLS/AERODECK/session.lua
+
+2210ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+2210ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/session.luac): Saved bytecode to file.
+
+2380ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+2380ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.lua, t): loading /SCRIPTS/TOOLS/AERODECK/msp-adapters.lua
+
+2380ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+2380ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/msp-adapters.luac): Saved bytecode to file.
+
+2390ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+2390ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.lua, t): loading /SCRIPTS/TOOLS/AERODECK/crsf-msp.lua
+
+2390ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+2390ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/crsf-msp.luac): Saved bytecode to file.
+
+2400ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+2400ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/vtx-native.lua, t): loading /SCRIPTS/TOOLS/AERODECK/vtx-native.lua
+
+2400ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+2400ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/vtx-native.luac): Saved bytecode to file.
+
+2440ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+2440ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+
+2440ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+2440ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/arm-status.luac): Saved bytecode to file.
+
+SHOT boot 261120
+18990ms: TE_PRESSED
+18990ms: TE_PRESSED
+
+19390ms: LONG PRESS[0x21ac6e0]
+19390ms: LONG PRESS[0x21ac6e0]
+
+20100ms: TE_RELEASED
+20100ms: CLICKED[0x21ac6e0]
+20100ms: TE_RELEASED
+
+20100ms: CLICKED[0x21ac6e0]
+
+20570ms: TE_PRESSED
+20570ms: TE_PRESSED
+
+20690ms: TE_RELEASED
+20690ms: TE_RELEASED
+
+20690ms: enableWidgetSelect(0)
+20690ms: enableWidgetSelect(0)
+
+20690ms: luaOpenBitmap: 0x2314fc0 (648)
+20690ms: luaOpenBitmap: 0x2314fc0 (648)
+
+20690ms: luaDestroyBitmap: 0x2314fc0 (648)
+20690ms: luaDestroyBitmap: 0x2314fc0 (648)
+
+20690ms: luaOpenBitmap: 0x2314fc0 (648)
+20690ms: luaOpenBitmap: 0x2314fc0 (648)
+
+20690ms: luaDestroyBitmap: 0x2314fc0 (648)
+20690ms: luaDestroyBitmap: 0x2314fc0 (648)
+
+20700ms: luaOpenBitmap: 0x22e50d0 (1800)
+20700ms: luaOpenBitmap: 0x22e50d0 (1800)
+
+20700ms: luaDestroyBitmap: 0x22e50d0 (1800)
+20700ms: luaDestroyBitmap: 0x22e50d0 (1800)
+
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+
+20700ms: luaOpenBitmap: 0x22e50d0 (1800)
+20700ms: luaOpenBitmap: 0x22e50d0 (1800)
+
+20700ms: luaDestroyBitmap: 0x22e50d0 (1800)
+20700ms: luaDestroyBitmap: 0x22e50d0 (1800)
+
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+20700ms: luaOpenBitmap: 0x222fd00 (1800)
+
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+20700ms: luaDestroyBitmap: 0x222fd00 (1800)
+
+20700ms: luaOpenBitmap: 0x22e50d0 (1800)
+20700ms: luaOpenBitmap: 0x22e50d0 (1800)
+
+20700ms: luaDestroyBitmap: 0x22e50d0 (1800)
+20700ms: luaDestroyBitmap: 0x22e50d0 (1800)
+
+20700ms: luaOpenBitmap: 0x222fd00 (648)
+20700ms: luaOpenBitmap: 0x222fd00 (648)
+
+20700ms: luaDestroyBitmap: 0x222fd00 (648)
+20700ms: luaDestroyBitmap: 0x222fd00 (648)
+
+20700ms: luaOpenBitmap: 0x222fd00 (648)
+20700ms: luaOpenBitmap: 0x222fd00 (648)
+
+20700ms: luaDestroyBitmap: 0x222fd00 (648)
+20700ms: luaDestroyBitmap: 0x222fd00 (648)
+
+20710ms: luaOpenBitmap: 0x222fd00 (648)
+20710ms: luaOpenBitmap: 0x222fd00 (648)
+
+QA_FRAME flight
+22740ms: TE_PRESSED
+22740ms: EVT_TOUCH_FIRST [230,233]
+22740ms: TE_PRESSED
+
+22740ms: EVT_TOUCH_FIRST [230,233]
+
+22860ms: TE_RELEASED
+22860ms: CLICKED[0x21ac6e0]
+22860ms: TE_RELEASED
+
+22860ms: CLICKED[0x21ac6e0]
+
+22860ms: luaDestroyBitmap: 0x222fd00 (648)
+22860ms: luaDestroyBitmap: 0x222fd00 (648)
+
+22870ms: luaOpenBitmap: 0x2244520 (648)
+22870ms: luaOpenBitmap: 0x2244520 (648)
+
+22870ms: luaDestroyBitmap: 0x2244520 (648)
+22870ms: luaDestroyBitmap: 0x2244520 (648)
+
+22870ms: luaOpenBitmap: 0x2244520 (648)
+22870ms: luaOpenBitmap: 0x2244520 (648)
+
+23270ms: CANCEL[0x21ac6e0]
+23270ms: CANCEL[0x21ac6e0]
+
+23270ms: luaDestroyBitmap: 0x2244520 (648)
+23270ms: luaDestroyBitmap: 0x2244520 (648)
+
+23440ms: TE_PRESSED
+23440ms: EVT_TOUCH_FIRST [155,233]
+23440ms: TE_PRESSED
+
+23440ms: EVT_TOUCH_FIRST [155,233]
+
+23560ms: TE_RELEASED
+23560ms: EVT_TOUCH_BREAK
+23560ms: CLICKED[0x21ac6e0]
+23560ms: TE_RELEASED
+
+23560ms: EVT_TOUCH_BREAK
+
+23560ms: CLICKED[0x21ac6e0]
+
+QA_FRAME flight-video
+26320ms: TE_PRESSED
+26320ms: EVT_TOUCH_FIRST [155,233]
+26320ms: TE_PRESSED
+
+26320ms: EVT_TOUCH_FIRST [155,233]
+
+26440ms: TE_RELEASED
+26440ms: EVT_TOUCH_BREAK
+26440ms: CLICKED[0x21ac6e0]
+26440ms: TE_RELEASED
+
+26440ms: EVT_TOUCH_BREAK
+
+26440ms: CLICKED[0x21ac6e0]
+
+QA_FRAME flight-navigation
+26680ms: TE_PRESSED
+26680ms: EVT_TOUCH_FIRST [155,233]
+26680ms: TE_PRESSED
+
+26680ms: EVT_TOUCH_FIRST [155,233]
+
+26790ms: TE_RELEASED
+26790ms: EVT_TOUCH_BREAK
+26790ms: CLICKED[0x21ac6e0]
+26790ms: TE_RELEASED
+
+26790ms: EVT_TOUCH_BREAK
+
+26790ms: CLICKED[0x21ac6e0]
+
+27030ms: TE_PRESSED
+27030ms: EVT_TOUCH_FIRST [70,15]
+27030ms: TE_PRESSED
+
+27030ms: EVT_TOUCH_FIRST [70,15]
+
+27150ms: TE_RELEASED
+27150ms: EVT_TOUCH_BREAK
+27150ms: CLICKED[0x21ac6e0]
+27150ms: TE_RELEASED
+
+27150ms: EVT_TOUCH_BREAK
+
+27150ms: CLICKED[0x21ac6e0]
+
+27380ms: TE_PRESSED
+27380ms: EVT_TOUCH_FIRST [70,15]
+27380ms: TE_PRESSED
+
+27380ms: EVT_TOUCH_FIRST [70,15]
+
+27440ms: TE_RELEASED
+27440ms: EVT_TOUCH_BREAK
+27440ms: CLICKED[0x21ac6e0]
+27440ms: TE_RELEASED
+
+27440ms: EVT_TOUCH_BREAK
+
+27440ms: CLICKED[0x21ac6e0]
+
+27740ms: TE_PRESSED
+27740ms: EVT_TOUCH_FIRST [70,15]
+27740ms: TE_PRESSED
+
+27740ms: EVT_TOUCH_FIRST [70,15]
+
+27800ms: TE_RELEASED
+27800ms: EVT_TOUCH_BREAK
+27800ms: CLICKED[0x21ac6e0]
+27800ms: TE_RELEASED
+
+27800ms: EVT_TOUCH_BREAK
+
+27800ms: CLICKED[0x21ac6e0]
+
+29550ms: CANCEL[0x21ac6e0]
+29550ms: CANCEL[0x21ac6e0]
+
+QA_DEV_MEMORY|23|3003|1121.83
+QA_DEV_MEMORY|23|3003|1121.83
+
+
+QA_DRAW_STATS|2071|3074|172|172|42|24|96|61.5
+QA_DRAW_STATS|2071|3074|172|172|42|24|96|61.5
+
+
+30970ms: TE_PRESSED
+30970ms: EVT_TOUCH_FIRST [60,177]
+30970ms: TE_PRESSED
+
+30970ms: EVT_TOUCH_FIRST [60,177]
+
+31030ms: TE_RELEASED
+31030ms: EVT_TOUCH_BREAK
+31030ms: CLICKED[0x21ac6e0]
+31030ms: TE_RELEASED
+
+31030ms: EVT_TOUCH_BREAK
+
+31030ms: CLICKED[0x21ac6e0]
+
+31090ms: luaOpenBitmap: 0x22064f0 (648)
+31090ms: luaOpenBitmap: 0x22064f0 (648)
+
+33830ms: TE_PRESSED
+33830ms: EVT_TOUCH_FIRST [20,15]
+33830ms: TE_PRESSED
+
+33830ms: EVT_TOUCH_FIRST [20,15]
+
+33890ms: TE_RELEASED
+33890ms: EVT_TOUCH_BREAK
+33890ms: CLICKED[0x21ac6e0]
+33890ms: TE_RELEASED
+
+33890ms: EVT_TOUCH_BREAK
+
+33890ms: CLICKED[0x21ac6e0]
+
+33950ms: luaDestroyBitmap: 0x22064f0 (648)
+33950ms: luaDestroyBitmap: 0x22064f0 (648)
+
+34170ms: TE_PRESSED
+34170ms: EVT_TOUCH_FIRST [456,259]
+34170ms: TE_PRESSED
+
+34170ms: EVT_TOUCH_FIRST [456,259]
+
+34230ms: TE_RELEASED
+34230ms: EVT_TOUCH_BREAK
+34230ms: CLICKED[0x21ac6e0]
+34230ms: TE_RELEASED
+
+34230ms: EVT_TOUCH_BREAK
+
+34230ms: CLICKED[0x21ac6e0]
+
+34290ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+34290ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/arm-status.lua, t): loading /SCRIPTS/TOOLS/AERODECK/arm-status.lua
+
+34300ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/reference.lua, t): loading /SCRIPTS/TOOLS/AERODECK/reference.lua
+34300ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/reference.lua, t): loading /SCRIPTS/TOOLS/AERODECK/reference.lua
+
+34300ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/reference.luac): Saved bytecode to file.
+34300ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/reference.luac): Saved bytecode to file.
+
+34300ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/reference-ui.lua, t): loading /SCRIPTS/TOOLS/AERODECK/reference-ui.lua
+34300ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/reference-ui.lua, t): loading /SCRIPTS/TOOLS/AERODECK/reference-ui.lua
+
+34310ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/reference-ui.luac): Saved bytecode to file.
+34310ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/reference-ui.luac): Saved bytecode to file.
+
+34530ms: TE_PRESSED
+34530ms: EVT_TOUCH_FIRST [60,75]
+34530ms: TE_PRESSED
+
+34530ms: EVT_TOUCH_FIRST [60,75]
+
+34580ms: TE_RELEASED
+34580ms: EVT_TOUCH_BREAK
+34580ms: CLICKED[0x21ac6e0]
+34580ms: TE_RELEASED
+
+34580ms: EVT_TOUCH_BREAK
+
+34580ms: CLICKED[0x21ac6e0]
+
+35040ms: CANCEL[0x21ac6e0]
+35040ms: CANCEL[0x21ac6e0]
+
+35210ms: TE_PRESSED
+35210ms: EVT_TOUCH_FIRST [198,15]
+35210ms: TE_PRESSED
+
+35210ms: EVT_TOUCH_FIRST [198,15]
+
+35330ms: TE_RELEASED
+35330ms: EVT_TOUCH_BREAK
+35330ms: CLICKED[0x21ac6e0]
+35330ms: TE_RELEASED
+
+35330ms: EVT_TOUCH_BREAK
+
+35330ms: CLICKED[0x21ac6e0]
+
+35390ms: luaOpenBitmap: 0x23178f0 (648)
+35390ms: luaOpenBitmap: 0x23178f0 (648)
+
+35570ms: TE_PRESSED
+35570ms: EVT_TOUCH_FIRST [240,44]
+35570ms: TE_PRESSED
+
+35570ms: EVT_TOUCH_FIRST [240,44]
+
+35680ms: TE_RELEASED
+35680ms: EVT_TOUCH_BREAK
+35680ms: CLICKED[0x21ac6e0]
+35680ms: TE_RELEASED
+
+35680ms: EVT_TOUCH_BREAK
+
+35680ms: CLICKED[0x21ac6e0]
+
+35740ms: luaDestroyBitmap: 0x23178f0 (648)
+35740ms: luaDestroyBitmap: 0x23178f0 (648)
+
+35910ms: TE_PRESSED
+35910ms: EVT_TOUCH_FIRST [30,75]
+35910ms: TE_PRESSED
+
+35910ms: EVT_TOUCH_FIRST [30,75]
+
+36030ms: TE_RELEASED
+36030ms: EVT_TOUCH_BREAK
+36030ms: CLICKED[0x21ac6e0]
+36030ms: TE_RELEASED
+
+36030ms: EVT_TOUCH_BREAK
+
+36030ms: CLICKED[0x21ac6e0]
+
+36090ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/quick-pack.lua, t): loading /SCRIPTS/TOOLS/AERODECK/quick-pack.lua
+36090ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/quick-pack.lua, t): loading /SCRIPTS/TOOLS/AERODECK/quick-pack.lua
+
+36100ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/quick-pack.luac): Saved bytecode to file.
+36100ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/quick-pack.luac): Saved bytecode to file.
+
+36260ms: TE_PRESSED
+36260ms: EVT_TOUCH_FIRST [40,232]
+36260ms: TE_PRESSED
+
+36260ms: EVT_TOUCH_FIRST [40,232]
+
+36380ms: TE_RELEASED
+36380ms: EVT_TOUCH_BREAK
+36380ms: CLICKED[0x21ac6e0]
+36380ms: TE_RELEASED
+
+36380ms: EVT_TOUCH_BREAK
+
+36380ms: CLICKED[0x21ac6e0]
+
+36620ms: TE_PRESSED
+36620ms: EVT_TOUCH_FIRST [405,44]
+36620ms: TE_PRESSED
+
+36620ms: EVT_TOUCH_FIRST [405,44]
+
+36740ms: TE_RELEASED
+36740ms: EVT_TOUCH_BREAK
+36740ms: CLICKED[0x21ac6e0]
+36740ms: TE_RELEASED
+
+36740ms: EVT_TOUCH_BREAK
+
+36740ms: CLICKED[0x21ac6e0]
+
+36970ms: TE_PRESSED
+36970ms: EVT_TOUCH_FIRST [262,15]
+36970ms: TE_PRESSED
+
+36970ms: EVT_TOUCH_FIRST [262,15]
+
+37090ms: TE_RELEASED
+37090ms: EVT_TOUCH_BREAK
+37090ms: CLICKED[0x21ac6e0]
+37090ms: TE_RELEASED
+
+37090ms: EVT_TOUCH_BREAK
+
+37090ms: CLICKED[0x21ac6e0]
+
+37150ms: luaOpenBitmap: 0x23331e0 (648)
+37150ms: luaOpenBitmap: 0x23331e0 (648)
+
+37150ms: luaDestroyBitmap: 0x23331e0 (648)
+37150ms: luaDestroyBitmap: 0x23331e0 (648)
+
+37150ms: luaOpenBitmap: 0x2252c00 (648)
+37150ms: luaOpenBitmap: 0x2252c00 (648)
+
+37330ms: TE_PRESSED
+37330ms: EVT_TOUCH_FIRST [390,232]
+37330ms: TE_PRESSED
+
+37330ms: EVT_TOUCH_FIRST [390,232]
+
+37440ms: TE_RELEASED
+37440ms: EVT_TOUCH_BREAK
+37440ms: CLICKED[0x21ac6e0]
+37440ms: TE_RELEASED
+
+37440ms: EVT_TOUCH_BREAK
+
+37440ms: CLICKED[0x21ac6e0]
+
+38200ms: TE_PRESSED
+38200ms: EVT_TOUCH_FIRST [390,232]
+38200ms: TE_PRESSED
+
+38200ms: EVT_TOUCH_FIRST [390,232]
+
+38310ms: TE_RELEASED
+38310ms: EVT_TOUCH_BREAK
+38310ms: CLICKED[0x21ac6e0]
+38310ms: TE_RELEASED
+
+38310ms: EVT_TOUCH_BREAK
+
+38310ms: CLICKED[0x21ac6e0]
+
+38550ms: TE_PRESSED
+38550ms: EVT_TOUCH_FIRST [390,232]
+38550ms: TE_PRESSED
+
+38550ms: EVT_TOUCH_FIRST [390,232]
+
+38670ms: TE_RELEASED
+38670ms: EVT_TOUCH_BREAK
+38670ms: CLICKED[0x21ac6e0]
+38670ms: TE_RELEASED
+
+38670ms: EVT_TOUCH_BREAK
+
+38670ms: CLICKED[0x21ac6e0]
+
+38890ms: TE_PRESSED
+38890ms: EVT_TOUCH_FIRST [350,44]
+38890ms: TE_PRESSED
+
+38890ms: EVT_TOUCH_FIRST [350,44]
+
+39010ms: TE_RELEASED
+39010ms: EVT_TOUCH_BREAK
+39010ms: CLICKED[0x21ac6e0]
+39010ms: TE_RELEASED
+
+39010ms: EVT_TOUCH_BREAK
+
+39010ms: CLICKED[0x21ac6e0]
+
+39070ms: luaDestroyBitmap: 0x2252c00 (648)
+39070ms: luaDestroyBitmap: 0x2252c00 (648)
+
+39240ms: TE_PRESSED
+39240ms: EVT_TOUCH_FIRST [326,15]
+39240ms: TE_PRESSED
+
+39240ms: EVT_TOUCH_FIRST [326,15]
+
+39360ms: TE_RELEASED
+39360ms: EVT_TOUCH_BREAK
+39360ms: CLICKED[0x21ac6e0]
+39360ms: TE_RELEASED
+
+39360ms: EVT_TOUCH_BREAK
+
+39360ms: CLICKED[0x21ac6e0]
+
+QA_DRAW_STATS|3074|4075|172|172|42|27|90|51.2
+QA_DRAW_STATS|3074|4075|172|172|42|27|90|51.2
+
+
+41810ms: TE_PRESSED
+41810ms: EVT_TOUCH_FIRST [386,15]
+41810ms: TE_PRESSED
+
+41810ms: EVT_TOUCH_FIRST [386,15]
+
+41910ms: TE_RELEASED
+41910ms: EVT_TOUCH_BREAK
+41910ms: CLICKED[0x21ac6e0]
+41910ms: TE_RELEASED
+
+41910ms: EVT_TOUCH_BREAK
+
+41910ms: CLICKED[0x21ac6e0]
+
+42150ms: TE_PRESSED
+42150ms: EVT_TOUCH_FIRST [300,234]
+42150ms: TE_PRESSED
+
+42150ms: EVT_TOUCH_FIRST [300,234]
+
+42270ms: TE_RELEASED
+42270ms: EVT_TOUCH_BREAK
+42270ms: CLICKED[0x21ac6e0]
+42270ms: TE_RELEASED
+
+42270ms: EVT_TOUCH_BREAK
+
+42270ms: CLICKED[0x21ac6e0]
+
+42500ms: TE_PRESSED
+42500ms: EVT_TOUCH_FIRST [150,148]
+42500ms: TE_PRESSED
+
+42500ms: EVT_TOUCH_FIRST [150,148]
+
+42610ms: TE_RELEASED
+42610ms: EVT_TOUCH_BREAK
+42610ms: CLICKED[0x21ac6e0]
+42610ms: TE_RELEASED
+
+42610ms: EVT_TOUCH_BREAK
+
+42610ms: CLICKED[0x21ac6e0]
+
+43060ms: CANCEL[0x21ac6e0]
+43060ms: CANCEL[0x21ac6e0]
+
+43230ms: TE_PRESSED
+43230ms: EVT_TOUCH_FIRST [450,15]
+43230ms: TE_PRESSED
+
+43230ms: EVT_TOUCH_FIRST [450,15]
+
+43350ms: TE_RELEASED
+43350ms: EVT_TOUCH_BREAK
+43350ms: CLICKED[0x21ac6e0]
+43350ms: TE_RELEASED
+
+43350ms: EVT_TOUCH_BREAK
+
+43350ms: CLICKED[0x21ac6e0]
+
+43420ms: luaOpenBitmap: 0x2339da0 (648)
+43420ms: luaOpenBitmap: 0x2339da0 (648)
+
+43420ms: luaDestroyBitmap: 0x2339da0 (648)
+43420ms: luaDestroyBitmap: 0x2339da0 (648)
+
+43420ms: luaOpenBitmap: 0x2339da0 (648)
+43420ms: luaOpenBitmap: 0x2339da0 (648)
+
+43590ms: TE_PRESSED
+43590ms: EVT_TOUCH_FIRST [240,44]
+43590ms: TE_PRESSED
+
+43590ms: EVT_TOUCH_FIRST [240,44]
+
+43700ms: TE_RELEASED
+43700ms: EVT_TOUCH_BREAK
+43700ms: TE_RELEASED
+
+43710ms: CLICKED[0x21ac6e0]
+43700ms: EVT_TOUCH_BREAK
+
+43710ms: CLICKED[0x21ac6e0]
+
+43760ms: luaDestroyBitmap: 0x2339da0 (648)
+43760ms: luaDestroyBitmap: 0x2339da0 (648)
+
+43940ms: TE_PRESSED
+43940ms: EVT_TOUCH_FIRST [405,44]
+43940ms: TE_PRESSED
+
+43940ms: EVT_TOUCH_FIRST [405,44]
+
+44050ms: TE_RELEASED
+44050ms: EVT_TOUCH_BREAK
+44050ms: CLICKED[0x21ac6e0]
+44050ms: TE_RELEASED
+
+44050ms: EVT_TOUCH_BREAK
+
+44050ms: CLICKED[0x21ac6e0]
+
+QA_FRAME diagnostics-1
+44290ms: TE_PRESSED
+44290ms: EVT_TOUCH_FIRST [180,75]
+44290ms: TE_PRESSED
+
+44290ms: EVT_TOUCH_FIRST [180,75]
+
+44400ms: TE_RELEASED
+44400ms: EVT_TOUCH_BREAK
+44400ms: CLICKED[0x21ac6e0]
+44400ms: TE_RELEASED
+
+44400ms: EVT_TOUCH_BREAK
+
+44400ms: CLICKED[0x21ac6e0]
+
+44870ms: TE_PRESSED
+44870ms: EVT_TOUCH_FIRST [180,75]
+44870ms: TE_PRESSED
+
+44870ms: EVT_TOUCH_FIRST [180,75]
+
+44920ms: TE_RELEASED
+44920ms: EVT_TOUCH_BREAK
+44920ms: CLICKED[0x21ac6e0]
+44920ms: TE_RELEASED
+
+44920ms: EVT_TOUCH_BREAK
+
+44920ms: CLICKED[0x21ac6e0]
+
+45390ms: TE_PRESSED
+45390ms: EVT_TOUCH_FIRST [180,75]
+45390ms: TE_PRESSED
+
+45390ms: EVT_TOUCH_FIRST [180,75]
+
+45500ms: TE_RELEASED
+45500ms: EVT_TOUCH_BREAK
+45500ms: CLICKED[0x21ac6e0]
+45500ms: TE_RELEASED
+
+45500ms: EVT_TOUCH_BREAK
+
+45500ms: CLICKED[0x21ac6e0]
+
+45980ms: TE_PRESSED
+45980ms: EVT_TOUCH_FIRST [180,75]
+45980ms: TE_PRESSED
+
+45980ms: EVT_TOUCH_FIRST [180,75]
+
+46040ms: TE_RELEASED
+46040ms: EVT_TOUCH_BREAK
+46040ms: CLICKED[0x21ac6e0]
+46040ms: TE_RELEASED
+
+46040ms: EVT_TOUCH_BREAK
+
+46040ms: CLICKED[0x21ac6e0]
+
+46510ms: TE_PRESSED
+46510ms: EVT_TOUCH_FIRST [180,75]
+46510ms: TE_PRESSED
+
+46510ms: EVT_TOUCH_FIRST [180,75]
+
+46630ms: TE_RELEASED
+46630ms: EVT_TOUCH_BREAK
+46630ms: CLICKED[0x21ac6e0]
+46630ms: TE_RELEASED
+
+46630ms: EVT_TOUCH_BREAK
+
+46630ms: CLICKED[0x21ac6e0]
+
+46690ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-image.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-image.lua
+46690ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/model-image.lua, t): loading /SCRIPTS/TOOLS/AERODECK/model-image.lua
+
+46690ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-image.luac): Saved bytecode to file.
+46690ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/model-image.luac): Saved bytecode to file.
+
+QA_FRAME diagnostics-6
+47040ms: TE_PRESSED
+47040ms: EVT_TOUCH_FIRST [180,75]
+47040ms: TE_PRESSED
+
+47040ms: EVT_TOUCH_FIRST [180,75]
+
+47160ms: TE_RELEASED
+47160ms: EVT_TOUCH_BREAK
+47160ms: CLICKED[0x21ac6e0]
+47160ms: TE_RELEASED
+
+47160ms: EVT_TOUCH_BREAK
+
+47160ms: CLICKED[0x21ac6e0]
+
+47620ms: TE_PRESSED
+47620ms: EVT_TOUCH_FIRST [20,15]
+47620ms: TE_PRESSED
+
+47620ms: EVT_TOUCH_FIRST [20,15]
+
+47680ms: TE_RELEASED
+47680ms: EVT_TOUCH_BREAK
+47680ms: CLICKED[0x21ac6e0]
+47680ms: TE_RELEASED
+
+47680ms: EVT_TOUCH_BREAK
+
+47680ms: CLICKED[0x21ac6e0]
+
+47970ms: TE_PRESSED
+47970ms: EVT_TOUCH_FIRST [230,233]
+47970ms: TE_PRESSED
+
+47970ms: EVT_TOUCH_FIRST [230,233]
+
+48080ms: TE_RELEASED
+48080ms: EVT_TOUCH_BREAK
+48080ms: CLICKED[0x21ac6e0]
+48080ms: TE_RELEASED
+
+48080ms: EVT_TOUCH_BREAK
+
+48080ms: CLICKED[0x21ac6e0]
+
+48320ms: TE_PRESSED
+48320ms: EVT_TOUCH_FIRST [60,232]
+48320ms: TE_PRESSED
+
+48320ms: EVT_TOUCH_FIRST [60,232]
+
+48380ms: TE_RELEASED
+48380ms: EVT_TOUCH_BREAK
+48380ms: CLICKED[0x21ac6e0]
+48380ms: TE_RELEASED
+
+48380ms: EVT_TOUCH_BREAK
+
+48380ms: CLICKED[0x21ac6e0]
+
+48670ms: TE_PRESSED
+48670ms: EVT_TOUCH_FIRST [150,72]
+48670ms: TE_PRESSED
+
+48670ms: EVT_TOUCH_FIRST [150,72]
+
+48790ms: TE_RELEASED
+48790ms: EVT_TOUCH_BREAK
+48790ms: CLICKED[0x21ac6e0]
+48790ms: TE_RELEASED
+
+48790ms: EVT_TOUCH_BREAK
+
+48790ms: CLICKED[0x21ac6e0]
+
+48850ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-picker.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-picker.lua
+48850ms: luaLoadScriptFileToState(/SCRIPTS/TOOLS/AERODECK/input-picker.lua, t): loading /SCRIPTS/TOOLS/AERODECK/input-picker.lua
+
+48850ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-picker.luac): Saved bytecode to file.
+48850ms: luaDumpState(/SCRIPTS/TOOLS/AERODECK/input-picker.luac): Saved bytecode to file.
+
+QA_FRAME input-picker
+49190ms: CANCEL[0x21ac6e0]
+49190ms: CANCEL[0x21ac6e0]
+
+49600ms: CANCEL[0x21ac6e0]
+49600ms: CANCEL[0x21ac6e0]
+
+49780ms: TE_PRESSED
+49780ms: EVT_TOUCH_FIRST [20,15]
+49780ms: TE_PRESSED
+
+49780ms: EVT_TOUCH_FIRST [20,15]
+
+49840ms: TE_RELEASED
+49840ms: EVT_TOUCH_BREAK
+49840ms: CLICKED[0x21ac6e0]
+49840ms: TE_RELEASED
+
+49840ms: EVT_TOUCH_BREAK
+
+49840ms: CLICKED[0x21ac6e0]
+
+QA_DRAW_STATS|4075|5079|172|171|41|27|90|46.1
+QA_DRAW_STATS|4075|5079|172|171|41|27|90|46.1
+
+
+QA_DEV_MEMORY|23|6004|1310.797
+QA_DEV_MEMORY|23|6004|1310.797
+
+
+QA_DRAW_STATS|5079|6081|171|171|42|81|91|86.2
+QA_DRAW_STATS|5079|6081|171|171|42|81|91|86.2
+
+
+QA_DRAW_STATS|6081|7083|171|171|41|80|91|86.2
+QA_DRAW_STATS|6081|7083|171|171|41|80|91|86.2
+
+
+QA_FRAME warm-flight-1
+78130ms: TE_PRESSED
+78130ms: EVT_TOUCH_FIRST [450,15]
+78130ms: TE_PRESSED
+
+78130ms: EVT_TOUCH_FIRST [450,15]
+
+78250ms: TE_RELEASED
+78250ms: EVT_TOUCH_BREAK
+78250ms: CLICKED[0x21ac6e0]
+78250ms: TE_RELEASED
+
+78250ms: EVT_TOUCH_BREAK
+
+78250ms: CLICKED[0x21ac6e0]
+
+78480ms: TE_PRESSED
+78480ms: EVT_TOUCH_FIRST [405,44]
+78480ms: TE_PRESSED
+
+78480ms: EVT_TOUCH_FIRST [405,44]
+
+78590ms: TE_RELEASED
+78590ms: EVT_TOUCH_BREAK
+78590ms: CLICKED[0x21ac6e0]
+78590ms: TE_RELEASED
+
+78590ms: EVT_TOUCH_BREAK
+
+78590ms: CLICKED[0x21ac6e0]
+
+78940ms: TE_PRESSED
+78940ms: EVT_TOUCH_FIRST [180,75]
+78940ms: TE_PRESSED
+
+78940ms: EVT_TOUCH_FIRST [180,75]
+
+78990ms: TE_RELEASED
+78990ms: EVT_TOUCH_BREAK
+78990ms: CLICKED[0x21ac6e0]
+78990ms: TE_RELEASED
+
+78990ms: EVT_TOUCH_BREAK
+
+78990ms: CLICKED[0x21ac6e0]
+
+79290ms: TE_PRESSED
+79290ms: EVT_TOUCH_FIRST [180,75]
+79290ms: TE_PRESSED
+
+79290ms: EVT_TOUCH_FIRST [180,75]
+
+79350ms: TE_RELEASED
+79350ms: EVT_TOUCH_BREAK
+79350ms: CLICKED[0x21ac6e0]
+79350ms: TE_RELEASED
+
+79350ms: EVT_TOUCH_BREAK
+
+79350ms: CLICKED[0x21ac6e0]
+
+79640ms: TE_PRESSED
+79640ms: EVT_TOUCH_FIRST [180,75]
+79640ms: TE_PRESSED
+
+79640ms: EVT_TOUCH_FIRST [180,75]
+
+79700ms: TE_RELEASED
+79700ms: EVT_TOUCH_BREAK
+79700ms: CLICKED[0x21ac6e0]
+79700ms: TE_RELEASED
+
+79700ms: EVT_TOUCH_BREAK
+
+79700ms: CLICKED[0x21ac6e0]
+
+80000ms: TE_PRESSED
+80000ms: EVT_TOUCH_FIRST [180,75]
+80000ms: TE_PRESSED
+
+80000ms: EVT_TOUCH_FIRST [180,75]
+
+80060ms: TE_RELEASED
+80060ms: EVT_TOUCH_BREAK
+80060ms: CLICKED[0x21ac6e0]
+80060ms: TE_RELEASED
+
+80060ms: EVT_TOUCH_BREAK
+
+80060ms: CLICKED[0x21ac6e0]
+
+80350ms: TE_PRESSED
+80350ms: EVT_TOUCH_FIRST [180,75]
+80350ms: TE_PRESSED
+
+80350ms: EVT_TOUCH_FIRST [180,75]
+
+80410ms: TE_RELEASED
+80410ms: EVT_TOUCH_BREAK
+80410ms: CLICKED[0x21ac6e0]
+80410ms: TE_RELEASED
+
+80410ms: EVT_TOUCH_BREAK
+
+80410ms: CLICKED[0x21ac6e0]
+
+80700ms: TE_PRESSED
+80700ms: EVT_TOUCH_FIRST [180,75]
+80700ms: TE_PRESSED
+
+80700ms: EVT_TOUCH_FIRST [180,75]
+
+80760ms: TE_RELEASED
+80760ms: EVT_TOUCH_BREAK
+80760ms: CLICKED[0x21ac6e0]
+80760ms: TE_RELEASED
+
+80760ms: EVT_TOUCH_BREAK
+
+80760ms: CLICKED[0x21ac6e0]
+
+QA_DRAW_STATS|7083|8088|171|171|42|32|91|73.9
+QA_DRAW_STATS|7083|8088|171|171|42|32|91|73.9
+
+
+QA_FRAME warm-about-1
+81000ms: TE_PRESSED
+81000ms: EVT_TOUCH_FIRST [180,75]
+81000ms: TE_PRESSED
+
+81000ms: EVT_TOUCH_FIRST [180,75]
+
+81110ms: TE_RELEASED
+81110ms: EVT_TOUCH_BREAK
+81110ms: CLICKED[0x21ac6e0]
+81110ms: TE_RELEASED
+
+81110ms: EVT_TOUCH_BREAK
+
+81110ms: CLICKED[0x21ac6e0]
+
+81410ms: TE_PRESSED
+81410ms: EVT_TOUCH_FIRST [180,75]
+81410ms: TE_PRESSED
+
+81410ms: EVT_TOUCH_FIRST [180,75]
+
+81470ms: TE_RELEASED
+81470ms: EVT_TOUCH_BREAK
+81470ms: CLICKED[0x21ac6e0]
+81470ms: TE_RELEASED
+
+81470ms: EVT_TOUCH_BREAK
+
+81470ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-runtime-1
+81750ms: TE_PRESSED
+81750ms: EVT_TOUCH_FIRST [180,75]
+81750ms: TE_PRESSED
+
+81750ms: EVT_TOUCH_FIRST [180,75]
+
+81810ms: TE_RELEASED
+81810ms: EVT_TOUCH_BREAK
+81810ms: CLICKED[0x21ac6e0]
+81810ms: TE_RELEASED
+
+81810ms: EVT_TOUCH_BREAK
+
+81810ms: CLICKED[0x21ac6e0]
+
+82100ms: TE_PRESSED
+82100ms: EVT_TOUCH_FIRST [180,75]
+82100ms: TE_PRESSED
+
+82100ms: EVT_TOUCH_FIRST [180,75]
+
+82160ms: TE_RELEASED
+82160ms: EVT_TOUCH_BREAK
+82160ms: CLICKED[0x21ac6e0]
+82160ms: TE_RELEASED
+
+82160ms: EVT_TOUCH_BREAK
+
+82160ms: CLICKED[0x21ac6e0]
+
+82460ms: TE_PRESSED
+82460ms: EVT_TOUCH_FIRST [180,75]
+82460ms: TE_PRESSED
+
+82460ms: EVT_TOUCH_FIRST [180,75]
+
+82520ms: TE_RELEASED
+82520ms: EVT_TOUCH_BREAK
+82520ms: CLICKED[0x21ac6e0]
+82520ms: TE_RELEASED
+
+82520ms: EVT_TOUCH_BREAK
+
+82520ms: CLICKED[0x21ac6e0]
+
+82800ms: TE_PRESSED
+82800ms: EVT_TOUCH_FIRST [180,75]
+82800ms: TE_PRESSED
+
+82800ms: EVT_TOUCH_FIRST [180,75]
+
+82860ms: TE_RELEASED
+82860ms: EVT_TOUCH_BREAK
+82860ms: CLICKED[0x21ac6e0]
+82860ms: TE_RELEASED
+
+82860ms: EVT_TOUCH_BREAK
+
+82860ms: CLICKED[0x21ac6e0]
+
+83150ms: TE_PRESSED
+83150ms: EVT_TOUCH_FIRST [180,75]
+83150ms: TE_PRESSED
+
+83150ms: EVT_TOUCH_FIRST [180,75]
+
+83210ms: TE_RELEASED
+83210ms: EVT_TOUCH_BREAK
+83210ms: CLICKED[0x21ac6e0]
+83210ms: TE_RELEASED
+
+83210ms: EVT_TOUCH_BREAK
+
+83210ms: CLICKED[0x21ac6e0]
+
+83510ms: TE_PRESSED
+83510ms: EVT_TOUCH_FIRST [180,75]
+83510ms: TE_PRESSED
+
+83510ms: EVT_TOUCH_FIRST [180,75]
+
+83570ms: TE_RELEASED
+83570ms: EVT_TOUCH_BREAK
+83570ms: TE_RELEASED
+
+83570ms: CLICKED[0x21ac6e0]
+83570ms: EVT_TOUCH_BREAK
+
+83570ms: CLICKED[0x21ac6e0]
+
+83860ms: TE_PRESSED
+83860ms: EVT_TOUCH_FIRST [20,15]
+83860ms: TE_PRESSED
+
+83860ms: EVT_TOUCH_FIRST [20,15]
+
+83920ms: TE_RELEASED
+83920ms: EVT_TOUCH_BREAK
+83920ms: CLICKED[0x21ac6e0]
+83920ms: TE_RELEASED
+
+83920ms: EVT_TOUCH_BREAK
+
+83920ms: CLICKED[0x21ac6e0]
+
+QA_WARM_ELAPSED_MS 34078
+QA_DEV_MEMORY|23|9006|1343.493
+QA_DEV_MEMORY|23|9006|1343.493
+
+
+QA_DRAW_STATS|8088|9088|171|171|42|31|91|71.8
+QA_DRAW_STATS|8088|9088|171|171|42|31|91|71.8
+
+
+QA_DRAW_STATS|9088|10090|171|171|42|80|91|86.0
+QA_DRAW_STATS|9088|10090|171|171|42|80|91|86.0
+
+
+QA_DRAW_STATS|10090|11091|171|171|42|80|92|86.3
+QA_DRAW_STATS|10090|11091|171|171|42|80|92|86.3
+
+
+QA_FRAME warm-flight-2
+112190ms: TE_PRESSED
+112190ms: EVT_TOUCH_FIRST [450,15]
+112190ms: TE_PRESSED
+
+112190ms: EVT_TOUCH_FIRST [450,15]
+
+112310ms: TE_RELEASED
+112310ms: EVT_TOUCH_BREAK
+112310ms: CLICKED[0x21ac6e0]
+112310ms: TE_RELEASED
+
+112310ms: EVT_TOUCH_BREAK
+
+112310ms: CLICKED[0x21ac6e0]
+
+112550ms: TE_PRESSED
+112550ms: EVT_TOUCH_FIRST [405,44]
+112550ms: TE_PRESSED
+
+112550ms: EVT_TOUCH_FIRST [405,44]
+
+112670ms: TE_RELEASED
+112670ms: EVT_TOUCH_BREAK
+112670ms: CLICKED[0x21ac6e0]
+112670ms: TE_RELEASED
+
+112670ms: EVT_TOUCH_BREAK
+
+112670ms: CLICKED[0x21ac6e0]
+
+113020ms: TE_PRESSED
+113020ms: EVT_TOUCH_FIRST [180,75]
+113020ms: TE_PRESSED
+
+113020ms: EVT_TOUCH_FIRST [180,75]
+
+113080ms: TE_RELEASED
+113080ms: EVT_TOUCH_BREAK
+113080ms: CLICKED[0x21ac6e0]
+113080ms: TE_RELEASED
+
+113080ms: EVT_TOUCH_BREAK
+
+113080ms: CLICKED[0x21ac6e0]
+
+113370ms: TE_PRESSED
+113370ms: EVT_TOUCH_FIRST [180,75]
+113370ms: TE_PRESSED
+
+113370ms: EVT_TOUCH_FIRST [180,75]
+
+113430ms: TE_RELEASED
+113430ms: EVT_TOUCH_BREAK
+113430ms: CLICKED[0x21ac6e0]
+113430ms: TE_RELEASED
+
+113430ms: EVT_TOUCH_BREAK
+
+113430ms: CLICKED[0x21ac6e0]
+
+113730ms: TE_PRESSED
+113730ms: EVT_TOUCH_FIRST [180,75]
+113730ms: TE_PRESSED
+
+113730ms: EVT_TOUCH_FIRST [180,75]
+
+113790ms: TE_RELEASED
+113790ms: EVT_TOUCH_BREAK
+113790ms: CLICKED[0x21ac6e0]
+113790ms: TE_RELEASED
+
+113790ms: EVT_TOUCH_BREAK
+
+113790ms: CLICKED[0x21ac6e0]
+
+114080ms: TE_PRESSED
+114080ms: EVT_TOUCH_FIRST [180,75]
+114080ms: TE_PRESSED
+
+114080ms: EVT_TOUCH_FIRST [180,75]
+
+114140ms: TE_RELEASED
+114140ms: EVT_TOUCH_BREAK
+114140ms: CLICKED[0x21ac6e0]
+114140ms: TE_RELEASED
+
+114140ms: EVT_TOUCH_BREAK
+
+114140ms: CLICKED[0x21ac6e0]
+
+114440ms: TE_PRESSED
+114440ms: EVT_TOUCH_FIRST [180,75]
+114440ms: TE_PRESSED
+
+114440ms: EVT_TOUCH_FIRST [180,75]
+
+114500ms: TE_RELEASED
+114500ms: EVT_TOUCH_BREAK
+114500ms: CLICKED[0x21ac6e0]
+114500ms: TE_RELEASED
+
+114500ms: EVT_TOUCH_BREAK
+
+114500ms: CLICKED[0x21ac6e0]
+
+114730ms: TE_PRESSED
+114730ms: EVT_TOUCH_FIRST [180,75]
+114730ms: TE_PRESSED
+
+114730ms: EVT_TOUCH_FIRST [180,75]
+
+114850ms: TE_RELEASED
+114850ms: EVT_TOUCH_BREAK
+114850ms: CLICKED[0x21ac6e0]
+114850ms: TE_RELEASED
+
+114850ms: EVT_TOUCH_BREAK
+
+114850ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-about-2
+115140ms: TE_PRESSED
+115140ms: EVT_TOUCH_FIRST [180,75]
+115140ms: TE_PRESSED
+
+115140ms: EVT_TOUCH_FIRST [180,75]
+
+115200ms: TE_RELEASED
+115200ms: EVT_TOUCH_BREAK
+115200ms: CLICKED[0x21ac6e0]
+115200ms: TE_RELEASED
+
+115200ms: EVT_TOUCH_BREAK
+
+115200ms: CLICKED[0x21ac6e0]
+
+115490ms: TE_PRESSED
+115490ms: EVT_TOUCH_FIRST [180,75]
+115490ms: TE_PRESSED
+
+115490ms: EVT_TOUCH_FIRST [180,75]
+
+115550ms: TE_RELEASED
+115550ms: EVT_TOUCH_BREAK
+115550ms: CLICKED[0x21ac6e0]
+115550ms: TE_RELEASED
+
+115550ms: EVT_TOUCH_BREAK
+
+115550ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-runtime-2
+115850ms: TE_PRESSED
+115850ms: EVT_TOUCH_FIRST [180,75]
+115850ms: TE_PRESSED
+
+115850ms: EVT_TOUCH_FIRST [180,75]
+
+115910ms: TE_RELEASED
+115910ms: EVT_TOUCH_BREAK
+115910ms: CLICKED[0x21ac6e0]
+115910ms: TE_RELEASED
+
+115910ms: EVT_TOUCH_BREAK
+
+115910ms: CLICKED[0x21ac6e0]
+
+116200ms: TE_PRESSED
+116200ms: EVT_TOUCH_FIRST [180,75]
+116200ms: TE_PRESSED
+
+116200ms: EVT_TOUCH_FIRST [180,75]
+
+116260ms: TE_RELEASED
+116260ms: EVT_TOUCH_BREAK
+116260ms: CLICKED[0x21ac6e0]
+116260ms: TE_RELEASED
+
+116260ms: EVT_TOUCH_BREAK
+
+116260ms: CLICKED[0x21ac6e0]
+
+116550ms: TE_PRESSED
+116550ms: EVT_TOUCH_FIRST [180,75]
+116550ms: TE_PRESSED
+
+116550ms: EVT_TOUCH_FIRST [180,75]
+
+116610ms: TE_RELEASED
+116610ms: EVT_TOUCH_BREAK
+116610ms: CLICKED[0x21ac6e0]
+116610ms: TE_RELEASED
+
+116610ms: EVT_TOUCH_BREAK
+
+116610ms: CLICKED[0x21ac6e0]
+
+116900ms: TE_PRESSED
+116900ms: EVT_TOUCH_FIRST [180,75]
+116900ms: TE_PRESSED
+
+116900ms: EVT_TOUCH_FIRST [180,75]
+
+116950ms: TE_RELEASED
+116950ms: EVT_TOUCH_BREAK
+116950ms: CLICKED[0x21ac6e0]
+116950ms: TE_RELEASED
+
+116950ms: EVT_TOUCH_BREAK
+
+116950ms: CLICKED[0x21ac6e0]
+
+117250ms: TE_PRESSED
+117250ms: EVT_TOUCH_FIRST [180,75]
+117250ms: TE_PRESSED
+
+117250ms: EVT_TOUCH_FIRST [180,75]
+
+117300ms: TE_RELEASED
+117300ms: EVT_TOUCH_BREAK
+117300ms: CLICKED[0x21ac6e0]
+117300ms: TE_RELEASED
+
+117300ms: EVT_TOUCH_BREAK
+
+117300ms: CLICKED[0x21ac6e0]
+
+117600ms: TE_PRESSED
+117600ms: EVT_TOUCH_FIRST [180,75]
+117600ms: TE_PRESSED
+
+117600ms: EVT_TOUCH_FIRST [180,75]
+
+117660ms: TE_RELEASED
+117660ms: EVT_TOUCH_BREAK
+117660ms: TE_RELEASED
+
+117660ms: CLICKED[0x21ac6e0]
+117660ms: EVT_TOUCH_BREAK
+
+117660ms: CLICKED[0x21ac6e0]
+
+117950ms: TE_PRESSED
+117950ms: EVT_TOUCH_FIRST [20,15]
+117950ms: TE_PRESSED
+
+117950ms: EVT_TOUCH_FIRST [20,15]
+
+118010ms: TE_RELEASED
+118010ms: EVT_TOUCH_BREAK
+118010ms: CLICKED[0x21ac6e0]
+118010ms: TE_RELEASED
+
+118010ms: EVT_TOUCH_BREAK
+
+118010ms: CLICKED[0x21ac6e0]
+
+QA_WARM_ELAPSED_MS 68172
+QA_DEV_MEMORY|23|12007|1325.463
+QA_DEV_MEMORY|23|12007|1325.463
+
+
+QA_DRAW_STATS|11091|12094|171|171|42|32|91|59.5
+QA_DRAW_STATS|11091|12094|171|171|42|32|91|59.5
+
+
+QA_DRAW_STATS|12094|13097|171|171|42|80|91|86.3
+QA_DRAW_STATS|12094|13097|171|171|42|80|91|86.3
+
+
+QA_DRAW_STATS|13097|14101|171|171|42|80|91|86.1
+QA_DRAW_STATS|13097|14101|171|171|42|80|91|86.1
+
+
+QA_FRAME warm-flight-3
+146300ms: TE_PRESSED
+146300ms: EVT_TOUCH_FIRST [450,15]
+146300ms: TE_PRESSED
+
+146300ms: EVT_TOUCH_FIRST [450,15]
+
+146420ms: TE_RELEASED
+146420ms: EVT_TOUCH_BREAK
+146420ms: CLICKED[0x21ac6e0]
+146420ms: TE_RELEASED
+
+146420ms: EVT_TOUCH_BREAK
+
+146420ms: CLICKED[0x21ac6e0]
+
+146650ms: TE_PRESSED
+146650ms: EVT_TOUCH_FIRST [405,44]
+146650ms: TE_PRESSED
+
+146650ms: EVT_TOUCH_FIRST [405,44]
+
+146710ms: TE_RELEASED
+146710ms: EVT_TOUCH_BREAK
+146710ms: CLICKED[0x21ac6e0]
+146710ms: TE_RELEASED
+
+146710ms: EVT_TOUCH_BREAK
+
+146710ms: CLICKED[0x21ac6e0]
+
+147120ms: TE_PRESSED
+147120ms: EVT_TOUCH_FIRST [180,75]
+147120ms: TE_PRESSED
+
+147120ms: EVT_TOUCH_FIRST [180,75]
+
+147180ms: TE_RELEASED
+147180ms: EVT_TOUCH_BREAK
+147180ms: CLICKED[0x21ac6e0]
+147180ms: TE_RELEASED
+
+147180ms: EVT_TOUCH_BREAK
+
+147180ms: CLICKED[0x21ac6e0]
+
+147470ms: TE_PRESSED
+147470ms: EVT_TOUCH_FIRST [180,75]
+147470ms: TE_PRESSED
+
+147470ms: EVT_TOUCH_FIRST [180,75]
+
+147530ms: TE_RELEASED
+147530ms: EVT_TOUCH_BREAK
+147530ms: CLICKED[0x21ac6e0]
+147530ms: TE_RELEASED
+
+147530ms: EVT_TOUCH_BREAK
+
+147530ms: CLICKED[0x21ac6e0]
+
+147820ms: TE_PRESSED
+147820ms: EVT_TOUCH_FIRST [180,75]
+147820ms: TE_PRESSED
+
+147820ms: EVT_TOUCH_FIRST [180,75]
+
+147880ms: TE_RELEASED
+147880ms: EVT_TOUCH_BREAK
+147880ms: CLICKED[0x21ac6e0]
+147880ms: TE_RELEASED
+
+147880ms: EVT_TOUCH_BREAK
+
+147880ms: CLICKED[0x21ac6e0]
+
+148180ms: TE_PRESSED
+148180ms: EVT_TOUCH_FIRST [180,75]
+148180ms: TE_PRESSED
+
+148180ms: EVT_TOUCH_FIRST [180,75]
+
+148230ms: TE_RELEASED
+148230ms: EVT_TOUCH_BREAK
+148230ms: CLICKED[0x21ac6e0]
+148230ms: TE_RELEASED
+
+148230ms: EVT_TOUCH_BREAK
+
+148230ms: CLICKED[0x21ac6e0]
+
+148470ms: TE_PRESSED
+148470ms: EVT_TOUCH_FIRST [180,75]
+148470ms: TE_PRESSED
+
+148470ms: EVT_TOUCH_FIRST [180,75]
+
+148590ms: TE_RELEASED
+148590ms: EVT_TOUCH_BREAK
+148590ms: CLICKED[0x21ac6e0]
+148590ms: TE_RELEASED
+
+148590ms: EVT_TOUCH_BREAK
+
+148590ms: CLICKED[0x21ac6e0]
+
+148830ms: TE_PRESSED
+148830ms: EVT_TOUCH_FIRST [180,75]
+148830ms: TE_PRESSED
+
+148830ms: EVT_TOUCH_FIRST [180,75]
+
+148940ms: TE_RELEASED
+148940ms: EVT_TOUCH_BREAK
+148940ms: CLICKED[0x21ac6e0]
+148940ms: TE_RELEASED
+
+148940ms: EVT_TOUCH_BREAK
+
+148940ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-about-3
+149180ms: TE_PRESSED
+149180ms: EVT_TOUCH_FIRST [180,75]
+149180ms: TE_PRESSED
+
+149180ms: EVT_TOUCH_FIRST [180,75]
+
+149300ms: TE_RELEASED
+149300ms: EVT_TOUCH_BREAK
+149300ms: CLICKED[0x21ac6e0]
+149300ms: TE_RELEASED
+
+149300ms: EVT_TOUCH_BREAK
+
+149300ms: CLICKED[0x21ac6e0]
+
+149530ms: TE_PRESSED
+149530ms: EVT_TOUCH_FIRST [180,75]
+149530ms: TE_PRESSED
+
+149530ms: EVT_TOUCH_FIRST [180,75]
+
+149650ms: TE_RELEASED
+149650ms: EVT_TOUCH_BREAK
+149650ms: CLICKED[0x21ac6e0]
+149650ms: TE_RELEASED
+
+149650ms: EVT_TOUCH_BREAK
+
+149650ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-runtime-3
+149890ms: TE_PRESSED
+149890ms: EVT_TOUCH_FIRST [180,75]
+149890ms: TE_PRESSED
+
+149890ms: EVT_TOUCH_FIRST [180,75]
+
+150010ms: TE_RELEASED
+150010ms: EVT_TOUCH_BREAK
+150010ms: CLICKED[0x21ac6e0]
+150010ms: TE_RELEASED
+
+150010ms: EVT_TOUCH_BREAK
+
+150010ms: CLICKED[0x21ac6e0]
+
+150240ms: TE_PRESSED
+150240ms: EVT_TOUCH_FIRST [180,75]
+150240ms: TE_PRESSED
+
+150240ms: EVT_TOUCH_FIRST [180,75]
+
+QA_DEV_MEMORY|23|15007|1370.662
+QA_DEV_MEMORY|23|15007|1370.662
+
+
+150360ms: TE_RELEASED
+150360ms: EVT_TOUCH_BREAK
+150360ms: CLICKED[0x21ac6e0]
+150360ms: TE_RELEASED
+
+150360ms: EVT_TOUCH_BREAK
+
+150360ms: CLICKED[0x21ac6e0]
+
+150600ms: TE_PRESSED
+150600ms: EVT_TOUCH_FIRST [180,75]
+150600ms: TE_PRESSED
+
+150600ms: EVT_TOUCH_FIRST [180,75]
+
+150710ms: TE_RELEASED
+150710ms: EVT_TOUCH_BREAK
+150710ms: CLICKED[0x21ac6e0]
+150710ms: TE_RELEASED
+
+150710ms: EVT_TOUCH_BREAK
+
+150710ms: CLICKED[0x21ac6e0]
+
+150950ms: TE_PRESSED
+150950ms: EVT_TOUCH_FIRST [180,75]
+150950ms: TE_PRESSED
+
+150950ms: EVT_TOUCH_FIRST [180,75]
+
+QA_DRAW_STATS|14101|15101|171|171|42|32|91|64.9
+QA_DRAW_STATS|14101|15101|171|171|42|32|91|64.9
+
+
+151070ms: TE_RELEASED
+151070ms: EVT_TOUCH_BREAK
+151070ms: CLICKED[0x21ac6e0]
+151070ms: TE_RELEASED
+
+151070ms: EVT_TOUCH_BREAK
+
+151070ms: CLICKED[0x21ac6e0]
+
+151310ms: TE_PRESSED
+151310ms: EVT_TOUCH_FIRST [180,75]
+151310ms: TE_PRESSED
+
+151310ms: EVT_TOUCH_FIRST [180,75]
+
+151420ms: TE_RELEASED
+151420ms: EVT_TOUCH_BREAK
+151420ms: CLICKED[0x21ac6e0]
+151420ms: TE_RELEASED
+
+151420ms: EVT_TOUCH_BREAK
+
+151420ms: CLICKED[0x21ac6e0]
+
+151660ms: TE_PRESSED
+151660ms: EVT_TOUCH_FIRST [180,75]
+151660ms: TE_PRESSED
+
+151660ms: EVT_TOUCH_FIRST [180,75]
+
+151780ms: TE_RELEASED
+151780ms: EVT_TOUCH_BREAK
+151780ms: TE_RELEASED
+
+151780ms: CLICKED[0x21ac6e0]
+151780ms: EVT_TOUCH_BREAK
+
+151780ms: CLICKED[0x21ac6e0]
+
+152010ms: TE_PRESSED
+152010ms: EVT_TOUCH_FIRST [20,15]
+152010ms: TE_PRESSED
+
+152010ms: EVT_TOUCH_FIRST [20,15]
+
+152130ms: TE_RELEASED
+152130ms: EVT_TOUCH_BREAK
+152130ms: CLICKED[0x21ac6e0]
+152130ms: TE_RELEASED
+
+152130ms: EVT_TOUCH_BREAK
+
+152130ms: CLICKED[0x21ac6e0]
+
+QA_WARM_ELAPSED_MS 102257
+QA_DRAW_STATS|15101|16104|171|171|42|32|91|80.9
+QA_DRAW_STATS|15101|16104|171|171|42|32|91|80.9
+
+
+QA_DRAW_STATS|16104|17104|171|171|42|80|92|86.3
+QA_DRAW_STATS|16104|17104|171|171|42|80|92|86.3
+
+
+QA_DEV_MEMORY|23|18010|1343.375
+QA_DEV_MEMORY|23|18010|1343.375
+
+
+QA_FRAME warm-flight-4
+180390ms: TE_PRESSED
+180390ms: EVT_TOUCH_FIRST [450,15]
+180390ms: TE_PRESSED
+
+180390ms: EVT_TOUCH_FIRST [450,15]
+
+180450ms: TE_RELEASED
+180450ms: EVT_TOUCH_BREAK
+180450ms: CLICKED[0x21ac6e0]
+180450ms: TE_RELEASED
+
+180450ms: EVT_TOUCH_BREAK
+
+180450ms: CLICKED[0x21ac6e0]
+
+180750ms: TE_PRESSED
+180750ms: EVT_TOUCH_FIRST [405,44]
+180750ms: TE_PRESSED
+
+180750ms: EVT_TOUCH_FIRST [405,44]
+
+180800ms: TE_RELEASED
+180800ms: EVT_TOUCH_BREAK
+180800ms: CLICKED[0x21ac6e0]
+180800ms: TE_RELEASED
+
+180800ms: EVT_TOUCH_BREAK
+
+180800ms: CLICKED[0x21ac6e0]
+
+QA_DRAW_STATS|17104|18104|170|170|41|36|91|83.6
+QA_DRAW_STATS|17104|18104|170|170|41|36|91|83.6
+
+
+181160ms: TE_PRESSED
+181160ms: EVT_TOUCH_FIRST [180,75]
+181160ms: TE_PRESSED
+
+181160ms: EVT_TOUCH_FIRST [180,75]
+
+181280ms: TE_RELEASED
+181280ms: EVT_TOUCH_BREAK
+181280ms: CLICKED[0x21ac6e0]
+181280ms: TE_RELEASED
+
+181280ms: EVT_TOUCH_BREAK
+
+181280ms: CLICKED[0x21ac6e0]
+
+181510ms: TE_PRESSED
+181510ms: EVT_TOUCH_FIRST [180,75]
+181510ms: TE_PRESSED
+
+181510ms: EVT_TOUCH_FIRST [180,75]
+
+181630ms: TE_RELEASED
+181630ms: EVT_TOUCH_BREAK
+181630ms: CLICKED[0x21ac6e0]
+181630ms: TE_RELEASED
+
+181630ms: EVT_TOUCH_BREAK
+
+181630ms: CLICKED[0x21ac6e0]
+
+181870ms: TE_PRESSED
+181870ms: EVT_TOUCH_FIRST [180,75]
+181870ms: TE_PRESSED
+
+181870ms: EVT_TOUCH_FIRST [180,75]
+
+181980ms: TE_RELEASED
+181980ms: EVT_TOUCH_BREAK
+181980ms: CLICKED[0x21ac6e0]
+181980ms: TE_RELEASED
+
+181980ms: EVT_TOUCH_BREAK
+
+181980ms: CLICKED[0x21ac6e0]
+
+182220ms: TE_PRESSED
+182220ms: EVT_TOUCH_FIRST [180,75]
+182220ms: TE_PRESSED
+
+182220ms: EVT_TOUCH_FIRST [180,75]
+
+182340ms: TE_RELEASED
+182340ms: EVT_TOUCH_BREAK
+182340ms: CLICKED[0x21ac6e0]
+182340ms: TE_RELEASED
+
+182340ms: EVT_TOUCH_BREAK
+
+182340ms: CLICKED[0x21ac6e0]
+
+182570ms: TE_PRESSED
+182570ms: EVT_TOUCH_FIRST [180,75]
+182570ms: TE_PRESSED
+
+182570ms: EVT_TOUCH_FIRST [180,75]
+
+182690ms: TE_RELEASED
+182690ms: EVT_TOUCH_BREAK
+182690ms: CLICKED[0x21ac6e0]
+182690ms: TE_RELEASED
+
+182690ms: EVT_TOUCH_BREAK
+
+182690ms: CLICKED[0x21ac6e0]
+
+182930ms: TE_PRESSED
+182930ms: EVT_TOUCH_FIRST [180,75]
+182930ms: TE_PRESSED
+
+182930ms: EVT_TOUCH_FIRST [180,75]
+
+183040ms: TE_RELEASED
+183050ms: EVT_TOUCH_BREAK
+183050ms: CLICKED[0x21ac6e0]
+183040ms: TE_RELEASED
+
+183050ms: EVT_TOUCH_BREAK
+
+183050ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-about-4
+183280ms: TE_PRESSED
+183280ms: EVT_TOUCH_FIRST [180,75]
+183280ms: TE_PRESSED
+
+183280ms: EVT_TOUCH_FIRST [180,75]
+
+183400ms: TE_RELEASED
+183400ms: EVT_TOUCH_BREAK
+183400ms: CLICKED[0x21ac6e0]
+183400ms: TE_RELEASED
+
+183400ms: EVT_TOUCH_BREAK
+
+183400ms: CLICKED[0x21ac6e0]
+
+183630ms: TE_PRESSED
+183630ms: EVT_TOUCH_FIRST [180,75]
+183630ms: TE_PRESSED
+
+183630ms: EVT_TOUCH_FIRST [180,75]
+
+183750ms: TE_RELEASED
+183750ms: EVT_TOUCH_BREAK
+183750ms: CLICKED[0x21ac6e0]
+183750ms: TE_RELEASED
+
+183750ms: EVT_TOUCH_BREAK
+
+183750ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-runtime-4
+183980ms: TE_PRESSED
+183980ms: EVT_TOUCH_FIRST [180,75]
+183980ms: TE_PRESSED
+
+183980ms: EVT_TOUCH_FIRST [180,75]
+
+184090ms: TE_RELEASED
+184090ms: EVT_TOUCH_BREAK
+184090ms: CLICKED[0x21ac6e0]
+184090ms: TE_RELEASED
+
+184090ms: EVT_TOUCH_BREAK
+
+184090ms: CLICKED[0x21ac6e0]
+
+184330ms: TE_PRESSED
+184330ms: EVT_TOUCH_FIRST [180,75]
+184330ms: TE_PRESSED
+
+184330ms: EVT_TOUCH_FIRST [180,75]
+
+184440ms: TE_RELEASED
+184440ms: EVT_TOUCH_BREAK
+184440ms: CLICKED[0x21ac6e0]
+184440ms: TE_RELEASED
+
+184440ms: EVT_TOUCH_BREAK
+
+184440ms: CLICKED[0x21ac6e0]
+
+184680ms: TE_PRESSED
+184680ms: EVT_TOUCH_FIRST [180,75]
+184680ms: TE_PRESSED
+
+184680ms: EVT_TOUCH_FIRST [180,75]
+
+184800ms: TE_RELEASED
+184800ms: EVT_TOUCH_BREAK
+184800ms: CLICKED[0x21ac6e0]
+184800ms: TE_RELEASED
+
+184800ms: EVT_TOUCH_BREAK
+
+184800ms: CLICKED[0x21ac6e0]
+
+185030ms: TE_PRESSED
+185030ms: EVT_TOUCH_FIRST [180,75]
+185030ms: TE_PRESSED
+
+185030ms: EVT_TOUCH_FIRST [180,75]
+
+185150ms: TE_RELEASED
+185150ms: EVT_TOUCH_BREAK
+185150ms: CLICKED[0x21ac6e0]
+185150ms: TE_RELEASED
+
+185150ms: EVT_TOUCH_BREAK
+
+185150ms: CLICKED[0x21ac6e0]
+
+185380ms: TE_PRESSED
+185380ms: EVT_TOUCH_FIRST [180,75]
+185380ms: TE_PRESSED
+
+185380ms: EVT_TOUCH_FIRST [180,75]
+
+185500ms: TE_RELEASED
+185500ms: EVT_TOUCH_BREAK
+185500ms: CLICKED[0x21ac6e0]
+185500ms: TE_RELEASED
+
+185500ms: EVT_TOUCH_BREAK
+
+185500ms: CLICKED[0x21ac6e0]
+
+185740ms: TE_PRESSED
+185740ms: EVT_TOUCH_FIRST [180,75]
+185740ms: TE_PRESSED
+
+185740ms: EVT_TOUCH_FIRST [180,75]
+
+185860ms: TE_RELEASED
+185860ms: EVT_TOUCH_BREAK
+185860ms: CLICKED[0x21ac6e0]
+185860ms: TE_RELEASED
+
+185860ms: EVT_TOUCH_BREAK
+
+185860ms: CLICKED[0x21ac6e0]
+
+186090ms: TE_PRESSED
+186090ms: EVT_TOUCH_FIRST [20,15]
+186090ms: TE_PRESSED
+
+186090ms: EVT_TOUCH_FIRST [20,15]
+
+186210ms: TE_RELEASED
+186210ms: EVT_TOUCH_BREAK
+186210ms: CLICKED[0x21ac6e0]
+186210ms: TE_RELEASED
+
+186210ms: EVT_TOUCH_BREAK
+
+186210ms: CLICKED[0x21ac6e0]
+
+QA_WARM_ELAPSED_MS 136346
+QA_DRAW_STATS|18104|19104|170|170|42|30|91|61.3
+QA_DRAW_STATS|18104|19104|170|170|42|30|91|61.3
+
+
+QA_DRAW_STATS|19104|20109|171|171|42|80|92|86.4
+QA_DRAW_STATS|19104|20109|171|171|42|80|92|86.4
+
+
+QA_DEV_MEMORY|23|21012|1367.222
+QA_DEV_MEMORY|23|21012|1367.222
+
+
+QA_DRAW_STATS|20109|21111|171|171|42|80|92|86.2
+QA_DRAW_STATS|20109|21111|171|171|42|80|92|86.2
+
+
+QA_FRAME warm-flight-5
+214490ms: TE_PRESSED
+214490ms: EVT_TOUCH_FIRST [450,15]
+214490ms: TE_PRESSED
+
+214490ms: EVT_TOUCH_FIRST [450,15]
+
+214540ms: TE_RELEASED
+214540ms: EVT_TOUCH_BREAK
+214540ms: CLICKED[0x21ac6e0]
+214540ms: TE_RELEASED
+
+214540ms: EVT_TOUCH_BREAK
+
+214540ms: CLICKED[0x21ac6e0]
+
+214840ms: TE_PRESSED
+214840ms: EVT_TOUCH_FIRST [405,44]
+214840ms: TE_PRESSED
+
+214840ms: EVT_TOUCH_FIRST [405,44]
+
+214900ms: TE_RELEASED
+214900ms: EVT_TOUCH_BREAK
+214900ms: CLICKED[0x21ac6e0]
+214900ms: TE_RELEASED
+
+214900ms: EVT_TOUCH_BREAK
+
+214900ms: CLICKED[0x21ac6e0]
+
+215250ms: TE_PRESSED
+215250ms: EVT_TOUCH_FIRST [180,75]
+215250ms: TE_PRESSED
+
+215250ms: EVT_TOUCH_FIRST [180,75]
+
+215370ms: TE_RELEASED
+215370ms: EVT_TOUCH_BREAK
+215370ms: CLICKED[0x21ac6e0]
+215370ms: TE_RELEASED
+
+215370ms: EVT_TOUCH_BREAK
+
+215370ms: CLICKED[0x21ac6e0]
+
+215600ms: TE_PRESSED
+215600ms: EVT_TOUCH_FIRST [180,75]
+215600ms: TE_PRESSED
+
+215600ms: EVT_TOUCH_FIRST [180,75]
+
+215720ms: TE_RELEASED
+215720ms: EVT_TOUCH_BREAK
+215720ms: CLICKED[0x21ac6e0]
+215720ms: TE_RELEASED
+
+215720ms: EVT_TOUCH_BREAK
+
+215720ms: CLICKED[0x21ac6e0]
+
+215950ms: TE_PRESSED
+215950ms: EVT_TOUCH_FIRST [180,75]
+215950ms: TE_PRESSED
+
+215950ms: EVT_TOUCH_FIRST [180,75]
+
+216070ms: TE_RELEASED
+216070ms: EVT_TOUCH_BREAK
+216070ms: CLICKED[0x21ac6e0]
+216070ms: TE_RELEASED
+
+216070ms: EVT_TOUCH_BREAK
+
+216070ms: CLICKED[0x21ac6e0]
+
+216300ms: TE_PRESSED
+216300ms: EVT_TOUCH_FIRST [180,75]
+216300ms: TE_PRESSED
+
+216300ms: EVT_TOUCH_FIRST [180,75]
+
+216410ms: TE_RELEASED
+216410ms: EVT_TOUCH_BREAK
+216410ms: CLICKED[0x21ac6e0]
+216410ms: TE_RELEASED
+
+216410ms: EVT_TOUCH_BREAK
+
+216410ms: CLICKED[0x21ac6e0]
+
+216650ms: TE_PRESSED
+216650ms: EVT_TOUCH_FIRST [180,75]
+216650ms: TE_PRESSED
+
+216650ms: EVT_TOUCH_FIRST [180,75]
+
+216770ms: TE_RELEASED
+216770ms: EVT_TOUCH_BREAK
+216770ms: CLICKED[0x21ac6e0]
+216770ms: TE_RELEASED
+
+216770ms: EVT_TOUCH_BREAK
+
+216770ms: CLICKED[0x21ac6e0]
+
+217000ms: TE_PRESSED
+217000ms: EVT_TOUCH_FIRST [180,75]
+217000ms: TE_PRESSED
+
+217000ms: EVT_TOUCH_FIRST [180,75]
+
+217110ms: TE_RELEASED
+217110ms: EVT_TOUCH_BREAK
+217110ms: CLICKED[0x21ac6e0]
+217110ms: TE_RELEASED
+
+217110ms: EVT_TOUCH_BREAK
+
+217110ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-about-5
+217400ms: TE_PRESSED
+217400ms: EVT_TOUCH_FIRST [180,75]
+217400ms: TE_PRESSED
+
+217400ms: EVT_TOUCH_FIRST [180,75]
+
+217460ms: TE_RELEASED
+217460ms: EVT_TOUCH_BREAK
+217460ms: CLICKED[0x21ac6e0]
+217460ms: TE_RELEASED
+
+217460ms: EVT_TOUCH_BREAK
+
+217460ms: CLICKED[0x21ac6e0]
+
+217760ms: TE_PRESSED
+217760ms: EVT_TOUCH_FIRST [180,75]
+217760ms: TE_PRESSED
+
+217760ms: EVT_TOUCH_FIRST [180,75]
+
+217810ms: TE_RELEASED
+217820ms: EVT_TOUCH_BREAK
+217820ms: CLICKED[0x21ac6e0]
+217810ms: TE_RELEASED
+
+217820ms: EVT_TOUCH_BREAK
+
+217820ms: CLICKED[0x21ac6e0]
+
+QA_FRAME warm-runtime-5
+218050ms: TE_PRESSED
+218050ms: EVT_TOUCH_FIRST [180,75]
+218050ms: TE_PRESSED
+
+218050ms: EVT_TOUCH_FIRST [180,75]
+
+218170ms: TE_RELEASED
+218170ms: EVT_TOUCH_BREAK
+218170ms: CLICKED[0x21ac6e0]
+218170ms: TE_RELEASED
+
+218170ms: EVT_TOUCH_BREAK
+
+218170ms: CLICKED[0x21ac6e0]
+
+218460ms: TE_PRESSED
+218460ms: EVT_TOUCH_FIRST [180,75]
+218460ms: TE_PRESSED
+
+218460ms: EVT_TOUCH_FIRST [180,75]
+
+218520ms: TE_RELEASED
+218520ms: EVT_TOUCH_BREAK
+218520ms: CLICKED[0x21ac6e0]
+218520ms: TE_RELEASED
+
+218520ms: EVT_TOUCH_BREAK
+
+218520ms: CLICKED[0x21ac6e0]
+
+218810ms: TE_PRESSED
+218810ms: EVT_TOUCH_FIRST [180,75]
+218810ms: TE_PRESSED
+
+218810ms: EVT_TOUCH_FIRST [180,75]
+
+218870ms: TE_RELEASED
+218870ms: EVT_TOUCH_BREAK
+218870ms: CLICKED[0x21ac6e0]
+218870ms: TE_RELEASED
+
+218870ms: EVT_TOUCH_BREAK
+
+218870ms: CLICKED[0x21ac6e0]
+
+219160ms: TE_PRESSED
+219160ms: EVT_TOUCH_FIRST [180,75]
+219160ms: TE_PRESSED
+
+219160ms: EVT_TOUCH_FIRST [180,75]
+
+219220ms: TE_RELEASED
+219220ms: EVT_TOUCH_BREAK
+219220ms: CLICKED[0x21ac6e0]
+219220ms: TE_RELEASED
+
+219220ms: EVT_TOUCH_BREAK
+
+219220ms: CLICKED[0x21ac6e0]
+
+219520ms: TE_PRESSED
+219520ms: EVT_TOUCH_FIRST [180,75]
+219520ms: TE_PRESSED
+
+219520ms: EVT_TOUCH_FIRST [180,75]
+
+219580ms: TE_RELEASED
+219580ms: EVT_TOUCH_BREAK
+219580ms: CLICKED[0x21ac6e0]
+219580ms: TE_RELEASED
+
+219580ms: EVT_TOUCH_BREAK
+
+219580ms: CLICKED[0x21ac6e0]
+
+219870ms: TE_PRESSED
+219870ms: EVT_TOUCH_FIRST [180,75]
+219870ms: TE_PRESSED
+
+219870ms: EVT_TOUCH_FIRST [180,75]
+
+219920ms: TE_RELEASED
+219920ms: EVT_TOUCH_BREAK
+219920ms: CLICKED[0x21ac6e0]
+219920ms: TE_RELEASED
+
+219920ms: EVT_TOUCH_BREAK
+
+219920ms: CLICKED[0x21ac6e0]
+
+220220ms: TE_PRESSED
+220220ms: EVT_TOUCH_FIRST [20,15]
+220220ms: TE_PRESSED
+
+220220ms: EVT_TOUCH_FIRST [20,15]
+
+220280ms: TE_RELEASED
+220280ms: EVT_TOUCH_BREAK
+220280ms: CLICKED[0x21ac6e0]
+220280ms: TE_RELEASED
+
+220280ms: EVT_TOUCH_BREAK
+
+220280ms: CLICKED[0x21ac6e0]
+
+QA_WARM_ELAPSED_MS 170363
+QA_LCD_PUMP {"intervalMs":16,"frames":3765,"elapsedMs":220584,"continuousDirtyCopyThenAck":true,"screenshotExtraAck":false}

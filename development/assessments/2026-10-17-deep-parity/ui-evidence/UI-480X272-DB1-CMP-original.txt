@@ -1,0 +1,237 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/UI/480X272/DB1/CMP.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/UI/480X272/DB1/CMP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 7), ('F', 1, 7), ('D', 1, 7), ('X', 1, 7), ('T', 1, 7)]
+K0 'i'
+K1 'd'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  14] CLOSURE   R5 = proto[0]
+   3 [  14] SETTABLE  R4[K0('i')] = R5
+   4 [  58] CLOSURE   R5 = proto[1]
+   5 [  58] SETTABLE  R4[K1('d')] = R5
+   6 [  60] RETURN    A=0 B=1 C=0
+   7 [  60] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 4 lines 12 14 source None
+UPVALUES [('T', (1, 4)), ('X', (1, 3)), ('G', (1, 0))]
+LOCALS [('w', 0, 7)]
+K0 'cpd'
+K1 'LMK'
+K2 'PGFXR'
+K3 'DBD_CMP_MASK.jpg'
+   1 [  13] GETTABUP  R1 = UP1[K1('LMK')]
+   2 [  13] GETTABUP  R2 = UP2[K2('PGFXR')]
+   3 [  13] LOADK     R3 = K3 ('DBD_CMP_MASK.jpg')
+   4 [  13] CONCAT    A=2 B=2 C=3
+   5 [  13] CALL      A=1 B=2 C=2
+   6 [  13] SETTABUP  UP0[K0('cpd')] = R1
+   7 [  14] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 1 vararg 0 stack 12 lines 16 58 source None
+UPVALUES [('X', (1, 3)), ('T', (1, 4)), ('D', (1, 2)), ('G', (1, 0)), ('_ENV', (0, 0))]
+LOCALS [('w', 0, 158), ('r', 15, 121), ('xd', 15, 121), ('yd', 15, 121), ('gcHRad', 28, 55), ('gcDisp', 67, 121), ('gcRad', 94, 121), ('dim', 140, 158)]
+K0 'MK'
+K1 'cpd'
+K2 'xl'
+K3 'yt'
+K4 4
+K5 'C'
+K6 'MD_V'
+K7 'S'
+K8 'GPS_DATA'
+K9 47
+K10 0
+K11 'fm'
+K12 'pgg'
+K13 'DIR_GCH'
+K14 'math'
+K15 'rad'
+K16 'floor'
+K17 'sin'
+K18 1
+K19 'cos'
+K20 -1
+K21 'CRF'
+K22 'xc'
+K23 'yc'
+K24 6
+K25 'WARN'
+K26 'DIR_GC'
+K27 'UI'
+K28 'CHDEG'
+K29 'TX'
+K30 5
+K31 34
+K32 'FONT_STD'
+K33 'TEXT_CENTER'
+K34 52
+K35 'GC'
+K36 'FONT_S'
+K37 'MD_L'
+K38 'OK'
+K39 'MDL_RCP_ON'
+K40 'TLM_ON'
+K41 'RCF'
+K42 'xr'
+K43 'yb'
+K44 'MD_B'
+K45 'dimTLM'
+   1 [  18] GETTABUP  R1 = UP0[K0('MK')]
+   2 [  18] GETTABUP  R2 = UP1[K1('cpd')]
+   3 [  18] GETTABLE  R3 = R0[K2('xl')]
+   4 [  18] GETTABLE  R4 = R0[K3('yt')]
+   5 [  18] ADD       A=4 B=4 C=260
+   6 [  18] GETTABUP  R5 = UP2[K5('C')]
+   7 [  18] GETTABLE  R5 = R5[K6('MD_V')]
+   8 [  18] CALL      A=1 B=5 C=1
+   9 [  27] GETTABUP  R1 = UP2[K7('S')]
+  10 [  27] GETTABLE  R1 = R1[K8('GPS_DATA')]
+  11 [  27] TEST      A=1 B=0 C=0
+  12 [  27] JMP       A=0 ->122
+  13 [  28] LOADK     R1 = K9 (47)
+  14 [  28] LOADK     R2 = K10 (0)
+  15 [  28] LOADK     R3 = K10 (0)
+  16 [  30] GETTABUP  R4 = UP3[K11('fm')]
+  17 [  30] GETTABLE  R4 = R4[K12('pgg')]
+  18 [  30] TEST      A=4 B=0 C=0
+  19 [  30] JMP       A=0 ->56
+  20 [  30] GETTABUP  R4 = UP2[K7('S')]
+  21 [  30] GETTABLE  R4 = R4[K13('DIR_GCH')]
+  22 [  30] TEST      A=4 B=0 C=0
+  23 [  30] JMP       A=0 ->56
+  24 [  31] GETTABUP  R4 = UP4[K14('math')]
+  25 [  31] GETTABLE  R4 = R4[K15('rad')]
+  26 [  31] GETTABUP  R5 = UP2[K7('S')]
+  27 [  31] GETTABLE  R5 = R5[K13('DIR_GCH')]
+  28 [  31] CALL      A=4 B=2 C=2
+  29 [  32] GETTABUP  R5 = UP4[K14('math')]
+  30 [  32] GETTABLE  R5 = R5[K16('floor')]
+  31 [  32] GETTABUP  R6 = UP4[K14('math')]
+  32 [  32] GETTABLE  R6 = R6[K17('sin')]
+  33 [  32] MOVE      A=7 B=4 C=0
+  34 [  32] CALL      A=6 B=2 C=2
+  35 [  32] MUL       A=6 B=1 C=6
+  36 [  32] CALL      A=5 B=2 C=2
+  37 [  32] ADD       A=2 B=5 C=274
+  38 [  33] GETTABUP  R5 = UP4[K14('math')]
+  39 [  33] GETTABLE  R5 = R5[K16('floor')]
+  40 [  33] GETTABUP  R6 = UP4[K14('math')]
+  41 [  33] GETTABLE  R6 = R6[K19('cos')]
+  42 [  33] MOVE      A=7 B=4 C=0
+  43 [  33] CALL      A=6 B=2 C=2
+  44 [  33] MUL       A=6 B=1 C=6
+  45 [  33] CALL      A=5 B=2 C=2
+  46 [  33] MUL       A=3 B=5 C=276
+  47 [  34] GETTABUP  R5 = UP0[K21('CRF')]
+  48 [  34] GETTABLE  R6 = R0[K22('xc')]
+  49 [  34] ADD       A=6 B=6 C=2
+  50 [  34] GETTABLE  R7 = R0[K23('yc')]
+  51 [  34] ADD       A=7 B=7 C=3
+  52 [  34] LOADK     R8 = K24 (6)
+  53 [  34] GETTABUP  R9 = UP2[K5('C')]
+  54 [  34] GETTABLE  R9 = R9[K25('WARN')]
+  55 [  34] CALL      A=5 B=5 C=1
+  56 [  38] GETTABUP  R4 = UP2[K7('S')]
+  57 [  38] GETTABLE  R4 = R4[K26('DIR_GC')]
+  58 [  38] TEST      A=4 B=0 C=0
+  59 [  38] JMP       A=0 ->122
+  60 [  39] GETTABUP  R4 = UP4[K14('math')]
+  61 [  39] GETTABLE  R4 = R4[K16('floor')]
+  62 [  39] GETTABUP  R5 = UP2[K7('S')]
+  63 [  39] GETTABLE  R5 = R5[K26('DIR_GC')]
+  64 [  39] CALL      A=4 B=2 C=2
+  65 [  39] GETTABUP  R5 = UP2[K27('UI')]
+  66 [  39] GETTABLE  R5 = R5[K28('CHDEG')]
+  67 [  39] CONCAT    A=4 B=4 C=5
+  68 [  40] GETTABUP  R5 = UP0[K29('TX')]
+  69 [  40] GETTABLE  R6 = R0[K22('xc')]
+  70 [  40] ADD       A=6 B=6 C=286
+  71 [  40] GETTABLE  R7 = R0[K3('yt')]
+  72 [  40] ADD       A=7 B=7 C=287
+  73 [  40] MOVE      A=8 B=4 C=0
+  74 [  40] GETTABUP  R9 = UP0[K32('FONT_STD')]
+  75 [  40] GETTABUP  R10 = UP0[K33('TEXT_CENTER')]
+  76 [  40] GETTABUP  R11 = UP2[K5('C')]
+  77 [  40] GETTABLE  R11 = R11[K6('MD_V')]
+  78 [  40] CALL      A=5 B=7 C=1
+  79 [  41] GETTABUP  R5 = UP0[K29('TX')]
+  80 [  41] GETTABLE  R6 = R0[K22('xc')]
+  81 [  41] ADD       A=6 B=6 C=274
+  82 [  41] GETTABLE  R7 = R0[K3('yt')]
+  83 [  41] ADD       A=7 B=7 C=290
+  84 [  41] LOADK     R8 = K35 ('GC')
+  85 [  41] GETTABUP  R9 = UP0[K36('FONT_S')]
+  86 [  41] GETTABUP  R10 = UP0[K33('TEXT_CENTER')]
+  87 [  41] GETTABUP  R11 = UP2[K5('C')]
+  88 [  41] GETTABLE  R11 = R11[K37('MD_L')]
+  89 [  41] CALL      A=5 B=7 C=1
+  90 [  43] GETTABUP  R5 = UP4[K14('math')]
+  91 [  43] GETTABLE  R5 = R5[K15('rad')]
+  92 [  43] GETTABUP  R6 = UP2[K7('S')]
+  93 [  43] GETTABLE  R6 = R6[K26('DIR_GC')]
+  94 [  43] CALL      A=5 B=2 C=2
+  95 [  44] GETTABUP  R6 = UP4[K14('math')]
+  96 [  44] GETTABLE  R6 = R6[K16('floor')]
+  97 [  44] GETTABUP  R7 = UP4[K14('math')]
+  98 [  44] GETTABLE  R7 = R7[K17('sin')]
+  99 [  44] MOVE      A=8 B=5 C=0
+ 100 [  44] CALL      A=7 B=2 C=2
+ 101 [  44] MUL       A=7 B=1 C=7
+ 102 [  44] CALL      A=6 B=2 C=2
+ 103 [  44] ADD       A=2 B=6 C=274
+ 104 [  45] GETTABUP  R6 = UP4[K14('math')]
+ 105 [  45] GETTABLE  R6 = R6[K16('floor')]
+ 106 [  45] GETTABUP  R7 = UP4[K14('math')]
+ 107 [  45] GETTABLE  R7 = R7[K19('cos')]
+ 108 [  45] MOVE      A=8 B=5 C=0
+ 109 [  45] CALL      A=7 B=2 C=2
+ 110 [  45] MUL       A=7 B=1 C=7
+ 111 [  45] CALL      A=6 B=2 C=2
+ 112 [  45] MUL       A=3 B=6 C=276
+ 113 [  46] GETTABUP  R6 = UP0[K21('CRF')]
+ 114 [  46] GETTABLE  R7 = R0[K22('xc')]
+ 115 [  46] ADD       A=7 B=7 C=2
+ 116 [  46] GETTABLE  R8 = R0[K23('yc')]
+ 117 [  46] ADD       A=8 B=8 C=3
+ 118 [  46] LOADK     R9 = K4 (4)
+ 119 [  46] GETTABUP  R10 = UP2[K5('C')]
+ 120 [  46] GETTABLE  R10 = R10[K38('OK')]
+ 121 [  46] CALL      A=6 B=5 C=1
+ 122 [  51] GETTABUP  R1 = UP2[K7('S')]
+ 123 [  51] GETTABLE  R1 = R1[K39('MDL_RCP_ON')]
+ 124 [  51] TEST      A=1 B=0 C=0
+ 125 [  51] JMP       A=0 ->130
+ 126 [  51] GETTABUP  R1 = UP2[K7('S')]
+ 127 [  51] GETTABLE  R1 = R1[K26('DIR_GC')]
+ 128 [  51] TEST      A=1 B=0 C=1
+ 129 [  51] JMP       A=0 ->133
+ 130 [  51] LOADBOOL  A=1 B=1 C=0
+ 131 [  51] TEST      A=1 B=0 C=1
+ 132 [  51] JMP       A=0 ->141
+ 133 [  51] GETTABUP  R1 = UP2[K7('S')]
+ 134 [  51] GETTABLE  R1 = R1[K40('TLM_ON')]
+ 135 [  51] TEST      A=1 B=0 C=1
+ 136 [  51] JMP       A=0 ->140
+ 137 [  51] LOADBOOL  A=1 B=1 C=0
+ 138 [  51] TEST      A=1 B=0 C=1
+ 139 [  51] JMP       A=0 ->141
+ 140 [  51] LOADNIL   A=1 B=0 C=0
+ 141 [  52] TEST      A=1 B=0 C=0
+ 142 [  52] JMP       A=0 ->157
+ 143 [  53] GETTABUP  R2 = UP0[K41('RCF')]
+ 144 [  53] GETTABLE  R3 = R0[K2('xl')]
+ 145 [  53] GETTABLE  R4 = R0[K3('yt')]
+ 146 [  53] GETTABLE  R5 = R0[K42('xr')]
+ 147 [  53] GETTABLE  R6 = R0[K2('xl')]
+ 148 [  53] SUB       A=5 B=5 C=6
+ 149 [  53] GETTABLE  R6 = R0[K43('yb')]
+ 150 [  53] GETTABLE  R7 = R0[K3('yt')]
+ 151 [  53] SUB       A=6 B=6 C=7
+ 152 [  53] GETTABUP  R7 = UP2[K5('C')]
+ 153 [  53] GETTABLE  R7 = R7[K44('MD_B')]
+ 154 [  53] GETTABUP  R8 = UP2[K27('UI')]
+ 155 [  53] GETTABLE  R8 = R8[K45('dimTLM')]
+ 156 [  53] CALL      A=2 B=7 C=1
+ 157 [  56] RETURN    A=0 B=1 C=0
+ 158 [  58] RETURN    A=0 B=1 C=0

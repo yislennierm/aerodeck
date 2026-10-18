@@ -4,7 +4,7 @@ local hostio=io
 local scriptPath=(arg and arg[0])or ''
 local scriptDirectory=scriptPath:match('^(.*)/[^/]+$')or '.'
 local f=assert(hostio.open(scriptDirectory..'/../sdcard/SCRIPTS/TOOLS/telem.lua','r'));local main=f:read('*a');f:close()
-local a=assert(string.find(main,'local batteryConfig=(function()',1,true));local b=assert(string.find(main,'-- The full app maintains',a,true))
+local a=assert(string.find(main,'local batteryConfig=(function()',1,true));local b=assert(string.find(main,'-- One dispatcher owns',a,true))
 local batterySource=string.sub(main,a,b-1)
 a=assert(string.find(main,'local configuration=(function()',1,true));b=assert(string.find(main,'function fcLink.update',a,true))
 local configurationSource=string.sub(main,a,b-1)
@@ -35,22 +35,21 @@ local assertions=0
 local function check(ok,label)assert(ok,label);assertions=assertions+1 end
 battery.init();config.init()
 check(config.isList(),'setup starts on category list')
-check(#config.visible()==4,'default conditional list visibility preserved')
-draw();check(not contains('PREVIOUS') and not contains('NEXT'),'single-page category list hides paging buttons')
-check(not config.input(EVT_TOUCH_TAP,{x=300,y=230}),'hidden paging controls have no touch action')
+check(#config.visible()==10,'Auto exposes every active default provider category')
+draw();check(contains('PREVIOUS')and contains('NEXT'),'active Auto categories have bounded paging controls')
 check(not config.hasChanges(),'new defaults are clean')
-check(config.get('rcProtocol')=='None' and config.get('fcType')=='None' and config.get('mspMode')==1,'None-as-auto and enabled MSP defaults preserved')
+check(config.get('rcProtocol')=='Auto' and config.get('fcType')=='Auto' and config.get('mspMode')==1,'None-as-auto and enabled MSP defaults preserved')
 check(not config.input(EVT_VIRTUAL_NEXT_PAGE),'global PAGE is not consumed by setup')
 check(not config.input(EVT_VIRTUAL_EXIT),'root owns RTN dispatch')
 check(not config.back(),'list back delegates to root')
 
 assert(config.openSection(1));event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT)
 check(config.isEditing() and config.hasChanges(),'editing creates pending draft')
-check(config.get('rcProtocol')=='None','draft has no runtime effect')
+check(config.get('rcProtocol')=='Auto','draft has no runtime effect')
 check(config.back(),'RTN cancels only current edit')
 check(not config.isEditing() and not config.hasChanges(),'cancel restores original single value')
 editFirst(1)
-check(config.get('rcProtocol')=='None' and config.hasChanges(),'accepting value still requires Settings save')
+check(config.get('rcProtocol')=='Auto' and config.hasChanges(),'accepting value still requires Settings save')
 event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT);check(config.back() and config.hasChanges(),'cancelling a later edit preserves the previously accepted draft value')
 check(config.back() and config.isList() and config.hasChanges(),'category back retains staged Settings changes')
 draw();check(contains('SETTINGS* '),'category list exposes pending Settings store')
@@ -63,17 +62,19 @@ check(files[appPath] and files[appPath]:sub(1,7)=='ADCFG1\n' and files[appPath..
 -- The duplicated Application connection setting is functional even when FC list is hidden.
 config.openSection(12);editFirst(-1)
 check(config.get('mspMode')==1 and config.hasChanges(),'shared MSP edit remains staged')
-event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER)
-check(config.get('mspMode')==0 and not config.hasChanges(),'rotary skips six note rows and can focus Save App')
+event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER)
+check(config.get('mspMode')==0 and not config.hasChanges(),'rotary skips informational rows, passes Error Log and reaches Save Settings')
 
 -- Enable the remaining conditional lists without changing the stored schema.
 config.openSection(1);event(EVT_VIRTUAL_NEXT);editFirst(1);event(EVT_VIRTUAL_NEXT);editFirst(2);saveApp()
 check(config.get('fcType')=='Betaflight' and config.get('vtxMode')==2 and #config.visible()==12,'all twelve existing categories remain available under their conditions')
 config.openSection(5);editFirst(1);saveApp()
-config.openSection(12);draw();check(contains('Auto / CRSF'),'Flight Controller and Application share the same MSP value')
+config.openSection(12);draw();check(contains('Auto / protocol'),'Flight Controller and Application share the same MSP value')
 touch(100,70);check(not config.isEditing(),'touching an informational note does not enter editing')
-config.openSection(1);nextN(16);event(EVT_VIRTUAL_ENTER);draw()
-check(contains('Barometer / pitot setup'),'rotary can reach trailing informational rows through More Rows')
+config.openSection(1,'baro');draw()
+check(contains('Barometric altitude'),'barometer source is a real selectable field')
+config.openSection(1,'airspeed');draw()
+check(contains('Airspeed'),'pitot source is a real selectable field')
 for id=1,12 do check(config.openSection(id) and not config.isList(),'category '..id..' opens');check(config.back() and config.isList(),'category '..id..' returns to list')end
 -- Paging buttons are visibly disabled at the bounds and never wrap.
 config.openSection(1);config.back();draw()
@@ -85,10 +86,11 @@ touch(300,230);event(EVT_VIRTUAL_ENTER);draw();check(contains('VTX'),'disabled N
 config.back();config.openSection(12);config.back();event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER);draw();check(contains('APPLICATION'),'rotary remains bounded at last category')
 -- Touch the second list page and open its first entry (category8).
 config.openSection(1);config.back();touch(300,230);touch(100,70);draw()
-for _,label in ipairs({'VTX connection','NOT IMPLEMENTED','Channel / power writes','Unavailable','VTX control','Use existing VTX tool','Favourites','Offline frequency notes only'})do check(contains(label),'notes-only VTX renders '..label)end
-check(contains('VTX') and not contains('SAVE SETTINGS') and not contains('REVERT SETTINGS') and not contains('+') and not contains('-'),'notes-only VTX page has no misleading adjustment/save controls')
-check(config.input(EVT_VIRTUAL_ENTER) and not config.hasChanges(),'notes-only page cannot become editable')
-check(not config.isEditing(),'notes are not edit targets')
+for _,label in ipairs({'Video connection','FC MSP','Status read interval (s)'})do check(contains(label),'functional VTX setup renders '..label)end
+check(contains('SAVE SETTINGS') and contains('REVERT SETTINGS'),'VTX interval has actual save/revert controls')
+config.openSection(8,'vtxPolling');event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER)
+check(config.get('vtxPolling')==5 and config.hasChanges(),'VTX interval remains draft until Save')
+touch(200,230);check(config.get('vtxPolling')==6 and not config.hasChanges(),'VTX interval Save activates actual scheduler setting')
 
 -- Battery is a separate file/store, with independent cancellation and physical actions.
 config.openSection(3);event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT)
@@ -115,10 +117,12 @@ config.openSection(nil);draw();check(contains('BATTERY*'),'pending battery badge
 config.discardAll()
 check(not config.hasChanges() and not config.isEditing(),'exit guard can explicitly discard both drafts')
 
--- Failed validation and storage writes must never activate staged settings.
+-- Linked threshold editing preserves a strict feasible order and full RTN rollback.
 config.openSection(3);nextN(3);editFirst(-4)
-check(not battery.save() and battery.hasChanges(),'invalid voltage order cannot be saved')
-battery.revert();check(not battery.hasChanges(),'invalid battery draft is reversible')
+check(battery.save() and not battery.hasChanges(),'neighbor coupling keeps edited threshold order valid')
+local thresholds=battery.values();for i=2,5 do check(thresholds[i]<thresholds[i+1],'coupled battery thresholds remain strictly increasing')end
+battery.open();nextN(3);event(EVT_VIRTUAL_ENTER);for i=1,10 do event(EVT_VIRTUAL_PREV)end
+check(battery.back() and not battery.hasChanges(),'RTN cancels the complete linked threshold edit')
 config.openSection(1);local oldProtocol=config.get('rcProtocol');editFirst(1);failWrite=true
 check(not config.save() and config.get('rcProtocol')==oldProtocol and config.hasChanges(),'failed Settings storage write leaves active values unchanged and draft available')
 failWrite=false;config.discardAll()
@@ -190,3 +194,6 @@ check(missingStatus==nil and missingCells==6,'missing voltage cannot produce a s
 check(tones==0 and haptics==0,'the visual-only saved profile remains silent across all boundary checks')
 io=hostio
 print('PASS: '..assertions..' configuration UX and native battery-boundary assertions')
+
+config.refreshSensorChoices({'GPS','VFAS','Tmp1'});config.openSection(2,'rcSubtype');event(EVT_VIRTUAL_ENTER);event(EVT_VIRTUAL_NEXT);event(EVT_VIRTUAL_ENTER);draw()
+check(contains('ELRS 2.x'),'sensor-choice refresh preserves protocol subtype choices')

@@ -1,0 +1,300 @@
+{
+  "name": "quad-direction",
+  "author": "AERODECK original vector artwork",
+  "license": "Apache-2.0",
+  "virtualSize": 18,
+  "purpose": "Nose-marked quad; body yaw preferred, GPS course fallback labelled explicitly",
+  "rotation": "Offline16frames; nearest22.5deg, maximum11.25deg visual quantization; exact native direction tick retained",
+  "masterSHA256": "ae10e1460567b09c1322b5f420a107a5c40ebaa81ca0af1bf75125590d52c90f",
+  "exports": [
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-00-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 0.0,
+      "sha256": "12cb0ea5def6271649a799af15f5a1396a02956f43cedd1910c0265b6a058b9c"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-00-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 0.0,
+      "sha256": "0c6b1dba7505c5b07aac5e8d58fa17665f775dbd6c7e134c66bdf49c2dd9f8e7"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-01-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 22.5,
+      "sha256": "5f2b84fe647854451cb9e064f9aec13aa50e9feae2eefb4aa79494838ed7d7f7"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-01-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 22.5,
+      "sha256": "2ce2c48b05ccd46d87b9a1ad25f564a2e2b4a423de026c829595d8469d8c903d"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-02-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 45.0,
+      "sha256": "49899fb022d71977307ae069c24848c19f7452bb90f96ed2ee4de757b69b3d30"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-02-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 45.0,
+      "sha256": "6bf3d760312490284359e892c5b596b31c726d77bf4734c9edc1151252634359"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-03-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 67.5,
+      "sha256": "efbb10631ea2d122dd49a0daa16f2895439f04c8fd4124178b4d7443930b1149"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-03-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 67.5,
+      "sha256": "fc5e8d69f1b1b95ec45b7ec7faaf3cddd500a4149ec71b974254bed576dc1ebf"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-04-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 90.0,
+      "sha256": "85ff958e2c1726fb458bf4c0f81e1c5f824cc356ba703eb41c2c5533bafc76ce"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-04-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 90.0,
+      "sha256": "d42721ef7069e0b9070b3e4da445f73dd6359e9e959f03dd4017744a14e0413c"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-05-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 112.5,
+      "sha256": "46b79545bf54b204f7794c18d6def37c61fcf06469dcdd7e9fbc3d8f69f03fc9"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-05-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 112.5,
+      "sha256": "36a6e3b77ce28b936f96cf0ba1533c2a58ca309eff1d36ef75f0e3ccdd6d21cb"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-06-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 135.0,
+      "sha256": "0e51b0bcaeec9cfd33ef27646f0bfbbbe4dd5fe4cfe7e5063abbdc0af4924d8c"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-06-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 135.0,
+      "sha256": "b1778202355f4a20f2617f3f275084a7eb91e5ce2c97996ef7305d2b71935929"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-07-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 157.5,
+      "sha256": "accd86dda03b6d70c2281d6b0f00752f350c20732ed971482f8e9ff217454b80"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-07-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 157.5,
+      "sha256": "d1cc05a14b71c7bb35baba12afd0916e67c9294f9941b0067976f807c6fd4659"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-08-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 180.0,
+      "sha256": "01a50ea5f020e8cbd26a7389eb8cca9058b1857d1b02d481bc90dfed50d2d02e"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-08-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 180.0,
+      "sha256": "155bd6cca4e9bb5243fd59241509a9fce567001e3e2a92563473739df2728e28"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-09-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 202.5,
+      "sha256": "e279b6a4031048b8f4c887434b4a02c2e634a72c04bff6c0fadc61cb7015824d"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-09-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 202.5,
+      "sha256": "d9890e7e04fff0688c7555ff6e606b07fe81c0233ca9cba303573225f13198a1"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-10-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 225.0,
+      "sha256": "0d4c1c31c82b43a716e41381fc8d02b6fc4695dda6cbdfc7448fd4be99f87a1a"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-10-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 225.0,
+      "sha256": "0602bc2c7822dc52ea69835cb6e813d0beaa729a228f742e9e7be833e9252fd0"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-11-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 247.5,
+      "sha256": "efc3ac9ae38ccb52e0783a0300a3fe91c13d85acc0a6678e2c0620d4f52236a7"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-11-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 247.5,
+      "sha256": "45dcd3a14381e502880f16545b92e68174d4e998564216058129a59d48c975e1"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-12-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 270.0,
+      "sha256": "8c4399fbd4ad4a21c131ad1bfe36e2baebae006b15f8a3c4ca7a7e2cabf47d43"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-12-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 270.0,
+      "sha256": "d298e73f98113b408de161966c38797ae31ce9b4890d49dc28bbe208d2ffaac0"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-13-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 292.5,
+      "sha256": "88e7b8989bf7168f75d976486fb21afa0abbf6c77a80198e25f5845b5ef51ed9"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-13-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 292.5,
+      "sha256": "8c23314b9828c0944b5908727ed9ba2c0f560f6cf9724fc8ec10bea22328fa36"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-14-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 315.0,
+      "sha256": "e53778b19b559e12357422864ce14dd988da76b3c8a149c659610cfb72ba06a1"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-14-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 315.0,
+      "sha256": "9c07493f01d2c2a38f73336d421f486b15cb0d6398461a5210f5cfcd8fa44b4e"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/quad-heading-15-18.png",
+      "size": [
+        18,
+        18
+      ],
+      "bearingDegrees": 337.5,
+      "sha256": "144a388121137aa5470dbede41ab801c4de9704c22e6352fc49877ff12415641"
+    },
+    {
+      "file": "sdcard/SCRIPTS/TOOLS/AERODECK/icons/800x480/quad-heading-15-18.png",
+      "size": [
+        30,
+        30
+      ],
+      "bearingDegrees": 337.5,
+      "sha256": "8349426ad882705577aeb6c0d944df3500f3391b66377ab527442de135e3200e"
+    }
+  ],
+  "runtimeStatus": "Retired by GPS-SIMPLE-20261018; artwork/export records retained as development history"
+}

@@ -1,0 +1,5 @@
+PASS: exact 476ae7be86d0efad2cff531ea2ece7f528cf07a4432dc8629f2dd0a0b50782e6 native toolbar verification.
+
+The first toolbar slot opens Telemetry. The far-right Arm shield opens Arm Info, has a distinct active plate and receives visible SYS focus. Home returns to Flight. A fresh known clear report makes the shield green even with Amber highlight; an active GPS flag makes it red with Cyan highlight. No overlap or CPU/script error was found in two cold native widget starts.
+
+Prior three-origin caller evidence is preserved separately. Synthetic EdgeTX 3.0 WASM only; physical EdgeTX 2.12.4 remains unverified.

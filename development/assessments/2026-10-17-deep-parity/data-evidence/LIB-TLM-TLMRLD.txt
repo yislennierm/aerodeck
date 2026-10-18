@@ -1,0 +1,171 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/TLMRLD.luac
+
+FUNCTION main params 0 vararg 1 stack 12 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/TLMRLD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 136), ('F', 1, 136), ('D', 1, 136), ('X', 1, 136), ('pv', 1, 136), ('defs', 122, 136), ('ret', 134, 136)]
+K0 'OFF'
+K1 'RSI_L'
+K2 0
+K3 1
+K4 99
+K5 '%'
+K6 'RSI_C'
+K7 98
+K8 'RQL_L'
+K9 'RQL_C'
+K10 'ACCST'
+K11 40
+K12 30
+K13 'EL2'
+K14 -94
+K15 -129
+K16 -1
+K17 'dBm'
+K18 -102
+K19 -130
+K20 -2
+K21 20
+K22 10
+K23 'XF'
+K24 80
+K25 70
+K26 'EL3'
+K27 'ELG'
+K28 'TRS'
+K29 'R9'
+   1 [  10] VARARG    A=0 B=6 C=0
+   2 [  13] NEWTABLE  A=5 B=0 C=4
+   3 [  14] NEWTABLE  A=6 B=0 C=4
+   4 [  15] NEWTABLE  A=7 B=4 C=0
+   5 [  15] LOADK     R8 = K2 (0)
+   6 [  15] LOADK     R9 = K3 (1)
+   7 [  15] LOADK     R10 = K4 (99)
+   8 [  15] LOADK     R11 = K5 ('%')
+   9 [  15] SETLIST   A=7 B=4 C=1
+  10 [  15] SETTABLE  R6[K1('RSI_L')] = R7
+  11 [  16] NEWTABLE  A=7 B=4 C=0
+  12 [  16] LOADK     R8 = K2 (0)
+  13 [  16] LOADK     R9 = K2 (0)
+  14 [  16] LOADK     R10 = K7 (98)
+  15 [  16] LOADK     R11 = K5 ('%')
+  16 [  16] SETLIST   A=7 B=4 C=1
+  17 [  16] SETTABLE  R6[K6('RSI_C')] = R7
+  18 [  17] NEWTABLE  A=7 B=4 C=0
+  19 [  17] LOADK     R8 = K2 (0)
+  20 [  17] LOADK     R9 = K3 (1)
+  21 [  17] LOADK     R10 = K4 (99)
+  22 [  17] LOADK     R11 = K5 ('%')
+  23 [  17] SETLIST   A=7 B=4 C=1
+  24 [  17] SETTABLE  R6[K8('RQL_L')] = R7
+  25 [  18] NEWTABLE  A=7 B=4 C=0
+  26 [  18] LOADK     R8 = K2 (0)
+  27 [  18] LOADK     R9 = K2 (0)
+  28 [  18] LOADK     R10 = K7 (98)
+  29 [  18] LOADK     R11 = K5 ('%')
+  30 [  18] SETLIST   A=7 B=4 C=1
+  31 [  18] SETTABLE  R6[K9('RQL_C')] = R7
+  32 [  19] SETTABLE  R5[K0('OFF')] = R6
+  33 [  20] NEWTABLE  A=6 B=0 C=4
+  34 [  21] NEWTABLE  A=7 B=4 C=0
+  35 [  21] LOADK     R8 = K11 (40)
+  36 [  21] LOADK     R9 = K3 (1)
+  37 [  21] LOADK     R10 = K4 (99)
+  38 [  21] LOADK     R11 = K5 ('%')
+  39 [  21] SETLIST   A=7 B=4 C=1
+  40 [  21] SETTABLE  R6[K1('RSI_L')] = R7
+  41 [  22] NEWTABLE  A=7 B=4 C=0
+  42 [  22] LOADK     R8 = K12 (30)
+  43 [  22] LOADK     R9 = K2 (0)
+  44 [  22] LOADK     R10 = K7 (98)
+  45 [  22] LOADK     R11 = K5 ('%')
+  46 [  22] SETLIST   A=7 B=4 C=1
+  47 [  22] SETTABLE  R6[K6('RSI_C')] = R7
+  48 [  23] NEWTABLE  A=7 B=4 C=0
+  49 [  23] LOADK     R8 = K2 (0)
+  50 [  23] LOADK     R9 = K3 (1)
+  51 [  23] LOADK     R10 = K4 (99)
+  52 [  23] LOADK     R11 = K5 ('%')
+  53 [  23] SETLIST   A=7 B=4 C=1
+  54 [  23] SETTABLE  R6[K8('RQL_L')] = R7
+  55 [  24] NEWTABLE  A=7 B=4 C=0
+  56 [  24] LOADK     R8 = K2 (0)
+  57 [  24] LOADK     R9 = K2 (0)
+  58 [  24] LOADK     R10 = K7 (98)
+  59 [  24] LOADK     R11 = K5 ('%')
+  60 [  24] SETLIST   A=7 B=4 C=1
+  61 [  24] SETTABLE  R6[K9('RQL_C')] = R7
+  62 [  25] SETTABLE  R5[K10('ACCST')] = R6
+  63 [  36] NEWTABLE  A=6 B=0 C=4
+  64 [  37] NEWTABLE  A=7 B=4 C=0
+  65 [  37] LOADK     R8 = K14 (-94)
+  66 [  37] LOADK     R9 = K15 (-129)
+  67 [  37] LOADK     R10 = K16 (-1)
+  68 [  37] LOADK     R11 = K17 ('dBm')
+  69 [  37] SETLIST   A=7 B=4 C=1
+  70 [  37] SETTABLE  R6[K1('RSI_L')] = R7
+  71 [  38] NEWTABLE  A=7 B=4 C=0
+  72 [  38] LOADK     R8 = K18 (-102)
+  73 [  38] LOADK     R9 = K19 (-130)
+  74 [  38] LOADK     R10 = K20 (-2)
+  75 [  38] LOADK     R11 = K17 ('dBm')
+  76 [  38] SETLIST   A=7 B=4 C=1
+  77 [  38] SETTABLE  R6[K6('RSI_C')] = R7
+  78 [  39] NEWTABLE  A=7 B=4 C=0
+  79 [  39] LOADK     R8 = K21 (20)
+  80 [  39] LOADK     R9 = K3 (1)
+  81 [  39] LOADK     R10 = K4 (99)
+  82 [  39] LOADK     R11 = K5 ('%')
+  83 [  39] SETLIST   A=7 B=4 C=1
+  84 [  39] SETTABLE  R6[K8('RQL_L')] = R7
+  85 [  40] NEWTABLE  A=7 B=4 C=0
+  86 [  40] LOADK     R8 = K22 (10)
+  87 [  40] LOADK     R9 = K2 (0)
+  88 [  40] LOADK     R10 = K7 (98)
+  89 [  40] LOADK     R11 = K5 ('%')
+  90 [  40] SETLIST   A=7 B=4 C=1
+  91 [  40] SETTABLE  R6[K9('RQL_C')] = R7
+  92 [  41] SETTABLE  R5[K13('EL2')] = R6
+  93 [  42] NEWTABLE  A=6 B=0 C=4
+  94 [  43] NEWTABLE  A=7 B=4 C=0
+  95 [  43] LOADK     R8 = K14 (-94)
+  96 [  43] LOADK     R9 = K15 (-129)
+  97 [  43] LOADK     R10 = K16 (-1)
+  98 [  43] LOADK     R11 = K17 ('dBm')
+  99 [  43] SETLIST   A=7 B=4 C=1
+ 100 [  43] SETTABLE  R6[K1('RSI_L')] = R7
+ 101 [  44] NEWTABLE  A=7 B=4 C=0
+ 102 [  44] LOADK     R8 = K18 (-102)
+ 103 [  44] LOADK     R9 = K19 (-130)
+ 104 [  44] LOADK     R10 = K20 (-2)
+ 105 [  44] LOADK     R11 = K17 ('dBm')
+ 106 [  44] SETLIST   A=7 B=4 C=1
+ 107 [  44] SETTABLE  R6[K6('RSI_C')] = R7
+ 108 [  45] NEWTABLE  A=7 B=4 C=0
+ 109 [  45] LOADK     R8 = K24 (80)
+ 110 [  45] LOADK     R9 = K3 (1)
+ 111 [  45] LOADK     R10 = K4 (99)
+ 112 [  45] LOADK     R11 = K5 ('%')
+ 113 [  45] SETLIST   A=7 B=4 C=1
+ 114 [  45] SETTABLE  R6[K8('RQL_L')] = R7
+ 115 [  46] NEWTABLE  A=7 B=4 C=0
+ 116 [  46] LOADK     R8 = K25 (70)
+ 117 [  46] LOADK     R9 = K2 (0)
+ 118 [  46] LOADK     R10 = K7 (98)
+ 119 [  46] LOADK     R11 = K5 ('%')
+ 120 [  46] SETLIST   A=7 B=4 C=1
+ 121 [  46] SETTABLE  R6[K9('RQL_C')] = R7
+ 122 [  47] SETTABLE  R5[K23('XF')] = R6
+ 123 [  50] GETTABLE  R6 = R5[K13('EL2')]
+ 124 [  50] SETTABLE  R5[K26('EL3')] = R6
+ 125 [  51] GETTABLE  R6 = R5[K13('EL2')]
+ 126 [  51] SETTABLE  R5[K27('ELG')] = R6
+ 127 [  52] GETTABLE  R6 = R5[K23('XF')]
+ 128 [  52] SETTABLE  R5[K28('TRS')] = R6
+ 129 [  53] GETTABLE  R6 = R5[K10('ACCST')]
+ 130 [  53] SETTABLE  R5[K29('R9')] = R6
+ 131 [  55] GETTABLE  R6 = R5[R4]
+ 132 [  55] TEST      A=6 B=0 C=1
+ 133 [  55] JMP       A=0 ->135
+ 134 [  55] GETTABLE  R6 = R5[K0('OFF')]
+ 135 [  57] RETURN    A=6 B=2 C=0
+ 136 [  57] RETURN    A=0 B=1 C=0

@@ -1,0 +1,42 @@
+UNIFIED-GPS-20261018
+Main SHA256: ae0f441dc9cbe2c8c1da8e3b8c05cc3d58e21b1a5d2ba8a118b7713de7da853d
+Local review build. Last file-verified radio: ATTITUDE-CLEAN-20261018.
+
+Flight compass:
+Home bearing is now an amber index on the heading ribbon (1.8 px/degree), with
+a left/right chevron when home is outside the visible scale. The center index
+stays below the heading digits; no home picture moves over the attitude.
+Signed shortest-bearing wrap respects the selected GPS-course/body-yaw reference.
+No cue without current position, home bearing and compass reference. Exactly two
+native line calls replace the two shadowed bitmap-pattern calls; no rotation,
+new assets, sensor scans, per-frame SD access or forced garbage collection.
+This reduces image rendering work; physical FPS improvement has not been measured.
+
+Unified GPS:
+One GPS destination opens Overview: north-up track, image aircraft/home markers,
+return distance/bearing, ground speed, altitude and seven-decimal current position.
+The former GPS Details and Track/Home tab strip is replaced by satellites/fix/
+home status and the current view name. One bottom view control cycles Overview,
+Coordinates, Satellites, Quality and Recovery. Coordinates retain exact current
+and home position, course and home guidance. Satellite paging, raw quality,
+reported fix, FC-home details, Plus Codes, relative home, ETA and yaw are retained.
+Unknown fix/HDOP/constellation values remain explicitly unavailable.
+Refresh, Zoom and Set Home share fixed control rectangles. Zoom is enabled only
+for Overview. RTN from supporting views returns Overview, then Flight. Toolbar
+GPS always lands on Overview. Physical focus visits real controls; no ghost tabs.
+Legacy page2 routes normalize to page7. Saved opening presets3/4 still open the
+GPS overview/coordinate view without rewriting per-model settings.
+
+Performance and scope:
+The same bounded cached projection, all180 retained trail points, full published
+path rendering, transport scheduling and native widget instruction budget remain.
+All58 portable suites PASS in LuaJIT and int32/float32 Lua5.3; full180-point,
+rolling history, warm cache, zoom, manual-home ownership and loss checks included.
+Native TX16S captures cover Flight and all five GPS views, section focus and RTN.
+No native script/CPU-limit errors, no instruction-hook changes. Simulator uses
+sample telemetry; these checks do not establish radio/quad performance.
+
+Preview: http://127.0.0.1:8766/
+Package: AERODECK-unified-gps-install.zip
+Evidence: development/runtime-evidence/unified-gps-20261018/
+Installation authority: DEPLOYMENT.txt. No radio install or GitHub push this turn.

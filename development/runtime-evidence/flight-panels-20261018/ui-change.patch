@@ -1,0 +1,169 @@
+--- ATTITUDE-CLEAN
++++ FLIGHT-PANELS
+@@ -10,7 +10,7 @@
+ local nativeLcd=lcd
+ local lcd=nativeLcd
+ local display,displayError
+-local BUILD_ID='ATTITUDE-CLEAN-20261018'
++local BUILD_ID='FLIGHT-PANELS-20261018'
+ local uiTheme
+ local alertsMuted=false
+ local alertPlayback={queue=function(event)
+@@ -1907,7 +1907,7 @@
+ end
+ local function horizonMark(ox,oy,cs,sn,offset,half,c)
+  local yy=oy+offset*cs;local xx=ox-offset*sn
+- clip(xx-half*cs,yy-half*sn,xx+half*cs,yy+half*sn,126,354,65,243,c)
++ clip(xx-half*cs,yy-half*sn,xx+half*cs,yy+half*sn,136,344,65,243,c)
+ end
+ -- Drop-in renderer fragment. Global nav/title/status are drawn by the caller.
+ -- Static row definitions are allocated once; the shared d sample supplies data.
+@@ -2020,6 +2020,10 @@
+    if width+unitWidth>w then font=SMLSIZE;width=textWidth(text,font)end
+    if width+unitWidth>w and TINSIZE then font=TINSIZE;width=textWidth(text,font)end
+    local shown=text;local available=w-unitWidth
++   if width>available and tonumber(text)then
++    local compact=string.format('%.2g',tonumber(text))
++    if textWidth(compact,font)<=available then shown=compact;width=textWidth(compact,font)end
++   end
+    if width>available then
+     if not TINSIZE or font~=TINSIZE then
+      if font~=SMLSIZE then font=SMLSIZE;width=textWidth(text,font)end
+@@ -2070,19 +2074,19 @@
+ end
+ local function flightStrip(d)
+  local p=palette
+- rect(126,222,228,22,p.black);line(126,222,353,222,p.border)
++ rect(136,222,209,22,p.black);line(136,222,344,222,p.border)
+  local throttle=d.inputs and d.inputs.roles.throttle;local limiter=d.inputs and d.inputs.roles.limiter
+  local value=throttle and throttle.state=='LIVE'and throttle.value or nil
+  local caption='THR '..(value~=nil and string.format('%.0f%%',value)or'--')..' >'
+  if limiter and limiter.state=='LIVE'then caption='T'..(value~=nil and string.format('%.0f',value)or'--')..' L'..string.format('%.0f',limiter.value)end
+- local shown,font=fittedText(caption,78,SMLSIZE);vlabel(200,222,22,shown,p.cyan,font)
+- vlabel(131,222,22,flightBank==0 and'PFD >'or flightBank==1 and'VIDEO >'or'GPS >',p.cyan,SMLSIZE)
+- line(194,226,194,239,p.border)
+- line(282,226,282,239,p.border)
++ local shown,font=fittedText(caption,70,SMLSIZE);vlabel(203,222,22,shown,p.cyan,font)
++ vlabel(141,222,22,flightBank==0 and'PFD >'or flightBank==1 and'VIDEO >'or'GPS >',p.cyan,SMLSIZE)
++ line(197,226,197,239,p.border)
++ line(277,226,277,239,p.border)
+  local timer=d.session and d.session.modelTimer;local seconds=timer and timer.value or(d.session and d.session.flightSeconds)or 0
+  local sign=seconds<0 and'-'or'';seconds=math.abs(seconds)
+  local timerText=sign..string.format('%02d:%02d',math.floor(seconds/60),math.floor(seconds)%60)
+- shown,font=fittedText(timerText,65,SMLSIZE);vlabel(349,222,22,shown,p.white,font,true)
++ shown,font=fittedText(timerText,57,SMLSIZE);vlabel(339,222,22,shown,p.white,font,true)
+  line(78,244,401,244,p.border)
+ end
+ local function cockpit(d)
+@@ -2099,16 +2103,16 @@
+  local lqColor=quality and(quality<=configuration.threshold(critical,d)and p.red or quality<=configuration.threshold(low,d)and p.orange or p.green)or p.muted
+  local batteryColor=d.v and(d.battery and p.orange or p.green)or p.muted
+  icon(9,8,39,lqColor,18);vlabel(31,36,23,frsky and'RSSI'or'LINK',p.muted,TINSIZE or SMLSIZE)
+- -- Compact pack identity; a tilde distinguishes voltage-inferred cell counts.
+- icon(3,410,36,batteryColor,18)
+- local cellCaption=d.cells and(d.cellsEstimated and '~'or '')..d.cells..'S'or'PACK'
+- local cellFont;cellCaption,cellFont=fittedText(cellCaption,40,SMLSIZE)
+- vlabel(432,35,19,cellCaption,p.muted,cellFont)
++ -- Voltage leads; cell count and remaining charge form two bounded columns.
++ -- AUTO describes inferred cells; EST describes a capacity estimate, not confidence.
+  flightValue(8,61,62,34,quality and round(quality)or '--','%',MIDSIZE,lqColor)
+- flightValue(410,54,62,30,d.v and string.format('%.1f',d.v)or '--','V',MIDSIZE,d.v and(d.battery and p.orange or p.white)or p.muted)
+- -- Flight has one charge gauge. Voltage range remains a separate Power view.
+- local pct=d.pct and(d.estimated and '~'or '')..round(d.pct)..'%'or '--'
+- flightValue(410,85,62,17,pct,'',SMLSIZE,d.pct and(d.battery and p.orange or p.white)or p.muted,true)
++ flightValue(410,35,62,30,d.v and string.format('%.1f',d.v)or '--','V',MIDSIZE,d.v and(d.battery and p.orange or p.white)or p.muted)
++ local cellCaption=d.cells and d.cells..'S'or'--'
++ flightValue(410,66,29,20,cellCaption,'',SMLSIZE,d.cells and p.white or p.muted,true)
++ local pct=d.pct~=nil and round(d.pct)..'%'or'--'
++ flightValue(443,66,29,20,pct,'',SMLSIZE,d.pct~=nil and(d.battery and p.orange or p.white)or p.muted,true)
++ flightValue(410,86,29,15,d.cellsEstimated and'AUTO'or'CELLS','',TINSIZE or SMLSIZE,p.muted,true)
++ flightValue(443,86,29,15,d.pct~=nil and d.estimated and'EST'or'LEFT','',TINSIZE or SMLSIZE,p.muted,true)
+  rect(8,100,62,4,p.dim);rect(410,103,62,4,p.dim)
+  if quality then rect(8,100,62*clamp(quality,0,100)/100,4,lqColor)end
+  if d.pct then rect(410,103,62*clamp(d.pct,0,100)/100,4,d.battery and p.orange or p.green)end
+@@ -2159,10 +2163,11 @@
+  flightValue(212,34,56,30,heading and string.format('%03d',round(heading)%360)or '--','',MIDSIZE,p.white,true)
+  line(208,63,271,63,p.cyan)
+ 
+- -- Wide native sky/ground is drawn once; no bitmap masks or Lua pixel loops.
++ -- Draw sky/ground only inside its own panel. EdgeTX positive bank can fill
++ -- xmax inclusively;344 is still inside the center, before its345px divider.
+  if attitude then
+-  rect(78,64,324,180,p.sky)
+-  ink(p.ground);lcd.drawHudRectangle(d.pitch,roll,78,402,64,244,CUSTOM_COLOR)
++  rect(136,64,209,180,p.sky)
++  ink(p.ground);lcd.drawHudRectangle(d.pitch,roll,136,344,64,244,CUSTOM_COLOR)
+   if configuration.get('attitudeOverlay')==1 then
+   local angle=-roll*pi/180;local cs,sn=math.cos(angle),math.sin(angle)
+   local sr,cr=math.sin(roll*pi/180),math.cos(roll*pi/180)
+@@ -2176,42 +2181,43 @@
+    horizonMark(ox,oy,cs,sn,0,degree%20==0 and 27 or 17,p.ladder)
+   end end
+   end
+- else rect(78,64,324,180,p.dim)end
++ else rect(136,64,209,180,p.dim)end
+  if attitude and configuration.get('attitudeOverlay')==1 then bankReference(roll)end
+  if d.session and d.session.current and d.session.homeBearing and heading~=nil then
+   local relative=(d.session.homeBearing-heading+540)%360-180
+-  local xx=round(clamp(240+relative*1.8,132,348))
++  local xx=round(clamp(240+relative*1.8,142,338))
+   -- The center badge keeps its own number; the caret sits below it in the HUD.
+   local yy=84
+   line(xx-5,yy+4,xx,yy,p.orange);line(xx,yy,xx+5,yy+4,p.orange);line(xx-3,yy+3,xx-3,yy+9,p.orange);line(xx+3,yy+3,xx+3,yy+9,p.orange);line(xx-3,yy+9,xx+3,yy+9,p.orange)
+  end
+- -- Equal-width tapes overlay the same field, with readable primary numbers.
+- rect(78,64,46,180,p.tape);rect(356,64,46,180,p.tape)
++ --56px opaque tapes are siblings of the horizon, never horizon overlays.
++ -- Their54px value cells retain the29px font through signed three-digit values.
++ rect(78,64,56,180,p.tape);rect(346,64,56,180,p.tape)
+  vlabel(81,64,17,d.airspeed and 'AS km/h'or 'GS km/h',p.muted,TINSIZE or SMLSIZE)
+  vlabel(399,64,17,d.alt~=nil and 'GPS m'or d.baro~=nil and 'BARO m'or 'ALT m',p.muted,TINSIZE or SMLSIZE,true)
+- line(124,64,124,243,p.border);line(355,64,355,243,p.border)
++ line(134,64,134,243,p.border);line(345,64,345,243,p.border)
+  for offset=-40,40,10 do
+   if speed then
+    local value=math.floor(speed/10)*10+offset;local yy=round(154-(value-speed)*2.4)
+    if value>=0 and yy>86 and yy<237 then
+-    local font=textWidth(value,SMLSIZE)<=32 and SMLSIZE or(TINSIZE or SMLSIZE)
+-    local tick=fittedText(value,32,font);local height=font==TINSIZE and 12 or 17;local top=yy-math.floor(height/2)
+-    if top>=82 and top+height<=242 and(top+height<=138 or top>=170)then vlabel(114,top,height,tick,p.muted,font,true)end;line(117,yy,123,yy,p.muted)
++    local font=textWidth(value,SMLSIZE)<=42 and SMLSIZE or(TINSIZE or SMLSIZE)
++    local tick=fittedText(value,42,font);local height=font==TINSIZE and 12 or 17;local top=yy-math.floor(height/2)
++    if top>=82 and top+height<=242 and(top+height<=138 or top>=170)then vlabel(124,top,height,tick,p.muted,font,true)end;line(127,yy,133,yy,p.muted)
+    end
+   end
+   if altitude then
+    local value=math.floor(altitude/10)*10+offset;local yy=round(154-(value-altitude)*2.4)
+    if yy>86 and yy<237 then
+-    local font=textWidth(value,SMLSIZE)<=32 and SMLSIZE or(TINSIZE or SMLSIZE)
+-    local tick=fittedText(value,32,font);local height=font==TINSIZE and 12 or 17;local top=yy-math.floor(height/2)
+-    if top>=82 and top+height<=242 and(top+height<=138 or top>=170)then vlabel(397,top,height,tick,p.muted,font,true)end;line(357,yy,363,yy,p.muted)
+-   end
+-  end
+- end
+- rect(78,138,46,32,p.black);rect(356,138,46,32,p.black)
+- for x=78,356,278 do line(x,138,x+45,138,p.green);line(x,169,x+45,169,p.green)end
+- flightValue(82,139,38,30,speed and round(speed)or '--','',MIDSIZE,nil,true)
+- flightValue(360,139,38,30,altitude and round(altitude)or '--','',MIDSIZE,nil,true)
++    local font=textWidth(value,SMLSIZE)<=42 and SMLSIZE or(TINSIZE or SMLSIZE)
++    local tick=fittedText(value,42,font);local height=font==TINSIZE and 12 or 17;local top=yy-math.floor(height/2)
++    if top>=82 and top+height<=242 and(top+height<=138 or top>=170)then vlabel(397,top,height,tick,p.muted,font,true)end;line(347,yy,353,yy,p.muted)
++   end
++  end
++ end
++ rect(78,138,56,32,p.black);rect(346,138,56,32,p.black)
++ for x=78,346,268 do line(x,138,x+55,138,p.green);line(x,169,x+55,169,p.green)end
++ flightValue(79,139,54,30,speed and round(speed)or '--','',MIDSIZE,nil,true)
++ flightValue(347,139,54,30,altitude and round(altitude)or '--','',MIDSIZE,nil,true)
+  if attitude then
+   -- A wider two-pixel reference with a dark four-pixel halo is visible at a glance.
+   ink(p.black);for dy=-1,2 do
+@@ -2823,7 +2829,7 @@
+   end
+  end
+  local bodies={
+-  [1]={{'flightBank',126,222,69,22,'FLIGHT PANEL'},{'inputStates',195,222,87,22,'THROTTLE / INPUT STATES'}},
++  [1]={{'flightBank',136,222,62,22,'FLIGHT PANEL'},{'inputStates',198,222,80,22,'THROTTLE / INPUT STATES'}},
+   [13]={{'inputSetup',8,222,228,21,'INPUTS / TIMERS'},{'modeSetup',244,222,228,21,'MODE INDICATORS'}},
+   [12]={{'diagView',8,64,464,24,'DIAGNOSTIC VIEW'},{'restartMsp',8,89,225,29,'RESTART MSP SESSION'},{'reloadApp',242,89,230,29,'RELOAD AERODECK'},{'diagRefresh',8,222,145,21,'REFRESH LIVE SOURCES'},{'mute',161,222,150,21,'MUTE ALERTS'},{'newFlight',319,222,153,21,'NEW FLIGHT'},{'logPrevious',8,222,110,21,'PREVIOUS ERROR'},{'logNext',126,222,110,21,'NEXT ERROR'},{'logSave',244,222,228,21,'SAVE ERROR LOG'}},
+   [5]={{'telemetryMode',1,35,158,26,'LIVE / NATIVE MIN / MAX'}},

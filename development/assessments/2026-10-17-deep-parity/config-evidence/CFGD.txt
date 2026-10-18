@@ -1,0 +1,73 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGD.luac
+Original SHA256: 93d4405a1dcf6beaba612e0adb3a2947326a381738e14fd244247a14ac7ea39f
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGD.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 35), ('F', 1, 35), ('D', 1, 35), ('X', 1, 35)]
+K0 'CFGSTR'
+K1 'T'
+K2 'AI'
+K3 'VER'
+K4 'MDL'
+K5 '0|0|0|0|0|0|0|0|0|0|0|0'
+K6 'RCL'
+K7 '1|40|30|80|70|4|0'
+K8 'BT'
+K9 '3.0|4.3|2.7|1|3.4|3.6|1'
+K10 'BTFS'
+K11 '0|0|0'
+K12 'BTF'
+K13 '0|1|100|0|1|100|0|1|100|0|1|100|0|1|100'
+K14 'FC'
+K15 '0|2|3|10'
+K16 'VTX'
+K17 '0|1|0|1|1'
+K18 'VTXF'
+K19 '0|0|0|0|0|0|0|0'
+K20 'GPS'
+K21 '7'
+K22 'IND'
+K23 'TM|-|-|0|1|-'
+K24 'INDBF'
+K25 'TM|TM|TM|-|-'
+K26 'TH'
+K27 'CARBON_PLATE|1'
+K28 'UI'
+K29 '1|1|1|1'
+K30 'APP'
+K31 '1'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  15] GETTABLE  R4 = R2[K0('CFGSTR')]
+   3 [  15] GETTABLE  R5 = R2[K2('AI')]
+   4 [  15] GETTABLE  R5 = R5[K3('VER')]
+   5 [  15] SETTABLE  R4[K1('T')] = R5
+   6 [  30] GETTABLE  R4 = R2[K0('CFGSTR')]
+   7 [  30] SETTABLE  R4[K4('MDL')] = K5('0|0|0|0|0|0|0|0|0|0|0|0')
+   8 [  40] GETTABLE  R4 = R2[K0('CFGSTR')]
+   9 [  40] SETTABLE  R4[K6('RCL')] = K7('1|40|30|80|70|4|0')
+  10 [  50] GETTABLE  R4 = R2[K0('CFGSTR')]
+  11 [  50] SETTABLE  R4[K8('BT')] = K9('3.0|4.3|2.7|1|3.4|3.6|1')
+  12 [  56] GETTABLE  R4 = R2[K0('CFGSTR')]
+  13 [  56] SETTABLE  R4[K10('BTFS')] = K11('0|0|0')
+  14 [  63] GETTABLE  R4 = R2[K0('CFGSTR')]
+  15 [  63] SETTABLE  R4[K12('BTF')] = K13('0|1|100|0|1|100|0|1|100|0|1|100|0|1|100')
+  16 [  70] GETTABLE  R4 = R2[K0('CFGSTR')]
+  17 [  70] SETTABLE  R4[K14('FC')] = K15('0|2|3|10')
+  18 [  78] GETTABLE  R4 = R2[K0('CFGSTR')]
+  19 [  78] SETTABLE  R4[K16('VTX')] = K17('0|1|0|1|1')
+  20 [  81] GETTABLE  R4 = R2[K0('CFGSTR')]
+  21 [  81] SETTABLE  R4[K18('VTXF')] = K19('0|0|0|0|0|0|0|0')
+  22 [  85] GETTABLE  R4 = R2[K0('CFGSTR')]
+  23 [  85] SETTABLE  R4[K20('GPS')] = K21('7')
+  24 [  93] GETTABLE  R4 = R2[K0('CFGSTR')]
+  25 [  93] SETTABLE  R4[K22('IND')] = K23('TM|-|-|0|1|-')
+  26 [ 101] GETTABLE  R4 = R2[K0('CFGSTR')]
+  27 [ 101] SETTABLE  R4[K24('INDBF')] = K25('TM|TM|TM|-|-')
+  28 [ 106] GETTABLE  R4 = R2[K0('CFGSTR')]
+  29 [ 106] SETTABLE  R4[K26('TH')] = K27('CARBON_PLATE|1')
+  30 [ 113] GETTABLE  R4 = R2[K0('CFGSTR')]
+  31 [ 113] SETTABLE  R4[K28('UI')] = K29('1|1|1|1')
+  32 [ 117] GETTABLE  R4 = R2[K0('CFGSTR')]
+  33 [ 117] SETTABLE  R4[K30('APP')] = K31('1')
+  34 [ 119] RETURN    A=0 B=1 C=0
+  35 [ 119] RETURN    A=0 B=1 C=0

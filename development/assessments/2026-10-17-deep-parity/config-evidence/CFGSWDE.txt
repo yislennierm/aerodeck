@@ -1,0 +1,240 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGSWDE.luac
+Original SHA256: 68485bb5f9a539af9eaed1205f0bdc2c04077d557f9d366a5beca3cce4f2d08c
+
+FUNCTION main params 0 vararg 1 stack 18 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGSWDE.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 189), ('F', 1, 189), ('D', 1, 189), ('X', 1, 189), ('T', 1, 189), ('iName', 1, 189), ('value', 1, 189), ('srcNeg', 11, 189), ('srcName', 26, 189), ('srcType', 37, 189), ('srcValue', 43, 189), ('srcSwPos', 48, 189), ('uiSource', 49, 189), ('srcSwPosNo', 108, 150)]
+K0 'string'
+K1 'sub'
+K2 1
+K3 '!'
+K4 2
+K5 4
+K6 '-'
+K7 3
+K8 5
+K9 'TM'
+K10 'cv'
+K11 '_'
+K12 '_srct'
+K13 'v'
+K14 0
+K15 '_swn'
+K16 '_swp'
+K17 '_lsn'
+K18 'SW'
+K19 '+'
+K20 '*'
+K21 'RD'
+K22 'SWK'
+K23 'LS'
+K24 'tonumber'
+   1 [  14] VARARG    A=0 B=8 C=0
+   2 [  17] GETTABUP  R7 = UP0[K0('string')]
+   3 [  17] GETTABLE  R7 = R7[K1('sub')]
+   4 [  17] MOVE      A=8 B=6 C=0
+   5 [  17] LOADK     R9 = K2 (1)
+   6 [  17] LOADK     R10 = K2 (1)
+   7 [  17] CALL      A=7 B=4 C=2
+   8 [  17] EQ        A=1 R7, K3('!'); skip-next if condition != A
+   9 [  17] JMP       A=0 ->11
+  10 [  17] LOADBOOL  A=7 B=0 C=1
+  11 [  17] LOADBOOL  A=7 B=1 C=0
+  12 [  18] TEST      A=7 B=0 C=0
+  13 [  18] JMP       A=0 ->21
+  14 [  18] GETTABUP  R8 = UP0[K0('string')]
+  15 [  18] GETTABLE  R8 = R8[K1('sub')]
+  16 [  18] MOVE      A=9 B=6 C=0
+  17 [  18] LOADK     R10 = K4 (2)
+  18 [  18] CALL      A=8 B=3 C=2
+  19 [  18] TESTSET   A=6 B=8 C=1
+  20 [  18] JMP       A=0 ->21
+  21 [  21] GETTABUP  R8 = UP0[K0('string')]
+  22 [  21] GETTABLE  R8 = R8[K1('sub')]
+  23 [  21] MOVE      A=9 B=6 C=0
+  24 [  21] LOADK     R10 = K2 (1)
+  25 [  21] LOADK     R11 = K5 (4)
+  26 [  21] CALL      A=8 B=4 C=2
+  27 [  22] EQ        A=0 R8, K6('-'); skip-next if condition != A
+  28 [  22] JMP       A=0 ->32
+  29 [  22] LOADK     R9 = K6 ('-')
+  30 [  22] TEST      A=9 B=0 C=1
+  31 [  22] JMP       A=0 ->38
+  32 [  22] GETTABUP  R9 = UP0[K0('string')]
+  33 [  22] GETTABLE  R9 = R9[K1('sub')]
+  34 [  22] MOVE      A=10 B=6 C=0
+  35 [  22] LOADK     R11 = K2 (1)
+  36 [  22] LOADK     R12 = K4 (2)
+  37 [  22] CALL      A=9 B=4 C=2
+  38 [  23] GETTABUP  R10 = UP0[K0('string')]
+  39 [  23] GETTABLE  R10 = R10[K1('sub')]
+  40 [  23] MOVE      A=11 B=6 C=0
+  41 [  23] LOADK     R12 = K7 (3)
+  42 [  23] LOADK     R13 = K5 (4)
+  43 [  23] CALL      A=10 B=4 C=2
+  44 [  24] GETTABUP  R11 = UP0[K0('string')]
+  45 [  24] GETTABLE  R11 = R11[K1('sub')]
+  46 [  24] MOVE      A=12 B=6 C=0
+  47 [  24] LOADK     R13 = K8 (5)
+  48 [  24] CALL      A=11 B=3 C=2
+  49 [  33] CLOSURE   R12 = proto[0]
+  50 [  40] EQ        A=1 R9, K6('-'); skip-next if condition != A
+  51 [  40] JMP       A=0 ->54
+  52 [  40] EQ        A=0 R9, K9('TM'); skip-next if condition != A
+  53 [  40] JMP       A=0 ->91
+  54 [  41] GETTABLE  R13 = R4[K10('cv')]
+  55 [  41] LOADK     R14 = K11 ('_')
+  56 [  41] MOVE      A=15 B=5 C=0
+  57 [  41] LOADK     R16 = K12 ('_srct')
+  58 [  41] CONCAT    A=14 B=14 C=16
+  59 [  41] GETTABLE  R13 = R13[R14]
+  60 [  41] MOVE      A=14 B=12 C=0
+  61 [  41] EQ        A=0 R9, K9('TM'); skip-next if condition != A
+  62 [  41] JMP       A=0 ->66
+  63 [  41] LOADK     R15 = K7 (3)
+  64 [  41] TEST      A=15 B=0 C=1
+  65 [  41] JMP       A=0 ->67
+  66 [  41] LOADK     R15 = K14 (0)
+  67 [  41] CALL      A=14 B=2 C=2
+  68 [  41] SETTABLE  R13[K13('v')] = R14
+  69 [  42] GETTABLE  R13 = R4[K10('cv')]
+  70 [  42] LOADK     R14 = K11 ('_')
+  71 [  42] MOVE      A=15 B=5 C=0
+  72 [  42] LOADK     R16 = K15 ('_swn')
+  73 [  42] CONCAT    A=14 B=14 C=16
+  74 [  42] GETTABLE  R13 = R13[R14]
+  75 [  42] SETTABLE  R13[K13('v')] = K14(0)
+  76 [  43] GETTABLE  R13 = R4[K10('cv')]
+  77 [  43] LOADK     R14 = K11 ('_')
+  78 [  43] MOVE      A=15 B=5 C=0
+  79 [  43] LOADK     R16 = K16 ('_swp')
+  80 [  43] CONCAT    A=14 B=14 C=16
+  81 [  43] GETTABLE  R13 = R13[R14]
+  82 [  43] SETTABLE  R13[K13('v')] = K14(0)
+  83 [  44] GETTABLE  R13 = R4[K10('cv')]
+  84 [  44] LOADK     R14 = K11 ('_')
+  85 [  44] MOVE      A=15 B=5 C=0
+  86 [  44] LOADK     R16 = K17 ('_lsn')
+  87 [  44] CONCAT    A=14 B=14 C=16
+  88 [  44] GETTABLE  R13 = R13[R14]
+  89 [  44] SETTABLE  R13[K13('v')] = K14(0)
+  90 [  44] JMP       A=0 ->188
+  91 [  46] EQ        A=0 R9, K18('SW'); skip-next if condition != A
+  92 [  46] JMP       A=0 ->152
+  93 [  47] EQ        A=0 R11, K19('+'); skip-next if condition != A
+  94 [  47] JMP       A=0 ->98
+  95 [  47] LOADK     R13 = K2 (1)
+  96 [  47] TEST      A=13 B=0 C=1
+  97 [  47] JMP       A=0 ->109
+  98 [  47] EQ        A=0 R11, K20('*'); skip-next if condition != A
+  99 [  47] JMP       A=0 ->103
+ 100 [  47] LOADK     R13 = K4 (2)
+ 101 [  47] TEST      A=13 B=0 C=1
+ 102 [  47] JMP       A=0 ->109
+ 103 [  47] EQ        A=0 R11, K6('-'); skip-next if condition != A
+ 104 [  47] JMP       A=0 ->108
+ 105 [  47] LOADK     R13 = K7 (3)
+ 106 [  47] TEST      A=13 B=0 C=1
+ 107 [  47] JMP       A=0 ->109
+ 108 [  47] LOADK     R13 = K14 (0)
+ 109 [  48] TEST      A=7 B=0 C=0
+ 110 [  48] JMP       A=0 ->114
+ 111 [  48] ADD       A=14 B=13 C=263
+ 112 [  48] TESTSET   A=13 B=14 C=1
+ 113 [  48] JMP       A=0 ->114
+ 114 [  54] GETTABLE  R14 = R4[K10('cv')]
+ 115 [  54] LOADK     R15 = K11 ('_')
+ 116 [  54] MOVE      A=16 B=5 C=0
+ 117 [  54] LOADK     R17 = K12 ('_srct')
+ 118 [  54] CONCAT    A=15 B=15 C=17
+ 119 [  54] GETTABLE  R14 = R14[R15]
+ 120 [  54] MOVE      A=15 B=12 C=0
+ 121 [  54] LOADK     R16 = K2 (1)
+ 122 [  54] CALL      A=15 B=2 C=2
+ 123 [  54] SETTABLE  R14[K13('v')] = R15
+ 124 [  55] GETTABLE  R14 = R4[K10('cv')]
+ 125 [  55] LOADK     R15 = K11 ('_')
+ 126 [  55] MOVE      A=16 B=5 C=0
+ 127 [  55] LOADK     R17 = K15 ('_swn')
+ 128 [  55] CONCAT    A=15 B=15 C=17
+ 129 [  55] GETTABLE  R14 = R14[R15]
+ 130 [  55] GETTABLE  R15 = R2[K21('RD')]
+ 131 [  55] GETTABLE  R15 = R15[K22('SWK')]
+ 132 [  55] GETTABLE  R15 = R15[R8]
+ 133 [  55] TEST      A=15 B=0 C=1
+ 134 [  55] JMP       A=0 ->136
+ 135 [  55] LOADK     R15 = K14 (0)
+ 136 [  55] SETTABLE  R14[K13('v')] = R15
+ 137 [  56] GETTABLE  R14 = R4[K10('cv')]
+ 138 [  56] LOADK     R15 = K11 ('_')
+ 139 [  56] MOVE      A=16 B=5 C=0
+ 140 [  56] LOADK     R17 = K16 ('_swp')
+ 141 [  56] CONCAT    A=15 B=15 C=17
+ 142 [  56] GETTABLE  R14 = R14[R15]
+ 143 [  56] SETTABLE  R14[K13('v')] = R13
+ 144 [  57] GETTABLE  R14 = R4[K10('cv')]
+ 145 [  57] LOADK     R15 = K11 ('_')
+ 146 [  57] MOVE      A=16 B=5 C=0
+ 147 [  57] LOADK     R17 = K17 ('_lsn')
+ 148 [  57] CONCAT    A=15 B=15 C=17
+ 149 [  57] GETTABLE  R14 = R14[R15]
+ 150 [  57] SETTABLE  R14[K13('v')] = K14(0)
+ 151 [  57] JMP       A=0 ->188
+ 152 [  59] EQ        A=0 R9, K23('LS'); skip-next if condition != A
+ 153 [  59] JMP       A=0 ->188
+ 154 [  60] GETTABLE  R13 = R4[K10('cv')]
+ 155 [  60] LOADK     R14 = K11 ('_')
+ 156 [  60] MOVE      A=15 B=5 C=0
+ 157 [  60] LOADK     R16 = K12 ('_srct')
+ 158 [  60] CONCAT    A=14 B=14 C=16
+ 159 [  60] GETTABLE  R13 = R13[R14]
+ 160 [  60] MOVE      A=14 B=12 C=0
+ 161 [  60] LOADK     R15 = K4 (2)
+ 162 [  60] CALL      A=14 B=2 C=2
+ 163 [  60] SETTABLE  R13[K13('v')] = R14
+ 164 [  61] GETTABLE  R13 = R4[K10('cv')]
+ 165 [  61] LOADK     R14 = K11 ('_')
+ 166 [  61] MOVE      A=15 B=5 C=0
+ 167 [  61] LOADK     R16 = K15 ('_swn')
+ 168 [  61] CONCAT    A=14 B=14 C=16
+ 169 [  61] GETTABLE  R13 = R13[R14]
+ 170 [  61] SETTABLE  R13[K13('v')] = K14(0)
+ 171 [  62] GETTABLE  R13 = R4[K10('cv')]
+ 172 [  62] LOADK     R14 = K11 ('_')
+ 173 [  62] MOVE      A=15 B=5 C=0
+ 174 [  62] LOADK     R16 = K16 ('_swp')
+ 175 [  62] CONCAT    A=14 B=14 C=16
+ 176 [  62] GETTABLE  R13 = R13[R14]
+ 177 [  62] SETTABLE  R13[K13('v')] = K14(0)
+ 178 [  63] GETTABLE  R13 = R4[K10('cv')]
+ 179 [  63] LOADK     R14 = K11 ('_')
+ 180 [  63] MOVE      A=15 B=5 C=0
+ 181 [  63] LOADK     R16 = K17 ('_lsn')
+ 182 [  63] CONCAT    A=14 B=14 C=16
+ 183 [  63] GETTABLE  R13 = R13[R14]
+ 184 [  63] GETTABUP  R14 = UP0[K24('tonumber')]
+ 185 [  63] MOVE      A=15 B=10 C=0
+ 186 [  63] CALL      A=14 B=2 C=2
+ 187 [  63] SETTABLE  R13[K13('v')] = R14
+ 188 [  67] RETURN    A=0 B=1 C=0
+ 189 [  67] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 0 stack 7 lines 26 33 source None
+UPVALUES [('T', (1, 4)), ('_ENV', (0, 0))]
+LOCALS [('source', 0, 14), ('(for generator)', 6, 12), ('(for state)', 6, 12), ('(for control)', 6, 12), ('ui', 7, 10), ('actual', 7, 10)]
+K0 'srcTypes'
+K1 'pairs'
+   1 [  27] GETTABUP  R1 = UP0[K0('srcTypes')]
+   2 [  27] TEST      A=1 B=0 C=0
+   3 [  27] JMP       A=0 ->13
+   4 [  28] GETTABUP  R1 = UP1[K1('pairs')]
+   5 [  28] GETTABUP  R2 = UP0[K0('srcTypes')]
+   6 [  28] CALL      A=1 B=2 C=4
+   7 [  28] JMP       A=0 ->11
+   8 [  29] EQ        A=0 R5, R0; skip-next if condition != A
+   9 [  29] JMP       A=0 ->11
+  10 [  29] RETURN    A=4 B=2 C=0
+  11 [  28] TFORCALL  A=1 B=0 C=2
+  12 [  28] TFORLOOP  A=3 ->8
+  13 [  32] RETURN    A=0 B=2 C=0
+  14 [  33] RETURN    A=0 B=1 C=0

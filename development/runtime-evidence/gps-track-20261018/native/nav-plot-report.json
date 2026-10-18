@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-17T23:25:43.466905+00:00",
+  "workspaceOnly": true,
+  "files": {
+    "nav-plot-candidate.lua": "097cdb6c03f25810fa08419d85f0c6f838673c60fdea1e183087fc376dfde333",
+    "nav-plot-pre-waiting-fix.lua": "a1d4b7c1f3a80c8b7892259ef64550c3b6d4f8aa217ee7d007f2ba739c8f0a6f",
+    "test_nav_plot.lua": "9a2d35f331d7ed013d5ea489ad1afca43142454a57a51ed68e4b910a54c8e52a"
+  },
+  "initialNativeIntegrationMainSha256": "b621f8bd11bec31a3f8e084ebd07c7ea5fadfb3714156c7cacca6d1fe6cffbac",
+  "metadataOnlyFollowup": "After obtaining a valid origin, clear waiting before sameTarget return; no pixel/projection/cache/budget change.",
+  "api": {
+    "prime": "prime(home,pos,track) -> state,computed; owner synchronization, at most one latest-point geo projection, zero track scan/copy.",
+    "step": "step(home,pos,track,zoom,now) -> state,geometryCount,processed; first callback captures all<=180point refs/owned origin/zoom. Later callbacks <=8geo cache misses and<=32total transformed points. Whole pixel path publishes atomically.",
+    "snapshot": "Stable state with frame/pending/completed/total/cacheCount/error/waiting; frame has owned origin, scale, zoom, full integer path and point refs.",
+    "reset": "Clears owner/cache/job/published frame without source mutations or external writes."
+  },
+  "bounds": {
+    "cachedProjectionEntries": 180,
+    "sourcePointRefsPerJob": 180,
+    "pixelFrameBuffers": 2,
+    "pixelPointsPerBuffer": 180,
+    "geometryCallsPerStep": 8,
+    "pointsPerStep": 32
+  },
+  "tests": {
+    "LuaJIT": {
+      "status": "PASS",
+      "checks": 19428
+    },
+    "Lua53Int32Float32": {
+      "status": "PASS",
+      "checks": 19428
+    },
+    "preMetadataIntegration": {
+      "status": "PASS",
+      "checksPerVm": 19425,
+      "note": "Extracted actual integrated b621helper before waiting-state fix; final source requires the added recovery assertion."
+    }
+  },
+  "coverage": [
+    "Exact old geo->sin/cos->scale->round pixel oracle for every point at all3zooms.",
+    "Full180history retained with no decimation.",
+    "Warm180points require six32point processing callbacks and zero further geodesic calls.",
+    "Cold180points require23bounded processing callbacks after one start/capture callback.",
+    "Rolling oldest eviction through260points costs only1geo per new point and preserves179cache identities.",
+    "Home identity/source track table replacement and explicit reset clear old picture/cache immediately.",
+    "No-home origin snapshots finish despite currentGPS/zoom/new history changing during every step; captured full history remains coherent.",
+    "Previous completed frame is unchanged while the next pixel buffer is built.",
+    "GPS missing/home missing and same-origin recovery never fabricate current data.",
+    "Antimeridian, near both poles, global distances and fractional/zero positions match old exact projection.",
+    "Overflow/malformed points are explicit; unchanged invalid target does not continuously retry.",
+    "Stripped native string metatable compatibility."
+  ],
+  "limits": [
+    "API call and pixel-oracle tests do not establish native20kinstruction budget or hardwareFPS; sibling owns actual native natural-growth/cache/no-home runs.",
+    "Published pixel frame is a captured projection snapshot; live current marker must be projected against frame.origin/scale and live sensor readouts remain caller-owned.",
+    "Source track points must remain immutable after session append. Array order may prune/append while a job runs; captured refs are retained until completion.",
+    "The two pixel buffers are borrowed views, not permanent historical snapshots; source timestamps/history remain in session-owned point records."
+  ]
+}

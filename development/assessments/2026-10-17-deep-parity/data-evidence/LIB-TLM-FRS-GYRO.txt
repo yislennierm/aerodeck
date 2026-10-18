@@ -1,0 +1,25 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO.luac
+
+FUNCTION main params 0 vararg 1 stack 6 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/TLM/FRS/GYRO.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 13), ('F', 1, 13), ('D', 1, 13), ('X', 1, 13), ('add', 1, 13)]
+K0 'S'
+K1 'ATT_PITCH'
+K2 None
+K3 'ATT_ROLL'
+K4 'ATT_YAW'
+K5 'POS_AH_ON'
+K6 'SN_ATT'
+   1 [  11] VARARG    A=0 B=6 C=0
+   2 [  13] GETTABLE  R5 = R2[K0('S')]
+   3 [  13] SETTABLE  R5[K1('ATT_PITCH')] = K2(None)
+   4 [  14] GETTABLE  R5 = R2[K0('S')]
+   5 [  14] SETTABLE  R5[K3('ATT_ROLL')] = K2(None)
+   6 [  15] GETTABLE  R5 = R2[K0('S')]
+   7 [  15] SETTABLE  R5[K4('ATT_YAW')] = K2(None)
+   8 [  16] GETTABLE  R5 = R2[K0('S')]
+   9 [  16] SETTABLE  R5[K5('POS_AH_ON')] = K2(None)
+  10 [  18] SETTABLE  R1[K6('SN_ATT')] = K2(None)
+  11 [  20] NEWTABLE  A=5 B=0 C=0
+  12 [  20] RETURN    A=5 B=2 C=0
+  13 [  20] RETURN    A=0 B=1 C=0

@@ -1,0 +1,150 @@
+Original file: work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/MSPP.luac
+SHA256: 8dcf1505b1746a45f1c5222cdc44210cd48c2cddf788b22f7a3f44f59af011b5
+
+FUNCTION main params 0 vararg 1 stack 5 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/MSPP.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 5), ('F', 1, 5), ('D', 1, 5), ('X', 1, 5)]
+K0 'MSPP'
+   1 [  23] VARARG    A=0 B=5 C=0
+   2 [  75] CLOSURE   R4 = proto[0]
+   3 [  75] SETTABLE  R1[K0('MSPP')] = R4
+   4 [  77] RETURN    A=0 B=1 C=0
+   5 [  77] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 1 vararg 1 stack 8 lines 26 75 source None
+UPVALUES [('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('fn', 0, 113), ('data', 3, 113), ('v', 8, 14), ('v', 26, 32), ('v', 56, 62), ('sLen', 66, 99), ('len', 67, 99), ('v', 81, 99), ('v', 103, 111)]
+K0 'MSP'
+K1 'IN'
+K2 'data'
+K3 'U8'
+K4 'dptr'
+K5 1
+K6 'U16'
+K7 256
+K8 2
+K9 'U32'
+K10 65536
+K11 3
+K12 16777216
+K13 4
+K14 'S'
+K15 None
+K16 ''
+K17 0
+K18 'string'
+K19 'char'
+K20 'P'
+   1 [  27] GETTABUP  R1 = UP0[K0('MSP')]
+   2 [  27] GETTABLE  R1 = R1[K1('IN')]
+   3 [  27] GETTABLE  R1 = R1[K2('data')]
+   4 [  31] EQ        A=0 R0, K3('U8'); skip-next if condition != A
+   5 [  31] JMP       A=0 ->16
+   6 [  32] GETTABUP  R2 = UP0[K0('MSP')]
+   7 [  32] GETTABLE  R2 = R2[K4('dptr')]
+   8 [  32] GETTABLE  R2 = R1[R2]
+   9 [  33] GETTABUP  R3 = UP0[K0('MSP')]
+  10 [  33] GETTABUP  R4 = UP0[K0('MSP')]
+  11 [  33] GETTABLE  R4 = R4[K4('dptr')]
+  12 [  33] ADD       A=4 B=4 C=261
+  13 [  33] SETTABLE  R3[K4('dptr')] = R4
+  14 [  34] RETURN    A=2 B=2 C=0
+  15 [  34] JMP       A=0 ->112
+  16 [  36] EQ        A=0 R0, K6('U16'); skip-next if condition != A
+  17 [  36] JMP       A=0 ->34
+  18 [  37] GETTABUP  R2 = UP0[K0('MSP')]
+  19 [  37] GETTABLE  R2 = R2[K4('dptr')]
+  20 [  37] GETTABLE  R2 = R1[R2]
+  21 [  37] GETTABUP  R3 = UP0[K0('MSP')]
+  22 [  37] GETTABLE  R3 = R3[K4('dptr')]
+  23 [  37] ADD       A=3 B=3 C=261
+  24 [  37] GETTABLE  R3 = R1[R3]
+  25 [  37] MUL       A=3 B=263 C=3
+  26 [  37] ADD       A=2 B=2 C=3
+  27 [  38] GETTABUP  R3 = UP0[K0('MSP')]
+  28 [  38] GETTABUP  R4 = UP0[K0('MSP')]
+  29 [  38] GETTABLE  R4 = R4[K4('dptr')]
+  30 [  38] ADD       A=4 B=4 C=264
+  31 [  38] SETTABLE  R3[K4('dptr')] = R4
+  32 [  39] RETURN    A=2 B=2 C=0
+  33 [  39] JMP       A=0 ->112
+  34 [  41] EQ        A=0 R0, K9('U32'); skip-next if condition != A
+  35 [  41] JMP       A=0 ->64
+  36 [  42] GETTABUP  R2 = UP0[K0('MSP')]
+  37 [  42] GETTABLE  R2 = R2[K4('dptr')]
+  38 [  42] GETTABLE  R2 = R1[R2]
+  39 [  42] GETTABUP  R3 = UP0[K0('MSP')]
+  40 [  42] GETTABLE  R3 = R3[K4('dptr')]
+  41 [  42] ADD       A=3 B=3 C=261
+  42 [  42] GETTABLE  R3 = R1[R3]
+  43 [  42] MUL       A=3 B=263 C=3
+  44 [  42] ADD       A=2 B=2 C=3
+  45 [  42] GETTABUP  R3 = UP0[K0('MSP')]
+  46 [  42] GETTABLE  R3 = R3[K4('dptr')]
+  47 [  42] ADD       A=3 B=3 C=264
+  48 [  42] GETTABLE  R3 = R1[R3]
+  49 [  42] MUL       A=3 B=266 C=3
+  50 [  42] ADD       A=2 B=2 C=3
+  51 [  42] GETTABUP  R3 = UP0[K0('MSP')]
+  52 [  42] GETTABLE  R3 = R3[K4('dptr')]
+  53 [  42] ADD       A=3 B=3 C=267
+  54 [  42] GETTABLE  R3 = R1[R3]
+  55 [  42] MUL       A=3 B=268 C=3
+  56 [  42] ADD       A=2 B=2 C=3
+  57 [  43] GETTABUP  R3 = UP0[K0('MSP')]
+  58 [  43] GETTABUP  R4 = UP0[K0('MSP')]
+  59 [  43] GETTABLE  R4 = R4[K4('dptr')]
+  60 [  43] ADD       A=4 B=4 C=269
+  61 [  43] SETTABLE  R3[K4('dptr')] = R4
+  62 [  44] RETURN    A=2 B=2 C=0
+  63 [  44] JMP       A=0 ->112
+  64 [  46] EQ        A=0 R0, K14('S'); skip-next if condition != A
+  65 [  46] JMP       A=0 ->101
+  66 [  47] VARARG    A=2 B=2 C=0
+  67 [  48] LOADNIL   A=3 B=0 C=0
+  68 [  49] EQ        A=0 R2, K15(None); skip-next if condition != A
+  69 [  49] JMP       A=0 ->80
+  70 [  50] GETTABUP  R4 = UP0[K0('MSP')]
+  71 [  50] GETTABLE  R4 = R4[K4('dptr')]
+  72 [  50] GETTABLE  R3 = R1[R4]
+  73 [  51] MOVE      A=2 B=3 C=0
+  74 [  52] GETTABUP  R4 = UP0[K0('MSP')]
+  75 [  52] GETTABUP  R5 = UP0[K0('MSP')]
+  76 [  52] GETTABLE  R5 = R5[K4('dptr')]
+  77 [  52] ADD       A=5 B=5 C=261
+  78 [  52] SETTABLE  R4[K4('dptr')] = R5
+  79 [  52] JMP       A=0 ->81
+  80 [  54] MOVE      A=3 B=2 C=0
+  81 [  57] LOADK     R4 = K16 ('')
+  82 [  58] LT        A=0 K17(0), R3; skip-next if condition != A
+  83 [  58] JMP       A=0 ->99
+  84 [  60] MOVE      A=5 B=4 C=0
+  85 [  60] GETTABUP  R6 = UP1[K18('string')]
+  86 [  60] GETTABLE  R6 = R6[K19('char')]
+  87 [  60] GETTABUP  R7 = UP0[K0('MSP')]
+  88 [  60] GETTABLE  R7 = R7[K4('dptr')]
+  89 [  60] GETTABLE  R7 = R1[R7]
+  90 [  60] CALL      A=6 B=2 C=2
+  91 [  60] CONCAT    A=4 B=5 C=6
+  92 [  61] GETTABUP  R5 = UP0[K0('MSP')]
+  93 [  61] GETTABUP  R6 = UP0[K0('MSP')]
+  94 [  61] GETTABLE  R6 = R6[K4('dptr')]
+  95 [  61] ADD       A=6 B=6 C=261
+  96 [  61] SETTABLE  R5[K4('dptr')] = R6
+  97 [  62] SUB       A=3 B=3 C=261
+  98 [  62] JMP       A=0 ->82
+  99 [  65] RETURN    A=4 B=2 C=0
+ 100 [  65] JMP       A=0 ->112
+ 101 [  67] EQ        A=0 R0, K20('P'); skip-next if condition != A
+ 102 [  67] JMP       A=0 ->112
+ 103 [  68] VARARG    A=2 B=2 C=0
+ 104 [  69] GETTABUP  R3 = UP0[K0('MSP')]
+ 105 [  69] GETTABUP  R4 = UP0[K0('MSP')]
+ 106 [  69] GETTABLE  R4 = R4[K4('dptr')]
+ 107 [  69] ADD       A=4 B=4 C=2
+ 108 [  69] SETTABLE  R3[K4('dptr')] = R4
+ 109 [  70] GETTABUP  R3 = UP0[K0('MSP')]
+ 110 [  70] GETTABLE  R3 = R3[K4('dptr')]
+ 111 [  70] RETURN    A=3 B=2 C=0
+ 112 [  74] RETURN    A=0 B=1 C=0
+ 113 [  75] RETURN    A=0 B=1 C=0

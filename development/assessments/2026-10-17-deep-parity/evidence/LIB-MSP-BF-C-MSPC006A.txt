@@ -1,0 +1,29 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC006A.luac 
+SHA256 4a59ac3cb78429e7229d3e7a0f3fbd1323c8b5c774665fffd85691cb4c59adfd
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/MSP/BF/C/MSPC006A.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 17), ('F', 1, 17), ('D', 1, 17), ('X', 1, 17)]
+K0 'GPS'
+K1 'fixed'
+K2 'MSPP'
+K3 'U8'
+K4 0
+K5 'numSat'
+   1 [   9] VARARG    A=0 B=5 C=0
+   2 [  11] GETTABLE  R4 = R2[K0('GPS')]
+   3 [  11] GETTABLE  R5 = R1[K2('MSPP')]
+   4 [  11] LOADK     R6 = K3 ('U8')
+   5 [  11] CALL      A=5 B=2 C=2
+   6 [  11] LT        A=1 K4(0), R5; skip-next if condition != A
+   7 [  11] JMP       A=0 ->9
+   8 [  11] LOADBOOL  A=5 B=0 C=1
+   9 [  11] LOADBOOL  A=5 B=1 C=0
+  10 [  11] SETTABLE  R4[K1('fixed')] = R5
+  11 [  12] GETTABLE  R4 = R2[K0('GPS')]
+  12 [  12] GETTABLE  R5 = R1[K2('MSPP')]
+  13 [  12] LOADK     R6 = K3 ('U8')
+  14 [  12] CALL      A=5 B=2 C=2
+  15 [  12] SETTABLE  R4[K5('numSat')] = R5
+  16 [  19] RETURN    A=0 B=1 C=0
+  17 [  19] RETURN    A=0 B=1 C=0

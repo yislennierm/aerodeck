@@ -1,0 +1,377 @@
+ORIGINAL work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/FC/BF/ASC.luac 
+SHA256 c9a88d29bbadce66038c360c7ceee1326d2d1bdef53e5d09e73b7f67d7aa4490
+
+FUNCTION main params 0 vararg 1 stack 15 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/FC/BF/ASC.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 254), ('F', 1, 254), ('D', 1, 254), ('X', 1, 254), ('all', 177, 254), ('bf46', 191, 254), ('asList', 234, 254), ('(for generator)', 242, 250), ('(for state)', 242, 250), ('(for control)', 242, 250), ('i', 243, 248), ('v', 243, 248), ('asNo', 244, 248)]
+K0 1
+K1 'NOGYRO'
+K2 'A gyro was not detected'
+K3 'Possibly hardware failure. If a previous firmware version works it may be a firmware issue or you have flashed a wrong target.'
+K4 2
+K5 'FAILSAFE'
+K6 'Failsafe is active'
+K7 'Rectify the failure condition and try again.'
+K8 3
+K9 'RXLOSS'
+K10 'No valid receiver signal is detected'
+K11 'Your receiver is either faulty or has no link to the transmitter.'
+K12 4
+K13 'BADRX'
+K14 'Your receiver has just recovered from receiver failsafe but the arm switch is on'
+K15 'Switch the arm switch off.'
+K16 5
+K17 'BOXFAILSAFE'
+K18 'The FAILSAFE switch was activated'
+K19 'See FAILSAFE'
+K20 6
+K21 'RUNAWAY'
+K22 'Runway Takeoff Prevention has been triggered'
+K23 'Disarm to clear this condition.'
+K24 7
+K25 'CRASH'
+K26 'Crash Recovery has been triggered'
+K27 8
+K28 'THROTTLE'
+K29 'Throttle channel is too high'
+K30 'Lower throttle below min_check.'
+K31 9
+K32 'ANGLE'
+K33 'Craft is not level (enough)'
+K34 'Level craft to within small_angle degrees (default 25).'
+K35 10
+K36 'BOOTGRACE'
+K37 'Arming too soon after power on'
+K38 'Wait until pwr_ON_arm_grace seconds (default 5) have elapsed.'
+K39 11
+K40 'NOPREARM'
+K41 'Prearm switch is not activated or prearm has not been toggled after disarm'
+K42 'Toggle the prearm switch.'
+K43 12
+K44 'LOAD'
+K45 'System load is too high for safe flight'
+K46 'Revisit configuration and disable features.'
+K47 13
+K48 'CALIB'
+K49 'Sensor calibration is still ongoing'
+K50 'Wait for sensor calibration to complete.'
+K51 14
+K52 'CLI'
+K53 'CLI is active'
+K54 'Exit the CLI.'
+K55 15
+K56 'CMS'
+K57 'CMS (config menu) is Active - over OSD or other display'
+K58 'Exit the CMS (or OSD menu).'
+K59 16
+K60 'BST'
+K61 'BST device (ex TBS Core Pro) disarmed and is preventing arming'
+K62 'Refer to the manual for your hardware.'
+K63 17
+K64 'MSP'
+K65 'MSP connection is active, probably via Betaflight Configurator'
+K66 'Terminate the Betaflight Configurator connection (disconnect).'
+K67 18
+K68 'PARALYZE'
+K69 'Paralyze mode has been activated'
+K70 'Power cycle/reset FC board.'
+K71 19
+K72 'GPS'
+K73 'GPS rescue mode is configured but required number of satellites has not been fixed'
+K74 'Wait for GPS fix, enable arming without GPS fix, or disable GPS rescue mode.'
+K75 20
+K76 'RESCUE_SW'
+K77 'GPS Rescue switch is in an unsafe position'
+K78 'Turn off the GPS Rescue switch to arm.'
+K79 21
+K80 'RPMFILTER'
+K81 'Motor RPM-based filtering is not functioning'
+K82 "One or more ESC's are not supplying valid RPM telemetry."
+K83 22
+K84 'REBOOT_REQD'
+K85 'Reboot required'
+K86 'Reboot the flight controller for settings changes to take effect.'
+K87 23
+K88 'DSHOT_BBANG'
+K89 'DSHOT Bitbang is not working'
+K90 ''
+K91 24
+K92 'NO_ACC_CAL'
+K93 'Accelerometer calibration required'
+K94 'Calibrate the accelerometer or disable features that use it'
+K95 25
+K96 'MOTOR_PROTO'
+K97 'ESC/Motor Protocol not configured'
+K98 'Select the ESC/Motor protocol to use on the Configuration tab.'
+K99 'FC'
+K100 'API_VERSION'
+K101 'tonumber'
+K102 1.4700000286102295
+K103 'CRASH_FLIP'
+K104 'Crash Flip mode is enabled'
+K105 'Disable Crash Flip mode to arm.'
+K106 'ALT_HOLD'
+K107 'Altitude Hold mode is enabled'
+K108 'Disable Altitude Hold mode to arm.'
+K109 'POS_HOLD'
+K110 'Position Hold mode is enabled'
+K111 'Disable Position Hold mode to arm.'
+K112 'ARMSWITCH'
+K113 'Arm switch is in an unsafe position'
+K114 'Toggle the arm switch to arm.'
+K115 'ARMSTOPS'
+K116 'ipairs'
+   1 [   8] VARARG    A=0 B=5 C=0
+   2 [  10] NEWTABLE  A=4 B=0 C=21
+   3 [  11] NEWTABLE  A=5 B=4 C=0
+   4 [  11] LOADK     R6 = K1 ('NOGYRO')
+   5 [  11] LOADK     R7 = K2 ('A gyro was not detected')
+   6 [  11] LOADK     R8 = K3 ('Possibly hardware failure. If a previous firmware version works it may be a firmware issue or you have flashed a wrong target.')
+   7 [  11] LOADK     R9 = K0 (1)
+   8 [  11] SETLIST   A=5 B=4 C=1
+   9 [  11] SETTABLE  R4[K0(1)] = R5
+  10 [  12] NEWTABLE  A=5 B=4 C=0
+  11 [  12] LOADK     R6 = K5 ('FAILSAFE')
+  12 [  12] LOADK     R7 = K6 ('Failsafe is active')
+  13 [  12] LOADK     R8 = K7 ('Rectify the failure condition and try again.')
+  14 [  12] LOADK     R9 = K4 (2)
+  15 [  12] SETLIST   A=5 B=4 C=1
+  16 [  12] SETTABLE  R4[K4(2)] = R5
+  17 [  13] NEWTABLE  A=5 B=4 C=0
+  18 [  13] LOADK     R6 = K9 ('RXLOSS')
+  19 [  13] LOADK     R7 = K10 ('No valid receiver signal is detected')
+  20 [  13] LOADK     R8 = K11 ('Your receiver is either faulty or has no link to the transmitter.')
+  21 [  13] LOADK     R9 = K8 (3)
+  22 [  13] SETLIST   A=5 B=4 C=1
+  23 [  13] SETTABLE  R4[K8(3)] = R5
+  24 [  14] NEWTABLE  A=5 B=4 C=0
+  25 [  14] LOADK     R6 = K13 ('BADRX')
+  26 [  14] LOADK     R7 = K14 ('Your receiver has just recovered from receiver failsafe but the arm switch is on')
+  27 [  14] LOADK     R8 = K15 ('Switch the arm switch off.')
+  28 [  14] LOADK     R9 = K12 (4)
+  29 [  14] SETLIST   A=5 B=4 C=1
+  30 [  14] SETTABLE  R4[K12(4)] = R5
+  31 [  15] NEWTABLE  A=5 B=4 C=0
+  32 [  15] LOADK     R6 = K17 ('BOXFAILSAFE')
+  33 [  15] LOADK     R7 = K18 ('The FAILSAFE switch was activated')
+  34 [  15] LOADK     R8 = K19 ('See FAILSAFE')
+  35 [  15] LOADK     R9 = K16 (5)
+  36 [  15] SETLIST   A=5 B=4 C=1
+  37 [  15] SETTABLE  R4[K16(5)] = R5
+  38 [  16] NEWTABLE  A=5 B=4 C=0
+  39 [  16] LOADK     R6 = K21 ('RUNAWAY')
+  40 [  16] LOADK     R7 = K22 ('Runway Takeoff Prevention has been triggered')
+  41 [  16] LOADK     R8 = K23 ('Disarm to clear this condition.')
+  42 [  16] LOADK     R9 = K20 (6)
+  43 [  16] SETLIST   A=5 B=4 C=1
+  44 [  16] SETTABLE  R4[K20(6)] = R5
+  45 [  17] NEWTABLE  A=5 B=4 C=0
+  46 [  17] LOADK     R6 = K25 ('CRASH')
+  47 [  17] LOADK     R7 = K26 ('Crash Recovery has been triggered')
+  48 [  17] LOADK     R8 = K23 ('Disarm to clear this condition.')
+  49 [  17] LOADK     R9 = K24 (7)
+  50 [  17] SETLIST   A=5 B=4 C=1
+  51 [  17] SETTABLE  R4[K24(7)] = R5
+  52 [  18] NEWTABLE  A=5 B=4 C=0
+  53 [  18] LOADK     R6 = K28 ('THROTTLE')
+  54 [  18] LOADK     R7 = K29 ('Throttle channel is too high')
+  55 [  18] LOADK     R8 = K30 ('Lower throttle below min_check.')
+  56 [  18] LOADK     R9 = K27 (8)
+  57 [  18] SETLIST   A=5 B=4 C=1
+  58 [  18] SETTABLE  R4[K27(8)] = R5
+  59 [  19] NEWTABLE  A=5 B=4 C=0
+  60 [  19] LOADK     R6 = K32 ('ANGLE')
+  61 [  19] LOADK     R7 = K33 ('Craft is not level (enough)')
+  62 [  19] LOADK     R8 = K34 ('Level craft to within small_angle degrees (default 25).')
+  63 [  19] LOADK     R9 = K31 (9)
+  64 [  19] SETLIST   A=5 B=4 C=1
+  65 [  19] SETTABLE  R4[K31(9)] = R5
+  66 [  20] NEWTABLE  A=5 B=4 C=0
+  67 [  20] LOADK     R6 = K36 ('BOOTGRACE')
+  68 [  20] LOADK     R7 = K37 ('Arming too soon after power on')
+  69 [  20] LOADK     R8 = K38 ('Wait until pwr_ON_arm_grace seconds (default 5) have elapsed.')
+  70 [  20] LOADK     R9 = K35 (10)
+  71 [  20] SETLIST   A=5 B=4 C=1
+  72 [  20] SETTABLE  R4[K35(10)] = R5
+  73 [  21] NEWTABLE  A=5 B=4 C=0
+  74 [  21] LOADK     R6 = K40 ('NOPREARM')
+  75 [  21] LOADK     R7 = K41 ('Prearm switch is not activated or prearm has not been toggled after disarm')
+  76 [  21] LOADK     R8 = K42 ('Toggle the prearm switch.')
+  77 [  21] LOADK     R9 = K39 (11)
+  78 [  21] SETLIST   A=5 B=4 C=1
+  79 [  21] SETTABLE  R4[K39(11)] = R5
+  80 [  22] NEWTABLE  A=5 B=4 C=0
+  81 [  22] LOADK     R6 = K44 ('LOAD')
+  82 [  22] LOADK     R7 = K45 ('System load is too high for safe flight')
+  83 [  22] LOADK     R8 = K46 ('Revisit configuration and disable features.')
+  84 [  22] LOADK     R9 = K43 (12)
+  85 [  22] SETLIST   A=5 B=4 C=1
+  86 [  22] SETTABLE  R4[K43(12)] = R5
+  87 [  23] NEWTABLE  A=5 B=4 C=0
+  88 [  23] LOADK     R6 = K48 ('CALIB')
+  89 [  23] LOADK     R7 = K49 ('Sensor calibration is still ongoing')
+  90 [  23] LOADK     R8 = K50 ('Wait for sensor calibration to complete.')
+  91 [  23] LOADK     R9 = K47 (13)
+  92 [  23] SETLIST   A=5 B=4 C=1
+  93 [  23] SETTABLE  R4[K47(13)] = R5
+  94 [  24] NEWTABLE  A=5 B=4 C=0
+  95 [  24] LOADK     R6 = K52 ('CLI')
+  96 [  24] LOADK     R7 = K53 ('CLI is active')
+  97 [  24] LOADK     R8 = K54 ('Exit the CLI.')
+  98 [  24] LOADK     R9 = K51 (14)
+  99 [  24] SETLIST   A=5 B=4 C=1
+ 100 [  24] SETTABLE  R4[K51(14)] = R5
+ 101 [  25] NEWTABLE  A=5 B=4 C=0
+ 102 [  25] LOADK     R6 = K56 ('CMS')
+ 103 [  25] LOADK     R7 = K57 ('CMS (config menu) is Active - over OSD or other display')
+ 104 [  25] LOADK     R8 = K58 ('Exit the CMS (or OSD menu).')
+ 105 [  25] LOADK     R9 = K55 (15)
+ 106 [  25] SETLIST   A=5 B=4 C=1
+ 107 [  25] SETTABLE  R4[K55(15)] = R5
+ 108 [  26] NEWTABLE  A=5 B=4 C=0
+ 109 [  26] LOADK     R6 = K60 ('BST')
+ 110 [  26] LOADK     R7 = K61 ('BST device (ex TBS Core Pro) disarmed and is preventing arming')
+ 111 [  26] LOADK     R8 = K62 ('Refer to the manual for your hardware.')
+ 112 [  26] LOADK     R9 = K59 (16)
+ 113 [  26] SETLIST   A=5 B=4 C=1
+ 114 [  26] SETTABLE  R4[K59(16)] = R5
+ 115 [  27] NEWTABLE  A=5 B=4 C=0
+ 116 [  27] LOADK     R6 = K64 ('MSP')
+ 117 [  27] LOADK     R7 = K65 ('MSP connection is active, probably via Betaflight Configurator')
+ 118 [  27] LOADK     R8 = K66 ('Terminate the Betaflight Configurator connection (disconnect).')
+ 119 [  27] LOADK     R9 = K63 (17)
+ 120 [  27] SETLIST   A=5 B=4 C=1
+ 121 [  27] SETTABLE  R4[K63(17)] = R5
+ 122 [  28] NEWTABLE  A=5 B=4 C=0
+ 123 [  28] LOADK     R6 = K68 ('PARALYZE')
+ 124 [  28] LOADK     R7 = K69 ('Paralyze mode has been activated')
+ 125 [  28] LOADK     R8 = K70 ('Power cycle/reset FC board.')
+ 126 [  28] LOADK     R9 = K67 (18)
+ 127 [  28] SETLIST   A=5 B=4 C=1
+ 128 [  28] SETTABLE  R4[K67(18)] = R5
+ 129 [  29] NEWTABLE  A=5 B=4 C=0
+ 130 [  29] LOADK     R6 = K72 ('GPS')
+ 131 [  29] LOADK     R7 = K73 ('GPS rescue mode is configured but required number of satellites has not been fixed')
+ 132 [  29] LOADK     R8 = K74 ('Wait for GPS fix, enable arming without GPS fix, or disable GPS rescue mode.')
+ 133 [  29] LOADK     R9 = K71 (19)
+ 134 [  29] SETLIST   A=5 B=4 C=1
+ 135 [  29] SETTABLE  R4[K71(19)] = R5
+ 136 [  30] NEWTABLE  A=5 B=4 C=0
+ 137 [  30] LOADK     R6 = K76 ('RESCUE_SW')
+ 138 [  30] LOADK     R7 = K77 ('GPS Rescue switch is in an unsafe position')
+ 139 [  30] LOADK     R8 = K78 ('Turn off the GPS Rescue switch to arm.')
+ 140 [  30] LOADK     R9 = K75 (20)
+ 141 [  30] SETLIST   A=5 B=4 C=1
+ 142 [  30] SETTABLE  R4[K75(20)] = R5
+ 143 [  31] NEWTABLE  A=5 B=4 C=0
+ 144 [  31] LOADK     R6 = K80 ('RPMFILTER')
+ 145 [  31] LOADK     R7 = K81 ('Motor RPM-based filtering is not functioning')
+ 146 [  31] LOADK     R8 = K82 ("One or more ESC's are not supplying valid RPM telemetry.")
+ 147 [  31] LOADK     R9 = K79 (21)
+ 148 [  31] SETLIST   A=5 B=4 C=1
+ 149 [  31] SETTABLE  R4[K79(21)] = R5
+ 150 [  32] NEWTABLE  A=5 B=4 C=0
+ 151 [  32] LOADK     R6 = K84 ('REBOOT_REQD')
+ 152 [  32] LOADK     R7 = K85 ('Reboot required')
+ 153 [  32] LOADK     R8 = K86 ('Reboot the flight controller for settings changes to take effect.')
+ 154 [  32] LOADK     R9 = K83 (22)
+ 155 [  32] SETLIST   A=5 B=4 C=1
+ 156 [  32] SETTABLE  R4[K83(22)] = R5
+ 157 [  33] NEWTABLE  A=5 B=4 C=0
+ 158 [  33] LOADK     R6 = K88 ('DSHOT_BBANG')
+ 159 [  33] LOADK     R7 = K89 ('DSHOT Bitbang is not working')
+ 160 [  33] LOADK     R8 = K90 ('')
+ 161 [  33] LOADK     R9 = K87 (23)
+ 162 [  33] SETLIST   A=5 B=4 C=1
+ 163 [  33] SETTABLE  R4[K87(23)] = R5
+ 164 [  34] NEWTABLE  A=5 B=4 C=0
+ 165 [  34] LOADK     R6 = K92 ('NO_ACC_CAL')
+ 166 [  34] LOADK     R7 = K93 ('Accelerometer calibration required')
+ 167 [  34] LOADK     R8 = K94 ('Calibrate the accelerometer or disable features that use it')
+ 168 [  34] LOADK     R9 = K91 (24)
+ 169 [  34] SETLIST   A=5 B=4 C=1
+ 170 [  34] SETTABLE  R4[K91(24)] = R5
+ 171 [  35] NEWTABLE  A=5 B=4 C=0
+ 172 [  35] LOADK     R6 = K96 ('MOTOR_PROTO')
+ 173 [  35] LOADK     R7 = K97 ('ESC/Motor Protocol not configured')
+ 174 [  35] LOADK     R8 = K98 ('Select the ESC/Motor protocol to use on the Configuration tab.')
+ 175 [  35] LOADK     R9 = K95 (25)
+ 176 [  35] SETLIST   A=5 B=4 C=1
+ 177 [  35] SETTABLE  R4[K95(25)] = R5
+ 178 [  38] GETTABLE  R5 = R2[K99('FC')]
+ 179 [  38] GETTABLE  R5 = R5[K100('API_VERSION')]
+ 180 [  38] TEST      A=5 B=0 C=0
+ 181 [  38] JMP       A=0 ->188
+ 182 [  38] GETTABUP  R5 = UP0[K101('tonumber')]
+ 183 [  38] GETTABLE  R6 = R2[K99('FC')]
+ 184 [  38] GETTABLE  R6 = R6[K100('API_VERSION')]
+ 185 [  38] CALL      A=5 B=2 C=2
+ 186 [  38] LE        A=1 K102(1.4700000286102295), R5; skip-next if condition != A
+ 187 [  38] JMP       A=0 ->191
+ 188 [  38] LOADBOOL  A=5 B=0 C=0
+ 189 [  38] JMP       A=0 ->192
+ 190 [  38] LOADBOOL  A=5 B=0 C=1
+ 191 [  38] LOADBOOL  A=5 B=1 C=0
+ 192 [  39] TEST      A=5 B=0 C=0
+ 193 [  39] JMP       A=0 ->224
+ 194 [  40] LEN       A=6 B=4 C=0
+ 195 [  40] ADD       A=6 B=6 C=256
+ 196 [  40] NEWTABLE  A=7 B=4 C=0
+ 197 [  40] LOADK     R8 = K103 ('CRASH_FLIP')
+ 198 [  40] LOADK     R9 = K104 ('Crash Flip mode is enabled')
+ 199 [  40] LOADK     R10 = K105 ('Disable Crash Flip mode to arm.')
+ 200 [  40] LEN       A=11 B=4 C=0
+ 201 [  40] ADD       A=11 B=11 C=256
+ 202 [  40] SETLIST   A=7 B=4 C=1
+ 203 [  40] SETTABLE  R4[R6] = R7
+ 204 [  41] LEN       A=6 B=4 C=0
+ 205 [  41] ADD       A=6 B=6 C=256
+ 206 [  41] NEWTABLE  A=7 B=4 C=0
+ 207 [  41] LOADK     R8 = K106 ('ALT_HOLD')
+ 208 [  41] LOADK     R9 = K107 ('Altitude Hold mode is enabled')
+ 209 [  41] LOADK     R10 = K108 ('Disable Altitude Hold mode to arm.')
+ 210 [  41] LEN       A=11 B=4 C=0
+ 211 [  41] ADD       A=11 B=11 C=256
+ 212 [  41] SETLIST   A=7 B=4 C=1
+ 213 [  41] SETTABLE  R4[R6] = R7
+ 214 [  42] LEN       A=6 B=4 C=0
+ 215 [  42] ADD       A=6 B=6 C=256
+ 216 [  42] NEWTABLE  A=7 B=4 C=0
+ 217 [  42] LOADK     R8 = K109 ('POS_HOLD')
+ 218 [  42] LOADK     R9 = K110 ('Position Hold mode is enabled')
+ 219 [  42] LOADK     R10 = K111 ('Disable Position Hold mode to arm.')
+ 220 [  42] LEN       A=11 B=4 C=0
+ 221 [  42] ADD       A=11 B=11 C=256
+ 222 [  42] SETLIST   A=7 B=4 C=1
+ 223 [  42] SETTABLE  R4[R6] = R7
+ 224 [  44] LEN       A=6 B=4 C=0
+ 225 [  44] ADD       A=6 B=6 C=256
+ 226 [  44] NEWTABLE  A=7 B=4 C=0
+ 227 [  44] LOADK     R8 = K112 ('ARMSWITCH')
+ 228 [  44] LOADK     R9 = K113 ('Arm switch is in an unsafe position')
+ 229 [  44] LOADK     R10 = K114 ('Toggle the arm switch to arm.')
+ 230 [  44] LEN       A=11 B=4 C=0
+ 231 [  44] ADD       A=11 B=11 C=256
+ 232 [  44] SETLIST   A=7 B=4 C=1
+ 233 [  44] SETTABLE  R4[R6] = R7
+ 234 [  46] NEWTABLE  A=6 B=0 C=0
+ 235 [  48] GETTABLE  R7 = R2[K99('FC')]
+ 236 [  48] GETTABLE  R7 = R7[K115('ARMSTOPS')]
+ 237 [  48] TEST      A=7 B=0 C=0
+ 238 [  48] JMP       A=0 ->252
+ 239 [  49] GETTABUP  R7 = UP0[K116('ipairs')]
+ 240 [  49] GETTABLE  R8 = R2[K99('FC')]
+ 241 [  49] GETTABLE  R8 = R8[K115('ARMSTOPS')]
+ 242 [  49] CALL      A=7 B=2 C=4
+ 243 [  49] JMP       A=0 ->249
+ 244 [  50] GETTABLE  R12 = R11[K0(1)]
+ 245 [  51] LEN       A=13 B=6 C=0
+ 246 [  51] ADD       A=13 B=13 C=256
+ 247 [  51] GETTABLE  R14 = R4[R12]
+ 248 [  51] SETTABLE  R6[R13] = R14
+ 249 [  49] TFORCALL  A=7 B=0 C=2
+ 250 [  49] TFORLOOP  A=9 ->244
+ 251 [  52] JMP       A=0 ->253
+ 252 [  54] MOVE      A=6 B=4 C=0
+ 253 [  57] RETURN    A=6 B=2 C=0
+ 254 [  57] RETURN    A=0 B=1 C=0

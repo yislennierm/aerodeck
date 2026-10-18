@@ -1,0 +1,28 @@
+AERODECK ARM-STATUS-20261018 — local only
+
+Toolbar order: Home, Data, GPS, Video, Setup, Tools, Arm Info.
+The shield is the final icon and stays strictly green/red, including selection:
+ green = a current successfully decoded known mapping with no blocking flags;
+ red = blocking flags, no/stale status, decode errors or unsupported mapping.
+Green is a clear flag report, not proof of actual armed state or readiness.
+The health green is independent of Cyan/Amber navigation highlight selection.
+No new labels, badges or controls. Footer text colors and all caller/return
+handlers remain unchanged. Existing assets and20-mask startup are unchanged.
+Setup/Video context checks now use page identity rather than toolbar position.
+
+56 suites pass under LuaJIT and stock Lua5.3 int32/float32, bound to66 runtime
+files. Navigation covers33 actual UI and17 contract scenarios, including unknown
+zero masks, stale/missing/malformed status, accent independence, all destinations,
+settings drafts and nested caller-return chains. Two exact-source native TX16S
+EdgeTX3.0 WASM cold runs confirm10 reviewed PNGs, Data-first/Arm-last touch/focus,
+green with Amber highlight and red with Cyan highlight, with0CPU/script errors.
+Development widget/telemetry fixtures are disclosed; production main/modules/
+assets execute unchanged under20k. This is scoped UI/cold-start verification;
+physical EdgeTX2.12.4 performance and RF behavior are not established.
+
+Refresh:http://127.0.0.1:8766/ — ARM-STATUS-20261018.
+Local package:AERODECK-arm-status-install.zip. Radio installation is unchanged;
+last file-verified build remains REPLACEMENT-RC1-20261017 (DEPLOYMENT.txt).
+Evidence:development/build-ARM-STATUS-20261018.json and
+ development/ui-previews/arm-status-last/verification.json.
+Previous build archives and evidence remain frozen.

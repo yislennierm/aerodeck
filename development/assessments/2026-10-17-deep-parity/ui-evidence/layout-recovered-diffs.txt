@@ -1,0 +1,2456 @@
+--- 480X272/DB1/AHR.lua
+
++++ 480X320/DB1/AHR.lua
+
+@@ -71,3 +71,3 @@
+
+   local scale = 25
+-  local scaleCalib = -9
++  local scaleCalib = -33
+   local color = D.C.WHITE
+@@ -194,5 +194,5 @@
+
+           local distU = D.S.POS_DISTH >= 1000 and "km" or "m"
+-          X.TX(hdgX, w.yt + 7, "HOME", X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
+-          X.TX(hdgX + 54, w.yt + 3, distH, X.FONT_S, X.TEXT_RIGHT, D.C.WHITE)
+-          X.TX(hdgX + 58, w.yt + 7, distU, X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
++          X.TX(xpvl + 5, w.yt + 7, "HOME", X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
++          X.TX(xpvr - 20, w.yt + 3, distH, X.FONT_S, X.TEXT_RIGHT, D.C.WHITE)
++          X.TX(xpvr - 17, w.yt + 7, distU, X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
+         end
+--- 480X272/DB1/AHR.lua
+
++++ 800X480/DB1/AHR.lua
+
+@@ -6,6 +6,6 @@
+
+ function T.d(w)
+-  local wpv = 60
++  local wpv = 90
+   local xpvl = w.xl + wpv
+   local xpvr = w.xr - wpv
+-  local hph = 20
++  local hph = 30
+   local ypht = w.yt + hph
+@@ -68,6 +68,6 @@
+
+   end
+-  low = -3
+-  local high = 3
+-  local scale = 25
+-  local scaleCalib = -9
++  low = -5
++  local high = 5
++  local scale = 40
++  local scaleCalib = -45
+   local color = D.C.WHITE
+@@ -84,3 +84,3 @@
+
+       if yl + 8 < w.yb then
+-        X.TX(xnum, yl - 8, ss, font, align, color)
++        X.TX(xnum, yl - 12, ss, font, align, color)
+       end
+@@ -110,4 +110,4 @@
+
+   local boxW = wpv - 6
+-  local boxH = 24
+-  local boxyt = -10
++  local boxH = 36
++  local boxyt = -13
+   local drawScaleBox = function(x, y, value, dir, cTxt)
+@@ -166,10 +166,10 @@
+
+       if D.S.DIR_RBH < -48 then
+-        X.TRF(xpvl + 7, w.yt + 21, xpvl + 2, w.yt + 26, xpvl + 7, w.yt + 31, bhColor)
+-        X.TX(xpvl + 14, w.yt + 18, gcHDirDisp, X.FONT_S, X.TEXT_LEFT, bhColor)
++        X.TRF(xpvl + 7, w.yt + 35, xpvl + 2, w.yt + 40, xpvl + 7, w.yt + 45, bhColor)
++        X.TX(xpvl + 14, w.yt + 28, gcHDirDisp, X.FONT_S, X.TEXT_LEFT, bhColor)
+       elseif D.S.DIR_RBH > 48 then
+-        X.TRF(xpvr - 7, w.yt + 21, xpvr - 2, w.yt + 26, xpvr - 7, w.yt + 31, bhColor)
+-        X.TX(xpvr - 11, w.yt + 18, gcHDirDisp, X.FONT_S, X.TEXT_RIGHT, bhColor)
++        X.TRF(xpvr - 7, w.yt + 35, xpvr - 2, w.yt + 40, xpvr - 7, w.yt + 45, bhColor)
++        X.TX(xpvr - 11, w.yt + 28, gcHDirDisp, X.FONT_S, X.TEXT_RIGHT, bhColor)
+       else
+-        X.RCF(w.xc + D.S.DIR_RBH - 7, w.yt + 21, 13, 13, bhColor)
+-        X.TX(w.xc + D.S.DIR_RBH - 1, w.yt + 19, "H", X.FONT_S, X.TEXT_CENTER, D.C.BLACK)
++        X.RCF(w.xc + D.S.DIR_RBH - 8, w.yt + 31, 15, 18, bhColor)
++        X.TX(w.xc + D.S.DIR_RBH - 1, w.yt + 29, "H", X.FONT_S, X.TEXT_CENTER, D.C.BLACK)
+       end
+@@ -181,3 +181,3 @@
+
+   X.RCF(w.xl, w.yt + hph, wpv, hph / 2, D.C.BLACK, 5)
+-  X.TX(w.xl + wpv / 2, w.yt + hph - 3, mainSpeedUnit, X.FONT_XS, X.TEXT_CENTER, color)
++  X.TX(w.xl + wpv / 2, w.yt + hph - 5, mainSpeedUnit, X.FONT_XS, X.TEXT_CENTER, color)
+   color = D.C.GREY2
+@@ -185,3 +185,3 @@
+
+   X.RCF(xpvr, w.yt + hph, wpv, hph / 2, D.C.BLACK, 5)
+-  X.TX(xpvr + wpv / 2, w.yt + hph - 3, mainAltUnit, X.FONT_XS, X.TEXT_CENTER, color)
++  X.TX(xpvr + wpv / 2, w.yt + hph - 5, mainAltUnit, X.FONT_XS, X.TEXT_CENTER, color)
+   local spn = D.UI.TASKS_ID and D.UI.TASKS_ID.DB1SPN
+@@ -194,5 +194,5 @@
+
+           local distU = D.S.POS_DISTH >= 1000 and "km" or "m"
+-          X.TX(hdgX, w.yt + 7, "HOME", X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
+-          X.TX(hdgX + 54, w.yt + 3, distH, X.FONT_S, X.TEXT_RIGHT, D.C.WHITE)
+-          X.TX(hdgX + 58, w.yt + 7, distU, X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
++          X.TX(hdgX, w.yt + 10, "HOME", X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
++          X.TX(hdgX + 54, w.yt + 6, distH, X.FONT_S, X.TEXT_RIGHT, D.C.WHITE)
++          X.TX(hdgX + 58, w.yt + 10, distU, X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
+         end
+@@ -201,4 +201,4 @@
+
+       if D.S.DIR_GC then
+-        X.TX(hdgX, w.yt + 7, "GC", X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
+-        X.TX(hdgX + 60, w.yt + 3, math.floor(D.S.DIR_GC) .. D.UI.CHDEG, X.FONT_S, X.TEXT_RIGHT, D.C.WHITE)
++        X.TX(hdgX, w.yt + 10, "GC", X.FONT_XS, X.TEXT_LEFT, D.C.GREY1)
++        X.TX(hdgX + 60, w.yt + 6, math.floor(D.S.DIR_GC) .. D.UI.CHDEG, X.FONT_S, X.TEXT_RIGHT, D.C.WHITE)
+       end
+@@ -212,5 +212,5 @@
+
+           if roll < 0 then
+-            X.TRF(x, w.yb - 10, x + 5, w.yb - 5, x + 5, w.yb - 15, color)
++            X.TRF(x, w.yb - 15, x + 5, w.yb - 10, x + 5, w.yb - 20, color)
+           else
+-            X.TRF(x + 5, w.yb - 10, x, w.yb - 5, x, w.yb - 15, color)
++            X.TRF(x + 5, w.yb - 15, x, w.yb - 10, x, w.yb - 20, color)
+           end
+@@ -220,3 +220,3 @@
+
+         end
+-        X.TX(xpvl + 15, yphb + 2, disp .. D.UI.CHDEG, X.FONT_S, X.TEXT_LEFT, color)
++        X.TX(xpvl + 20, yphb + 3, disp .. D.UI.CHDEG, X.FONT_S, X.TEXT_LEFT, color)
+         if pitch ~= 0 then
+@@ -224,5 +224,5 @@
+
+           if pitch < 0 then
+-            X.TRF(x + 5, w.yb - 7, x, w.yb - 12, x + 10, w.yb - 12, color)
++            X.TRF(x + 5, w.yb - 15, x, w.yb - 20, x + 10, w.yb - 20, color)
+           else
+-            X.TRF(x + 5, w.yb - 12, x, w.yb - 7, x + 10, w.yb - 7, color)
++            X.TRF(x + 5, w.yb - 20, x, w.yb - 15, x + 10, w.yb - 15, color)
+           end
+@@ -232,3 +232,3 @@
+
+         end
+-        X.TX(xpvr - 17, yphb + 2, disp .. D.UI.CHDEG, X.FONT_S, X.TEXT_RIGHT, color)
++        X.TX(xpvr - 20, yphb + 3, disp .. D.UI.CHDEG, X.FONT_S, X.TEXT_RIGHT, color)
+       end
+@@ -238,3 +238,3 @@
+
+       X.TX(w.xl + wpv / 2, w.yb - 2 * hph, auxSpeedName, X.FONT_S, X.TEXT_CENTER, D.C.GREY1)
+-      X.TX(w.xl + wpv / 2, w.yb - hph - 6, auxSpeedUnit, X.FONT_XS, X.TEXT_CENTER, D.C.GREY1)
++      X.TX(w.xl + wpv / 2, w.yb - hph - 10, auxSpeedUnit, X.FONT_XS, X.TEXT_CENTER, D.C.GREY1)
+       X.TX(w.xl + wpv / 2, w.yb - hph + 3, auxSpeed, X.FONT_STD, X.TEXT_CENTER, D.C.WHITE)
+@@ -244,3 +244,3 @@
+
+       X.TX(xpvr + wpv / 2, w.yb - 2 * hph, auxAltName, X.FONT_S, X.TEXT_CENTER, D.C.GREY1)
+-      X.TX(xpvr + wpv / 2, w.yb - hph - 6, auxAltUnit, X.FONT_XS, X.TEXT_CENTER, D.C.GREY1)
++      X.TX(xpvr + wpv / 2, w.yb - hph - 10, auxAltUnit, X.FONT_XS, X.TEXT_CENTER, D.C.GREY1)
+       X.TX(xpvr + wpv / 2, w.yb - hph + 3, auxAlt, X.FONT_STD, X.TEXT_CENTER, D.C.WHITE)
+--- 480X272/DB1/ATT.lua
+
++++ 800X480/DB1/ATT.lua
+
+@@ -27,4 +27,4 @@
+
+       local pitchDisp = math.floor(D.S.ATT_PITCH) .. D.UI.CHDEG
+-      X.TX(w.xl + 39, w.yt + 31, "PITCH", X.FONT_XS, X.TEXT_CENTER, D.C.MD_V)
+-      X.TX(w.xl + 54, w.yt + 40, pitchDisp, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 58, w.yt + 46, "PITCH", X.FONT_XS, X.TEXT_CENTER, D.C.MD_V)
++      X.TX(w.xl + 81, w.yt + 60, pitchDisp, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+     end
+@@ -34,4 +34,4 @@
+
+       local pitchDisp = math.floor(D.S.ATT_ROLL) .. D.UI.CHDEG
+-      X.TX(w.xl + 84, w.yt + 31, "ROLL", X.FONT_XS, X.TEXT_RIGHT, D.C.MD_V)
+-      X.TX(w.xl + 86, w.yt + 40, pitchDisp, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 126, w.yt + 46, "ROLL", X.FONT_XS, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 129, w.yt + 60, pitchDisp, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+     end
+@@ -42,6 +42,6 @@
+
+         local yawDisp = math.floor(D.S.ATT_YAW) .. D.UI.CHDEG
+-        X.TX(w.xl + 56, w.yt + 75, "YAW", X.FONT_XS, X.TEXT_CENTER, D.C.MD_V)
+-        X.TX(w.xl + 58, w.yt + 59, yawDisp, X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
++        X.TX(w.xl + 84, w.yt + 88, "YAW", X.FONT_XS, X.TEXT_CENTER, D.C.MD_V)
++        X.TX(w.xl + 87, w.yt + 102, yawDisp, X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
+       end
+-      local r = 47
++      local r = 70
+       local xd = 0
+--- 480X272/DB1/BAT.lua
+
++++ 480X320/DB1/BAT.lua
+
+@@ -24,6 +24,6 @@
+
+     dt = D.UI.SNV({s = "SN21", vd = val})
+-    t4 = {b = {w.xl, w.yt + 185, w.w, 24, dt.cb},
+-            v = {w.xl + 49, w.yt + 193, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-            l = {w.xl + 38, w.yt + 185, "BATT", X.FONT_XXS, X.TEXT_CENTER, dt.cl},
+-            u = {w.xl + 51, w.yt + 197, "V", X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
++    t4 = {b = {w.xl, w.yt + 231, w.w, 26, dt.cb},
++            v = {w.xl + 49, w.yt + 239, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++            l = {w.xl + 38, w.yt + 231, "BATT", X.FONT_XXS, X.TEXT_CENTER, dt.cl},
++            u = {w.xl + 51, w.yt + 243, "V", X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
+     D.UI.DIT(t4)
+@@ -52,6 +52,6 @@
+
+       local x = w.xl + (D.SEN.SN24u == "Ah" and 48 or 40)
+-      t5 = {b = {w.xl, w.yt + 158, w.w, 23, dt.cb},
+-                v = {x, w.yt + 166, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 38, w.yt + 158, D.SEN.SN24n, X.FONT_XXS, X.TEXT_CENTER, dt.cl},
+-                u = {x + 3, w.yt + 170, dt.unit, X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
++      t5 = {b = {w.xl, w.yt + 196, w.w, 23, dt.cb},
++                v = {x, w.yt + 204, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 38, w.yt + 196, D.SEN.SN24n, X.FONT_XXS, X.TEXT_CENTER, dt.cl},
++                u = {x + 3, w.yt + 208, dt.unit, X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
+       D.UI.DIT(t5)
+--- 480X272/DB1/BAT.lua
+
++++ 800X480/DB1/BAT.lua
+
+@@ -8,5 +8,6 @@
+
+     local t5 = {}
+-    t5.x = w.xl + 24
+-    t5.y = w.yt + 51
+-    t5.w = 28
++    t5.x = w.xl + 40
++    t5.y = w.yt + 82
++    t5.w = 46
++    t5.h = 110
+     t5.bg = true
+@@ -24,6 +25,6 @@
+
+     dt = D.UI.SNV({s = "SN21", vd = val})
+-    t4 = {b = {w.xl, w.yt + 185, w.w, 24, dt.cb},
+-            v = {w.xl + 49, w.yt + 193, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-            l = {w.xl + 38, w.yt + 185, "BATT", X.FONT_XXS, X.TEXT_CENTER, dt.cl},
+-            u = {w.xl + 51, w.yt + 197, "V", X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
++    t4 = {b = {w.xl, w.yt + 345, w.w, 41, dt.cb},
++            v = {w.xl + 81, w.yt + 359, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++            l = {w.xl + 63, w.yt + 347, "BATT", X.FONT_XXS, X.TEXT_CENTER, dt.cl},
++            u = {w.xl + 85, w.yt + 365, "V", X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
+     D.UI.DIT(t4)
+@@ -33,6 +34,6 @@
+
+       dt = D.UI.SNV({s = "SN22"}, true)
+-      D.UI.DBAR(dt, {x = w.xl + 13, y = w.yt + 51, bg = true})
+-      t4 = {b = {w.xl, w.yt + 133, 37, 23, dt.cb},
+-                v = {w.xl + 32, w.yt + 141, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 12, w.yt + 133, D.SEN.SN22n, X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
++      D.UI.DBAR(dt, {x = w.xl + 22, y = w.yt + 82, w = 12, h = 110, bg = true})
++      t4 = {b = {w.xl, w.yt + 200, 61, 37, dt.cb},
++                v = {w.xl + 53, w.yt + 214, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 20, w.yt + 200, D.SEN.SN22n, X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
+       D.UI.DIT(t4)
+@@ -41,6 +42,6 @@
+
+       dt = D.UI.SNV({s = "SN23"}, true)
+-      D.UI.DBAR(dt, {x = w.xl + 56, y = w.yt + 51, bg = true})
+-      t4 = {b = {w.xl + 39, w.yt + 133, 36, 23, dt.cb},
+-                v = {w.xl + 65, w.yt + 141, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 67, w.yt + 133, D.SEN.SN23n, X.FONT_XXS, X.TEXT_RIGHT, dt.cl}}
++      D.UI.DBAR(dt, {x = w.xl + 93, y = w.yt + 82, w = 12, h = 110, bg = true})
++      t4 = {b = {w.xl + 65, w.yt + 200, 60, 37, dt.cb},
++                v = {w.xl + 108, w.yt + 214, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 111, w.yt + 200, D.SEN.SN23n, X.FONT_XXS, X.TEXT_RIGHT, dt.cl}}
+       D.UI.DIT(t4)
+@@ -51,7 +52,7 @@
+
+       dt = D.UI.SNV(t4)
+-      local x = w.xl + (D.SEN.SN24u == "Ah" and 48 or 40)
+-      t5 = {b = {w.xl, w.yt + 158, w.w, 23, dt.cb},
+-                v = {x, w.yt + 166, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 38, w.yt + 158, D.SEN.SN24n, X.FONT_XXS, X.TEXT_CENTER, dt.cl},
+-                u = {x + 3, w.yt + 170, dt.unit, X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
++      local x = w.xl + (D.SEN.SN24u == "Ah" and 80 or 66)
++      t5 = {b = {w.xl, w.yt + 291, w.w, 41, dt.cb},
++                v = {x, w.yt + 308, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 63, w.yt + 294, D.SEN.SN24n, X.FONT_XXS, X.TEXT_CENTER, dt.cl},
++                u = {x + 5, w.yt + 313, dt.unit, X.FONT_XXS, X.TEXT_LEFT, dt.cl}}
+       D.UI.DIT(t5)
+--- 480X272/DB1/BFV.lua
+
++++ 800X480/DB1/BFV.lua
+
+@@ -37,8 +37,8 @@
+
+   local xo, yo
+-  local bw = 96
+-  local bh = 32
+-  X.TX(w.xc, w.yt + 5, "Battery Pack connected", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  local bw = 159
++  local bh = 48
++  X.TX(w.xc, w.yt + 8, "Battery Pack connected", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+   for i = 0, 5 do
+-    xo = w.xl + (i < 3 and 8 or 114)
+-    yo = w.yt + 29 + i % 3 * 37
++    xo = w.xl + (i < 3 and 23 or 199)
++    yo = w.yt + 44 + i % 3 * 56
+     local favID = T.favs[i] and T.favs[i].id or 0
+@@ -55,6 +55,6 @@
+
+       X.RC(xo, yo, bw, bh, cFrm)
+-      X.RCF(xo + bw, yo + 6, 4, 20, cFrm)
++      X.RCF(xo + bw, yo + 9, 7, 30, cFrm)
+       if T.selN == i then
+         X.RC(xo, yo, bw, bh, cBkg)
+-        X.RCF(xo + bw, yo + 6, 4, 20, cBkg)
++        X.RCF(xo + bw, yo + 9, 7, 30, cBkg)
+       end
+@@ -68,10 +68,10 @@
+
+         end
+-        X.TX(xo + 3, yo + 1, battType, X.FONT_S, X.TEXT_LEFT, cTxt)
+-        X.TX(xo + 61, yo + 1, T.favs[i].s, X.FONT_S, X.TEXT_RIGHT, cTxt)
+-        X.TX(xo + 64, yo + 1, "S", X.FONT_S, X.TEXT_LEFT, cTxt)
+-        X.TX(xo + 61, yo + 15, battCapa, X.FONT_S, X.TEXT_RIGHT, cTxt)
+-        X.TX(xo + 64, yo + 15, unit, X.FONT_S, X.TEXT_LEFT, cTxt)
++        X.TX(xo + 5, yo + 2, battType, X.FONT_S, X.TEXT_LEFT, cTxt)
++        X.TX(xo + 101, yo + 2, T.favs[i].s, X.FONT_S, X.TEXT_RIGHT, cTxt)
++        X.TX(xo + 106, yo + 2, "S", X.FONT_S, X.TEXT_LEFT, cTxt)
++        X.TX(xo + 101, yo + 23, battCapa, X.FONT_S, X.TEXT_RIGHT, cTxt)
++        X.TX(xo + 106, yo + 23, unit, X.FONT_S, X.TEXT_LEFT, cTxt)
+       else
+-        X.TX(xo + 48, yo + 1, "config", X.FONT_S, X.TEXT_CENTER, cTxt)
+-        X.TX(xo + 48, yo + 14, "auto sense", X.FONT_S, X.TEXT_CENTER, cTxt)
++        X.TX(xo + 80, yo + 2, "config", X.FONT_S, X.TEXT_CENTER, cTxt)
++        X.TX(xo + 80, yo + 21, "auto sense", X.FONT_S, X.TEXT_CENTER, cTxt)
+       end
+--- 480X272/DB1/BTC.lua
+
++++ 800X480/DB1/BTC.lua
+
+@@ -3,9 +3,9 @@
+
+   local xo, yo, xs, yi
+-  local bw, bh = 54, 20
+-  local vs = 19
+-  X.TX(w.xc, w.yt + 5, "Battery Cells voltage", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  local bw, bh = 90, 30
++  local vs = 29
++  X.TX(w.xc, w.yt + 8, "Battery Cells voltage", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+   if D.S.BT_MD_CELLS_V then
+     for i, v in ipairs(D.S.BT_MD_CELL_V) do
+-      local t13 = i <= 18 and 111
+-      xs = 164
++      local t13 = i <= 18 and 194
++      xs = 282
+       xo = w.xl + xs
+@@ -14,3 +14,3 @@
+
+       yi = i - 19
+-      yo = w.yt + 24 + yi * vs
++      yo = w.yt + 50 + yi * vs
+       cBkg = D.C.MD_B
+@@ -20,7 +20,7 @@
+
+       X.RC(xo, yo, bw, bh, cFrm)
+-      X.TX(xo + 3, yo + 2, i, X.FONT_XS, X.TEXT_LEFT, cLbl)
+-      X.TX(xo + 47, yo, string.format("%.2f", v), X.FONT_STD, X.TEXT_RIGHT, cTxt)
++      X.TX(xo + 5, yo + 3, i, X.FONT_XS, X.TEXT_LEFT, cLbl)
++      X.TX(xo + 78, yo, string.format("%.2f", v), X.FONT_STD, X.TEXT_RIGHT, cTxt)
+     end
+   else
+-    X.TX(w.xc, w.yt + 30, "No cell voltage data", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(w.xc, w.yt + 45, "No cell voltage data", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+   end
+--- 480X272/DB1/CEL.lua
+
++++ 800X480/DB1/CEL.lua
+
+@@ -6,6 +6,6 @@
+
+     val = ""
+-    vx, y, va = w.xl + 28, w.yt + 3, X.TEXT_CENTER
++    vx, y, va = w.xl + 46, w.yt + 7, X.TEXT_CENTER
+     if not D.S.UI_THM_OV then
+-      vx, y, va = w.xl + 68, w.yt + 5, X.TEXT_RIGHT
+-      X.TX(w.xl + 6, y, "CELLS", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++      vx, y, va = w.xl + 112, w.yt + 9, X.TEXT_RIGHT
++      X.TX(w.xl + 10, y, "CELLS", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+     end
+--- 480X272/DB1/CMP.lua
+
++++ 800X480/DB1/CMP.lua
+
+@@ -5,5 +5,10 @@
+
+ function T.d(w)
+-  X.MK(T.cpd, w.xl, w.yt + 4, D.C.MD_V)
++  local pw, ph = 162, 165
++  local px = w.xl + math.floor((w.w - pw) / 2)
++  local py = w.yt + math.floor((w.h - ph) / 2)
++  local pcx = px + 81
++  local pcy = py + 82
++  X.MK(T.cpd, px, py, D.C.MD_V)
+   if D.S.GPS_DATA then
+-    local r = 47
++    local r = 70
+     local xd = 0
+@@ -15,3 +20,3 @@
+
+         yd = math.floor(r * math.cos(gcHRad)) * -1
+-        X.CRF(w.xc + xd, w.yc + yd, 6, D.C.WARN)
++        X.CRF(pcx + xd, pcy + yd, 6, D.C.WARN)
+       end
+@@ -19,4 +24,4 @@
+
+         local gcDisp = math.floor(D.S.DIR_GC) .. D.UI.CHDEG
+-        X.TX(w.xc + 5, w.yt + 34, gcDisp, X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+-        X.TX(w.xc + 1, w.yt + 52, "GC", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++        X.TX(pcx + 7, pcy - 27, gcDisp, X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++        X.TX(pcx + 2, pcy - 1, "GC", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+         local gcRad = math.rad(D.S.DIR_GC)
+@@ -24,3 +29,3 @@
+
+         yd = math.floor(r * math.cos(gcRad)) * -1
+-        X.CRF(w.xc + xd, w.yc + yd, 4, D.C.OK)
++        X.CRF(pcx + xd, pcy + yd, 4, D.C.OK)
+       end
+--- 480X272/DB1/FCD.lua
+
++++ 480X320/DB1/FCD.lua
+
+@@ -50,3 +50,3 @@
+
+   T.selN = 1
+-  T.lineN = 8
++  T.lineN = 12
+ end
+--- 480X272/DB1/FCD.lua
+
++++ 800X480/DB1/FCD.lua
+
+@@ -50,3 +50,3 @@
+
+   T.selN = 1
+-  T.lineN = 8
++  T.lineN = 13
+ end
+@@ -63,7 +63,7 @@
+
+ function T.d(w)
+-  local x1, x2 = w.xl + 8, w.xl + 90
+-  X.TX(w.xc, w.yt + 5, "Firmware / FC", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  local x1, x2 = w.xl + 23, w.xl + 159
++  X.TX(w.xc, w.yt + 8, "Firmware / FC", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+   for i, fData in ipairs(T.data) do
+     if i >= T.selN and i <= T.selN + T.lineN then
+-      X.TX(x1, w.yt + 15 + (i - T.selN + 1) * 12, fData[2], X.FONT_XS, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(x1, w.yt + 23 + (i - T.selN + 1) * 18, fData[2], X.FONT_XS, X.TEXT_LEFT, D.C.MD_L)
+       local val = "-"
+@@ -82,3 +82,3 @@
+
+       end
+-      X.TX(x2, w.yt + 15 + (i - T.selN + 1) * 12, val, X.FONT_XS, X.TEXT_LEFT, D.C.MD_V)
++      X.TX(x2, w.yt + 23 + (i - T.selN + 1) * 18, val, X.FONT_XS, X.TEXT_LEFT, D.C.MD_V)
+     end
+--- 480X272/DB1/FM.lua
+
++++ 800X480/DB1/FM.lua
+
+@@ -3,3 +3,3 @@
+
+   local color = D.S.TLM_ON and D.C.MD_V or D.C.MD_L
+-  X.TX(w.xc, w.yt + 5, D.S.FC_FM_NAME or "---", X.FONT_STD_BOLD, X.TEXT_CENTER, D.CFGSTR.iFMS == 0 and D.C.MD_V or color)
++  X.TX(w.xc, w.yt + 8, D.S.FC_FM_NAME or "---", X.FONT_STD_BOLD, X.TEXT_CENTER, D.CFGSTR.iFMS == 0 and D.C.MD_V or color)
+   return
+--- 480X272/DB1/FMI.lua
+
++++ 800X480/DB1/FMI.lua
+
+@@ -8,12 +8,13 @@
+
+   if D.S.IND_AM then
+-    X.RCF(w.xl, w.yt, 35, 30, D.C.INB_ON)
+-    X.MK(T.icAir, w.xl + 9, w.yt + 7, D.C.INV_ON)
++    local xo = D.S.UI_THM_OV and 10 or 14
++    X.RCF(w.xl, w.yt, 52, w.h, D.C.INB_ON)
++    X.MK(T.icAir, w.xl + xo, w.yt + 10, D.C.INV_ON)
+   end
+   if D.S.IND_RTH then
+-    X.RCF(w.xl + 36, w.yt, 35, 30, D.C.INB_AL)
+-    X.MK(T.icRTH, w.xl + 41, w.yt + 7, D.C.INV_AL)
++    X.RCF(w.xl + 54, w.yt, 54, w.h, D.C.INB_AL)
++    X.MK(T.icRTH, w.xl + 62, w.yt + 10, D.C.INV_AL)
+   else
+     if D.S.IND_TU then
+-      X.RCF(w.xl + 36, w.yt, 35, 30, D.C.INB_AL)
+-      X.MK(T.icTm, w.xl + 41, w.yt + 7, D.C.INV_AL)
++      X.RCF(w.xl + 56, w.yt, 54, w.h, D.C.INB_AL)
++      X.MK(T.icTm, w.xl + 62, w.yt + 10, D.C.INV_AL)
+     end
+--- 480X272/DB1/GPS.lua
+
++++ 800X480/DB1/GPS.lua
+
+@@ -8,5 +8,5 @@
+
+   local var
+-  X.MK(T.icSat, w.xl + 8, w.yt + 8, D.C.MD_V)
+-  X.MK(T.icDrone, w.xl + 8, w.yt + 33, D.C.MD_V)
+-  if G.fm.pgg then X.MK(T.icHome, w.xl + 8, w.yt + 83, D.C.MD_V) end
++  X.MK(T.icSat, w.xl + 8, w.yt + 12, D.C.MD_V)
++  X.MK(T.icDrone, w.xl + 8, w.yt + 50, D.C.MD_V)
++  if G.fm.pgg then X.MK(T.icHome, w.xl + 8, w.yt + 125, D.C.MD_V) end
+   local color, color2 = D.C.MD_V
+@@ -17,17 +17,18 @@
+
+     color2 = color
+-    X.TX(w.xl + 60, w.yt + 4, var, X.FONT_L, X.TEXT_RIGHT, color)
++    X.TX(w.xl + 85, w.yt + 6, var, X.FONT_L, X.TEXT_RIGHT, color)
+     t4 = D.S.GPS_HDOP and D.S.GPS_HDOP
+     var = ""
+-    X.TX(w.xl + 64, w.yt + 8, "HDOP", X.FONT_XS, X.TEXT_LEFT, color)
+-    X.TX(w.xl + 101, w.yt + 4, var, X.FONT_S, X.TEXT_RIGHT, color)
+-    X.GA(w.xl + 64, w.yt + 21, 37, 5, D.S.GPS_HDOP or 0, 9, nil, color)
++    X.TX(w.xl + 91, w.yt + 11, "HDOP", X.FONT_XS, X.TEXT_LEFT, color)
++    X.TX(w.xl + 153, w.yt + 7, var, X.FONT_S, X.TEXT_RIGHT, color)
++    X.GA(w.xl + 91, w.yt + 32, 61, 8, D.S.GPS_HDOP or 0, 9, nil, color)
+     local lat = D.S.POS_LAT and string.format("%3.6f", D.S.POS_LAT) or ""
+-    X.TX(w.xl + 101, w.yt + 29, lat, X.FONT_S, X.TEXT_RIGHT, color)
++    X.TX(w.xl + 153, w.yt + 44, lat, X.FONT_S, X.TEXT_RIGHT, color)
+     local lon = D.S.POS_LON and string.format("%3.6f", D.S.POS_LON) or ""
+     do
+-      X.TX(w.xl + 101, w.yt + 42, lon, X.FONT_S, X.TEXT_RIGHT, color)
++      X.TX(w.xl + 153, w.yt + 63, lon, X.FONT_S, X.TEXT_RIGHT, color)
+       if D.S.POS_FIX then
+-        X.RCF(w.xl + 23, w.yt + 45, 9, 12, D.C.MD_B)
+-        X.RCF(w.xl + 25, w.yt + 50, 7, 6, D.C.OK)
+-        X.CR(w.xl + 28, w.yt + 49, 2, D.C.OK)
++        X.RCF(w.xl + 31, w.yt + 69, 15, 16, D.C.MD_B)
++        X.RCF(w.xl + 32, w.yt + 75, 13, 9, D.C.OK)
++        X.CR(w.xl + 38, w.yt + 74, 4, D.C.OK)
++        X.CR(w.xl + 38, w.yt + 74, 3, D.C.OK)
+       end
+@@ -36,3 +37,3 @@
+
+       end
+-      X.TX(w.xl + 101, w.yt + 81, latH, X.FONT_S, X.TEXT_RIGHT, color)
++      X.TX(w.xl + 153, w.yt + 122, latH, X.FONT_S, X.TEXT_RIGHT, color)
+       if G.fm.pgg and D.S.POS_LONH then
+@@ -40,9 +41,10 @@
+
+       end
+-      X.TX(w.xl + 101, w.yt + 94, lonH, X.FONT_S, X.TEXT_RIGHT, color)
++      X.TX(w.xl + 153, w.yt + 141, lonH, X.FONT_S, X.TEXT_RIGHT, color)
+       if G.fm.pgg and D.S.POS_FIXH then
+-        X.RCF(w.xl + 23, w.yt + 96, 9, 12, D.C.MD_B)
+-        X.RCF(w.xl + 25, w.yt + 101, 7, 6, D.C.OK)
+-        X.CR(w.xl + 28, w.yt + 99, 2, D.C.OK)
+-        local x0 = w.xl + 18
+-        local y0 = w.yt + 68
++        X.RCF(w.xl + 31, w.yt + 148, 15, 16, D.C.MD_B)
++        X.RCF(w.xl + 32, w.yt + 154, 12, 9, D.C.OK)
++        X.CR(w.xl + 38, w.yt + 153, 4, D.C.OK)
++        X.CR(w.xl + 38, w.yt + 153, 3, D.C.OK)
++        local x0 = w.xl + 25
++        local y0 = w.yt + 102
+         local x1, y1, x2, y2, x3, y3, x4, y4
+@@ -52,4 +54,4 @@
+
+           dd = dd % 360
+-          local px = x0 + math.floor(r * math.sin(math.rad(dd)))
+-          local py = y0 - math.floor(r * math.cos(math.rad(dd)))
++          local px = x0 + math.floor(r * 1.6599999666214 * math.sin(math.rad(dd)))
++          local py = y0 - math.floor(r * 1.5 * math.cos(math.rad(dd)))
+           return px, py
+@@ -66,3 +68,3 @@
+
+         end
+-        X.TX(w.xl + 82, w.yt + 60, distH, X.FONT_STD, X.TEXT_RIGHT, color)
++        X.TX(w.xl + 126, w.yt + 93, distH, X.FONT_STD, X.TEXT_RIGHT, color)
+         if D.S.POS_DISTH then
+@@ -71,3 +73,3 @@
+
+         end
+-        X.TX(w.xl + 98, w.yt + 67, distU, X.FONT_XS, X.TEXT_RIGHT, color)
++        X.TX(w.xl + 153, w.yt + 101, distU, X.FONT_XS, X.TEXT_RIGHT, color)
+       end
+--- 480X272/DB1/LITE.lua
+
++++ 800X480/DB1/LITE.lua
+
+@@ -6,8 +6,8 @@
+
+ function T.d(w)
+-  X.TX(w.xc, w.yt + 4, "FM2M ToolBox LITE version", X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
+-  X.TX(w.xc, w.yt + 18, "upgrade and support project", X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
+-  X.MK(T.qrwww, w.xl + 10, w.yt + 36, D.C.MD_V)
+-  X.TX(w.xl + 55, w.yt + 126, "Website", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+-  X.MK(T.qrfb, w.xl + 120, w.yt + 36, D.C.MD_V)
+-  X.TX(w.xl + 165, w.yt + 126, "FB Group", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  X.TX(w.xc, w.yt + 8, "FM2M ToolBox LITE version", X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
++  X.TX(w.xc, w.yt + 28, "upgrade and support project", X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
++  X.MK(T.qrwww, w.xl + 30, w.yt + 55, D.C.MD_V)
++  X.TX(w.xl + 100, w.yt + 200, "Website", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  X.MK(T.qrfb, w.xl + 220, w.yt + 55, D.C.MD_V)
++  X.TX(w.xl + 290, w.yt + 200, "FB Group", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+   return
+--- 480X272/DB1/LITE2.lua
+
++++ 800X480/DB1/LITE2.lua
+
+@@ -2,5 +2,5 @@
+
+ function T.d(w)
+-  X.RCF(w.xl, w.yt, 53, 34, D.C.MD_L)
+-  X.TX(w.xl + 46, w.yt + 9, "WWW", X.FONT_S, X.TEXT_RIGHT, D.C.MD_B)
+-  X.TX(w.xl + 60, w.yt + 9, "https://fm2m.online", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++  X.RCF(w.xl, w.yt, 70, w.h, D.C.MD_L)
++  X.TX(w.xl + 58, w.yt + 15, "WWW", X.FONT_S, X.TEXT_RIGHT, D.C.MD_B)
++  X.TX(w.xl + 84, w.yt + 15, "https://fm2m.online", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+   return
+--- 480X272/DB1/MDL.lua
+
++++ 800X480/DB1/MDL.lua
+
+@@ -23,7 +23,7 @@
+
+   if D.S.UI_THM_OV then
+-    X.RCF(w.xl, w.yt, w.w, 35, cBkg)
+-    X.RCF(w.xl + 9, w.yt + 35, w.w - 18, 28, cBkg)
++    X.RCF(w.xl, w.yt, w.w, 54, cBkg)
++    X.RCF(w.xl + 9, w.yt + 54, w.w - 18, 43, cBkg)
+     if not D.S.TLM_ON then
+-      X.RCF(w.xl, w.yt, w.w, 35, D.C.MD_B, D.UI.dimTLM)
+-      X.RCF(w.xl + 9, w.yt + 35, w.w - 18, 28, D.C.MD_B, D.UI.dimTLM)
++      X.RCF(w.xl, w.yt, w.w, 54, D.C.MD_B, D.UI.dimTLM)
++      X.RCF(w.xl + 9, w.yt + 54, w.w - 18, 43, D.C.MD_B, D.UI.dimTLM)
+     end
+@@ -40,3 +40,3 @@
+
+     local label = D.S.mspReady and D.S.ARM_STOP_LIST or "Arming disabled"
+-    X.RCF(w.xl, w.yt, w.w, 16, D.C.SNB_C, 7)
++    X.RCF(w.xl, w.yt, w.w, 24, D.C.SNB_C, 7)
+     if D.TI.tick50 then
+--- 480X272/DB1/MEM.lua
+
++++ 800X480/DB1/MEM.lua
+
+@@ -2,5 +2,5 @@
+
+ function T.d(w)
+-  X.RCF(w.xl, w.yt, 42, 34, D.C.MD_L)
+-  X.TX(w.xl + 36, w.yt + 9, "MEM", X.FONT_S, X.TEXT_RIGHT, D.C.MD_B)
+-  X.TX(w.xl + 48, w.yt + 9, G.memC .. " KB (" .. G.memX .. " KB)", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++  X.RCF(w.xl, w.yt, 70, w.w, D.C.MD_L)
++  X.TX(w.xl + 35, w.yt + 15, "MEM", X.FONT_S, X.TEXT_CENTER, D.C.MD_B)
++  X.TX(w.xl + 80, w.yt + 15, G.memC .. " KB (" .. G.memX .. " KB)", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+   return
+--- 480X272/DB1/MSP.lua
+
++++ 800X480/DB1/MSP.lua
+
+@@ -2,7 +2,7 @@
+
+ function T.d(w)
+-  X.RCF(w.xl, w.yt, 42, 34, D.C.MD_L)
+-  X.TX(w.xl + 36, w.yt + 9, "MSP", X.FONT_S, X.TEXT_RIGHT, D.C.MD_B)
++  X.RCF(w.xl, w.yt, 70, w.w, D.C.MD_L)
++  X.TX(w.xl + 35, w.yt + 15, "MSP", X.FONT_S, X.TEXT_CENTER, D.C.MD_B)
+   if D.S.mspTxReady then
+     local color = D.S.mspInfoWarn and D.C.WARN or D.C.MD_V
+-    X.TX(w.xl + 48, w.yt + 9, D.S.mspInfo or "", X.FONT_S, X.TEXT_LEFT, color)
++    X.TX(w.xl + 80, w.yt + 15, D.S.mspInfo or "", X.FONT_S, X.TEXT_LEFT, color)
+   end
+--- 480X272/DB1/POS.lua
+
++++ 800X480/DB1/POS.lua
+
+@@ -6,19 +6,19 @@
+
+ function T.d(w)
+-  local sizeH = 40
+-  local sizeV = 27
+-  X.TX(w.xl + 6, w.yt + 7, "ETH", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++  local sizeH = 60
++  local sizeV = 40
++  X.TX(w.xl + 10, w.yt + 10, "ETH", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+   if D.S.POS_TIMEH then
+     if D.S.POS_TIMEH.h > 0 then
+-      X.TX(w.xl + 51, w.yt + 4, string.format("%02d", D.S.POS_TIMEH.h), X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
+-      X.TX(w.xl + 51, w.yt + 7, "H", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xl + 74, w.yt + 7, string.format("%02d", D.S.POS_TIMEH.h), X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 76, w.yt + 10, "H", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     end
+     if D.S.POS_TIMEH.m > 0 or D.S.POS_TIMEH.h > 0 then
+-      X.TX(w.xl + 79, w.yt + 4, string.format("%02d", D.S.POS_TIMEH.m), X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
+-      X.TX(w.xl + 80, w.yt + 7, "M", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xl + 115, w.yt + 7, string.format("%02d", D.S.POS_TIMEH.m), X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 117, w.yt + 10, "M", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     end
+     if D.S.POS_TIMEH.m > 0 or D.S.POS_TIMEH.h > 0 then
+-      X.TX(w.xl + 105, w.yt + 7, string.format("%02d", D.S.POS_TIMEH.s), X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 154, w.yt + 10, string.format("%02d", D.S.POS_TIMEH.s), X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+     else
+-      X.TX(w.xl + 92, w.yt + 4, string.format("%2d", D.S.POS_TIMEH.s), X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
+-      X.TX(w.xl + 94, w.yt + 7, "S", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xl + 140, w.yt + 7, string.format("%2d", D.S.POS_TIMEH.s), X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 142, w.yt + 10, "S", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     end
+@@ -29,5 +29,5 @@
+
+     do
+-      local xd = (D.GPS.posLog[1].lon - D.GPS.posLog[0].lon) * 1000
++      local xd = (D.GPS.posLog[1].lon - D.GPS.posLog[0].lon) * 1660
+       xd = math.max(math.min(xd, sizeH), -sizeH)
+-      local yd = (D.GPS.posLog[1].lat - D.GPS.posLog[0].lat) * -1000
++      local yd = (D.GPS.posLog[1].lat - D.GPS.posLog[0].lat) * -1500
+       yd = math.max(math.min(yd, sizeV), -sizeV)
+@@ -37,3 +37,3 @@
+
+   end
+-  X.TX(w.xl + 6, w.yb - 20, "DIST", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++  X.TX(w.xl + 10, w.yb - 28, "DIST", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+   if D.S.POS_DISTH then
+@@ -41,5 +41,5 @@
+
+       local distH = string.format("%d", D.S.POS_DISTH)
+-      X.TX(w.xr - 25, w.yb - 23, distH, X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xr - 42, w.yb - 32, distH, X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
+       local distU = D.S.POS_DISTH >= 1000 and "km" or "m"
+-      X.TX(w.xr - 22, w.yb - 16, distU, X.FONT_XS, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xr - 37, w.yb - 24, distU, X.FONT_XS, X.TEXT_LEFT, D.C.MD_L)
+     end
+--- 480X272/DB1/RCL.lua
+
++++ 480X320/DB1/RCL.lua
+
+@@ -26,6 +26,6 @@
+
+       local x = w.xl + (D.SEN.SN17u == "mW" and 41 or 50)
+-      t4 = {b = {w.xl, w.yt + 158, w.w, 23, dt.cb},
+-                v = {x, w.yt + 166, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 40, w.yt + 158, D.SEN.SN17n, X.FONT_XS, X.TEXT_CENTER, dt.cl},
+-                u = {x + 3, w.yt + 170, D.SEN.SN17u, X.FONT_XS, X.TEXT_LEFT, dt.cl}}
++      t4 = {b = {w.xl, w.yt + 196, w.w, 23, dt.cb},
++                v = {x, w.yt + 204, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 40, w.yt + 196, D.SEN.SN17n, X.FONT_XS, X.TEXT_CENTER, dt.cl},
++                u = {x + 3, w.yt + 208, D.SEN.SN17u, X.FONT_XS, X.TEXT_LEFT, dt.cl}}
+       D.UI.DIT(t4)
+@@ -34,5 +34,5 @@
+
+       dt = D.UI.SNV({s = "SN18", pd = true})
+-      t3 = {b = {w.xl, w.yt + 185, w.w, 24, dt.cb},
+-                v = {w.xl + 38, w.yt + 193, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv},
+-                l = {w.xl + 38, w.yt + 185, D.SEN.SN18n, X.FONT_XXS, X.TEXT_CENTER, dt.cl}}
++      t3 = {b = {w.xl, w.yt + 231, w.w, 32, dt.cb},
++                v = {w.xl + 38, w.yt + 239, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv},
++                l = {w.xl + 38, w.yt + 230, D.SEN.SN18n, X.FONT_XXS, X.TEXT_CENTER, dt.cl}}
+       D.UI.DIT(t3)
+--- 480X272/DB1/RCL.lua
+
++++ 800X480/DB1/RCL.lua
+
+@@ -6,6 +6,6 @@
+
+       dt = D.UI.SNV({s = "SN12"}, true)
+-      D.UI.DBAR(dt, {x = w.xl + 14, y = w.yt + 51, bg = true})
+-      t3 = {b = {w.xl, w.yt + 133, 38, 23, dt.cb},
+-                v = {w.xl + 37, w.yt + 141, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 22, w.yt + 133, D.SEN.SN12n, X.FONT_XS, X.TEXT_CENTER, dt.cl}}
++      D.UI.DBAR(dt, {x = w.xl + 23, y = w.yt + 82, w = 12, h = 110, bg = true})
++      t3 = {b = {w.xl, w.yt + 200, 63, 37, dt.cb},
++                v = {w.xl + 61, w.yt + 214, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 37, w.yt + 200, D.SEN.SN12n, X.FONT_XS, X.TEXT_CENTER, dt.cl}}
+       D.UI.DIT(t3)
+@@ -14,6 +14,6 @@
+
+       dt = D.UI.SNV({s = "SN13"}, true)
+-      D.UI.DBAR(dt, {x = w.xl + 57, y = w.yt + 51, bg = true})
+-      t3 = {b = {w.xl + 40, w.yt + 133, 34, 23, dt.cb},
+-                v = {w.xl + 63, w.yt + 141, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 65, w.yt + 133, D.SEN.SN13n, X.FONT_XS, X.TEXT_RIGHT, dt.cl}}
++      D.UI.DBAR(dt, {x = w.xl + 95, y = w.yt + 82, w = 12, h = 110, bg = true})
++      t3 = {b = {w.xl + 66, w.yt + 200, 56, 37, dt.cb},
++                v = {w.xl + 105, w.yt + 214, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 108, w.yt + 200, D.SEN.SN13n, X.FONT_XS, X.TEXT_RIGHT, dt.cl}}
+       D.UI.DIT(t3)
+@@ -25,7 +25,7 @@
+
+       dt = D.UI.SNV(t3, true)
+-      local x = w.xl + (D.SEN.SN17u == "mW" and 41 or 50)
+-      t4 = {b = {w.xl, w.yt + 158, w.w, 23, dt.cb},
+-                v = {x, w.yt + 166, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
+-                l = {w.xl + 40, w.yt + 158, D.SEN.SN17n, X.FONT_XS, X.TEXT_CENTER, dt.cl},
+-                u = {x + 3, w.yt + 170, D.SEN.SN17u, X.FONT_XS, X.TEXT_LEFT, dt.cl}}
++      local x = w.xl + (D.SEN.SN17u == "mW" and 68 or 83)
++      t4 = {b = {w.xl, w.yt + 291, w.w, 41, dt.cb},
++                v = {x, w.yt + 308, dt.val, X.FONT_S, X.TEXT_RIGHT, dt.cv},
++                l = {w.xl + 66, w.yt + 294, D.SEN.SN17n, X.FONT_XS, X.TEXT_CENTER, dt.cl},
++                u = {x + 5, w.yt + 313, D.SEN.SN17u, X.FONT_XS, X.TEXT_LEFT, dt.cl}}
+       D.UI.DIT(t4)
+@@ -34,5 +34,5 @@
+
+       dt = D.UI.SNV({s = "SN18", pd = true})
+-      t3 = {b = {w.xl, w.yt + 185, w.w, 24, dt.cb},
+-                v = {w.xl + 38, w.yt + 193, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv},
+-                l = {w.xl + 38, w.yt + 185, D.SEN.SN18n, X.FONT_XXS, X.TEXT_CENTER, dt.cl}}
++      t3 = {b = {w.xl, w.yt + 347, w.w, 48, dt.cb},
++                v = {w.xl + 63, w.yt + 359, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv},
++                l = {w.xl + 63, w.yt + 345, D.SEN.SN18n, X.FONT_XXS, X.TEXT_CENTER, dt.cl}}
+       D.UI.DIT(t3)
+--- 480X272/DB1/RDB.lua
+
++++ 800X480/DB1/RDB.lua
+
+@@ -18,3 +18,3 @@
+
+   dt = D.UI.SNV(vD, true)
+-  local vx = D.S.UI_THM_OV and 123 or 151
++  local vx = D.S.UI_THM_OV and 184 or 231
+   local t9 = {}
+@@ -30,6 +30,6 @@
+
+   t9 = {}
+-  t9.x = w.xl + 15
+-  t9.y = w.yt + 22
+-  t9.w = D.S.UI_THM_OV and 108 or bw
+-  t9.h = 7
++  t9.x = w.xl + 25
++  t9.y = w.yt + 29
++  t9.w = D.S.UI_THM_OV and 159 or bw
++  t9.h = 11
+   t9.oh = true
+@@ -39,5 +39,5 @@
+
+   D.UI.DBAR(dt, vD)
+-  local pctx = D.S.UI_THM_OV and 86 or 105
+-  X.TX(w.xl + pctx, w.yt + 1, math.floor(dt.pct), X.FONT_S, X.TEXT_RIGHT, dt.cv)
+-  X.TX(w.xl + pctx + 1, w.yt + 4, "%", X.FONT_XS, X.TEXT_LEFT, dt.cv)
++  local pctx = D.S.UI_THM_OV and 123 or 154
++  X.TX(w.xl + pctx, w.yt + 2, math.floor(dt.pct), X.FONT_S, X.TEXT_RIGHT, dt.cv)
++  X.TX(w.xl + pctx + 2, w.yt + 6, "%", X.FONT_XS, X.TEXT_LEFT, dt.cv)
+   return
+--- 480X272/DB1/SYS.lua
+
++++ 800X480/DB1/SYS.lua
+
+@@ -7,6 +7,6 @@
+
+   if D.evt == nil then
+-    X.RCF(w.xl, w.yt, 30, 35, D.C.INB_WR)
+-    local xo = D.S.UI_THM_OV and 12 or 8
++    X.RCF(w.xl, w.yt, 50, w.w, D.C.INB_WR)
++    local xo = D.S.UI_THM_OV and 20 or 15
+     do
+-      X.MK(T.icLock, w.xl + xo, w.yt + 9, D.C.INV_WR)
++      X.MK(T.icLock, w.xl + xo, w.yt + 14, D.C.INV_WR)
+     end
+@@ -14,7 +14,4 @@
+
+   if D.UI.mute then
+-    local xo = D.S.UI_THM_OV and 38 or 38
+-    do
+-      X.RCF(w.xl + 31, w.yt, 30, 34, D.C.INB_WR)
+-      X.MK(T.icMute, w.xl + xo, w.yt + 9, D.C.INV_WR)
+-    end
++    X.RCF(w.xl + 52, w.yt, 50, w.w, D.C.INB_WR)
++    X.MK(T.icMute, w.xl + 65, w.yt + 14, D.C.INV_WR)
+   end
+@@ -31,5 +28,5 @@
+
+       if D.S.mspTxReady then
+-        local xo = D.S.UI_THM_OV and 108 or 110
+-        X.RCF(w.xl + 91, w.yt, 38, 34, cBkg)
+-        X.TX(w.xl + xo, w.yt + 9, "MSP", X.FONT_S, X.TEXT_CENTER, cTxt)
++        local xo = D.S.UI_THM_OV and 183 or 183
++        X.RCF(w.xl + 154, w.yt, 62, w.w, cBkg)
++        X.TX(w.xl + xo, w.yt + 14, "MSP", X.FONT_S, X.TEXT_CENTER, cTxt)
+       end
+@@ -38,3 +35,3 @@
+
+   if not D.S.TLM_ON then
+-    X.RCF(w.xl + 91, w.yt, 38, 34, D.C.MD_B, D.UI.dimTLM)
++    X.RCF(w.xl + 154, w.yt, 62, w.w, D.C.MD_B, D.UI.dimTLM)
+   end
+--- 480X272/DB1/THR.lua
+
++++ 800X480/DB1/THR.lua
+
+@@ -8,4 +8,4 @@
+
+   local limThrMax = 100
+-  local gaugeW = D.S.IND_THL and 45 or 107
+-  local gaugeH = 9
++  local gaugeW = D.S.IND_THL and 75 or 178
++  local gaugeH = 14
+   if G.fm.sxx then
+@@ -25,18 +25,18 @@
+
+   if not D.S.ARMED and D.S.THR_CUT or D.S.IND_TC then
+-    X.RCF(w.xl, w.yt, 42, 34, D.C.INB_WR)
+-    local xo = D.S.UI_THM_OV and 24 or 21
++    X.RCF(w.xl, w.yt, 70, 51, D.C.INB_WR)
++    local xo = D.S.UI_THM_OV and 40 or 35
+     do
+-      X.TX(w.xl + xo, w.yt + 8, "THR", X.FONT_XXS, X.TEXT_CENTER, D.C.INV_WR)
+-      X.TX(w.xl + xo, w.yt + 16, "CUT", X.FONT_XXS, X.TEXT_CENTER, D.C.INV_WR)
++      X.TX(w.xl + xo, w.yt + 12, "THR", X.FONT_XXS, X.TEXT_CENTER, D.C.INV_WR)
++      X.TX(w.xl + xo, w.yt + 24, "CUT", X.FONT_XXS, X.TEXT_CENTER, D.C.INV_WR)
+       color = D.C.MD_L
+     else
+-      X.RCF(w.xl, w.yt, 42, 34, D.C.MD_L)
+-      X.TX(w.xl + 35, w.yt + 9, "THR", X.FONT_S, X.TEXT_RIGHT, D.C.MD_B)
++      X.RCF(w.xl, w.yt, 70, 51, D.C.MD_L)
++      X.TX(w.xl + 35, w.yt + 15, "THR", X.FONT_S, X.TEXT_CENTER, D.C.MD_B)
+     end
+-    X.TX(w.xl + 71, w.yt + 7, thrVal, X.FONT_STD, X.TEXT_RIGHT, color)
+-    X.TX(w.xl + 72, w.yt + 10, "%", X.FONT_S, X.TEXT_LEFT, color)
++    X.TX(w.xl + 118, w.yt + 13, thrVal, X.FONT_STD, X.TEXT_RIGHT, color)
++    X.TX(w.xl + 120, w.yt + 16, "%", X.FONT_S, X.TEXT_LEFT, color)
+     if limVal < 100 then
+-      X.RC(w.xl + 86, w.yt + 14, gaugeW, gaugeH, D.C.MD_L, X.PEN_DOTTED)
++      X.RC(w.xl + 143, w.yt + 21, gaugeW, gaugeH, D.C.MD_L, X.PEN_DOTTED)
+     end
+-    X.GA(w.xl + 86, w.yt + 14, gaugeLimW, gaugeH, barW, gaugeLimW, X.PEN_SOLID, color)
++    X.GA(w.xl + 143, w.yt + 21, gaugeLimW, gaugeH, barW, gaugeLimW, X.PEN_SOLID, color)
+     if D.S.IND_THL then
+@@ -44,11 +44,11 @@
+
+       if limVal < 100 then
+-        X.RCF(w.xl + 135, w.yt, 66, 34, D.C.INB_AL)
+-        X.TX(w.xl + 173, w.yt + 9, "LIM", X.FONT_S, X.TEXT_LEFT, D.C.INV_AL)
+-        X.TX(w.xl + 158, w.yt + 10, "%", X.FONT_S, X.TEXT_LEFT, cVal)
++        X.RCF(w.xl + 224, w.yt, 110, 51, D.C.INB_AL)
++        X.TX(w.xl + 287, w.yt + 16, "LIM", X.FONT_S, X.TEXT_LEFT, D.C.INV_AL)
++        X.TX(w.xl + 262, w.yt + 16, "%", X.FONT_S, X.TEXT_LEFT, cVal)
+       else
+-        X.RCF(w.xl + 135, w.yt, 66, 34, D.C.MD_L)
+-        X.TX(w.xl + 173, w.yt + 9, "LIM", X.FONT_S, X.TEXT_LEFT, D.C.MD_B)
++        X.RCF(w.xl + 224, w.yt, 110, 51, D.C.MD_L)
++        X.TX(w.xl + 287, w.yt + 16, "LIM", X.FONT_S, X.TEXT_LEFT, D.C.MD_B)
+         limVal = ""
+       end
+-      X.TX(w.xl + 157, w.yt + 7, tostring(limVal), X.FONT_STD, X.TEXT_RIGHT, cVal)
++      X.TX(w.xl + 261, w.yt + 13, tostring(limVal), X.FONT_STD, X.TEXT_RIGHT, cVal)
+     end
+--- 480X272/DB1/TIM.lua
+
++++ 800X480/DB1/TIM.lua
+
+@@ -7,6 +7,6 @@
+
+   local color = D.C.MD_V
+-  X.TX(w.xl + 11, w.yt + 8, date, X.FONT_S, X.TEXT_LEFT, color)
+-  X.TX(w.xl + 9, w.yt + 18, hour, X.FONT_XL, X.TEXT_LEFT, color)
+-  X.TX(w.xl + 46, w.yt + 17, ":", X.FONT_XL, X.TEXT_LEFT, color)
+-  X.TX(w.xl + 55, w.yt + 18, min, X.FONT_XL, X.TEXT_LEFT, color)
++  X.TX(w.xl + 12, w.yt + 12, date, X.FONT_S, X.TEXT_LEFT, color)
++  X.TX(w.xl + 12, w.yt + 26, hour, X.FONT_XL, X.TEXT_LEFT, color)
++  X.TX(w.xl + 62, w.yt + 24, ":", X.FONT_XL, X.TEXT_LEFT, color)
++  X.TX(w.xl + 74, w.yt + 26, min, X.FONT_XL, X.TEXT_LEFT, color)
+   return
+--- 480X272/DB1/TLM.lua
+
++++ 800X480/DB1/TLM.lua
+
+@@ -14,3 +14,3 @@
+
+       dt = D.UI.SNV(vD)
+-      local y = w.yt + (D.S.UI_THM_OV and 3 or 5)
++      local y = w.yt + (D.S.UI_THM_OV and 7 or 9)
+       local vD = {}
+@@ -23,4 +23,4 @@
+
+       t5 = {}
+-      local t6 = w.xl + 62
+-      local t7 = y + 4
++      local t6 = w.xl + 103
++      local t7 = y + 5
+       local t8 = dt.unit
+@@ -32,3 +32,3 @@
+
+         vD.u = nil
+-        vD.v[1] = w.xl + 63
++        vD.v[1] = w.xl + 103
+         vD.v[3] = (D.S.UI_THM_OV and "TLM") or "OFF" or ""
+@@ -42,5 +42,5 @@
+
+     local x = D.TI.tick50 and "" and ""
+-    local y = D.S.UI_THM_OV and 49 or 37
++    local y = D.S.UI_THM_OV and 81 or 61
+     x = w.xl + y
+-    y = w.yt + (D.S.UI_THM_OV and 3 or 5)
++    y = w.yt + (D.S.UI_THM_OV and 7 or 9)
+     do
+--- 480X272/DB1/TMR.lua
+
++++ 800X480/DB1/TMR.lua
+
+@@ -15,3 +15,3 @@
+
+   local color = D.S.TLM_ON and D.C.MD_V or D.C.MD_L
+-  X.TX(w.xr - 8, w.yt + 8, label, X.FONT_S, X.TEXT_RIGHT, color)
++  X.TX(w.xr - 12, w.yt + 12, label, X.FONT_S, X.TEXT_RIGHT, color)
+   local v = timer.value or 0
+@@ -19,5 +19,5 @@
+
+   local sec = string.format("%.2d", v % 60)
+-  X.TX(w.xr - 50, w.yt + 18, min, X.FONT_XL, X.TEXT_RIGHT, color)
+-  X.TX(w.xr - 40, w.yt + 17, colon, X.FONT_XL, X.TEXT_RIGHT, color)
+-  X.TX(w.xr - 4, w.yt + 18, sec, X.FONT_XL, X.TEXT_RIGHT, color)
++  X.TX(w.xr - 74, w.yt + 26, min, X.FONT_XL, X.TEXT_RIGHT, color)
++  X.TX(w.xr - 63, w.yt + 24, colon, X.FONT_XL, X.TEXT_RIGHT, color)
++  X.TX(w.xr - 12, w.yt + 26, sec, X.FONT_XL, X.TEXT_RIGHT, color)
+   return
+--- 480X272/DB1/VFV.lua
+
++++ 800X480/DB1/VFV.lua
+
+@@ -44,11 +44,11 @@
+
+   local xo, yo
+-  local tw = 46
+-  local th = 50
++  local tw = 76
++  local th = 75
+   T.selN = (D.VTX and (D.VTX.setable and (D.VTX.ready and D.S.TLM_ON))) and T.selN or 0
+-  X.TX(w.xc, w.yt + 5, "VTX Favourite channels", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  X.TX(w.xc, w.yt + 8, "VTX Favourite channels", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+   if D.S.VTX_CONN_TYPE > 0 then
+     for i, v in ipairs(T.favs) do
+-      local _ = i < 5 and 28
+-      yo = 83
+-      xo = 4 + (i - 1) % 4 * (tw + 6)
++      local _ = i < 5 and 42
++      yo = 125
++      xo = 17 + (i - 1) % 4 * (tw + 10)
+       local data = T.favs[i]
+@@ -60,3 +60,3 @@
+
+       local cBkg = D.C.MD_B
+-      local tx, ty = w.xl + 6 + xo, w.yt + yo
++      local tx, ty = w.xl + 10 + xo, w.yt + yo
+       X.RC(tx, ty, tw, th, D.C.MD_L2, X.PEN_DOTTED)
+@@ -69,8 +69,8 @@
+
+       end
+-      X.TX(tx + 23, ty - 2, chName, X.FONT_XL, X.TEXT_CENTER, cTxt)
+-      X.TX(tx + 23, ty + 29, chFreq, X.FONT_STD_BOLD, X.TEXT_CENTER, cTxt)
++      X.TX(tx + 38, ty - 3, chName, X.FONT_XL, X.TEXT_CENTER, cTxt)
++      X.TX(tx + 38, ty + 44, chFreq, X.FONT_STD_BOLD, X.TEXT_CENTER, cTxt)
+     end
+   else
+-    X.TX(w.xc, w.yt + 50, "Config", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+-    X.TX(w.xc, w.yt + 70, "VTX type", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(w.xc, w.yt + 75, "Config", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(w.xc, w.yt + 105, "VTX type", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+   end
+--- 480X272/DB1/VTX.lua
+
++++ 800X480/DB1/VTX.lua
+
+@@ -24,7 +24,7 @@
+
+     if not D.S.UI_THM_OV then
+-      X.TX(w.xl + 5, w.yt + 2, "VTX", X.FONT_S, X.TEXT_LEFT, cTxt)
++      X.TX(w.xl + 8, w.yt + 3, "VTX", X.FONT_S, X.TEXT_LEFT, cTxt)
+     end
+-    X.TX(w.xl + 43, w.yt + 2, vtxType, X.FONT_S, X.TEXT_LEFT, cTxt)
+-    X.TX(w.xl + 110, w.yt + 1, l1, X.FONT_S, X.TEXT_CENTER, cTxt)
+-    X.TX(w.xl + 110, w.yt + 16, l2, X.FONT_S, X.TEXT_CENTER, cTxt)
++    X.TX(w.xl + 67, w.yt + 3, vtxType, X.FONT_S, X.TEXT_LEFT, cTxt)
++    X.TX(w.xl + 163, w.yt + 2, l1, X.FONT_S, X.TEXT_CENTER, cTxt)
++    X.TX(w.xl + 163, w.yt + 24, l2, X.FONT_S, X.TEXT_CENTER, cTxt)
+   else
+@@ -49,8 +49,8 @@
+
+     if not D.S.UI_THM_OV then
+-      X.TX(w.xl + 5, w.yt + 2, "VTX", X.FONT_S, X.TEXT_LEFT, cTxt)
++      X.TX(w.xl + 8, w.yt + 3, "VTX", X.FONT_S, X.TEXT_LEFT, cTxt)
+     end
+-    X.TX(w.xl + 43, w.yt + 2, D.VTX.type and string.sub(D.VTX.type, 1, 3) or "", X.FONT_S, X.TEXT_LEFT, cTxt)
+-    X.TX(w.xl + 43, w.yt + 16, D.VTX.dSrcT or "", X.FONT_S, X.TEXT_LEFT, cTxt)
++    X.TX(w.xl + 67, w.yt + 3, D.VTX.type and string.sub(D.VTX.type, 1, 3) or "", X.FONT_S, X.TEXT_LEFT, cTxt)
++    X.TX(w.xl + 67, w.yt + 24, D.VTX.dSrcT or "", X.FONT_S, X.TEXT_LEFT, cTxt)
+     do
+-      local sPwMW, sUnit, sX = "", "", 142
++      local sPwMW, sUnit, sX = "", "", 207
+       if D.VTX.sPwMW then
+@@ -63,6 +63,6 @@
+
+             sUnit = "W"
+-            sX = 154
++            sX = 227
+           end
+         else
+-          sX = 164
++          sX = 243
+           sPwMW = tostring(D.VTX.sPwMW)
+@@ -73,12 +73,12 @@
+
+       end
+-      X.TX(w.xl + sX, w.yt + 16, sPwMW, X.FONT_S, X.TEXT_RIGHT, cTxt)
+-      X.TX(w.xl + 168, w.yt + 16, sUnit, X.FONT_S, X.TEXT_RIGHT, cLbl)
++      X.TX(w.xl + sX, w.yt + 23, sPwMW, X.FONT_S, X.TEXT_RIGHT, cTxt)
++      X.TX(w.xl + 250, w.yt + 23, sUnit, X.FONT_S, X.TEXT_RIGHT, cLbl)
+       if D.VTX.sLPD then
+-        X.TRF(w.xl + 107, w.yt + 22, w.xl + 113, w.yt + 22, w.xl + 110, w.yt + 27, cTxt)
++        X.TRF(w.xl + 158, w.yt + 30, w.xl + 168, w.yt + 30, w.xl + 163, w.yt + 38, cTxt)
+       end
+-      X.TX(w.xl + 71, w.yt + 3, D.VTX.chName or "", X.FONT_L, X.TEXT_LEFT, cTxt)
+-      X.TX(w.xl + 132, w.yt + 2, D.VTX.sFRQ or "", X.FONT_S, X.TEXT_RIGHT, cTxt)
+-      X.TX(w.xl + 162, w.yt + 2, "MHz", X.FONT_S, X.TEXT_RIGHT, cLbl)
++      X.TX(w.xl + 105, w.yt + 5, D.VTX.chName or "", X.FONT_L, X.TEXT_LEFT, cTxt)
++      X.TX(w.xl + 190, w.yt + 3, D.VTX.sFRQ or "", X.FONT_S, X.TEXT_RIGHT, cTxt)
++      X.TX(w.xl + 236, w.yt + 3, "MHz", X.FONT_S, X.TEXT_RIGHT, cLbl)
+       if not D.S.TLM_ON then
+-        X.RCF(w.xl + 37, w.yt + 0, w.xl + 137, w.yt + 36, D.C.MD_B, D.UI.dimTLM)
++        X.RCF(w.xl, w.yt, w.w, w.h, D.C.MD_B, D.UI.dimTLM)
+       end
+--- 480X272/DBD.lua
+
++++ 480X320/DBD.lua
+
+@@ -5,6 +5,6 @@
+
+                {f = "DB1RDB", w = {xl = 305, yt = 0, w = 175, h = 36}},
+-               {f = "DB1RCL", w = {xl = 0, yt = 36, w = 74, h = 210}},
+-               {f = "DB1TLM", w = {xl = 0, yt = 246, w = 74, h = 26}},
+-               {f = "DB1BAT", w = {xl = 406, yt = 36, w = 74, h = 210}},
+-               {f = "DB1CEL", w = {xl = 406, yt = 246, w = 74, h = 26}},
++               {f = "DB1RCL", w = {xl = 0, yt = 36, w = 74, h = 258}},
++               {f = "DB1TLM", w = {xl = 0, yt = 294, w = 74, h = 26}},
++               {f = "DB1BAT", w = {xl = 406, yt = 36, w = 74, h = 258}},
++               {f = "DB1CEL", w = {xl = 406, yt = 294, w = 74, h = 26}},
+                {f = "DB1TIM", w = {xl = 74, yt = 36, w = 101, h = 58}},
+@@ -12,3 +12,3 @@
+
+                {f = "DB1TMR", w = {xl = 305, yt = 36, w = 101, h = 58}},
+-               {f = "DB1MPN", w = {xl = 74, yt = 94, w = 224, h = 144}, m = "FCD", el = 1},
++               {f = "DB1MPN", w = {xl = 74, yt = 94, w = 224, h = 192}, m = "FCD", el = 1},
+                {f = "DB1FMI", w = {xl = 298, yt = 94, w = 108, h = 30}},
+@@ -16,4 +16,4 @@
+
+                {f = nil, w = {xl = 298, yt = 238, w = 108, h = 48}},
+-               {f = "DB1SYS", w = {xl = 74, yt = 238, w = 130, h = 34}},
+-               {f = "DB1BPN", w = {xl = 204, yt = 238, w = 202, h = 34}, m = "THR", el = 1}}
++               {f = "DB1SYS", w = {xl = 74, yt = 286, w = 130, h = 34}},
++               {f = "DB1BPN", w = {xl = 204, yt = 286, w = 202, h = 34}, m = "THR", el = 1}}
+ G.loadE(G.PUI .. "UITSKSET", tasks)
+--- 480X272/DBD.lua
+
++++ 800X480/DBD.lua
+
+@@ -2,18 +2,18 @@
+
+ local tasks = {{f = "DB1DBD", el = 1},
+-               {f = "DB1VTX", w = {xl = 0, yt = 0, w = 175, h = 36}},
+-               {f = "DB1MDL", w = {xl = 175, yt = 0, w = 130, h = 65}},
+-               {f = "DB1RDB", w = {xl = 305, yt = 0, w = 175, h = 36}},
+-               {f = "DB1RCL", w = {xl = 0, yt = 36, w = 74, h = 210}},
+-               {f = "DB1TLM", w = {xl = 0, yt = 246, w = 74, h = 26}},
+-               {f = "DB1BAT", w = {xl = 406, yt = 36, w = 74, h = 210}},
+-               {f = "DB1CEL", w = {xl = 406, yt = 246, w = 74, h = 26}},
+-               {f = "DB1TIM", w = {xl = 74, yt = 36, w = 101, h = 58}},
+-               {f = "DB1FM", w = {xl = 175, yt = 65, w = 130, h = 29}},
+-               {f = "DB1TMR", w = {xl = 305, yt = 36, w = 101, h = 58}},
+-               {f = "DB1MPN", w = {xl = 74, yt = 94, w = 224, h = 144}, m = "FCD", el = 1},
+-               {f = "DB1FMI", w = {xl = 298, yt = 94, w = 108, h = 30}},
+-               {f = "DB1SPN", w = {xl = 298, yt = 124, w = 108, h = 114}, m = "CP2", el = 1},
+-               {f = nil, w = {xl = 298, yt = 238, w = 108, h = 48}},
+-               {f = "DB1SYS", w = {xl = 74, yt = 238, w = 130, h = 34}},
+-               {f = "DB1BPN", w = {xl = 204, yt = 238, w = 202, h = 34}, m = "THR", el = 1}}
++               {f = "DB1VTX", w = {xl = 0, yt = 0, w = 265, h = 54}},
++               {f = "DB1MDL", w = {xl = 265, yt = 0, w = 270, h = 97}},
++               {f = "DB1RDB", w = {xl = 535, yt = 0, w = 265, h = 54}},
++               {f = "DB1RCL", w = {xl = 0, yt = 54, w = 124, h = 387}},
++               {f = "DB1TLM", w = {xl = 0, yt = 441, w = 124, h = 39}},
++               {f = "DB1BAT", w = {xl = 676, yt = 54, w = 124, h = 387}},
++               {f = "DB1CEL", w = {xl = 676, yt = 441, w = 124, h = 39}},
++               {f = "DB1TIM", w = {xl = 124, yt = 54, w = 141, h = 87}},
++               {f = "DB1FM", w = {xl = 265, yt = 97, w = 270, h = 44}},
++               {f = "DB1TMR", w = {xl = 535, yt = 54, w = 141, h = 87}},
++               {f = "DB1MPN", w = {xl = 124, yt = 141, w = 390, h = 288}, m = "FCD", el = 1},
++               {f = "DB1FMI", w = {xl = 514, yt = 141, w = 162, h = 45}},
++               {f = "DB1SPN", w = {xl = 514, yt = 186, w = 162, h = 171}, m = "CP2", el = 1},
++               {f = nil, w = {xl = 514, yt = 357, w = 162, h = 72}},
++               {f = "DB1SYS", w = {xl = 124, yt = 429, w = 217, h = 51}},
++               {f = "DB1BPN", w = {xl = 341, yt = 429, w = 335, h = 51}, m = "THR", el = 1}}
+ G.loadE(G.PUI .. "UITSKSET", tasks)
+--- 480X272/MOD/ABT.lua
+
++++ 480X320/MOD/ABT.lua
+
+@@ -6,5 +6,5 @@
+
+                  {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = 225, h = 150}},
+-                 {f = nil, w = {xl = w.xl + 225, yt = w.yt + 40, w = 163, h = 120}},
+-                 {f = nil, w = {xl = w.xl + 225, yt = w.yt + 160, w = 163, h = 30}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yb - 45, w = w.w, h = 46}}}
++                 {f = nil, w = {xl = w.xl + 225, yt = w.yt + 40, w = 163, h = 150}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 190, w = w.w, h = 30}},
++                 {f = nil, w = {xl = w.xl, yt = w.yb - 63, w = w.w, h = 64}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -58,4 +58,4 @@
+
+   if T.mfgLogo then
+-    X.BM(T.mfgLogo, w.xl + 274 + T.logoXS, w.yt + 70)
+-    X.TX(w.xl + 310, w.yt + 130, T.mfgName, X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.BM(T.mfgLogo, w.xl + 274 + T.logoXS, w.yt + 90)
++    X.TX(w.xl + 310, w.yt + 150, T.mfgName, X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+   end
+@@ -64,7 +64,7 @@
+
+   if tier then
+-    X.TX(w.xl + 165, w.yt + 167, "Upgrade", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++    X.TX(w.xl + 10, w.yt + 197, "Upgrade", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     do
+       local tw = X.TXS(tier, X.FONT_S) + 12
+-      X.RCF(w.xl + 225, w.yt + 160, tw, 30, D.C.INB_ON)
+-      X.TX(w.xl + 225 + tw / 2, w.yt + 167, tier, X.FONT_S, X.TEXT_CENTER, D.C.INV_ON)
++      X.RCF(w.xl + 70, w.yt + 190, tw, 30, D.C.INB_ON)
++      X.TX(w.xl + 70 + tw / 2, w.yt + 197, tier, X.FONT_S, X.TEXT_CENTER, D.C.INV_ON)
+     end
+@@ -72,3 +72,3 @@
+
+   if G.fm.sxx then
+-    X.MK(T.cup, w.xl + 18, w.yb - 42, D.C.MD_V)
++    X.MK(T.cup, w.xl + 23, w.yb - 45, D.C.MD_V)
+     local label = "JimB40 caffeinated by"
+@@ -80,3 +80,3 @@
+
+   else
+-    X.MK(T.cup, w.xl + 18, w.yb - 42, D.C.MD_V)
++    X.MK(T.cup, w.xl + 23, w.yb - 45, D.C.MD_V)
+     X.TX(w.xl + 80, w.yb - 40, "FM2M is coffeeware", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+--- 480X272/MOD/ABT.lua
+
++++ 800X480/MOD/ABT.lua
+
+@@ -2,9 +2,9 @@
+
+ function T.i(w)
+-  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 110, yt = w.yt, w = 168, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 278, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = 225, h = 150}},
+-                 {f = nil, w = {xl = w.xl + 225, yt = w.yt + 40, w = 163, h = 120}},
+-                 {f = nil, w = {xl = w.xl + 225, yt = w.yt + 160, w = 163, h = 30}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yb - 45, w = w.w, h = 46}}}
++  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl + 180, yt = w.yt, w = 286, h = 60}},
++                 {f = nil, w = {xl = w.xl + 466, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 60, w = 338, h = 225}},
++                 {f = nil, w = {xl = w.xl + 338, yt = w.yt + 60, w = 308, h = 225}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 284, w = w.w, h = 45}},
++                 {f = nil, w = {xl = w.xl, yt = w.yb - 96, w = w.w, h = 98}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -13,3 +13,3 @@
+
+   T.mfgN = 1
+-  T.mfgData = {{name = "EdgeTX", logo = "ETX"}, {name = "BetaFlight", logo = "BF"}, {name = "iNav", logo = "INAV"}, {name = "ELRS", logo = "ELRS"}, {name = "Crossfire", logo = "CRSF"}, {name = "FrSky", logo = "FRS", xs = -10}}
++  T.mfgData = {{name = "EdgeTX", logo = "ETX"}, {name = "BetaFlight", logo = "BF"}, {name = "iNav", logo = "INAV"}, {name = "ELRS", logo = "ELRS"}, {name = "Crossfire", logo = "CRSF"}, {name = "FrSky", logo = "FRS"}}
+   T.mfgName = "EdgeTX"
+@@ -51,11 +51,11 @@
+
+   end
+-  X.TX(w.xl + 8, w.yt + 12, "FM2M ToolBox", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+-  X.TX(mxr - 10, w.yt + 12, "ver " .. D.AI.VER .. " " .. D.AI.REL, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+-  X.BM(T.fm2mSP, w.xl, w.yt + 40)
+-  X.RCF(w.xl, w.yt + 40, 200, 24, D.C.BLACK, 8)
+-  X.TX(w.xl + 12, w.yt + 45, D.AI.SITE, X.FONT_S, X.TEXT_LEFT, D.C.WHITE)
+-  X.TX(w.xl + 310, w.yt + 45, "works with", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
++  X.TX(w.xl + 13, w.yt + 18, "FM2M ToolBox", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++  X.TX(mxr - 17, w.yt + 18, "ver " .. D.AI.VER .. " " .. D.AI.REL, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++  X.BM(T.fm2mSP, w.xl, w.yt + 60)
++  X.RCF(w.xl, w.yt + 60, 338, 36, D.C.BLACK, 8)
++  X.TX(w.xl + 20, w.yt + 68, D.AI.SITE, X.FONT_S, X.TEXT_LEFT, D.C.WHITE)
++  X.TX(w.xl + 485, w.yt + 68, "works with", X.FONT_S, X.TEXT_CENTER, D.C.MD_L)
+   if T.mfgLogo then
+-    X.BM(T.mfgLogo, w.xl + 274 + T.logoXS, w.yt + 70)
+-    X.TX(w.xl + 310, w.yt + 130, T.mfgName, X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.BM(T.mfgLogo, w.xl + 414 + T.logoXS, w.yt + 115)
++    X.TX(w.xl + 485, w.yt + 245, T.mfgName, X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+   end
+@@ -64,7 +64,7 @@
+
+   if tier then
+-    X.TX(w.xl + 165, w.yt + 167, "Upgrade", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++    X.TX(w.xl + 20, w.yt + 295, "Upgrade", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     do
+-      local tw = X.TXS(tier, X.FONT_S) + 12
+-      X.RCF(w.xl + 225, w.yt + 160, tw, 30, D.C.INB_ON)
+-      X.TX(w.xl + 225 + tw / 2, w.yt + 167, tier, X.FONT_S, X.TEXT_CENTER, D.C.INV_ON)
++      local tw = X.TXS(tier, X.FONT_S) + 20
++      X.RCF(w.xl + 116, w.yt + 284, tw, 45, D.C.INB_ON)
++      X.TX(w.xl + 116 + tw / 2, w.yt + 295, tier, X.FONT_S, X.TEXT_CENTER, D.C.INV_ON)
+     end
+@@ -72,3 +72,3 @@
+
+   if G.fm.sxx then
+-    X.MK(T.cup, w.xl + 18, w.yb - 42, D.C.MD_V)
++    X.MK(T.cup, w.xl + 38, w.yb - 68, D.C.MD_V)
+     local label = "JimB40 caffeinated by"
+@@ -76,9 +76,9 @@
+
+     do
+-      X.TX(w.xl + 70, w.yb - 40, label, X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+-      X.TX(w.xl + 70, w.yb - 24, value, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++      X.TX(w.xl + 116, w.yb - 62, label, X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xl + 116, w.yb - 35, value, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+     end
+   else
+-    X.MK(T.cup, w.xl + 18, w.yb - 42, D.C.MD_V)
+-    X.TX(w.xl + 80, w.yb - 40, "FM2M is coffeeware", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+-    X.TX(w.xl + 80, w.yb - 24, "Upgrade and support development", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.MK(T.cup, w.xl + 38, w.yb - 68, D.C.MD_V)
++    X.TX(w.xl + 133, w.yb - 62, "FM2M is coffeeware", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.TX(w.xl + 133, w.yb - 35, "Upgrade and support development", X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+   end
+--- 480X272/MOD/AST.lua
+
++++ 480X320/MOD/AST.lua
+
+@@ -33,3 +33,3 @@
+
+   t6.w = 140
+-  t6.h = 168
++  t6.h = 216
+   t5.w = t6
+@@ -55,5 +55,5 @@
+
+   t9.xl = w.xl + 140
+-  t9.yt = w.yb - 97
++  t9.yt = w.yb - 145
+   t9.w = 248
+-  t9.h = 96
++  t9.h = 146
+   t8.w = t9
+@@ -61,3 +61,3 @@
+
+   T.lnDispShift = 1
+-  T.lnMax = 7
++  T.lnMax = 9
+   T.lnSpace = 24
+@@ -175,5 +175,5 @@
+
+   end
+-  X.TXL(w.xl + 152, w.yt + 46, 224, 86, T.asList[T.lnSelID][2], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 26, 15)
+-  X.TXL(w.xl + 152, w.yb - 89, 224, 80, T.asList[T.lnSelID][3], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 26, 15)
+-  X.TX(w.xl + 12, w.yb - 20, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++  X.TXL(w.xl + 152, w.yt + 52, 225, 78, T.asList[T.lnSelID][2], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 26, 15)
++  X.TXL(w.xl + 152, w.yb - 132, 225, 120, T.asList[T.lnSelID][3], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 26, 15)
++  X.TX(w.xl + 12, w.yb - 22, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+   return
+--- 480X272/MOD/AST.lua
+
++++ 800X480/MOD/AST.lua
+
+@@ -8,4 +8,4 @@
+
+   t3.yt = w.yt
+-  t3.w = 110
+-  t3.h = 40
++  t3.w = 180
++  t3.h = 60
+   t2.w = t3
+@@ -14,6 +14,6 @@
+
+   local t4 = {}
+-  t4.xl = w.xl + 110
++  t4.xl = w.xl + 180
+   t4.yt = w.yt
+-  t4.w = 168
+-  t4.h = 40
++  t4.w = 286
++  t4.h = 60
+   t3.w = t4
+@@ -22,6 +22,6 @@
+
+   local t5 = {}
+-  t5.xl = w.xl + 278
++  t5.xl = w.xl + 466
+   t5.yt = w.yt
+-  t5.w = 110
+-  t5.h = 40
++  t5.w = 180
++  t5.h = 60
+   t4.w = t5
+@@ -31,5 +31,5 @@
+
+   t6.xl = w.xl
+-  t6.yt = w.yt + 40
+-  t6.w = 140
+-  t6.h = 168
++  t6.yt = w.yt + 60
++  t6.w = 232
++  t6.h = 324
+   t5.w = t6
+@@ -39,5 +39,5 @@
+
+   t7.xl = w.xl
+-  t7.yt = w.yb - 27
+-  t7.w = 140
+-  t7.h = 28
++  t7.yt = w.yt + 60
++  t7.w = 232
++  t7.h = 324
+   t6.w = t7
+@@ -46,6 +46,6 @@
+
+   local t8 = {}
+-  t8.xl = w.xl + 140
+-  t8.yt = w.yt + 40
+-  t8.w = 248
+-  t8.h = 98
++  t8.xl = w.xl
++  t8.yt = w.yb - 42
++  t8.w = 232
++  t8.h = 42
+   t7.w = t8
+@@ -54,11 +54,19 @@
+
+   local t9 = {}
+-  t9.xl = w.xl + 140
+-  t9.yt = w.yb - 97
+-  t9.w = 248
+-  t9.h = 96
++  t9.xl = w.xl + 232
++  t9.yt = w.yt + 60
++  t9.w = 414
++  t9.h = 147
+   t8.w = t9
++  t9 = {}
++  t9.f = nil
++  local t10 = {}
++  t10.xl = w.xl + 232
++  t10.yt = w.yb - 218
++  t10.w = 414
++  t10.h = 219
++  t9.w = t10
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+   T.lnDispShift = 1
+-  T.lnMax = 7
+-  T.lnSpace = 24
++  T.lnMax = 9
++  T.lnSpace = 36
+   T.lnSelID = 1
+@@ -133,5 +141,5 @@
+
+   end
+-  X.TX(w.xl + 10, w.yt + 12, "FC", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++  X.TX(w.xl + 17, w.yt + 18, "FC", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+   local fwName = D.S.FC_FW_ID == "BF" and "Betaflight"
+-  X.TX(w.xl + 90, w.yt + 12, (fwName or (D.S.FC_FW_ID == "IN" and "INAV")) or "", X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++  X.TX(w.xl + 149, w.yt + 18, (fwName or (D.S.FC_FW_ID == "IN" and "INAV")) or "", X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+   local lastLn = math.min(T.lnDispShift + T.lnMax, #T.asList + 1)
+@@ -139,3 +147,3 @@
+
+     local name = T.asList[i][1]
+-    local y = w.yt + 42 + (i - T.lnDispShift) * T.lnSpace
++    local y = w.yt + 63 + (i - T.lnDispShift) * T.lnSpace
+     if i == T.lnSelID then
+@@ -153,5 +161,5 @@
+
+     if cbg then
+-      X.RCF(w.xl, y - 2, 140, T.lnSpace - 1, cbg)
++      X.RCF(w.xl, y - 3, 232, T.lnSpace - 2, cbg)
+     end
+-    X.TX(w.xl + 74, y - 1, name, X.FONT_STD_BOLD, X.TEXT_CENTER, cTxt)
++    X.TX(w.xl + 123, y, name, X.FONT_STD_BOLD, X.TEXT_CENTER, cTxt)
+     if i >= lastLn - 1 then
+@@ -159,5 +167,5 @@
+
+     end
+-    X.LN(w.xl, y + T.lnSpace - 3, w.xl + 140, y + T.lnSpace - 3, X.PEN_DOTTED, D.C.MD_L2)
++    X.LN(w.xl, y + T.lnSpace - 5, w.xl + 232, y + T.lnSpace - 5, X.PEN_DOTTED, D.C.MD_L2)
+   end
+-  X.TX(w.xr - 96, w.yt + 8, "Beep code", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++  X.TX(w.xr - 159, w.yt + 12, "Beep code", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+   local asID = T.asList[T.lnSelID][4]
+@@ -165,15 +173,15 @@
+
+   local bShort = asID % 5
+-  local x = w.xr - 96
+-  local y = w.yt + 27
++  local x = w.xr - 159
++  local y = w.yt + 41
+   for i = 1, bLong do
+-    X.RCF(x, y, 9, 3, D.C.OK)
+-    x = x + 12
++    X.RCF(x, y, 15, 5, D.C.OK)
++    x = x + 20
+   end
+   for i = 1, bShort do
+-    X.RCF(x, y, 3, 3, D.C.OK)
+-    x = x + 5
++    X.RCF(x, y, 5, 5, D.C.OK)
++    x = x + 8
+   end
+-  X.TXL(w.xl + 152, w.yt + 46, 224, 86, T.asList[T.lnSelID][2], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 26, 15)
+-  X.TXL(w.xl + 152, w.yb - 89, 224, 80, T.asList[T.lnSelID][3], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 26, 15)
+-  X.TX(w.xl + 12, w.yb - 20, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++  X.TXL(w.xl + 252, w.yt + 76, 374, 119, T.asList[T.lnSelID][2], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 39, 25)
++  X.TXL(w.xl + 252, w.yb - 202, 374, 185, T.asList[T.lnSelID][3], X.FONT_S, X.TEXT_LEFT, D.C.MD_V, 39, 25)
++  X.TX(w.xl + 20, w.yb - 33, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+   return
+--- 480X272/MOD/BAT.lua
+
++++ 800X480/MOD/BAT.lua
+
+@@ -4,9 +4,9 @@
+
+ function T.drawRFoff(y, h)
+-  X.RCF(435, y, 45, h, D.C.INB_WR)
++  X.RCF(723, y, 77, h, D.C.INB_WR)
+   if D.S.UI_THM_OV then
+-    X.RCF(435, y, 45, 30, D.C.SNB_C)
+-    X.TX(458, y + 32, "OFF", X.FONT_S, X.TEXT_CENTER, D.C.INV_WR)
++    X.RCF(723, y, 77, 45, D.C.SNB_C)
++    X.TX(762, y + 48, "OFF", X.FONT_S, X.TEXT_CENTER, D.C.INV_WR)
+   else
+-    X.TX(458, y + 4, "RF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
+-    X.TX(458, y + 28, "OFF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
++    X.TX(762, y + 6, "RF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
++    X.TX(762, y + 42, "OFF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
+   end
+@@ -17,7 +17,7 @@
+
+   dt = D.UI.SNV(vD, true)
+-  vD = {b = {435, 36, 45, 76, dt.cb}}
++  vD = {b = {723, 54, 77, 114, dt.cb}}
+   if D.S.UI_THM_OV then
+     local t3 = {}
+-    local t4 = 459
+-    local t5 = 89
++    local t4 = 762
++    local t5 = 135
+     if (dt.val ~= "") or not "" then
+@@ -30,4 +30,4 @@
+
+       t3 = {}
+-      t4 = 458
+-      t5 = 86
++      t4 = 762
++      t5 = 129
+       if (dt.val ~= "") or not "" then
+@@ -43,6 +43,6 @@
+
+   if D.S.UI_THM_OV then
+-    X.RCF(435, 36, 45, 50, dt.ci)
++    X.RCF(723, 54, 77, 75, dt.ci)
+   else
+-    X.TX(455, 42, "RD", X.FONT_STD, X.TEXT_CENTER, dt.cv)
+-    X.TX(456, 62, "BAT", X.FONT_STD, X.TEXT_CENTER, dt.cv)
++    X.TX(762, 63, "RD", X.FONT_STD, X.TEXT_CENTER, dt.cv)
++    X.TX(762, 93, "BAT", X.FONT_STD, X.TEXT_CENTER, dt.cv)
+   end
+@@ -51,7 +51,7 @@
+
+     dt = D.UI.SNV(vD, true)
+-    vD = {b = {435, 112, 45, 76, dt.cb}}
++    vD = {b = {723, 168, 77, 114, dt.cb}}
+     if D.S.UI_THM_OV then
+       t3 = {}
+-      t4 = 459
+-      t5 = 145
++      t4 = 762
++      t5 = 219
+       if (dt.val ~= "") or not "" then
+@@ -64,4 +64,4 @@
+
+         t3 = {}
+-        t4 = 458
+-        t5 = 162
++        t4 = 762
++        t5 = 243
+         if (dt.val ~= "") or not "" then
+@@ -77,6 +77,6 @@
+
+     if D.S.UI_THM_OV then
+-      X.RCF(434, 112, 46, 30, dt.ci)
++      X.RCF(723, 168, 77, 45, dt.ci)
+     else
+-      X.TX(457, 118, "MDL", X.FONT_STD, X.TEXT_CENTER, dt.cv)
+-      X.TX(456, 138, "BAT", X.FONT_STD, X.TEXT_CENTER, dt.cv)
++      X.TX(762, 177, "MDL", X.FONT_STD, X.TEXT_CENTER, dt.cv)
++      X.TX(762, 207, "BAT", X.FONT_STD, X.TEXT_CENTER, dt.cv)
+     end
+--- 480X272/MOD/CFG.lua
+
++++ 480X320/MOD/CFG.lua
+
+@@ -33,4 +33,4 @@
+
+   T.cPages = {}
+-  T.lnMax = 8
+-  T.lnSpace = 22
++  T.lnMax = 11
++  T.lnSpace = 20
+   T.lnDispOffset = 1
+--- 480X272/MOD/CFG.lua
+
++++ 800X480/MOD/CFG.lua
+
+@@ -10,3 +10,3 @@
+
+   t3.w = w.w
+-  t3.h = 30
++  t3.h = 45
+   t2.w = t3
+@@ -16,5 +16,5 @@
+
+   t4.xl = w.xl
+-  t4.yt = w.yt + 30
++  t4.yt = w.yt + 45
+   t4.w = w.w
+-  t4.h = 26
++  t4.h = 39
+   t3.w = t4
+@@ -24,5 +24,5 @@
+
+   t5.xl = w.xl
+-  t5.yt = w.yt + 56
++  t5.yt = w.yt + 84
+   t5.w = w.w
+-  t5.h = w.h - 56
++  t5.h = w.h - 84
+   t4.w = t5
+@@ -33,4 +33,4 @@
+
+   T.cPages = {}
+-  T.lnMax = 8
+-  T.lnSpace = 22
++  T.lnMax = 10
++  T.lnSpace = 33
+   T.lnDispOffset = 1
+@@ -45,7 +45,7 @@
+
+   end
+-  X.TX(w.xl + 10, w.yt + (D.S.UI_THM_OV and 0 or 4) + 30, T.pN, X.FONT_STD_BOLD, X.TEXT_LEFT, D.C.MN_TN)
+-  X.TX(w.xr - 10, w.yt + (D.S.UI_THM_OV and 0 or 4) + 30, D.S.UI_CFG_PN .. "/" .. #D.MODCFG.pagesVisible, X.FONT_STD_BOLD, X.TEXT_RIGHT, D.C.MN_TN)
+-  local itlx = w.xl + 8
++  X.TX(w.xl + 17, w.yt + (D.S.UI_THM_OV and 1 or 6) + 45, T.pN, X.FONT_STD_BOLD, X.TEXT_LEFT, D.C.MN_TN)
++  X.TX(w.xr - 17, w.yt + (D.S.UI_THM_OV and 1 or 6) + 45, D.S.UI_CFG_PN .. "/" .. #D.MODCFG.pagesVisible, X.FONT_STD_BOLD, X.TEXT_RIGHT, D.C.MN_TN)
++  local itlx = w.xl + 17
+   local itvxl = w.xr - T.dVxo
+-  local itvxr = w.xr - 8
++  local itvxr = w.xr - 17
+   local itvxc = itvxl + (itvxr - itvxl) / 2
+@@ -56,3 +56,3 @@
+
+     local vD = T.cvS[vN]
+-    local yo = 57
++    local yo = 86
+     if vD then
+@@ -72,4 +72,4 @@
+
+       end
+-      X.TX(itlx, ity, vD.l, X.FONT_STD_BOLD, X.TEXT_LEFT, ctx)
+-      X.TX(itvxc, ity, vD.dv, X.FONT_STD_BOLD, X.TEXT_CENTER, ctx)
++      X.TX(itlx, ity + 2, vD.l, X.FONT_STD_BOLD, X.TEXT_LEFT, ctx)
++      X.TX(itvxc, ity + 2, vD.dv, X.FONT_STD_BOLD, X.TEXT_CENTER, ctx)
+       if vSel and T.eMod then
+@@ -78,5 +78,5 @@
+
+         cond = vD.v == true
+-        X.TX(itvxl, ity, "<" or "", X.FONT_STD_BOLD, X.TEXT_LEFT, ctx)
++        X.TX(itvxl, ity + 2, "<" or "", X.FONT_STD_BOLD, X.TEXT_LEFT, ctx)
+         cond = vD.v == false
+-        X.TX(itvxr, ity, ">" or "", X.FONT_STD_BOLD, X.TEXT_RIGHT, ctx)
++        X.TX(itvxr, ity + 2, ">" or "", X.FONT_STD_BOLD, X.TEXT_RIGHT, ctx)
+       end
+--- 480X272/MOD/GPS.lua
+
++++ 480X320/MOD/GPS.lua
+
+@@ -5,5 +5,6 @@
+
+                  {f = nil, w = {xl = w.xl + 278, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = 140, h = 168}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = 140, h = 216}},
+                  {f = nil, w = {xl = w.xl, yt = w.yb - 27, w = 140, h = 28}},
+-                 {f = nil, w = {xl = w.xl + 140, yt = w.yt + 40, w = 248, h = 196}}}
++                 {f = nil, w = {xl = w.xl + 140, yt = w.yt + 40, w = 248, h = 216}},
++                 {f = nil, w = {xl = w.xl + 140, yt = w.yb - 27, w = 248, h = 28}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -20,3 +21,3 @@
+
+   T.SAT_HEAL = {"Healthy", "Unhealthy", "Unknown", [0] = "Unknown"}
+-  T.lnMax = 10
++  T.lnMax = 13
+   T.lnSpace = 16
+@@ -47,3 +48,3 @@
+
+       for i = T.lnID, lastLn do
+-        local y = w.yt + 43 + (i - T.lnID) * T.lnSpace
++        local y = w.yt + 44 + (i - T.lnID) * T.lnSpace
+         local satStatName = T.SAT_STAT[D.GPS.SATS[i][1]] or ""
+@@ -113,3 +114,3 @@
+
+     end
+-    X.TX(w.xl + 12, w.yb - 20, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.TX(w.xl + 12, w.yb - 22, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+     return
+--- 480X272/MOD/GPS.lua
+
++++ 800X480/MOD/GPS.lua
+
+@@ -2,8 +2,9 @@
+
+ function T.i(w)
+-  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 110, yt = w.yt, w = 168, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 278, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = 140, h = 168}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yb - 27, w = 140, h = 28}},
+-                 {f = nil, w = {xl = w.xl + 140, yt = w.yt + 40, w = 248, h = 196}}}
++  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl + 180, yt = w.yt, w = 286, h = 60}},
++                 {f = nil, w = {xl = w.xl + 466, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 60, w = 232, h = 324}},
++                 {f = nil, w = {xl = w.xl, yt = w.yb - 42, w = 232, h = 42}},
++                 {f = nil, w = {xl = w.xl + 232, yt = w.yt + 60, w = 414, h = 324}},
++                 {f = nil, w = {xl = w.xl + 232, yt = w.yb - 42, w = 414, h = 42}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -20,4 +21,4 @@
+
+   T.SAT_HEAL = {"Healthy", "Unhealthy", "Unknown", [0] = "Unknown"}
+-  T.lnMax = 10
+-  T.lnSpace = 16
++  T.lnMax = 13
++  T.lnSpace = 24
+   T.lnID = 1
+@@ -47,3 +48,3 @@
+
+       for i = T.lnID, lastLn do
+-        local y = w.yt + 43 + (i - T.lnID) * T.lnSpace
++        local y = w.yt + 66 + (i - T.lnID) * T.lnSpace
+         local satStatName = T.SAT_STAT[D.GPS.SATS[i][1]] or ""
+@@ -58,5 +59,5 @@
+
+           local ct = D.C[cid] or D.C.MD_L
+-          X.TX(w.xl + 12, y + 4, satTypeName .. "." .. satTypeID, X.FONT_XS, X.TEXT_LEFT, ct)
+-          X.GA(w.xl + 68, y + 7, 15, 6, satSignal, 99, nil, ct)
+-          X.TX(w.xl + 86, y + 4, satStatName, X.FONT_XS, X.TEXT_LEFT, ct)
++          X.TX(w.xl + 20, y + 6, satTypeName .. "." .. satTypeID, X.FONT_XS, X.TEXT_LEFT, ct)
++          X.GA(w.xl + 113, y + 10, 25, 9, satSignal, 99, nil, ct)
++          X.TX(w.xl + 143, y + 6, satStatName, X.FONT_XS, X.TEXT_LEFT, ct)
+           if i >= lastLn - 1 then
+@@ -72,15 +73,15 @@
+
+       local var = D.S.GPS_SATS or "-"
+-      X.TX(w.xl + 10, w.yt + 15, "SATS", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+-      X.TX(w.xl + 68, w.yt + 12, var, X.FONT_STD_BOLD, X.TEXT_RIGHT, D.C.MD_V)
+-      X.TX(w.xl + 73, w.yt + 12, "/", X.FONT_STD_BOLD, X.TEXT_LEFT, D.C.MD_L)
+-      X.TX(w.xl + 100, w.yt + 12, T.satsAll > 0 and T.satsAll or "", X.FONT_STD_BOLD, X.TEXT_RIGHT, D.C.MD_L)
++      X.TX(w.xl + 17, w.yt + 22, "SATS", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xl + 113, w.yt + 18, var, X.FONT_STD_BOLD, X.TEXT_RIGHT, D.C.MD_V)
++      X.TX(w.xl + 121, w.yt + 18, "/", X.FONT_STD_BOLD, X.TEXT_LEFT, D.C.MD_L)
++      X.TX(w.xl + 166, w.yt + 18, T.satsAll > 0 and T.satsAll or "", X.FONT_STD_BOLD, X.TEXT_RIGHT, D.C.MD_L)
+     end
+     local color = D.S.POS_FIX and D.C.INB_ON or D.C.INB_WR
+-    X.RCF(w.xr - 110, w.yt, 110, 40, color)
++    X.RCF(w.xr - 180, w.yt, 180, 60, color)
+     color = D.C.INV_WR
+-    X.TX(w.xr - 54, w.yt + 12, "3D FIX", X.FONT_STD_BOLD, X.TEXT_CENTER, color)
+-    local cL = w.xl + 150
+-    local cD = w.xl + 350
+-    local cU = w.xl + 355
+-    local y = w.yt + 46
++    X.TX(w.xr - 89, w.yt + 18, "3D FIX", X.FONT_STD_BOLD, X.TEXT_CENTER, color)
++    local cL = w.xl + 249
++    local cD = w.xl + 581
++    local cU = w.xl + 589
++    local y = w.yt + 69
+     local var
+@@ -101,5 +102,5 @@
+
+     c = D.C.MD_L
+-    lnSpace = 20
++    lnSpace = 30
+     for i, item in ipairs(items) do
+-      X.TX(cL, y + (i - 1) * lnSpace + 3, item.l, X.FONT_S, X.TEXT_LEFT, c)
++      X.TX(cL, y + (i - 1) * lnSpace + 4, item.l, X.FONT_S, X.TEXT_LEFT, c)
+       local value = D.S[item.sID]
+@@ -108,4 +109,4 @@
+
+       end
+-      X.TX(cD, y + (i - 1) * lnSpace - 1, var, X.FONT_STD_BOLD, X.TEXT_RIGHT, c)
+-      local ys = item.u == degs and 0 or 6
++      X.TX(cD, y + (i - 1) * lnSpace - 2, var, X.FONT_STD_BOLD, X.TEXT_RIGHT, c)
++      local ys = item.u == degs and 0 or 9
+       local unit = item.u or ""
+@@ -113,3 +114,3 @@
+
+     end
+-    X.TX(w.xl + 12, w.yb - 20, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.TX(w.xl + 20, w.yb - 33, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+     return
+--- 480X272/MOD/MENU.lua
+
++++ 800X480/MOD/MENU.lua
+
+@@ -15,6 +15,6 @@
+
+   T.nextN = G.next(T.nextN + 1, 1, #D.UI.MODS.visible, true)
+-  T.iconX = 58
+-  T.iconSpacing = 45
+-  T.iconW = 30
+-  T.iconH = 30
++  T.iconX = 70
++  T.iconSpacing = 60
++  T.iconW = 45
++  T.iconH = 45
+ end
+@@ -59,3 +59,3 @@
+
+   if T.menuActive then
+-    X.RCF(46, 35, 388, 284, D.C.MD_B, D.UI.dimMENU)
++    X.RCF(77, 54, 646, 426, D.C.MD_B, D.UI.dimMENU)
+   end
+@@ -64,3 +64,3 @@
+
+     local xi = T.iconX + (i - 1) * T.iconSpacing
+-    local y = 42
++    local y = 65
+     if T.menuActive then
+@@ -78,3 +78,3 @@
+
+     if T.menuActive and i == T.nextN then
+-      X.RCF(xi, yo + T.iconH, T.iconW, 3, D.C.MD_V)
++      X.RCF(xi, yo + T.iconH, T.iconW, 4, D.C.MD_V)
+     end
+--- 480X272/MOD/RCL.lua
+
++++ 800X480/MOD/RCL.lua
+
+@@ -4,9 +4,9 @@
+
+ function T.drawRFoff(y, h)
+-  X.RCF(0, y, 46, h, D.C.INB_WR)
++  X.RCF(0, y, 76, h, D.C.INB_WR)
+   if D.S.UI_THM_OV then
+-    X.RCF(0, y, 46, 30, D.C.SNB_C)
+-    X.TX(23, y + 32, "OFF", X.FONT_S, X.TEXT_CENTER, D.C.INV_WR)
++    X.RCF(0, y, 76, 45, D.C.SNB_C)
++    X.TX(38, y + 50, "OFF", X.FONT_S, X.TEXT_CENTER, D.C.INV_WR)
+   else
+-    X.TX(23, y + 4, "RF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
+-    X.TX(23, y + 28, "OFF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
++    X.TX(38, y + 6, "RF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
++    X.TX(38, y + 42, "OFF", X.FONT_STD, X.TEXT_CENTER, D.C.INV_WR)
+   end
+@@ -33,11 +33,13 @@
+
+   armTxt = ((armTxt or armTxt) or (dt.val == 0 and "DIS")) or ""
+-  vD = {b = {0, 36, 46, 76, dt.cb}}
+-  if D.S.UI_THM_OV then t4 = {22, 89, armTxt, X.FONT_S, X.TEXT_CENTER, dt.cv} end
+-  vD.v = t4 or {22, 86, armTxt, X.FONT_STD, X.TEXT_CENTER, dt.cv}
++  vD = {b = {0, 54, 76, 114, dt.cb}}
++  if D.S.UI_THM_OV then
++    t4 = {37, 135, armTxt, X.FONT_S, X.TEXT_CENTER, dt.cv}
++  end
++  vD.v = t4 or {37, 129, armTxt, X.FONT_STD, X.TEXT_CENTER, dt.cv}
+   D.UI.DIT(vD)
+   if D.S.UI_THM_OV then
+-    X.RCF(0, 36, 46, 50, dt.ci)
++    X.RCF(0, 54, 76, 75, dt.ci)
+   else
+-    X.TX(24, 42, "MDL", X.FONT_STD, X.TEXT_CENTER, dt.cv)
+-    X.TX(22, 62, "ARM", X.FONT_STD, X.TEXT_CENTER, dt.cv)
++    X.TX(40, 63, "MDL", X.FONT_STD, X.TEXT_CENTER, dt.cv)
++    X.TX(37, 93, "ARM", X.FONT_STD, X.TEXT_CENTER, dt.cv)
+   end
+@@ -58,11 +60,11 @@
+
+     dt = D.UI.SNV(vD)
+-    vD = {b = {0, 112, 46, 56, dt.cb}}
++    vD = {b = {0, 168, 76, 84, dt.cb}}
+     if D.S.UI_THM_OV then
+-      t4 = {23, 145, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv}
++      t4 = {38, 219, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv}
+     end
+-    vD.v = t4 or {23, 142, dt.val, X.FONT_STD, X.TEXT_CENTER, dt.cv}
+-    vD.l = {23, 118, "TLM", X.FONT_STD, X.TEXT_CENTER, dt.cv}
++    vD.v = t4 or {38, 213, dt.val, X.FONT_STD, X.TEXT_CENTER, dt.cv}
++    vD.l = {38, 177, "TLM", X.FONT_STD, X.TEXT_CENTER, dt.cv}
+     D.UI.DIT(vD)
+     if D.S.UI_THM_OV then
+-      X.RCF(0, 112, 45, 30, dt.ci)
++      X.RCF(0, 168, 75, 45, dt.ci)
+     end
+@@ -74,11 +76,11 @@
+
+     label = (label or (D.S.UI_THM_OV and "TLM")) or "OFF"
+-    local y = D.S.UI_THM_OV and 145 or 141
++    local y = D.S.UI_THM_OV and 218 or 212
+     local font = D.S.UI_THM_OV and X.FONT_S or X.FONT_STD
+-    X.RCF(0, 112, 46, 54, cB)
++    X.RCF(0, 168, 76, 81, cB)
+     if D.S.UI_THM_OV then
+-      X.RCF(0, 112, 46, 30, D.S.TLM_ON and D.C.INV_ON or D.C.INV_WR)
++      X.RCF(0, 168, 76, 45, D.S.TLM_ON and D.C.INV_ON or D.C.INV_WR)
+     else
+-      X.TX(23, 116, "TLM", X.FONT_STD, X.TEXT_CENTER, cT)
++      X.TX(38, 174, "TLM", X.FONT_STD, X.TEXT_CENTER, cT)
+     end
+-    X.TX(23, y, label, font, X.TEXT_CENTER, cT)
++    X.TX(38, y, label, font, X.TEXT_CENTER, cT)
+   end
+@@ -88,11 +90,11 @@
+
+       dt = D.UI.SNV(vD)
+-      vD = {b = {0, 168, 46, 56, dt.cb}}
++      vD = {b = {0, 252, 76, 84, dt.cb}}
+       if D.S.UI_THM_OV then
+-        t4 = {23, 201, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv}
++        t4 = {38, 303, dt.val, X.FONT_S, X.TEXT_CENTER, dt.cv}
+       end
+-      vD.v = t4 or {23, 198, dt.val, X.FONT_STD, X.TEXT_CENTER, dt.cv}
+-      vD.l = {23, 174, "RL", X.FONT_STD, X.TEXT_CENTER, dt.cv}
++      vD.v = t4 or {38, 297, dt.val, X.FONT_STD, X.TEXT_CENTER, dt.cv}
++      vD.l = {38, 261, "RL", X.FONT_STD, X.TEXT_CENTER, dt.cv}
+       D.UI.DIT(vD)
+       if D.S.UI_THM_OV then
+-        X.RCF(0, 168, 45, 30, dt.ci)
++        X.RCF(0, 252, 75, 45, dt.ci)
+       end
+@@ -100,3 +102,3 @@
+
+   else
+-    T.drawRFoff(168, 54)
++    T.drawRFoff(252, 81)
+   end
+--- 480X272/MOD/STK.lua
+
++++ 480X320/MOD/STK.lua
+
+@@ -2,3 +2,3 @@
+
+ T.lnDispShift = 1
+-T.lnMax = 7
++T.lnMax = 9
+ T.lnSpace = 25
+--- 480X272/MOD/STK.lua
+
++++ 800X480/MOD/STK.lua
+
+@@ -2,10 +2,10 @@
+
+ T.lnDispShift = 1
+-T.lnMax = 7
+-T.lnSpace = 25
++T.lnMax = 9
++T.lnSpace = 38
+ T.radioMode = D.RD.CHMODE
+ function T.i(w)
+-  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 110, yt = w.yt, w = 168, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 278, yt = w.yt, w = 110, h = 40}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = w.w, h = w.h - 40}}}
++  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl + 180, yt = w.yt, w = 286, h = 60}},
++                 {f = nil, w = {xl = w.xl + 466, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 60, w = w.w, h = w.h - 60}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -26,3 +26,3 @@
+
+   x, y, c, d, o = 0, 0, 0, 0, 0
+-  local x1, y1, x2, y2 = xPos, yPos, xPos + gSize + 6, yPos
++  local x1, y1, x2, y2 = xPos, yPos, xPos + gSize + 10, yPos
+   d = math.floor(gSize / 2)
+@@ -30,4 +30,4 @@
+
+   X.RC(x2, y2, gSize, gSize, D.C.MD_L)
+-  local posX = {1, d - 3, 13}
+-  local posY = {14, d - 3, 1}
++  local posX = {1, d - 5, 22}
++  local posY = {23, d - 5, 2}
+   local sx1, sy1, sx2, sy2 = 0, 0, 0, 0
+@@ -39,3 +39,3 @@
+
+   X.RCF(sx2, sy2, sSize, sSize, D.C.MD_V)
+-  X.TX(x2 + gSize + 15, yPos, label, X.FONT_STD, X.TEXT_LEFT, D.C.MD_V)
++  X.TX(x2 + gSize + 25, yPos + 5, label, X.FONT_STD, X.TEXT_LEFT, D.C.MD_V)
+ end
+@@ -61,14 +61,14 @@
+
+ function T.d(w)
+-  X.TX(w.xl + 10, w.yt + 12, "FC", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++  X.TX(w.xl + 17, w.yt + 18, "FC", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+   local fwName = D.S.FC_FW_ID == "BF" and "Betaflight"
+-  X.TX(w.xl + 90, w.yt + 12, (fwName or (D.S.FC_FW_ID == "IN" and "INAV")) or "", X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+-  X.TX(w.xr - 90, w.yt + 12, "MODE", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+-  X.TX(w.xr - 10, w.yt + 12, tostring(T.radioMode), X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+-  local gSize = 20
+-  local sSize = 6
+-  local x = w.xl + 16
+-  local y = w.yt + 54
++  X.TX(w.xl + 149, w.yt + 18, (fwName or (D.S.FC_FW_ID == "IN" and "INAV")) or "", X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++  X.TX(w.xr - 149, w.yt + 18, "MODE", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++  X.TX(w.xr - 17, w.yt + 18, tostring(T.radioMode), X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++  local gSize = 33
++  local sSize = 10
++  local x = w.xl + 27
++  local y = w.yt + 79
+   for i = 1, T.lnMax do
+     local cmd = T.stickCmds[T.lnDispShift + i - 1]
+-    T.drawStick(cmd, x, y - 2, gSize, sSize)
++    T.drawStick(cmd, x, y - 3, gSize, sSize)
+     y = y + T.lnSpace
+--- 480X272/MOD/TLM.lua
+
++++ 480X320/MOD/TLM.lua
+
+@@ -12,5 +12,5 @@
+
+   T.lnDispShift = 1
+-  T.lnMax = 7
++  T.lnMax = 10
+   T.sMax = T.lnMax * 3 - 1
+-  T.lnSpace = 23
++  T.lnSpace = 21
+   if G.fm.pgg then t2 = {"LIVE", "MIN", "MAX"} end
+--- 480X272/MOD/TLM.lua
+
++++ 800X480/MOD/TLM.lua
+
+@@ -2,8 +2,8 @@
+
+ function T.i(w)
+-  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 108, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 108, yt = w.yt, w = 172, h = 40}},
+-                 {f = nil, w = {xl = w.xl + 280, yt = w.yt, w = 108, h = 40}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 40, w = w.w, h = 216}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yb - 27, w = 120, h = 28}},
+-                 {f = nil, w = {xl = w.xl + 120, yt = w.yb - 27, w = 268, h = 28}}}
++  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl + 180, yt = w.yt, w = 286, h = 60}},
++                 {f = nil, w = {xl = w.xl + 466, yt = w.yt, w = 180, h = 60}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 60, w = w.w, h = 324}},
++                 {f = nil, w = {xl = w.xl, yt = w.yb - 40, w = 199, h = 42}},
++                 {f = nil, w = {xl = w.xl + 199, yt = w.yb - 40, w = 445, h = 42}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -12,5 +12,5 @@
+
+   T.lnDispShift = 1
+-  T.lnMax = 7
++  T.lnMax = 10
+   T.sMax = T.lnMax * 3 - 1
+-  T.lnSpace = 23
++  T.lnSpace = 32
+   if G.fm.pgg then t2 = {"LIVE", "MIN", "MAX"} end
+@@ -53,15 +53,15 @@
+
+   if not D.S.MDL_RCP_ON then
+-    X.TX(mxc, w.yt + 47, "Set RC Link", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+-    X.TX(mxc, w.yt + 66, "in Config", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(mxc, w.yt + 70, "Set RC Link", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(mxc, w.yt + 99, "in Config", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+   elseif #D.TLM.SN == 0 then
+-    X.TX(mxc, w.yt + 47, "Discover telemetry", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+-    X.TX(mxc, w.yt + 66, "sensors in OS", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(mxc, w.yt + 70, "Discover telemetry", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
++    X.TX(mxc, w.yt + 99, "sensors in OS", X.FONT_STD, X.TEXT_CENTER, D.C.MD_V)
+   else
+-    X.TX(w.xl + 10, w.yt + 12, D.S.RCP_pverName, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+-    X.TX(w.xr - 93, w.yt + 12, "VALUES", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++    X.TX(w.xl + 17, w.yt + 18, D.S.RCP_pverName, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.TX(w.xr - 154, w.yt + 18, "VALUES", X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     local svTypeName = D.S.TLM_ON or T.svTypeN == 1 or "LAST"
+     svTypeName = T.svTypeL[T.svTypeN]
+-    X.TX(w.xr - 10, w.yt + 12, svTypeName, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
+-    X.LN(w.xl + 133, w.yt + 40, w.xl + 133, w.yb - 28, X.PEN_DOTTED, D.C.MD_L2)
+-    X.LN(w.xl + 260, w.yt + 40, w.xl + 260, w.yb - 28, X.PEN_DOTTED, D.C.MD_L2)
++    X.TX(w.xr - 17, w.yt + 18, svTypeName, X.FONT_S, X.TEXT_RIGHT, D.C.MD_V)
++    X.LN(w.xl + 221, w.yt + 60, w.xl + 221, w.yb - 42, X.PEN_DOTTED, D.C.MD_L2)
++    X.LN(w.xl + 432, w.yt + 60, w.xl + 432, w.yb - 42, X.PEN_DOTTED, D.C.MD_L2)
+     for i = T.topID, math.min(T.topID + T.sMax, #D.TLM.SN) do
+@@ -83,5 +83,5 @@
+
+       if ci > 2 * T.lnMax then
+-        xsh = 264
++        xsh = 438
+       elseif ci > T.lnMax then
+-        xsh = 137
++        xsh = 227
+       end
+@@ -96,5 +96,5 @@
+
+       end
+-      X.TX(x, y + 4, snData.pName or "-", X.FONT_S, X.TEXT_LEFT, cLbl)
+-      X.TX(x + (112 or 93), y + 1, sVal or "-", X.FONT_STD_BOLD, X.TEXT_RIGHT, cTxt)
+-      X.TX(x + 98, y + 8, D.UNITSB[snData.dUnit] or "", X.FONT_XS, X.TEXT_LEFT, cLbl)
++      X.TX(x, y + 5, snData.pName or "-", X.FONT_S, X.TEXT_LEFT, cLbl)
++      X.TX(x + (186 or 154), y + 3, sVal or "-", X.FONT_STD_BOLD, X.TEXT_RIGHT, cTxt)
++      X.TX(x + 163, y + 11, D.UNITSB[snData.dUnit] or "", X.FONT_XS, X.TEXT_LEFT, cLbl)
+     end
+--- 480X272/MOD/VTX.lua
+
++++ 480X320/MOD/VTX.lua
+
+@@ -5,7 +5,7 @@
+
+                  {f = nil, w = {xl = w.xl + 280, yt = w.yt, w = 108, h = 50}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 50, w = 24, h = 158}},
+-                 {f = nil, w = {xl = w.xl + 24, yt = w.yt + 50, w = 256, h = 158}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 50, w = 24, h = 206}},
++                 {f = nil, w = {xl = w.xl + 24, yt = w.yt + 50, w = 256, h = 206}},
+                  {f = nil, w = {xl = w.xl, yt = w.yb - 27, w = 140, h = 28}},
+                  {f = nil, w = {xl = w.xl + 280, yt = w.yt + 50, w = 108, h = 30}},
+-                 {f = nil, w = {xl = w.xl + 280, yt = w.yt + 80, w = 48, h = 156}},
++                 {f = nil, w = {xl = w.xl + 280, yt = w.yt + 80, w = 48, h = 176}},
+                  {f = nil, w = {xl = w.xl + 328, yt = w.yt + 80, w = 60, h = 30}},
+@@ -13,4 +13,4 @@
+
+                  {f = nil, w = {xl = w.xl + 328, yt = w.yt + 130, w = 60, h = 30}},
+-                 {f = nil, w = {xl = w.xl + 328, yt = w.yt + 160, w = 60, h = 76}},
+-                 {f = nil, w = {xl = w.xl + 140, yt = w.yb - 27, w = 140, h = 28}}}
++                 {f = nil, w = {xl = w.xl + 328, yt = w.yt + 160, w = 60, h = 96}},
++                 {f = nil, w = {xl = w.xl + 140, yt = w.yb - 27, w = 248, h = 28}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+@@ -18,3 +18,3 @@
+
+   T.lnMax = 8
+-  T.lnSpace = 17
++  T.lnSpace = 22
+   T.lnSelID = 1
+@@ -62,5 +62,5 @@
+
+   by = by and y + by or y
+-  bw = bw or 13
+-  bh = bh or 16
+-  X.RCF(bx + 1, by + 4, bw, bh, cBkg)
++  bw = bw or 14
++  bh = bh or 18
++  X.RCF(bx + 1, by + 3, bw, bh, cBkg)
+   X.TX(x + 3, y + 2, item, X.FONT_STD, X.TEXT_LEFT, cTxt)
+@@ -136,5 +136,5 @@
+
+     if not D.S.MDL_RCP_ON then
+-      stMsg, stBkg, stTxt = "RC Link cfg", D.C.INB_WR, D.C.INV_WR
++      stMsg, stBkg, stTxt = "Config RC Link", D.C.INB_WR, D.C.INV_WR
+     elseif D.S.VTX_CONN_TYPE == 0 then
+-      stMsg, stBkg, stTxt = "Config VTX", D.C.INB_WR, D.C.INV_WR
++      stMsg, stBkg, stTxt = "Config VTX connection", D.C.INB_WR, D.C.INV_WR
+     elseif D.S.VTX_CONN_TYPE == 1 then
+@@ -156,3 +156,3 @@
+
+       elseif D.S.VTX_CONN_TYPE == 1 then
+-        local yo = "RC Link cfg" and "Config VTX" and "Config FC firmware" and "Betaflight only" and "Config MSP on" and "Only TBS protocol" and "No data" and D.S.VTX_CONN_TYPE == 1 or D.S.FC_MSP_ON and D.S.mspTxReady or "MSP N/A"
++        local yo = "Config RC Link" and "Config VTX connection" and "Config FC firmware" and "Betaflight only" and "Config MSP on" and "TBS Link only" and "No data" and D.S.VTX_CONN_TYPE == 1 or D.S.FC_MSP_ON and D.S.mspTxReady or "MSP not available"
+       end
+@@ -185,3 +185,3 @@
+
+     local cxr = w.xl + cw - 20
+-    local cyt = w.yt + 65
++    local cyt = w.yt + 70
+     local cyb = w.yb - 28
+@@ -203,3 +203,3 @@
+
+     end
+-    X.RCF(w.xl + 25, cyt - 14, w.xl + cw - 70, 16, D.C.MD_L)
++    X.RCF(w.xl + 25, cyt - 20, w.xl + cw - 70, 19, D.C.MD_L)
+     local fStart = 5300
+@@ -210,3 +210,3 @@
+
+       if cxl <= xpos and cxr >= xpos then
+-        local yo = D.S.UI_THM_OV and 9 or 12
++        local yo = D.S.UI_THM_OV and 13 or 15
+         X.TX(xpos + 8, cyt - yo, f, X.FONT_XS, X.TEXT_CENTER, D.C.MD_B)
+@@ -308,17 +308,17 @@
+
+     lineS = D.VTX.tPwV and lineS and lineS
+-    X.TX(w.xl + 12, w.yb - 20, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.TX(w.xl + 12, w.yb - 22, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+     if stMsg then
+-      X.RCF(w.xl + 140, w.yb - 27, 140, 28, stBkg)
+-      X.TX(w.xl + 150, w.yb - 20, stMsg, X.FONT_S, X.TEXT_LEFT, stTxt)
++      X.RCF(w.xl + 140, w.yb - 27, 248, 28, stBkg)
++      X.TX(w.xl + 150, w.yb - 22, stMsg, X.FONT_S, X.TEXT_LEFT, stTxt)
+     elseif D.S.VTX_CONN_TYPE == 1 then
+       if D.VTX.tPwR or D.VTX.tChR then
+-        X.RCF(w.xl + 140, w.yb - 27, 140, 28, D.C.INB_AL)
+-        X.TX(w.xl + 150, w.yb - 20, "Reading tables", X.FONT_S, X.TEXT_LEFT, D.C.INV_AL)
++        X.RCF(w.xl + 140, w.yb - 27, 248, 28, D.C.INB_AL)
++        X.TX(w.xl + 150, w.yb - 22, "Reading VTX tables", X.FONT_S, X.TEXT_LEFT, D.C.INV_AL)
+       else
+         if not D.VTX.tChRA then
+-          X.RCF(w.xl + 140, w.yb - 27, 140, 28, D.C.INB_WR)
+-          X.TX(w.xl + 150, w.yb - 20, "Tables not read", X.FONT_S, X.TEXT_LEFT, D.C.INV_WR)
++          X.RCF(w.xl + 140, w.yb - 27, 248, 28, D.C.INB_WR)
++          X.TX(w.xl + 150, w.yb - 22, "VTX tables not read", X.FONT_S, X.TEXT_LEFT, D.C.INV_WR)
+         else
+-          X.RCF(w.xl + 140, w.yb - 27, 140, 28, D.C.INB_ON)
+-          X.TX(w.xl + 150, w.yb - 20, "Tables read", X.FONT_S, X.TEXT_LEFT, D.C.INV_ON)
++          X.RCF(w.xl + 140, w.yb - 27, 248, 28, D.C.INB_ON)
++          X.TX(w.xl + 150, w.yb - 22, "VTX tables read", X.FONT_S, X.TEXT_LEFT, D.C.INV_ON)
+         end
+--- 480X272/MOD/VTX.lua
+
++++ 800X480/MOD/VTX.lua
+
+@@ -2,19 +2,19 @@
+
+ function T.i(w)
+-  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 108, h = 50}},
+-                 {f = nil, w = {xl = w.xl + 108, yt = w.yt, w = 172, h = 50}},
+-                 {f = nil, w = {xl = w.xl + 280, yt = w.yt, w = 108, h = 50}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yt + 50, w = 24, h = 158}},
+-                 {f = nil, w = {xl = w.xl + 24, yt = w.yt + 50, w = 256, h = 158}},
+-                 {f = nil, w = {xl = w.xl, yt = w.yb - 27, w = 140, h = 28}},
+-                 {f = nil, w = {xl = w.xl + 280, yt = w.yt + 50, w = 108, h = 30}},
+-                 {f = nil, w = {xl = w.xl + 280, yt = w.yt + 80, w = 48, h = 156}},
+-                 {f = nil, w = {xl = w.xl + 328, yt = w.yt + 80, w = 60, h = 30}},
+-                 {f = nil, w = {xl = w.xl + 328, yt = w.yt + 110, w = 60, h = 20}},
+-                 {f = nil, w = {xl = w.xl + 328, yt = w.yt + 130, w = 60, h = 30}},
+-                 {f = nil, w = {xl = w.xl + 328, yt = w.yt + 160, w = 60, h = 76}},
+-                 {f = nil, w = {xl = w.xl + 140, yt = w.yb - 27, w = 140, h = 28}}}
++  local tasks = {{f = nil, w = {xl = w.xl, yt = w.yt, w = 179, h = 75}},
++                 {f = nil, w = {xl = w.xl + 179, yt = w.yt, w = 286, h = 75}},
++                 {f = nil, w = {xl = w.xl + 465, yt = w.yt, w = 179, h = 75}},
++                 {f = nil, w = {xl = w.xl, yt = w.yt + 75, w = 45, h = 309}},
++                 {f = nil, w = {xl = w.xl + 45, yt = w.yt + 75, w = 420, h = 309}},
++                 {f = nil, w = {xl = w.xl, yt = w.yb - 41, w = 232, h = 42}},
++                 {f = nil, w = {xl = w.xl + 465, yt = w.yt + 75, w = 179, h = 45}},
++                 {f = nil, w = {xl = w.xl + 465, yt = w.yt + 120, w = 80, h = 264}},
++                 {f = nil, w = {xl = w.xl + 544, yt = w.yt + 120, w = 100, h = 45}},
++                 {f = nil, w = {xl = w.xl + 544, yt = w.yt + 165, w = 100, h = 30}},
++                 {f = nil, w = {xl = w.xl + 544, yt = w.yt + 195, w = 100, h = 45}},
++                 {f = nil, w = {xl = w.xl + 544, yt = w.yt + 240, w = 100, h = 144}},
++                 {f = nil, w = {xl = w.xl + 232, yt = w.yb - 41, w = 412, h = 42}}}
+   G.loadE(G.PUI .. "UITSKSET", tasks)
+   T.lnDispShift = 1
+-  T.lnMax = 8
+-  T.lnSpace = 17
++  T.lnMax = 9
++  T.lnSpace = 33
+   T.lnSelID = 1
+@@ -62,6 +62,6 @@
+
+   by = by and y + by or y
+-  bw = bw or 13
+-  bh = bh or 16
+-  X.RCF(bx + 1, by + 4, bw, bh, cBkg)
+-  X.TX(x + 3, y + 2, item, X.FONT_STD, X.TEXT_LEFT, cTxt)
++  bw = bw or 19
++  bh = bh or 24
++  X.RCF(bx + 2, by + 5, bw, bh, cBkg)
++  X.TX(x + 5, y + 4, item, X.FONT_STD, X.TEXT_LEFT, cTxt)
+ end
+@@ -136,5 +136,5 @@
+
+     if not D.S.MDL_RCP_ON then
+-      stMsg, stBkg, stTxt = "RC Link cfg", D.C.INB_WR, D.C.INV_WR
++      stMsg, stBkg, stTxt = "Config RC Link", D.C.INB_WR, D.C.INV_WR
+     elseif D.S.VTX_CONN_TYPE == 0 then
+-      stMsg, stBkg, stTxt = "Config VTX", D.C.INB_WR, D.C.INV_WR
++      stMsg, stBkg, stTxt = "Config VTX connection", D.C.INB_WR, D.C.INV_WR
+     elseif D.S.VTX_CONN_TYPE == 1 then
+@@ -156,7 +156,7 @@
+
+       elseif D.S.VTX_CONN_TYPE == 1 then
+-        local yo = "RC Link cfg" and "Config VTX" and "Config FC firmware" and "Betaflight only" and "Config MSP on" and "Only TBS protocol" and "No data" and D.S.VTX_CONN_TYPE == 1 or D.S.FC_MSP_ON and D.S.mspTxReady or "MSP N/A"
+-      end
+-    end
+-    yo = D.S.UI_THM_OV and 0 or -4
+-    X.TX(240, 69 + yo, msg, X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
++        local yo = "Config RC Link" and "Config VTX connection" and "Config FC firmware" and "Betaflight only" and "Config MSP on" and "TBS Link only" and "No data" and D.S.VTX_CONN_TYPE == 1 or D.S.FC_MSP_ON and D.S.mspTxReady or "MSP not available"
++      end
++    end
++    yo = D.S.UI_THM_OV and 0 or -6
++    X.TX(398, 104 + yo, msg, X.FONT_S, X.TEXT_CENTER, D.C.MD_V)
+     if not D.VTX.tChR then
+@@ -165,6 +165,6 @@
+
+         cBkg = D.C.GREY1
+-        X.RCF(w.xl, w.yt, 108, 50, cBkg)
+-        X.TX(w.xl + 12, w.yt + 7, T.sCNAME, X.FONT_XL, X.TEXT_LEFT, cTxt)
+-        X.TX(w.xl + 54, w.yt + 11, T.sFRQ, X.FONT_S, X.TEXT_LEFT, cTxt)
+-        X.TX(w.xl + 54, w.yt + 24, "MHz", X.FONT_S, X.TEXT_LEFT, cTxt)
++        X.RCF(w.xl, w.yt, 179, 75, cBkg)
++        X.TX(w.xl + 20, w.yt + 11, T.sCNAME, X.FONT_XL, X.TEXT_LEFT, cTxt)
++        X.TX(w.xl + 90, w.yt + 17, T.sFRQ, X.FONT_S, X.TEXT_LEFT, cTxt)
++        X.TX(w.xl + 90, w.yt + 36, "MHz", X.FONT_S, X.TEXT_LEFT, cTxt)
+       end
+@@ -173,16 +173,16 @@
+
+         cBkg = D.C.GREY2
+-        X.RCF(w.xr - 108, w.yt, 108, 50, cBkg)
++        X.RCF(w.xr - 179, w.yt, 179, 75, cBkg)
+         local dTxt = D.VTX.setInP and D.TI.tick50 and ""
+         dTxt = T.nCNAME
+-        X.TX(w.xr - 84, w.yt + 7, dTxt, X.FONT_XL, X.TEXT_LEFT, cTxt)
+-        X.TX(w.xr - 40, w.yt + 11, T.nFRQ, X.FONT_S, X.TEXT_LEFT, cTxt)
+-        X.TX(w.xr - 40, w.yt + 24, "MHz", X.FONT_S, X.TEXT_LEFT, cTxt)
+-      end
+-    end
+-    local cw = 278
+-    local ch = 206
+-    local cxl = w.xl + 30
++        X.TX(w.xr - 139, w.yt + 11, dTxt, X.FONT_XL, X.TEXT_LEFT, cTxt)
++        X.TX(w.xr - 66, w.yt + 17, T.nFRQ, X.FONT_S, X.TEXT_LEFT, cTxt)
++        X.TX(w.xr - 66, w.yt + 36, "MHz", X.FONT_S, X.TEXT_LEFT, cTxt)
++      end
++    end
++    local cw = 461
++    local ch = 309
++    local cxl = w.xl + 50
+     local cxr = w.xl + cw - 20
+-    local cyt = w.yt + 65
+-    local cyb = w.yb - 28
++    local cyt = w.yt + 115
++    local cyb = w.yb - 41
+     T.nIDF = T.nIDF or 6
+@@ -203,3 +203,3 @@
+
+     end
+-    X.RCF(w.xl + 25, cyt - 14, w.xl + cw - 70, 16, D.C.MD_L)
++    X.RCF(w.xl + 45, cyt - 25, w.xl + cw - 115, 24, D.C.MD_L)
+     local fStart = 5300
+@@ -210,4 +210,4 @@
+
+       if cxl <= xpos and cxr >= xpos then
+-        local yo = D.S.UI_THM_OV and 9 or 12
+-        X.TX(xpos + 8, cyt - yo, f, X.FONT_XS, X.TEXT_CENTER, D.C.MD_B)
++        local yo = D.S.UI_THM_OV and 18 or 20
++        X.TX(xpos + 13, cyt - yo, f, X.FONT_XS, X.TEXT_CENTER, D.C.MD_B)
+       end
+@@ -220,4 +220,4 @@
+
+       if cyt <= ypos and cyb >= ypos then
+-        T.drawItem(v.bl, w.xl + 5, ypos)
+-        X.LN(cxl, ypos + 12, w.xl + cw - 5, ypos + 12, X.PEN_DOTTED, D.C.MD_L)
++        T.drawItem(v.bl, w.xl + 13, ypos)
++        X.LN(cxl, ypos + 18, w.xl + cw - 8, ypos + 18, X.PEN_DOTTED, D.C.MD_L)
+       end
+@@ -236,3 +236,3 @@
+
+                   cBkg = D.C.GREY2
+-                  T.drawItem(v.bl, w.xl + 5, ypos, cBkg, cTxt)
++                  T.drawItem(v.bl, w.xl + 13, ypos, cBkg, cTxt)
+                 end
+@@ -241,3 +241,3 @@
+
+                   cBkg = D.C.GREY1
+-                  T.drawItem(v.bl, w.xl + 5, ypos, cBkg, cTxt)
++                  T.drawItem(v.bl, w.xl + 13, ypos, cBkg, cTxt)
+                 end
+@@ -273,4 +273,4 @@
+
+     end
+-    X.TX(w.xr - 56 + sx, w.yt + 56, sPwMW, X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
+-    X.TX(w.xr - 53, w.yt + 59, sUnit, X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
++    X.TX(w.xr - 76 + sx, w.yt + 84, sPwMW, X.FONT_STD, X.TEXT_RIGHT, D.C.MD_V)
++    X.TX(w.xr - 72, w.yt + 87, sUnit, X.FONT_S, X.TEXT_LEFT, D.C.MD_L)
+     cTxt = D.C.MD_V
+@@ -278,3 +278,3 @@
+
+     if D.VTX.nPIT ~= nil and D.VTX.nPIT ~= D.VTX.sPIT then
+-      X.RCF(w.xl + 328, w.yt + 109, 60, 20, D.C.SNB_L)
++      X.RCF(w.xl + 544, w.yt + 164, 100, 30, D.C.SNB_L)
+       cTxt = D.C.INV_AL
+@@ -287,5 +287,5 @@
+
+     end
+-    local yo = D.S.UI_THM_OV and 0 or -1
+-    X.TX(w.xl + (340 or 357), w.yt + yo + 113, "ON" or "OFF", X.FONT_S, X.TEXT_LEFT, cTxt)
+-    X.CRF(w.xl + (374 or 342), w.yt + yo + 121, 4, cTxt)
++    local yo = D.S.UI_THM_OV and 0 or -2
++    X.TX(w.xl + (564 or 593), w.yt + yo + 170, "ON" or "OFF", X.FONT_S, X.TEXT_LEFT, cTxt)
++    X.CRF(w.xl + (621 or 568), w.yt + yo + 182, 6, cTxt)
+     cTxt = D.C.MD_V
+@@ -294,6 +294,6 @@
+
+       cBkg = D.C.INB_WR
+-      X.RCF(w.xl + 328, w.yt + 80, 60, 30, cBkg)
++      X.RCF(w.xl + 544, w.yt + 120, 100, 45, cBkg)
+     end
+     if not D.S.UI_THM_OV then
+-      X.TX(w.xl + 358, w.yt + 81, "PIT", X.FONT_L, X.TEXT_CENTER, cTxt)
++      X.TX(w.xl + 594, w.yt + 122, "PIT", X.FONT_L, X.TEXT_CENTER, cTxt)
+     end
+@@ -302,23 +302,23 @@
+
+       cBkg = D.C.INB_WR
+-      X.RCF(w.xl + 328, w.yt + 130, 60, 30, cBkg)
++      X.RCF(w.xl + 544, w.yt + 195, 100, 45, cBkg)
+     end
+     if not D.S.UI_THM_OV then
+-      X.TX(w.xl + 358, w.yt + 131, "LPD", X.FONT_L, X.TEXT_CENTER, cTxt)
++      X.TX(w.xl + 594, w.yt + 197, "LPD", X.FONT_L, X.TEXT_CENTER, cTxt)
+     end
+     lineS = D.VTX.tPwV and lineS and lineS
+-    X.TX(w.xl + 12, w.yb - 20, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
++    X.TX(w.xl + 20, w.yb - 33, D.S.mspInfo, X.FONT_S, X.TEXT_LEFT, D.C.MD_V)
+     if stMsg then
+-      X.RCF(w.xl + 140, w.yb - 27, 140, 28, stBkg)
+-      X.TX(w.xl + 150, w.yb - 20, stMsg, X.FONT_S, X.TEXT_LEFT, stTxt)
++      X.RCF(w.xl + 232, w.yb - 41, 412, 42, stBkg)
++      X.TX(w.xl + 249, w.yb - 33, stMsg, X.FONT_S, X.TEXT_LEFT, stTxt)
+     elseif D.S.VTX_CONN_TYPE == 1 then
+       if D.VTX.tPwR or D.VTX.tChR then
+-        X.RCF(w.xl + 140, w.yb - 27, 140, 28, D.C.INB_AL)
+-        X.TX(w.xl + 150, w.yb - 20, "Reading tables", X.FONT_S, X.TEXT_LEFT, D.C.INV_AL)
++        X.RCF(w.xl + 232, w.yb - 41, 412, 42, D.C.INB_AL)
++        X.TX(w.xl + 249, w.yb - 33, "Reading VTX tables", X.FONT_S, X.TEXT_LEFT, D.C.INV_AL)
+       else
+         if not D.VTX.tChRA then
+-          X.RCF(w.xl + 140, w.yb - 27, 140, 28, D.C.INB_WR)
+-          X.TX(w.xl + 150, w.yb - 20, "Tables not read", X.FONT_S, X.TEXT_LEFT, D.C.INV_WR)
++          X.RCF(w.xl + 232, w.yb - 41, 412, 42, D.C.INB_WR)
++          X.TX(w.xl + 249, w.yb - 33, "VTX tables not read", X.FONT_S, X.TEXT_LEFT, D.C.INV_WR)
+         else
+-          X.RCF(w.xl + 140, w.yb - 27, 140, 28, D.C.INB_ON)
+-          X.TX(w.xl + 150, w.yb - 20, "Tables read", X.FONT_S, X.TEXT_LEFT, D.C.INV_ON)
++          X.RCF(w.xl + 232, w.yb - 41, 412, 42, D.C.INB_ON)
++          X.TX(w.xl + 249, w.yb - 33, "VTX tables read", X.FONT_S, X.TEXT_LEFT, D.C.INV_ON)
+         end
+--- 480X272/MOD.lua
+
++++ 480X320/MOD.lua
+
+@@ -2,3 +2,3 @@
+
+ local modFile = "MOD" .. D.UI.MODS.selID
+-local tasks = {{f = modFile, w = {xl = 46, yt = 36, w = 388, h = 236}, el = 2},
++local tasks = {{f = modFile, w = {xl = 46, yt = 36, w = 388, h = 284}, el = 2},
+                {f = "MODMENU", w = {xl = 0, yt = 0, w = 480, h = 36}, el = 1},
+@@ -8,3 +8,3 @@
+
+                {f = nil, w = {xl = 0, yt = 168, w = 46, h = 56}},
+-               {f = nil, w = {xl = 0, yt = 224, w = 46, h = 48}},
++               {f = nil, w = {xl = 0, yt = 224, w = 46, h = 96}},
+                {f = "MODBAT"},
+@@ -12,3 +12,3 @@
+
+                {f = nil, w = {xl = 434, yt = 112, w = 46, h = 76}},
+-               {f = nil, w = {xl = 434, yt = 188, w = 46, h = 84}}}
++               {f = nil, w = {xl = 434, yt = 188, w = 46, h = 132}}}
+ G.loadE(G.PUI .. "UITSKSET", tasks)
+--- 480X272/MOD.lua
+
++++ 800X480/MOD.lua
+
+@@ -2,13 +2,13 @@
+
+ local modFile = "MOD" .. D.UI.MODS.selID
+-local tasks = {{f = modFile, w = {xl = 46, yt = 36, w = 388, h = 236}, el = 2},
+-               {f = "MODMENU", w = {xl = 0, yt = 0, w = 480, h = 36}, el = 1},
++local tasks = {{f = modFile, w = {xl = 77, yt = 54, w = 646, h = 426}, el = 2},
++               {f = "MODMENU", w = {xl = 0, yt = 0, w = 800, h = 54}, el = 1},
+                {f = "MODRCL"},
+-               {f = nil, w = {xl = 0, yt = 36, w = 46, h = 76}},
+-               {f = nil, w = {xl = 0, yt = 112, w = 46, h = 56}},
+-               {f = nil, w = {xl = 0, yt = 168, w = 46, h = 56}},
+-               {f = nil, w = {xl = 0, yt = 224, w = 46, h = 48}},
++               {f = nil, w = {xl = 0, yt = 54, w = 77, h = 114}},
++               {f = nil, w = {xl = 0, yt = 168, w = 77, h = 84}},
++               {f = nil, w = {xl = 0, yt = 252, w = 77, h = 84}},
++               {f = nil, w = {xl = 0, yt = 336, w = 77, h = 144}},
+                {f = "MODBAT"},
+-               {f = nil, w = {xl = 434, yt = 36, w = 46, h = 76}},
+-               {f = nil, w = {xl = 434, yt = 112, w = 46, h = 76}},
+-               {f = nil, w = {xl = 434, yt = 188, w = 46, h = 84}}}
++               {f = nil, w = {xl = 723, yt = 54, w = 77, h = 114}},
++               {f = nil, w = {xl = 723, yt = 168, w = 77, h = 114}},
++               {f = nil, w = {xl = 723, yt = 282, w = 77, h = 198}}}
+ G.loadE(G.PUI .. "UITSKSET", tasks)

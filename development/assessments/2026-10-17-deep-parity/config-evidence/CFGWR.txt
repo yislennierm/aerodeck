@@ -1,0 +1,92 @@
+Original file: /Users/nene/Documents/Codex/2026-10-12/i-x20/work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/CFG/CFGWR.luac
+Original SHA256: be334b87a0c68399722d04d8daf0c7a59a24c4b24509d7bfd05277c433ae87f9
+
+FUNCTION main params 0 vararg 1 stack 18 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/CFG/CFGWR.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 60), ('F', 1, 60), ('D', 1, 60), ('X', 1, 60), ('cF', 12, 60), ('cD', 13, 60), ('(for generator)', 16, 50), ('(for state)', 16, 50), ('(for control)', 16, 50), ('cN', 17, 48), ('cV', 17, 48), ('cS', 20, 48)]
+K0 'PCFG'
+K1 'MODEL/'
+K2 'RD'
+K3 'MODEL'
+K4 '_'
+K5 'model'
+K6 'getInfo'
+K7 'name'
+K8 '.cfg'
+K9 'local t=... \r\n'
+K10 'pairs'
+K11 'CFGSTR'
+K12 'tostring'
+K13 'type'
+K14 'string'
+K15 '"'
+K16 'boolean'
+K17 'true'
+K18 'false'
+K19 't.'
+K20 '='
+K21 '\r\n'
+K22 'loadE'
+K23 'PLIBFS'
+K24 'FSWF'
+K25 'w'
+   1 [  14] VARARG    A=0 B=5 C=0
+   2 [  17] GETTABLE  R4 = R0[K0('PCFG')]
+   3 [  17] LOADK     R5 = K1 ('MODEL/')
+   4 [  17] GETTABLE  R6 = R2[K2('RD')]
+   5 [  17] GETTABLE  R6 = R6[K3('MODEL')]
+   6 [  17] LOADK     R7 = K4 ('_')
+   7 [  17] GETTABUP  R8 = UP0[K5('model')]
+   8 [  17] GETTABLE  R8 = R8[K6('getInfo')]
+   9 [  17] CALL      A=8 B=1 C=2
+  10 [  17] GETTABLE  R8 = R8[K7('name')]
+  11 [  17] LOADK     R9 = K8 ('.cfg')
+  12 [  17] CONCAT    A=4 B=4 C=9
+  13 [  18] LOADK     R5 = K9 ('local t=... \r\n')
+  14 [  20] GETTABUP  R6 = UP0[K10('pairs')]
+  15 [  20] GETTABLE  R7 = R2[K11('CFGSTR')]
+  16 [  20] CALL      A=6 B=2 C=4
+  17 [  20] JMP       A=0 ->49
+  18 [  22] GETTABUP  R11 = UP0[K12('tostring')]
+  19 [  22] MOVE      A=12 B=10 C=0
+  20 [  22] CALL      A=11 B=2 C=2
+  21 [  23] GETTABUP  R12 = UP0[K13('type')]
+  22 [  23] MOVE      A=13 B=10 C=0
+  23 [  23] CALL      A=12 B=2 C=2
+  24 [  23] EQ        A=0 R12, K14('string'); skip-next if condition != A
+  25 [  23] JMP       A=0 ->31
+  26 [  25] LOADK     R12 = K15 ('"')
+  27 [  25] MOVE      A=13 B=10 C=0
+  28 [  25] LOADK     R14 = K15 ('"')
+  29 [  25] CONCAT    A=11 B=12 C=14
+  30 [  25] JMP       A=0 ->42
+  31 [  26] GETTABUP  R12 = UP0[K13('type')]
+  32 [  26] MOVE      A=13 B=10 C=0
+  33 [  26] CALL      A=12 B=2 C=2
+  34 [  26] EQ        A=0 R12, K16('boolean'); skip-next if condition != A
+  35 [  26] JMP       A=0 ->42
+  36 [  28] TEST      A=10 B=0 C=0
+  37 [  28] JMP       A=0 ->41
+  38 [  28] LOADK     R12 = K17 ('true')
+  39 [  28] TESTSET   A=11 B=12 C=1
+  40 [  28] JMP       A=0 ->42
+  41 [  28] LOADK     R11 = K18 ('false')
+  42 [  30] MOVE      A=12 B=5 C=0
+  43 [  30] LOADK     R13 = K19 ('t.')
+  44 [  30] MOVE      A=14 B=9 C=0
+  45 [  30] LOADK     R15 = K20 ('=')
+  46 [  30] MOVE      A=16 B=11 C=0
+  47 [  30] LOADK     R17 = K21 ('\r\n')
+  48 [  30] CONCAT    A=5 B=12 C=17
+  49 [  20] TFORCALL  A=6 B=0 C=2
+  50 [  20] TFORLOOP  A=8 ->18
+  51 [  32] GETTABLE  R6 = R0[K22('loadE')]
+  52 [  32] GETTABLE  R7 = R0[K23('PLIBFS')]
+  53 [  32] LOADK     R8 = K24 ('FSWF')
+  54 [  32] CONCAT    A=7 B=7 C=8
+  55 [  32] MOVE      A=8 B=4 C=0
+  56 [  32] MOVE      A=9 B=5 C=0
+  57 [  32] LOADK     R10 = K25 ('w')
+  58 [  32] CALL      A=6 B=5 C=1
+  59 [  35] RETURN    A=0 B=1 C=0
+  60 [  35] RETURN    A=0 B=1 C=0

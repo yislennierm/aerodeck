@@ -1,0 +1,2625 @@
+{
+  "modules": [
+    {
+      "file": "ASSETS/THEMES/CARBON_PLATE/C.luac",
+      "sha256": "c7e4faf61f482fdf88be26e04fc7504d4aae9947673ea2c1a063f6f09307a040",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped inventory/symbol/layout review only; no complete semantic branch review claimed"
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "ASSETS/THEMES/LEATHER_BLUE/C.luac",
+      "sha256": "26804f18ebed30cedb2d6786fa01e0006bf42240ab68595808fb3124cf35ea3d",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped inventory/symbol/layout review only; no complete semantic branch review claimed"
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "ASSETS/THEMES/METAL_SILVER/C.luac",
+      "sha256": "6772da8f6982f1a67afb59e5cac93ee5b7dc78abf3a2eb04bd9d8427622785d3",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped inventory/symbol/layout review only; no complete semantic branch review claimed"
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "ASSETS/THEMES/WOOD_WALNUT/C.luac",
+      "sha256": "864b180003b232317c0758d2fb8676fb8434c834fff8910892d1e23e09782afc",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped inventory/symbol/layout review only; no complete semantic branch review claimed"
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "LIB/CFG/CFGAPP.luac",
+      "sha256": "067ee04de483357dc41ddffb2dc37f983b628772e72f78bb31d8e56d785efde4",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGBAT.luac",
+      "sha256": "1dbec91f6ab8dfb059494135f20b436cc5b738f5708a1f1a5e31b67c5ab08669",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGBFV.luac",
+      "sha256": "a305098a214b190b7a454aa507f19843cfdd1d017bc6bfdf15a9aa604dee1a29",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGD.luac",
+      "sha256": "93d4405a1dcf6beaba612e0adb3a2947326a381738e14fd244247a14ac7ea39f",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGFC.luac",
+      "sha256": "12d325ca042e90a51a33649424ef8d845ef0be735acb895f554d380df55092f5",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGFNUI.luac",
+      "sha256": "46718889741066fa512c8e38685dbcc7a6cdd375bb67a6f1fafe7f59e771592f",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGGPS.luac",
+      "sha256": "819e2a77cdb1a9a94b10e6d223ac65bc62fbbc1dd78c93ca819f9d2c9af2a2d2",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGIND.luac",
+      "sha256": "81143b6a9771a5b09dd6387f7f9b85b3ab8a5b05ecb575edb0d6d70a06cbb98f",
+      "domain": "configuration",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed",
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGINDBF.luac",
+      "sha256": "11488ed418cd6c24e1dde2f8d6d5a959e75ee2e785468c88dd6cb9e3bac3ca3b",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGINIT.luac",
+      "sha256": "03775742d8621e7797bb6c238d66def0f5a3e5a58460579b944e9614e5fe4fed",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGLD.luac",
+      "sha256": "46c031ca6ecaba97be10592bcdbd723a5dca601d25d7d94da48578595348d1b5",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGMDL.luac",
+      "sha256": "deb8e461a60ebfd2426748374905f3a195fc995430e6c3b8b76416da8335ab2d",
+      "domain": "configuration",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed",
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGRCL.luac",
+      "sha256": "ace24be15bf5f48f34fdde96c55f9fa16900d57380b96b98b1052c6b630afa17",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGSRDE.luac",
+      "sha256": "7ed7a8fa96d7fb72ada3beadf5fa19ed7420cef94f486182d643651ce0f7644c",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGSREN.luac",
+      "sha256": "ba5dde59e879e53b9285426fc15b909c1ee85553bf9d180b01a10437f41ffdbe",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGSWDE.luac",
+      "sha256": "68485bb5f9a539af9eaed1205f0bdc2c04077d557f9d366a5beca3cce4f2d08c",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGSWEN.luac",
+      "sha256": "816373b189d07ecfeec075d188c5e6411de054d0b35dddfa159acb42e4c5bd4f",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGUI.luac",
+      "sha256": "76ffb909da1b692d82fc91a270c5deb4b2028303c02ecc50054074b6a98575f9",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGUPD.luac",
+      "sha256": "619185234c48d646733e89a59f9f616be22ed615553b2954894c22a1d187942a",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGUPDP.luac",
+      "sha256": "9a9386063bfc2ceb1228441de05c40b84459c173f6d05eadbe63e27844fffbb3",
+      "domain": "configuration",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGVFV.luac",
+      "sha256": "4687d13abcb3375bafd7547c89dee9aec0ec90e8d84d09ca34a5fc45866e42df",
+      "domain": "configuration",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGVTX.luac",
+      "sha256": "edb8074d9aa662d5286b415fbae4a9e7e8948a34b70445055eec9cb1a55dbcfb",
+      "domain": "configuration",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/CFG/CFGWR.luac",
+      "sha256": "be334b87a0c68399722d04d8daf0c7a59a24c4b24509d7bfd05277c433ae87f9",
+      "domain": "configuration",
+      "review": [
+        "Configuration declaration/persistence/dependency review; recovered symbols checked against original constants; selected control flow checked"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/BF/ASC.luac",
+      "sha256": "c9a88d29bbadce66038c360c7ceee1326d2d1bdef53e5d09e73b7f67d7aa4490",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/BF/ASCS.luac",
+      "sha256": "0088591f83745cfb947dc63b0265e147dd4bb6dc3cde7db561f9a1ca1d4d3751",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/BF/STK.luac",
+      "sha256": "784493d306fd5cf66b67637dbabaa28295a9473ccc37ba6bd469a97ad416ccf7",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/FCINIT.luac",
+      "sha256": "f85163c956957c0a81bd0f15d95bbfa63535c82a6e7a9471318a22577165797f",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/IN/ASC.luac",
+      "sha256": "61d513ea048c1af1f7b055f0eebb7740e156a249f432a220324672dd64ac3154",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/IN/ASCS.luac",
+      "sha256": "1058bfc487f8eca67304e761328d9c7f73a0c3b68674a1e862a8a740244fb269",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FC/IN/STK.luac",
+      "sha256": "ce68da50e4c6d0c6972633ad514b73fe214fd94d44b71a49cfe7d8166c1cad07",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FS/FSDIR.luac",
+      "sha256": "fe65856395001f9247db7d65a76eaa5513832e90df99a4b7d2b708d1fa71c528",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FS/FSLF.luac",
+      "sha256": "b189eac93bfbbe1556b4f77c7c7dd893a458e6424bae10e6cbb1c6897a055ddb",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FS/FSLOG.luac",
+      "sha256": "e43240472411f585464ca6e60051d8e03871e2c9ad888efc22b5f6baac753022",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FS/FSWF.luac",
+      "sha256": "3a265aa5090e389200fa4fe47d39fc74510fe08120ee817dfb4807cf06b60784",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/FS/FSWP.luac",
+      "sha256": "0d0b1fa18b83190f0aeacc84ed6af6f08d0b6b3844a6542cee8f1155d4fd135e",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/GPS/GPSINIT.luac",
+      "sha256": "014660214bc6cce4caa2d0021d7914cf70c0d562b67e6c5630d9735ff57de949",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0001.luac",
+      "sha256": "bc9f68d8de39a711f70740b2f779e8b43e657db079738659dc0687f6fb7ff099",
+      "domain": "transport/control",
+      "review": [
+        "All original instructions and constants read; assignments and helper calls traced. Reads three U8 values through MSPP: protocol version, API major, API minor. Stores protocol version and tonumber(major..\".\"..minor).; No transport sends, settings writes, extra sensor fields or hidden controls.; AERODECK already retains major/minor separately; do not copy decimal API representation."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0002.luac",
+      "sha256": "88f69707b6da331541d6fc4d34e75d88e942058605108903c9435af772da349a",
+      "domain": "transport/control",
+      "review": [
+        "All original instructions and constants read; side effects enumerated. Reads fixed four-byte string via MSPP(\"S\",4) and stores FC.FW_NAME; remaining calls are debug logging.; Actual family acceptance/rejection remains in MSPCFC, already covered. No additional capability."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0003.luac",
+      "sha256": "53da89fab0d4be527dd3255c5392eb7269991b4e331684976940a5082c1a6bc0",
+      "domain": "transport/control",
+      "review": [
+        "All original instructions and constants read; family-specific stored fields traced. Reads three U8 values and formats dotted firmware version.; No extra request or control operation."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0004.luac",
+      "sha256": "d3f4390de833d47bd6dda21a0f51013fcc3de5ee9b7ca780153d28ca1d80f682",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0058.luac",
+      "sha256": "45506022ec8facb666fe737844152a8f5f93aedb6d726611ff36b3bd9f388182",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0059.luac",
+      "sha256": "a5b6c43082fa552b1383576d72ea2fa6758a4cc93c080d8c0d19cfec269f93eb",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC006A.luac",
+      "sha256": "4a59ac3cb78429e7229d3e7a0f3fbd1323c8b5c774665fffd85691cb4c59adfd",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC006B.luac",
+      "sha256": "0f3f30401a48f51470510b74fe3abd2bec4c94fe1e2b86702c846ccfaac2e64d",
+      "domain": "transport/control",
+      "review": [
+        "Entire three-instruction original handler read; zero constants/prototypes or helper calls. MSP107 handler is a literal no-op: VARARG followed by RETURN and terminal RETURN. It does not decode home distance/bearing or any field.; Catalog presence is not implementation. No 107 enqueue found in earlier scheduler/caller review.; Correction to broad earlier context wording: 107 is catalog-plus-no-op, not a functioning decoder. This strengthens the existing negative finding; it does not create another missing AERODECK capability."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0089.luac",
+      "sha256": "9fff51071788ef453b7086df0fedb1ea3443d8fa04e3201ac439b9990f9d3b26",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC008A.luac",
+      "sha256": "3d90b30229aa5d29728ef7ac774b91fb3788f9b214d2a016c212a1c8f4e82357",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC0096.luac",
+      "sha256": "c8502cf1f6343ce2b700f88d6a6751dbd3b6d08f027d176ad221803645c76378",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC00A0.luac",
+      "sha256": "2cf69110ebf52c39744ee6f31124b09c949c00e6f4aa254dabb2d9368ad67c87",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC00A4.luac",
+      "sha256": "927edda4ecd54d13a0d88e232cc6faccbba14821611c96d706bc60b5787b6dbf",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPC00FA.luac",
+      "sha256": "c330c2f8d6985613c733b50a429c14cddea658cbb596115e481584c2def5afaf",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/C/MSPCMD.luac",
+      "sha256": "c07404beab66466400683cc20ecb70cd23872192839ec8f40f4774c15c842207",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/MSPCFC.luac",
+      "sha256": "4e566da81c26c2f600759cc40810ff0b511dbd92901d0df2d458e2b7214c9f7b",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/MSPRPT.luac",
+      "sha256": "582ebade13d1d87a93a7cca3896351e70f8bbb10e4c2014f7601d13e0c1bc37b",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/V2/MSPIN.luac",
+      "sha256": "b4ada1a793b2e0ec475855c48f53c321bcdcb49684cc37de21cc1ffde77ccf7b",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/BF/V2/MSPOUT.luac",
+      "sha256": "25e79a6cc2b0351acdbf26e429d57353a650224bd1c52e718c87ec7d0b1b5110",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC0001.luac",
+      "sha256": "df164c5b32c16a9ed361ae92acf9501d714960d614b79dfa4d0cb0f64bbb1092",
+      "domain": "transport/control",
+      "review": [
+        "All original instructions and constants read; assignments and helper calls traced. Reads three U8 values through MSPP: protocol version, API major, API minor. Stores protocol version and tonumber(major..\".\"..minor).; No transport sends, settings writes, extra sensor fields or hidden controls.; AERODECK already retains major/minor separately; do not copy decimal API representation."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC0002.luac",
+      "sha256": "e291f5a3dff61f39df05dd0b56c39472f8aeeed5f688b7d84332881684d3253c",
+      "domain": "transport/control",
+      "review": [
+        "All original instructions and constants read; side effects enumerated. Reads fixed four-byte string via MSPP(\"S\",4) and stores FC.FW_NAME; remaining calls are debug logging.; Actual family acceptance/rejection remains in MSPCFC, already covered. No additional capability."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC0003.luac",
+      "sha256": "31aa75851a30d412509d308ed4f970dc8dad24e25d44544345b77091b736f623",
+      "domain": "transport/control",
+      "review": [
+        "All original instructions and constants read; family-specific stored fields traced. Reads three U8 values and formats dotted firmware version.; No extra request or control operation.; INAV additionally stores FW_VER_MAJOR, FW_VER_MINOR and FW_VER_PATCH separately for its existing version guard; covered by CTL-002."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC0004.luac",
+      "sha256": "5e9b47fcb2e08d0e7c1b75fd8445d45efdc16ad963e842e49671d75d9318320b",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC006A.luac",
+      "sha256": "49cf0e7d375b5a4cb76a7bac483de107a3871d55650e2c0181377bcacade0e1c",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC006B.luac",
+      "sha256": "b14ea4a14394828fed7ae9841e90f4aef83472217966f421516b77f52302d0ea",
+      "domain": "transport/control",
+      "review": [
+        "Entire three-instruction original handler read; zero constants/prototypes or helper calls. MSP107 handler is a literal no-op: VARARG followed by RETURN and terminal RETURN. It does not decode home distance/bearing or any field.; Catalog presence is not implementation. No 107 enqueue found in earlier scheduler/caller review.; Correction to broad earlier context wording: 107 is catalog-plus-no-op, not a functioning decoder. This strengthens the existing negative finding; it does not create another missing AERODECK capability."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC0097.luac",
+      "sha256": "963680eade05c3102b817fae9f375d0b89485533e004bfad2df02316e9cc0cc4",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC00A0.luac",
+      "sha256": "4cb699fd931c08b0d3580a69d6092ee3bb254df89827229fb58c3a9bd30f2f5f",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC00A4.luac",
+      "sha256": "1f391a03c0516a9777234ccf03f94b0bbd9c4f9a5cf8138df8dd9514908acb2b",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPC2000.luac",
+      "sha256": "173e6c420ee94548a540b6e106e95ac627fc47589361b5bb068c201506874ae5",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/C/MSPCMD.luac",
+      "sha256": "2703046e61894213e79b8194d732a7c260e06573a0017cc83f907924ea5d5c22",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/MSPCFC.luac",
+      "sha256": "d42b004009b8d76f5b3d8b6a87ce16266c68b24bd1b528f0339bab2bc0343a61",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/MSPRPT.luac",
+      "sha256": "35e9a6226563986630859bebc583669557371f7eefd4497bbe1e67608a2837e2",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/V2/MSPIN.luac",
+      "sha256": "9f4bb4cbd71af130d853ab69cddf18b775a301d0957c206e0c3d871516cee1cf",
+      "domain": "transport/control",
+      "review": [
+        "Instruction/constant/control-flow inspection of codec plus recursive semantic-structure equality to already reviewed BF counterpart; no emulation or hardware execution. INAV receiver is structurally identical to BF receiver: parameters, vararg/stack, instruction words, constants, upvalue descriptors and all nested prototypes match after excluding source/debug metadata.; Traced error flag, version bits, START/sequence, little-endian command/length, command matching, continuation/reassembly, timeout/error accounting and dispatch to family C/MSPCxxxx handler.; No INAV-specific hidden command or additional data feature resides in codec. Family-specific capabilities remain in selected handlers.; Original buffers by configured chunk size and reported length; current AERODECK bounds/strict validation remain desirable and are not made equivalent by this comparison."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/IN/V2/MSPOUT.luac",
+      "sha256": "8be6d92936c79f3fe10e23937ba2f55f25453b12c81e7e03b2beb3d38d474f8c",
+      "domain": "transport/control",
+      "review": [
+        "Instruction/constant/control-flow inspection of codec plus recursive semantic-structure equality to already reviewed BF counterpart; no emulation or hardware execution. INAV transmitter is structurally identical to BF transmitter under the same metadata-excluded comparison.; Traced START/version/sequence header, little-endian command/length, payload chunk packing through OUT.SIZE, pointer/sequence advancement and pushM wrapper call.; Read/write outer frame type selection remains in shared MSPWXF wrapper based on OUT.save (0x7A/0x7C), already covered. No INAV-specific control capability hidden in the codec.; This is code-structure proof, not packet execution, transport validation or hardware performance proof."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPINIT.luac",
+      "sha256": "7aad0722f500af69141813d7345bddd7e51e80b19192f45aaadc298ea823676d",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPML.luac",
+      "sha256": "dc8f927e5b62766df9d88abc4fd2efbfd6c7d97da6b50399f1ec9f8f9e27eb55",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPP.luac",
+      "sha256": "8dcf1505b1746a45f1c5222cdc44210cd48c2cddf788b22f7a3f44f59af011b5",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPQAD.luac",
+      "sha256": "f04b28d5f02ad3beb89b2e4e323510e1a62754cfedeca24cdbfc493b3c9fb62f",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPRST.luac",
+      "sha256": "c6b51b42f9388a27ab10c5b119e120e3f0c0cd98b56abbfaae3f27749fb03b69",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPTC.luac",
+      "sha256": "01b39419775ed271c0f4acf31c7b4fde6056c2e8f082a9ab4cc02dff82216475",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/MSPTP.luac",
+      "sha256": "3a7de23307fe82ccd1a1bc9f78e8ec2247052bc7cc720e24376781dc3f712c65",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/WR/MSPWSP.luac",
+      "sha256": "82ccffe3bc9c6e6bb5d29b61d86351ec330844a1480898fc638b7b29d67318a6",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/MSP/WR/MSPWXF.luac",
+      "sha256": "8bacac5e63e3bc788f7b08a616b0059d88714fa7d978277c9019fa1925d41ac5",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/OS/UETX.luac",
+      "sha256": "da589ca5c5f7519da3149477a56d908d2b086ef0abd933b42d85085e735933eb",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/BAT.luac",
+      "sha256": "9f3d33277f726391de24a0afa6afbe6d0bb663a5aa749095ee4c1665b4c4b16b",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/RDINP.luac",
+      "sha256": "440a24d91a189628fdbf8b7e4635870095dfc02d87aee1cae82d84c17754477f",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/RDKEY.luac",
+      "sha256": "002e45fa65399fe393b8dcb9b068f960e02f03531a89d2fdb46b0c74919e78c5",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/SIN.luac",
+      "sha256": "e2497070956bb9b8ed28cc570d1ee0228a79149bb0b900f6bf3236f4a418abc2",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/SND.luac",
+      "sha256": "e1f36b0909f709cb68ae0f0000a473df8e011aa6b9c62d7cfd78f65624e53596",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/SSW.luac",
+      "sha256": "0ea55293009bff6ea15437fe0705c01f7a1b408b192f27e2bea64766978abb55",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/RD/TMR.luac",
+      "sha256": "d8f138d463fa09514edff3595ad54ded95a9dd03a6828d1688b2d77f8da6814f",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TB/BTCNO.luac",
+      "sha256": "9504eec4974495157aae021315097d4f1206aca64b4f7386f4950b0115d60792",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TB/DATAINIT.luac",
+      "sha256": "b88f1e8e0901908ec71c99cb394b336f6fc629057d7bb65e0a50d1317fccec5b",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TB/INDINIT.luac",
+      "sha256": "5db1652c1e4a29e65135f0b94ae5f6efa7fa67be105c90058b5391d5f062eb91",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TB/INDUPD.luac",
+      "sha256": "a4ade69404ddacd0404a22be62070d77985905244011652a7713df22442057b5",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TB/RST.luac",
+      "sha256": "fbd89a76d8bde3371ad771a143ff7a39f153c8e25539b77f276be6a288e9c10d",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/ACC.luac",
+      "sha256": "2928cf5ae4a2c24505eda31685c81efcdca036374a9c133145df45df553cf1df",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/BARO.luac",
+      "sha256": "38a86e83c26d64883bfd017652117e40a2ddd5ea5bb3cff2922a9995481829b3",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/BTA.luac",
+      "sha256": "db47d5174d78cf35e1bb87e8f7ef17c08eee6f850b00a50a2342ac33c3ad474b",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/BTV.luac",
+      "sha256": "b4e507af3f346eb7fc374a6fce4df52bef173522c68af572b536b48424c54872",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/FC.luac",
+      "sha256": "7fbb63ef46c326bfedf171d042015b944e13ee32e2b55d5947421a1d813166ce",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/FC_BF.luac",
+      "sha256": "e71d38298902e49d3c36c15384ae49fa6e8d931f5acd8ab021fd7c9612600132",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/FC_IN.luac",
+      "sha256": "c29ad1eae19fd03085828317d62ec96e1a63f8e6cf974bde4dca1c7e2b4648a4",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/GPS.luac",
+      "sha256": "1e461fe175f3c110f77cd4d25f7034bd415b403ae79f84221124a7b96215e022",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/GPS_BF.luac",
+      "sha256": "26902d0285e82c04fe5c01c385cf8930a070014cdc66f76ad21bd8f5b129c0ff",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/GPS_IN.luac",
+      "sha256": "9b6d8010744d05ad86b36330a2ee2dcf071813e847c9cb7fac39de577438d823",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/GYRO.luac",
+      "sha256": "3d49a1ab650115f9b850d4fc6233abee5dfda9259c4e31ddb0c1f1cf96c71e33",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/GYRO_BF.luac",
+      "sha256": "aee6bc0a90c568d9c2c0a3f09cb0349042990eeb65a4a27d7b64c4870d3a4d8e",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/GYRO_IN.luac",
+      "sha256": "0f0d9088fa0689b2eda4dccaf6c1416fc06e4c93bff6f606da2382f5cc53756f",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/PITOT.luac",
+      "sha256": "26d9b672d6381abd1fb2856f7fc6a50666c54526ecd8e12aaf01ea86184b9136",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/FRS/RL.luac",
+      "sha256": "f182ead3b26cf2bc89c4263254f9b2258ad11167da552e9db6e33b462613273a",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/RCPINIT.luac",
+      "sha256": "66094d810ef6a19b61f12f89326315c22806c3a88db08c5d020fc673e82138ac",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/ACC.luac",
+      "sha256": "9ac3e176e99f96c2a071492d62765a81b3045e96e6b8c4f5d127b3bca20d4261",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/BARO.luac",
+      "sha256": "8eab1a6aecca2ee6657c27a1cde8cae6a693b97f67a80e7b6017634aa384b518",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/BTA.luac",
+      "sha256": "997ec0508dbcc8919e976e364bf2f7d5805ad2344d5442fa30f5d88f4afc35c6",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/BTV.luac",
+      "sha256": "5f48aa079e394e8e9dfd20d500d548010d475eae229e2f4bed40ed869a05f61a",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/FC.luac",
+      "sha256": "cbb853eedd4a77c6fbf28f8422f8a9fb14f4bc2122ebf0361ae8aea4a2e80eb3",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/FC_BF.luac",
+      "sha256": "18d3c77c43d929e6d93bcda6e997b53760c56727cf8f68d2db97ddfb704ffbd2",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/FC_IN.luac",
+      "sha256": "20dea8552ab5746ecc827de319f9f938a13c8b1d6fe842dcdca960c4bbe062d3",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/GPS.luac",
+      "sha256": "6f9698220306991976d7d68676f05057b2ed3bf20dfe1053dc61fd025252fec6",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/GYRO.luac",
+      "sha256": "23095d5121f1c016aa79d7e64348ca57083a0cdb9434448e83762dbf472c5eee",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/PITOT.luac",
+      "sha256": "85e4f18e03e279635bcf4158cf76bd8e57e8ca69687711660aba6ad67d65cd74",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TBS/RL.luac",
+      "sha256": "f6207492f0e64cfe09096b777cdcefeca1b3561abf3790913f65a96faa464c88",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TLMINIT.luac",
+      "sha256": "67f9f11ecdb5b8ff54a2913a55d3d7afede57091f7325fd770e600dab4c2807a",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TLMRLD.luac",
+      "sha256": "0ad1fd8ef2a0686d49ed256da7452cf9ff0a8b311e3412fa8b22da2d3dfd9e02",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TLMRST.luac",
+      "sha256": "b1dcbd16d4317e0dd9a8a908ed601a9b07004b824d6c395a51a03c710f2445b4",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TLMSADD.luac",
+      "sha256": "ae5df9faa9ebddb56fd2475904a95961202250090a6a0dc5f0e31281eefc45d3",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TLMSDEL.luac",
+      "sha256": "a07d11171c1f8c25e4ebe4a0e72c0d5497177eefd844261a8e00b9834e370b47",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/TLM/TLMUPDS.luac",
+      "sha256": "5e383ccbce0732ef4ac94bc41226497c5b76d7c9b3e24ad4af7f4658d2d1c863",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/VTX/VTXBFR.luac",
+      "sha256": "17194b9ed025b7e748c73555766899ad2344e575c3bc037e230926077da68e49",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/VTX/VTXFCH.luac",
+      "sha256": "5ce93c990f7932cd390336f6a25ac4920981a66dead3d299dc97048b789ae172",
+      "domain": "transport/control",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/VTX/VTXINIT.luac",
+      "sha256": "ccf2014aa018fbd797980ee73a5d4af57fe640c8afff358be89909f7f09f5cf7",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/VTX/VTXMSP.luac",
+      "sha256": "b0a438f8d96dbafd91a3ba15773569b1297f1074489abfecca95dc61980e615f",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/VTX/VTXPXW.luac",
+      "sha256": "28a70128c17e42bf19f0a3afeefb0f04089286eae5b1964a5c4e4f5fe06495cf",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "LIB/VTX/VTXTBS.luac",
+      "sha256": "d692b9d62ff948773234dbcde218c4db99410c12fdf892e4e6c504726d5972f6",
+      "domain": "transport/control",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "M.luac",
+      "sha256": "ee0742ca4f3ff3ca2e323982941194e75eea071ac0cf97b93dc55a931f12148c",
+      "domain": "root/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "MAIN/AI.luac",
+      "sha256": "5d09503d62be4632f8e250fd9cd2019c393dabc8aae66ba8d771f3c0f5f7d4f3",
+      "domain": "root/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "MAIN/GF.luac",
+      "sha256": "e4f12354ec21c665adab4250c0d777b21ff6c9ae1bc3dc4714c8c469975c59ac",
+      "domain": "root/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "MAIN/INIT.luac",
+      "sha256": "ba438661659e481f6d94b4bd56f005fefa69ad1fe2fa04df819cc1e6389f2792",
+      "domain": "root/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "MAIN/ML.luac",
+      "sha256": "a87860bd6129bdad847a2596b4483d29d9e02cfc7e96a3919280cba367d00cf6",
+      "domain": "root/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch.",
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "MAIN/RD.luac",
+      "sha256": "e154de085f36cdfc4ff9c96d4122c75989a6b30806e4667930b9b9427395fcc6",
+      "domain": "root/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/AHR.luac",
+      "sha256": "0ccd8ec1b865c3bfe12f027de2e132f9e1424333801bd03e7cbc06fb5f74145d",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 changes vertical scale calibration and home label placement.800 widens rails60→90,scale positions−3..3→−5..5,spacing25→40,index24→36 and moves captions."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/ATT.luac",
+      "sha256": "b005f1674bfa26b1d0a2fba88e532ebae75038954263bd8e028879b001d03a5d",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed executable prototype.800 changes positions and yaw-point radius47→70."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/BAT.luac",
+      "sha256": "e736c792d0c1b7514b5caeeec64014f163018dd7f3a5c7d894f437d57a109b4b",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 relocates lower sections;800 changes widths/heights/label offsets and adds explicit gauge dimensions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/BFV.luac",
+      "sha256": "3701fad9cb929f0e81ee85ac72a76cad0dd1fba447b28ee002f97418e8ff73e7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales tile/label geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/BPN.luac",
+      "sha256": "de350b3b9401318d014d8028a1ed05be8187bfa6478d04b32ecb7b69ce4ab764",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match across all three resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/BTC.luac",
+      "sha256": "31ff60191dd43913af343dfb9893bed006256310961d0ec1396d3464b5602702",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes grid/tile geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/CEL.luac",
+      "sha256": "186e91ccc66b8b11e7fff41137988f9f8e98b6dad0b032e212547f3987ffe1b7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes badge geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/CMP.luac",
+      "sha256": "94560196f8ba46112b0b3f07bd8ac72b21308591bf92e671e4d025141e665622",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 explicitly centers162×165mask using panel width/height and radius70 rather than47."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/DBD.luac",
+      "sha256": "a846197d179c5b0601e7d05fa5284b575da729d9f065252120506cf90698bd01",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/FCD.luac",
+      "sha256": "bb81b20f6c1e7ebd6777ecd92b7c7135bdd2f8b89e88b505f5dc0315ce2dba1b",
+      "domain": "UI/rendering",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Raw T.lineN8/12/13 for272/320/800;800 also changes label spacing/columns."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/FM.luac",
+      "sha256": "b9112a88619cc3f1844f645557ea289b2bb85f0a10d53a62cc89be47593868f4",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes text geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/FM2M.luac",
+      "sha256": "b7529f16cba49ea6ea2fe7fe9b5f8c42e6231b477013cd40e91310728c1ba70d",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/FMI.luac",
+      "sha256": "77ca12a2d932507c2be1aaf427f1bf03e784db079ecf6a2a66711f79c607a31b",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes dimensions and uses UI_THM_OV/h placement branches."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/GPS.luac",
+      "sha256": "228dc7e8537f3f3e1b4010545d6271788e670fc2a74e99037ccc3cd0f08fed74",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales icon/arrow/coordinate geometry and uses doubled outline rings."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/LITE.luac",
+      "sha256": "f18ec335145af4a95d7544285e9bd536afdbb646f324fd1bf88ea24a5e5e96b7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/LITE2.luac",
+      "sha256": "5fdf227d6e257a7543c57ad0e0dca00414f9e5be35bf8c05f81d1f68be09a9ec",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 uses panel height for placement."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/MDL.luac",
+      "sha256": "0590b425d0c1ba50690c88c8722e4f3cb23be18afd73473d50772db72e6a2198",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales drawing geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/MEM.luac",
+      "sha256": "795d407641ab6c71c1b74e0a06040014c431bbcc4930a342ec2f9fff334f8ca6",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes label alignment to center and uses panel width."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/MPN.luac",
+      "sha256": "f99d187850b436ad8f1797947a00cbb06c05680d9fd9aac070f912e05d8342f1",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/MSP.luac",
+      "sha256": "f2644a6015cdd0eb397b40d42d06441a58a66a75227a30ae05c0799745470f5a",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes alignment/width-based placement."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/POS.luac",
+      "sha256": "c75ebae37ae86efef9860507449aa0dcb635f421a6c56fd5030b0c0e4b264489",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales inset/caption geometry."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/RCL.luac",
+      "sha256": "622495936f7996de3481d06fff970ce82fbdd4a07856b96de1672bd1c245ab2b",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 adjusts lower section offsets;800 sets explicit larger gauge dimensions and label positions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/RDB.luac",
+      "sha256": "9e7a60cf2f50f90e1af7d0e535a89f10e18056476e5e8c408fb6a8ea7115da40",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rail geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/SPN.luac",
+      "sha256": "8b4c7d75bdb5cca95a25f407f881088eb85faa12d3aabb0f8d3f23f322cf575b",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/SYS.luac",
+      "sha256": "170cce2cf03390956585bc2f1ef8fc89737de2de371f097f81896524a981a52a",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes panel-width/placement calculations and simplifies repeated position locals."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/THR.luac",
+      "sha256": "db9698ed8cec8056775bcfb3e9f7d3a8589665968e6ea7635c6f0ed00476a1c0",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales gauge/text positions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/TIM.luac",
+      "sha256": "793549250bc6cf01afe9590ab5a7efcee464e9b3caf9d5b3fa06d8d6bb9a5d8e",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes vertical offsets."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/TLM.luac",
+      "sha256": "887bd95c1fa39e2aa6930c978a4eceb74ba3788f9223aebb95d95a3b1c5b0f7e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes dimensions and some expression code shape."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/DB1/TMR.luac",
+      "sha256": "c0034cd09e3fa11bd5382a40d150620a81e7bb94940f3ab328853cf27fce8f75",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales label/value geometry."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/VFV.luac",
+      "sha256": "9d1dd1f615a6af1379ae52fc76baffa61bf162697ac8ac98fee41768a400462f",
+      "domain": "UI/rendering",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales tiles/captions."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DB1/VTX.luac",
+      "sha256": "e5cc3ba78e60a8cd7d97c424acf19e5ae7d50a4ba0c2a390b222ff76a383d974",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes width/positions and conditional offset expressions."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/DBD.luac",
+      "sha256": "47fc9c66c3a0ce7a6506456d7cb785409042af0a29a7c6ccf25842b9d9696d16",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 expands main panel144→192 high and lower rails to258.800 recomposes panels with main390×288 and wider rails."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD/ABT.luac",
+      "sha256": "8879976df83ad5f892ff61dfa32279af371da0f816ed663b4d858ee48a40b997",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320/800 recompose support/partner/footer areas and offsets;800 removes one FrSky-logo x correction."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/MOD/AST.luac",
+      "sha256": "4ecf27b01b3d10632a7694d92db5b682e17b3427e419ae8ab0c76b4cd0b08a70",
+      "domain": "UI/rendering",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/9/9;spacing24/24/36.800 adds/rearranges content task rectangles and larger beep rectangles."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD/BAT.luac",
+      "sha256": "995f20f5b22b3f0d94e575aad06b9c7ea57e5958a010e90f2fe2365ba446b89e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rail/icon/value geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/MOD/CFG.luac",
+      "sha256": "fc64dc0c424b4288c04cf2304adb9eb75a7903316af03d092329d062a9ba16c1",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax8/11/10;spacing22/20/33.800 changes title/row regions and cursor/caption offsets."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/MOD/GPS.luac",
+      "sha256": "ecab0bf84369402a2b888867a6a4f122b9f8873e5faf41e400d759ceec0cbd3f",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax10/13/13;spacing16/16/24.320/800 add separate lower-right task rectangle and reflow content."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD/MENU.luac",
+      "sha256": "109305ee21e7313d26dee0fe4fa5dc42d5374108a77e80c48d825e472fafe297",
+      "domain": "UI/rendering",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 icon30→45,spacing45→60,caption/overlay reflow."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD/RCL.luac",
+      "sha256": "121ba728ee07e45ca416fa615fd86e40cbe6215b9dfc5499663bceb1fb22f3e0",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rails/gauge labels."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X272/MOD/STK.luac",
+      "sha256": "50e8a55f9fe3a6e0c23b7da6fab04d93768a6ead0ea0794f102c7036e2d68164",
+      "domain": "UI/rendering",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/9/9;spacing25/25/38;800 stickbox20→33 and spot6→10."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD/TLM.luac",
+      "sha256": "bc0b40bf90ed385d3abd50edb9cba5b71a7941f64cd4ad4811f9fad0eb50bca5",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/10/10;spacing23/21/32 and derived sMax=lnMax*3−1;800 widens three columns."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD/VTX.luac",
+      "sha256": "2ef7e63b80af29eb109103692a214280bb10e94bd92700ff4c4f3ca869917f34",
+      "domain": "UI/rendering",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates",
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Raw lnMax8/8/9 and lnSpace17/22/33 for272/320/800, with larger task regions.320/800 use longer guidance strings (Config RC Link,MSP not available,Reading VTX tables,etc.). Raw capacity does not itself prove the exact displayed count."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/480X272/MOD.luac",
+      "sha256": "dde6f5021a45eb7b9e22550af29fcae5825c7dde2e2b20d5ab0ad22bd0d071cb",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 body388×284 versus388×236;800 body646×426 with77px rails and54px top menu."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/AHR.luac",
+      "sha256": "04d997dc292ffd50b6acb45aea9daa3f620d3088a0c55f97fa5b8ca6236f1f6e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 changes vertical scale calibration and home label placement.800 widens rails60→90,scale positions−3..3→−5..5,spacing25→40,index24→36 and moves captions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/ATT.luac",
+      "sha256": "a10922d641c3d1a3a348b8a4ac548182ad0bf1e0475424b4733ba69820d85fb4",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed executable prototype.800 changes positions and yaw-point radius47→70."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/BAT.luac",
+      "sha256": "4209a4091c403a61a3c3e6d12041df592736d375c34e21f953c3c46b3e083331",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 relocates lower sections;800 changes widths/heights/label offsets and adds explicit gauge dimensions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/BFV.luac",
+      "sha256": "e8166af8f843c2e98f644f746eb7b225fcbea17e61a5adafa6a557fafabcec7e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales tile/label geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/BPN.luac",
+      "sha256": "498dbc37a33a00cba2cc6b20541731da6a1434485010e1b902e01e5d35c343d5",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match across all three resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/BTC.luac",
+      "sha256": "42317addd9adc3883fb7bb81beb100d4bcf52ae1c63ca920238a05e065548d36",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes grid/tile geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/CEL.luac",
+      "sha256": "e96983fe4baa11904098ee37b1ee99ba4aebcdcd10b7fc50648662173bb5f13e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes badge geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/CMP.luac",
+      "sha256": "5d39b47635391f6c194ed8711823e07c9ba04ea7bf3c37618a85460a8224d4b6",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 explicitly centers162×165mask using panel width/height and radius70 rather than47."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/DBD.luac",
+      "sha256": "25cb50946c62a11b7e19cf3667233451dd685913b06e4943472ca9d352fcb67e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/FCD.luac",
+      "sha256": "19eb5c7f30a4157ba1053b826b277c08a8451c2bcac47719636c05bab9c26e43",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Raw T.lineN8/12/13 for272/320/800;800 also changes label spacing/columns."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/FM.luac",
+      "sha256": "0fd52ad0362a93b275b57e88b92db6e77b388ba1a3526c3408f3ddae1a9ef0d4",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes text geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/FM2M.luac",
+      "sha256": "f4661fdb7978791b6235a97f7c62bb751d78c30cc20bb0f5f3613ec8367f9eb4",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/FMI.luac",
+      "sha256": "811055e298d6bcb1d61c4e8e4d0338c70cbae275eb71760ab459984e7e2398d7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes dimensions and uses UI_THM_OV/h placement branches."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/GPS.luac",
+      "sha256": "ad04422b1abb3b920d881b6d15f176b5ccb4a21587d8c28756ddbb09b85645c4",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales icon/arrow/coordinate geometry and uses doubled outline rings."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/LITE.luac",
+      "sha256": "fe9ba07015c55bd39eb1af82b4dea51666c811f94c5f5b72f89364ed9553da65",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/LITE2.luac",
+      "sha256": "c96ff374daad9767f1cf6e8ac52cdf4e9aa6a65559b833f3b1dc783025592aea",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 uses panel height for placement."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/MDL.luac",
+      "sha256": "902591d847aa6304972de66458099ca5fa37fb5918f78bb13a82f69caf125bd2",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales drawing geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/MEM.luac",
+      "sha256": "54a0749cdbfae866f810d1526bd1437d9fd69615df83a2e4ac08460f53713cff",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes label alignment to center and uses panel width."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/MPN.luac",
+      "sha256": "52a32d3029e480794cd46cdc4950e89a9d479509024e713cf4c912e2ec81d6e8",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/MSP.luac",
+      "sha256": "c2d94dc7062d56827ce19ac95efbfae31e2b769807361d241bd34d82c3e52c5f",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes alignment/width-based placement."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/POS.luac",
+      "sha256": "ad0e07658dd606c24a2096b1db996d0ec79d03ab2e6ce205c881e533c0e33d1c",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales inset/caption geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/RCL.luac",
+      "sha256": "19ab5a65ef08dfea7afb97df23a85c3392c360c74c666b2f12740a6ddc468d73",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 adjusts lower section offsets;800 sets explicit larger gauge dimensions and label positions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/RDB.luac",
+      "sha256": "c2673f834177b21969fd39b564bac27ac3ebd1c9c8157df0d1ec25785ee6021c",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rail geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/SPN.luac",
+      "sha256": "a9717f2fd994ea6518ff8b3ec87ef9996d1c818d6151c3d11c5d03465624b191",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/SYS.luac",
+      "sha256": "ff3792593c4847342473d5c9e1ab4e2f898293c2bea2fa16ed579a8f92e66ec7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes panel-width/placement calculations and simplifies repeated position locals."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/THR.luac",
+      "sha256": "4e76b7be8888ddc9387a493018ac8b69355d6ad2b55437afe011833a15661b64",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales gauge/text positions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/TIM.luac",
+      "sha256": "aa1028bb4873c62a30c0f0527fadc460b49a545dbfb6fdf1be2199722d8f6418",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes vertical offsets."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/TLM.luac",
+      "sha256": "5f9bdac578c6eccd61bb9782d3f4ed4ee90ff409c9e0e3e6e79d71a33305fa27",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes dimensions and some expression code shape."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/TMR.luac",
+      "sha256": "486b7d5f255ef03a88294fab43aae0caf005f0ede0449d9168242288df4cbcc7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales label/value geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/VFV.luac",
+      "sha256": "9bfeaca1a1c38cc23e6ce806b4ad96edb6c6e0f8a0165edcd1e55521eeec62f1",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales tiles/captions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DB1/VTX.luac",
+      "sha256": "68b77746e61d9f3a592362bd44a870131f6d9486b5070beca612324a21faf2bc",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes width/positions and conditional offset expressions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/DBD.luac",
+      "sha256": "64048d119db95eed0b6a063f0244025f3cc9e502dcd1af9fa21ab2b3cc0e4ae7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 expands main panel144→192 high and lower rails to258.800 recomposes panels with main390×288 and wider rails."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/ABT.luac",
+      "sha256": "b1f47b53f6da35b99487bd6018a4462de034bf098024be2d5caf1b1f13572354",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320/800 recompose support/partner/footer areas and offsets;800 removes one FrSky-logo x correction."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/AST.luac",
+      "sha256": "47bc989bd1bb8748cb75f2450f0e68fe65fd832424842f89d0d3f1063a80ff62",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/9/9;spacing24/24/36.800 adds/rearranges content task rectangles and larger beep rectangles."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/BAT.luac",
+      "sha256": "c6832cb8c03fb9b6392d96ffcd21fac1f3d8246c770e453482efef55f49a1f36",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rail/icon/value geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/CFG.luac",
+      "sha256": "0743670e38b2e43778c0f0f1eb0ee21d8af63e28d07614c9bbfc7f84fc87c8cd",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax8/11/10;spacing22/20/33.800 changes title/row regions and cursor/caption offsets."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/GPS.luac",
+      "sha256": "e88e99e59914ec88f3dddff88f78eabeb1bced2b0284d46be90e616667ea3948",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax10/13/13;spacing16/16/24.320/800 add separate lower-right task rectangle and reflow content."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/MENU.luac",
+      "sha256": "921aa7543becc60ec3ffea2e4ab1c7d6651658b5680db5e46306b1ed26e61222",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 icon30→45,spacing45→60,caption/overlay reflow."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/RCL.luac",
+      "sha256": "890bc260d4dc5f63102d0a453495c5bbffcb78e13feb60cde2d37b1b8f77a34e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rails/gauge labels."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/STK.luac",
+      "sha256": "a53ccdddd5697cf2eeabed033c5908c27bd97a8e845bdd4d315b7d9e3f046f79",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/9/9;spacing25/25/38;800 stickbox20→33 and spot6→10."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/TLM.luac",
+      "sha256": "bdfd7e1a3614bb9e94848b701a87fbd2174c74ef8d2718ccfc8d17d58d77ad5a",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/10/10;spacing23/21/32 and derived sMax=lnMax*3−1;800 widens three columns."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD/VTX.luac",
+      "sha256": "8707b92149d87198175b216e06422ab3d6542267f353687023feec74178d0594",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Raw lnMax8/8/9 and lnSpace17/22/33 for272/320/800, with larger task regions.320/800 use longer guidance strings (Config RC Link,MSP not available,Reading VTX tables,etc.). Raw capacity does not itself prove the exact displayed count."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/480X320/MOD.luac",
+      "sha256": "35f540bd4d6e937f0485c88ab373a09d645027700f3984ed257d3246fa0412f6",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 body388×284 versus388×236;800 body646×426 with77px rails and54px top menu."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/AHR.luac",
+      "sha256": "13ac22c3901af896329f64c7d8d585fc87b3581e2887f8834fa9944f65622800",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 changes vertical scale calibration and home label placement.800 widens rails60→90,scale positions−3..3→−5..5,spacing25→40,index24→36 and moves captions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/ATT.luac",
+      "sha256": "ef6f948ef9dbab70843a7ff495ffc5a18fb4bd218c0354a31002e0f6613de889",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed executable prototype.800 changes positions and yaw-point radius47→70."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/BAT.luac",
+      "sha256": "11deb32776d84ebaafe41c16140443f372af46bbc5ee0f78c5eea451d44b20dc",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 relocates lower sections;800 changes widths/heights/label offsets and adds explicit gauge dimensions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/BFV.luac",
+      "sha256": "45e245667f74adf3e7d236b68335df3a2be412b2f6da712388fdcc37e66ba34d",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales tile/label geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/BPN.luac",
+      "sha256": "671d2f4f422ac653342b016cb4014782a1a1c28052c92704352e9673ddfbb38c",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match across all three resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/BTC.luac",
+      "sha256": "022869810717728784bb2a138611b400809ed5975bb594dfed7702611f90a1d1",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes grid/tile geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/CEL.luac",
+      "sha256": "96126605a1b1ba5db9ab250ea75f5e149e93828866f2f9598302a920e6435aa8",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes badge geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/CMP.luac",
+      "sha256": "9377225231790b558bafa1da793e9ac41df2652319dab6937947574c709a2952",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 explicitly centers162×165mask using panel width/height and radius70 rather than47."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/DBD.luac",
+      "sha256": "27fcc32f3bf73726fe8dbabda30f5f5749ef9e61b500257c95892f6f4c4095e7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/FCD.luac",
+      "sha256": "275a96c2503c587de38a714dfe605f403ab0ed8217a0d357482f3bcacba0c5a2",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Raw T.lineN8/12/13 for272/320/800;800 also changes label spacing/columns."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/FM.luac",
+      "sha256": "177f6684f0989898f7d1d141f5bf8e3fb7ae4a8b3599e467badcc323b5dba61f",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes text geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/FM2M.luac",
+      "sha256": "b244979bce08f782362f6654afeca7430ae01fdb0419c7e17affd98631e887a7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/FMI.luac",
+      "sha256": "c4a13a682f4e5efa13882f8f2e5345217072b1cff6f9f30e2958042a7a0a4570",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes dimensions and uses UI_THM_OV/h placement branches."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/GPS.luac",
+      "sha256": "1ec4ca38c46845aaf907968bfb43add911e2a7afe8fa89901cedee7cc9444e1b",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales icon/arrow/coordinate geometry and uses doubled outline rings."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/LITE.luac",
+      "sha256": "998d2f38019f3a0081d9c6fe365d53ed94afaddf74bef826b34c124b163d2690",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/LITE2.luac",
+      "sha256": "09ca4a2b08f0eedb714aeab49a23d8eb5c1d34674209ecc64be51d91607e24c1",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 uses panel height for placement."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/MDL.luac",
+      "sha256": "c2a5c5b40977c938febb527d3b0ec45d44edb340d885561b47b922ba2e8bbf75",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales drawing geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/MEM.luac",
+      "sha256": "a298cc1186f49d382b8eda91bbaa25a849994d25922232fad94392191d549c49",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes label alignment to center and uses panel width."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/MPN.luac",
+      "sha256": "0b69d4624200efa23adec7c2c69be41dee1a16f94ca009ff26a3aaca9b9d8107",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/MSP.luac",
+      "sha256": "cc580fc0815f0ae3aaf0f2d0c0130f0ad820f9875de9cb1283d0891d1dc943cf",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes alignment/width-based placement."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/POS.luac",
+      "sha256": "77940bd40e70621c73d66c8e81f5a7ba3e74badf06349fca5a7298073b634186",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales inset/caption geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/RCL.luac",
+      "sha256": "8db5b9436386aed9de49266978e68accf94e17668285c613876215b14060da04",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 adjusts lower section offsets;800 sets explicit larger gauge dimensions and label positions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/RDB.luac",
+      "sha256": "9c6af7f8d02ffcf20343699bb895a133cb27e559c6b1d7dae7597956ccc6ad77",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rail geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/SPN.luac",
+      "sha256": "c905f6eaa8aade39cad685cc50a9f1ca0f9cfc492125d7238740177306b1ee03",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Parsed executable prototypes match all resolutions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/SYS.luac",
+      "sha256": "5cae4bf8d8f303e6e01a955d54e2fab82958b10d7d9044074483b320aaa6038b",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes panel-width/placement calculations and simplifies repeated position locals."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/THR.luac",
+      "sha256": "721e8eefdb2854fb57023819238926243bb4c09593e776d7022d1ffa0ceb60e7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales gauge/text positions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/TIM.luac",
+      "sha256": "6d04ff502119d8b905b9bd00faca2f5ce304b7cc07a90b4e882fdc3e3332614c",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes vertical offsets."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/TLM.luac",
+      "sha256": "2f33fb3f3d334ff898d157c74678ef9fc62671629d32b68ae25ee02e3eee055d",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes dimensions and some expression code shape."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/TMR.luac",
+      "sha256": "ce44ef7aa32250276b11eab7bb769eeedc1042b833af1f25b984065a7c47c846",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales label/value geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/VFV.luac",
+      "sha256": "47ac6da44d5e7b272337204726760032756d4e3b2c25102fe6fca9e2bd42bc2d",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales tiles/captions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DB1/VTX.luac",
+      "sha256": "b22069788de73fa02e0e4fe520e6707fe6bd80535183d178af8663d8e41b874f",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 changes width/positions and conditional offset expressions."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/DBD.luac",
+      "sha256": "c59e425bd38d70377ef8598a480e0333e549345fd09fdeb455da8b0c24b0a46e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 expands main panel144→192 high and lower rails to258.800 recomposes panels with main390×288 and wider rails."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/ABT.luac",
+      "sha256": "fbff200a9c4a7fdb50d346878ab67edbf0d801589f5ee91bf28ae88bd241f426",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320/800 recompose support/partner/footer areas and offsets;800 removes one FrSky-logo x correction."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/AST.luac",
+      "sha256": "197fea9aab2fe91de76a988e74308d64e83ae1a72cc554e344fe25f3b9388558",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/9/9;spacing24/24/36.800 adds/rearranges content task rectangles and larger beep rectangles."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/BAT.luac",
+      "sha256": "9ec058879c5cc4c2a8ff2c897cc0f188369b588ef1237afb77f14b142a8ec6e0",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rail/icon/value geometry."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/CFG.luac",
+      "sha256": "9fb79514d6467f48d396d34ccf41ef6fae563570c47dd9a6c52e20b58a4934e7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax8/11/10;spacing22/20/33.800 changes title/row regions and cursor/caption offsets."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/GPS.luac",
+      "sha256": "ff8ed2d757e365e39f9336496ee32444e138fb94799f083ae545ce13e8da8ef7",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax10/13/13;spacing16/16/24.320/800 add separate lower-right task rectangle and reflow content."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/MENU.luac",
+      "sha256": "1efecfbcb56a5af67b5df64c8a3b9afea86b6ac8d02c689e70a6dee3fbc97772",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 icon30→45,spacing45→60,caption/overlay reflow."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/RCL.luac",
+      "sha256": "52ab36391e4c8d9f71bcbd58325517af62543ae972aeb1bbf30da84be5c96e01",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 matches parsed prototype;800 scales rails/gauge labels."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/STK.luac",
+      "sha256": "6ae9089b33e8ca0f8816fe1e0cd3e887d0c6c6ab4ffe97db216b810d340bf7ed",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/9/9;spacing25/25/38;800 stickbox20→33 and spot6→10."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/TLM.luac",
+      "sha256": "92f0f72098922ba9502bb7c55acd68a55ee7a1e06625c230537f75eb7f61c67e",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: lnMax7/10/10;spacing23/21/32 and derived sMax=lnMax*3−1;800 widens three columns."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD/VTX.luac",
+      "sha256": "0180e9f125d7535ba73060959f14c21a9333bb0d5f35b66844f914f9c3396a85",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: Raw lnMax8/8/9 and lnSpace17/22/33 for272/320/800, with larger task regions.320/800 use longer guidance strings (Config RC Link,MSP not available,Reading VTX tables,etc.). Raw capacity does not itself prove the exact displayed count."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/800X480/MOD.luac",
+      "sha256": "48750553d41256b460b731227f995154ac80d6faac1a524f2269da7e09e03adb",
+      "domain": "UI/rendering",
+      "review": [
+        "Grouped resolution-family review: Parsed all original prototype constants, complete instruction words and recursive opcode sequence. Does not establish runtime/semantic equivalence; numeric constants can affect behavior, not just geometry. Observed differences: 320 body388×284 versus388×236;800 body646×426 with77px rails and54px top menu."
+      ],
+      "originalDisassemblyAvailable": false
+    },
+    {
+      "file": "UI/DBAR.luac",
+      "sha256": "f10799a5b912101bf73e349d832e67a856ac29aa95542b124644666cf66a9a4b",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Bounded percent bar renderer, horizontal/vertical with optional background/tenth separators."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/DIT.luac",
+      "sha256": "5bfc51c6741dd6595634f5673b199c9587d138cedeef0c0f92d003d66e457156",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Draw assembled background,label,value,unit tuples through X wrappers."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/MDINIT.luac",
+      "sha256": "9d812efc18c2881740027bfa74734c8f045a76af44b4a90af59fac0396c30fa9",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Registers8 modules:Dashboard,Configuration,Telemetry,VTX,GPS,Arm Stops,Sticks,About."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/MDUPD.luac",
+      "sha256": "0257242ccb3e3e0d28a1b672b92a33460cb7b3bff391926832cd4be9de76f5f5",
+      "domain": "UI/rendering",
+      "review": [
+        "Cited capability/control-flow review; scope limited to cited functions/fields/gates"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/OV.luac",
+      "sha256": "954a35c19f6e0b49186aa5a34773e0613d4536787516f010affeb038c421a2ce",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Optional lazily cached selected full-resolution theme overlay."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/QM.luac",
+      "sha256": "ae9a3ab1b69faceea4937d35386ae2fa6f9382e7bf2850aed6f3ccfb372ca5ea",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Original callbacks include mute,reset flight data,reload and custom commands; opens onMN,rotary selects,ENTER invokes callback,EX/MN dismisses."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/SNV.luac",
+      "sha256": "c0723c6d03f938147b6e4ccf40152d78617ce11c86b4b08555bae84ceebd6b28",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Metadata-driven value/name/unit/format and normal/low/critical/inverted/blink/bar normalization."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/THMINIT.luac",
+      "sha256": "aa2eaa69f8d9c42503bbd8282f5ee8a66cf6cf9cb80d034f1231b039e0943303",
+      "domain": "UI/rendering",
+      "review": [
+        "Disassembled for inventory/context; no complete semantic review claimed"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/THMLD.luac",
+      "sha256": "b0dfb4ca237d06a9857501b331148e39c1a009bdedc9c6188114b78e70d2a9a5",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Loads selected theme C palette and resolution asset paths."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/UIINIT.luac",
+      "sha256": "2c2c34e49fb8b1566edecd2a06d6403e5bb87b0e290c36e0361d3bd5b4d28cb1",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Initializes shared UI state,model image,actual resolution paths,themes and Dashboard startup."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/UIML.luac",
+      "sha256": "ab2b6ef34d7234f612177570dd7acdc4314b81772f024cae5dbba3546b4c92ee",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/UITSKCHG.luac",
+      "sha256": "760df27224cce04179fd6ea18c4b3d9167b17aec37d73bce5676af9220a7d58b",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Loads chosen task implementation by DB1/MOD directory and calls init."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/UITSKINIT.luac",
+      "sha256": "8515fe6c3c04ed8ea72a66cba22e9fca8ac25f5ff72a8d7cc439a52e3e70f611",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Indexes registered tasks and invokes im/i initialization callbacks."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/UITSKRUN.luac",
+      "sha256": "952f585c337c862bcaa76dea148b22791ffc8bd31402f14e166905ca456aa837",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/UITSKSET.luac",
+      "sha256": "16541b81d89c1675d9e4b3ab36ba90b5ef6a34f482aa15301cb0df9b48e67ea0",
+      "domain": "UI/rendering",
+      "review": [
+        "Recovered source skim plus original constants/prototype instructions; selected QM dispatch chain checked end-to-end. Not a complete semantic proof of every helper branch. Purpose: Computes task bounds/center,registers task,loads implementation/default selected submodule and initialization callback."
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "UI/X.luac",
+      "sha256": "4b3688d5431989751b82893f9ed684931c2cac4592d79d4599e4128943a9ac94",
+      "domain": "UI/rendering",
+      "review": [
+        "UI instrument/lifecycle branch/field review; see individual cited rows, not all instructions"
+      ],
+      "originalDisassemblyAvailable": true
+    },
+    {
+      "file": "WIDGET/loader.luac",
+      "sha256": "6dae407066af5bbb92810a30fa32030f5394a9b172e1a0c819cc5a95d4a110ed",
+      "domain": "data/lifecycle",
+      "review": [
+        "Original bytecode parsed and available; feature call sites and material branches reviewed. Grouped helper listing is not a claim of formal verification of every branch."
+      ],
+      "originalDisassemblyAvailable": true
+    }
+  ],
+  "total": 287,
+  "inventoryOnly": 4,
+  "caveat": "All287 parsed/inventoried; selected material call paths reviewed. This is not formal equivalence or an assertion every branch was semantically audited."
+}

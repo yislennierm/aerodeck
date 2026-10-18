@@ -1,0 +1,589 @@
+FILE work/edgetx/toolbox-200-reference/fm2m-toolbox-200-edgetx/FM2M/APPS/TOOLBOX2/LIB/GPS/GPSINIT.luac
+
+FUNCTION main params 0 vararg 1 stack 7 lines 0 0 source @/FM2M_DEV/APPS/TOOLBOX2/LIB/GPS/GPSINIT.lua
+UPVALUES [('_ENV', (1, 0))]
+LOCALS [('G', 1, 57), ('F', 1, 57), ('D', 1, 57), ('X', 1, 57)]
+K0 'GPS'
+K1 'clear'
+K2 '+GPS*'
+K3 'S'
+K4 'MDL_GPS_ON'
+K5 'EARTH_R'
+K6 6371000
+K7 'SATS'
+K8 'posLog'
+K9 'posLogMax'
+K10 'GPS_LOG_ON'
+K11 'GPS_LOG_MAX'
+K12 20
+K13 1
+K14 'calcGC'
+K15 'calcBearing'
+K16 'calcDistance'
+K17 'GPS'
+K18 'addPosition'
+K19 'GPS'
+K20 'encodeToPlusCode'
+K21 'calcTravelTime'
+   1 [  10] VARARG    A=0 B=5 C=0
+   2 [  14] GETTABLE  R4 = R2[K0('GPS')]
+   3 [  14] TEST      A=4 B=0 C=1
+   4 [  14] JMP       A=0 ->6
+   5 [  14] NEWTABLE  A=4 B=0 C=0
+   6 [  14] SETTABLE  R2[K0('GPS')] = R4
+   7 [  15] GETTABLE  R4 = R0[K1('clear')]
+   8 [  15] MOVE      A=5 B=2 C=0
+   9 [  15] LOADK     R6 = K2 ('+GPS*')
+  10 [  15] CALL      A=4 B=3 C=1
+  11 [  17] GETTABLE  R4 = R2[K3('S')]
+  12 [  17] GETTABLE  R4 = R4[K4('MDL_GPS_ON')]
+  13 [  17] TEST      A=4 B=0 C=1
+  14 [  17] JMP       A=0 ->16
+  15 [  17] RETURN    A=0 B=1 C=0
+  16 [  19] GETTABLE  R4 = R2[K0('GPS')]
+  17 [  19] SETTABLE  R4[K5('EARTH_R')] = K6(6371000)
+  18 [  20] GETTABLE  R4 = R2[K0('GPS')]
+  19 [  20] NEWTABLE  A=5 B=0 C=0
+  20 [  20] SETTABLE  R4[K7('SATS')] = R5
+  21 [  53] GETTABLE  R4 = R2[K0('GPS')]
+  22 [  53] NEWTABLE  A=5 B=0 C=0
+  23 [  53] SETTABLE  R4[K8('posLog')] = R5
+  24 [  55] GETTABLE  R4 = R2[K0('GPS')]
+  25 [  55] GETTABLE  R5 = R2[K3('S')]
+  26 [  55] GETTABLE  R5 = R5[K10('GPS_LOG_ON')]
+  27 [  55] TEST      A=5 B=0 C=0
+  28 [  55] JMP       A=0 ->36
+  29 [  55] GETTABLE  R5 = R2[K3('S')]
+  30 [  55] GETTABLE  R5 = R5[K11('GPS_LOG_MAX')]
+  31 [  55] TEST      A=5 B=0 C=1
+  32 [  55] JMP       A=0 ->37
+  33 [  55] LOADK     R5 = K12 (20)
+  34 [  55] TEST      A=5 B=0 C=1
+  35 [  55] JMP       A=0 ->37
+  36 [  55] LOADK     R5 = K13 (1)
+  37 [  55] SETTABLE  R4[K9('posLogMax')] = R5
+  38 [  58] GETTABLE  R4 = R2[K0('GPS')]
+  39 [  69] CLOSURE   R5 = proto[0]
+  40 [  69] SETTABLE  R4[K14('calcGC')] = R5
+  41 [  72] GETTABLE  R4 = R2[K0('GPS')]
+  42 [  79] CLOSURE   R5 = proto[1]
+  43 [  79] SETTABLE  R4[K15('calcBearing')] = R5
+  44 [  82] GETTABLE  R4 = R2[K0('GPS')]
+  45 [  89] CLOSURE   R5 = proto[2]
+  46 [  89] SETTABLE  R4[K16('calcDistance')] = R5
+  47 [  91] GETTABLE  R4 = R2[K17('GPS')]
+  48 [ 106] CLOSURE   R5 = proto[3]
+  49 [ 106] SETTABLE  R4[K18('addPosition')] = R5
+  50 [ 109] GETTABLE  R4 = R2[K19('GPS')]
+  51 [ 139] CLOSURE   R5 = proto[4]
+  52 [ 139] SETTABLE  R4[K20('encodeToPlusCode')] = R5
+  53 [ 141] GETTABLE  R4 = R2[K19('GPS')]
+  54 [ 184] CLOSURE   R5 = proto[5]
+  55 [ 184] SETTABLE  R4[K21('calcTravelTime')] = R5
+  56 [ 186] RETURN    A=0 B=1 C=0
+  57 [ 186] RETURN    A=0 B=1 C=0
+
+FUNCTION main/0 params 3 vararg 0 stack 14 lines 58 69 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('c1', 0, 77), ('c2', 0, 77), ('currGC', 0, 77), ('lat1', 31, 77), ('lon1', 31, 77), ('lat2', 31, 77), ('lon2', 31, 77), ('c', 35, 77), ('x', 40, 77), ('y', 60, 77), ('gc', 68, 77)]
+K0 None
+K1 'lat'
+K2 'lon'
+K3 'math'
+K4 'rad'
+K5 'cos'
+K6 'sin'
+K7 'deg'
+K8 'atan'
+K9 'floor'
+K10 360
+K11 0
+   1 [  59] EQ        A=1 R0, K0(None); skip-next if condition != A
+   2 [  59] JMP       A=0 ->15
+   3 [  59] EQ        A=1 R1, K0(None); skip-next if condition != A
+   4 [  59] JMP       A=0 ->15
+   5 [  59] EQ        A=1 R2, K0(None); skip-next if condition != A
+   6 [  59] JMP       A=0 ->16
+   7 [  59] GETTABLE  R3 = R0[K1('lat')]
+   8 [  59] GETTABLE  R4 = R1[K1('lat')]
+   9 [  59] EQ        A=0 R3, R4; skip-next if condition != A
+  10 [  59] JMP       A=0 ->16
+  11 [  59] GETTABLE  R3 = R0[K2('lon')]
+  12 [  59] GETTABLE  R4 = R1[K2('lon')]
+  13 [  59] EQ        A=0 R3, R4; skip-next if condition != A
+  14 [  59] JMP       A=0 ->16
+  15 [  59] RETURN    A=2 B=2 C=0
+  16 [  60] GETTABUP  R3 = UP0[K3('math')]
+  17 [  60] GETTABLE  R3 = R3[K4('rad')]
+  18 [  60] GETTABLE  R4 = R0[K1('lat')]
+  19 [  60] CALL      A=3 B=2 C=2
+  20 [  60] GETTABUP  R4 = UP0[K3('math')]
+  21 [  60] GETTABLE  R4 = R4[K4('rad')]
+  22 [  60] GETTABLE  R5 = R0[K2('lon')]
+  23 [  60] CALL      A=4 B=2 C=2
+  24 [  60] GETTABUP  R5 = UP0[K3('math')]
+  25 [  60] GETTABLE  R5 = R5[K4('rad')]
+  26 [  60] GETTABLE  R6 = R1[K1('lat')]
+  27 [  60] CALL      A=5 B=2 C=2
+  28 [  60] GETTABUP  R6 = UP0[K3('math')]
+  29 [  60] GETTABLE  R6 = R6[K4('rad')]
+  30 [  60] GETTABLE  R7 = R1[K2('lon')]
+  31 [  60] CALL      A=6 B=2 C=2
+  32 [  61] GETTABUP  R7 = UP0[K3('math')]
+  33 [  61] GETTABLE  R7 = R7[K5('cos')]
+  34 [  61] MOVE      A=8 B=5 C=0
+  35 [  61] CALL      A=7 B=2 C=2
+  36 [  62] GETTABUP  R8 = UP0[K3('math')]
+  37 [  62] GETTABLE  R8 = R8[K6('sin')]
+  38 [  62] SUB       A=9 B=6 C=4
+  39 [  62] CALL      A=8 B=2 C=2
+  40 [  62] MUL       A=8 B=8 C=7
+  41 [  63] GETTABUP  R9 = UP0[K3('math')]
+  42 [  63] GETTABLE  R9 = R9[K5('cos')]
+  43 [  63] MOVE      A=10 B=3 C=0
+  44 [  63] CALL      A=9 B=2 C=2
+  45 [  63] GETTABUP  R10 = UP0[K3('math')]
+  46 [  63] GETTABLE  R10 = R10[K6('sin')]
+  47 [  63] MOVE      A=11 B=5 C=0
+  48 [  63] CALL      A=10 B=2 C=2
+  49 [  63] MUL       A=9 B=9 C=10
+  50 [  63] GETTABUP  R10 = UP0[K3('math')]
+  51 [  63] GETTABLE  R10 = R10[K6('sin')]
+  52 [  63] MOVE      A=11 B=3 C=0
+  53 [  63] CALL      A=10 B=2 C=2
+  54 [  63] MUL       A=10 B=10 C=7
+  55 [  63] GETTABUP  R11 = UP0[K3('math')]
+  56 [  63] GETTABLE  R11 = R11[K5('cos')]
+  57 [  63] SUB       A=12 B=6 C=4
+  58 [  63] CALL      A=11 B=2 C=2
+  59 [  63] MUL       A=10 B=10 C=11
+  60 [  63] SUB       A=9 B=9 C=10
+  61 [  64] GETTABUP  R10 = UP0[K3('math')]
+  62 [  64] GETTABLE  R10 = R10[K7('deg')]
+  63 [  64] GETTABUP  R11 = UP0[K3('math')]
+  64 [  64] GETTABLE  R11 = R11[K8('atan')]
+  65 [  64] MOVE      A=12 B=8 C=0
+  66 [  64] MOVE      A=13 B=9 C=0
+  67 [  64] CALL      A=11 B=3 C=0
+  68 [  64] CALL      A=10 B=0 C=2
+  69 [  66] GETTABUP  R11 = UP0[K3('math')]
+  70 [  66] GETTABLE  R11 = R11[K9('floor')]
+  71 [  66] ADD       A=12 B=10 C=266
+  72 [  66] MOD       A=12 B=12 C=266
+  73 [  66] LOADK     R13 = K11 (0)
+  74 [  66] CALL      A=11 B=3 C=2
+  75 [  66] MOVE      A=10 B=11 C=0
+  76 [  68] RETURN    A=10 B=2 C=0
+  77 [  69] RETURN    A=0 B=1 C=0
+
+FUNCTION main/1 params 2 vararg 0 stack 4 lines 72 79 source None
+UPVALUES []
+LOCALS [('gc1', 0, 14), ('gc2', 0, 14), ('angle', 7, 14)]
+K0 None
+K1 360
+K2 180
+   1 [  73] EQ        A=1 R0, K0(None); skip-next if condition != A
+   2 [  73] JMP       A=0 ->5
+   3 [  73] EQ        A=0 R1, K0(None); skip-next if condition != A
+   4 [  73] JMP       A=0 ->6
+   5 [  73] RETURN    A=0 B=1 C=0
+   6 [  75] SUB       A=2 B=1 C=0
+   7 [  75] MOD       A=2 B=2 C=257
+   8 [  77] LT        A=0 K2(180), R2; skip-next if condition != A
+   9 [  77] JMP       A=0 ->13
+  10 [  77] SUB       A=3 B=2 C=257
+  11 [  77] TESTSET   A=2 B=3 C=1
+  12 [  77] JMP       A=0 ->13
+  13 [  78] RETURN    A=2 B=2 C=0
+  14 [  79] RETURN    A=0 B=1 C=0
+
+FUNCTION main/2 params 2 vararg 0 stack 11 lines 82 89 source None
+UPVALUES [('_ENV', (0, 0)), ('G', (1, 0)), ('D', (1, 2))]
+LOCALS [('c1', 0, 64), ('c2', 0, 64), ('lat1', 21, 64), ('lon1', 21, 64), ('lat2', 21, 64), ('lon2', 21, 64), ('a', 44, 64), ('c', 56, 64), ('d', 62, 64)]
+K0 None
+K1 'math'
+K2 'rad'
+K3 'lat'
+K4 'lon'
+K5 'sin'
+K6 2
+K7 'cos'
+K8 'atan'
+K9 'sqrt'
+K10 1
+K11 'round'
+K12 'GPS'
+K13 'EARTH_R'
+K14 0
+   1 [  83] EQ        A=1 R0, K0(None); skip-next if condition != A
+   2 [  83] JMP       A=0 ->5
+   3 [  83] EQ        A=0 R1, K0(None); skip-next if condition != A
+   4 [  83] JMP       A=0 ->6
+   5 [  83] RETURN    A=0 B=1 C=0
+   6 [  84] GETTABUP  R2 = UP0[K1('math')]
+   7 [  84] GETTABLE  R2 = R2[K2('rad')]
+   8 [  84] GETTABLE  R3 = R0[K3('lat')]
+   9 [  84] CALL      A=2 B=2 C=2
+  10 [  84] GETTABUP  R3 = UP0[K1('math')]
+  11 [  84] GETTABLE  R3 = R3[K2('rad')]
+  12 [  84] GETTABLE  R4 = R0[K4('lon')]
+  13 [  84] CALL      A=3 B=2 C=2
+  14 [  84] GETTABUP  R4 = UP0[K1('math')]
+  15 [  84] GETTABLE  R4 = R4[K2('rad')]
+  16 [  84] GETTABLE  R5 = R1[K3('lat')]
+  17 [  84] CALL      A=4 B=2 C=2
+  18 [  84] GETTABUP  R5 = UP0[K1('math')]
+  19 [  84] GETTABLE  R5 = R5[K2('rad')]
+  20 [  84] GETTABLE  R6 = R1[K4('lon')]
+  21 [  84] CALL      A=5 B=2 C=2
+  22 [  85] GETTABUP  R6 = UP0[K1('math')]
+  23 [  85] GETTABLE  R6 = R6[K5('sin')]
+  24 [  85] SUB       A=7 B=4 C=2
+  25 [  85] DIV       A=7 B=7 C=262
+  26 [  85] CALL      A=6 B=2 C=2
+  27 [  85] POW       A=6 B=6 C=262
+  28 [  85] GETTABUP  R7 = UP0[K1('math')]
+  29 [  85] GETTABLE  R7 = R7[K5('sin')]
+  30 [  85] SUB       A=8 B=5 C=3
+  31 [  85] DIV       A=8 B=8 C=262
+  32 [  85] CALL      A=7 B=2 C=2
+  33 [  85] POW       A=7 B=7 C=262
+  34 [  85] GETTABUP  R8 = UP0[K1('math')]
+  35 [  85] GETTABLE  R8 = R8[K7('cos')]
+  36 [  85] MOVE      A=9 B=2 C=0
+  37 [  85] CALL      A=8 B=2 C=2
+  38 [  85] MUL       A=7 B=7 C=8
+  39 [  85] GETTABUP  R8 = UP0[K1('math')]
+  40 [  85] GETTABLE  R8 = R8[K7('cos')]
+  41 [  85] MOVE      A=9 B=4 C=0
+  42 [  85] CALL      A=8 B=2 C=2
+  43 [  85] MUL       A=7 B=7 C=8
+  44 [  85] ADD       A=6 B=6 C=7
+  45 [  86] GETTABUP  R7 = UP0[K1('math')]
+  46 [  86] GETTABLE  R7 = R7[K8('atan')]
+  47 [  86] GETTABUP  R8 = UP0[K1('math')]
+  48 [  86] GETTABLE  R8 = R8[K9('sqrt')]
+  49 [  86] MOVE      A=9 B=6 C=0
+  50 [  86] CALL      A=8 B=2 C=2
+  51 [  86] GETTABUP  R9 = UP0[K1('math')]
+  52 [  86] GETTABLE  R9 = R9[K9('sqrt')]
+  53 [  86] SUB       A=10 B=266 C=6
+  54 [  86] CALL      A=9 B=2 C=0
+  55 [  86] CALL      A=7 B=0 C=2
+  56 [  86] MUL       A=7 B=262 C=7
+  57 [  87] GETTABUP  R8 = UP1[K11('round')]
+  58 [  87] GETTABUP  R9 = UP2[K12('GPS')]
+  59 [  87] GETTABLE  R9 = R9[K13('EARTH_R')]
+  60 [  87] MUL       A=9 B=7 C=9
+  61 [  87] LOADK     R10 = K14 (0)
+  62 [  87] CALL      A=8 B=3 C=2
+  63 [  88] RETURN    A=8 B=2 C=0
+  64 [  89] RETURN    A=0 B=1 C=0
+
+FUNCTION main/3 params 3 vararg 0 stack 10 lines 91 106 source None
+UPVALUES [('G', (1, 0)), ('D', (1, 2)), ('_ENV', (0, 0))]
+LOCALS [('lat', 0, 70), ('lon', 0, 70), ('logID', 0, 70), ('date', 7, 70), ('time', 7, 70), ('ostime', 9, 70), ('logMaxID', 59, 70)]
+K0 None
+K1 'getDateTime'
+K2 'TI'
+K3 'now'
+K4 'GPS'
+K5 'posLog'
+K6 'date'
+K7 'time'
+K8 'ostime'
+K9 'lat'
+K10 'lon'
+K11 1
+K12 'table'
+K13 'insert'
+K14 'S'
+K15 'GPS_LOG_ON'
+K16 'posLogMax'
+K17 2
+K18 'remove'
+   1 [  92] EQ        A=1 R0, K0(None); skip-next if condition != A
+   2 [  92] JMP       A=0 ->5
+   3 [  92] EQ        A=0 R1, K0(None); skip-next if condition != A
+   4 [  92] JMP       A=0 ->6
+   5 [  92] RETURN    A=0 B=1 C=0
+   6 [  93] GETTABUP  R3 = UP0[K1('getDateTime')]
+   7 [  93] CALL      A=3 B=1 C=3
+   8 [  94] GETTABUP  R5 = UP1[K2('TI')]
+   9 [  94] GETTABLE  R5 = R5[K3('now')]
+  10 [  95] TEST      A=2 B=0 C=0
+  11 [  95] JMP       A=0 ->22
+  12 [  96] GETTABUP  R6 = UP1[K4('GPS')]
+  13 [  96] GETTABLE  R6 = R6[K5('posLog')]
+  14 [  96] NEWTABLE  A=7 B=0 C=5
+  15 [  96] SETTABLE  R7[K6('date')] = R3
+  16 [  96] SETTABLE  R7[K7('time')] = R4
+  17 [  96] SETTABLE  R7[K8('ostime')] = R5
+  18 [  96] SETTABLE  R7[K9('lat')] = R0
+  19 [  96] SETTABLE  R7[K10('lon')] = R1
+  20 [  96] SETTABLE  R6[R2] = R7
+  21 [  97] RETURN    A=0 B=1 C=0
+  22 [  99] GETTABUP  R6 = UP1[K4('GPS')]
+  23 [  99] GETTABLE  R6 = R6[K5('posLog')]
+  24 [  99] GETTABLE  R6 = R6[K11(1)]
+  25 [  99] TEST      A=6 B=0 C=0
+  26 [  99] JMP       A=0 ->39
+  27 [  99] GETTABUP  R6 = UP1[K4('GPS')]
+  28 [  99] GETTABLE  R6 = R6[K5('posLog')]
+  29 [  99] GETTABLE  R6 = R6[K11(1)]
+  30 [  99] GETTABLE  R6 = R6[K9('lat')]
+  31 [  99] EQ        A=0 R0, R6; skip-next if condition != A
+  32 [  99] JMP       A=0 ->39
+  33 [  99] GETTABUP  R6 = UP1[K4('GPS')]
+  34 [  99] GETTABLE  R6 = R6[K5('posLog')]
+  35 [  99] GETTABLE  R6 = R6[K11(1)]
+  36 [  99] GETTABLE  R6 = R6[K10('lon')]
+  37 [  99] EQ        A=1 R1, R6; skip-next if condition != A
+  38 [  99] JMP       A=0 ->51
+  39 [ 100] GETTABUP  R6 = UP2[K12('table')]
+  40 [ 100] GETTABLE  R6 = R6[K13('insert')]
+  41 [ 100] GETTABUP  R7 = UP1[K4('GPS')]
+  42 [ 100] GETTABLE  R7 = R7[K5('posLog')]
+  43 [ 100] LOADK     R8 = K11 (1)
+  44 [ 100] NEWTABLE  A=9 B=0 C=5
+  45 [ 100] SETTABLE  R9[K6('date')] = R3
+  46 [ 100] SETTABLE  R9[K7('time')] = R4
+  47 [ 100] SETTABLE  R9[K8('ostime')] = R5
+  48 [ 100] SETTABLE  R9[K9('lat')] = R0
+  49 [ 100] SETTABLE  R9[K10('lon')] = R1
+  50 [ 100] CALL      A=6 B=4 C=1
+  51 [ 102] GETTABUP  R6 = UP1[K14('S')]
+  52 [ 102] GETTABLE  R6 = R6[K15('GPS_LOG_ON')]
+  53 [ 102] TEST      A=6 B=0 C=0
+  54 [ 102] JMP       A=0 ->59
+  55 [ 102] GETTABUP  R6 = UP1[K4('GPS')]
+  56 [ 102] GETTABLE  R6 = R6[K16('posLogMax')]
+  57 [ 102] TEST      A=6 B=0 C=1
+  58 [ 102] JMP       A=0 ->60
+  59 [ 102] LOADK     R6 = K17 (2)
+  60 [ 103] GETTABUP  R7 = UP1[K4('GPS')]
+  61 [ 103] GETTABLE  R7 = R7[K5('posLog')]
+  62 [ 103] LEN       A=7 B=7 C=0
+  63 [ 103] LT        A=0 R6, R7; skip-next if condition != A
+  64 [ 103] JMP       A=0 ->70
+  65 [ 104] GETTABUP  R7 = UP2[K12('table')]
+  66 [ 104] GETTABLE  R7 = R7[K18('remove')]
+  67 [ 104] GETTABUP  R8 = UP1[K4('GPS')]
+  68 [ 104] GETTABLE  R8 = R8[K5('posLog')]
+  69 [ 104] CALL      A=7 B=2 C=1
+  70 [ 106] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4 params 2 vararg 0 stack 22 lines 109 139 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('lat', 0, 84), ('lon', 0, 84), ('CODES', 28, 84), ('cp', 29, 84), ('getcode', 36, 84), ('pc', 41, 84), ('(for index)', 44, 56), ('(for limit)', 44, 56), ('(for step)', 44, 56), ('i', 45, 55)]
+K0 None
+K1 ''
+K2 0
+K3 '2'
+K4 '3'
+K5 '4'
+K6 '5'
+K7 '6'
+K8 '7'
+K9 '8'
+K10 '9'
+K11 'C'
+K12 'F'
+K13 'G'
+K14 'H'
+K15 'J'
+K16 'M'
+K17 'P'
+K18 'Q'
+K19 'R'
+K20 'V'
+K21 'W'
+K22 'X'
+K23 '-'
+K24 90
+K25 20
+K26 180
+K27 1
+K28 4
+K29 '+'
+K30 'math'
+K31 'floor'
+K32 5
+   1 [ 110] EQ        A=1 R0, K0(None); skip-next if condition != A
+   2 [ 110] JMP       A=0 ->5
+   3 [ 110] EQ        A=0 R1, K0(None); skip-next if condition != A
+   4 [ 110] JMP       A=0 ->7
+   5 [ 110] LOADK     R2 = K1 ('')
+   6 [ 110] RETURN    A=2 B=2 C=0
+   7 [ 112] NEWTABLE  A=2 B=18 C=1
+   8 [ 112] SETTABLE  R2[K2(0)] = K3('2')
+   9 [ 112] LOADK     R3 = K4 ('3')
+  10 [ 112] LOADK     R4 = K5 ('4')
+  11 [ 112] LOADK     R5 = K6 ('5')
+  12 [ 112] LOADK     R6 = K7 ('6')
+  13 [ 112] LOADK     R7 = K8 ('7')
+  14 [ 112] LOADK     R8 = K9 ('8')
+  15 [ 112] LOADK     R9 = K10 ('9')
+  16 [ 112] LOADK     R10 = K11 ('C')
+  17 [ 112] LOADK     R11 = K12 ('F')
+  18 [ 112] LOADK     R12 = K13 ('G')
+  19 [ 112] LOADK     R13 = K14 ('H')
+  20 [ 112] LOADK     R14 = K15 ('J')
+  21 [ 112] LOADK     R15 = K16 ('M')
+  22 [ 112] LOADK     R16 = K17 ('P')
+  23 [ 112] LOADK     R17 = K18 ('Q')
+  24 [ 112] LOADK     R18 = K19 ('R')
+  25 [ 112] LOADK     R19 = K20 ('V')
+  26 [ 112] LOADK     R20 = K21 ('W')
+  27 [ 112] LOADK     R21 = K22 ('X')
+  28 [ 112] SETLIST   A=2 B=19 C=1
+  29 [ 113] LOADNIL   A=3 B=0 C=0
+  30 [ 115] TEST      A=0 B=0 C=0
+  31 [ 115] JMP       A=0 ->34
+  32 [ 115] TEST      A=1 B=0 C=1
+  33 [ 115] JMP       A=0 ->36
+  34 [ 115] LOADK     R4 = K23 ('-')
+  35 [ 115] RETURN    A=4 B=2 C=0
+  36 [ 125] CLOSURE   R4 = proto[0]
+  37 [ 127] ADD       A=5 B=0 C=280
+  38 [ 127] DIV       A=0 B=5 C=281
+  39 [ 128] ADD       A=5 B=1 C=282
+  40 [ 128] DIV       A=1 B=5 C=281
+  41 [ 129] LOADK     R5 = K1 ('')
+  42 [ 130] LOADK     R6 = K27 (1)
+  43 [ 130] LOADK     R7 = K28 (4)
+  44 [ 130] LOADK     R8 = K27 (1)
+  45 [ 130] FORPREP   A=6 ->56
+  46 [ 131] MOVE      A=10 B=4 C=0
+  47 [ 131] MOVE      A=11 B=0 C=0
+  48 [ 131] MOVE      A=12 B=1 C=0
+  49 [ 131] CALL      A=10 B=3 C=4
+  50 [ 131] MOVE      A=3 B=12 C=0
+  51 [ 131] MOVE      A=1 B=11 C=0
+  52 [ 131] MOVE      A=0 B=10 C=0
+  53 [ 132] MOVE      A=10 B=5 C=0
+  54 [ 132] MOVE      A=11 B=3 C=0
+  55 [ 132] CONCAT    A=5 B=10 C=11
+  56 [ 130] FORLOOP   A=6 ->46
+  57 [ 134] MOVE      A=6 B=5 C=0
+  58 [ 134] LOADK     R7 = K29 ('+')
+  59 [ 134] CONCAT    A=5 B=6 C=7
+  60 [ 135] MOVE      A=6 B=4 C=0
+  61 [ 135] MOVE      A=7 B=0 C=0
+  62 [ 135] MOVE      A=8 B=1 C=0
+  63 [ 135] CALL      A=6 B=3 C=4
+  64 [ 135] MOVE      A=3 B=8 C=0
+  65 [ 135] MOVE      A=1 B=7 C=0
+  66 [ 135] MOVE      A=0 B=6 C=0
+  67 [ 136] MOVE      A=6 B=5 C=0
+  68 [ 136] MOVE      A=7 B=3 C=0
+  69 [ 136] CONCAT    A=5 B=6 C=7
+  70 [ 137] MOVE      A=6 B=5 C=0
+  71 [ 137] GETTABUP  R7 = UP0[K30('math')]
+  72 [ 137] GETTABLE  R7 = R7[K31('floor')]
+  73 [ 137] DIV       A=8 B=0 C=288
+  74 [ 137] CALL      A=7 B=2 C=2
+  75 [ 137] MUL       A=7 B=284 C=7
+  76 [ 137] GETTABUP  R8 = UP0[K30('math')]
+  77 [ 137] GETTABLE  R8 = R8[K31('floor')]
+  78 [ 137] DIV       A=9 B=1 C=284
+  79 [ 137] CALL      A=8 B=2 C=2
+  80 [ 137] ADD       A=7 B=7 C=8
+  81 [ 137] GETTABLE  R7 = R2[R7]
+  82 [ 137] CONCAT    A=5 B=6 C=7
+  83 [ 138] RETURN    A=5 B=2 C=0
+  84 [ 139] RETURN    A=0 B=1 C=0
+
+FUNCTION main/4/0 params 2 vararg 0 stack 7 lines 117 125 source None
+UPVALUES [('_ENV', (0, 0)), ('CODES', (1, 2))]
+LOCALS [('lat', 0, 22), ('lon', 0, 22), ('i', 4, 22), ('cp', 5, 22)]
+K0 'math'
+K1 'floor'
+K2 20
+   1 [ 118] GETTABUP  R2 = UP0[K0('math')]
+   2 [ 118] GETTABLE  R2 = R2[K1('floor')]
+   3 [ 118] MOVE      A=3 B=0 C=0
+   4 [ 118] CALL      A=2 B=2 C=2
+   5 [ 119] GETTABUP  R3 = UP1[R2]
+   6 [ 120] SUB       A=4 B=0 C=2
+   7 [ 120] MUL       A=0 B=258 C=4
+   8 [ 121] GETTABUP  R4 = UP0[K0('math')]
+   9 [ 121] GETTABLE  R4 = R4[K1('floor')]
+  10 [ 121] MOVE      A=5 B=1 C=0
+  11 [ 121] CALL      A=4 B=2 C=2
+  12 [ 121] MOVE      A=2 B=4 C=0
+  13 [ 122] MOVE      A=4 B=3 C=0
+  14 [ 122] GETTABUP  R5 = UP1[R2]
+  15 [ 122] CONCAT    A=3 B=4 C=5
+  16 [ 123] SUB       A=4 B=1 C=2
+  17 [ 123] MUL       A=1 B=258 C=4
+  18 [ 124] MOVE      A=4 B=0 C=0
+  19 [ 124] MOVE      A=5 B=1 C=0
+  20 [ 124] MOVE      A=6 B=3 C=0
+  21 [ 124] RETURN    A=4 B=4 C=0
+  22 [ 125] RETURN    A=0 B=1 C=0
+
+FUNCTION main/5 params 4 vararg 0 stack 13 lines 141 184 source None
+UPVALUES [('_ENV', (0, 0))]
+LOCALS [('distance', 0, 51), ('distUnit', 0, 51), ('speed', 0, 51), ('speedUnit', 0, 51), ('distConversion', 20, 51), ('speedConversion', 21, 51), ('distanceInMeters', 26, 51), ('speedInMetersSec', 31, 51), ('timeInSeconds', 32, 51), ('hours', 36, 51), ('minutes', 41, 51), ('seconds', 45, 51)]
+K0 0
+K1 1
+K2 'math'
+K3 'abs'
+K4 'floor'
+K5 3600
+K6 60
+K7 'h'
+K8 'm'
+K9 's'
+   1 [ 142] TEST      A=0 B=0 C=0
+   2 [ 142] JMP       A=0 ->9
+   3 [ 142] TEST      A=1 B=0 C=0
+   4 [ 142] JMP       A=0 ->9
+   5 [ 142] TEST      A=2 B=0 C=0
+   6 [ 142] JMP       A=0 ->9
+   7 [ 142] TEST      A=3 B=0 C=1
+   8 [ 142] JMP       A=0 ->10
+   9 [ 143] RETURN    A=0 B=1 C=0
+  10 [ 146] EQ        A=0 R2, K0(0); skip-next if condition != A
+  11 [ 146] JMP       A=0 ->15
+  12 [ 146] LOADK     R4 = K1 (1)
+  13 [ 146] TESTSET   A=2 B=4 C=1
+  14 [ 146] JMP       A=0 ->20
+  15 [ 146] GETTABUP  R4 = UP0[K2('math')]
+  16 [ 146] GETTABLE  R4 = R4[K3('abs')]
+  17 [ 146] MOVE      A=5 B=2 C=0
+  18 [ 146] CALL      A=4 B=2 C=2
+  19 [ 146] MOVE      A=2 B=4 C=0
+  20 [ 149] NEWTABLE  A=4 B=0 C=0
+  21 [ 158] NEWTABLE  A=5 B=0 C=0
+  22 [ 170] GETTABLE  R6 = R4[R1]
+  23 [ 170] TEST      A=6 B=0 C=1
+  24 [ 170] JMP       A=0 ->26
+  25 [ 170] LOADK     R6 = K1 (1)
+  26 [ 170] MUL       A=6 B=0 C=6
+  27 [ 173] GETTABLE  R7 = R5[R3]
+  28 [ 173] TEST      A=7 B=0 C=1
+  29 [ 173] JMP       A=0 ->31
+  30 [ 173] LOADK     R7 = K1 (1)
+  31 [ 173] MUL       A=7 B=2 C=7
+  32 [ 176] DIV       A=8 B=6 C=7
+  33 [ 179] GETTABUP  R9 = UP0[K2('math')]
+  34 [ 179] GETTABLE  R9 = R9[K4('floor')]
+  35 [ 179] DIV       A=10 B=8 C=261
+  36 [ 179] CALL      A=9 B=2 C=2
+  37 [ 180] GETTABUP  R10 = UP0[K2('math')]
+  38 [ 180] GETTABLE  R10 = R10[K4('floor')]
+  39 [ 180] MOD       A=11 B=8 C=261
+  40 [ 180] DIV       A=11 B=11 C=262
+  41 [ 180] CALL      A=10 B=2 C=2
+  42 [ 181] GETTABUP  R11 = UP0[K2('math')]
+  43 [ 181] GETTABLE  R11 = R11[K4('floor')]
+  44 [ 181] MOD       A=12 B=8 C=262
+  45 [ 181] CALL      A=11 B=2 C=2
+  46 [ 183] NEWTABLE  A=12 B=0 C=3
+  47 [ 183] SETTABLE  R12[K7('h')] = R9
+  48 [ 183] SETTABLE  R12[K8('m')] = R10
+  49 [ 183] SETTABLE  R12[K9('s')] = R11
+  50 [ 183] RETURN    A=12 B=2 C=0
+  51 [ 184] RETURN    A=0 B=1 C=0
