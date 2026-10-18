@@ -5,6 +5,7 @@
 -- range and an inclusive <= warning. Percentage is a RANGE estimate, not SOC.
 -- Visual health follows Toolbox's lower-third/lower-fifth range bands; the
 -- native warning is separate and always escalates the indicator to critical.
+-- Only displayVoltage is range-clamped; voltage/rawVoltage and alarms stay native.
 local M={}
 local function finite(v)return type(v)=='number'and v==v and v~=math.huge and v~=-math.huge end
 local function decivolts(v)
@@ -22,7 +23,7 @@ function M.new(opts)
  local last=nil
  local api={}
  local function clear()
-  s.voltage=nil;s.rawVoltage=nil;s.percent=nil;s.warning=nil;s.health=nil
+  s.voltage=nil;s.rawVoltage=nil;s.displayVoltage=nil;s.displayBoundary=nil;s.percent=nil;s.warning=nil;s.health=nil
   s.battMin=nil;s.battMax=nil;s.battWarn=nil
   s.voltageError=nil;s.settingsError=nil;s.error=nil
  end
@@ -63,13 +64,15 @@ function M.new(opts)
    elseif not decivolts(raw)then s.voltageState='INVALID';s.voltageError='INVALID TX VOLTAGE'
    elseif read and current~=true then
     s.voltageState=current==false and'STALE'or'UNSUPPORTED';s.voltageError='TX VOLTAGE NOT CURRENT'
-   else voltage=decivolts(raw);s.voltage=voltage/10;s.rawVoltage=raw;s.voltageState='CURRENT'end
+   else voltage=decivolts(raw);s.voltage=voltage/10;s.rawVoltage=raw;s.displayVoltage=s.voltage;s.voltageState='CURRENT'end
   end
   if voltage and minimum then
    local range,offset=maximum-minimum,voltage-minimum
    local percent=math.floor(100*offset/range+0.5)
    s.percent=math.max(0,math.min(100,percent));s.warning=voltage<=threshold
    s.health=(s.warning or offset*5<=range)and'CRITICAL'or offset*3<=range and'LOW'or'NORMAL'
+   s.displayVoltage=math.max(minimum,math.min(maximum,voltage))/10
+   s.displayBoundary=voltage<minimum and'LOWER'or voltage>maximum and'UPPER'or nil
   end
   s.state=s.voltageState=='CURRENT'and(s.limitsState=='CURRENT'and'CURRENT'or'PARTIAL')or s.voltageState
   s.error=s.voltageError or s.settingsError

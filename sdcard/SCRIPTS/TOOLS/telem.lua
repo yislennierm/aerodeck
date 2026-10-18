@@ -2835,7 +2835,7 @@ local function diagnostics(d)
  elseif diagnosticView==7 then
   local radio=d.radioStatus or{}
   local nativeWarning=radio.warning==nil and'UNAVAILABLE'or radio.warning and'LOW'or'NORMAL'
-  rows={{'Transmitter voltage',numberText(radio.voltage,'%.1f',' V')},{'Native warning threshold',numberText(radio.battWarn,'%.1f',' V')},
+  rows={{'Measured TX voltage',numberText(radio.voltage,'%.1f',' V')},{'Native warning threshold',numberText(radio.battWarn,'%.1f',' V')},
    {'Native range minimum',numberText(radio.battMin,'%.1f',' V')},{'Native range maximum',numberText(radio.battMax,'%.1f',' V')},
    {'Range estimate',numberText(radio.percent,'%.0f','% / not charge capacity')},{'Gauge / native warning',(radio.health or'UNAVAILABLE')..' / '..nativeWarning},
    {'Source / limits',(radio.voltageState or'MODULE UNAVAILABLE')..' / '..(radio.limitsState or'--')}}
@@ -3059,7 +3059,10 @@ shell=(function()
    if fill>0 then rect(46,29-fill,7,fill,gaugeColor)end
   else line(47,18,51,18,p.muted)end
   if headerView==1 then
-   local shown,font=fittedText(d.radioVoltage and string.format('%.1f V',d.radioVoltage)or'-- V',54,SMLSIZE)
+   local voltage=radio and radio.displayVoltage or d.radioVoltage
+   local bound=radio and radio.displayBoundary
+   local prefix=bound=='LOWER'and'<'or bound=='UPPER'and'>'or''
+   local shown,font=fittedText(voltage and prefix..string.format('%.1f V',voltage)or'-- V',54,SMLSIZE)
    vlabel(60,0,18,shown,health=='CRITICAL'and p.red or health=='LOW'and p.orange or d.radioVoltage and p.white or p.muted,font)
   elseif headerView==2 then vlabel(60,0,18,clock,p.white)
   elseif headerView==4 then local shown,font=fittedText(dateText,54,TINSIZE or SMLSIZE);vlabel(60,0,18,shown,p.white,font)

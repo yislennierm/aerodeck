@@ -87,6 +87,8 @@ The arm-information shield opens arming diagnostics. Its colour summarizes statu
 
 The battery beside Home is the **radio's battery**, separate from the aircraft-energy panel. Its fill uses EdgeTX's configured radio voltage range, not a measured state of charge. Green is the normal range, amber is the lower third, and red is the lower fifth or EdgeTX's battery-warning threshold. AERODECK checks the native value once per second while displaying the application; the underlying voltage changes at EdgeTX's own measurement cadence. Missing readings show an unavailable gauge. Set radio limits in EdgeTX, not in the aircraft battery profile.
 
+The header voltage stops at the configured meter limits, like Toolbox. A **<** or **>** marks a reading outside those limits: **<6.2 V** means the measured voltage is below a6.2V minimum, and **>8.2 V** means it is above an8.2V maximum. Inside the range it shows the measured value normally. Diagnostics retains the measured TX voltage, and warnings always use that measurement. The meter range does not select a cell count or calibrate the battery sensor.
+
 ## Data and sensors
 
 The Data section provides telemetry views, power/link detail and discovered-sensor information. Where a view offers LIVE/MIN/MAX, historical values come from the supported native extrema sources; a missing minimum or maximum stays unavailable.

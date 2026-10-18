@@ -78,4 +78,24 @@ end
 limits.battWarn=8;now=now+100;voltage=8;r.sample()
 check(s.health=='CRITICAL'and s.warning and s.percent==67,'configured native warning overrides visual range bands')
 now=now+100;current=false;r.sample();check(s.health==nil and s.warning==nil,'stale source clears visual health and native warning')
+-- A range minimum is not a floor for the measured voltage. Toolbox's SNV
+-- formatter clamps its displayed value; preserve the actual native reading.
+local belowRange=M.new({getGeneralSettings=function()return{battMin=6.2,battMax=8.2,battWarn=6.6}end,
+ getSourceValue=function()return 4.2,true,true end,getValue=function()return 4.2 end}).sample(0)
+check(belowRange.voltage==4.2 and belowRange.percent==0 and belowRange.warning and belowRange.health=='CRITICAL','4.2V stays4.2V below a6.2V native gauge minimum')
+check(belowRange.displayVoltage==6.2 and belowRange.displayBoundary=='LOWER','separate presentation voltage uses configured minimum with explicit lower-bound marker')
+local displayNow,displayRaw,displayCurrent=0,8.5,true
+local display=M.new({getGeneralSettings=function()return{battMin=6.2,battMax=8.2,battWarn=6.6}end,getSourceValue=function()return displayRaw,displayCurrent,true end})
+local ds=display.sample(displayNow)
+check(ds.voltage==8.5 and ds.displayVoltage==8.2 and ds.displayBoundary=='UPPER'and not ds.warning,'display maximum is separate from measured voltage and alarm')
+for _,v in ipairs({6.2,7.4,8.2})do
+ displayNow=displayNow+100;displayRaw=v;display.sample(displayNow)
+ check(ds.voltage==v and ds.displayVoltage==v and ds.displayBoundary==nil,'exact limits and in-range voltage have no comparison marker')
+end
+displayNow=displayNow+100;displayCurrent=false;display.sample(displayNow)
+check(ds.displayVoltage==nil and ds.displayBoundary==nil,'source loss clears old display limits as well as measured voltage')
+display.reset();check(ds.displayVoltage==nil and ds.displayBoundary==nil,'reset clears bounded display metadata')
+displayRaw=4.2;displayCurrent=true;display.sample(displayNow)
+check(ds.displayBoundary=='LOWER','fresh source recovers display metadata after reset')
+display.sample(-1);check(ds.displayVoltage==nil and ds.displayBoundary==nil,'invalid clock cannot leave a misleading clamped header value')
 print('radio-status: '..checks..' checks passed')

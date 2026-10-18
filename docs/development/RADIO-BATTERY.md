@@ -13,6 +13,7 @@ The retained full-screen loop can defer slow quad-data phases when its prefix us
 | Element | Toolbox reference | AERODECK after correction |
 |---|---|---|
 | Voltage source | Dedicated `LIB/RD/BAT.lua` reader uses `getValue("tx-voltage")` | Dedicated `pollRadio` path uses the native `getSourceValue` API; `getValue` compatibility only when that API is absent |
+| Displayed voltage outside range | `UI/SNV.lua` clamps the displayed numeric value to the configured min/max before formatting | Same numeric floor/ceiling in the header, marked with `<`/`>`; measured value retained for diagnostics and alarms |
 | Settings | Native general radio battery limits | Native general radio battery limits, validated in volts |
 | Gauge fill | Linear position within configured min/max | Rounded, clamped range percentage; explicitly not chemical SOC |
 | Health colours | Lower third/ lower fifth bands in sensor policy | Same inclusive range bands, with native battery warning also forcing critical |
@@ -30,8 +31,27 @@ EdgeTX2.12.4's [Lua implementation](https://github.com/EdgeTX/edgetx/blob/v2.12.
 
 The regression checks foreground voltage changes, low/critical/normal gauge fill and colour, bounded native reads, unchanged deferred quad acquisition, source loss and recovery. The radio module checks inclusive visual thresholds, separation from the actual native warning, invalid clock clearing and recovery, missing/stale sources and float32 voltage rounding. Current source-bound reports come from the two complete acceptance commands in CONTRIBUTING.md; archived release reports remain historical.
 
-Verification for this correction: all60 suites pass in LuaJIT and Lua5.3 int32/float32, and the source-bound installation package builds successfully. The native480×272 WASM preview was inspected with the corrected gauge and unchanged20000-instruction callback budget; this is sample-data rendering evidence, not hardware throughput. The checked main SHA256 is `c27cbf10b1bf4ad6f5e114c06bf03f20d09d49847c7d3c9184b75a06dd2ca2a4`, and the radio module SHA256 is `cbee472ded40b344e896e261adbd457d6bfde63a106f631d67f20925f59f44b7`. Local generated reports/captures remain under ignored `.build/`.
+Refresh-fix baseline verification: all60 suites passed in LuaJIT and Lua5.3 int32/float32, and the source-bound installation package built successfully. The native480×272 WASM preview was inspected with the corrected gauge and unchanged20000-instruction callback budget; this is sample-data rendering evidence, not hardware throughput. That baseline main SHA256 is `c27cbf10b1bf4ad6f5e114c06bf03f20d09d49847c7d3c9184b75a06dd2ca2a4`, and its radio module SHA256 is `cbee472ded40b344e896e261adbd457d6bfde63a106f631d67f20925f59f44b7`. Local generated reports/captures remain under ignored `.build/`.
 
 ## Physical acceptance still required
 
-Install the checked runtime deliberately, then keep the full-screen App open with real telemetry long enough for the radio's native voltage to change. Compare against EdgeTX's radio battery display, allowing for its measurement granularity. Confirm refresh without changing pages, normal attitude responsiveness and the Tool/compact/hidden lifecycle paths. Record exact runtime hashes and observed results in the equipment records. This repository change has not itself installed or physically validated a radio.
+### Follow-up:4.2V versus6.2V
+
+After installation, a user reported4.2V beside Home while Toolbox displayed6.2V. The charging indication in EdgeTX was full, so it did not provide a numeric tie-breaker. Inspection of Toolbox's actual `UI/SNV.luac` confirms that its numeric formatter clamps the displayed value as well as its percentage. With a configured6.2–8.2V range, its formatter produces the following results:
+
+| Supplied raw voltage | Toolbox displayed voltage | AERODECK displayed voltage |
+|---|---|---|
+|4.2V |6.2V |<6.2V |
+|6.2V |6.2V |6.2V |
+|6.4V |6.4V |6.4V |
+|8.5V |8.2V |>8.2V |
+
+The Toolbox results were reproduced with its actual compiled formatter, a controlled radio source and the int32/float32 Lua interpreter. Only the copied chunk's size_t header was adapted to the host loader; instructions and constants were unchanged. No Toolbox code/binary is added to this repository. These are formatter comparisons, not measurements of a physical battery.
+
+The matching clamp explains how this exact display discrepancy can occur; it does not independently establish the real battery voltage or prove a fault in either EdgeTX voltage API. Both native API implementations use the same underlying TX source in the inspected firmware. The user subsequently reported about4.02V on EdgeTX's Hardware screen and a shutdown, consistent with the application's approximately4V reading. The physical pack voltage has not been independently measured.
+
+At the user's request, the header now follows Toolbox's configured numeric floor/ceiling. It adds a comparison marker so the limit is visibly distinct from an in-range measurement. `radio-status.lua` provides separate `displayVoltage` and `displayBoundary` fields, sampled at the existing1Hz cadence. Native `voltage`, `rawVoltage`, alarm comparisons, `d.radioVoltage` and the measured-voltage diagnostic remain unclamped. Missing limits leave the actual voltage available; missing voltage clears the display. The module/header checks cover both out-of-range directions, exact boundaries, in-range values, loss, reset and clock failure. This display change does not alter radio calibration, battery charging or cell-count configuration, and it does not establish the pack's physical condition.
+
+Display-limit verification: all60 suites pass in both interpreters, and the source-bound package builds. The native480×272 preview with an explicit development-only4.2V sample and6.2–8.2V meter range shows `<6.2 V` fitting beside Home, an empty gauge, the critical battery footer, and4.2V in the measured-voltage diagnostic. The firmware callback budget remains20000. The checked main SHA256 is `2a26c0343cc8b4268278c75f59e00b93a11d8e882f9aa013a50e3fe00b87d7b8`; the radio module SHA256 is `1052267ee164dc44f0208fdee6cc09dba2a279fe0d6fe0bc094ff472473b5c2f`. The source-bound reports are generated as `.build/checks-display-*.json`; local screenshots/metadata are under `.build/radio-display/`. These simulation results do not claim a physical install or hardware acceptance of the display-limit change.
+
+The battery-refresh build was subsequently installed and file-hash verified on the primary radio; the private equipment deployment record is the installation authority. Physical acceptance remains separate: keep the full-screen App open with real telemetry long enough for the radio's native voltage to change. Compare against EdgeTX's numeric radio battery reading, allowing for its measurement granularity. Confirm refresh without changing pages, normal attitude responsiveness and the Tool/compact/hidden lifecycle paths. Record exact runtime hashes and observed results in the equipment records. A verified copy does not validate the physical voltage or application performance.

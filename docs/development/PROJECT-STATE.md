@@ -30,4 +30,6 @@ The repository cleanup provides a clear product README, separated runtime/assets
 
 ## Keep this useful
 
+Follow-up radio-voltage investigation: Toolbox's actual compiled `UI/SNV` formatter clamps displayed numeric voltage to the configured min/max. A controlled4.2V input with a6.2V minimum reproduces Toolbox displaying6.2V; the user subsequently observed about4.02V in EdgeTX Hardware. At the user's request, AERODECK's header now uses the same numeric limits, with `<`/`>` markers outside the range. Preserve the separate unclamped native measurement for diagnostics/alarms. Regression checks cover both display limits, raw values, loss and recovery. Physical pack voltage remains unmeasured. Read RADIO-BATTERY.md before changing APIs, calibration or voltage scaling. Check current source/report hashes before deploying this local presentation change.
+
 After meaningful work, update accepted decisions, unresolved issues and the next concrete step here. Record measurements in source-bound evidence, not as unsupported statements. Keep machine-specific paths, credentials, personal radio files and full chat transcripts out of public documentation.

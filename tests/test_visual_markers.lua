@@ -8,6 +8,12 @@ local function marker(a,name)
  return find(a,'pattern',function(c)return c.path:find('/'..name..'-18.png',1,true)and c.y>=64 and c.y<244 end)
 end
 local function fill(a)return find(a,'fill',function(c)return c.x==46 and c.w==7 and c.y>=7 and c.y+c.h==29 end)end
+local under=adapter.make({radioVoltage=4.2,radioGeneral={battMin=6.2,battMax=8.2,battWarn=6.6}})
+check(find(under,'text',function(c)return c.x==60 and c.text=='<6.2 V'and c.color==0xfa5b40 end)and not fill(under),'header marks the6.2V display floor with empty critical gauge')
+check(under.snapshot().radioVoltage==4.2 and under.snapshot().radioStatus.voltage==4.2 and under.snapshot().radioWarning,'header display floor never changes measured voltage or native warning')
+local over=adapter.make({radioVoltage=8.5,radioGeneral={battMin=6.2,battMax=8.2,battWarn=6.6}})
+check(find(over,'text',function(c)return c.x==60 and c.text=='>8.2 V'end)and fill(over).h==22,'header marks configured ceiling with full gauge')
+check(over.snapshot().radioVoltage==8.5 and not over.snapshot().radioWarning,'display ceiling preserves actual above-range reading and native alarm state')
 local opts={radioVoltage=6.6,radioGeneral={battMin=6.6,battMax=8.4,battWarn=6.8}}
 local a=adapter.make(opts)
 check(not fill(a),'empty native voltage range produces no fabricated full gauge')
