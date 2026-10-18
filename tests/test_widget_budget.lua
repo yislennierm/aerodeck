@@ -12,7 +12,8 @@ local function make(physicalArm,logModel,device)
  getLogicalSwitchValue=physicalArm and function(i)if i==0 then return logicalArm end end or nil
  local initialSettings=base..(physicalArm and'armBinding=LS:L01\n'or'')
  if device then initialSettings=string.gsub(initialSettings,'mspMode=0','mspMode=1')end
- local a=adapter.make({filename=logModel,settings=initialSettings,device=device})
+ local options={filename=logModel,settings=initialSettings,device=device}
+ local a=adapter.make(options)
  if logModel then
   local factory=assert(loadfile('sdcard/SCRIPTS/TOOLS/AERODECK/model-store.lua'))()
   local store=factory.new({io=io,remove=del,rename=rename})
@@ -20,12 +21,12 @@ local function make(physicalArm,logModel,device)
  end
  if physicalArm then a.setSensor('FM',nil,false,true)end
  local now=getTime();getTime=function()return now end
- local raw=getSourceValue;local reads={current=0,voltage=0,gps=0,pitch=0,roll=0}
+ local raw=getSourceValue;local reads={current=0,voltage=0,gps=0,pitch=0,roll=0,radio=0}
  getSourceValue=function(id)
-  if id==1006 then reads.current=reads.current+1 elseif id==1003 then reads.voltage=reads.voltage+1 elseif id==1021 then reads.gps=reads.gps+1 elseif id==1036 then reads.pitch=reads.pitch+1 elseif id==1039 then reads.roll=reads.roll+1 end
+  if id=='tx-voltage'then reads.radio=reads.radio+1 elseif id==1006 then reads.current=reads.current+1 elseif id==1003 then reads.voltage=reads.voltage+1 elseif id==1021 then reads.gps=reads.gps+1 elseif id==1036 then reads.pitch=reads.pitch+1 elseif id==1039 then reads.roll=reads.roll+1 end
   return raw(id)
  end
- local h={app=a,reads=reads,setLogicalArm=function(v)logicalArm=v end}
+ local h={app=a,reads=reads,options=options,setLogicalArm=function(v)logicalArm=v end}
  function h.step(event,touch,ticks)now=now+(ticks or 4);return a.send(event or 0,touch)end
  function h.background(ticks)now=now+(ticks or 4);a.background(1)end
  function h.now()return now end
@@ -71,7 +72,7 @@ for i=1,120 do
  a.setAttitude(rawPitch,rawRoll);a.setSensor('Curr',i,true,true);a.setSensor('GPS',{lat=latitude,lon=-97.1573563},true,true)
  local old=a.snapshot();local serial=a.inputs.serviceSerial;local currentReads=h.reads.current
  local oldA,oldLat=old.a,old.session.current.lat
- local oldPower,oldRadio=view(old.powerState),view(old.radioStatus)
+ local oldPower=view(old.powerState)
  local pending=a.inputs.pendingData
  local expectedA=pending and pending.data.a
  local expectedLat=pending and pending.data.gps and pending.data.gps.lat
@@ -86,7 +87,7 @@ for i=1,120 do
   near(old.a,oldA,'in-progress work cannot mutate published current')
   near(old.session.current.lat,oldLat,'session position changes only at publication')
   unchanged(old.powerState,oldPower,'in-progress derive leaves published battery view intact')
-  unchanged(old.radioStatus,oldRadio,'in-progress acquisition leaves published radio view intact')
+  check(old.radioStatus and old.radioStatus.state=='CURRENT','independent radio view remains complete during quad acquisition')
  end
  if h.reads.current>currentReads then
   acquisitions=acquisitions+1;local acquired=a.inputs.pendingData
@@ -326,6 +327,29 @@ check(ma.inputs.pendingData==held and held.phase==3,'visible modal permits remai
 margin.step(0,nil,1);check(held.phase==4 and ma.visible('QUICK ACTIONS'),'modal also permits bounded power derivation')
 oldSerial=ma.inputs.serviceSerial;margin.step(0,nil,1)
 check(ma.inputs.serviceSerial==oldSerial+1 and ma.inputs.pendingData==nil and ma.visible('QUICK ACTIONS'),'modal publishes the completed sample while retaining the visible controls')
+-- TX battery must remain live even when every full-screen callback defers quad
+-- acquisition. No background(), page switch or reinit may rescue this fixture.
+local battery=make();local ba=battery.app;battery.drain()
+local batterySerial,quadReads=ba.inputs.serviceSerial,battery.reads.current
+local radioReads=battery.reads.radio
+battery.options.radioGeneral={battMin=6,battMax=9,battWarn=6.2}
+battery.options.radioVoltage=7
+getUsage=function()return 12 end
+for i=1,16 do battery.step(0,nil,20);painted(ba,'budget-deferred battery refresh')end
+check(ba.inputs.serviceSerial==batterySerial and battery.reads.current==quadReads,'radio refresh never forces budget-deferred quad acquisition')
+near(ba.snapshot().radioVoltage,7,'native radio voltage refreshes without leaving AERODECK')
+check(ba.snapshot().radioStatus.percent==33 and ba.snapshot().radioStatus.health=='LOW'and not ba.snapshot().radioWarning,'native range bands update independently of model telemetry')
+check(battery.reads.radio-radioReads>=3 and battery.reads.radio-radioReads<=4,'foreground battery reads remain bounded to1Hz')
+local function gauge(color,height)
+ for _,c in ipairs(ba.commands())do if c.kind=='fill'and c.x==46 and c.w==7 and c.h==height and c.color==color then return true end end
+end
+check(gauge(0xffae62,7),'visible gauge shows updated low-band fill')
+battery.options.radioVoltage=6.6;battery.step(0,nil,100)
+check(gauge(0xfa5b40,4)and ba.snapshot().radioStatus.health=='CRITICAL'and not ba.snapshot().radioWarning,'critical range colour does not fabricate native battery alarm')
+battery.options.radioCurrent=false;battery.step(0,nil,100)
+check(ba.snapshot().radioVoltage==nil and ba.snapshot().radioStatus.percent==nil and ba.snapshot().radioStatus.health==nil,'unavailable radio source clears stale display while quad acquisition is deferred')
+battery.options.radioCurrent=true;battery.options.radioVoltage=9;battery.step(0,nil,100)
+check(gauge(0xa4e37d,22)and ba.snapshot().radioStatus.percent==100,'foreground radio recovers without page switch')
 getUsage=nil
 -- Simulate recurring cost at the ACTUAL native transport pop, through real main,
 -- link dispatcher, MSP client and packet fixture. No fake replacement tick loop.

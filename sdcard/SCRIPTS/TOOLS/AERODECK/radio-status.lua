@@ -3,6 +3,8 @@
 -- tx-voltage is native g_vbat100mV * 0.1, not a model telemetry sensor.
 -- edgetx.h GET_TXBATT_BARS / IS_TXBATT_WARNING use the configured min/max
 -- range and an inclusive <= warning. Percentage is a RANGE estimate, not SOC.
+-- Visual health follows Toolbox's lower-third/lower-fifth range bands; the
+-- native warning is separate and always escalates the indicator to critical.
 local M={}
 local function finite(v)return type(v)=='number'and v==v and v~=math.huge and v~=-math.huge end
 local function decivolts(v)
@@ -20,7 +22,7 @@ function M.new(opts)
  local last=nil
  local api={}
  local function clear()
-  s.voltage=nil;s.rawVoltage=nil;s.percent=nil;s.warning=nil
+  s.voltage=nil;s.rawVoltage=nil;s.percent=nil;s.warning=nil;s.health=nil
   s.battMin=nil;s.battMax=nil;s.battWarn=nil
   s.voltageError=nil;s.settingsError=nil;s.error=nil
  end
@@ -31,7 +33,8 @@ function M.new(opts)
  function api.sample(now)
   if now==nil and clock then local ok,value=pcall(clock);if ok then now=value end end
   if not finite(now)or now<0 then
-   s.error='CLOCK UNAVAILABLE';s.state='UNAVAILABLE';s.voltage=nil;s.percent=nil;s.warning=nil;s.voltageState='UNAVAILABLE'
+   if s.error~='CLOCK UNAVAILABLE'then s.revision=s.revision+1 end
+   last=nil;clear();s.sampleAt=nil;s.error='CLOCK UNAVAILABLE';s.state='UNAVAILABLE';s.voltageState='UNAVAILABLE';s.limitsState='UNAVAILABLE'
    return s
   end
   if last and now>=last and now-last<100 then return s end
@@ -63,8 +66,10 @@ function M.new(opts)
    else voltage=decivolts(raw);s.voltage=voltage/10;s.rawVoltage=raw;s.voltageState='CURRENT'end
   end
   if voltage and minimum then
-   local percent=math.floor(100*(voltage-minimum)/(maximum-minimum)+0.5)
+   local range,offset=maximum-minimum,voltage-minimum
+   local percent=math.floor(100*offset/range+0.5)
    s.percent=math.max(0,math.min(100,percent));s.warning=voltage<=threshold
+   s.health=(s.warning or offset*5<=range)and'CRITICAL'or offset*3<=range and'LOW'or'NORMAL'
   end
   s.state=s.voltageState=='CURRENT'and(s.limitsState=='CURRENT'and'CURRENT'or'PARTIAL')or s.voltageState
   s.error=s.voltageError or s.settingsError

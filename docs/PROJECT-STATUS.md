@@ -4,7 +4,7 @@
 
 Version: **2026.10.0-alpha**. Primary target: TX16S MkII,480×272, EdgeTX2.12.4 with Betaflight/ELRS. This development alpha retains the approved flat navy/cyan/soft-green UI, Material bitmap navigation icons and120×120 AD startup logo. The rejected pure LED-green/blue palette is not the current theme.
 
-The repository split changes ownership, tooling and documentation; all68 active Lua/PNG runtime files are byte-identical to the pre-split alpha. Five relevant development commits were extracted with rewritten product-only commit IDs. The fpv history is retained unchanged up to its migration commits. `migration.json` records the correspondence.
+The repository split and organization cleanup preserved all68 active Lua/PNG runtime files from the pre-split alpha. Five relevant development commits were extracted with rewritten product-only commit IDs. The fpv history is retained unchanged up to its migration commits. `migration.json` records the correspondence. Subsequent runtime changes are described below; the original release evidence does not validate those changes.
 
 ## Verification and deployment are separate
 
@@ -13,6 +13,7 @@ The repository split changes ownership, tooling and documentation; all68 active 
 - AERODECK's portable browser entry point is `tools/preview.py`. It needs Node and an externally supplied compatible EdgeTX WASM, not the old Codex workspace.
 - The last recorded physical SD install before extraction was SPLASH-20261018. The calendar-versioned alpha was local/simulator-only. This migration does not install a radio.
 - The equipment repository's `radiomaster_tx16s_mkII/LUA/DEPLOYMENT.txt` remains the authority for that radio's file-verified install. A GitHub artifact, version tag or submodule pointer does not prove an on-radio test.
+- The current checkout separates radio-battery refresh from deferred quad-data work, and adds distinct normal/low/critical gauge colours. The foreground-only regression covers the reported freeze without leaving AERODECK. See [the investigation and remaining radio acceptance](development/RADIO-BATTERY.md). A passing portable regression is not confirmation on the physical radio.
 
 ## Scope and remaining acceptance
 

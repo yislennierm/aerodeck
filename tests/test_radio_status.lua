@@ -67,4 +67,15 @@ debug.setmetatable('',nativeStringMeta);check(okay,'stripped-string compatibilit
 local noClock=M.new({getGeneralSettings=function()error('must not read')end,getValue=function()error('must not read')end})
 check(noClock.sample().error=='CLOCK UNAVAILABLE','missing clock cannot cause unbounded native reads')
 local previous=reads;now=-1;check(r.sample().voltage==nil and r.snapshot().error=='CLOCK UNAVAILABLE'and reads==previous,'invalid clock clears current claim without native reads')
+check(s.health==nil and s.rawVoltage==nil and s.battMin==nil and s.sampleAt==nil and s.limitsState=='UNAVAILABLE','invalid clock clears all native/derived battery claims')
+local invalidRevision=s.revision;r.sample();check(s.revision==invalidRevision,'repeated invalid clock does not allocate new snapshot revisions')
+now=3200;r.sample();check(s.voltage==7.5 and s.state=='CURRENT','valid clock recovery samples immediately')
+limits={battMin=6,battMax=9,battWarn=6.2}
+for _,case in ipairs({{7,'LOW',false},{7.1,'NORMAL',false},{6.7,'LOW',false},{6.6,'CRITICAL',false},{6.2,'CRITICAL',true}})do
+ now=now+100;voltage=case[1];r.sample()
+ check(s.health==case[2]and s.warning==case[3],'inclusive lower-third/lower-fifth bands stay separate from native alarm: '..case[1])
+end
+limits.battWarn=8;now=now+100;voltage=8;r.sample()
+check(s.health=='CRITICAL'and s.warning and s.percent==67,'configured native warning overrides visual range bands')
+now=now+100;current=false;r.sample();check(s.health==nil and s.warning==nil,'stale source clears visual health and native warning')
 print('radio-status: '..checks..' checks passed')

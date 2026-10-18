@@ -11,7 +11,8 @@ local function fill(a)return find(a,'fill',function(c)return c.x==46 and c.w==7 
 local opts={radioVoltage=6.6,radioGeneral={battMin=6.6,battMax=8.4,battWarn=6.8}}
 local a=adapter.make(opts)
 check(not fill(a),'empty native voltage range produces no fabricated full gauge')
-check(find(a,'fill',function(c)return c.x==44 and c.y==5 and c.w==11 and c.h==26 and c.color==0xffae62 end),'native low warning colors the tall battery frame')
+check(find(a,'fill',function(c)return c.x==44 and c.y==5 and c.w==11 and c.h==26 and c.color==0x8ca4b3 end),'empty gauge retains a muted silhouette rather than implying a full coloured battery')
+check(find(a,'text',function(c)return c.text=='6.6 V'and c.color==0xfa5b40 end),'native battery warning remains visible in red voltage even with empty gauge')
 opts.radioVoltage=8.4;a.background(120);a.send(0)
 check(fill(a)and fill(a).h==22,'native maximum fills the22px interior')
 opts.radioVoltage=7.5;a.background(120);a.send(0)

@@ -864,6 +864,19 @@ local function pollAttitude()
  liveData.pitch=attitudePitch;liveData.roll=attitudeRoll
  return attitudePitch,attitudeRoll
 end
+-- Native transmitter state is independent of budget-deferred quad acquisition.
+-- The module caches both native reads at1Hz; each published view gets its own copy.
+local function pollRadio(d,now)
+ if radioStatus then
+  local current=radioStatus.sample(now)
+  if not d.radioStatus or d.radioStatus.revision~=current.revision then d.radioStatus=copyView(d.radioStatus,current)end
+  radioVoltage=current.voltage;d.radioWarning=current.warning
+ elseif now<radioAt or now-radioAt>=100 then
+  radioAt=now;local v=getValue and getValue('tx-voltage')
+  radioVoltage=type(v)=='number'and v==v and v>0 and v<100 and v or nil
+ end
+ d.radioVoltage=radioVoltage
+end
 local function getData(t,first,last,partial)
  local d=liveData
  for i=first or 1,last or #liveFields do
@@ -886,15 +899,7 @@ local function getData(t,first,last,partial)
  d.consumedName=profile and profile.family=='FRSKY'and 'Fuel'or 'Capa'
  if decoded.rf~=d.rf then decoded.rf=d.rf;decoded.rfCaption=protocolFactory and protocolFactory.rfCaption(d.rf,profile)or nil end
  d.rfCaption=decoded.rfCaption
- if radioStatus then
-  local current=radioStatus.sample(getTime())
-  if not d.radioStatus or d.radioStatus.revision~=current.revision then d.radioStatus=copyView(d.radioStatus,current)end
-  radioVoltage=current.voltage;d.radioWarning=current.warning
- elseif getTime()<radioAt or getTime()-radioAt>=100 then
-  radioAt=getTime();local v=getValue and getValue('tx-voltage')
-  radioVoltage=type(v)=='number'and v==v and v>0 and v<100 and v or nil
- end
- d.radioVoltage=radioVoltage
+ pollRadio(d,getTime())
  d.pitch=attitudePitch;d.roll=attitudeRoll
  local rawFlight=not(profile and profile.supported==false)and configuration.value('FM')or nil;d.flight=rawFlight or '--';d.demo=false;d.estimated=nil
  d.pct=d.rawPct;d.estimatedPct=nil;d.percentageOrigin=d.rawPct~=nil and 'REPORTED' or nil
@@ -1051,7 +1056,7 @@ local function extremaStatus()
  return extremaReader.snapshot().pending and 'READING'or 'NATIVE'
 end
 local function toggle()mode=1;last=-100;scanUnits()end
-return {prime=prime,acquire=acquire,finishAcquire=finishAcquire,derive=derive,extrema=extrema,prepareExtrema=prepareExtrema,extremaReady=extremaReady,extremaView=extremaView,cancelExtrema=cancelExtrema,serviceExtrema=serviceExtrema,extremaAllowance=extremaAllowance,extremaOverdue=extremaOverdue,extremaStatus=extremaStatus,clearStatistics=function()receivedSources={};nativeAt=-100;nativeWorkMode=nil;if extremaReader then extremaReader.resetBindings()end end,resetPower=function()if powerPolicy then powerPolicy.reset()end end,init=init,sample=sample,pollAttitude=pollAttitude,toggle=toggle,sourceStatus=sourceStatus,refreshBindings=function()last=-100;scanUnits()end,isDemo=function()return false end,profile=function()return profile end,release=function()end,refresh=function()last=-100 end}
+return {prime=prime,acquire=acquire,finishAcquire=finishAcquire,derive=derive,extrema=extrema,prepareExtrema=prepareExtrema,extremaReady=extremaReady,extremaView=extremaView,cancelExtrema=cancelExtrema,serviceExtrema=serviceExtrema,extremaAllowance=extremaAllowance,extremaOverdue=extremaOverdue,extremaStatus=extremaStatus,clearStatistics=function()receivedSources={};nativeAt=-100;nativeWorkMode=nil;if extremaReader then extremaReader.resetBindings()end end,resetPower=function()if powerPolicy then powerPolicy.reset()end end,init=init,sample=sample,pollAttitude=pollAttitude,pollRadio=pollRadio,toggle=toggle,sourceStatus=sourceStatus,refreshBindings=function()last=-100;scanUnits()end,isDemo=function()return false end,profile=function()return profile end,release=function()end,refresh=function()last=-100 end}
 
 end)()
 fcLink.guard=function()
@@ -2829,9 +2834,10 @@ local function diagnostics(d)
   vlabel(18,198,18,'optional radio statistics / selected timer.',p.muted)
  elseif diagnosticView==7 then
   local radio=d.radioStatus or{}
+  local nativeWarning=radio.warning==nil and'UNAVAILABLE'or radio.warning and'LOW'or'NORMAL'
   rows={{'Transmitter voltage',numberText(radio.voltage,'%.1f',' V')},{'Native warning threshold',numberText(radio.battWarn,'%.1f',' V')},
    {'Native range minimum',numberText(radio.battMin,'%.1f',' V')},{'Native range maximum',numberText(radio.battMax,'%.1f',' V')},
-   {'Range estimate',numberText(radio.percent,'%.0f','% / not charge capacity')},{'Warning',radio.warning==nil and'UNAVAILABLE'or radio.warning and'LOW'or'NORMAL'},
+   {'Range estimate',numberText(radio.percent,'%.0f','% / not charge capacity')},{'Gauge / native warning',(radio.health or'UNAVAILABLE')..' / '..nativeWarning},
    {'Source / limits',(radio.voltageState or'MODULE UNAVAILABLE')..' / '..(radio.limitsState or'--')}}
  elseif diagnosticView==6 then
   if not modelImage then local chunk=loadScript and loadScript(ROOT..'model-image.lua');local factory=chunk and chunk();modelImage=factory and factory.new({Bitmap=Bitmap,lcd=lcd})or nil end
@@ -3043,17 +3049,18 @@ shell=(function()
    clockAt=now
   end
   local radio=d.radioStatus;local percent=radio and radio.percent
-  local gaugeColor=d.radioWarning and p.orange or percent~=nil and(p.statusGreen or p.green)or p.muted
+  local health=radio and radio.health
+  local gaugeColor=health=='CRITICAL'and p.red or health=='LOW'and p.orange or percent~=nil and(p.statusGreen or p.green)or p.muted
   -- Frame and fill are dynamic native rectangles; the value is a voltage-range
   -- estimate from existing once-per-second sampling, never a claimed SOC.
-  rect(47,2,5,3,gaugeColor);rect(44,5,11,26,gaugeColor);rect(45,6,9,24,p.black)
+  rect(47,2,5,3,p.muted);rect(44,5,11,26,p.muted);rect(45,6,9,24,p.black)
   if percent~=nil then
    local fill=round(22*clamp(percent,0,100)/100)
    if fill>0 then rect(46,29-fill,7,fill,gaugeColor)end
   else line(47,18,51,18,p.muted)end
   if headerView==1 then
    local shown,font=fittedText(d.radioVoltage and string.format('%.1f V',d.radioVoltage)or'-- V',54,SMLSIZE)
-   vlabel(60,0,18,shown,d.radioWarning and p.orange or p.white,font)
+   vlabel(60,0,18,shown,health=='CRITICAL'and p.red or health=='LOW'and p.orange or d.radioVoltage and p.white or p.muted,font)
   elseif headerView==2 then vlabel(60,0,18,clock,p.white)
   elseif headerView==4 then local shown,font=fittedText(dateText,54,TINSIZE or SMLSIZE);vlabel(60,0,18,shown,p.white,font)
   else
@@ -3468,6 +3475,7 @@ local function run(event,touch)
   d=serviceData(false,true)
  end
  if not d then inputRuntime.progress('READING CURRENT TELEMETRY');return 0 end
+ telemetry.pollRadio(d,now)
  -- Capture/rebuild bounded map data before painting; never reproject the whole
  -- growing trail inside a widget draw. Current aircraft position stays live.
  if page==7 and not inputRuntime.gpsInfo and not inputRuntime.gpsMenu and(not inputRuntime.deferred or type(getUsage)~='function'or getUsage()<=18)then inputRuntime.stepNavPlot(now)end

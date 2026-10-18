@@ -26,7 +26,7 @@ The last recorded pre-split physical SD install was SPLASH-20261018. The calenda
 
 Use `tools/run_checks.py` for fresh source-bound reports. Historical alpha/native evidence and the350-row parity assessment remain under `archive/imported/development/`. Their partial/unverified classifications still matter. Continue with real telemetry correctness, sustained responsiveness and source-backed parity closure, then native-size layout reviews and equipment acceptance.
 
-Current cleanup scope: a clear product README, separated runtime/assets/tests/tools/archive, reliable current entry points and durable chat continuation guidance. It changes organization/tooling/documentation, not flight behaviour. Check git status and current reports before reporting this cleanup as committed, pushed or installed.
+The repository cleanup provides a clear product README, separated runtime/assets/tests/tools/archive, current entry points and durable chat continuation guidance. Its organization commit preserved all runtime bytes. A subsequent radio-battery fix changes runtime behaviour: native TX battery sampling now runs independently of budget-deferred quad acquisition. The regression reproduces an unchanged voltage during sustained moderate foreground usage, then verifies updates without background callbacks or page changes. Read [the battery investigation](RADIO-BATTERY.md) for source comparison, limits and hardware acceptance still required. Check git status and current reports before reporting either change as pushed or installed.
 
 ## Keep this useful
 
