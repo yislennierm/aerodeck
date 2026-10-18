@@ -33,7 +33,7 @@ let latestFrame=Buffer.alloc(480*272*2),lcdFrames=0;const lcdPumpStarted=Date.no
 const lcdPump=setInterval(()=>{if(e.simuLcdChanged()){const n=e.simuLcdCopy(ptr,480*272*2);latestFrame=Buffer.from(new Uint8Array(memory.buffer,ptr,n));lcdFrames++;e.simuLcdFlushed();}},16);
 const copyFrame=()=>Buffer.from(latestFrame);
 process.on('exit',()=>{clearInterval(lcdPump);console.log('QA_LCD_PUMP',JSON.stringify({intervalMs:16,frames:lcdFrames,elapsedMs:Date.now()-lcdPumpStarted,continuousDirtyCopyThenAck:true,screenshotExtraAck:false}));});
-const shot=name=>{const frame=copyFrame();fs.mkdirSync(path.join(__dirname,'captures'),{recursive:true});fs.writeFileSync(path.join(__dirname,'captures',name+'.raw'),frame);console.log('SHOT',name,frame.length);};
+const shot=name=>{const frame=copyFrame();fs.mkdirSync(path.join(base,'captures'),{recursive:true});fs.writeFileSync(path.join(base,'captures',name+'.raw'),frame);console.log('SHOT',name,frame.length);};
 const key=async(k,d=120)=>{e.simuSetKey(k,1);await sleep(d);e.simuSetKey(k,0);await sleep(250);};
 const tap=async(x,y)=>{e.simuTouchDown(x,y);await sleep(100);e.simuTouchUp();await sleep(250);};
 await sleep(3000);shot('boot');
