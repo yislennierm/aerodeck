@@ -36,7 +36,7 @@ def main():
     folder = ROOT / 'sdcard/SCRIPTS/TOOLS/AERODECK'
     runtime += sorted(folder.glob('*.lua')) + sorted((folder / 'icons').rglob('*.png'))
     bound = {str(p.relative_to(ROOT)): sha(p) for p in runtime}
-    binary = Path(args.lua)
+    binary = Path(shutil.which(args.lua) or args.lua).resolve()
     version = subprocess.run([str(binary), '-v'], capture_output=True, text=True)
     probe = subprocess.run([str(binary), '-e',
                             "print(string.packsize and string.packsize('j') or 'JIT',string.packsize and string.packsize('n') or 'double')"],

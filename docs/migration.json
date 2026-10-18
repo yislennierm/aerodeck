@@ -1,0 +1,32 @@
+{
+  "sourceRepository": "https://github.com/yislennierm/fpv.git",
+  "sourcePrefix": "radiomaster_tx16s_mkII/LUA/",
+  "sourceCheckpoint": "2463c645120cd024d02ebbf9b238f17506c2161a",
+  "importedHead": "54cf8347079cdb45b60c05a09999c9cc83529cca",
+  "relevantCommitMap": [
+    {
+      "fpv": "2463c645120cd024d02ebbf9b238f17506c2161a",
+      "aerodeck": "54cf8347079cdb45b60c05a09999c9cc83529cca"
+    },
+    {
+      "fpv": "4362c0dedfb659c98ed78e0a3a050e8508d75825",
+      "aerodeck": "468f6de6c1ea135d5f05aaac06af992e9c0676c9"
+    },
+    {
+      "fpv": "a51222f4294039621b82046ec689252e4f5749d3",
+      "aerodeck": "1b4665ce63b89b87ba90eb5a5a02dfa91bf73d8b"
+    },
+    {
+      "fpv": "b824ac30977dea686ff21e654d18e8f315c37a06",
+      "aerodeck": "e2c70dd681174c0875573fbc7bbdf87be91e7387"
+    },
+    {
+      "fpv": "ebb932a7e5252785d98e2fe7a7a8add7df5cf5db",
+      "aerodeck": "4ba4511ccdc3d455a7538cb9f1cd0aa644b01416"
+    }
+  ],
+  "runtimeFilesVerifiedByteExact": 68,
+  "simulatorSHA256": "99f4f0b71dd14d3bf3df45095edb61dc48b4ebcfaf090a05f13eb727dcfb1525",
+  "radioDeploymentPerformed": false,
+  "originalHistoryRewritten": false
+}

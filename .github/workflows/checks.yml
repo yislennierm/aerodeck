@@ -1,0 +1,25 @@
+name: Portable acceptance
+on:
+  push:
+  pull_request:
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install LuaJIT and compiler dependencies
+        run: sudo apt-get update && sudo apt-get install -y luajit build-essential
+      - run: python3 tools/build_lua32.py
+      - run: python3 development/set_version.py --check
+      - run: python3 development/run_checks.py --lua luajit --report .build/checks-luajit.json
+      - run: python3 development/run_checks.py --lua .build/lua-5.3.6/src/lua --report .build/checks-lua32.json
+      - run: python3 tools/package.py --reports .build/checks-luajit.json .build/checks-lua32.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aerodeck-alpha-package-and-checks
+          path: |
+            dist/
+            .build/checks-*.json
